@@ -7,9 +7,9 @@ import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { CheckCircle2, Calculator } from "lucide-react";
 
 export const metadata: Metadata = generateSEO({
-  title: "Marine Cargo Insurance Premium in Batam – How It's Calculated | Batam Insurance",
+  title: "How Marine Cargo Insurance Premiums Are Set in Batam | Batam Insurance",
   description:
-    "How much does marine cargo insurance cost in Batam? Learn the premium formula, factors that affect your rate, and how to get the best coverage for your budget. Contact Rio!",
+    "What actually goes into the price of marine cargo insurance in Batam? Walk through the premium formula, the factors underwriters weigh, and how to get solid coverage without overpaying. Contact Rio!",
   canonical: "/en/blog/marine-cargo-insurance-premium-batam",
   languages: {
     id: "https://asuransibatam.com/blog/premi-asuransi-marine-cargo-batam",
@@ -20,12 +20,12 @@ export const metadata: Metadata = generateSEO({
 const schemaArticle = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "How Much Is Marine Cargo Insurance Premium in Batam?",
+  headline: "What Actually Determines Your Marine Cargo Insurance Premium in Batam",
   description:
-    "A complete guide to calculating marine cargo insurance premiums in Batam, covering key rating factors, policy types, and tips for getting the best coverage.",
+    "A practical walkthrough of how marine cargo insurance premiums are set in Batam, covering the rating factors, policy structures, and tips for getting solid coverage at a fair price.",
   url: "https://asuransibatam.com/en/blog/marine-cargo-insurance-premium-batam",
   datePublished: "2026-05-08",
-  dateModified: "2026-05-08",
+  dateModified: "2026-08-04",
   author: {
     "@type": "Person",
     name: "Rio",
@@ -40,51 +40,51 @@ const schemaArticle = {
 
 const FAQS = [
   {
-    q: "Is the marine cargo premium calculated per shipment or per year?",
-    a: "Both options are available. An open cover policy (annual) suits exporters or distributors making regular shipments — the premium is paid upfront and each shipment is declared to obtain a certificate. A per-voyage policy is better suited for one-off or infrequent shipments.",
+    q: "Do I pay the cargo premium per shipment, or once a year?",
+    a: "Either structure is available. An open cover (annual) policy fits exporters or distributors shipping on a regular basis — you pay upfront and simply declare each shipment to get a certificate. A per-voyage policy works better if your shipments are one-off or infrequent.",
   },
   {
-    q: "Is there a minimum cargo value to qualify for insurance?",
-    a: "There is no formal minimum value requirement. However, for goods worth less than IDR 5 million, the cost of the premium relative to the potential claim amount may make insurance less efficient. For shipments exceeding IDR 50 million, cargo insurance is strongly advisable.",
+    q: "Is there a floor on cargo value before insurance makes sense?",
+    a: "There's no formal minimum. That said, for goods worth under IDR 5 million, the premium can end up disproportionate to what you'd actually recover in a claim, making cover less worthwhile. Once a shipment crosses roughly IDR 50 million, cargo insurance becomes well worth arranging.",
   },
   {
-    q: "How do I determine the correct sum insured?",
-    a: "The sum insured is typically calculated as the CIF (Cost + Insurance + Freight) value of the goods, plus 10% as an allowance for anticipated profit. Avoid under-insuring — in the event of a claim, any shortfall will be applied proportionally and the payout will be reduced accordingly.",
+    q: "How do I land on the right sum insured?",
+    a: "The usual approach is the CIF (Cost + Insurance + Freight) value of the goods, plus a 10% allowance for anticipated profit. Steer clear of under-insuring — if a claim comes in, any shortfall gets applied proportionally and your payout shrinks accordingly.",
   },
   {
-    q: "What is a deductible in a cargo policy?",
-    a: "A deductible (also called an excess) is the portion of any loss that the insured bears before the insurance pays out. For example, if the deductible is IDR 1 million and the loss is IDR 10 million, the insurer pays IDR 9 million. Choosing a higher deductible will lower your premium.",
+    q: "What does a deductible mean on a cargo policy?",
+    a: "A deductible (sometimes called an excess) is the slice of any loss you absorb yourself before the insurer starts paying. Say the deductible is IDR 1 million and the loss totals IDR 10 million — the insurer covers IDR 9 million. Opting for a higher deductible brings your premium down.",
   },
   {
-    q: "Can I get a lower premium if I have a good claims record?",
-    a: "Yes. Policyholders with a low loss ratio (few or no claims) typically receive a discount or no-claim reduction at renewal. This is one of the key advantages of an annual open cover policy over per-voyage arrangements.",
+    q: "Can a clean claims history get me a better rate?",
+    a: "Yes. Policyholders with a low loss ratio — few or no claims — typically see a discount or no-claim reduction when they renew. It's one of the clearest advantages an annual open cover has over arranging cover voyage by voyage.",
   },
 ];
 
 const FACTORS = [
   {
     title: "Declared Cargo Value (Sum Insured)",
-    desc: "The higher the declared value, the larger the absolute premium — even if the percentage rate remains the same.",
+    desc: "A higher declared value pushes up the absolute premium even when the percentage rate itself doesn't change.",
   },
   {
     title: "Commodity Type & Condition",
-    desc: "Fragile goods, liquids, or chemicals carry a higher rate than steel or construction materials due to their elevated risk profile.",
+    desc: "Fragile items, liquids, or chemicals sit at a higher rate than steel or building materials simply because their risk profile is greater.",
   },
   {
     title: "Route & Distance",
-    desc: "Domestic routes like Batam–Jakarta are rated differently from international routes such as Batam–Singapore or Batam–Port Klang.",
+    desc: "A domestic run like Batam–Jakarta is priced differently than an international leg such as Batam–Singapore or Batam–Port Klang.",
   },
   {
-    title: "ICC Clause Selected",
-    desc: "ICC (A) carries the highest premium due to its broadest coverage. ICC (C) is the most affordable but offers the most limited protection.",
+    title: "Which ICC Clause You Pick",
+    desc: "ICC (A) costs the most because it covers the most. ICC (C) is the cheapest option, but the protection it offers is correspondingly narrow.",
   },
   {
-    title: "Packaging & Loading Method",
-    desc: "FCL (Full Container Load) shipments attract lower rates than LCL or break-bulk, as the damage risk is better contained.",
+    title: "Packaging & How It's Loaded",
+    desc: "FCL (Full Container Load) shipments generally rate lower than LCL or break-bulk cargo, since the damage exposure is easier to contain.",
   },
   {
-    title: "Claims History",
-    desc: "Insureds with minimal past claims receive better rates at renewal — a key advantage of maintaining an annual open cover relationship.",
+    title: "Your Claims History",
+    desc: "A track record with few claims earns better pricing at renewal — one of the practical upsides of sticking with an annual open cover arrangement.",
   },
 ];
 
@@ -145,12 +145,12 @@ export default function MarineCargoPremiENPage() {
             className="text-3xl md:text-5xl font-bold text-white mb-5"
             style={{ fontFamily: "Syne, sans-serif" }}
           >
-            How Much Is Marine Cargo<br />Insurance in Batam?
+            What Does Marine Cargo<br />Insurance Cost in Batam?
           </h1>
           <p className="text-gray-300 text-lg mb-8 max-w-2xl">
-            Marine cargo insurance does not have a single fixed rate — the premium depends on
-            multiple factors specific to your shipment. Learn how the calculation works, what
-            drives the cost, and how to get the best value for your coverage.
+            There's no single flat rate for marine cargo insurance — the premium shifts based on
+            several factors specific to your shipment. Here's how the calculation actually works,
+            what pushes the cost up or down, and how to get solid coverage without overpaying.
           </p>
           <a
             href={WHATSAPP_URL("Hello Rio, I would like a premium estimate for marine cargo insurance from Batam")}
@@ -169,7 +169,7 @@ export default function MarineCargoPremiENPage() {
         <div className="max-w-4xl mx-auto">
           <SectionHeader
             eyebrow="Premium Formula"
-            title="How Marine Cargo Premium Is Calculated"
+            title="The Math Behind a Marine Cargo Premium"
           />
           <div className="mt-10 space-y-6">
             <div className="bg-blue-50 rounded-2xl p-6 border border-blue-200">
@@ -178,20 +178,20 @@ export default function MarineCargoPremiENPage() {
                 Premium = Sum Insured × Rate (%)
               </p>
               <p className="text-sm text-blue-700 mt-3">
-                Sum Insured = CIF value of goods + 10% (anticipated profit allowance)
+                Sum Insured = CIF value of the goods + 10% (anticipated profit allowance)
               </p>
             </div>
 
             <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
-              <p className="text-sm font-bold text-gray-700 mb-4">Example Calculation:</p>
+              <p className="text-sm font-bold text-gray-700 mb-4">Worked Example:</p>
               <div className="space-y-2 text-sm text-gray-700">
                 <div className="flex justify-between border-b border-gray-200 pb-2">
                   <span>Cargo value (CIF)</span>
-                  <span className="font-semibold">IDR 500,000,000</span>
+                  <span className="font-semibold">IDR 400,000,000</span>
                 </div>
                 <div className="flex justify-between border-b border-gray-200 pb-2">
                   <span>Sum Insured (CIF + 10%)</span>
-                  <span className="font-semibold">IDR 550,000,000</span>
+                  <span className="font-semibold">IDR 440,000,000</span>
                 </div>
                 <div className="flex justify-between border-b border-gray-200 pb-2">
                   <span>Rate – ICC (B), domestic route</span>
@@ -199,11 +199,11 @@ export default function MarineCargoPremiENPage() {
                 </div>
                 <div className="flex justify-between pt-2 text-blue-800 font-bold">
                   <span>Estimated Premium</span>
-                  <span>IDR 825,000 – IDR 1,375,000</span>
+                  <span>IDR 660,000 – IDR 1,100,000</span>
                 </div>
               </div>
               <p className="text-xs text-gray-500 mt-3">
-                *Rates are for illustration only. Actual rates are determined by the underwriter based on commodity type, route, and ICC clause selected.
+                *These rates are illustrative only. The underwriter sets the actual rate based on commodity type, route, and the ICC clause chosen.
               </p>
             </div>
           </div>
@@ -215,7 +215,7 @@ export default function MarineCargoPremiENPage() {
         <div className="max-w-6xl mx-auto">
           <SectionHeader
             eyebrow="Rating Factors"
-            title="What Drives Your Cargo Premium"
+            title="What Actually Moves Your Cargo Premium"
             center
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
@@ -242,7 +242,7 @@ export default function MarineCargoPremiENPage() {
         <div className="max-w-4xl mx-auto">
           <SectionHeader
             eyebrow="Per-Voyage vs Open Cover"
-            title="Choose the Right Policy Type for Your Business"
+            title="Picking the Policy Structure That Fits Your Business"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
             {[
@@ -250,22 +250,22 @@ export default function MarineCargoPremiENPage() {
                 title: "Per-Voyage Policy",
                 color: "#4a7fb5",
                 points: [
-                  "For single or infrequent shipments",
-                  "Premium paid per individual shipment",
-                  "No periodic reporting required",
-                  "Ideal for SMEs or first-time shippers",
-                  "Flexible — no annual commitment",
+                  "Suited to a single shipment or infrequent shipping",
+                  "You pay a premium for each individual shipment",
+                  "No ongoing reporting obligations",
+                  "A natural fit for SMEs or first-time shippers",
+                  "Flexible, with no annual commitment attached",
                 ],
               },
               {
                 title: "Open Cover Policy (Annual)",
                 color: "#0a1628",
                 points: [
-                  "For shippers with regular monthly volumes",
-                  "One policy covers all shipments for the year",
-                  "Each voyage declared; certificate issued per shipment",
-                  "More cost-efficient per shipment at scale",
-                  "Potential no-claim discount at renewal",
+                  "Built for shippers moving cargo on a regular monthly basis",
+                  "One policy sits behind every shipment across the year",
+                  "You declare each voyage and receive a certificate per shipment",
+                  "Works out cheaper per shipment once volume picks up",
+                  "Opens the door to a no-claim discount at renewal",
                 ],
               },
             ].map((item) => (
@@ -299,7 +299,7 @@ export default function MarineCargoPremiENPage() {
         <div className="max-w-3xl mx-auto">
           <SectionHeader
             eyebrow="FAQ"
-            title="Marine Cargo Premium – Common Questions"
+            title="Marine Cargo Premium — Questions People Actually Ask"
             center
           />
           <FAQAccordion faqs={FAQS} />
@@ -337,4 +337,4 @@ export default function MarineCargoPremiENPage() {
       />
     </>
   );
-                }
+}

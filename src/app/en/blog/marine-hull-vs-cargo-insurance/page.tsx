@@ -14,9 +14,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = generateSEO({
-  title: "Marine Hull vs Marine Cargo Insurance",
+  title: "Marine Hull Insurance vs Marine Cargo Insurance, Explained",
   description:
-    "Clear explanation of marine hull (vessel) and marine cargo (goods) insurance: who buys each, what they cover, and how they work together. Consult Rio +62813-7333-6728.",
+    "A plain-language breakdown of marine hull (the vessel) and marine cargo (the goods) insurance: who each one is for, what it actually covers, and how the two interact. Consult Rio +62813-7333-6728.",
   canonical: "https://asuransibatam.com/en/blog/marine-hull-vs-cargo-insurance",
   languages: {
     en: "https://asuransibatam.com/en/blog/marine-hull-vs-cargo-insurance",
@@ -27,10 +27,10 @@ export const metadata: Metadata = generateSEO({
 const schema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Marine Hull vs Marine Cargo Insurance – What's the Difference?",
-  description: "Clear explanation of marine hull (vessel) and marine cargo (goods) insurance: who buys each, what they cover, and how they work together.",
+  headline: "Marine Hull vs Marine Cargo Insurance: How They Differ and Why It Matters",
+  description: "A plain-language breakdown of marine hull (the vessel) and marine cargo (the goods) insurance: who each one is for, what it actually covers, and how the two interact.",
   datePublished: "2026-05-07",
-  dateModified: "2026-05-07",
+  dateModified: "2026-08-04",
   inLanguage: "en",
   author: { "@type": "Person", name: "Rio", jobTitle: "Insurance Practitioner", telephone: "+6281373336728" },
   publisher: { "@type": "InsuranceAgency", name: "Asuransi Batam – Rio", url: "https://asuransibatam.com" },
@@ -40,20 +40,20 @@ const schema = {
 export default function MarineHullVsCargoPage() {
   return (
     <ArticleLayout
-      title="Marine Hull vs Marine Cargo Insurance – What's the Difference?"
-      description="The ship being insured does not mean your cargo is covered. Understand the fundamental difference between these two products before choosing."
+      title="Marine Hull vs Marine Cargo Insurance: How They Differ and Why It Matters"
+      description="Insuring the ship doesn't mean your goods are covered too. Here's the core distinction between these two products, laid out before you have to find out the hard way."
       date="May 7, 2026"
       readTime="7 min read"
       category="Marine"
       breadcrumbs={[{ label: "Marine Hull vs Cargo Insurance", href: "/en/blog/marine-hull-vs-cargo-insurance" }]}
       schema={schema}
     >
-      <h2>The Costly Misconception: &quot;The Ship Is Insured, So My Cargo Is Safe&quot;</h2>
+      <h2>The Expensive Assumption: &quot;The Vessel Is Insured, So My Goods Must Be Too&quot;</h2>
       <p>
-        This is one of the most common and expensive misunderstandings I encounter when advising clients in Batam. Cargo owners frequently assume that because the vessel carrying their goods is insured, their shipment is automatically protected too.
+        This is one of the costliest misunderstandings I run into when advising clients around Batam. Owners of the goods being shipped often assume that because the vessel carrying their cargo has insurance, their shipment is riding along under that same protection.
       </p>
       <p>
-        It is not. <strong>Marine hull insurance and marine cargo insurance are two entirely separate products</strong> — covering different objects, for different parties, through different claims processes.
+        It isn&apos;t. <strong>Marine hull and marine cargo insurance are two completely separate products</strong> — different insured objects, different policyholders, and different claims processes entirely.
       </p>
 
       <div className="not-prose grid grid-cols-1 md:grid-cols-2 gap-5 my-8">
@@ -63,10 +63,10 @@ export default function MarineHullVsCargoPage() {
           </div>
           <h3 className="font-display font-bold text-lg mb-2" style={{ color: "#0a1628" }}>Marine Hull Insurance</h3>
           <p className="text-sm text-[#475569] mb-3">
-            Protects the <strong className="text-[#0a1628]">physical vessel and its permanently fitted equipment</strong> — the hull structure, machinery, navigation systems, and everything that forms a permanent part of the ship.
+            Covers the <strong className="text-[#0a1628]">physical vessel and everything permanently built into it</strong> — the hull itself, onboard machinery, navigation gear, and any equipment that's a fixed part of the ship.
           </p>
-          <p className="text-sm text-[#475569] mb-1"><strong className="text-[#0a1628]">Who buys it:</strong> ship owners and fleet operators — shipping companies, ferry operators, tug boat owners, patrol vessel operators.</p>
-          <p className="text-sm text-[#475569]"><strong className="text-[#0a1628]">Covers:</strong> hull damage from collision, grounding, or severe weather; machinery breakdown (optional); collision liability; total loss.</p>
+          <p className="text-sm text-[#475569] mb-1"><strong className="text-[#0a1628]">Typical buyer:</strong> owners and operators of vessels — shipping lines, ferry operators, tugboat owners, patrol boat fleets.</p>
+          <p className="text-sm text-[#475569]"><strong className="text-[#0a1628]">What it pays for:</strong> hull damage from collision, grounding, or heavy weather; machinery breakdown (as an add-on); collision liability; and total loss.</p>
         </div>
         <div className="rounded-2xl border-2 p-6" style={{ borderColor: "#c9a84c30", background: "#faf8f3" }}>
           <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: "linear-gradient(135deg, #c9a84c, #f0d080)" }}>
@@ -74,27 +74,27 @@ export default function MarineHullVsCargoPage() {
           </div>
           <h3 className="font-display font-bold text-lg mb-2" style={{ color: "#0a1628" }}>Marine Cargo Insurance</h3>
           <p className="text-sm text-[#475569] mb-3">
-            Protects <strong className="text-[#0a1628]">the goods being transported</strong>, not the vessel. Follows the goods from the shipper's warehouse to the consignee's warehouse — including terminal time, inside the container, and across transport modes.
+            Covers <strong className="text-[#0a1628]">the goods in transit</strong> — not the ship carrying them. It travels with the goods from the shipper&apos;s warehouse to the consignee&apos;s door, including time spent at terminals, inside containers, and across changes of transport mode.
           </p>
-          <p className="text-sm text-[#475569]"><strong className="text-[#0a1628]">Who buys it:</strong> the cargo owner — shipper, importer, exporter, or trading company. Who bears the risk depends on the agreed Incoterms.</p>
+          <p className="text-sm text-[#475569]"><strong className="text-[#0a1628]">Typical buyer:</strong> whoever owns the goods — a shipper, importer, exporter, or trading company. Exactly who that is depends on the Incoterms agreed in the sale.</p>
         </div>
       </div>
 
-      <h2>Three Coverage Levels Under Institute Cargo Clauses (ICC)</h2>
+      <h2>Three Levels of Cover Under the Institute Cargo Clauses (ICC)</h2>
       <div className="overflow-x-auto my-6">
         <table className="w-full border-collapse text-sm">
           <thead>
             <tr className="bg-[#0a1628] text-white">
               <th className="text-left px-4 py-3 rounded-tl-lg">Clause</th>
-              <th className="text-left px-4 py-3">Coverage Scope</th>
-              <th className="text-left px-4 py-3 rounded-tr-lg">Best For</th>
+              <th className="text-left px-4 py-3">What It Covers</th>
+              <th className="text-left px-4 py-3 rounded-tr-lg">Suited For</th>
             </tr>
           </thead>
           <tbody>
             {[
-              ["ICC (A)", "All risks — everything not explicitly excluded", "High-value goods, electronics, machinery"],
-              ["ICC (B)", "Named perils — fire, collision, sinking, etc.", "Bulk goods, commodities"],
-              ["ICC (C)", "Limited perils — major losses and total loss only", "Low-value, low-risk cargo"],
+              ["ICC (A)", "All risks — everything except what's specifically excluded", "High-value goods, electronics, machinery"],
+              ["ICC (B)", "Named perils only — fire, collision, sinking, and similar events", "Bulk commodities, raw materials"],
+              ["ICC (C)", "A narrower set of perils — major and total losses only", "Low-value cargo with lower exposure"],
             ].map(([clause, scope, best], i) => (
               <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-[#faf8f3]"}>
                 <td className="px-4 py-3 font-bold text-[#1a4fa0] border-b border-[#e2e8f0]">{clause}</td>
@@ -106,24 +106,24 @@ export default function MarineHullVsCargoPage() {
         </table>
       </div>
 
-      <h2>Side-by-Side Comparison: Hull vs Cargo</h2>
+      <h2>Hull vs Cargo, Side by Side</h2>
       <div className="overflow-x-auto my-6">
         <table className="w-full border-collapse text-sm">
           <thead>
             <tr className="bg-[#0a1628] text-white">
-              <th className="text-left px-4 py-3 rounded-tl-lg">Aspect</th>
+              <th className="text-left px-4 py-3 rounded-tl-lg">Point of Comparison</th>
               <th className="text-left px-4 py-3">Marine Hull</th>
               <th className="text-left px-4 py-3 rounded-tr-lg">Marine Cargo</th>
             </tr>
           </thead>
           <tbody>
             {[
-              ["Insured object", "The vessel", "The goods"],
-              ["Policyholder", "Ship owner", "Cargo owner"],
-              ["Follows", "The vessel", "The cargo journey"],
-              ["Active during", "Vessel operations", "Goods in transit"],
-              ["Valuation basis", "Market value of vessel", "Invoice value + margin"],
-              ["Claim filed by", "Ship owner / operator", "Shipper / consignee"],
+              ["What's insured", "The vessel itself", "The goods being carried"],
+              ["Who holds the policy", "The vessel owner", "The cargo owner"],
+              ["What it follows", "The ship", "The shipment's journey"],
+              ["When it's active", "Whenever the vessel operates", "While goods are in transit"],
+              ["How value is set", "Market value of the vessel", "Invoice value plus a margin"],
+              ["Who files the claim", "Owner or operator of the ship", "Shipper or consignee"],
             ].map(([aspect, hull, cargo], i) => (
               <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-[#faf8f3]"}>
                 <td className="px-4 py-3 font-medium text-[#0a1628] border-b border-[#e2e8f0]">{aspect}</td>
@@ -135,55 +135,56 @@ export default function MarineHullVsCargoPage() {
         </table>
       </div>
 
-      <h2>How Both Work Together in a Single Incident</h2>
+      <h2>What Happens When Both Get Triggered by the Same Incident</h2>
       <div className="not-prose my-6 p-5 rounded-2xl border-l-4 border-[#c9a84c] bg-[#faf8f3] flex items-start gap-4">
         <Container size={22} className="flex-shrink-0 mt-0.5" style={{ color: "#a07830" }} />
         <p className="text-sm text-[#374151] m-0">
-          Consider a small cargo vessel on the Batam–Jakarta route that catches fire on deck, destroying part of the cargo. The ship owner claims hull and structural damage against their hull policy. Each cargo owner independently claims their damaged goods against their own cargo policy. Both claims run <strong style={{ color: "#0a1628" }}>in parallel and independently</strong> — one does not affect the other. This is why a single incident can generate dozens of separate cargo claims from different cargo owners, while there is only one hull claim from the vessel owner.
+          Picture a small cargo vessel on the Batam–Jakarta route catching fire on deck and ruining part of what's on board. The vessel owner files a hull claim for the structural damage. Separately, each cargo owner whose goods were affected files their own claim under their own cargo policy. These claims run <strong style={{ color: "#0a1628" }}>side by side, entirely independent of one another</strong> — a delay or dispute on one has no bearing on the other. That's how a single fire can produce dozens of distinct cargo claims from different owners, alongside just one hull claim from the vessel's owner.
         </p>
       </div>
 
-      <h2>Does the Carrier Cover Cargo Damage?</h2>
+      <h2>Won't the Carrier Just Pay for Cargo Damage?</h2>
       <div className="not-prose my-6 p-5 rounded-2xl border flex items-start gap-4" style={{ borderColor: "#0a162820", background: "#0a16280a" }}>
         <Gavel size={22} className="flex-shrink-0 mt-0.5" style={{ color: "#0a1628" }} />
         <p className="text-sm text-[#374151] m-0">
-          Under international maritime law — the Hague-Visby Rules — carriers do have limited liability for cargo damage. But there are three practical problems: carrier liability is capped (calculated per package or per kilogram, often far below actual value), pursuing a carrier takes months or years through legal proceedings, and carriers have broad exclusions including acts of God and force majeure. This is why cargo owners should hold their own cargo policy rather than relying solely on carrier responsibility.
+          Under the Hague-Visby Rules that govern international carriage by sea, carriers do carry some liability for cargo damage — but relying on that alone runs into three practical snags. Their liability is capped, usually calculated per package or per kilogram and often well under the goods&apos; real value; recovering anything from a carrier can take months or years of legal process; and carriers lean on broad exclusions, including force majeure and acts of God. That combination is exactly why cargo owners are better off holding their own cargo policy instead of counting on the carrier to make them whole.
         </p>
       </div>
 
-      <h2>Who Should Buy What?</h2>
+      <h2>So Which One Do You Actually Need?</h2>
       <div className="not-prose grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
         <div className="rounded-2xl p-5 bg-white border border-[#e2e8f0] shadow-sm">
           <Anchor size={20} className="mb-2" style={{ color: "#0a1628" }} />
-          <p className="font-bold text-sm mb-1" style={{ color: "#0a1628" }}>Buy Marine Hull if you</p>
-          <p className="text-sm text-[#475569]">Own or operate a commercial vessel, or run a fleet of tug boats, ferries, or patrol vessels in Batam waters.</p>
+          <p className="font-bold text-sm mb-1" style={{ color: "#0a1628" }}>Get Marine Hull if you</p>
+          <p className="text-sm text-[#475569]">Own or operate a commercial vessel, or run a fleet of tugboats, ferries, or patrol boats in Batam waters.</p>
         </div>
         <div className="rounded-2xl p-5 bg-white border border-[#e2e8f0] shadow-sm">
           <Package size={20} className="mb-2" style={{ color: "#0a1628" }} />
-          <p className="font-bold text-sm mb-1" style={{ color: "#0a1628" }}>Buy Marine Cargo if you</p>
-          <p className="text-sm text-[#475569]">Import or export goods regularly by sea or air, run a trading company, or distribute large inbound shipments.</p>
+          <p className="font-bold text-sm mb-1" style={{ color: "#0a1628" }}>Get Marine Cargo if you</p>
+          <p className="text-sm text-[#475569]">Regularly import or export goods by sea or air, run a trading business, or handle large inbound shipments.</p>
         </div>
         <div className="rounded-2xl p-5 bg-white border border-[#e2e8f0] shadow-sm">
           <Layers size={20} className="mb-2" style={{ color: "#0a1628" }} />
-          <p className="font-bold text-sm mb-1" style={{ color: "#0a1628" }}>Buy both if you</p>
-          <p className="text-sm text-[#475569]">Own the vessel and also carry your own cargo on board.</p>
+          <p className="font-bold text-sm mb-1" style={{ color: "#0a1628" }}>Get both if you</p>
+          <p className="text-sm text-[#475569]">Own the vessel and also ship your own goods on it.</p>
         </div>
       </div>
 
-      <h2>What Does It Cost?</h2>
+      <h2>What Does This Actually Cost?</h2>
       <div className="not-prose my-6 p-5 rounded-2xl border flex items-start gap-4" style={{ borderColor: "#c9a84c30", background: "#faf8f3" }}>
         <Percent size={22} className="flex-shrink-0 mt-0.5" style={{ color: "#a07830" }} />
         <p className="text-sm text-[#374151] m-0">
-          Marine cargo premiums typically range from <strong style={{ color: "#0a1628" }}>0.1% to 0.5% of cargo value</strong>, depending
-          on the type of goods, route, and coverage clause. Short routes like Batam–Singapore or Batam–Jakarta
-          tend to attract lower rates than long-haul international corridors.
+          Marine cargo premiums generally land somewhere between <strong style={{ color: "#0a1628" }}>0.1% and 0.5% of the cargo's value</strong>, with
+          the exact rate shaped by the type of goods, the route, and which clause you pick. Shorter
+          crossings such as Batam–Singapore or Batam–Jakarta usually price lower than long-haul
+          international routes.
         </p>
       </div>
 
       <div className="mt-10 p-6 bg-[#0a1628] rounded-2xl text-white not-prose">
-        <h3 className="font-display font-bold text-lg text-[#c9a84c] mb-2">Free Consultation – Find the Right Cover</h3>
+        <h3 className="font-display font-bold text-lg text-[#c9a84c] mb-2">Free Consultation — Figure Out What You Actually Need</h3>
         <p className="text-white/70 text-sm mb-4 leading-relaxed">
-          Not sure whether you need hull, cargo, or both? The right answer depends on your role in the supply chain and your Incoterms. I can help you work it out.
+          Not sure if you need hull cover, cargo cover, or both? It comes down to your role in the supply chain and the Incoterms you're working under. Happy to walk through it with you.
         </p>
         <a href="https://wa.me/6281373336728?text=Hello%20Rio%2C%20I%20would%20like%20to%20consult%20about%20marine%20insurance"
           target="_blank" rel="noopener noreferrer"

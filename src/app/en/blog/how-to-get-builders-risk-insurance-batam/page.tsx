@@ -6,9 +6,9 @@ import ArticleLayout from "@/components/ArticleLayout";
 import Link from "next/link";
 
 export const metadata: Metadata = generateSEO({
-  title: "How to Get Builders Risk Insurance Batam",
+  title: "How to Choose Builders Risk Insurance in Batam",
   description:
-    "A complete guide to choosing Builders Risk insurance for construction projects and shipyards in Batam: a real claim case study, common mistakes, and how to set the right sum insured. Consult Rio +62 813-7333-6728.",
+    "A field-tested guide to picking Builders Risk cover for construction sites and shipyards in Batam: a real claim walkthrough, the mistakes that trip owners up, and how to size the sum insured correctly. Consult Rio +62 813-7333-6728.",
   canonical:
     "https://asuransibatam.com/en/blog/how-to-get-builders-risk-insurance-batam",
   languages: {
@@ -21,11 +21,11 @@ export const metadata: Metadata = generateSEO({
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "How to Get the Right Builders Risk Insurance in Batam",
+  headline: "How to Choose the Right Builders Risk Insurance in Batam",
   description:
-    "A complete guide to choosing Builders Risk insurance for construction projects and shipyards in Batam, featuring a real claim case study.",
+    "A field-tested guide to picking Builders Risk cover for construction sites and shipyards in Batam, built around a real claim walkthrough.",
   datePublished: "2026-06-23",
-  dateModified: "2026-06-23",
+  dateModified: "2026-08-04",
   inLanguage: "en",
   author: {
     "@type": "Person",
@@ -51,47 +51,47 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What is Builders Risk insurance?",
+      name: "What exactly does Builders Risk insurance cover?",
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "Builders Risk insurance (also known as Contractors' All Risks or Erection All Risks) is a policy that covers physical loss or damage to a project under construction — including buildings, installations, or vessels being built or repaired at a shipyard — caused by risks such as fire, water damage, workplace accidents, or natural disasters during the construction period.",
+          "Builders Risk — also sold as Contractors' All Risks or Erection All Risks — indemnifies physical loss or damage to a project that is still under construction, including a vessel being built or repaired at a shipyard. Triggers typically include fire, water ingress, on-site accidents, and natural catastrophe events occurring while the work is in progress.",
       },
     },
     {
       "@type": "Question",
-      name: "Do shipyards in Batam need Builders Risk insurance?",
+      name: "Is Builders Risk cover actually necessary for a Batam shipyard?",
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "Yes. During construction or repair, the asset being worked on at a shipyard is typically very high in value, yet it cannot be insured under a standard marine hull policy because the vessel is not yet complete or seaworthy. Builders Risk fills this protection gap from the start of the project until handover.",
+          "In most cases, yes. While a vessel is being built or repaired, its value is often substantial, yet it doesn't qualify for a standard marine hull policy since it isn't complete or seaworthy yet. Builders Risk bridges that gap from the day work starts until formal handover.",
       },
     },
     {
       "@type": "Question",
-      name: "How long does a Builders Risk claim usually take to settle?",
+      name: "Roughly how long does it take to settle a Builders Risk claim?",
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "It depends on the complexity of the loss and how complete the documentation is, but generally the process — from loss adjuster survey to claim decision — takes anywhere from a few weeks to 2-3 months for larger losses that require in-depth investigation.",
+          "Timing depends heavily on how complex the loss is and how organized the paperwork is. As a rough range, expect anywhere from a few weeks up to two or three months for larger losses that call for a more thorough loss adjuster investigation.",
       },
     },
     {
       "@type": "Question",
-      name: "What is the most common mistake when buying a Builders Risk policy?",
+      name: "What's the single most common misstep buyers make with this policy?",
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "The most common mistake is setting the sum insured too low (under-insurance), failing to include subcontractors as covered parties, and not checking exclusions related to design defects, which are a frequent source of claim disputes.",
+          "Under-declaring the sum insured is by far the most frequent issue, followed closely by leaving subcontractors off the policy as named insureds and skipping a careful read of design-defect exclusions — a clause that shows up in a disproportionate share of claim disputes.",
       },
     },
     {
       "@type": "Question",
-      name: "Does Builders Risk cover subcontractor work?",
+      name: "Are subcontractors automatically covered under a Builders Risk policy?",
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "It depends on the policy wording. Many projects involve multiple subcontractors handling different scopes of work, and the policy needs to explicitly state that every party working on the project is covered as a joint insured or additional insured, so there is no gap in liability when a claim occurs.",
+          "Not automatically — it comes down to how the policy is worded. Most projects run through several subcontractors handling different scopes, so the wording has to spell out that each of them is protected as a joint insured or additional insured, closing any liability gap before a claim is ever filed.",
       },
     },
   ],
@@ -100,8 +100,8 @@ const faqSchema = {
 export default function HowToGetBuildersRiskPage() {
   return (
     <ArticleLayout
-      title="How to Get the Right Builders Risk Insurance in Batam"
-      description="A real claim case study from a Batam shipyard, and the steps to choosing a Builders Risk policy that truly protects your project."
+      title="How to Choose the Right Builders Risk Insurance in Batam"
+      description="A real claim walkthrough from a Batam shipyard, plus the steps for picking a Builders Risk policy that actually holds up when something goes wrong."
       date="June 23, 2026"
       readTime="10 min read"
       category="Marine"
@@ -125,12 +125,12 @@ export default function HowToGetBuildersRiskPage() {
       <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-[#8a6d1f] mb-3">
         Understanding the Risk
       </p>
-      <h2>Why Builders Risk Insurance Gets Overlooked, Despite the High Stakes</h2>
+      <h2>Why This Cover Gets Skipped, Even Though the Exposure Is Enormous</h2>
       <p>
-        Once a construction project or a ship repair job kicks off, attention is almost entirely absorbed by schedules, budgets, and technical execution. Insurance often gets treated as administrative paperwork that can be sorted out &quot;later&quot; — until an incident happens mid-project and everyone realizes an asset worth billions of rupiah was never properly protected.
+        The moment a construction project or a ship repair job breaks ground, everyone&apos;s attention shifts to schedules, budgets, and getting the work done. Insurance tends to get filed under &quot;we&apos;ll sort it out later&quot; — right up until something goes wrong mid-project and it becomes clear an asset worth billions of rupiah was never actually protected.
       </p>
       <p>
-        <Link href="/en/marine-insurance/builders-risk" className="text-[#1a4fa0] hover:text-[#c9a84c] underline transition-colors">Builders Risk insurance</Link> (sometimes also written as Contractors&apos; All Risks or Erection All Risks) was built specifically to close that gap: it protects a project while it is being built, not an asset that is already finished. For projects like building construction, plant installation, and especially ship construction or repair at a shipyard, the construction period itself is exactly when the project is most exposed to major loss.
+        <Link href="/en/marine-insurance/builders-risk" className="text-[#1a4fa0] hover:text-[#c9a84c] underline transition-colors">Builders Risk insurance</Link> (also referred to as Contractors&apos; All Risks or Erection All Risks) exists specifically to close that gap: it protects a project while it&apos;s still being built, not an asset that&apos;s already finished. For building construction, plant installation, and especially ship construction or repair inside a shipyard, the build phase itself is when a project is most exposed to a major loss.
       </p>
 
       <div className="mt-14 mb-3 flex items-center gap-3">
@@ -140,12 +140,12 @@ export default function HowToGetBuildersRiskPage() {
         </p>
         <span className="h-px flex-1 bg-[#e2e8f0]" />
       </div>
-      <h2 className="text-center">Case Study: A Builders Risk Claim at a Batam Shipyard</h2>
+      <h2 className="text-center">A Real Builders Risk Claim from a Batam Shipyard</h2>
       <p>
-        One case I handled directly involved a shipyard in Batam carrying out a repair and structural modification project on a commercial vessel. The work involved welding, replacing hull plating, and reinstalling part of the mechanical system in the dock area.
+        One project I worked on directly involved a Batam shipyard carrying out repair and structural modification work on a commercial vessel — welding, replacing sections of hull plating, and reinstalling part of the mechanical system while the ship sat in dock.
       </p>
       <p>
-        Midway through the job, a small fire broke out, originating from welding activity near combustible material nearby. The yard&apos;s team managed to extinguish it quickly, but the fire still caused damage to part of the structure under work, as well as some equipment on site.
+        Partway through the job, a small fire started near the welding station, sparked by nearby combustible material. The yard crew put it out quickly, but not before it damaged part of the structure under repair and a handful of pieces of equipment nearby.
       </p>
 
       <figure className="not-prose my-10 rounded-2xl border border-[#e2e8f0] bg-white p-3 shadow-[0_20px_48px_-12px_rgba(10,22,40,0.15)]">
@@ -169,7 +169,7 @@ export default function HowToGetBuildersRiskPage() {
         </figcaption>
       </figure>
 
-      <p>Here is how the claim was handled in that case:</p>
+      <p>Here&apos;s roughly how that claim moved through the process:</p>
       <div className="not-prose my-7 overflow-hidden rounded-2xl border border-[#e2e8f0] shadow-[0_8px_24px_-8px_rgba(10,22,40,0.12)]">
         <table className="w-full border-collapse text-sm">
           <thead>
@@ -181,28 +181,28 @@ export default function HowToGetBuildersRiskPage() {
           <tbody>
             {[
               [
-                "Initial notification",
-                "The shipyard reported the incident to the insurer within 24 hours, before cleaning up the site",
+                "First notice of loss",
+                "The yard notified the insurer inside 24 hours, before touching or clearing the affected area",
               ],
               [
-                "Site preservation",
-                "The affected area was isolated; no repairs were made before the survey",
+                "Scene preserved",
+                "The damaged section was cordoned off, with no repair work started ahead of the survey",
               ],
               [
                 "Loss adjuster survey",
-                "An independent surveyor assessed the extent of damage to the structure and equipment, and estimated repair costs",
+                "An independent adjuster inspected the structural and equipment damage and put together a repair-cost estimate",
               ],
               [
-                "Sum insured & wording verification",
-                "Checked whether the insured value matched project progress, and whether the cause of the fire fell within the policy's coverage",
+                "Sum insured & wording check",
+                "The team confirmed the declared value tracked actual project progress, and that the fire's cause fell within the wording",
               ],
               [
-                "Negotiation & loss adjustment",
-                "The claim value was adjusted based on the survey findings, less the deductible per the policy",
+                "Negotiation & adjustment",
+                "The claim figure was adjusted against the survey findings, net of the policy deductible",
               ],
               [
-                "Claim settlement",
-                "Funds were released to cover structural repairs and replacement of damaged equipment",
+                "Payout",
+                "Funds were released to cover structural repairs and to replace the damaged equipment",
               ],
             ].map(([stage, detail], i) => (
               <tr
@@ -223,7 +223,7 @@ export default function HowToGetBuildersRiskPage() {
 
       <div className="not-prose my-8 rounded-2xl border-l-4 border-[#c9a84c] bg-[#faf8f3] px-6 py-5">
         <p className="text-[#0a1628] leading-relaxed">
-          <span className="font-display font-bold">Insight from the field:</span> This claim went through relatively smoothly, and that was no accident. On the advice of an insurance consultant, the shipyard had already set its sum insured to be adjusted periodically against project progress (rather than a fixed value locked in at contract signing), and the policy explicitly listed every subcontractor working in the dock area as a covered party. Those two details are the most common source of disputes in Builders Risk claims that were not properly prepared.
+          <span className="font-display font-bold">Field note:</span> This claim went through without much friction, and that wasn&apos;t luck. Following an insurance consultant&apos;s advice early on, the yard had structured the sum insured to step up in line with project progress rather than locking in one fixed figure at signing, and the policy named every subcontractor working in the dock area as a covered party. Those two details are exactly where under-prepared Builders Risk claims most often run into trouble.
         </p>
       </div>
 
@@ -234,9 +234,9 @@ export default function HowToGetBuildersRiskPage() {
         </p>
         <span className="h-px flex-1 bg-[#e2e8f0]" />
       </div>
-      <h2 className="text-center">What Is and Isn&apos;t Covered Under a Builders Risk Policy</h2>
+      <h2 className="text-center">What&apos;s In and What&apos;s Out Under a Builders Risk Policy</h2>
       <p>
-        Builders Risk is one of the products within the <Link href="/en/marine-insurance" className="text-[#1a4fa0] hover:text-[#c9a84c] underline transition-colors">marine insurance</Link> line we handle in Batam, with coverage characteristics specific to the construction period. Generally speaking, here is how covered risks and exclusions break down:
+        Builders Risk sits within the <Link href="/en/marine-insurance" className="text-[#1a4fa0] hover:text-[#c9a84c] underline transition-colors">marine insurance</Link> line we handle in Batam, and its coverage is shaped specifically around the construction period. Broadly, here&apos;s how the covered risks and the exclusions split out:
       </p>
 
       <div className="not-prose mt-8 mb-10 grid gap-5 sm:grid-cols-2">
@@ -245,14 +245,14 @@ export default function HowToGetBuildersRiskPage() {
             <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#0a1628] text-[#c9a84c] text-xs">
               ✓
             </span>
-            Covered
+            Typically Covered
           </p>
           <ul className="space-y-3 text-sm text-[#475569] leading-relaxed">
-            <li className="flex gap-2"><span className="text-[#c9a84c]">—</span>Fire, explosion, and lightning strikes at the project site</li>
-            <li className="flex gap-2"><span className="text-[#c9a84c]">—</span>Damage caused by workplace accidents or heavy equipment operator error</li>
-            <li className="flex gap-2"><span className="text-[#c9a84c]">—</span>Natural disasters: flood, strong winds, earthquake (usually as extended cover)</li>
-            <li className="flex gap-2"><span className="text-[#c9a84c]">—</span>Theft of material or equipment installed on site</li>
-            <li className="flex gap-2"><span className="text-[#c9a84c]">—</span>Damage occurring during testing and commissioning, per agreed wording</li>
+            <li className="flex gap-2"><span className="text-[#c9a84c]">—</span>Fire, explosion, and lightning strikes at the job site</li>
+            <li className="flex gap-2"><span className="text-[#c9a84c]">—</span>Damage from workplace accidents or operator error on heavy equipment</li>
+            <li className="flex gap-2"><span className="text-[#c9a84c]">—</span>Natural catastrophe events — flood, high winds, earthquake — usually as an extension</li>
+            <li className="flex gap-2"><span className="text-[#c9a84c]">—</span>Theft of materials or equipment already installed on site</li>
+            <li className="flex gap-2"><span className="text-[#c9a84c]">—</span>Damage arising during testing and commissioning, subject to the agreed wording</li>
           </ul>
         </div>
 
@@ -261,13 +261,13 @@ export default function HowToGetBuildersRiskPage() {
             <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#0a1628]/10 text-[#0a1628] text-xs">
               ✕
             </span>
-            Excluded
+            Typically Excluded
           </p>
           <ul className="space-y-3 text-sm text-[#475569] leading-relaxed">
-            <li className="flex gap-2"><span className="text-[#94a3b8]">—</span>Loss caused by pre-existing design defects</li>
-            <li className="flex gap-2"><span className="text-[#94a3b8]">—</span>Normal wear and tear and gradual damage from regular corrosion</li>
-            <li className="flex gap-2"><span className="text-[#94a3b8]">—</span>Delay penalties or consequential loss (unless a specific extension applies)</li>
-            <li className="flex gap-2"><span className="text-[#94a3b8]">—</span>Loss occurring after the maintenance period ends without an extension of cover</li>
+            <li className="flex gap-2"><span className="text-[#94a3b8]">—</span>Loss traced back to a pre-existing design flaw</li>
+            <li className="flex gap-2"><span className="text-[#94a3b8]">—</span>Ordinary wear and tear or gradual deterioration from routine corrosion</li>
+            <li className="flex gap-2"><span className="text-[#94a3b8]">—</span>Delay penalties or consequential loss, unless a specific extension is purchased</li>
+            <li className="flex gap-2"><span className="text-[#94a3b8]">—</span>Loss occurring after the maintenance period ends without an extended cover in place</li>
           </ul>
         </div>
       </div>
@@ -279,38 +279,38 @@ export default function HowToGetBuildersRiskPage() {
         </p>
         <span className="h-px flex-1 bg-[#e2e8f0]" />
       </div>
-      <h2 className="text-center">Steps to Choosing the Right Builders Risk Insurance</h2>
+      <h2 className="text-center">A Practical Way to Choose Your Builders Risk Policy</h2>
 
       <div className="not-prose mt-10 mb-12">
         {[
           {
             n: "01",
-            title: "Map the Specific Risks of Your Project",
-            body: "Building construction, plant installation, and ship repair at a shipyard each carry a different risk profile. Before buying a policy, identify the trouble spots: is there hot work involved (welding, cutting), areas with combustible material, or high-risk work at height?",
+            title: "Map Out What's Actually Risky About Your Project",
+            body: "Building construction, plant installation, and shipyard repair work each carry a distinct risk profile. Before shopping for a policy, flag the trouble spots yourself: is there hot work involved (welding, cutting), storage of combustible material nearby, or work at height with elevated exposure?",
           },
           {
             n: "02",
-            title: "Set the Sum Insured Based on Full Contract Value, Not Current Progress",
-            body: "The most common mistake is setting the sum insured based on work already completed, when it should instead be based on the project's total contract value plus the cost of materials and equipment yet to be installed. An insured sum that's too low triggers proportional reduction (average clause) when a claim is made.",
+            title: "Base the Sum Insured on the Full Contract Value, Not Today's Progress",
+            body: "The most common slip-up is pegging the sum insured to work completed so far, when it should instead reflect the project's total contract value plus the materials and equipment still to be installed. Set it too low and you trigger a proportional reduction (the average clause) the moment a claim is filed.",
           },
           {
             n: "03",
-            title: "Make Sure Every Party on Site Is Covered as an Insured",
-            body: "If the project involves subcontractors, make sure the policy explicitly names them as a joint insured or additional insured. Without this clause, the insurer could deny the claim or pursue recovery (subrogation) against subcontractors who are, after all, your own working partners.",
+            title: "Confirm Every Party on Site Is Named as an Insured",
+            body: "Where subcontractors are involved, make sure the wording explicitly lists them as a joint insured or additional insured. Skip this and the insurer may deny the claim outright, or come after your own subcontractors through subrogation.",
           },
           {
             n: "04",
-            title: "Check the Insurance Period and Maintenance Period",
-            body: "A Builders Risk policy typically runs from the mobilization of materials to the site through to project handover, plus a maintenance period (usually 12 months). Make sure this period actually matches your real project schedule, including any potential delays.",
+            title: "Check the Construction Period Against the Maintenance Period",
+            body: "A Builders Risk policy usually runs from the moment materials are mobilized to site through to handover, plus a maintenance period (commonly 12 months). Make sure that window genuinely matches your real project timeline, including realistic room for delays.",
           },
           {
             n: "05",
-            title: "Read the Wording and Exclusions Carefully, or Bring In a Consultant",
+            title: "Read the Wording and Exclusions Closely — or Bring In Someone Who Will",
             body: (
               <>
-                A single exclusion clause can determine whether a claim worth hundreds of millions of rupiah gets paid in full or denied. Working with an insurance consultant who understands the nature of construction and shipyard projects — not just shopping for the cheapest premium — is the step that most often saves a project when an incident actually happens. You can review{" "}
+                A single exclusion clause can be the difference between a claim worth hundreds of millions of rupiah being paid in full or denied outright. Working with a consultant who actually understands construction and shipyard risk — rather than just comparing premium quotes — is usually what saves a project when something does go wrong. You can review{" "}
                 <Link href="/en/marine-insurance/builders-risk" className="text-[#1a4fa0] hover:text-[#c9a84c] underline transition-colors">
-                  our Builders Risk policy coverage here
+                  our Builders Risk coverage details here
                 </Link>
                 .
               </>
@@ -341,29 +341,29 @@ export default function HowToGetBuildersRiskPage() {
         </p>
         <span className="h-px flex-1 bg-[#e2e8f0]" />
       </div>
-      <h2 className="text-center">FAQ About Builders Risk Insurance</h2>
+      <h2 className="text-center">FAQ: Builders Risk Insurance in Batam</h2>
 
       <div className="not-prose mt-8 mb-10 space-y-3">
         {[
           {
-            q: "What is Builders Risk insurance?",
-            a: "Builders Risk insurance (also known as Contractors' All Risks or Erection All Risks) covers physical loss or damage to a project under construction — including a vessel being built or repaired at a shipyard — caused by risks such as fire, workplace accidents, or natural disasters during the construction period.",
+            q: "What exactly does Builders Risk insurance cover?",
+            a: "It indemnifies physical loss or damage to a project still under construction — including a vessel being built or repaired at a shipyard — from causes such as fire, on-site accidents, or natural catastrophe events during the build period.",
           },
           {
-            q: "Do shipyards in Batam need Builders Risk insurance?",
-            a: "Yes. During construction or repair, a vessel cannot be insured under a standard marine hull policy because it is not yet complete or seaworthy. Builders Risk fills that protection gap from the start of the project until handover.",
+            q: "Is Builders Risk cover actually necessary for a Batam shipyard?",
+            a: "In most cases, yes — a vessel under construction or repair can't be placed on a standard marine hull policy since it isn't finished or seaworthy yet. Builders Risk fills that gap from day one of the project until handover.",
           },
           {
-            q: "How long does a Builders Risk claim usually take to settle?",
-            a: "It depends on the complexity of the loss and how complete the documentation is — generally a few weeks to 2-3 months for larger losses that require in-depth investigation by the loss adjuster.",
+            q: "Roughly how long does it take to settle a Builders Risk claim?",
+            a: "It varies with how complex the loss is and how complete the documentation is — generally a few weeks up to two or three months for larger losses needing deeper investigation by the loss adjuster.",
           },
           {
-            q: "What is the most common mistake when buying a Builders Risk policy?",
-            a: "Setting the sum insured too low (under-insurance), failing to include subcontractors as covered parties, and not checking exclusions related to design defects, which are a frequent source of claim disputes.",
+            q: "What's the single most common misstep buyers make with this policy?",
+            a: "Under-declaring the sum insured, leaving subcontractors off the policy as named parties, and skipping a close read of design-defect exclusions — a clause that turns up in a disproportionate share of claim disputes.",
           },
           {
-            q: "Does Builders Risk cover subcontractor work?",
-            a: "It depends on the policy wording. The policy needs to explicitly list every party working on the project as a joint insured or additional insured, so there is no gap in liability when a claim occurs.",
+            q: "Are subcontractors automatically covered under a Builders Risk policy?",
+            a: "Not automatically — it depends entirely on the wording. The policy needs to explicitly list every party working on the project as a joint insured or additional insured, so there's no liability gap when a claim comes in.",
           },
         ].map((item) => (
           <div
@@ -384,10 +384,10 @@ export default function HowToGetBuildersRiskPage() {
           Free Consultation
         </p>
         <h3 className="font-display font-bold text-xl text-white mb-3">
-          Starting a Construction Project or Shipyard Job?
+          Kicking Off a Construction Project or Shipyard Job?
         </h3>
         <p className="text-white/70 text-sm mb-6 leading-relaxed max-w-2xl">
-          I help set the right sum insured, make sure every relevant party is covered under the policy, and support you if a claim ever actually happens — based on hands-on experience handling claims in the field, not just comparing premiums.
+          I help set the sum insured correctly, make sure every relevant party is actually named on the policy, and stay involved if a claim ever happens — grounded in hands-on claims experience, not just premium comparisons.
         </p>
         <div className="flex flex-col sm:flex-row gap-3">
           <a
