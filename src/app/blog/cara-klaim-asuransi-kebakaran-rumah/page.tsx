@@ -27,8 +27,8 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = generateSEO({
-  title: "Cara Klaim Asuransi Kebakaran Rumah – Dokumen, Prosedur & Kesalahan Fatal yang Harus Dihindari",
-  description: "Mengklaim asuransi kebakaran rumah tidak semudah kelihatannya. Pelajari dokumen yang diperlukan, prosedur yang benar, dan kesalahan umum yang menyebabkan klaim ditolak — panduan lengkap untuk pemilik rumah di Batam.",
+  title: "Prosedur Klaim Asuransi Kebakaran Rumah – Dokumen, Tahapan & Penyebab Klaim Ditolak",
+  description: "Proses klaim kebakaran rumah menyimpan sejumlah jebakan yang jarang disadari pemilik rumah. Ketahui dokumen wajib, tahapan dari survei hingga pencairan dana, dan kesalahan paling umum yang membuat klaim gagal cair — panduan bagi pemilik rumah di Batam.",
   canonical: "https://asuransibatam.com/blog/cara-klaim-asuransi-kebakaran-rumah",
   languages: {
       id: "https://asuransibatam.com/blog/cara-klaim-asuransi-kebakaran-rumah",
@@ -39,9 +39,9 @@ export const metadata: Metadata = generateSEO({
 const schema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Cara Klaim Asuransi Kebakaran Rumah: Dokumen, Prosedur & Kesalahan Fatal yang Harus Dihindari",
+  headline: "Prosedur Klaim Asuransi Kebakaran Rumah: Dokumen, Tahapan & Penyebab Klaim Ditolak",
   datePublished: "2026-05-06",
-  dateModified: "2026-05-06",
+  dateModified: "2026-08-04",
   author: { "@type": "Person", name: "Rio" },
   publisher: { "@type": "Organization", name: "Asuransi Batam" },
 };
@@ -49,24 +49,24 @@ const schema = {
 // FAQPage JSON-LD — sumber tunggal untuk schema & accordion FAQ visual di bawah.
 const faqItems = [
   {
-    question: "Apakah kerusakan akibat asap saja (tanpa api langsung) ditanggung polis?",
+    question: "Kalau kerusakan cuma dari asap, tanpa rumah ikut terbakar, apakah tetap ditanggung?",
     answer:
-      "Ya, smoke damage adalah bagian dari format dasar FLEXAS yang menjadi standar polis properti di Indonesia. Selama asap berasal dari peristiwa kebakaran yang ditanggung, kerusakan pada dinding, furnitur, atau barang akibat asap tetap dapat diklaim.",
+      "Tetap ditanggung. Asap termasuk risiko dasar dalam format FLEXAS yang dipakai hampir semua polis properti di Indonesia. Syaratnya, asap tersebut harus berasal dari kejadian kebakaran yang memang dijamin polis — kerusakan pada furnitur, dinding, atau barang lain akibat asap tetap bisa diklaim.",
   },
   {
-    question: "Apakah saya wajib menggunakan kontraktor rekanan asuransi untuk perbaikan?",
+    question: "Perbaikan rumah wajib pakai kontraktor rekanan asuransi, benar begitu?",
     answer:
-      "Umumnya tidak wajib. Anda bebas memilih kontraktor sendiri, selama biaya perbaikan yang diajukan sesuai dengan estimasi yang sudah disepakati bersama Loss Adjuster. Beberapa penanggung menawarkan rekanan kontraktor sebagai opsi, bukan kewajiban.",
+      "Tidak selalu. Anda tetap punya kebebasan menunjuk kontraktor pilihan sendiri, asalkan nilai perbaikan yang diajukan sejalan dengan hasil penilaian Loss Adjuster. Sebagian penanggung memang menyediakan daftar kontraktor rekanan, tapi sifatnya opsi tambahan, bukan keharusan.",
   },
   {
-    question: "Bagaimana jika klaim saya ditolak padahal merasa sudah mengikuti prosedur?",
+    question: "Sudah mengikuti semua prosedur tapi klaim tetap ditolak, apa yang bisa dilakukan?",
     answer:
-      "Anda berhak mengajukan keberatan tertulis kepada penanggung dengan menyertakan bukti pendukung tambahan. Jika tidak ditemukan kesepakatan, Anda dapat menempuh jalur mediasi melalui OJK atau Badan Mediasi Asuransi Indonesia (BMAI) sebelum melanjutkan ke jalur hukum.",
+      "Ajukan keberatan tertulis ke penanggung, lengkapi dengan bukti pendukung tambahan yang belum sempat disertakan sebelumnya. Bila tidak tercapai kesepakatan, jalur mediasi melalui OJK atau Badan Mediasi Asuransi Indonesia (BMAI) tersedia sebagai opsi sebelum menempuh jalur hukum.",
   },
   {
-    question: "Apakah barang elektronik dan furnitur ikut ditanggung, atau hanya bangunan?",
+    question: "Elektronik dan perabot rumah ikut ditanggung, atau hanya bangunannya saja?",
     answer:
-      "Tergantung jenis pertanggungan pada polis Anda. Polis dasar biasanya hanya menanggung struktur bangunan, sementara isi rumah (household contents) seperti elektronik dan furnitur memerlukan perluasan pertanggungan tersendiri. Periksa ringkasan polis untuk memastikan keduanya tercakup.",
+      "Tergantung struktur polis yang dipilih. Polis standar umumnya hanya menjamin bangunan, sementara isi rumah — elektronik, furnitur, dan barang pribadi — baru tercakup jika Anda mengambil perluasan household contents secara terpisah. Cek kembali ringkasan polis untuk memastikan keduanya sudah termasuk.",
   },
 ];
 
@@ -144,8 +144,8 @@ function Steps({ items }: { items: { title: string; desc?: React.ReactNode }[] }
 export default function ArticleCaraKlaimAsuransiKebakaranRumahPage() {
   return (
     <ArticleLayout
-      title="Cara Klaim Asuransi Kebakaran Rumah: Dokumen, Prosedur & Kesalahan Fatal yang Harus Dihindari"
-      description="Kebakaran sudah terjadi. Rumah rusak. Polis masih aktif. Tapi klaim ditolak — ini terjadi lebih sering dari yang Anda kira. Berikut panduan lengkap agar klaim Anda disetujui."
+      title="Prosedur Klaim Asuransi Kebakaran Rumah: Dokumen, Tahapan & Penyebab Klaim Ditolak"
+      description="Api sudah padam, rumah sudah rusak, polis masih aktif — tapi klaim tetap bisa ditolak. Ini terjadi lebih sering dari yang dibayangkan kebanyakan orang. Berikut panduan lengkap agar klaim Anda diproses tanpa hambatan."
       date="6 Mei 2026"
       category="Properti"
       readTime="10 menit baca"
@@ -154,20 +154,20 @@ export default function ArticleCaraKlaimAsuransiKebakaranRumahPage() {
       faqSchema={faqSchema}
     >
       <p>
-        Tidak ada yang ingin mengalami kebakaran rumah. Namun justru di saat itulah kita
-        benar-benar mengetahui apakah{" "}
+        Kebakaran rumah adalah skenario yang tidak pernah ingin dialami siapa pun. Namun justru
+        pada momen itulah kualitas{" "}
         <Link href="/asuransi-properti" className="font-medium">
           asuransi properti
         </Link>{" "}
-        yang selama ini preminya kita bayar sungguh-sungguh bekerja. Banyak pemilik rumah di
-        Batam akhirnya kecewa bukan karena penanggung berlaku tidak jujur, melainkan karena
-        prosedur klaim tidak diikuti dengan benar sejak menit pertama setelah insiden. Panduan
-        ini membahas secara terperinci apa yang harus — dan tidak boleh — Anda lakukan agar
-        klaim asuransi kebakaran rumah diproses dan dibayarkan tanpa hambatan yang tidak perlu.
+        yang selama ini preminya rutin dibayar benar-benar diuji. Tidak sedikit pemilik rumah di
+        Batam yang akhirnya kecewa — bukan karena penanggung bertindak curang, melainkan karena
+        prosedur klaim tidak dijalankan dengan tepat sejak menit-menit pertama pascakejadian.
+        Panduan berikut merinci apa yang sebaiknya dilakukan, dan apa yang sebaiknya dihindari,
+        agar proses klaim asuransi kebakaran rumah Anda berjalan lancar sampai dana cair.
       </p>
       <p>
-        Meski pembahasan ini berfokus pada rumah tinggal, prinsip prosedur klaim yang sama pada
-        dasarnya juga berlaku untuk properti komersial lain seperti{" "}
+        Fokus pembahasan di sini adalah rumah tinggal, tapi alur klaimnya pada dasarnya berlaku
+        juga untuk properti komersial seperti{" "}
         <Link href="/asuransi-properti/asuransi-ruko-batam" className="font-medium">
           ruko
         </Link>{" "}
@@ -175,90 +175,90 @@ export default function ArticleCaraKlaimAsuransiKebakaranRumahPage() {
         <Link href="/asuransi-properti/asuransi-apartemen-batam" className="font-medium">
           apartemen
         </Link>{" "}
-        — hanya saja dokumen kepemilikan dan pihak yang terlibat dalam survei bisa sedikit berbeda.
+        — bedanya umumnya hanya pada dokumen kepemilikan dan pihak yang dilibatkan saat survei.
       </p>
 
       <SectionHeading icon={ShieldCheck}>
-        Pertama, Pahami Dulu: Apa yang Sebenarnya Ditanggung Asuransi Kebakaran Rumah?
+        Sebelum Bicara Prosedur: Kenali Dulu Apa yang Sebenarnya Ditanggung
       </SectionHeading>
       <p>
-        Sebelum membahas prosedur, penting untuk dipahami bahwa tidak semua kerusakan akibat
-        kebakaran otomatis ditanggung oleh asuransi. Polis properti standar di Indonesia
-        menggunakan format <strong>FLEXAS</strong> sebagai dasar:
+        Tidak semua kerugian akibat kebakaran otomatis dijamin polis. Standar polis properti di
+        Indonesia mengacu pada format <strong>FLEXAS</strong>:
       </p>
       <IconList
         items={[
-          { icon: Flame, title: "Fire", text: "Kebakaran" },
-          { icon: Zap, title: "Lightning", text: "Sambaran petir" },
-          { icon: AlertTriangle, title: "Explosion", text: "Ledakan" },
-          { icon: PlaneTakeoff, title: "Aircraft impact", text: "Kejatuhan pesawat terbang" },
-          { icon: Wind, title: "Smoke damage", text: "Kerusakan akibat asap" },
+          { icon: Flame, title: "Fire", text: "Kebakaran itu sendiri — penyebab paling umum di balik klaim polis properti" },
+          { icon: Zap, title: "Lightning", text: "Sambaran petir yang berdampak langsung pada bangunan" },
+          { icon: AlertTriangle, title: "Explosion", text: "Ledakan, baik yang bersumber dari dalam maupun luar bangunan" },
+          { icon: PlaneTakeoff, title: "Aircraft impact", text: "Kejatuhan pesawat udara atau bagian dari pesawat" },
+          { icon: Wind, title: "Smoke damage", text: "Kerusakan yang ditimbulkan asap dari peristiwa kebakaran" },
         ]}
       />
       <p>
-        Perluasan seperti banjir, badai, kerusuhan, dan gempa bumi hanya ditanggung jika secara
-        eksplisit tercantum dalam polis Anda. Sebelum mengajukan klaim, buka polis dan periksa
-        ringkasan pertanggungan — pastikan penyebab kebakaran atau kerusakan yang Anda alami
-        memang termasuk dalam yang telah disepakati.
+        Risiko tambahan seperti banjir, badai, huru-hara, atau gempa bumi hanya dijamin apabila
+        secara eksplisit dicantumkan sebagai perluasan pada polis Anda. Sebelum mengajukan klaim,
+        buka kembali ringkasan pertanggungan untuk memastikan penyebab kerusakan yang dialami
+        memang termasuk dalam yang sudah disepakati.
       </p>
 
-      <SectionHeading icon={Timer}>Yang Harus Anda Lakukan dalam 24 Jam Pertama</SectionHeading>
+      <SectionHeading icon={Timer}>Momen Kritis: yang Perlu Dilakukan dalam 24 Jam Pertama</SectionHeading>
       <p>
-        Jam-jam pertama setelah kebakaran adalah yang paling kritis untuk keberhasilan klaim.
-        Kepanikan adalah hal yang sangat wajar, namun tindakan tertentu yang diambil — atau
-        tidak diambil — pada fase ini dapat menentukan apakah klaim Anda berhasil atau gagal.
+        Jam-jam awal pascakebakaran menentukan lancar-tidaknya proses klaim ke depan. Panik
+        adalah reaksi yang sangat wajar, tapi ada beberapa tindakan pada fase ini yang sebaiknya
+        tidak sampai terlewat.
       </p>
 
-      <SubHeading icon={Camera}>1. Utamakan Keselamatan, Baru Dokumentasi</SubHeading>
+      <SubHeading icon={Camera}>1. Keselamatan Dulu, Dokumentasi Menyusul</SubHeading>
       <p>
-        Pastikan semua penghuni aman dan api sudah benar-benar padam sebelum mendekati lokasi
-        kejadian. Setelah kondisi aman, mulailah mendokumentasikan kerusakan secara menyeluruh:
+        Pastikan seluruh penghuni dalam kondisi aman dan api benar-benar padam sebelum mendekat
+        ke area yang terdampak. Begitu situasi aman, mulailah mendokumentasikan kondisi kerusakan
+        selengkap mungkin:
       </p>
       <IconList
         items={[
-          { icon: Camera, text: "Foto dan video bangunan dari luar — tampak depan, samping, dan belakang" },
-          { icon: Home, text: "Foto interior setiap ruangan yang terdampak" },
-          { icon: FileWarning, text: "Foto barang-barang yang rusak atau hancur — furnitur, elektronik, dokumen" },
-          { icon: Flame, text: "Foto titik asal kebakaran jika masih dapat diidentifikasi secara visual" },
-          { icon: ClipboardList, text: "Dokumentasikan kondisi sebelum ada yang disentuh atau dibersihkan" },
+          { icon: Camera, text: "Rekam foto dan video bangunan dari berbagai sisi — tampak depan, samping, belakang" },
+          { icon: Home, text: "Ambil gambar setiap ruangan yang terkena dampak dari dalam" },
+          { icon: FileWarning, text: "Foto barang yang rusak atau hangus — dokumen, furnitur, peralatan elektronik" },
+          { icon: Flame, text: "Jika titik awal api masih terlihat, dokumentasikan secara khusus" },
+          { icon: ClipboardList, text: "Rekam kondisi apa adanya sebelum ada yang dipindahkan atau dibersihkan" },
         ]}
       />
       <p>
-        Dokumentasi ini merupakan bukti utama yang akan dievaluasi oleh surveyor asuransi.
-        Semakin lengkap dan terperinci, semakin lancar proses verifikasi berjalan.
+        Dokumentasi inilah yang nantinya menjadi rujukan utama surveyor saat menilai klaim.
+        Semakin rinci catatan visual yang Anda simpan, semakin cepat proses verifikasi berjalan.
       </p>
 
-      <SubHeading icon={FileWarning}>2. Buat Laporan ke Pemadam Kebakaran atau Kepolisian</SubHeading>
+      <SubHeading icon={FileWarning}>2. Segera Buat Laporan ke Damkar atau Kepolisian</SubHeading>
       <p>
-        Surat keterangan dari Dinas Pemadam Kebakaran (Damkar) adalah dokumen wajib dalam
-        hampir semua klaim asuransi kebakaran. Surat ini memuat tanggal kejadian, perkiraan
-        penyebab, dan penilaian kerusakan awal dari pihak pemadam. Di Batam, laporan dapat
-        dibuat ke Dinas Pemadam Kebakaran Kota Batam yang memiliki kantor di berbagai kecamatan.
+        Surat keterangan dari Dinas Pemadam Kebakaran menjadi dokumen yang hampir selalu diminta
+        dalam klaim kebakaran. Isinya mencakup tanggal kejadian, dugaan penyebab, serta gambaran
+        awal tingkat kerusakan. Warga Batam bisa mengurusnya melalui kantor Damkar terdekat di
+        kecamatan masing-masing.
       </p>
       <p>
-        Untuk kebakaran yang menimbulkan kerugian besar, kerusakan pada properti tetangga, atau
-        jika ada dugaan unsur kesengajaan, laporan polisi juga wajib dibuat. Minta salinan Surat
-        Tanda Penerimaan Laporan (STPL) sebagai bukti resmi.
-      </p>
-
-      <SubHeading icon={PhoneCall}>3. Hubungi Agen atau Perusahaan Asuransi Anda</SubHeading>
-      <p>
-        Jangan menunggu situasi tenang atau sampai Anda merasa siap. Pelaporan wajib dilakukan{" "}
-        <strong>dalam 3 × 24 jam</strong> sejak insiden diketahui — ini adalah tenggat waktu yang
-        ditetapkan oleh hampir semua polis asuransi properti. Melewati batas waktu ini dapat
-        dijadikan alasan teknis penolakan, bahkan saat kerusakannya jelas-jelas ditanggung oleh
-        polis.
-      </p>
-      <p>
-        Sampaikan kejadian dengan jujur dan apa adanya. Jangan menambahkan detail yang tidak
-        terjadi dan jangan menghilangkan fakta yang relevan — konsistensi antara laporan awal
-        Anda dan temuan surveyor dicermati ketat sepanjang proses verifikasi berlangsung.
+        Untuk kasus dengan kerugian besar, dampak ke properti tetangga, atau indikasi unsur
+        kesengajaan, laporan ke kepolisian juga menjadi keharusan. Simpan Surat Tanda Penerimaan
+        Laporan (STPL) sebagai arsip resmi.
       </p>
 
-      <SectionHeading icon={ClipboardList}>Dokumen yang Diperlukan untuk Pengajuan Klaim</SectionHeading>
+      <SubHeading icon={PhoneCall}>3. Segera Hubungi Agen atau Penanggung Anda</SubHeading>
       <p>
-        Proses klaim resmi tidak dapat dimulai sebelum seluruh dokumen berikut diserahkan kepada
-        penanggung. Siapkan dari awal untuk menghindari bolak-balik yang memperlambat pencairan:
+        Jangan tunda pelaporan sampai keadaan tenang atau Anda merasa "siap". Batas waktu resmi
+        pelaporan adalah <strong>3×24 jam</strong> sejak kejadian diketahui — ketentuan ini
+        berlaku di hampir seluruh polis properti yang beredar. Melewati tenggat ini bisa dipakai
+        sebagai dasar penolakan teknis, sekalipun kerusakannya jelas termasuk yang dijamin.
+      </p>
+      <p>
+        Ceritakan kronologi apa adanya. Hindari menambah-nambahi detail atau menyembunyikan fakta
+        yang relevan, sebab konsistensi antara laporan awal Anda dan temuan surveyor akan
+        diperiksa secara ketat sepanjang proses verifikasi berlangsung.
+      </p>
+
+      <SectionHeading icon={ClipboardList}>Berkas yang Wajib Disiapkan Sebelum Mengajukan Klaim</SectionHeading>
+      <p>
+        Pengajuan klaim resmi baru bisa diproses setelah seluruh dokumen berikut lengkap di
+        tangan penanggung. Menyiapkannya sejak awal akan menghindarkan Anda dari bolak-balik yang
+        memperlambat pencairan:
       </p>
 
       <div className="overflow-x-auto my-6 rounded-2xl border border-[#e2e8f0]">
@@ -271,15 +271,15 @@ export default function ArticleCaraKlaimAsuransiKebakaranRumahPage() {
           </thead>
           <tbody>
             {[
-              ["Formulir klaim asuransi", "Diisi dan ditandatangani oleh tertanggung; tersedia dari agen atau penanggung"],
-              ["Polis asuransi asli atau salinan", "Halaman ringkasan pertanggungan dan klausul perluasan yang relevan"],
-              ["Surat keterangan pemadam kebakaran", "Memuat tanggal, lokasi, perkiraan penyebab, dan skala kebakaran"],
-              ["Laporan polisi (jika diperlukan)", "Untuk kerugian besar atau dugaan unsur kesengajaan"],
-              ["KTP tertanggung", "Identitas pemilik polis yang mengajukan klaim"],
-              ["Foto lengkap kerusakan", "Dokumentasi visual bangunan dan isi rumah pasca kebakaran"],
-              ["Daftar inventaris barang yang rusak/hancur", "Dengan perkiraan nilai masing-masing barang; semakin terperinci semakin baik"],
-              ["Bukti kepemilikan properti", "Sertifikat tanah (SHM/SHGB) atau perjanjian sewa jika bukan pemilik"],
-              ["Bukti pembelian barang bernilai tinggi", "Nota atau faktur untuk elektronik, furnitur, atau perabot mahal"],
+              ["Formulir pengajuan klaim", "Diisi lengkap dan ditandatangani pemegang polis; formulirnya bisa diminta ke agen atau langsung ke penanggung"],
+              ["Salinan polis (atau yang asli)", "Termasuk halaman ringkasan pertanggungan dan klausul perluasan yang relevan dengan kejadian"],
+              ["Surat keterangan Damkar", "Mencantumkan tanggal, lokasi, dugaan penyebab, dan skala kebakaran"],
+              ["Laporan kepolisian (bila relevan)", "Diperlukan untuk kerugian besar atau bila ada indikasi kesengajaan"],
+              ["KTP pemegang polis", "Sebagai bukti identitas pihak yang mengajukan klaim"],
+              ["Dokumentasi visual kerusakan", "Foto dan video menyeluruh kondisi bangunan serta isi rumah pascakebakaran"],
+              ["Daftar barang yang rusak/hilang", "Sertakan estimasi nilai tiap barang; semakin detail semakin membantu proses penilaian"],
+              ["Bukti kepemilikan properti", "SHM/SHGB, atau perjanjian sewa apabila Anda bukan pemilik langsung"],
+              ["Bukti pembelian barang bernilai besar", "Nota atau invoice untuk elektronik, furnitur, atau perabot dengan harga tinggi"],
             ].map(([a, b], i) => (
               <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-[#faf8f3]"}>
                 <td className="p-4 font-medium text-[#0a1628]">{a}</td>
@@ -290,81 +290,81 @@ export default function ArticleCaraKlaimAsuransiKebakaranRumahPage() {
         </table>
       </div>
 
-      <SectionHeading icon={Search}>Apa yang Terjadi Setelah Dokumen Diserahkan</SectionHeading>
+      <SectionHeading icon={Search}>Sesudah Berkas Diserahkan, Apa Selanjutnya?</SectionHeading>
 
-      <SubHeading icon={Search}>Survei oleh Loss Adjuster</SubHeading>
+      <SubHeading icon={Search}>Survei dari Loss Adjuster</SubHeading>
       <p>
-        Untuk klaim kebakaran di atas nilai tertentu (umumnya di atas Rp 50 juta), perusahaan
-        asuransi akan menunjuk <em>Loss Adjuster</em> independen — bukan karyawan penanggung —
-        untuk menilai kerugian secara objektif. Loss Adjuster akan mengunjungi lokasi, memeriksa
-        kondisi bangunan, mencocokkan dokumentasi Anda dengan kondisi nyata di lapangan, dan
-        menghasilkan laporan penilaian kerugian yang menjadi dasar pembayaran klaim.
+        Untuk klaim kebakaran dengan nilai kerugian signifikan (umumnya di atas Rp 50 juta),
+        penanggung akan menugaskan <em>Loss Adjuster</em> independen — pihak di luar perusahaan
+        asuransi — untuk menilai kerugian secara objektif. Petugas ini akan datang langsung ke
+        lokasi, memeriksa kondisi bangunan, membandingkan dokumentasi Anda dengan temuan di
+        lapangan, lalu menyusun laporan penilaian yang menjadi dasar pembayaran klaim.
       </p>
       <p>
-        Selama proses ini, <strong>jangan memulai perbaikan apapun</strong> sebelum survei
-        selesai dan persetujuan tertulis diberikan oleh penanggung. Perbaikan yang dilakukan
-        sebelum survei dianggap telah mengubah bukti dan dapat mengakibatkan klaim ditolak atau
-        jumlah pembayaran dikurangi.
+        Selama tahap ini berlangsung, <strong>tunda dulu segala bentuk perbaikan</strong> sampai
+        survei rampung dan ada persetujuan tertulis dari penanggung. Memperbaiki bangunan sebelum
+        survei selesai dianggap mengubah kondisi bukti, dan berisiko membuat klaim ditolak atau
+        nilai pembayarannya dipangkas.
       </p>
 
-      <SubHeading icon={Scale}>Negosiasi Nilai Klaim</SubHeading>
+      <SubHeading icon={Scale}>Tahap Negosiasi Nilai Klaim</SubHeading>
       <p>
-        Jika terdapat selisih antara jumlah kerugian yang Anda ajukan dan jumlah yang dinilai
-        oleh Loss Adjuster, inilah tahap negosiasinya. Anda berhak mengajukan keberatan dengan
-        bukti pendukung tambahan — nota pembelian, foto kondisi sebelum kebakaran, atau pendapat
-        kontraktor Anda mengenai estimasi biaya perbaikan. Negosiasi ini adalah bagian normal
-        dari proses klaim dan tidak berarti ada masalah dengan klaim Anda.
+        Bila muncul selisih antara nilai kerugian yang Anda ajukan dengan hasil penilaian Loss
+        Adjuster, di sinilah negosiasi berlangsung. Anda berhak menyampaikan keberatan disertai
+        bukti tambahan — nota pembelian, foto kondisi sebelum kebakaran, atau opini kontraktor
+        soal estimasi biaya perbaikan. Proses negosiasi ini wajar terjadi dan bukan pertanda ada
+        masalah dengan klaim Anda.
       </p>
 
-      <SectionHeading icon={AlertTriangle}>Kesalahan Fatal yang Sering Mengakibatkan Klaim Ditolak</SectionHeading>
+      <SectionHeading icon={AlertTriangle}>Kesalahan yang Paling Sering Membuat Klaim Ditolak</SectionHeading>
       <IconList
         items={[
           {
             icon: Clock,
-            title: "Terlambat melapor",
-            text: "Banyak pemilik rumah menunggu situasi mereda sebelum menghubungi penanggung. Jika tiga hari telah berlalu, risiko penolakan teknis sangat tinggi.",
+            title: "Melapor terlalu lambat",
+            text: "Banyak pemilik rumah menunggu keadaan reda dulu sebelum menghubungi penanggung. Lewat dari tiga hari, peluang penolakan atas dasar teknis meningkat tajam.",
           },
           {
             icon: Trash2,
-            title: "Membersihkan lokasi sebelum survei",
-            text: "Dorongan untuk segera membersihkan puing-puing sangat wajar, namun ini salah satu penyebab terbesar komplikasi klaim. Tunggu persetujuan tertulis sebelum memulai pembersihan.",
+            title: "Membersihkan lokasi sebelum disurvei",
+            text: "Keinginan segera merapikan puing memang manusiawi, tapi ini justru salah satu pemicu terbesar komplikasi klaim. Tahan dulu sampai ada izin tertulis.",
           },
           {
             icon: TrendingDown,
-            title: "Underinsurance — uang pertanggungan terlalu rendah",
-            text: "Jika rumah senilai Rp 800 juta diasuransikan hanya Rp 400 juta, hanya 50% dari kerugian sesungguhnya yang disetujui, sesuai rasio underinsurance.",
+            title: "Nilai pertanggungan lebih rendah dari nilai riil",
+            text: "Rumah senilai Rp 800 juta yang hanya diasuransikan Rp 400 juta berarti klaim yang disetujui pun proporsional — hanya sekitar separuh dari kerugian sebenarnya, sesuai prinsip underinsurance.",
           },
           {
             icon: Flame,
-            title: "Penyebab kebakaran tidak ditanggung",
-            text: "Kebakaran akibat korsleting umumnya ditanggung. Namun penyebab yang terbukti dikecualikan polis — misalnya penyimpanan bahan mudah terbakar berlebih — dapat mengakibatkan penolakan.",
+            title: "Penyebab kebakaran termasuk yang dikecualikan polis",
+            text: "Korsleting listrik umumnya dijamin, tapi penyebab yang secara eksplisit dikecualikan — misalnya penyimpanan bahan mudah terbakar dalam jumlah berlebih — bisa jadi dasar penolakan.",
           },
           {
             icon: MessageSquareWarning,
-            title: "Informasi yang tidak konsisten",
-            text: "Jika Anda menyampaikan ke pemadam bahwa api bermula dari dapur, namun ke surveyor menyebut garasi, inkonsistensi ini ditandai sebagai catatan merah dalam verifikasi.",
+            title: "Cerita yang tidak konsisten",
+            text: "Menyebut api berasal dari dapur ke petugas pemadam, lalu menyebut garasi ke surveyor, adalah jenis inkonsistensi yang langsung ditandai sebagai catatan merah saat verifikasi.",
           },
         ]}
       />
 
-      <SectionHeading icon={Timer}>Berapa Lama Proses Klaim Asuransi Kebakaran Rumah?</SectionHeading>
-      <p>Durasinya bervariasi tergantung kompleksitas kerusakan dan kelengkapan dokumen. Sebagai panduan umum:</p>
+      <SectionHeading icon={Timer}>Berapa Lama Biasanya Proses Klaim Berlangsung?</SectionHeading>
+      <p>Lama prosesnya bervariasi, tergantung besar kerusakan dan kelengkapan dokumen sejak awal. Sebagai gambaran umum:</p>
       <Steps
         items={[
-          { title: "Klaim kecil (di bawah Rp 50 juta)", desc: "7–14 hari kerja setelah dokumen lengkap diterima." },
-          { title: "Klaim menengah (Rp 50 juta – Rp 500 juta)", desc: "14–30 hari kerja, tergantung jadwal Loss Adjuster." },
-          { title: "Klaim besar (di atas Rp 500 juta)", desc: "30–60 hari kerja atau lebih, karena proses negosiasi yang lebih panjang." },
+          { title: "Klaim nilai kecil (di bawah Rp 50 juta)", desc: "Biasanya selesai 7–14 hari kerja sejak dokumen lengkap diterima penanggung." },
+          { title: "Klaim nilai menengah (Rp 50 juta – Rp 500 juta)", desc: "Berkisar 14–30 hari kerja, tergantung jadwal kunjungan Loss Adjuster." },
+          { title: "Klaim nilai besar (di atas Rp 500 juta)", desc: "Bisa mencapai 30–60 hari kerja atau lebih, karena tahap negosiasi yang biasanya lebih panjang." },
         ]}
       />
       <p>
-        Kelengkapan dokumen sejak awal adalah faktor tunggal paling signifikan dalam mempercepat
-        proses. Setiap permintaan dokumen tambahan dari penanggung dapat menambah 5–10 hari
-        kerja pada total waktu pemrosesan. Jika Anda belum memiliki polis dan ingin memastikan
-        proses klaim di masa depan berjalan lancar, mulailah dengan memilih{" "}
+        Kelengkapan dokumen sejak pengajuan pertama adalah faktor paling menentukan cepat-
+        lambatnya proses. Setiap kali penanggung meminta dokumen tambahan, total waktu
+        pemrosesan bisa molor 5–10 hari kerja. Jika Anda belum punya polis dan ingin memastikan
+        proses klaim di masa depan tidak berbelit, mulailah dengan memilih{" "}
         <Link href="/asuransi-properti/asuransi-rumah-batam" className="font-medium">
           asuransi rumah
         </Link>{" "}
-        dengan nilai pertanggungan yang sesuai dari awal.
+        dengan nilai pertanggungan yang sesuai sejak awal.
       </p>
 
       <SectionHeading icon={FileSearch}>Pertanyaan yang Sering Diajukan</SectionHeading>
@@ -387,14 +387,14 @@ export default function ArticleCaraKlaimAsuransiKebakaranRumahPage() {
         <div className="flex items-center gap-2.5 mb-3">
           <ShieldCheck className="w-5 h-5 text-[#c9a84c]" strokeWidth={2} />
           <h3 className="font-display font-bold text-[#0a1628] m-0">
-            Butuh Bantuan Klaim atau Konsultasi Asuransi Properti di Batam?
+            Butuh Pendampingan Klaim atau Konsultasi Asuransi Properti di Batam?
           </h3>
         </div>
         <p className="text-[#475569] mb-4">
-          Rio membantu proses klaim asuransi properti dari awal hingga akhir — mulai dari
-          persiapan dokumen dan koordinasi dengan Loss Adjuster hingga negosiasi nilai klaim
-          jika ada selisih penilaian. Konsultasi gratis, tanpa biaya tambahan di luar premi
-          polis Anda.
+          Rio siap mendampingi proses klaim asuransi properti Anda dari tahap awal sampai
+          pencairan — mulai dari menyiapkan dokumen, mengoordinasikan jadwal dengan Loss
+          Adjuster, hingga membantu negosiasi bila terjadi selisih penilaian. Konsultasi tidak
+          dipungut biaya tambahan di luar premi polis yang sudah Anda bayar.
         </p>
         <div className="flex flex-wrap gap-3">
           <Link
