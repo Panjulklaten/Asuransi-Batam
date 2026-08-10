@@ -4,12 +4,12 @@ import { generateSEO, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
 import { WHATSAPP_URL } from "@/lib/constants";
 import { Breadcrumb, CTASection, SectionHeader } from "@/components/ui/index";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
-import { CheckCircle2, Calculator } from "lucide-react";
+import { TrendingDown, Calculator, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = generateSEO({
-  title: "How Marine Cargo Insurance Premiums Are Set in Batam | Batam Insurance",
+  title: "Marine Cargo Insurance Premium in Batam: Pricing & How to Lower It",
   description:
-    "What actually goes into the price of marine cargo insurance in Batam? Walk through the premium formula, the factors underwriters weigh, and how to get solid coverage without overpaying. Contact Rio!",
+    "A breakdown of how marine cargo insurance premiums are priced in Batam — two worked examples, the factors underwriters weigh, and practical ways shippers actually bring the cost down. Contact Rio!",
   canonical: "/en/blog/marine-cargo-insurance-premium-batam",
   languages: {
     id: "https://asuransibatam.com/blog/premi-asuransi-marine-cargo-batam",
@@ -20,12 +20,12 @@ export const metadata: Metadata = generateSEO({
 const schemaArticle = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "What Actually Determines Your Marine Cargo Insurance Premium in Batam",
+  headline: "Marine Cargo Insurance Premium in Batam: How It's Priced, and How to Bring It Down",
   description:
-    "A practical walkthrough of how marine cargo insurance premiums are set in Batam, covering the rating factors, policy structures, and tips for getting solid coverage at a fair price.",
+    "A shipper's breakdown of marine cargo insurance pricing in Batam, with two worked examples and practical steps for lowering the premium without cutting real protection.",
   url: "https://asuransibatam.com/en/blog/marine-cargo-insurance-premium-batam",
   datePublished: "2026-05-08",
-  dateModified: "2026-08-04",
+  dateModified: "2026-08-10",
   author: {
     "@type": "Person",
     name: "Rio",
@@ -40,51 +40,24 @@ const schemaArticle = {
 
 const FAQS = [
   {
-    q: "Do I pay the cargo premium per shipment, or once a year?",
-    a: "Either structure is available. An open cover (annual) policy fits exporters or distributors shipping on a regular basis — you pay upfront and simply declare each shipment to get a certificate. A per-voyage policy works better if your shipments are one-off or infrequent.",
+    q: "Do I pay per shipment, or as one annual premium?",
+    a: "Both structures exist. A per-voyage policy prices each shipment on its own — simplest for occasional shippers. An open cover runs annually: you pay upfront, then just declare each shipment as it goes out to get its certificate. Regular shippers usually come out ahead financially on open cover.",
   },
   {
-    q: "Is there a floor on cargo value before insurance makes sense?",
-    a: "There's no formal minimum. That said, for goods worth under IDR 5 million, the premium can end up disproportionate to what you'd actually recover in a claim, making cover less worthwhile. Once a shipment crosses roughly IDR 50 million, cargo insurance becomes well worth arranging.",
+    q: "Below what cargo value does insurance stop making sense?",
+    a: "There's no hard cutoff, but under roughly IDR 5 million the premium can end up disproportionate to what you'd realistically recover. Past about IDR 50 million per shipment, arranging cover is almost always worth it.",
   },
   {
-    q: "How do I land on the right sum insured?",
-    a: "The usual approach is the CIF (Cost + Insurance + Freight) value of the goods, plus a 10% allowance for anticipated profit. Steer clear of under-insuring — if a claim comes in, any shortfall gets applied proportionally and your payout shrinks accordingly.",
+    q: "What sum insured should I actually declare?",
+    a: "Standard practice is CIF (Cost + Insurance + Freight) value plus 10% to cover anticipated profit. Don't shave that number down to save on premium — under-insuring triggers a proportional cut on any payout, which usually costs far more than the premium you saved.",
   },
   {
-    q: "What does a deductible mean on a cargo policy?",
-    a: "A deductible (sometimes called an excess) is the slice of any loss you absorb yourself before the insurer starts paying. Say the deductible is IDR 1 million and the loss totals IDR 10 million — the insurer covers IDR 9 million. Opting for a higher deductible brings your premium down.",
+    q: "How does the deductible affect what I pay?",
+    a: "A deductible is the portion of any loss you absorb before the insurer pays the rest. A IDR 10 million loss against a IDR 1 million deductible means the insurer pays IDR 9 million. Taking on a higher deductible is one of the more effective levers for bringing the premium down, provided you can comfortably absorb a bigger first loss.",
   },
   {
-    q: "Can a clean claims history get me a better rate?",
-    a: "Yes. Policyholders with a low loss ratio — few or no claims — typically see a discount or no-claim reduction when they renew. It's one of the clearest advantages an annual open cover has over arranging cover voyage by voyage.",
-  },
-];
-
-const FACTORS = [
-  {
-    title: "Declared Cargo Value (Sum Insured)",
-    desc: "A higher declared value pushes up the absolute premium even when the percentage rate itself doesn't change.",
-  },
-  {
-    title: "Commodity Type & Condition",
-    desc: "Fragile items, liquids, or chemicals sit at a higher rate than steel or building materials simply because their risk profile is greater.",
-  },
-  {
-    title: "Route & Distance",
-    desc: "A domestic run like Batam–Jakarta is priced differently than an international leg such as Batam–Singapore or Batam–Port Klang.",
-  },
-  {
-    title: "Which ICC Clause You Pick",
-    desc: "ICC (A) costs the most because it covers the most. ICC (C) is the cheapest option, but the protection it offers is correspondingly narrow.",
-  },
-  {
-    title: "Packaging & How It's Loaded",
-    desc: "FCL (Full Container Load) shipments generally rate lower than LCL or break-bulk cargo, since the damage exposure is easier to contain.",
-  },
-  {
-    title: "Your Claims History",
-    desc: "A track record with few claims earns better pricing at renewal — one of the practical upsides of sticking with an annual open cover arrangement.",
+    q: "Does a clean claims history actually lower the premium?",
+    a: "Yes — insurers reward a low loss ratio with a no-claim discount at renewal, most visibly under an annual open cover. It's one of the clearer financial arguments for consolidating shipments under one policy instead of insuring voyage by voyage.",
   },
 ];
 
@@ -145,12 +118,13 @@ export default function MarineCargoPremiENPage() {
             className="text-3xl md:text-5xl font-bold text-white mb-5"
             style={{ fontFamily: "Syne, sans-serif" }}
           >
-            What Does Marine Cargo<br />Insurance Cost in Batam?
+            Marine Cargo Insurance in Batam:<br />What It Costs, and Why
           </h1>
           <p className="text-gray-300 text-lg mb-8 max-w-2xl">
-            There's no single flat rate for marine cargo insurance — the premium shifts based on
-            several factors specific to your shipment. Here's how the calculation actually works,
-            what pushes the cost up or down, and how to get solid coverage without overpaying.
+            Ask three different shippers what they pay for cargo cover out of Batam and you'll get
+            three different numbers. That's not inconsistency — it's because the premium is built
+            from several moving parts. Here's what those parts are, two worked examples, and a few
+            genuine levers for bringing the cost down.
           </p>
           <a
             href={WHATSAPP_URL("Hello Rio, I would like a premium estimate for marine cargo insurance from Batam")}
@@ -164,149 +138,155 @@ export default function MarineCargoPremiENPage() {
         </div>
       </section>
 
-      {/* Premium Formula */}
+      {/* What drives pricing — narrative, not a card grid */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <SectionHeader
-            eyebrow="Premium Formula"
-            title="The Math Behind a Marine Cargo Premium"
+            eyebrow="What Sets the Price"
+            title="Six Things Underwriters Actually Look At"
           />
-          <div className="mt-10 space-y-6">
-            <div className="bg-blue-50 rounded-2xl p-6 border border-blue-200">
-              <p className="text-sm font-bold text-blue-800 mb-2 uppercase tracking-wide">Basic Formula</p>
-              <p className="text-2xl font-bold text-blue-900 font-mono">
-                Premium = Sum Insured × Rate (%)
-              </p>
-              <p className="text-sm text-blue-700 mt-3">
-                Sum Insured = CIF value of the goods + 10% (anticipated profit allowance)
-              </p>
-            </div>
-
-            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
-              <p className="text-sm font-bold text-gray-700 mb-4">Worked Example:</p>
-              <div className="space-y-2 text-sm text-gray-700">
-                <div className="flex justify-between border-b border-gray-200 pb-2">
-                  <span>Cargo value (CIF)</span>
-                  <span className="font-semibold">IDR 400,000,000</span>
-                </div>
-                <div className="flex justify-between border-b border-gray-200 pb-2">
-                  <span>Sum Insured (CIF + 10%)</span>
-                  <span className="font-semibold">IDR 440,000,000</span>
-                </div>
-                <div className="flex justify-between border-b border-gray-200 pb-2">
-                  <span>Rate – ICC (B), domestic route</span>
-                  <span className="font-semibold">~0.15% – 0.25%</span>
-                </div>
-                <div className="flex justify-between pt-2 text-blue-800 font-bold">
-                  <span>Estimated Premium</span>
-                  <span>IDR 660,000 – IDR 1,100,000</span>
-                </div>
-              </div>
-              <p className="text-xs text-gray-500 mt-3">
-                *These rates are illustrative only. The underwriter sets the actual rate based on commodity type, route, and the ICC clause chosen.
-              </p>
-            </div>
+          <div className="mt-8 space-y-5 text-gray-700 leading-relaxed">
+            <p>
+              None of these factors work in isolation — an underwriter weighs them together, which
+              is why two shipments of similar value can land on noticeably different rates.
+            </p>
+            <ol className="space-y-4">
+              {[
+                { label: "Declared value (sum insured)", detail: "A higher CIF value raises the rupiah premium even at an unchanged percentage rate." },
+                { label: "What the cargo actually is", detail: "Electronics, glass, and chemicals sit at a materially higher rate than steel coils or bagged cement, purely on breakage/spoilage risk." },
+                { label: "Route and distance", detail: "Batam–Jakarta domestic legs price differently than Batam–Singapore or Batam–Port Klang international runs." },
+                { label: "Institute Cargo Clause chosen", detail: "ICC (A) — all risks — sits at the top of the range. ICC (C) is the cheapest but the narrowest in what it actually pays out for." },
+                { label: "Packing and loading method", detail: "A sealed FCL container rates lower than LCL or break-bulk cargo, since the exposure to handling damage is smaller." },
+                { label: "Your claims track record", detail: "Fewer past claims earns a better rate at renewal — one of the practical arguments for staying on one insurer's open cover rather than shopping per voyage." },
+              ].map((f, i) => (
+                <li key={f.label} className="flex gap-4">
+                  <span
+                    className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white"
+                    style={{ background: "#1a4fa0" }}
+                  >
+                    {i + 1}
+                  </span>
+                  <p className="m-0">
+                    <span className="font-semibold text-[#0a1628]">{f.label}.</span>{" "}
+                    <span className="text-gray-600">{f.detail}</span>
+                  </p>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
       </section>
 
-      {/* Rating Factors */}
+      {/* Formula + two contrasting worked examples */}
       <section className="py-16 px-4 bg-blue-50">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <SectionHeader
-            eyebrow="Rating Factors"
-            title="What Actually Moves Your Cargo Premium"
-            center
+            eyebrow="The Math"
+            title="Same Formula, Two Very Different Results"
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
-            {FACTORS.map((f, i) => (
-              <div key={f.title} className="bg-white rounded-2xl p-6 shadow-sm border border-blue-100">
-                <div
-                  className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-sm font-bold mb-3"
-                  style={{ background: "#1a4fa0" }}
-                >
-                  {i + 1}
-                </div>
-                <h3 className="font-bold mb-2 text-sm" style={{ color: "#0a1628" }}>
-                  {f.title}
-                </h3>
-                <p className="text-xs text-gray-600 leading-relaxed">{f.desc}</p>
+          <div className="mt-8 bg-white rounded-2xl p-6 border border-blue-200 shadow-sm">
+            <p className="text-sm font-bold text-blue-800 mb-2 uppercase tracking-wide">The Base Formula</p>
+            <p className="text-2xl font-bold text-blue-900 font-mono">Premium = Sum Insured × Rate (%)</p>
+            <p className="text-sm text-blue-700 mt-3">Sum Insured = CIF value of the goods + 10% (anticipated profit margin)</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-6">
+            <div className="bg-white rounded-2xl p-6 border border-gray-200">
+              <p className="text-xs font-bold uppercase tracking-wide text-gray-500 mb-3">Example A — Electronics, ICC (A)</p>
+              <div className="space-y-2 text-sm text-gray-700">
+                <div className="flex justify-between border-b border-gray-100 pb-2"><span>CIF value</span><span className="font-semibold">IDR 300,000,000</span></div>
+                <div className="flex justify-between border-b border-gray-100 pb-2"><span>Sum Insured (+10%)</span><span className="font-semibold">IDR 330,000,000</span></div>
+                <div className="flex justify-between border-b border-gray-100 pb-2"><span>Rate — ICC (A)</span><span className="font-semibold">~0.30% – 0.45%</span></div>
+                <div className="flex justify-between pt-1 text-blue-800 font-bold"><span>Premium</span><span>≈ IDR 990,000 – 1,485,000</span></div>
               </div>
-            ))}
+            </div>
+            <div className="bg-white rounded-2xl p-6 border border-gray-200">
+              <p className="text-xs font-bold uppercase tracking-wide text-gray-500 mb-3">Example B — Bagged Cement, ICC (C)</p>
+              <div className="space-y-2 text-sm text-gray-700">
+                <div className="flex justify-between border-b border-gray-100 pb-2"><span>CIF value</span><span className="font-semibold">IDR 300,000,000</span></div>
+                <div className="flex justify-between border-b border-gray-100 pb-2"><span>Sum Insured (+10%)</span><span className="font-semibold">IDR 330,000,000</span></div>
+                <div className="flex justify-between border-b border-gray-100 pb-2"><span>Rate — ICC (C)</span><span className="font-semibold">~0.05% – 0.10%</span></div>
+                <div className="flex justify-between pt-1 text-blue-800 font-bold"><span>Premium</span><span>≈ IDR 165,000 – 330,000</span></div>
+              </div>
+            </div>
+          </div>
+          <p className="text-sm text-gray-600 mt-4">
+            Same cargo value, same route — the four- to fivefold gap between the two comes almost
+            entirely from commodity risk and clause choice. This is exactly why "what's the going
+            rate for cargo insurance" rarely has a single honest answer.
+          </p>
+        </div>
+      </section>
+
+      {/* Policy structure comparison — table, not cards */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <SectionHeader eyebrow="Per-Voyage vs Open Cover" title="Which Policy Structure Actually Fits Your Volume" />
+          <div className="mt-8 overflow-x-auto rounded-2xl border border-gray-200">
+            <table className="w-full text-sm text-left">
+              <thead className="bg-[#0a1628] text-white">
+                <tr>
+                  <th className="px-5 py-4">Question</th>
+                  <th className="px-5 py-4">Per-Voyage Policy</th>
+                  <th className="px-5 py-4">Open Cover (Annual)</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {[
+                  ["Best fit", "One-off or infrequent shipments", "Monthly or more frequent shipping"],
+                  ["How you pay", "Per shipment, as it goes out", "One upfront premium, shipments declared as they occur"],
+                  ["Paperwork", "None ongoing", "A certificate issued per declared shipment"],
+                  ["Cost per shipment at volume", "Higher", "Lower once shipment count picks up"],
+                  ["No-claim discount at renewal", "Not applicable", "Available"],
+                ].map(([q, a, b], i) => (
+                  <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-[#faf8f3]"}>
+                    <td className="px-5 py-3 font-semibold text-[#0a1628]">{q}</td>
+                    <td className="px-5 py-3 text-gray-600">{a}</td>
+                    <td className="px-5 py-3 text-gray-600">{b}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
 
-      {/* Policy Type Comparison */}
-      <section className="py-16 px-4 bg-white">
+      {/* NEW: practical premium-lowering tips */}
+      <section className="py-16 px-4 bg-blue-50">
         <div className="max-w-4xl mx-auto">
-          <SectionHeader
-            eyebrow="Per-Voyage vs Open Cover"
-            title="Picking the Policy Structure That Fits Your Business"
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+          <SectionHeader eyebrow="Cost Control" title="Genuine Ways to Bring the Premium Down" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-8">
             {[
-              {
-                title: "Per-Voyage Policy",
-                color: "#4a7fb5",
-                points: [
-                  "Suited to a single shipment or infrequent shipping",
-                  "You pay a premium for each individual shipment",
-                  "No ongoing reporting obligations",
-                  "A natural fit for SMEs or first-time shippers",
-                  "Flexible, with no annual commitment attached",
-                ],
-              },
-              {
-                title: "Open Cover Policy (Annual)",
-                color: "#0a1628",
-                points: [
-                  "Built for shippers moving cargo on a regular monthly basis",
-                  "One policy sits behind every shipment across the year",
-                  "You declare each voyage and receive a certificate per shipment",
-                  "Works out cheaper per shipment once volume picks up",
-                  "Opens the door to a no-claim discount at renewal",
-                ],
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="rounded-2xl p-6 border"
-                style={{ borderColor: item.color + "40", background: item.color + "08" }}
-              >
-                <div
-                  className="inline-block text-white text-xs font-bold px-3 py-1 rounded-full mb-4"
-                  style={{ background: item.color }}
-                >
-                  {item.title}
+              { title: "Raise your deductible", body: "Absorbing a larger first-loss amount is one of the most direct ways to cut the rate — worth doing if your business can comfortably self-fund a small loss." },
+              { title: "Consolidate under open cover", body: "If you're shipping more than roughly once a month, switching from per-voyage policies to one open cover almost always lowers the effective cost per shipment." },
+              { title: "Match the clause to the real risk, not habit", body: "ICC (A) is the safe default, but bulk or low-value cargo genuinely exposed to fewer perils can often move to ICC (B) or (C) without meaningfully weakening protection." },
+              { title: "Keep packaging and handling documentation tight", body: "A clean claims history is what earns a discount at renewal — and clear packing lists, photos, and handover records are what keep disputed claims from happening in the first place." },
+            ].map((t) => (
+              <div key={t.title} className="bg-white rounded-2xl p-6 border border-blue-100 flex gap-4">
+                <TrendingDown size={20} className="flex-shrink-0 mt-1" style={{ color: "#1a4fa0" }} />
+                <div>
+                  <p className="font-bold text-sm mb-1" style={{ color: "#0a1628" }}>{t.title}</p>
+                  <p className="text-xs text-gray-600 leading-relaxed">{t.body}</p>
                 </div>
-                <ul className="space-y-2">
-                  {item.points.map((p) => (
-                    <li key={p} className="flex items-start gap-2 text-sm text-gray-700">
-                      <CheckCircle2 size={14} className="flex-shrink-0 mt-0.5" style={{ color: item.color }} />
-                      {p}
-                    </li>
-                  ))}
-                </ul>
               </div>
             ))}
           </div>
+          <p className="text-sm text-gray-600 mt-6 flex items-start gap-2">
+            <ArrowRight size={16} className="flex-shrink-0 mt-0.5" style={{ color: "#a07830" }} />
+            None of these should come at the cost of being genuinely under-covered — the point is
+            trimming the premium intelligently, not just picking the cheapest clause available.
+          </p>
         </div>
       </section>
 
       {/* FAQ */}
       <section className="py-16 px-4" style={{ background: "#faf8f3" }}>
         <div className="max-w-3xl mx-auto">
-          <SectionHeader
-            eyebrow="FAQ"
-            title="Marine Cargo Premium — Questions People Actually Ask"
-            center
-          />
+          <SectionHeader eyebrow="FAQ" title="Marine Cargo Premium — Questions People Actually Ask" center />
           <FAQAccordion faqs={FAQS} />
         </div>
       </section>
 
-      
       {/* Related Links */}
       <section className="py-12 px-4 bg-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto">
