@@ -13,7 +13,6 @@ import {
   Gavel,
   AlertTriangle,
   MapPin,
-  ClipboardList,
   FileSearch,
   BadgeCheck,
   Ambulance,
@@ -114,7 +113,7 @@ function CoverageCard({ icon: Icon, title, desc }: { icon: React.ElementType; ti
 export default function AsuransiMotorCrossBatamPage() {
   return (
     <ArticleLayout
-      title="Asuransi Event Motor Cross Batam & Kepri: Dari Pembalap sampai Penonton"
+      title="Panduan Lengkap Asuransi Event Motor Cross Batam & Kepri: Dari Pembalap sampai Penonton"
       description="Panduan lengkap perlindungan risiko event motor cross dan grasstrack di Kepulauan Riau — jaminan personal accident, public liability, dan tips memilih perlindungan yang tepat."
       date="17 September 2026"
       category="Asuransi Event"
@@ -284,9 +283,15 @@ export default function AsuransiMotorCrossBatamPage() {
         </div>
       </div>
 
-      <SectionHeading icon={ClipboardList}>Cara Mendapatkan Asuransi Event Motor Cross</SectionHeading>
-      <p>Proses pengajuan untuk panitia klub, IMI Kepri, atau event organizer swasta umumnya meliputi:</p>
-      <Steps />
+      <SectionHeading icon={CreditCard}>Cakupan, Dokumen & Estimasi Premi</SectionHeading>
+      <p>
+        Rincian cakupan, data yang perlu disiapkan panitia, dan gambaran premi sesuai skala event
+        dijelaskan di halaman produk kami. Lihat{" "}
+        <Link href="/asuransi-event/motor-cross" className="font-medium">
+          Asuransi Event Motor Cross Batam
+        </Link>{" "}
+        untuk detail cakupan dan cara pengajuannya.
+      </p>
 
       <SectionHeading icon={FileSearch}>Pertanyaan yang Sering Diajukan</SectionHeading>
       <div className="space-y-3 not-prose">
@@ -315,8 +320,8 @@ export default function AsuransiMotorCrossBatamPage() {
           skala event.
         </p>
         <div className="flex flex-wrap gap-3">
-          <Link href="/kontak" className="px-6 py-2.5 bg-[#0a1628] text-white font-semibold rounded-xl text-sm">
-            Konsultasi Asuransi Event
+          <Link href="/asuransi-event/motor-cross" className="px-6 py-2.5 bg-[#0a1628] text-white font-semibold rounded-xl text-sm">
+            Lihat Cakupan & Ajukan
           </Link>
           <a href="https://wa.me/6281373336728?text=Halo%2C%20saya%20ingin%20konsultasi%20asuransi%20event%20motor%20cross" target="_blank" rel="noopener noreferrer" className="px-6 py-2.5 border border-[#0a1628] text-[#0a1628] font-semibold rounded-xl text-sm">
             Chat via WhatsApp
@@ -340,6 +345,7 @@ export default function AsuransiMotorCrossBatamPage() {
           <div>
             <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#c9a84c" }}>Produk &amp; Layanan</p>
             <ul className="space-y-2">
+              <li><Link href="/asuransi-event/motor-cross" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi Event Motor Cross (cakupan & harga)</Link></li>
               <li><Link href="/asuransi-personal-accident" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi Personal Accident Batam</Link></li>
               <li><Link href="/asuransi-kendaraan" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi Kendaraan Batam</Link></li>
             </ul>
@@ -347,30 +353,5 @@ export default function AsuransiMotorCrossBatamPage() {
         </div>
       </div>
     </ArticleLayout>
-  );
-}
-
-function Steps() {
-  const items = [
-    { title: "Pendaftaran data event", desc: "Tanggal, lokasi sirkuit, estimasi jumlah pembalap dan penonton, serta susunan kelas yang dipertandingkan." },
-    { title: "Assessment lokasi & keselamatan", desc: "Peninjauan kesiapan barrier, akses ambulans, dan zona aman penonton di venue." },
-    { title: "Penentuan nilai pertanggungan", desc: "Santunan personal accident per pembalap dan limit liability disesuaikan skala event." },
-    { title: "Penerbitan polis sebelum hari-H", desc: "Idealnya diajukan 1–2 minggu sebelum pelaksanaan untuk event Kejurda atau kejuaraan resmi." },
-    { title: "Pendampingan klaim", desc: "Jika terjadi kecelakaan, tim kami membantu proses dokumentasi medis dan pengajuan klaim." },
-  ];
-  return (
-    <ol className="not-prose relative my-6 list-none p-0 space-y-5 ml-1">
-      {items.map((item, i) => (
-        <li key={i} className="flex gap-4">
-          <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#0a1628] text-[#c9a84c] font-display font-bold text-sm shrink-0">
-            {i + 1}
-          </span>
-          <div className="pt-0.5">
-            <p className="font-semibold text-[#0a1628] m-0 text-[15px]">{item.title}</p>
-            <p className="text-sm text-[#475569] mt-1 mb-0">{item.desc}</p>
-          </div>
-        </li>
-      ))}
-    </ol>
   );
 }

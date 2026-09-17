@@ -63,6 +63,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/asuransi-personal-accident/pa-individu-keluarga`,             lastModified: new Date("2026-06-28"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/asuransi-personal-accident/pa-karyawan-grup`,                 lastModified: new Date("2026-06-28"), changeFrequency: "monthly", priority: 0.8 },
 
+    // ── Asuransi Event ─────────────────────────────────────────────────────
+    { url: `${BASE_URL}/asuransi-event`,                    lastModified: new Date("2026-09-17"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/asuransi-event/konser-musik`,       lastModified: new Date("2026-09-17"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/asuransi-event/motor-cross`,        lastModified: new Date("2026-09-17"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/asuransi-event/hole-in-one`,        lastModified: new Date("2026-09-17"), changeFrequency: "monthly", priority: 0.8 },
+
     { url: `${BASE_URL}/en/personal-accident-insurance`,                              lastModified: new Date("2026-06-27"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/en/personal-accident-insurance/individual-family-pa`,         lastModified: new Date("2026-06-27"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/en/personal-accident-insurance/group-employee-pa`,           lastModified: new Date("2026-06-27"), changeFrequency: "monthly", priority: 0.8 },

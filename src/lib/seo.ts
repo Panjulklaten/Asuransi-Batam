@@ -42,6 +42,7 @@ const OG_IMAGE_BY_PREFIX: [string, string][] = [
   ["/difference-between-bid-bond-and-performance-bond", "/images/og/og-surety-bond.jpg"],
   ["/asuransi-personal-accident", "/images/og/og-personal-accident.jpg"],
   ["/personal-accident-insurance", "/images/og/og-personal-accident.jpg"],
+  ["/asuransi-event", "/images/og/og-liability.jpg"], // fallback sampai og-event.jpg dibuat
 ];
 
 // Artikel blog tidak punya prefix cluster di URL-nya, jadi dipetakan manual

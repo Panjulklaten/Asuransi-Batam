@@ -14,7 +14,6 @@ import {
   Gavel,
   AlertTriangle,
   MapPin,
-  ClipboardList,
   FileSearch,
   BadgeCheck,
   Ticket,
@@ -123,7 +122,7 @@ function CoverageCard({
 export default function AsuransiKonserMusikBatamPage() {
   return (
     <ArticleLayout
-      title="Asuransi Konser Musik Batam: Liability, Pembatalan & Non-Appearance Artis"
+      title="Panduan Lengkap Asuransi Konser Musik Batam: Liability, Pembatalan & Non-Appearance Artis"
       description="Panduan lengkap perlindungan risiko konser musik untuk promotor, event organizer, dan pengelola venue — dari liability penonton hingga pembatalan mendadak."
       date="17 September 2026"
       category="Asuransi Event"
@@ -347,27 +346,15 @@ export default function AsuransiKonserMusikBatamPage() {
         <li><strong>Sponsor korporat</strong> — perusahaan yang menanamkan dana besar pada sebuah acara dan ingin memastikan risiko finansial terkelola dengan baik.</li>
       </ul>
 
-      <SectionHeading icon={ClipboardList}>Proses Pengajuan Asuransi Konser</SectionHeading>
-      <p>Secara umum, proses pengajuan asuransi konser melalui beberapa tahap berikut:</p>
-      <ol className="not-prose relative my-6 list-none p-0 space-y-5 ml-1">
-        {[
-          { title: "Pengisian data acara", desc: "Tanggal, venue, kapasitas penonton, susunan artis, dan estimasi budget produksi." },
-          { title: "Assessment risiko venue", desc: "Termasuk apakah acara indoor/outdoor, struktur panggung, dan rencana pengamanan crowd." },
-          { title: "Penentuan nilai pertanggungan", desc: "Disesuaikan dengan total budget produksi, talent fee, dan limit liability yang dibutuhkan." },
-          { title: "Penerbitan polis", desc: "Idealnya selesai 2–4 minggu sebelum hari-H untuk acara skala menengah-besar." },
-          { title: "Pendampingan saat klaim", desc: "Jika terjadi insiden, tim kami membantu proses dokumentasi dan pengajuan klaim ke perusahaan asuransi." },
-        ].map((item, i) => (
-          <li key={i} className="flex gap-4">
-            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#0a1628] text-[#c9a84c] font-display font-bold text-sm shrink-0">
-              {i + 1}
-            </span>
-            <div className="pt-0.5">
-              <p className="font-semibold text-[#0a1628] m-0 text-[15px]">{item.title}</p>
-              <p className="text-sm text-[#475569] mt-1 mb-0">{item.desc}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
+      <SectionHeading icon={CreditCard}>Cakupan, Dokumen & Estimasi Premi</SectionHeading>
+      <p>
+        Rincian cakupan lengkap, dokumen yang dibutuhkan, dan gambaran premi untuk masing-masing skala
+        acara dijelaskan di halaman produk kami agar tidak berulang di sini. Lihat{" "}
+        <Link href="/asuransi-event/konser-musik" className="font-medium">
+          Asuransi Konser Musik Batam
+        </Link>{" "}
+        untuk detail cakupan dan cara pengajuannya.
+      </p>
 
       <SectionHeading icon={FileSearch}>Pertanyaan yang Sering Diajukan</SectionHeading>
       <div className="space-y-3 not-prose">
@@ -395,8 +382,8 @@ export default function AsuransiKonserMusikBatamPage() {
           event organizer di Batam merancang skema perlindungan yang sesuai skala acara.
         </p>
         <div className="flex flex-wrap gap-3">
-          <Link href="/kontak" className="px-6 py-2.5 bg-[#0a1628] text-white font-semibold rounded-xl text-sm">
-            Konsultasi Asuransi Event
+          <Link href="/asuransi-event/konser-musik" className="px-6 py-2.5 bg-[#0a1628] text-white font-semibold rounded-xl text-sm">
+            Lihat Cakupan & Ajukan
           </Link>
           <a href="https://wa.me/6281373336728?text=Halo%2C%20saya%20ingin%20konsultasi%20asuransi%20konser%20musik" target="_blank" rel="noopener noreferrer" className="px-6 py-2.5 border border-[#0a1628] text-[#0a1628] font-semibold rounded-xl text-sm">
             Chat via WhatsApp
@@ -420,6 +407,7 @@ export default function AsuransiKonserMusikBatamPage() {
           <div>
             <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#c9a84c" }}>Produk &amp; Layanan</p>
             <ul className="space-y-2">
+              <li><Link href="/asuransi-event/konser-musik" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi Konser Musik Batam (cakupan & harga)</Link></li>
               <li><Link href="/asuransi-liability" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi Liability Batam</Link></li>
               <li><Link href="/asuransi-personal-accident" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi Personal Accident (Kru & Talent)</Link></li>
             </ul>

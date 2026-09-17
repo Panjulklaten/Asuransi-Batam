@@ -168,6 +168,15 @@ const productsID: NavItem[] = [
       { label: "Builder's Risk", href: "/asuransi-marine/builders-risk", desc: "Pembangunan kapal" },
     ],
   },
+  {
+    label: "Event",
+    href: "/asuransi-event",
+    children: [
+      { label: "Asuransi Konser Musik", href: "/asuransi-event/konser-musik", desc: "Liability & non-appearance artis" },
+      { label: "Asuransi Motor Cross", href: "/asuransi-event/motor-cross", desc: "Personal accident pembalap" },
+      { label: "Asuransi Hole in One", href: "/asuransi-event/hole-in-one", desc: "Jaminan hadiah turnamen golf" },
+    ],
+  },
 ];
 
 const productsEN: NavItem[] = [

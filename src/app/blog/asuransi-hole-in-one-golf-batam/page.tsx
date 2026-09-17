@@ -122,7 +122,7 @@ function TCCard({
 export default function AsuransiHoleInOneGolfBatamPage() {
   return (
     <ArticleLayout
-      title="Asuransi Hole in One Batam: Syarat, Ketentuan & Cara Kerja Lengkap"
+      title="Panduan Lengkap Asuransi Hole in One Batam: Syarat, Ketentuan & Cara Kerja"
       description="Panduan lengkap bagi panitia turnamen golf di Batam — memahami syarat peserta, jarak minimum hole, risiko sendiri, dan cara kerja klaim hadiah hole in one."
       date="17 September 2026"
       category="Asuransi Event"
@@ -307,26 +307,15 @@ export default function AsuransiHoleInOneGolfBatamPage() {
         </div>
       </div>
 
-      <SectionHeading icon={ClipboardList}>Cara Mengasuransikan Turnamen Golf Anda</SectionHeading>
-      <ol className="not-prose relative my-6 list-none p-0 space-y-5 ml-1">
-        {[
-          { title: "Tentukan hole dan hadiah", desc: "Pilih hole par 3 dengan jarak sesuai ketentuan (minimal 120 meter) dan tetapkan nilai hadiah yang ingin diasuransikan." },
-          { title: "Konfirmasi jumlah & status peserta", desc: "Pastikan estimasi jumlah peserta dan status amatir sesuai batas polis sebelum pengajuan." },
-          { title: "Ajukan data ke asuransi", desc: "Sertakan layout lapangan, jarak hole, jumlah peserta, dan nilai hadiah untuk dihitung preminya." },
-          { title: "Bayar premi & terima konfirmasi", desc: "Setelah premi dibayar, panitia menerima konfirmasi tertulis dan jadwal kehadiran petugas pengawas." },
-          { title: "Pelaksanaan turnamen dengan pengawasan", desc: "Petugas hadir di hole yang diasuransikan sepanjang hari pertandingan untuk memverifikasi setiap upaya hole in one." },
-        ].map((item, i) => (
-          <li key={i} className="flex gap-4">
-            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#0a1628] text-[#c9a84c] font-display font-bold text-sm shrink-0">
-              {i + 1}
-            </span>
-            <div className="pt-0.5">
-              <p className="font-semibold text-[#0a1628] m-0 text-[15px]">{item.title}</p>
-              <p className="text-sm text-[#475569] mt-1 mb-0">{item.desc}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
+      <SectionHeading icon={CreditCard}>Cakupan, Dokumen & Estimasi Premi</SectionHeading>
+      <p>
+        Rincian jenis hadiah yang bisa diasuransikan, dokumen yang perlu disiapkan panitia, dan gambaran
+        premi dijelaskan di halaman produk kami. Lihat{" "}
+        <Link href="/asuransi-event/hole-in-one" className="font-medium">
+          Asuransi Hole in One Batam
+        </Link>{" "}
+        untuk detail cakupan dan cara pengajuannya.
+      </p>
 
       <SectionHeading icon={FileSearch}>Pertanyaan yang Sering Diajukan</SectionHeading>
       <div className="space-y-3 not-prose">
@@ -354,8 +343,8 @@ export default function AsuransiHoleInOneGolfBatamPage() {
           syarat, jarak hole, dan nilai hadiah turnamen Anda untuk mendapatkan perlindungan yang tepat.
         </p>
         <div className="flex flex-wrap gap-3">
-          <Link href="/kontak" className="px-6 py-2.5 bg-[#0a1628] text-white font-semibold rounded-xl text-sm">
-            Konsultasi Asuransi Hole in One
+          <Link href="/asuransi-event/hole-in-one" className="px-6 py-2.5 bg-[#0a1628] text-white font-semibold rounded-xl text-sm">
+            Lihat Cakupan & Ajukan
           </Link>
           <a href="https://wa.me/6281373336728?text=Halo%2C%20saya%20ingin%20konsultasi%20asuransi%20hole%20in%20one" target="_blank" rel="noopener noreferrer" className="px-6 py-2.5 border border-[#0a1628] text-[#0a1628] font-semibold rounded-xl text-sm">
             Chat via WhatsApp
@@ -379,6 +368,7 @@ export default function AsuransiHoleInOneGolfBatamPage() {
           <div>
             <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#c9a84c" }}>Produk &amp; Layanan</p>
             <ul className="space-y-2">
+              <li><Link href="/asuransi-event/hole-in-one" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi Hole in One Batam (cakupan & harga)</Link></li>
               <li><Link href="/asuransi-liability" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi Liability Batam</Link></li>
               <li><Link href="/kontak" className="text-sm text-blue-700 hover:underline font-medium">→ Hubungi Tim Asuransi Batam</Link></li>
             </ul>

@@ -20,6 +20,7 @@ const productLinksID2 = [
   { label: "Public Liability",     href: "/asuransi-liability/public-liability" },
   { label: "Asuransi Engineering", href: "/asuransi-engineering" },
   { label: "Asuransi Surety Bond", href: "/asuransi-surety-bond" },
+  { label: "Asuransi Event",       href: "/asuransi-event" },
   { label: "Kalkulator Premi Mobil", href: "/kalkulator-premi-mobil" },
   { label: "Kalkulator Premi Motor", href: "/kalkulator-premi-motor" },
 ];
