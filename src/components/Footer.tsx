@@ -47,6 +47,7 @@ const productLinksEN2 = [
   { label: "Public Liability",          href: "/en/liability-insurance/public-liability" },
   { label: "Engineering Insurance",     href: "/en/engineering-insurance" },
   { label: "Surety Bond Insurance",     href: "/en/surety-bond-insurance" },
+  { label: "Event Insurance",           href: "/en/event-insurance" },
   { label: "Car Premium Calculator",    href: "/en/car-premium-calculator" },
 ];
 const blogLinksEN = [

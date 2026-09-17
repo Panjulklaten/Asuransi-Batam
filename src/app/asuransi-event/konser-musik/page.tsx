@@ -8,7 +8,10 @@ export const metadata: Metadata = generateSEO({
   description:
     "Asuransi konser musik untuk promotor dan event organizer di Batam. Liability penonton, non-appearance artis, event cancellation, kerusakan panggung. Konsultasi Rio 0813-7333-6728.",
   canonical: "https://asuransibatam.com/asuransi-event/konser-musik",
-  languages: { id: "https://asuransibatam.com/asuransi-event/konser-musik" },
+  languages: {
+    id: "https://asuransibatam.com/asuransi-event/konser-musik",
+    en: "https://asuransibatam.com/en/event-insurance/concert-insurance",
+  },
 });
 
 const benefits = [

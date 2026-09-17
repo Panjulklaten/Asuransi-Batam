@@ -8,7 +8,10 @@ export const metadata: Metadata = generateSEO({
   description:
     "Asuransi hole in one untuk turnamen golf di Batam. Jaminan hadiah mobil, uang tunai, atau perhiasan tanpa panitia menanggung nilai penuh. Konsultasi Rio 0813-7333-6728.",
   canonical: "https://asuransibatam.com/asuransi-event/hole-in-one",
-  languages: { id: "https://asuransibatam.com/asuransi-event/hole-in-one" },
+  languages: {
+    id: "https://asuransibatam.com/asuransi-event/hole-in-one",
+    en: "https://asuransibatam.com/en/event-insurance/hole-in-one-insurance",
+  },
 });
 
 const benefits = [

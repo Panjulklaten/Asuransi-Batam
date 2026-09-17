@@ -8,7 +8,10 @@ export const metadata: Metadata = generateSEO({
   description:
     "Asuransi event di Batam untuk promotor konser musik, panitia motor cross/grasstrack, dan turnamen golf hole in one. Liability, personal accident, dan cancellation. Konsultasi Rio 0813-7333-6728.",
   canonical: "https://asuransibatam.com/asuransi-event",
-  languages: { id: "https://asuransibatam.com/asuransi-event" },
+  languages: {
+    id: "https://asuransibatam.com/asuransi-event",
+    en: "https://asuransibatam.com/en/event-insurance",
+  },
 });
 
 const benefits = [

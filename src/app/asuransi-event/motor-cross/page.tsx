@@ -8,7 +8,10 @@ export const metadata: Metadata = generateSEO({
   description:
     "Asuransi event motor cross dan grasstrack di Batam & Kepri. Personal accident pembalap, public liability penonton, kerusakan properti venue. Konsultasi Rio 0813-7333-6728.",
   canonical: "https://asuransibatam.com/asuransi-event/motor-cross",
-  languages: { id: "https://asuransibatam.com/asuransi-event/motor-cross" },
+  languages: {
+    id: "https://asuransibatam.com/asuransi-event/motor-cross",
+    en: "https://asuransibatam.com/en/event-insurance/motocross-insurance",
+  },
 });
 
 const benefits = [

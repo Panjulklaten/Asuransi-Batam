@@ -43,6 +43,7 @@ const OG_IMAGE_BY_PREFIX: [string, string][] = [
   ["/asuransi-personal-accident", "/images/og/og-personal-accident.jpg"],
   ["/personal-accident-insurance", "/images/og/og-personal-accident.jpg"],
   ["/asuransi-event", "/images/og/og-liability.jpg"], // fallback sampai og-event.jpg dibuat
+  ["/en/event-insurance", "/images/og/og-liability.jpg"],
 ];
 
 // Artikel blog tidak punya prefix cluster di URL-nya, jadi dipetakan manual

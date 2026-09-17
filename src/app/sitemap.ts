@@ -73,6 +73,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/en/personal-accident-insurance/individual-family-pa`,         lastModified: new Date("2026-06-27"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/en/personal-accident-insurance/group-employee-pa`,           lastModified: new Date("2026-06-27"), changeFrequency: "monthly", priority: 0.8 },
 
+    // ── EN: Event Insurance ──────────────────────────────────────────────────
+    { url: `${BASE_URL}/en/event-insurance`,                                     lastModified: new Date("2026-09-17"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/en/event-insurance/concert-insurance`,                   lastModified: new Date("2026-09-17"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/en/event-insurance/motocross-insurance`,                 lastModified: new Date("2026-09-17"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/en/event-insurance/hole-in-one-insurance`,               lastModified: new Date("2026-09-17"), changeFrequency: "monthly", priority: 0.8 },
+
     // ────────────────────────────────────────────────────────────────────────
     // SUB-PAGES – MACHINERY
     // ────────────────────────────────────────────────────────────────────────

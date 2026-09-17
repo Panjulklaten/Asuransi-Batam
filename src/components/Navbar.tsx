@@ -50,6 +50,10 @@ const URL_MAP: Record<string, string> = {
   "/asuransi-marine/marine-hull": "/en/marine-insurance/marine-hull",
   "/asuransi-marine/marine-cargo": "/en/marine-insurance/marine-cargo",
   "/asuransi-marine/builders-risk": "/en/marine-insurance/builders-risk",
+  "/asuransi-event": "/en/event-insurance",
+  "/asuransi-event/konser-musik": "/en/event-insurance/concert-insurance",
+  "/asuransi-event/motor-cross": "/en/event-insurance/motocross-insurance",
+  "/asuransi-event/hole-in-one": "/en/event-insurance/hole-in-one-insurance",
   // Kalkulator
   "/kalkulator-premi-mobil": "/en/car-premium-calculator",
   "/kalkulator-premi-motor": "/en/motorcycle-premium-calculator",
@@ -242,6 +246,15 @@ const productsEN: NavItem[] = [
       { label: "Marine Hull", href: "/en/marine-insurance/marine-hull", desc: "Hull & vessel machinery" },
       { label: "Marine Cargo", href: "/en/marine-insurance/marine-cargo", desc: "Cargo & sea freight" },
       { label: "Builder's Risk", href: "/en/marine-insurance/builders-risk", desc: "Vessel construction" },
+    ],
+  },
+  {
+    label: "Event",
+    href: "/en/event-insurance",
+    children: [
+      { label: "Concert Insurance", href: "/en/event-insurance/concert-insurance", desc: "Liability & artist non-appearance" },
+      { label: "Motocross Insurance", href: "/en/event-insurance/motocross-insurance", desc: "Rider personal accident" },
+      { label: "Hole-in-One Insurance", href: "/en/event-insurance/hole-in-one-insurance", desc: "Golf prize indemnity" },
     ],
   },
 ];
