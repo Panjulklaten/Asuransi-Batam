@@ -115,6 +115,10 @@ const OG_IMAGE_BY_BLOG_SLUG: Record<string, string> = {
   "temporary-import-guarantee-ob23-batam": "surety-bond",
   // ── Personal Accident ──
   "asuransi-kecelakaan-diri-pekerja-industri-batam": "personal-accident",
+  // ── Asuransi Event (pakai og-liability sebagai fallback sampai og-event.jpg dibuat) ──
+  "asuransi-konser-musik-batam": "liability",
+  "asuransi-motorcross-batam": "liability",
+  "asuransi-hole-in-one-golf-batam": "liability",
 };
 
 function detectOgImage(canonicalPath: string): string | undefined {

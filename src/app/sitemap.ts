@@ -183,6 +183,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Personal Accident
     { url: `${BASE_URL}/blog/asuransi-kecelakaan-diri-pekerja-industri-batam`, lastModified: new Date("2026-07-02"), changeFrequency: "yearly",  priority: 0.7 },
 
+    // ── Asuransi Event ─────────────────────────────────────────────────────
+    { url: `${BASE_URL}/blog/asuransi-konser-musik-batam`,       lastModified: new Date("2026-09-17"), changeFrequency: "yearly",  priority: 0.7 },
+    { url: `${BASE_URL}/blog/asuransi-motorcross-batam`,         lastModified: new Date("2026-09-17"), changeFrequency: "yearly",  priority: 0.7 },
+    { url: `${BASE_URL}/blog/asuransi-hole-in-one-golf-batam`,   lastModified: new Date("2026-09-17"), changeFrequency: "yearly",  priority: 0.7 },
+
     // ────────────────────────────────────────────────────────────────────────
     // BLOG – EN
     // ────────────────────────────────────────────────────────────────────────

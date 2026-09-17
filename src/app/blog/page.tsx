@@ -382,6 +382,34 @@ const articles: Article[] = [
       "Panduan lengkap Asuransi Kecelakaan Diri (PA) untuk pekerja galangan kapal dan manufaktur di Batam — celah BPJS Ketenagakerjaan, skema PA Individu vs Grup, dan cara klaim yang benar.",
     readTime: "10 menit",
   },
+  // ── Asuransi Event ───────────────────────────────────────────────────────────
+  {
+    title: "Asuransi Konser Musik Batam: Liability, Pembatalan & Non-Appearance",
+    slug: "asuransi-konser-musik-batam",
+    date: "17 September 2026",
+    category: "Asuransi Event",
+    excerpt:
+      "Panduan lengkap asuransi konser musik untuk promotor, event organizer, dan venue di Batam — liability penonton, risiko pembatalan acara, non-appearance artis, dan studi kasus nyata.",
+    readTime: "10 menit",
+  },
+  {
+    title: "Asuransi Event Motor Cross Batam & Kepri: Jaminan Pembalap & Penonton",
+    slug: "asuransi-motorcross-batam",
+    date: "17 September 2026",
+    category: "Asuransi Event",
+    excerpt:
+      "Panduan lengkap asuransi event motor cross dan grasstrack di Batam serta Kepulauan Riau — jaminan personal accident pembalap, public liability penonton, dan risiko cuaca.",
+    readTime: "9 menit",
+  },
+  {
+    title: "Asuransi Hole in One Batam: Syarat, Ketentuan & Cara Kerja Lengkap",
+    slug: "asuransi-hole-in-one-golf-batam",
+    date: "17 September 2026",
+    category: "Asuransi Event",
+    excerpt:
+      "Panduan lengkap asuransi hole in one untuk turnamen golf di Batam — syarat peserta, jarak minimum hole, risiko sendiri, dan cara kerja klaim hadiah hole in one.",
+    readTime: "9 menit",
+  },
 ];
 
 const categoryColors: Record<string, string> = {
@@ -393,9 +421,10 @@ const categoryColors: Record<string, string> = {
   Marine: "bg-cyan-100 text-cyan-800",
   "Surety Bond": "bg-rose-100 text-rose-800",
   "Personal Accident": "bg-indigo-100 text-indigo-800",
+  "Asuransi Event": "bg-fuchsia-100 text-fuchsia-800",
 };
 
-const categories = ["Kendaraan", "Alat Berat", "Properti", "Liability", "Engineering", "Marine", "Surety Bond", "Personal Accident"];
+const categories = ["Kendaraan", "Alat Berat", "Properti", "Liability", "Engineering", "Marine", "Surety Bond", "Personal Accident", "Asuransi Event"];
 
 export default function BlogPage() {
   return (
