@@ -146,8 +146,14 @@ export default function AsuransiKonserMusikBatamPage() {
         dibanding kota-kota besar lain di Indonesia. Namun kemudahan ini juga membawa lapisan risiko
         tambahan — mulai dari keterlambatan penyeberangan artis lewat feri, isu keimigrasian, sampai
         risiko standar setiap konser seperti kerumunan penonton dan kerusakan peralatan panggung. Di sinilah{" "}
-        <strong>asuransi konser musik</strong> berperan sebagai jaring pengaman finansial bagi promotor,
-        event organizer, dan pihak venue.
+        <Link href="/asuransi-event/konser-musik" className="font-medium">
+          asuransi konser musik
+        </Link>{" "}
+        — salah satu kategori dalam{" "}
+        <Link href="/asuransi-event" className="font-medium">
+          asuransi event
+        </Link>{" "}
+        — berperan sebagai jaring pengaman finansial bagi promotor, event organizer, dan pihak venue.
       </p>
 
       {/* HERO IMAGE SLOT */}
@@ -407,6 +413,7 @@ export default function AsuransiKonserMusikBatamPage() {
           <div>
             <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#c9a84c" }}>Produk &amp; Layanan</p>
             <ul className="space-y-2">
+              <li><Link href="/asuransi-event" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi Event Batam (semua kategori)</Link></li>
               <li><Link href="/asuransi-event/konser-musik" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi Konser Musik Batam (cakupan & harga)</Link></li>
               <li><Link href="/asuransi-liability" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi Liability Batam</Link></li>
               <li><Link href="/asuransi-personal-accident" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi Personal Accident (Kru & Talent)</Link></li>

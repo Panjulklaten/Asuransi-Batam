@@ -135,8 +135,15 @@ export default function AsuransiMotorCrossBatamPage() {
         Semakin ramai sebuah event balap, semakin besar pula eksposur risikonya — bukan hanya bagi
         pembalap yang memacu adrenalin di lintasan, tapi juga bagi penonton yang berdiri di pinggir trek,
         panitia yang mengatur jalannya lomba, dan pemilik lahan atau properti di sekitar sirkuit.{" "}
-        <strong>Asuransi event motor cross</strong> hadir untuk memastikan satu insiden di lintasan tidak
-        berubah menjadi bencana finansial bagi penyelenggara.
+        <Link href="/asuransi-event/motor-cross" className="font-medium">
+          Asuransi event motor cross
+        </Link>{" "}
+        — salah satu kategori dalam{" "}
+        <Link href="/asuransi-event" className="font-medium">
+          asuransi event
+        </Link>{" "}
+        — hadir untuk memastikan satu insiden di lintasan tidak berubah menjadi bencana finansial bagi
+        penyelenggara.
       </p>
 
       {/* HERO IMAGE SLOT */}
@@ -345,6 +352,7 @@ export default function AsuransiMotorCrossBatamPage() {
           <div>
             <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#c9a84c" }}>Produk &amp; Layanan</p>
             <ul className="space-y-2">
+              <li><Link href="/asuransi-event" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi Event Batam (semua kategori)</Link></li>
               <li><Link href="/asuransi-event/motor-cross" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi Event Motor Cross (cakupan & harga)</Link></li>
               <li><Link href="/asuransi-personal-accident" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi Personal Accident Batam</Link></li>
               <li><Link href="/asuransi-kendaraan" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi Kendaraan Batam</Link></li>

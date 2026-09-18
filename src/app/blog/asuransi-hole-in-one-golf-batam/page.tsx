@@ -143,9 +143,16 @@ export default function AsuransiHoleInOneGolfBatamPage() {
       <p>
         Dengan geliat sport tourism sebesar ini, turnamen golf amal, korporat, maupun reguler klub hampir
         digelar setiap bulan di Batam — dan hampir semuanya menyertakan hadiah hole in one sebagai daya
-        tarik utama peserta. Di sinilah <strong>asuransi hole in one</strong> berperan penting: memastikan
-        panitia turnamen tidak perlu menanggung sendiri risiko finansial dari hadiah bernilai besar jika
-        benar-benar ada peserta yang berhasil mencetaknya.
+        tarik utama peserta. Di sinilah{" "}
+        <Link href="/asuransi-event/hole-in-one" className="font-medium">
+          asuransi hole in one
+        </Link>{" "}
+        — salah satu kategori dalam{" "}
+        <Link href="/asuransi-event" className="font-medium">
+          asuransi event
+        </Link>{" "}
+        — berperan penting: memastikan panitia turnamen tidak perlu menanggung sendiri risiko finansial
+        dari hadiah bernilai besar jika benar-benar ada peserta yang berhasil mencetaknya.
       </p>
 
       {/* HERO IMAGE SLOT */}
@@ -368,6 +375,7 @@ export default function AsuransiHoleInOneGolfBatamPage() {
           <div>
             <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#c9a84c" }}>Produk &amp; Layanan</p>
             <ul className="space-y-2">
+              <li><Link href="/asuransi-event" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi Event Batam (semua kategori)</Link></li>
               <li><Link href="/asuransi-event/hole-in-one" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi Hole in One Batam (cakupan & harga)</Link></li>
               <li><Link href="/asuransi-liability" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi Liability Batam</Link></li>
               <li><Link href="/kontak" className="text-sm text-blue-700 hover:underline font-medium">→ Hubungi Tim Asuransi Batam</Link></li>
