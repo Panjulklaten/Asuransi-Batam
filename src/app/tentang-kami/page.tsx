@@ -116,26 +116,46 @@ export default function TentangKamiPage() {
 
             {/* Foto profil */}
             <div className="flex justify-center lg:justify-start">
-              <div className="frame-shimmer relative w-full max-w-md aspect-square rounded-3xl">
-                <div className="frame-shadow-theme relative w-full h-full rounded-3xl overflow-hidden">
-                  <Image
-                    src="/images/rio-mardiansyah.jpg"
-                    alt="Rio Mardiansyah – Praktisi Asuransi Batam"
-                    fill
-                    className="object-cover object-center"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    priority
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#0a1628]/80 to-transparent" />
-                  <div className="absolute bottom-5 left-5 right-5">
-                    <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-4 py-3">
-                      <p className="font-display font-bold text-white text-lg leading-tight">Rio Mardiansyah</p>
-                      <p className="text-[#c9a84c] text-sm font-medium">Praktisi Asuransi</p>
+              <div className="frame-glow relative w-full max-w-md aspect-square rounded-3xl">
+                <div className="frame-shimmer relative w-full h-full rounded-3xl">
+                  <div className="frame-shadow-theme relative w-full h-full rounded-3xl overflow-hidden">
+                    <Image
+                      src="/images/rio-mardiansyah.jpg"
+                      alt="Rio Mardiansyah – Praktisi Asuransi Batam"
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      priority
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#0a1628]/80 to-transparent" />
+                    <div className="absolute bottom-5 left-5 right-5">
+                      <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-4 py-3">
+                        <p className="font-display font-bold text-white text-lg leading-tight">Rio Mardiansyah</p>
+                        <p className="text-[#c9a84c] text-sm font-medium">Praktisi Asuransi</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
               <style>{`
+                .frame-glow {
+                  position: relative;
+                  isolation: isolate;
+                }
+                .frame-glow::after {
+                  content: "";
+                  position: absolute;
+                  inset: -14px;
+                  border-radius: inherit;
+                  background: conic-gradient(
+                    from 0deg,
+                    #ff2d55, #ff9500, #ffdd00, #34ff6a, #00d1ff, #7c3aed, #ff2d55
+                  );
+                  filter: blur(22px);
+                  opacity: 0.6;
+                  animation: frame-rgb-spin 4s linear infinite;
+                  z-index: -1;
+                }
                 .frame-shimmer {
                   position: relative;
                   isolation: isolate;
@@ -143,35 +163,31 @@ export default function TentangKamiPage() {
                 .frame-shimmer::before {
                   content: "";
                   position: absolute;
-                  inset: -2px;
+                  inset: -3px;
                   border-radius: inherit;
-                  padding: 2px;
+                  padding: 3px;
                   background: conic-gradient(
                     from 0deg,
-                    transparent 0%,
-                    transparent 78%,
-                    rgba(240, 208, 128, 0.95) 86%,
-                    rgba(255, 255, 255, 0.9) 89%,
-                    rgba(240, 208, 128, 0.95) 92%,
-                    transparent 100%
+                    #ff2d55, #ff9500, #ffdd00, #34ff6a, #00d1ff, #7c3aed, #ff2d55
                   );
                   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
                   -webkit-mask-composite: xor;
                   mask-composite: exclude;
-                  animation: frame-shimmer-spin 4.5s linear infinite;
+                  animation: frame-rgb-spin 4s linear infinite;
                   pointer-events: none;
                   z-index: 1;
                 }
-                @keyframes frame-shimmer-spin {
+                @keyframes frame-rgb-spin {
                   to { transform: rotate(360deg); }
                 }
                 .frame-shadow-theme {
                   box-shadow:
-                    0 30px 60px -15px rgba(10, 22, 40, 0.45),
-                    0 12px 28px -6px rgba(201, 168, 76, 0.25),
-                    0 0 0 1px rgba(201, 168, 76, 0.12);
+                    0 45px 90px -12px rgba(10, 22, 40, 0.6),
+                    0 20px 45px -8px rgba(10, 22, 40, 0.45),
+                    0 0 0 1px rgba(201, 168, 76, 0.15);
                 }
                 @media (prefers-reduced-motion: reduce) {
+                  .frame-glow::after,
                   .frame-shimmer::before { animation: none; }
                 }
               `}</style>
