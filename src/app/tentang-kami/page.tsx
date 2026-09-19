@@ -116,23 +116,65 @@ export default function TentangKamiPage() {
 
             {/* Foto profil */}
             <div className="flex justify-center lg:justify-start">
-              <div className="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/rio-mardiansyah.jpg"
-                  alt="Rio Mardiansyah – Praktisi Asuransi Batam"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
-                />
-                <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#0a1628]/80 to-transparent" />
-                <div className="absolute bottom-5 left-5 right-5">
-                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-4 py-3">
-                    <p className="font-display font-bold text-white text-lg leading-tight">Rio Mardiansyah</p>
-                    <p className="text-[#c9a84c] text-sm font-medium">Praktisi Asuransi</p>
+              <div className="frame-shimmer relative w-full max-w-md aspect-square rounded-3xl">
+                <div className="frame-shadow-theme relative w-full h-full rounded-3xl overflow-hidden">
+                  <Image
+                    src="/images/rio-mardiansyah.jpg"
+                    alt="Rio Mardiansyah – Praktisi Asuransi Batam"
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#0a1628]/80 to-transparent" />
+                  <div className="absolute bottom-5 left-5 right-5">
+                    <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-4 py-3">
+                      <p className="font-display font-bold text-white text-lg leading-tight">Rio Mardiansyah</p>
+                      <p className="text-[#c9a84c] text-sm font-medium">Praktisi Asuransi</p>
+                    </div>
                   </div>
                 </div>
               </div>
+              <style>{`
+                .frame-shimmer {
+                  position: relative;
+                  isolation: isolate;
+                }
+                .frame-shimmer::before {
+                  content: "";
+                  position: absolute;
+                  inset: -2px;
+                  border-radius: inherit;
+                  padding: 2px;
+                  background: conic-gradient(
+                    from 0deg,
+                    transparent 0%,
+                    transparent 78%,
+                    rgba(240, 208, 128, 0.95) 86%,
+                    rgba(255, 255, 255, 0.9) 89%,
+                    rgba(240, 208, 128, 0.95) 92%,
+                    transparent 100%
+                  );
+                  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                  -webkit-mask-composite: xor;
+                  mask-composite: exclude;
+                  animation: frame-shimmer-spin 4.5s linear infinite;
+                  pointer-events: none;
+                  z-index: 1;
+                }
+                @keyframes frame-shimmer-spin {
+                  to { transform: rotate(360deg); }
+                }
+                .frame-shadow-theme {
+                  box-shadow:
+                    0 30px 60px -15px rgba(10, 22, 40, 0.45),
+                    0 12px 28px -6px rgba(201, 168, 76, 0.25),
+                    0 0 0 1px rgba(201, 168, 76, 0.12);
+                }
+                @media (prefers-reduced-motion: reduce) {
+                  .frame-shimmer::before { animation: none; }
+                }
+              `}</style>
             </div>
 
             {/* Bio */}
@@ -141,19 +183,22 @@ export default function TentangKamiPage() {
                 Profil Rio
               </h2>
               <p className="text-[#475569] leading-relaxed mb-6">
-                Rio Mardiansyah adalah praktisi asuransi dengan lebih dari 8 tahun pengalaman
-                langsung di industri asuransi kerugian, meniti karier dari Account Officer di
-                PT Asuransi Umum Bumida 1967 (Batam), Sales &amp; Marketing Specialist, hingga
-                Branch Manager di PT Asuransi Purna Artanugraha (ASPAN). Pengalaman lintas fungsi
-                ini memberi Rio pemahaman langsung tentang proses akuisisi nasabah, pemasaran
-                produk, hingga operasional cabang dan penanganan klaim di lapangan.
+                Rio Mardiansyah menekuni industri asuransi kerugian lebih dari delapan tahun,
+                dibentuk oleh perjalanan karier yang dimulai sebagai Account Officer di
+                PT Asuransi Umum Bumida 1967 (Batam), berlanjut sebagai Sales &amp; Marketing
+                Specialist, hingga dipercaya menjabat Branch Manager di PT Asuransi Purna
+                Artanugraha (ASPAN). Dari setiap jenjang itu, Rio membawa pemahaman yang utuh —
+                bukan sekadar teori — tentang bagaimana nasabah diakuisisi, produk dipasarkan
+                secara tepat, dan sebuah cabang dijalankan hingga ke penanganan klaim di lapangan.
               </p>
               <p className="text-[#475569] leading-relaxed mb-8">
-                Sejak 2022, Rio melanjutkan sebagai praktisi asuransi digital, fokus melayani
-                klien di Batam dan Kepulauan Riau dengan spesialisasi asuransi properti komersial,
-                kendaraan niaga dan armada, alat berat dan machinery, serta asuransi liability
-                khusus industri termasuk limbah B3 – bidang yang sangat relevan dengan karakteristik
-                industri Batam sebagai kawasan ekonomi khusus.
+                Sejak 2022, pengalaman itu dituangkan ke ranah digital. Kini Rio mendampingi
+                klien individu maupun korporat di Batam dan Kepulauan Riau, dengan fokus pada
+                asuransi properti komersial, kendaraan niaga dan armada, alat berat dan
+                machinery, hingga liability industri termasuk pertanggungan limbah B3 — sebuah
+                spesialisasi yang selaras dengan denyut industri Batam sebagai kawasan ekonomi
+                khusus. Baginya, setiap polis bermula dari satu hal sederhana: memahami risiko
+                klien seakurat mungkin, sebelum menawarkan solusi.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-8">
                 {[
@@ -300,7 +345,7 @@ export default function TentangKamiPage() {
         </div>
       </section>
 
-      <CTASection />
+            <CTASection />
     </>
   );
 }
