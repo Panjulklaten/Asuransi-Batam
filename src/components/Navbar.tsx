@@ -92,6 +92,8 @@ const URL_MAP: Record<string, string> = {
   // Blog – Surety Bond
   "/blog/perbedaan-bid-bond-performance-bond": "/en/difference-between-bid-bond-and-performance-bond",
   "/blog/panduan-ob23-impor-sementara-batam": "/en/blog/temporary-import-guarantee-ob23-batam",
+  // Blog – Personal Accident
+  "/blog/asuransi-pa-pekerja-asing-ke-singapura-dari-batam": "/en/blog/pa-insurance-foreign-workers-singapore-from-batam",
 };
 
 // Build reverse map (EN → ID) automatically
@@ -152,6 +154,14 @@ const productsID: NavItem[] = [
     children: [
       { label: "Contractor All Risk", href: "/asuransi-engineering/contractor-all-risk", desc: "CAR proyek konstruksi" },
       { label: "Erection All Risk", href: "/asuransi-engineering/erection-all-risk", desc: "EAR instalasi mesin" },
+    ],
+  },
+  {
+    label: "Personal Accident",
+    href: "/asuransi-personal-accident",
+    children: [
+      { label: "PA Individu & Keluarga", href: "/asuransi-personal-accident/pa-individu-keluarga", desc: "Proteksi diri & keluarga" },
+      { label: "PA Karyawan Grup", href: "/asuransi-personal-accident/pa-karyawan-grup", desc: "Proteksi tim & perusahaan" },
     ],
   },
   {
@@ -232,6 +242,14 @@ const productsEN: NavItem[] = [
     ],
   },
   {
+    label: "Personal Accident",
+    href: "/en/personal-accident-insurance",
+    children: [
+      { label: "Individual & Family PA", href: "/en/personal-accident-insurance/individual-family-pa", desc: "Personal & family protection" },
+      { label: "Group Employee PA", href: "/en/personal-accident-insurance/group-employee-pa", desc: "Team & company protection" },
+    ],
+  },
+  {
     label: "Surety Bond",
     href: "/en/surety-bond-insurance",
     children: [
@@ -294,6 +312,7 @@ const blogCategoriesID: BlogCategory[] = [
     category: "Liability",
     articles: [
       { label: "Pentingnya Asuransi Limbah B3", href: "/blog/pentingnya-asuransi-limbah-b3" },
+      { label: "Panduan Freight Forwarders Liability (FFL)", href: "/blog/asuransi-freight-forwarders-liability-batam-panduan-lengkap" },
     ],
   },
   {
@@ -314,6 +333,12 @@ const blogCategoriesID: BlogCategory[] = [
       { label: "Asuransi Cargo Ekspor Batam", href: "/blog/asuransi-cargo-ekspor-batam" },
       { label: "Builder's Risk Galangan Kapal", href: "/blog/builders-risk-untuk-galangan-kapal" },
       { label: "Cara Mendapatkan Asuransi Builders Risk", href: "/blog/cara-mendapatkan-asuransi-builders-risk-batam" },
+    ],
+  },
+  {
+    category: "Personal Accident",
+    articles: [
+      { label: "PA untuk Pekerja Asing ke Singapura", href: "/blog/asuransi-pa-pekerja-asing-ke-singapura-dari-batam" },
     ],
   },
 ];
@@ -367,6 +392,12 @@ const blogCategoriesEN: BlogCategory[] = [
       { label: "Batam Export Cargo Insurance", href: "/en/blog/batam-export-cargo-insurance" },
       { label: "Builder's Risk Shipyard Insurance", href: "/en/blog/builders-risk-shipyard-insurance-batam" },
       { label: "How to Get Builders Risk Insurance", href: "/en/blog/how-to-get-builders-risk-insurance-batam" },
+    ],
+  },
+  {
+    category: "Personal Accident",
+    articles: [
+      { label: "PA Insurance for Foreign Workers to Singapore", href: "/en/blog/pa-insurance-foreign-workers-singapore-from-batam" },
     ],
   },
 ];
