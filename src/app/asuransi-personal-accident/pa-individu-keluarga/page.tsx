@@ -468,7 +468,7 @@ export default function IndividualFamilyPA_ID() {
             <h2 className="font-display text-2xl md:text-3xl font-bold text-navy mb-8 text-center">
               Lengkapi Proteksi Anda
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <Link href="/asuransi-personal-accident/pa-karyawan-grup" className="group bg-white p-6 rounded-2xl shadow-sm card-hover border border-navy/5">
                 <UserCheck className="text-gold w-8 h-8 mb-3" />
                 <h3 className="font-bold text-navy mb-2 group-hover:text-gold transition-colors">PA Karyawan Grup</h3>
@@ -483,6 +483,11 @@ export default function IndividualFamilyPA_ID() {
                 <Car className="text-gold w-8 h-8 mb-3" />
                 <h3 className="font-bold text-navy mb-2 group-hover:text-gold transition-colors">Asuransi Mobil Batam</h3>
                 <p className="text-sm text-navy/60">PA melindungi diri Anda, sementara asuransi mobil melindungi kendaraan dari risiko kecelakaan.</p>
+              </Link>
+              <Link href="/blog/asuransi-pa-pekerja-asing-ke-singapura-dari-batam" className="group bg-white p-6 rounded-2xl shadow-sm card-hover border border-navy/5">
+                <Ship className="text-gold w-8 h-8 mb-3" />
+                <h3 className="font-bold text-navy mb-2 group-hover:text-gold transition-colors">PA untuk Staf ke Singapura</h3>
+                <p className="text-sm text-navy/60">Kirim teknisi atau staf asing ke Singapura? Baca aturan ICA & MOM yang berlaku.</p>
               </Link>
             </div>
           </div>

@@ -196,6 +196,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/blog/checklist-dokumen-custom-bond-ditolak`,            lastModified: new Date("2026-07-05"), changeFrequency: "yearly",  priority: 0.7 },
     // Personal Accident
     { url: `${BASE_URL}/blog/asuransi-kecelakaan-diri-pekerja-industri-batam`, lastModified: new Date("2026-07-02"), changeFrequency: "yearly",  priority: 0.7 },
+    { url: `${BASE_URL}/blog/asuransi-pa-pekerja-asing-ke-singapura-dari-batam`, lastModified: new Date("2026-09-22"), changeFrequency: "yearly",  priority: 0.7 },
 
     // ── Asuransi Event ─────────────────────────────────────────────────────
     { url: `${BASE_URL}/blog/asuransi-konser-musik-batam`,       lastModified: new Date("2026-09-17"), changeFrequency: "yearly",  priority: 0.7 },
@@ -236,6 +237,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/en/blog/builders-risk-shipyard-insurance-batam`,                 lastModified: new Date("2026-05-07"), changeFrequency: "yearly", priority: 0.7 },
     { url: `${BASE_URL}/en/blog/how-to-get-builders-risk-insurance-batam`,               lastModified: new Date("2026-05-07"), changeFrequency: "yearly", priority: 0.7 },
     { url: `${BASE_URL}/en/blog/temporary-import-guarantee-ob23-batam`,                  lastModified: new Date("2026-07-05"), changeFrequency: "yearly", priority: 0.7 },
+    { url: `${BASE_URL}/en/blog/pa-insurance-foreign-workers-singapore-from-batam`,      lastModified: new Date("2026-09-22"), changeFrequency: "yearly", priority: 0.7 },
 
     // ────────────────────────────────────────────────────────────────────────
     // INFO PAGES

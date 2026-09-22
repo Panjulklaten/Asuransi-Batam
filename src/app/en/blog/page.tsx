@@ -218,6 +218,15 @@ const articles: Article[] = [
       "Complete guide to OB 23 (temporary import) in Batam: when to use it, required documents, the application process, common mistakes that lead to penalties, and custom bond cost estimates.",
     readTime: "9 min",
   },
+  {
+    title: "PA Insurance for Foreign Workers Travelling to Singapore from Batam",
+    slug: "pa-insurance-foreign-workers-singapore-from-batam",
+    date: "September 22, 2026",
+    category: "Personal Accident",
+    excerpt:
+      "A practical guide to PA insurance for foreign technicians and staff travelling from Batam to Singapore — ICA rules for visa-free visitors, MOM requirements for Work Pass holders, and visa documentation for nationals like India.",
+    readTime: "10 min",
+  },
 ];
 
 const categoryColors: Record<string, string> = {
@@ -228,9 +237,10 @@ const categoryColors: Record<string, string> = {
   Engineering: "bg-purple-100 text-purple-800",
   Marine: "bg-cyan-100 text-cyan-800",
   "Surety Bond": "bg-rose-100 text-rose-800",
+  "Personal Accident": "bg-indigo-100 text-indigo-800",
 };
 
-const categories = ["Vehicle", "Heavy Equipment", "Property", "Liability", "Engineering", "Marine", "Surety Bond"];
+const categories = ["Vehicle", "Heavy Equipment", "Property", "Liability", "Engineering", "Marine", "Surety Bond", "Personal Accident"];
 
 export default function BlogPageEN() {
   return (

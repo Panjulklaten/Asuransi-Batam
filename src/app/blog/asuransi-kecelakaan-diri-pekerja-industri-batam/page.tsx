@@ -549,6 +549,14 @@ export default function ArticleAsuransiKecelakaanDiriPekerjaIndustriBatamPage() 
                   → Asuransi Gudang Kawasan Industri Batam
                 </a>
               </li>
+              <li>
+                <a
+                  href="/blog/asuransi-pa-pekerja-asing-ke-singapura-dari-batam"
+                  className="text-sm text-blue-700 hover:underline font-medium"
+                >
+                  → Asuransi PA untuk Pekerja Asing ke Singapura
+                </a>
+              </li>
             </ul>
           </div>
         </div>

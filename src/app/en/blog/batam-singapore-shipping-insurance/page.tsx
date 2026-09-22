@@ -222,6 +222,7 @@ export default function BatamSingaporeShippingInsurancePage() {
               <li><a href="/en/blog/batam-export-cargo-insurance" className="text-sm text-blue-700 hover:underline font-medium">→ Batam Export Cargo Insurance</a></li>
               <li><a href="/en/blog/marine-cargo-insurance-premium-batam" className="text-sm text-blue-700 hover:underline font-medium">→ Marine Cargo Insurance Premium Batam</a></li>
               <li><a href="/en/blog/batam-jakarta-cargo-insurance" className="text-sm text-blue-700 hover:underline font-medium">→ Batam–Jakarta Cargo Insurance</a></li>
+              <li><a href="/en/blog/pa-insurance-foreign-workers-singapore-from-batam" className="text-sm text-blue-700 hover:underline font-medium">→ PA Insurance for Foreign Workers Travelling to Singapore</a></li>
             </ul>
           </div>
         </div>

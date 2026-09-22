@@ -409,6 +409,15 @@ const articles: Article[] = [
       "Panduan lengkap Asuransi Kecelakaan Diri (PA) untuk pekerja galangan kapal dan manufaktur di Batam — celah BPJS Ketenagakerjaan, skema PA Individu vs Grup, dan cara klaim yang benar.",
     readTime: "10 menit",
   },
+  {
+    title: "Asuransi PA untuk Pekerja Asing ke Singapura dari Batam",
+    slug: "asuransi-pa-pekerja-asing-ke-singapura-dari-batam",
+    date: "22 September 2026",
+    category: "Personal Accident",
+    excerpt:
+      "Panduan asuransi PA untuk teknisi dan staf asing yang bepergian dari Batam ke Singapura — aturan ICA untuk turis bebas visa, ketentuan MOM untuk Work Pass, dan syarat visa negara seperti India.",
+    readTime: "11 menit",
+  },
   // ── Asuransi Event ───────────────────────────────────────────────────────────
   {
     title: "Asuransi Konser Musik Batam: Liability, Pembatalan & Non-Appearance",
