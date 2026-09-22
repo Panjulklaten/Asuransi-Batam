@@ -565,7 +565,7 @@ export default function Navbar() {
             href={lang === "id" ? "/" : "/en"}
             className="flex items-center gap-2 flex-shrink-0"
           >
-            <div className="w-8 h-8 bg-gradient-to-br from-[#c9a84c] to-[#f0d080] rounded-lg flex items-center justify-center">
+            <div className="logo-shimmer w-8 h-8 bg-gradient-to-br from-[#c9a84c] to-[#f0d080] rounded-lg flex items-center justify-center">
               <span className="text-[#0a1628] font-bold text-sm">AB</span>
             </div>
             <span className="font-bold text-white text-lg leading-tight">
