@@ -106,6 +106,9 @@ const OG_IMAGE_BY_BLOG_SLUG: Record<string, string> = {
   "klaim-asuransi-limbah-b3-kawasan-industri-batam": "liability",
   "pentingnya-asuransi-limbah-b3": "liability",
   "hazardous-waste-insurance-batam": "liability",
+  "asuransi-freight-forwarders-liability-batam-panduan-lengkap": "liability",
+  "cara-klaim-asuransi-ffl-freight-forwarder-batam": "liability",
+  "kawasan-logistik-pergudangan-batam-batu-ampar-sekupang-tanjung-uncang": "liability",
   // ── Surety Bond ──
   "biaya-premi-surety-bond-batam": "surety-bond",
   "cara-mendapatkan-surety-bond-tender-proyek-batam": "surety-bond",

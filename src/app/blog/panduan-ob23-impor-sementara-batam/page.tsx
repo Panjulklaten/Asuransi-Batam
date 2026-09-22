@@ -255,6 +255,7 @@ export default function PanduanOB23BatamPage() {
               { title: "OB 23 vs KITE", href: "/blog/ob23-vs-kite-batam", desc: "Cara menentukan fasilitas yang tepat untuk bisnis Anda" },
               { title: "Custom Bond untuk Galangan Kapal", href: "/blog/custom-bond-galangan-kapal-batam", desc: "Kombinasi Kawasan Berikat dan OB 23 di industri shipyard" },
               { title: "Checklist Dokumen yang Sering Ditolak", href: "/blog/checklist-dokumen-custom-bond-ditolak", desc: "5 dokumen yang paling sering bikin pengajuan tertunda" },
+              { title: "Asuransi Freight Forwarders Liability (FFL) Batam", href: "/blog/asuransi-freight-forwarders-liability-batam-panduan-lengkap", desc: "Proteksi PPJK dari kesalahan dokumen OB23/KITE yang merugikan klien" },
             ].map((link) => (
               <Link key={link.href} href={link.href} className="group flex items-start gap-3 p-4 bg-[#faf8f3] rounded-xl border border-[#e2e8f0] hover:border-[#c9a84c]/50 hover:shadow-md transition-all">
                 <Shield className="w-5 h-5 text-[#c9a84c] flex-shrink-0 mt-0.5" />

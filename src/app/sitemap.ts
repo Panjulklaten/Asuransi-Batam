@@ -93,9 +93,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ────────────────────────────────────────────────────────────────────────
     { url: `${BASE_URL}/asuransi-liability/asuransi-limbah-b3`,                       lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/asuransi-liability/public-liability`,                         lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/asuransi-liability/freight-forwarders-liability`,             lastModified: new Date("2026-09-22"), changeFrequency: "monthly", priority: 0.8 },
 
     { url: `${BASE_URL}/en/liability-insurance/b3-waste-insurance`,                   lastModified: new Date("2026-06-27"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/en/liability-insurance/public-liability`,                     lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/en/liability-insurance/freight-forwarders-liability`,         lastModified: new Date("2026-09-22"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/en/hazardous-waste-insurance-batam`,                          lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.7 },
 
     // ────────────────────────────────────────────────────────────────────────
@@ -197,6 +199,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // ── Asuransi Event ─────────────────────────────────────────────────────
     { url: `${BASE_URL}/blog/asuransi-konser-musik-batam`,       lastModified: new Date("2026-09-17"), changeFrequency: "yearly",  priority: 0.7 },
+    { url: `${BASE_URL}/blog/asuransi-freight-forwarders-liability-batam-panduan-lengkap`, lastModified: new Date("2026-09-22"), changeFrequency: "yearly",  priority: 0.7 },
+    { url: `${BASE_URL}/blog/cara-klaim-asuransi-ffl-freight-forwarder-batam`,             lastModified: new Date("2026-09-22"), changeFrequency: "yearly",  priority: 0.7 },
+    { url: `${BASE_URL}/blog/kawasan-logistik-pergudangan-batam-batu-ampar-sekupang-tanjung-uncang`, lastModified: new Date("2026-09-22"), changeFrequency: "yearly",  priority: 0.7 },
     { url: `${BASE_URL}/blog/asuransi-motorcross-batam`,         lastModified: new Date("2026-09-17"), changeFrequency: "yearly",  priority: 0.7 },
     { url: `${BASE_URL}/blog/asuransi-hole-in-one-golf-batam`,   lastModified: new Date("2026-09-17"), changeFrequency: "yearly",  priority: 0.7 },
 

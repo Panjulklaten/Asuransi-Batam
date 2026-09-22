@@ -127,6 +127,33 @@ const articles: Article[] = [
   },
   // ── Liability ───────────────────────────────────────────────────────────────
   {
+    title: "Asuransi Freight Forwarders Liability (FFL) Batam: Panduan Lengkap",
+    slug: "asuransi-freight-forwarders-liability-batam-panduan-lengkap",
+    date: "22 September 2026",
+    category: "Liability",
+    excerpt:
+      "Panduan lengkap FFL untuk forwarder, PPJK & EMKL di Batam — perbedaan dengan marine cargo, siapa yang wajib punya, risiko di Batu Ampar, Sekupang & Tanjung Uncang, dan kisaran premi.",
+    readTime: "13 menit",
+  },
+  {
+    title: "Cara Klaim Asuransi FFL (Freight Forwarders Liability) di Batam",
+    slug: "cara-klaim-asuransi-ffl-freight-forwarder-batam",
+    date: "22 September 2026",
+    category: "Liability",
+    excerpt:
+      "Panduan step-by-step mengajukan klaim FFL — dokumen yang dibutuhkan, timeline, penyebab klaim ditolak, dan tips mempercepat proses.",
+    readTime: "10 menit",
+  },
+  {
+    title: "Peta Risiko Logistik & Pergudangan Batam: Batu Ampar, Sekupang, Tanjung Uncang",
+    slug: "kawasan-logistik-pergudangan-batam-batu-ampar-sekupang-tanjung-uncang",
+    date: "22 September 2026",
+    category: "Liability",
+    excerpt:
+      "Karakteristik risiko logistik dan pergudangan di tiga simpul utama Batam serta proteksi asuransi yang relevan untuk forwarder dan operator gudang.",
+    readTime: "12 menit",
+  },
+  {
     title: "Employers Liability & Product Liability di Batam",
     slug: "employers-liability-product-liability-batam",
     date: "2 Juli 2026",

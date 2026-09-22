@@ -70,10 +70,11 @@ export default function AsuransiLiabilityPage() {
         </div>
       </div>
       <h2 className="font-display font-bold text-3xl text-[#0a1628] mb-6 text-center">Produk Liability Kami</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {[
           { title: "Asuransi Limbah B3", desc: "Perlindungan khusus industri penghasil limbah Bahan Berbahaya & Beracun di kawasan industri Batam. Wajib untuk izin lingkungan.", href: "/asuransi-liability/asuransi-limbah-b3" },
           { title: "Public Liability Insurance", desc: "Perlindungan tanggung gugat terhadap publik, tamu, pelanggan, dan pihak ketiga yang mengalami kerugian akibat operasional bisnis Anda.", href: "/asuransi-liability/public-liability" },
+          { title: "Freight Forwarders Liability (FFL)", desc: "Proteksi bagi perusahaan forwarding, PPJK & EMKL dari tuntutan kehilangan, kerusakan, dan kesalahan dokumen kargo di Batu Ampar, Sekupang & Tanjung Uncang.", href: "/asuransi-liability/freight-forwarders-liability" },
         ].map((p) => (
           <Link key={p.href} href={p.href} className="group p-6 bg-white rounded-2xl border-2 border-[#e2e8f0] hover:border-[#c9a84c]/50 hover:shadow-lg transition-all">
             <h3 className="font-display font-bold text-lg text-[#0a1628] group-hover:text-[#1a4fa0] mb-2">{p.title}</h3>

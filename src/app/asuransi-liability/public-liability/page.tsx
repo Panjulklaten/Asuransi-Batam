@@ -156,7 +156,7 @@ export default function PublicLiabilityPage() {
     >
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Sering Dibutuhkan Bersamaan</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
           <Link href="/asuransi-marine/builders-risk" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
             <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Builder&apos;s Risk Galangan Kapal</h3>
             <p className="text-[#475569] text-sm">Lengkapi proteksi aset proyek pembangunan kapal Anda di galangan.</p>
@@ -168,6 +168,10 @@ export default function PublicLiabilityPage() {
           <Link href="/asuransi-engineering/contractor-all-risk" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
             <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Contractor All Risk (CAR)</h3>
             <p className="text-[#475569] text-sm">Untuk proyek konstruksi yang juga butuh proteksi aset fisik.</p>
+          </Link>
+          <Link href="/asuransi-liability/freight-forwarders-liability" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
+            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Freight Forwarders Liability</h3>
+            <p className="text-[#475569] text-sm">Untuk perusahaan forwarding & PPJK yang juga melayani publik di area gudang/kantor.</p>
           </Link>
         </div>
       </div>

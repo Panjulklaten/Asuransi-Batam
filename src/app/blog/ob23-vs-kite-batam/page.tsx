@@ -235,6 +235,7 @@ export default function OB23VsKitePage() {
               { title: "Panduan OB 23 Batam", href: "/blog/panduan-ob23-impor-sementara-batam", desc: "Cara mengurus impor sementara untuk pameran dan proyek" },
               { title: "Custom Bond untuk Galangan Kapal", href: "/blog/custom-bond-galangan-kapal-batam", desc: "Kombinasi Kawasan Berikat dan OB 23 di industri shipyard" },
               { title: "Asuransi Surety Bond Batam", href: "/asuransi-surety-bond", desc: "Semua jenis jaminan proyek dan kepabeanan di Batam" },
+              { title: "Asuransi Freight Forwarders Liability (FFL) Batam", href: "/blog/asuransi-freight-forwarders-liability-batam-panduan-lengkap", desc: "Proteksi PPJK dari kesalahan dokumen OB23/KITE yang merugikan klien" },
             ].map((link) => (
               <Link key={link.href} href={link.href} className="group flex items-start gap-3 p-4 bg-[#faf8f3] rounded-xl border border-[#e2e8f0] hover:border-[#c9a84c]/50 hover:shadow-md transition-all">
                 <GitCompareArrows className="w-5 h-5 text-[#c9a84c] flex-shrink-0 mt-0.5" />

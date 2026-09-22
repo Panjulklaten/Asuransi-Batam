@@ -236,6 +236,7 @@ export default function AsuransiPengirimanBatamSingapurePage() {
               <li><a href="/blog/asuransi-cargo-ekspor-batam" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi Cargo Ekspor dari Batam</a></li>
               <li><a href="/blog/premi-asuransi-marine-cargo-batam" className="text-sm text-blue-700 hover:underline font-medium">→ Premi Marine Cargo Batam</a></li>
               <li><a href="/blog/asuransi-pengiriman-batam-jakarta" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi Pengiriman Batam–Jakarta</a></li>
+              <li><a href="/blog/asuransi-freight-forwarders-liability-batam-panduan-lengkap" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi Freight Forwarders Liability (FFL) Batam</a></li>
             </ul>
           </div>
         </div>

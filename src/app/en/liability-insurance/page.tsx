@@ -57,7 +57,7 @@ export default function LiabilityInsurancePage() {
       schema={schema}
     >
       <h2 className="font-display font-bold text-3xl text-[#0a1628] mb-6 text-center">Our Liability Products</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {[
           {
             title: "B3 Hazardous Waste Insurance",
@@ -68,6 +68,11 @@ export default function LiabilityInsurancePage() {
             title: "Public Liability Insurance",
             desc: "Third-party and public liability protection for your business.",
             href: "/en/liability-insurance/public-liability",
+          },
+          {
+            title: "Freight Forwarders Liability (FFL)",
+            desc: "Protection for forwarding companies and customs brokers against cargo loss, damage, and documentation-error claims.",
+            href: "/en/liability-insurance/freight-forwarders-liability",
           },
         ].map((p) => (
           <Link
