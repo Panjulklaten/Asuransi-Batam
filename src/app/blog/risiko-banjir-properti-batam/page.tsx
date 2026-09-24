@@ -1,4 +1,4 @@
-// app/blog/banjir-batam-2026-asuransi-properti/page.tsx
+// app/blog/risiko-banjir-properti-batam/page.tsx
 import type { Metadata } from "next";
 import { generateSEO } from "@/lib/seo";
 import Link from "next/link";
@@ -19,19 +19,19 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = generateSEO({
-  title: "Banjir Batam September 2026: Apakah Asuransi Properti Anda Sudah Menanggung Risiko Ini?",
+  title: "Risiko Banjir Batam untuk Properti Anda: Apa yang Benar-Benar Ditanggung Asuransi?",
   description:
     "Hujan deras dua jam merendam Bengkong dan Batu Aji hingga 1 meter pada 22 September 2026. Pelajari kenapa Batam rawan banjir kilat, apa yang benar-benar ditanggung polis properti standar, dan langkah melindungi rumah, ruko, atau gudang Anda.",
-  canonical: "https://asuransibatam.com/blog/banjir-batam-2026-asuransi-properti",
+  canonical: "https://asuransibatam.com/blog/risiko-banjir-properti-batam",
   languages: {
-    id: "https://asuransibatam.com/blog/banjir-batam-2026-asuransi-properti",
+    id: "https://asuransibatam.com/blog/risiko-banjir-properti-batam",
   },
 });
 
 const schema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Banjir Batam September 2026: Apakah Asuransi Properti Anda Sudah Menanggung Risiko Ini?",
+  headline: "Risiko Banjir Batam untuk Properti Anda: Apa yang Benar-Benar Ditanggung Asuransi?",
   description:
     "Analisis kejadian banjir Bengkong dan Batu Aji 22 September 2026 serta panduan lengkap perlindungan asuransi properti terhadap risiko banjir di Batam.",
   datePublished: "2026-09-24",
@@ -135,12 +135,12 @@ function Steps({ items }: { items: { title: string; desc?: React.ReactNode }[] }
 export default function ArticleBanjirBatam2026AsuransiPropertiPage() {
   return (
     <ArticleLayout
-      title="Banjir Batam September 2026: Apakah Asuransi Properti Anda Sudah Menanggung Risiko Ini?"
+      title="Risiko Banjir Batam untuk Properti Anda: Apa yang Benar-Benar Ditanggung Asuransi?"
       description="Hujan deras selama satu setengah sampai dua jam saja sudah cukup merendam sejumlah kawasan Batam hingga setinggi 1 meter. Ini yang perlu diketahui pemilik rumah, ruko, dan gudang sebelum hujan berikutnya turun."
       date="24 September 2026"
       category="Properti"
       readTime="11 menit baca"
-      breadcrumbs={[{ label: "Banjir Batam & Asuransi Properti", href: "/blog/banjir-batam-2026-asuransi-properti" }]}
+      breadcrumbs={[{ label: "Banjir Batam & Asuransi Properti", href: "/blog/risiko-banjir-properti-batam" }]}
       schema={schema}
       faqSchema={faqSchema}
     >
@@ -356,7 +356,7 @@ export default function ArticleBanjirBatam2026AsuransiPropertiPage() {
           <div>
             <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#c9a84c" }}>Artikel Terkait</p>
             <ul className="space-y-2">
-              <li><a href="/blog/banjir-batam-2026-asuransi-kendaraan" className="text-sm text-blue-700 hover:underline font-medium">→ Banjir Batam & Asuransi Kendaraan</a></li>
+              <li><a href="/blog/risiko-banjir-kendaraan-batam" className="text-sm text-blue-700 hover:underline font-medium">→ Banjir Batam & Asuransi Kendaraan</a></li>
               <li><a href="/blog/cara-klaim-asuransi-kebakaran-rumah" className="text-sm text-blue-700 hover:underline font-medium">→ Cara Klaim Asuransi Kebakaran Rumah</a></li>
               <li><a href="/blog/asuransi-properti-komersial-batam" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi Properti Komersial Batam</a></li>
             </ul>

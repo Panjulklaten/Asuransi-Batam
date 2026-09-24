@@ -61,8 +61,8 @@ const articles: Article[] = [
     readTime: "8 menit",
   },
   {
-    title: "Mobil Hanyut di Bengkong: Apakah Asuransi Kendaraan Anda Menanggung Kerusakan Akibat Banjir?",
-    slug: "banjir-batam-2026-asuransi-kendaraan",
+    title: "Banjir Batam dan Asuransi Kendaraan: Apakah Mobil Anda Terlindungi?",
+    slug: "risiko-banjir-kendaraan-batam",
     date: "24 September 2026",
     category: "Kendaraan",
     excerpt:
@@ -135,8 +135,8 @@ const articles: Article[] = [
     readTime: "8 menit",
   },
   {
-    title: "Banjir Batam September 2026: Apakah Asuransi Properti Anda Sudah Menanggung Risiko Ini?",
-    slug: "banjir-batam-2026-asuransi-properti",
+    title: "Risiko Banjir Batam untuk Properti Anda: Apa yang Benar-Benar Ditanggung Asuransi?",
+    slug: "risiko-banjir-properti-batam",
     date: "24 September 2026",
     category: "Properti",
     excerpt:

@@ -152,7 +152,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Kendaraan
     { url: `${BASE_URL}/blog/cara-klaim-asuransi-mobil-batam`,       lastModified: new Date("2026-04-30"), changeFrequency: "yearly",  priority: 0.7 },
     { url: `${BASE_URL}/blog/perbedaan-all-risk-dan-tlo`,            lastModified: new Date("2025-03-05"), changeFrequency: "yearly",  priority: 0.7 },
-    { url: `${BASE_URL}/blog/banjir-batam-2026-asuransi-kendaraan`,  lastModified: new Date("2026-09-24"), changeFrequency: "yearly",  priority: 0.7 },
+    { url: `${BASE_URL}/blog/risiko-banjir-kendaraan-batam`,  lastModified: new Date("2026-09-24"), changeFrequency: "yearly",  priority: 0.7 },
     // Alat Berat
     { url: `${BASE_URL}/blog/asuransi-excavator-dan-bulldozer`,      lastModified: new Date("2026-05-06"), changeFrequency: "yearly",  priority: 0.7 },
     { url: `${BASE_URL}/blog/asuransi-alat-berat-proyek-konstruksi`, lastModified: new Date("2026-05-06"), changeFrequency: "yearly",  priority: 0.7 },
@@ -161,7 +161,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Properti
     { url: `${BASE_URL}/blog/asuransi-properti-komersial-batam`,     lastModified: new Date("2026-05-08"), changeFrequency: "yearly",  priority: 0.7 },
     { url: `${BASE_URL}/blog/cara-klaim-asuransi-kebakaran-rumah`,   lastModified: new Date("2026-05-08"), changeFrequency: "yearly",  priority: 0.7 },
-    { url: `${BASE_URL}/blog/banjir-batam-2026-asuransi-properti`,   lastModified: new Date("2026-09-24"), changeFrequency: "yearly",  priority: 0.7 },
+    { url: `${BASE_URL}/blog/risiko-banjir-properti-batam`,   lastModified: new Date("2026-09-24"), changeFrequency: "yearly",  priority: 0.7 },
     // Liability
     { url: `${BASE_URL}/blog/pentingnya-asuransi-limbah-b3`,         lastModified: new Date("2025-02-20"), changeFrequency: "yearly",  priority: 0.7 },
     { url: `${BASE_URL}/blog/asuransi-public-liability-batam-panduan-lengkap`, lastModified: new Date("2026-07-02"), changeFrequency: "yearly",  priority: 0.7 },

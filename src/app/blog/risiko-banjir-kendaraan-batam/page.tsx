@@ -1,4 +1,4 @@
-// app/blog/banjir-batam-2026-asuransi-kendaraan/page.tsx
+// app/blog/risiko-banjir-kendaraan-batam/page.tsx
 import type { Metadata } from "next";
 import { generateSEO } from "@/lib/seo";
 import Link from "next/link";
@@ -19,19 +19,19 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = generateSEO({
-  title: "Mobil Hanyut di Bengkong: Apakah Asuransi Kendaraan Anda Menanggung Kerusakan Akibat Banjir?",
+  title: "Banjir Batam dan Asuransi Kendaraan: Apakah Mobil Anda Terlindungi?",
   description:
     "Banjir 22 September 2026 menyeret mobil ke parit di Bengkong Indah, Batam. Pelajari kenapa asuransi All Risk belum tentu otomatis menanggung banjir, bahaya water hammer, dan langkah menyelamatkan kendaraan saat genangan naik.",
-  canonical: "https://asuransibatam.com/blog/banjir-batam-2026-asuransi-kendaraan",
+  canonical: "https://asuransibatam.com/blog/risiko-banjir-kendaraan-batam",
   languages: {
-    id: "https://asuransibatam.com/blog/banjir-batam-2026-asuransi-kendaraan",
+    id: "https://asuransibatam.com/blog/risiko-banjir-kendaraan-batam",
   },
 });
 
 const schema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Mobil Hanyut di Bengkong: Apakah Asuransi Kendaraan Anda Menanggung Kerusakan Akibat Banjir?",
+  headline: "Banjir Batam dan Asuransi Kendaraan: Apakah Mobil Anda Terlindungi?",
   description:
     "Analisis kejadian mobil hanyut saat banjir Bengkong Indah 22 September 2026 serta panduan lengkap perlindungan asuransi kendaraan terhadap risiko banjir di Batam.",
   datePublished: "2026-09-24",
@@ -135,12 +135,12 @@ function Steps({ items }: { items: { title: string; desc?: React.ReactNode }[] }
 export default function ArticleBanjirBatam2026AsuransiKendaraanPage() {
   return (
     <ArticleLayout
-      title="Mobil Hanyut di Bengkong: Apakah Asuransi Kendaraan Anda Menanggung Kerusakan Akibat Banjir?"
+      title="Banjir Batam dan Asuransi Kendaraan: Apakah Mobil Anda Terlindungi?"
       description="Video mobil yang terseret arus ke parit di Bengkong Indah sempat ramai dibicarakan warga Batam. Di balik kejadian itu, ada satu hal yang jarang disadari pemilik kendaraan: All Risk tidak selalu berarti bebas risiko banjir."
       date="24 September 2026"
       category="Kendaraan"
       readTime="10 menit baca"
-      breadcrumbs={[{ label: "Banjir Batam & Asuransi Kendaraan", href: "/blog/banjir-batam-2026-asuransi-kendaraan" }]}
+      breadcrumbs={[{ label: "Banjir Batam & Asuransi Kendaraan", href: "/blog/risiko-banjir-kendaraan-batam" }]}
       schema={schema}
       faqSchema={faqSchema}
     >
@@ -334,7 +334,7 @@ export default function ArticleBanjirBatam2026AsuransiKendaraanPage() {
           <div>
             <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#c9a84c" }}>Artikel Terkait</p>
             <ul className="space-y-2">
-              <li><a href="/blog/banjir-batam-2026-asuransi-properti" className="text-sm text-blue-700 hover:underline font-medium">→ Banjir Batam & Asuransi Properti</a></li>
+              <li><a href="/blog/risiko-banjir-properti-batam" className="text-sm text-blue-700 hover:underline font-medium">→ Banjir Batam & Asuransi Properti</a></li>
               <li><a href="/blog/cara-klaim-asuransi-mobil-batam" className="text-sm text-blue-700 hover:underline font-medium">→ Cara Klaim Asuransi Mobil Batam</a></li>
               <li><a href="/blog/perbedaan-all-risk-dan-tlo" className="text-sm text-blue-700 hover:underline font-medium">→ Perbedaan All Risk dan TLO</a></li>
             </ul>
