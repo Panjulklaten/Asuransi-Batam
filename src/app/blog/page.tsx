@@ -60,6 +60,15 @@ const articles: Article[] = [
       "Panduan lengkap asuransi dump truck di Batam untuk proyek konstruksi dan infrastruktur. Risiko operasional, jenis perlindungan, estimasi premi, dan tips klaim.",
     readTime: "8 menit",
   },
+  {
+    title: "Banjir Batam dan Asuransi Kendaraan: Apakah Mobil Anda Terlindungi?",
+    slug: "risiko-banjir-kendaraan-batam",
+    date: "24 September 2026",
+    category: "Kendaraan",
+    excerpt:
+      "Banjir 22 September 2026 menyeret mobil ke parit di Bengkong Indah. Kenapa All Risk belum tentu otomatis menanggung banjir, bahaya water hammer, dan langkah menyelamatkan kendaraan saat genangan naik.",
+    readTime: "10 menit",
+  },
   // ── Alat Berat ──────────────────────────────────────────────────────────────
   {
     title: "Asuransi Excavator dan Bulldozer di Batam",
@@ -124,6 +133,15 @@ const articles: Article[] = [
     excerpt:
       "Panduan asuransi gudang untuk kawasan industri Muka Kuning, Kabil, dan Batam. Risiko gudang logistik, syarat BP Batam, estimasi premi, dan tips klaim.",
     readTime: "8 menit",
+  },
+  {
+    title: "Risiko Banjir Batam untuk Properti Anda: Apa yang Benar-Benar Ditanggung Asuransi?",
+    slug: "risiko-banjir-properti-batam",
+    date: "24 September 2026",
+    category: "Properti",
+    excerpt:
+      "Hujan dua jam merendam Bengkong dan Batu Aji hingga 1 meter pada 22 September 2026. Kenapa Batam rawan banjir kilat, apa yang benar-benar ditanggung polis properti standar, dan langkah melindungi rumah, ruko, atau gudang Anda.",
+    readTime: "11 menit",
   },
   // ── Liability ───────────────────────────────────────────────────────────────
   {
