@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import { generateSEO } from "@/lib/seo";
 import Link from "next/link";
-import { Shield, Star, Clock, Users, ArrowRight, CheckCircle, Phone } from "lucide-react";
+import { Shield, Star, Clock, Users, CheckCircle } from "lucide-react";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = generateSEO({
@@ -165,33 +165,6 @@ export default function HomePageEN() {
                 Rio, an insurance practitioner with 8+ years of experience in Batam.
                 The right solution for property, vehicles, heavy equipment, liability, and engineering.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-4">
-                <a
-                  href="https://wa.me/6281373336728?text=Hello%20Rio%2C%20I%20would%20like%20to%20consult%20about%20insurance"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-[#c9a84c] to-[#f0d080] text-[#0a1628] font-bold rounded-xl hover:shadow-xl hover:shadow-[#c9a84c]/30 transition-all text-lg"
-                >
-                  <Phone className="w-5 h-5" />
-                  Free Consultation via WhatsApp
-                </a>
-                <Link
-                  href="/en/car-premium-calculator"
-                  className="flex items-center justify-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-all text-lg"
-                >
-                  Calculate Premium
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-              </div>
-              <div className="mb-10">
-                <Link
-                  href="/en/property-premium-calculator"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-all text-lg"
-                >
-                  Calculate Property Premium
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-              </div>
               <div className="flex flex-wrap gap-6">
                 {[
                   { icon: <CheckCircle className="w-4 h-4" />, text: "OJK-Registered" },
