@@ -233,7 +233,7 @@ export default function HomePage() {
                 Solusi lengkap untuk properti, kendaraan, alat berat, liability, engineering,
                 marine, surety bond, dan personal accident.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-10">
+              <div className="flex flex-col sm:flex-row gap-4 mb-4">
                 <a
                   href="https://wa.me/6281373336728?text=Halo%20Rio%2C%20saya%20ingin%20konsultasi%20asuransi"
                   target="_blank"
@@ -250,6 +250,15 @@ export default function HomePage() {
                   className="flex items-center justify-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-all text-lg"
                 >
                   Hitung Premi Mobil
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
+              <div className="mb-10">
+                <Link
+                  href="/kalkulator-premi-properti"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-all text-lg"
+                >
+                  Hitung Premi Properti
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </div>
@@ -582,7 +591,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <CTASection />
+      <CTASection
+        tertiaryLabel="Hitung Premi Properti"
+        tertiaryHref="/kalkulator-premi-properti"
+      />
     </>
   );
 }

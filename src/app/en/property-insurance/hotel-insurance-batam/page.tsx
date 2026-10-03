@@ -56,6 +56,7 @@ export default function HotelInsuranceBatamPage() {
         { label: "Hotel Insurance Batam", href: "/en/property-insurance/hotel-insurance-batam" },
       ]}
       schema={schema}
+      calculatorCard="hotel"
     />
   );
 }

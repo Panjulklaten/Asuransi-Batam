@@ -131,6 +131,7 @@ export default function AsuransiApartemenBatamPage() {
         { label: "Asuransi Apartemen Batam", href: "/asuransi-properti/asuransi-apartemen-batam" },
       ]}
       schema={schema}
+      calculatorCard="apartemen"
     >
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Properti Lainnya</h2>

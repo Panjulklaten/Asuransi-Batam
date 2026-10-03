@@ -107,6 +107,7 @@ export default function AsuransiGudangBatamPage() {
         { label: "Asuransi Gudang Batam", href: "/asuransi-properti/asuransi-gudang-batam" },
       ]}
       schema={schema}
+      calculatorCard="gudang"
     >
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Baca & Lengkapi Juga</h2>

@@ -103,6 +103,7 @@ export default function ShophouseInsuranceBatamPage() {
         { label: "Shophouse Insurance Batam", href: "/en/property-insurance/shophouse-insurance-batam" },
       ]}
       schema={schema}
+      calculatorCard="ruko"
     />
   );
 }

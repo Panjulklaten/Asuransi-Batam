@@ -107,6 +107,7 @@ export default function WarehouseInsuranceBatamPage() {
         { label: "Warehouse Insurance Batam", href: "/en/property-insurance/warehouse-insurance-batam" },
       ]}
       schema={schema}
+      calculatorCard="gudang"
     />
   );
 }

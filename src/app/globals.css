@@ -92,3 +92,47 @@ body {
     display: none;
   }
 }
+
+/* Tombol shimmer — kilau diagonal yang menyapu tombol berulang (kartu kalkulator properti) */
+@keyframes btn-shimmer-sweep {
+  0%        { transform: translateX(-130%) skewX(-20deg); }
+  55%, 100% { transform: translateX(330%)  skewX(-20deg); }
+}
+
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn-shimmer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 45%;
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.75) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-130%) skewX(-20deg);
+  animation: btn-shimmer-sweep 2.8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Teks tombol tetap tajam di atas kilau */
+.btn-shimmer > * {
+  position: relative;
+  z-index: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-shimmer::before {
+    animation: none;
+    display: none;
+  }
+}

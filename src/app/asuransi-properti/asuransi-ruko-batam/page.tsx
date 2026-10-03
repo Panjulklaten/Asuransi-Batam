@@ -103,6 +103,7 @@ export default function AsuransiRukoBatamPage() {
         { label: "Asuransi Ruko Batam", href: "/asuransi-properti/asuransi-ruko-batam" },
       ]}
       schema={schema}
+      calculatorCard="ruko"
     >
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Properti Komersial Lainnya</h2>

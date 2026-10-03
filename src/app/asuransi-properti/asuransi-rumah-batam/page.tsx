@@ -53,6 +53,7 @@ export default function AsuransiRumahBatamPage() {
         { label: "Asuransi Rumah Batam", href: "/asuransi-properti/asuransi-rumah-batam" },
       ]}
       schema={schema}
+      calculatorCard="rumah"
     >
       <div className="mb-12 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Estimasi Premi Asuransi Rumah di Batam</h2>

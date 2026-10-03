@@ -130,6 +130,7 @@ export default function FactoryInsuranceBatamPage() {
         { label: "Factory & Industrial Insurance Batam", href: "/en/property-insurance/factory-industrial-insurance-batam" },
       ]}
       schema={schema}
+      calculatorCard="pabrik"
     />
   );
 }

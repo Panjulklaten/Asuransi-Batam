@@ -94,6 +94,7 @@ export default function AsuransiPropertiPage() {
       policyComparison={policyComparison}
       breadcrumbs={[{ label: "Asuransi Properti", href: "/asuransi-properti" }]}
       schema={schema}
+      calculatorCta={{ label: "Hitung Premi Properti", href: "/kalkulator-premi-properti" }}
     >
       <h2 className="font-display font-bold text-3xl text-[#0a1628] mb-6 text-center">Produk Properti Kami</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">

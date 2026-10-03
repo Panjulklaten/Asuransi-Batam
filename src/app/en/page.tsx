@@ -165,7 +165,7 @@ export default function HomePageEN() {
                 Rio, an insurance practitioner with 8+ years of experience in Batam.
                 The right solution for property, vehicles, heavy equipment, liability, and engineering.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-10">
+              <div className="flex flex-col sm:flex-row gap-4 mb-4">
                 <a
                   href="https://wa.me/6281373336728?text=Hello%20Rio%2C%20I%20would%20like%20to%20consult%20about%20insurance"
                   target="_blank"
@@ -180,6 +180,15 @@ export default function HomePageEN() {
                   className="flex items-center justify-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-all text-lg"
                 >
                   Calculate Premium
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
+              <div className="mb-10">
+                <Link
+                  href="/en/property-premium-calculator"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-all text-lg"
+                >
+                  Calculate Property Premium
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </div>
@@ -390,6 +399,8 @@ export default function HomePageEN() {
         waMsg="Hello%20Rio%2C%20I%20would%20like%20to%20consult%20about%20insurance"
         secondaryLabel="Calculate Car Premium"
         secondaryHref="/en/car-premium-calculator"
+        tertiaryLabel="Calculate Property Premium"
+        tertiaryHref="/en/property-premium-calculator"
       />
     </>
   );

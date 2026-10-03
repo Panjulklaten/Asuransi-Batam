@@ -48,6 +48,7 @@ export default function HomeInsuranceBatamPage() {
         { label: "Home Insurance Batam", href: "/en/property-insurance/home-insurance-batam" },
       ]}
       schema={schema}
+      calculatorCard="rumah"
     />
   );
 }

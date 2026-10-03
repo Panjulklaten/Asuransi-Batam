@@ -63,6 +63,7 @@ export default function AsuransiHotelBatamPage() {
         { label: "Asuransi Hotel Batam", href: "/asuransi-properti/asuransi-hotel-batam" },
       ]}
       schema={schema}
+      calculatorCard="hotel"
     >
       <div className="mb-12 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Studi Kasus: Klaim Hotel di Batam</h2>

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import CTASection from "./CTASection";
 import AuthorAvatar from "./AuthorAvatar";
+import CalculatorPromoCard, { type CalculatorCardVariant } from "./CalculatorPromoCard";
 
 interface FAQ { q: string; a: string; }
 interface Benefit { icon: string; title: string; desc: string; href?: string; }
@@ -16,13 +17,17 @@ interface ProductPageProps {
   policyComparison?: PolicyComparison[];
   breadcrumbs: { label: string; href: string }[];
   schema: Record<string, unknown>;
+  /** Tombol kalkulator tambahan di CTA bawah (opsional), mis. kalkulator premi properti. */
+  calculatorCta?: { label: string; href: string };
+  /** Tampilkan kartu ajakan kalkulator premi properti (sub-halaman properti). */
+  calculatorCard?: CalculatorCardVariant;
   children?: React.ReactNode;
 }
 
 export default function ProductPageLayout({
   title, subtitle, description,
   benefits, faqs, policyComparison,
-  breadcrumbs, schema, children,
+  breadcrumbs, schema, calculatorCta, calculatorCard, children,
 }: ProductPageProps) {
   // Detect language from first breadcrumb href
   const isEN = breadcrumbs[0]?.href?.startsWith("/en");
@@ -189,6 +194,9 @@ export default function ProductPageLayout({
         </section>
       )}
 
+      {/* Kartu kalkulator premi properti (opsional) */}
+      {calculatorCard && <CalculatorPromoCard lang={lang} variant={calculatorCard} />}
+
       {/* Policy comparison */}
       {policyComparison && (
         <section className="section-padding bg-white">
@@ -244,7 +252,11 @@ export default function ProductPageLayout({
       </section>
 
       {/* ✅ lang prop now passed so CTA defaults to correct language */}
-      <CTASection lang={lang} />
+      <CTASection
+        lang={lang}
+        tertiaryLabel={calculatorCta?.label}
+        tertiaryHref={calculatorCta?.href}
+      />
     </>
   );
 }

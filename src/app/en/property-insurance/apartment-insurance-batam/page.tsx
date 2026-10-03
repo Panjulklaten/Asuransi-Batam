@@ -130,6 +130,7 @@ export default function ApartmentInsuranceBatamPage() {
         { label: "Apartment Insurance Batam", href: "/en/property-insurance/apartment-insurance-batam" },
       ]}
       schema={schema}
+      calculatorCard="apartemen"
     />
   );
 }

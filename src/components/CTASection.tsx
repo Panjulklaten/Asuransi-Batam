@@ -8,6 +8,9 @@ interface CTASectionProps {
   waMsg?: string;
   secondaryLabel?: string;
   secondaryHref?: string;
+  /** Tombol ketiga (opsional). Hanya tampil bila label dan href diisi. */
+  tertiaryLabel?: string;
+  tertiaryHref?: string;
   /** Pass "en" to use English defaults. All explicit props still override. */
   lang?: "id" | "en";
 }
@@ -40,6 +43,8 @@ export default function CTASection({
   waMsg,
   secondaryLabel,
   secondaryHref,
+  tertiaryLabel,
+  tertiaryHref,
 }: CTASectionProps) {
   const d = DEFAULTS[lang];
 
@@ -62,7 +67,7 @@ export default function CTASection({
           {resolvedTitle}
         </h2>
         <p className="text-white/70 text-lg mb-10 max-w-2xl mx-auto">{resolvedSubtitle}</p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className={`flex flex-col sm:flex-row gap-4 justify-center${tertiaryLabel && tertiaryHref ? " sm:flex-wrap" : ""}`}>
           <a
             href={resolvedHref}
             target={resolvedHref.startsWith("http") ? "_blank" : undefined}
@@ -77,6 +82,14 @@ export default function CTASection({
           >
             {resolvedSecondaryLabel}
           </Link>
+          {tertiaryLabel && tertiaryHref && (
+            <Link
+              href={tertiaryHref}
+              className="px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-all text-center"
+            >
+              {tertiaryLabel}
+            </Link>
+          )}
         </div>
       </div>
     </section>

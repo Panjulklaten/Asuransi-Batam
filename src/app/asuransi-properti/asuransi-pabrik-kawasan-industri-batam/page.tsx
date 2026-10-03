@@ -131,6 +131,7 @@ export default function AsuransiPabrikBatamPage() {
         { label: "Asuransi Pabrik & Kawasan Industri", href: "/asuransi-properti/asuransi-pabrik-kawasan-industri-batam" },
       ]}
       schema={schema}
+      calculatorCard="pabrik"
     >
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Lengkapi Proteksi Kawasan Industri Anda</h2>

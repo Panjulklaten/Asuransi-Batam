@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { SITE } from "@/lib/constants";
 
@@ -306,6 +306,12 @@ export default function KalkulatorProperti({ lang = "id" }: KalkulatorPropertiPr
   const [huruhara, setHuruhara] = useState(false);
   const [gempa, setGempa] = useState(false);
   const [wilayah, setWilayah] = useState("batam");
+
+  // Tautan dari sub-halaman properti: /kalkulator-premi-properti?okupasi=ruko
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get("okupasi");
+    if (q && (OKUPASI_ORDER as string[]).includes(q)) setOkupasi(q as OkupasiKey);
+  }, []);
 
   const [hasil, setHasil] = useState<Hasil | null>(null);
   const [error, setError] = useState("");
