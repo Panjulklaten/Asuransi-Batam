@@ -25,6 +25,7 @@ const productLinksID2 = [
   { label: "Asuransi Event",       href: "/asuransi-event" },
   { label: "Kalkulator Premi Mobil", href: "/kalkulator-premi-mobil" },
   { label: "Kalkulator Premi Motor", href: "/kalkulator-premi-motor" },
+  { label: "Kalkulator Premi Properti", href: "/kalkulator-premi-properti" },
 ];
 const blogLinksID = [
   { label: "Cara Klaim Asuransi Mobil",     href: "/blog/cara-klaim-asuransi-mobil-batam" },
@@ -53,6 +54,7 @@ const productLinksEN2 = [
   { label: "Surety Bond Insurance",     href: "/en/surety-bond-insurance" },
   { label: "Event Insurance",           href: "/en/event-insurance" },
   { label: "Car Premium Calculator",    href: "/en/car-premium-calculator" },
+  { label: "Property Premium Calculator", href: "/en/property-premium-calculator" },
 ];
 const blogLinksEN = [
   { label: "How to File a Car Insurance Claim",  href: "/en/blog/how-to-claim-car-insurance-batam" },

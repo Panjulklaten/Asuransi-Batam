@@ -144,6 +144,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/kalkulator-premi-motor`,           lastModified: new Date("2026-07-12"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/en/motorcycle-premium-calculator`, lastModified: new Date("2026-07-12"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/en/car-premium-calculator`,        lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/kalkulator-premi-properti`,        lastModified: new Date("2026-10-03"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/en/property-premium-calculator`,   lastModified: new Date("2026-10-03"), changeFrequency: "monthly", priority: 0.8 },
 
     // ────────────────────────────────────────────────────────────────────────
     // BLOG – ID

@@ -58,6 +58,7 @@ const URL_MAP: Record<string, string> = {
   // Kalkulator
   "/kalkulator-premi-mobil": "/en/car-premium-calculator",
   "/kalkulator-premi-motor": "/en/motorcycle-premium-calculator",
+  "/kalkulator-premi-properti": "/en/property-premium-calculator",
   // Info
   "/tentang-kami": "/en/about-us",
   "/kontak": "/en/contact",

@@ -22,6 +22,8 @@ const EN_BRAND = "Batam Insurance";
 const OG_IMAGE_BY_PREFIX: [string, string][] = [
   ["/asuransi-properti", "/images/og/og-properti.jpg"],
   ["/property-insurance", "/images/og/og-properti.jpg"],
+  ["/kalkulator-premi-properti", "/images/og/og-properti.jpg"],
+  ["/property-premium-calculator", "/images/og/og-properti.jpg"],
   ["/asuransi-kendaraan", "/images/og/og-kendaraan.jpg"],
   ["/vehicle-insurance", "/images/og/og-kendaraan.jpg"],
   ["/kalkulator-premi-mobil", "/images/og/og-kendaraan.jpg"],
