@@ -5,7 +5,7 @@ import KalkulatorProperti from "@/components/KalkulatorProperti";
 export const metadata: Metadata = generateSEO({
   title: "Kalkulator Premi Asuransi Properti Batam – Cek Tarif OJK, Gratis",
   description:
-    "Hitung estimasi premi asuransi kebakaran, huru-hara, dan gempa bumi untuk rumah, ruko, gudang, kos, hotel, dan vila di Batam. Memakai tarif OJK (SEOJK 6/2017), hasil instan, tanpa daftar.",
+    "Hitung estimasi premi asuransi kebakaran, banjir, huru-hara, dan gempa bumi untuk rumah, ruko, gudang, kos, hotel, dan vila di Batam. Memakai tarif OJK (SEOJK 6/2017), hasil instan, tanpa daftar.",
   canonical: "https://asuransibatam.com/kalkulator-premi-properti",
   languages: {
     id: "https://asuransibatam.com/kalkulator-premi-properti",

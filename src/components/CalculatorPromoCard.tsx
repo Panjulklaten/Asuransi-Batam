@@ -21,7 +21,7 @@ const TEXT = {
   id: {
     href: "/kalkulator-premi-properti",
     eyebrow: "Kalkulator Premi Properti",
-    desc: "Masukkan nilai bangunan Anda dan dapatkan estimasi premi kebakaran, huru-hara, dan gempa bumi berdasarkan tarif OJK. Hasil instan, tanpa perlu daftar.",
+    desc: "Masukkan nilai bangunan Anda dan dapatkan estimasi premi kebakaran, banjir, huru-hara, dan gempa bumi berdasarkan tarif OJK. Hasil instan, tanpa perlu daftar.",
     chips: ["Tarif OJK", "Hasil Instan", "Gratis"],
     button: "Hitung Premi Sekarang",
     caption: "Estimasi awal · premi final ditentukan setelah survei",
@@ -41,7 +41,7 @@ const TEXT = {
   en: {
     href: "/en/property-premium-calculator",
     eyebrow: "Property Premium Calculator",
-    desc: "Enter your building value and get an estimated fire, riot, and earthquake premium based on official OJK rates. Instant results, no sign-up needed.",
+    desc: "Enter your building value and get an estimated fire, flood, riot, and earthquake premium based on official OJK rates. Instant results, no sign-up needed.",
     chips: ["OJK Rates", "Instant Results", "Free"],
     button: "Calculate Premium Now",
     caption: "Initial estimate · final premium set after survey",

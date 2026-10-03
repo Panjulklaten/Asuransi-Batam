@@ -6,7 +6,7 @@ import KalkulatorProperti from "@/components/KalkulatorProperti";
 export const metadata: Metadata = generateSEO({
   title: "Property Insurance Premium Calculator Batam",
   description:
-    "Estimate fire, riot, and earthquake insurance premiums for homes, shophouses, warehouses, boarding houses, hotels, and villas in Batam. Based on official OJK rates (SEOJK 6/2017). Instant results, no sign-up.",
+    "Estimate fire, flood, riot, and earthquake insurance premiums for homes, shophouses, warehouses, boarding houses, hotels, and villas in Batam. Based on official OJK rates (SEOJK 6/2017). Instant results, no sign-up.",
   canonical: "https://asuransibatam.com/en/property-premium-calculator",
   languages: {
     id: "https://asuransibatam.com/kalkulator-premi-properti",

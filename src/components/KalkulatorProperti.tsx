@@ -23,7 +23,8 @@ function parseInput(val: string): number {
 //
 // Lampiran I Tabel I.A — tarif kebakaran (FLEXAS) per kode okupasi, dalam PER MIL (‰),
 // per kelas konstruksi 1/2/3. Perusahaan asuransi boleh memakai tarif di antara
-// BATAS BAWAH (lo) dan BATAS ATAS (hi), sehingga kalkulator menampilkan rentang.
+// BATAS BAWAH (lo) dan BATAS ATAS (hi). Kalkulator ini menampilkan satu estimasi
+// memakai BATAS BAWAH (lo); data "hi" disimpan sebagai referensi OJK.
 type Kelas = "k1" | "k2" | "k3";
 const KELAS_INDEX: Record<Kelas, 0 | 1 | 2> = { k1: 0, k2: 1, k3: 2 };
 
@@ -42,8 +43,8 @@ type OkupasiKey =
 interface OkupasiRate {
   kode: string; // kode okupasi OJK (referensi)
   dwelling: boolean; // true = Dwelling House (kode 2976) → dipakai untuk tarif gempa
-  lo: [number, number, number]; // ‰ tarif bawah  [kelas1, kelas2, kelas3]
-  hi: [number, number, number]; // ‰ tarif atas   [kelas1, kelas2, kelas3]
+  lo: [number, number, number]; // ‰ tarif bawah  [kelas1, kelas2, kelas3] — DIPAKAI
+  hi: [number, number, number]; // ‰ tarif atas   [kelas1, kelas2, kelas3] — referensi
 }
 
 const OKUPASI: Record<OkupasiKey, OkupasiRate> = {
@@ -70,6 +71,19 @@ const OKUPASI: Record<OkupasiKey, OkupasiRate> = {
 const OKUPASI_ORDER: OkupasiKey[] = [
   "rumah", "apartemen", "kos", "kantor", "ruko", "gudang_sendiri", "gudang_umum", "vila", "hotel_bawah", "hotel_atas",
 ];
+
+// Lampiran II Tabel II.A — tarif perluasan BANJIR (endorsement AAUI 4.3A: banjir, angin topan,
+// badai, dan kerusakan akibat air), kolom "luar Jakarta, Banten, Jabar", dalam PERSEN (%)
+// dari total pertanggungan. Zona ditentukan riwayat banjir properti:
+//   Zona 1 — belum pernah banjir / terakhir banjir > 6 tahun lalu : 0,045% s.d. 0,050%
+//   Zona 2 — pernah banjir dalam 6 tahun terakhir                  : 0,050% s.d. 0,055%
+//   Zona 3 & 4 (banjir ≤ 3 tahun / ≤ 1 tahun terakhir) = tarif Zona 2 + faktor loading yang
+//   ditentukan underwriter → tidak dihitung di kalkulator (diarahkan ke konsultasi).
+type ZonaBanjir = 1 | 2;
+const BANJIR_RATE: Record<ZonaBanjir, { lo: number; hi: number }> = {
+  1: { lo: 0.045, hi: 0.05 },
+  2: { lo: 0.05, hi: 0.055 },
+};
 
 // Lampiran III Tabel III.A — tarif gempa bumi (‰) per zona.
 //   Dwelling House (kode 2976), rangka baja/kayu/beton bertulang:  Z1 0,76 · Z2 0,79 · Z3 1,04
@@ -109,23 +123,26 @@ interface Params {
   kelas: Kelas;
   nilaiBangunan: number;
   nilaiIsi: number;
+  banjir: boolean;
+  zonaBanjir: ZonaBanjir;
   huruhara: boolean;
   gempa: boolean;
   wilayah: string;
 }
 
-function hitung(p: Params, band: "lo" | "hi") {
+function hitung(p: Params) {
   const o = OKUPASI[p.okupasi];
   const total = p.nilaiBangunan + p.nilaiIsi;
 
-  // Polis 1: kebakaran (+ huru-hara bila dipilih)
-  const rateKebakaran = o[band][KELAS_INDEX[p.kelas]];
-  const kebakaran = (total * rateKebakaran) / 1000;
+  // Polis 1: kebakaran (+ banjir, + huru-hara bila dipilih) — memakai tarif batas bawah OJK
+  const kebakaran = (total * o.lo[KELAS_INDEX[p.kelas]]) / 1000;
+  const banjir = p.banjir ? (total * BANJIR_RATE[p.zonaBanjir].lo) / 100 : 0;
   const huruhara = p.huruhara ? (total * RATE_HURUHARA) / 100 : 0;
-  const polis1 = kebakaran + huruhara;
-  const admin1 = adminFee(polis1);
+  const premi1 = kebakaran + banjir + huruhara;
+  const admin1 = adminFee(premi1);
+  const subtotal1 = premi1 + admin1;
 
-  // Polis 2: gempa bumi (terpisah) — hanya Kelas 1
+  // Polis 2: gempa bumi (polis TERSENDIRI) — hanya Kelas 1
   let gempa = 0;
   let admin2 = 0;
   if (p.gempa && p.kelas === "k1") {
@@ -134,20 +151,27 @@ function hitung(p: Params, band: "lo" | "hi") {
     gempa = (total * rate) / 1000;
     admin2 = adminFee(gempa);
   }
+  const subtotal2 = gempa + admin2;
 
   return {
     total,
     kebakaran,
+    banjir,
     huruhara,
     admin1,
+    subtotal1,
     gempa,
     admin2,
+    subtotal2,
     duaPolis: gempa > 0,
-    grandTotal: polis1 + admin1 + gempa + admin2,
+    grandTotal: subtotal1 + subtotal2,
+    // disimpan agar tampilan hasil konsisten dengan input saat dihitung
+    zonaBanjir: p.zonaBanjir,
+    wilayah: p.wilayah,
   };
 }
 
-type Hasil = { lo: ReturnType<typeof hitung>; hi: ReturnType<typeof hitung> };
+type Hasil = ReturnType<typeof hitung>;
 
 // ─── TEKS ID / EN ────────────────────────────────────────────────────────────
 const TEXT = {
@@ -156,7 +180,7 @@ const TEXT = {
     breadcrumbCurrent: "Kalkulator Premi Properti",
     eyebrow: "Kalkulator Online",
     title: "Kalkulator Premi Asuransi Properti",
-    subtitle: "Estimasi premi kebakaran, huru-hara, dan gempa bumi berdasarkan tarif OJK.",
+    subtitle: "Estimasi premi kebakaran, banjir, huru-hara, dan gempa bumi berdasarkan tarif OJK.",
     okupasiLabel: "Jenis Properti / Okupasi",
     kelasLabel: "Kelas Konstruksi",
     kelas: {
@@ -184,26 +208,51 @@ const TEXT = {
     nilaiIsiPlaceholder: "Contoh: 50.000.000",
     nilaiIsiHint: "Perabot, elektronik, mesin, stok barang",
     perluasanLabel: "Perluasan Jaminan (opsional)",
+    banjir: "Banjir",
+    banjirSub: "termasuk angin topan, badai & kerusakan akibat air",
+    banjirZonaLabel: "Riwayat banjir di lokasi properti",
+    zona: {
+      1: { title: "Zona 1 — Rendah", desc: "Belum pernah banjir, atau terakhir banjir lebih dari 6 tahun lalu." },
+      2: { title: "Zona 2 — Sedang", desc: "Pernah banjir dalam 6 tahun terakhir." },
+    } as Record<ZonaBanjir, { title: string; desc: string }>,
+    banjirHint:
+      "Banjir terjadi dalam 3 tahun terakhir? Tarifnya lebih tinggi dan ditentukan underwriter setelah survei — hubungi kami untuk penawaran.",
     huruhara: "Huru-hara (RSMDCC)",
     gempa: "Gempa Bumi",
     gempaOnlyK1: "(hanya Kelas 1)",
     gempaSeparate: "(polis terpisah)",
     wilayahLabel: "Lokasi Properti",
     wilayahHint: "Zona gempa mengikuti lokasi risiko (Lampiran III OJK).",
-    gempaInfo: "Gempa bumi diterbitkan sebagai polis tersendiri, biaya administrasi dihitung per polis.",
+    gempaInfo: "Gempa bumi diterbitkan sebagai polis tersendiri (Polis 2), dengan biaya administrasi sendiri.",
+    gempaBatamNote:
+      "Catatan: Batam termasuk wilayah dengan aktivitas gempa yang relatif rendah (jarang terjadi gempa), sehingga perluasan gempa bumi jarang dipakai untuk properti di Batam. Pilihan ini sepenuhnya opsional.",
     errMinNilai: "Masukkan nilai bangunan minimal Rp 10.000.000",
     button: "Hitung Estimasi Premi",
     resultTitle: "Estimasi Premi Tahunan",
-    min: "Minimum",
-    max: "Maksimum",
-    breakdownTitle: "Rincian",
+    basis: "Berdasarkan tarif batas bawah OJK",
+    totalOne: "Total 1 polis, sudah termasuk biaya administrasi",
+    totalTwo: "Total Polis 1 + Polis 2, sudah termasuk biaya administrasi",
     totalInsured: "Total pertanggungan",
+    policy1: "POLIS 1",
+    policy2: "POLIS 2 · TERPISAH",
+    fireShort: "Kebakaran",
+    floodShort: "Banjir",
+    riotShort: "Huru-hara",
+    quakeTitle: "Gempa Bumi",
     fire: "Kebakaran, petir, ledakan",
+    flood: "Banjir, angin topan & badai",
+    zoneWord: "Zona",
     riot: "Perluasan huru-hara",
-    quake: "Gempa bumi (polis 2)",
+    quakePremium: "Premi gempa bumi",
     admin: "Biaya administrasi",
+    subtotal1: "Subtotal Polis 1",
+    subtotal2: "Subtotal Polis 2",
+    separateNote:
+      "Gempa bumi diterbitkan sebagai polis tersendiri, dengan nomor polis dan biaya administrasi sendiri. Anda bisa memilih Polis 1 saja.",
+    gempaBatamResultNote:
+      "Catatan: gempa bumi jarang dipakai untuk properti di Batam karena wilayah ini jarang mengalami gempa. Polis ini bersifat opsional.",
     disclaimer:
-      "* Estimasi berdasarkan SE OJK No. 6/SEOJK.05/2017: kebakaran dihitung dari batas bawah sampai batas atas tarif OJK. Tarif huru-hara adalah tarif referensi karena tidak diatur OJK. Premi final ditentukan perusahaan asuransi setelah survei.",
+      "* Estimasi memakai batas bawah tarif OJK (SE OJK No. 6/SEOJK.05/2017); premi final ditentukan perusahaan asuransi setelah survei dan bisa lebih tinggi. Tarif huru-hara adalah tarif referensi karena tidak diatur OJK.",
     cta: "Minta Penawaran via WhatsApp",
     otherCalc: "→ Coba Kalkulator Premi Mobil",
     otherCalcHref: "/kalkulator-premi-mobil",
@@ -217,6 +266,8 @@ const TEXT = {
     waExt: "Perluasan",
     waNone: "Tidak ada",
     waEst: "Estimasi premi per tahun",
+    waPolicy1: "Polis 1",
+    waPolicy2: "Polis 2 (gempa bumi, polis terpisah)",
     waNote: "(Mohon info penawaran resminya. Terima kasih.)",
     waPolicyTwo: "Polis terpisah",
   },
@@ -225,7 +276,7 @@ const TEXT = {
     breadcrumbCurrent: "Property Premium Calculator",
     eyebrow: "Online Calculator",
     title: "Property Insurance Premium Calculator",
-    subtitle: "Estimate fire, riot, and earthquake premiums based on official OJK rates.",
+    subtitle: "Estimate fire, flood, riot, and earthquake premiums based on official OJK rates.",
     okupasiLabel: "Property Type / Occupancy",
     kelasLabel: "Construction Class",
     kelas: {
@@ -253,26 +304,51 @@ const TEXT = {
     nilaiIsiPlaceholder: "e.g. 50.000.000",
     nilaiIsiHint: "Furniture, electronics, machinery, stock",
     perluasanLabel: "Extensions (optional)",
+    banjir: "Flood",
+    banjirSub: "includes windstorm, storm & water damage",
+    banjirZonaLabel: "Flood history at the property location",
+    zona: {
+      1: { title: "Zone 1 — Low", desc: "Never flooded, or last flooded more than 6 years ago." },
+      2: { title: "Zone 2 — Moderate", desc: "Flooded within the last 6 years." },
+    } as Record<ZonaBanjir, { title: string; desc: string }>,
+    banjirHint:
+      "Flooded within the last 3 years? The rate is higher and set by the underwriter after a survey — contact us for a quotation.",
     huruhara: "Riot & Civil Commotion (RSMDCC)",
     gempa: "Earthquake",
     gempaOnlyK1: "(Class 1 only)",
     gempaSeparate: "(separate policy)",
     wilayahLabel: "Property Location",
     wilayahHint: "The earthquake zone follows the risk location (OJK Appendix III).",
-    gempaInfo: "Earthquake cover is issued as a separate policy, so the admin fee applies per policy.",
+    gempaInfo: "Earthquake cover is issued as a separate policy (Policy 2), with its own administration fee.",
+    gempaBatamNote:
+      "Note: Batam has relatively low seismic activity (earthquakes are rare), so earthquake cover is seldom taken for properties in Batam. This option is entirely optional.",
     errMinNilai: "Enter a building value of at least Rp 10.000.000",
     button: "Calculate Estimated Premium",
     resultTitle: "Estimated Annual Premium",
-    min: "Minimum",
-    max: "Maximum",
-    breakdownTitle: "Breakdown",
+    basis: "Based on the lower bound of OJK rates",
+    totalOne: "Total for 1 policy, including administration fee",
+    totalTwo: "Total of Policy 1 + Policy 2, including administration fees",
     totalInsured: "Total sum insured",
+    policy1: "POLICY 1",
+    policy2: "POLICY 2 · SEPARATE",
+    fireShort: "Fire",
+    floodShort: "Flood",
+    riotShort: "Riot",
+    quakeTitle: "Earthquake",
     fire: "Fire, lightning, explosion",
+    flood: "Flood, windstorm & storm",
+    zoneWord: "Zone",
     riot: "Riot extension",
-    quake: "Earthquake (policy 2)",
+    quakePremium: "Earthquake premium",
     admin: "Administration fee",
+    subtotal1: "Policy 1 subtotal",
+    subtotal2: "Policy 2 subtotal",
+    separateNote:
+      "Earthquake cover is issued as its own policy, with a separate policy number and administration fee. You can choose Policy 1 only.",
+    gempaBatamResultNote:
+      "Note: earthquake cover is seldom taken for properties in Batam because earthquakes are rare in this area. This policy is optional.",
     disclaimer:
-      "* Estimate based on OJK Circular No. 6/SEOJK.05/2017: fire is calculated from the lower to the upper OJK rate. The riot rate is a reference rate because OJK does not set one. The final premium is determined by the insurer after a survey.",
+      "* Estimate uses the lower bound of OJK rates (OJK Circular No. 6/SEOJK.05/2017); the final premium is set by the insurer after a survey and may be higher. The riot rate is a reference rate because OJK does not set one.",
     cta: "Request a Quote via WhatsApp",
     otherCalc: "→ Try the Car Premium Calculator",
     otherCalcHref: "/en/car-premium-calculator",
@@ -286,10 +362,54 @@ const TEXT = {
     waExt: "Extensions",
     waNone: "None",
     waEst: "Estimated annual premium",
+    waPolicy1: "Policy 1",
+    waPolicy2: "Policy 2 (earthquake, separate policy)",
     waNote: "(Please send me the official quotation. Thank you.)",
     waPolicyTwo: "Separate policy",
   },
 };
+
+// ─── KOMPONEN KECIL UNTUK HASIL ──────────────────────────────────────────────
+function Row({ label, value, strong }: { label: string; value: string; strong?: boolean }) {
+  return (
+    <div className="flex justify-between gap-4 py-2 text-sm">
+      <dt className={strong ? "font-semibold text-white" : "text-white/70"}>{label}</dt>
+      <dd className={`text-right ${strong ? "font-bold text-[#f0d080]" : "font-semibold text-white"}`}>{value}</dd>
+    </div>
+  );
+}
+
+function PolicyBlock({
+  badge,
+  title,
+  accent,
+  children,
+}: {
+  badge: string;
+  title: string;
+  accent?: boolean;
+  children: React.ReactNode;
+}) {
+  return (
+    <div
+      className={`rounded-xl p-4 ${
+        accent ? "border border-dashed border-[#c9a84c]/60 bg-[#c9a84c]/10" : "border border-white/15 bg-white/10"
+      }`}
+    >
+      <div className="mb-2 flex flex-wrap items-center gap-2">
+        <span
+          className={`rounded-full px-2.5 py-1 text-[11px] font-bold tracking-wider ${
+            accent ? "bg-[#c9a84c] text-[#0a1628]" : "bg-white/20 text-white"
+          }`}
+        >
+          {badge}
+        </span>
+        <span className="font-display font-semibold text-white">{title}</span>
+      </div>
+      {children}
+    </div>
+  );
+}
 
 interface KalkulatorPropertiProps {
   lang?: "id" | "en";
@@ -303,6 +423,8 @@ export default function KalkulatorProperti({ lang = "id" }: KalkulatorPropertiPr
   const [kelas, setKelas] = useState<Kelas>("k1");
   const [nilai, setNilai] = useState("");
   const [isi, setIsi] = useState("");
+  const [banjir, setBanjir] = useState(false);
+  const [zonaBanjir, setZonaBanjir] = useState<ZonaBanjir>(1);
   const [huruhara, setHuruhara] = useState(false);
   const [gempa, setGempa] = useState(false);
   const [wilayah, setWilayah] = useState("batam");
@@ -334,16 +456,16 @@ export default function KalkulatorProperti({ lang = "id" }: KalkulatorPropertiPr
       return;
     }
     setError("");
-    const params: Params = { okupasi, kelas, nilaiBangunan, nilaiIsi, huruhara, gempa, wilayah };
-    setHasil({ lo: hitung(params, "lo"), hi: hitung(params, "hi") });
+    setHasil(hitung({ okupasi, kelas, nilaiBangunan, nilaiIsi, banjir, zonaBanjir, huruhara, gempa, wilayah }));
   }
 
   function buildWaLink() {
     if (!hasil) return `https://wa.me/${SITE.phoneWA}`;
-    const w = WILAYAH.find((x) => x.value === wilayah) ?? WILAYAH[0];
+    const w = WILAYAH.find((x) => x.value === hasil.wilayah) ?? WILAYAH[0];
     const ext = [
-      huruhara && t.huruhara,
-      hasil.lo.duaPolis && `${t.gempa} – ${w.label} (${t.waPolicyTwo})`,
+      hasil.banjir > 0 && `${t.banjir} (${t.zoneWord} ${hasil.zonaBanjir})`,
+      hasil.huruhara > 0 && t.huruhara,
+      hasil.duaPolis && `${t.gempa} – ${w.label} (${t.waPolicyTwo})`,
     ].filter(Boolean).join(" + ") || t.waNone;
 
     const lines = [
@@ -354,10 +476,12 @@ export default function KalkulatorProperti({ lang = "id" }: KalkulatorPropertiPr
       `- ${t.waClass}: ${t.kelas[kelas]}`,
       `- ${t.waBuilding}: ${formatRupiah(parseInput(nilai))}`,
       ...(parseInput(isi) > 0 ? [`- ${t.waContents}: ${formatRupiah(parseInput(isi))}`] : []),
-      `- ${t.waTotal}: ${formatRupiah(hasil.lo.total)}`,
+      `- ${t.waTotal}: ${formatRupiah(hasil.total)}`,
       `- ${t.waExt}: ${ext}`,
       "",
-      `*${t.waEst}: ${formatRupiah(hasil.lo.grandTotal)} – ${formatRupiah(hasil.hi.grandTotal)}*`,
+      `*${t.waEst}: ${formatRupiah(hasil.grandTotal)}*`,
+      `- ${t.waPolicy1}: ${formatRupiah(hasil.subtotal1)}`,
+      ...(hasil.duaPolis ? [`- ${t.waPolicy2}: ${formatRupiah(hasil.subtotal2)}`] : []),
       "",
       t.waNote,
     ];
@@ -368,10 +492,14 @@ export default function KalkulatorProperti({ lang = "id" }: KalkulatorPropertiPr
     "w-full px-4 py-3 rounded-xl border-2 border-[#e2e8f0] focus:border-[#1a4fa0] outline-none text-[#0a1628] font-medium bg-white";
   const labelCls = "block font-display font-semibold text-[#0a1628] mb-2";
   const hintCls = "text-[#475569] text-xs mt-1.5 block";
+  const extCardCls = (active: boolean) =>
+    `flex items-start gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all ${
+      active ? "border-[#c9a84c] bg-[#c9a84c]/5" : "border-[#e2e8f0] hover:border-[#c9a84c]/40"
+    }`;
 
-  // Baris rincian: tampilkan rentang bila min ≠ maks
-  const range = (lo: number, hi: number) =>
-    Math.round(lo) === Math.round(hi) ? formatRupiah(lo) : `${formatRupiah(lo)} – ${formatRupiah(hi)}`;
+  const policy1Title = [t.fireShort, hasil && hasil.banjir > 0 && t.floodShort, hasil && hasil.huruhara > 0 && t.riotShort]
+    .filter(Boolean)
+    .join(" + ");
 
   return (
     <div className="min-h-screen">
@@ -456,66 +584,111 @@ export default function KalkulatorProperti({ lang = "id" }: KalkulatorPropertiPr
                 </div>
               </div>
 
-              {/* Perluasan */}
+              {/* Perluasan jaminan */}
               <div>
                 <span className={labelCls}>{t.perluasanLabel}</span>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <label
-                    className={`flex items-center gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all ${
-                      huruhara ? "border-[#c9a84c] bg-[#c9a84c]/5" : "border-[#e2e8f0] hover:border-[#c9a84c]/40"
-                    }`}
-                  >
+                <div className="space-y-3">
+                  {/* Banjir */}
+                  <div>
+                    <label className={extCardCls(banjir)}>
+                      <input
+                        type="checkbox"
+                        checked={banjir}
+                        onChange={(e) => { setBanjir(e.target.checked); reset(); }}
+                        className="accent-[#c9a84c] w-4 h-4 mt-0.5"
+                      />
+                      <span className="text-sm font-semibold text-[#0a1628]">
+                        {t.banjir}{" "}
+                        <span className="font-normal text-xs text-[#475569]">({t.banjirSub})</span>
+                      </span>
+                    </label>
+
+                    {banjir && (
+                      <div className="mt-3 pl-4 border-l-2 border-[#c9a84c]/40">
+                        <span className={labelCls}>{t.banjirZonaLabel}</span>
+                        <div role="radiogroup" aria-label={t.banjirZonaLabel} className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          {([1, 2] as ZonaBanjir[]).map((z) => (
+                            <label key={z} className={extCardCls(zonaBanjir === z)}>
+                              <input
+                                type="radio"
+                                name="kp-zona-banjir"
+                                checked={zonaBanjir === z}
+                                onChange={() => { setZonaBanjir(z); reset(); }}
+                                className="accent-[#c9a84c] w-4 h-4 mt-0.5"
+                              />
+                              <span>
+                                <span className="block text-sm font-semibold text-[#0a1628]">{t.zona[z].title}</span>
+                                <span className="block text-xs text-[#475569] mt-0.5 leading-relaxed">{t.zona[z].desc}</span>
+                              </span>
+                            </label>
+                          ))}
+                        </div>
+                        <p className="text-[#475569] text-xs mt-3 leading-relaxed">{t.banjirHint}</p>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Huru-hara */}
+                  <label className={extCardCls(huruhara)}>
                     <input
                       type="checkbox"
                       checked={huruhara}
                       onChange={(e) => { setHuruhara(e.target.checked); reset(); }}
-                      className="accent-[#c9a84c] w-4 h-4"
+                      className="accent-[#c9a84c] w-4 h-4 mt-0.5"
                     />
                     <span className="text-sm font-semibold text-[#0a1628]">{t.huruhara}</span>
                   </label>
 
-                  <label
-                    className={`flex items-center gap-3 p-4 rounded-xl border-2 transition-all ${
-                      !gempaBisaDipilih
-                        ? "border-[#e2e8f0] bg-[#f8fafc] cursor-not-allowed opacity-60"
-                        : gempa
-                          ? "border-[#c9a84c] bg-[#c9a84c]/5 cursor-pointer"
-                          : "border-[#e2e8f0] hover:border-[#c9a84c]/40 cursor-pointer"
-                    }`}
-                  >
-                    <input
-                      type="checkbox"
-                      checked={gempa}
-                      disabled={!gempaBisaDipilih}
-                      onChange={(e) => { setGempa(e.target.checked); reset(); }}
-                      className="accent-[#c9a84c] w-4 h-4"
-                    />
-                    <span className="text-sm font-semibold text-[#0a1628]">
-                      {t.gempa}{" "}
-                      <span className="font-normal text-xs text-[#475569]">
-                        {!gempaBisaDipilih ? t.gempaOnlyK1 : gempa ? t.gempaSeparate : ""}
-                      </span>
-                    </span>
-                  </label>
-                </div>
-
-                {gempa && gempaBisaDipilih && (
-                  <div className="mt-4">
-                    <label htmlFor="kp-wilayah" className={labelCls}>{t.wilayahLabel}</label>
-                    <select
-                      id="kp-wilayah"
-                      className={fieldCls}
-                      value={wilayah}
-                      onChange={(e) => { setWilayah(e.target.value); reset(); }}
+                  {/* Gempa bumi */}
+                  <div>
+                    <label
+                      className={`flex items-start gap-3 p-4 rounded-xl border-2 transition-all ${
+                        !gempaBisaDipilih
+                          ? "border-[#e2e8f0] bg-[#f8fafc] cursor-not-allowed opacity-60"
+                          : gempa
+                            ? "border-[#c9a84c] bg-[#c9a84c]/5 cursor-pointer"
+                            : "border-[#e2e8f0] hover:border-[#c9a84c]/40 cursor-pointer"
+                      }`}
                     >
-                      {WILAYAH.map((w) => (
-                        <option key={w.value} value={w.value}>{w.label}</option>
-                      ))}
-                    </select>
-                    <span className={hintCls}>{t.wilayahHint}</span>
-                    <p className="text-[#475569] text-xs mt-2 leading-relaxed">{t.gempaInfo}</p>
+                      <input
+                        type="checkbox"
+                        checked={gempa}
+                        disabled={!gempaBisaDipilih}
+                        onChange={(e) => { setGempa(e.target.checked); reset(); }}
+                        className="accent-[#c9a84c] w-4 h-4 mt-0.5"
+                      />
+                      <span className="text-sm font-semibold text-[#0a1628]">
+                        {t.gempa}{" "}
+                        <span className="font-normal text-xs text-[#475569]">
+                          {!gempaBisaDipilih ? t.gempaOnlyK1 : t.gempaSeparate}
+                        </span>
+                      </span>
+                    </label>
+
+                    {gempa && gempaBisaDipilih && (
+                      <div className="mt-3 pl-4 border-l-2 border-[#c9a84c]/40">
+                        <label htmlFor="kp-wilayah" className={labelCls}>{t.wilayahLabel}</label>
+                        <select
+                          id="kp-wilayah"
+                          className={fieldCls}
+                          value={wilayah}
+                          onChange={(e) => { setWilayah(e.target.value); reset(); }}
+                        >
+                          {WILAYAH.map((w) => (
+                            <option key={w.value} value={w.value}>{w.label}</option>
+                          ))}
+                        </select>
+                        <span className={hintCls}>{t.wilayahHint}</span>
+                        <p className="text-[#475569] text-xs mt-3 leading-relaxed">{t.gempaInfo}</p>
+                        {wilayah === "batam" && (
+                          <p className="mt-2 rounded-lg bg-[#faf8f3] border border-[#c9a84c]/30 px-3 py-2 text-xs leading-relaxed text-[#475569]">
+                            {t.gempaBatamNote}
+                          </p>
+                        )}
+                      </div>
+                    )}
                   </div>
-                )}
+                </div>
               </div>
 
               {error && <p className="text-red-600 text-sm" role="alert">{error}</p>}
@@ -530,61 +703,68 @@ export default function KalkulatorProperti({ lang = "id" }: KalkulatorPropertiPr
 
             {/* HASIL */}
             {hasil && (
-              <div className="mt-6 p-6 bg-gradient-to-r from-[#0a1628] to-[#1a4fa0] rounded-2xl text-white">
-                <h3 className="font-display font-bold text-lg mb-4 text-[#c9a84c]">{t.resultTitle}</h3>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
-                  <div className="bg-white/10 rounded-xl p-4 text-center">
-                    <div className="text-white/60 text-xs mb-1">{t.min}</div>
-                    <div className="font-bold text-xl">{formatRupiah(hasil.lo.grandTotal)}</div>
-                  </div>
-                  <div className="bg-[#c9a84c]/20 rounded-xl p-4 text-center border border-[#c9a84c]/40">
-                    <div className="text-[#c9a84c] text-xs mb-1">{t.max}</div>
-                    <div className="font-bold text-xl text-[#f0d080]">{formatRupiah(hasil.hi.grandTotal)}</div>
-                  </div>
+              <div className="mt-6 overflow-hidden rounded-2xl bg-gradient-to-br from-[#0a1628] to-[#1a4fa0] text-white">
+                {/* Total */}
+                <div className="border-b border-white/10 px-6 pb-5 pt-6 text-center">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-[#c9a84c]">{t.resultTitle}</p>
+                  <p className="mt-2 font-display text-4xl font-bold text-[#f0d080] sm:text-5xl">
+                    {formatRupiah(hasil.grandTotal)}
+                  </p>
+                  <p className="mt-2 text-xs text-white/60">{hasil.duaPolis ? t.totalTwo : t.totalOne}</p>
+                  <p className="text-xs text-white/50">{t.basis}</p>
                 </div>
 
-                <div className="text-sm border-t border-white/15 pt-4">
-                  <div className="text-white/60 text-xs font-semibold mb-2">{t.breakdownTitle}</div>
-                  <dl className="space-y-2">
-                    <div className="flex justify-between gap-4">
-                      <dt className="text-white/70">{t.totalInsured}</dt>
-                      <dd className="font-semibold text-right">{formatRupiah(hasil.lo.total)}</dd>
-                    </div>
-                    <div className="flex justify-between gap-4">
-                      <dt className="text-white/70">{t.fire}</dt>
-                      <dd className="font-semibold text-right">{range(hasil.lo.kebakaran, hasil.hi.kebakaran)}</dd>
-                    </div>
-                    {hasil.lo.huruhara > 0 && (
-                      <div className="flex justify-between gap-4">
-                        <dt className="text-white/70">{t.riot}</dt>
-                        <dd className="font-semibold text-right">{formatRupiah(hasil.lo.huruhara)}</dd>
-                      </div>
-                    )}
-                    {hasil.lo.duaPolis && (
-                      <div className="flex justify-between gap-4">
-                        <dt className="text-white/70">{t.quake}</dt>
-                        <dd className="font-semibold text-right">{formatRupiah(hasil.lo.gempa)}</dd>
-                      </div>
-                    )}
-                    <div className="flex justify-between gap-4">
-                      <dt className="text-white/70">{t.admin}</dt>
-                      <dd className="font-semibold text-right">
-                        {range(hasil.lo.admin1 + hasil.lo.admin2, hasil.hi.admin1 + hasil.hi.admin2)}
-                      </dd>
-                    </div>
-                  </dl>
+                <div className="space-y-3 p-6">
+                  <div className="flex justify-between gap-4 text-sm">
+                    <span className="text-white/70">{t.totalInsured}</span>
+                    <span className="font-semibold">{formatRupiah(hasil.total)}</span>
+                  </div>
+
+                  {/* Polis 1 */}
+                  <PolicyBlock badge={t.policy1} title={policy1Title}>
+                    <dl className="divide-y divide-white/10">
+                      <Row label={t.fire} value={formatRupiah(hasil.kebakaran)} />
+                      {hasil.banjir > 0 && (
+                        <Row label={`${t.flood} (${t.zoneWord} ${hasil.zonaBanjir})`} value={formatRupiah(hasil.banjir)} />
+                      )}
+                      {hasil.huruhara > 0 && <Row label={t.riot} value={formatRupiah(hasil.huruhara)} />}
+                      <Row label={t.admin} value={formatRupiah(hasil.admin1)} />
+                      <Row strong label={t.subtotal1} value={formatRupiah(hasil.subtotal1)} />
+                    </dl>
+                  </PolicyBlock>
+
+                  {/* Polis 2 — gempa bumi, terpisah */}
+                  {hasil.duaPolis && (
+                    <>
+                      <div className="text-center text-lg font-bold text-[#c9a84c]" aria-hidden="true">+</div>
+                      <PolicyBlock accent badge={t.policy2} title={t.quakeTitle}>
+                        <p className="mb-2 text-xs leading-relaxed text-white/70">{t.separateNote}</p>
+                        <dl className="divide-y divide-white/10">
+                          <Row label={t.quakePremium} value={formatRupiah(hasil.gempa)} />
+                          <Row label={t.admin} value={formatRupiah(hasil.admin2)} />
+                          <Row strong label={t.subtotal2} value={formatRupiah(hasil.subtotal2)} />
+                        </dl>
+                        {hasil.wilayah === "batam" && (
+                          <p className="mt-3 rounded-lg bg-white/10 px-3 py-2 text-xs leading-relaxed text-white/80">
+                            {t.gempaBatamResultNote}
+                          </p>
+                        )}
+                      </PolicyBlock>
+                    </>
+                  )}
                 </div>
 
-                <p className="text-white/60 text-xs mt-4 mb-4 leading-relaxed">{t.disclaimer}</p>
-                <a
-                  href={buildWaLink()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full py-3 bg-[#c9a84c] text-[#0a1628] font-bold rounded-xl text-center hover:bg-[#f0d080] transition-colors"
-                >
-                  {t.cta}
-                </a>
+                <div className="px-6 pb-6">
+                  <p className="mb-4 text-xs leading-relaxed text-white/60">{t.disclaimer}</p>
+                  <a
+                    href={buildWaLink()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full rounded-xl bg-[#c9a84c] py-3 text-center font-bold text-[#0a1628] transition-colors hover:bg-[#f0d080]"
+                  >
+                    {t.cta}
+                  </a>
+                </div>
               </div>
             )}
           </div>
