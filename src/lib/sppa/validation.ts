@@ -234,15 +234,9 @@ export function validateSubmission(product: ProductConfig, raw: Raw): Validation
   return validateFields(flattenFields(product), raw);
 }
 
-/** Dokumen wajib (yang tampil dan required) yang belum terunggah. */
-export function missingDocuments(
-  product: ProductConfig,
-  cleanValues: Raw,
-  uploadedKeys: string[],
-): DocumentSpec[] {
-  return product.documents.filter(
-    (d) => d.required && evaluate(d.showIf, cleanValues) && !uploadedKeys.includes(d.key),
-  );
+/** Dokumen yang perlu dikirim pemohon lewat WhatsApp (hanya yang relevan dengan jawaban). */
+export function requestedDocuments(product: ProductConfig, cleanValues: Raw): DocumentSpec[] {
+  return product.documents.filter((d) => evaluate(d.showIf, cleanValues));
 }
 
 /** Ringkasan untuk kolom database / notifikasi. */

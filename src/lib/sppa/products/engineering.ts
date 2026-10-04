@@ -131,7 +131,7 @@ export const engineeringConfig: ProductConfig = {
       ],
     },
     { id: "claims", title: "Riwayat Asuransi & Klaim", fields: claimsFields() },
-    { id: "documents", title: "Upload Dokumen", description: "Semua dokumen opsional pada tahap awal. Lampirkan yang sudah tersedia.", fields: [] },
+    { id: "documents", title: "Dokumen Pendukung", description: "Dokumen tidak diunggah di sini. Setelah SPPA terkirim, kirimkan dokumen berikut lewat WhatsApp.", fields: [] },
   ],
   documents: [
     { key: "contractSpk", label: "Contract / SPK", showIf: PROJECT },

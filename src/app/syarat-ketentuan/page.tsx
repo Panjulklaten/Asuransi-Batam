@@ -25,8 +25,8 @@ export default function SyaratKetentuanPage() {
       <h2>3. Peran kami</h2>
       <p>Kami membantu menyampaikan dan menindaklanjuti pengajuan Anda kepada perusahaan asuransi. Ketentuan polis yang berlaku adalah yang tercantum dalam dokumen polis resmi dari perusahaan asuransi.</p>
 
-      <h2>4. Dokumen yang Anda unggah</h2>
-      <p>Unggah hanya dokumen yang sah dan milik Anda atau yang Anda berwenang menggunakannya. Format yang diterima adalah PDF, JPG, dan PNG dengan ukuran terbatas.</p>
+      <h2>4. Dokumen pendukung</h2>
+      <p>Formulir ini tidak menerima unggahan dokumen. Dokumen pendukung dikirim melalui WhatsApp kami; kirim hanya dokumen yang sah dan yang Anda berwenang menggunakannya.</p>
 
       <h2>5. Penggunaan yang wajar</h2>
       <p>Dilarang menyalahgunakan formulir, termasuk mengirim data palsu, otomatisasi berlebihan, atau upaya mengganggu keamanan layanan.</p>
