@@ -177,6 +177,25 @@ export default function Footer() {
                   {t.contact}
                 </Link>
               </li>
+              {!isEN && (
+                <>
+                  <li>
+                    <Link href="/form-sppa" className="text-sm text-white/60 hover:text-[#c9a84c] transition-colors">
+                      Form SPPA
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/kebijakan-privasi" className="text-sm text-white/60 hover:text-[#c9a84c] transition-colors">
+                      Kebijakan Privasi
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/syarat-ketentuan" className="text-sm text-white/60 hover:text-[#c9a84c] transition-colors">
+                      Syarat &amp; Ketentuan
+                    </Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </div>

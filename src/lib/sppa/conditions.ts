@@ -25,9 +25,28 @@ export function flattenFields(product: ProductConfig): Field[] {
 }
 
 /**
- * Langkah yang ditampilkan untuk jawaban saat ini: langkah berisi field harus punya minimal satu
- * field tampil; langkah tanpa field (mis. "documents") selalu tampil.
+ * Nama field yang tampil untuk jawaban saat ini. Kondisi dievaluasi berurutan terhadap field yang
+ * sendiri tampil (sama seperti validasi server), sehingga jawaban basi dari field tersembunyi
+ * tidak bisa membuka field turunannya.
+ */
+export function visibleFieldNames(fields: Field[], values: Values): Set<string> {
+  const eff: Values = { ...values };
+  for (const f of fields) delete eff[f.name];
+  const visible = new Set<string>();
+  for (const f of fields) {
+    if (evaluate(f.showIf, eff)) {
+      visible.add(f.name);
+      eff[f.name] = values[f.name];
+    }
+  }
+  return visible;
+}
+
+/**
+ * Langkah yang ditampilkan: langkah berisi field harus punya minimal satu field tampil;
+ * langkah tanpa field (mis. "documents") selalu tampil.
  */
 export function visibleSteps(product: ProductConfig, values: Values): StepConfig[] {
-  return product.steps.filter((s) => s.fields.length === 0 || s.fields.some((f) => evaluate(f.showIf, values)));
+  const visible = visibleFieldNames(flattenFields(product), values);
+  return product.steps.filter((s) => s.fields.length === 0 || s.fields.some((f) => visible.has(f.name)));
 }

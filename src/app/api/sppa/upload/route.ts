@@ -72,3 +72,21 @@ export async function POST(req: Request) {
 
   return NextResponse.json({ ok: true, uploadSession: session, path, signedUrl: signed.signedUrl, token: signed.token }, { headers: { "Cache-Control": "no-store" } });
 }
+
+// DELETE /api/sppa/upload — hapus dokumen yang belum di-submit (milik sesi upload yang sama).
+const deleteSchema = z.object({ uploadSession: z.string().regex(UUID_RE), path: z.string().min(10).max(300) });
+
+export async function DELETE(req: Request) {
+  const db = getAdminClient();
+  if (!db) return fail(503, "Layanan sedang tidak tersedia.");
+  const parsed = deleteSchema.safeParse(await req.json().catch(() => null));
+  if (!parsed.success) return fail(400, "Permintaan tidak valid.");
+  const { uploadSession, path } = parsed.data;
+  if (!path.startsWith(`${uploadSession}/`)) return fail(400, "Permintaan tidak valid.");
+
+  const { data: row } = await db.from("sppa_documents").select("id").eq("upload_session", uploadSession).eq("storage_path", path).is("submission_id", null).maybeSingle();
+  if (!row) return fail(404, "Dokumen tidak ditemukan.");
+  await db.storage.from(DOCS_BUCKET).remove([path]);
+  await db.from("sppa_documents").delete().eq("id", row.id);
+  return NextResponse.json({ ok: true }, { headers: { "Cache-Control": "no-store" } });
+}
