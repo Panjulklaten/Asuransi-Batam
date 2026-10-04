@@ -128,7 +128,7 @@ export const marineHullConfig: ProductConfig = {
       title: "Riwayat Asuransi & Klaim",
       fields: claimsFields({ claimQuestion: "Pernah mengalami klaim dalam 3–5 tahun terakhir?", claimType: true }),
     },
-    { id: "documents", title: "Upload Dokumen", description: "Semua dokumen opsional pada tahap awal. Lampirkan yang sudah tersedia.", fields: [] },
+    { id: "documents", title: "Dokumen Pendukung", description: "Dokumen tidak diunggah di sini. Setelah SPPA terkirim, kirimkan dokumen berikut lewat WhatsApp.", fields: [] },
   ],
   documents: [
     { key: "shipParticular", label: "Ship Particular" },

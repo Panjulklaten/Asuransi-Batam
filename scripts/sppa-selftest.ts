@@ -1,8 +1,7 @@
 // Self-test logika SPPA (tanpa framework test). Jalankan: npx tsx scripts/sppa-selftest.ts
 import { PRODUCTS, PRODUCT_LIST, getProduct } from "../src/lib/sppa/productConfig";
 import { evaluate, flattenFields, visibleSteps } from "../src/lib/sppa/conditions";
-import { extractSummary, missingDocuments, normalizePhone, validateFields, validateSubmission } from "../src/lib/sppa/validation";
-import { checkFileContent, checkFileMeta, sanitizeFileName, sniffMime } from "../src/lib/sppa/fileCheck";
+import { extractSummary, normalizePhone, requestedDocuments, validateFields, validateSubmission } from "../src/lib/sppa/validation";
 import { generateReferenceNo, REFERENCE_PATTERN } from "../src/lib/sppa/reference";
 import { sanitizeText, sanitizeMultiline } from "../src/lib/sppa/sanitize";
 import { validateDeclaration, DECLARATION_ITEMS } from "../src/lib/sppa/declaration";
@@ -162,8 +161,8 @@ r = validateSubmission(pa, { subType: "group", participantMode: "manual", partic
 t("PA group: minimal 1 peserta", !!r.errors.participants);
 r = validateSubmission(pa, { subType: "group", participantMode: "upload", participants: grpPeople, ...paBase });
 t("PA group upload: peserta manual dibuang", r.ok && !("participants" in r.values), r.errors);
-t("PA group upload: dokumen daftar peserta wajib", missingDocuments(pa, r.values, []).map((d) => d.key).join() === "participantList");
-t("PA group upload: lolos jika sudah diunggah", missingDocuments(pa, r.values, ["participantList"]).length === 0);
+t("PA group via WA: daftar peserta diminta", requestedDocuments(pa, r.values).some((d) => d.key === "participantList" && d.required));
+t("PA individual: daftar peserta tidak diminta", !requestedDocuments(pa, validateSubmission(pa, { subType: "individual", ...paBase }).values).some((d) => d.key === "participantList"));
 r = validateSubmission(pa, { subType: "event", eventRisk: "Lomba lari", eventName: "Fun Run", eventLocation: "Batam", eventParticipants: "500", ...paBase });
 t("PA event valid; pertanyaan pekerjaan tidak diminta", r.ok && !("workAtSea" in r.values), r.errors);
 t("PA event: langkah risiko tetap tampil", visibleSteps(pa, { subType: "event" }).some((s) => s.id === "risk"));
@@ -177,22 +176,9 @@ t("normalizePhone variasi", ["081234567890", "+62 812-3456-7890", "6281234567890
 const refs = new Set<string>();
 for (let i = 0; i < 3000; i++) { const x = generateReferenceNo(new Date("2026-10-04")); t("format referensi", REFERENCE_PATTERN.test(x), x); refs.add(x); }
 t("referensi unik (3000 sampel)", refs.size === 3000, refs.size);
-const pdf = new Uint8Array([0x25, 0x50, 0x44, 0x46, 0x2d, 0x31]);
-const png = new Uint8Array([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
-const exe = new Uint8Array([0x4d, 0x5a, 0x90, 0x00]);
-t("sniff pdf/png/exe", sniffMime(pdf) === "application/pdf" && sniffMime(png) === "image/png" && sniffMime(exe) === null);
-t("exe berkedok .pdf ditolak", !!checkFileContent(exe, "application/pdf", "a.pdf"));
-t("png berkedok pdf ditolak", !!checkFileContent(png, "application/pdf", "a.pdf"));
-t("pdf asli lolos", checkFileContent(pdf, "application/pdf", "a.pdf") === null);
-t("meta: >8MB ditolak", !!checkFileMeta({ name: "a.pdf", size: 9 * 1024 * 1024, type: "application/pdf" }));
-t("meta: .exe ditolak", !!checkFileMeta({ name: "a.exe", size: 100, type: "application/pdf" }));
-t("meta: mime≠ekstensi ditolak", !!checkFileMeta({ name: "a.png", size: 100, type: "application/pdf" }));
-t("meta: pdf ok", checkFileMeta({ name: "Kontrak 1.pdf", size: 100, type: "application/pdf" }) === null);
-t("nama file disanitasi", sanitizeFileName("../../etc/pass wd<>.pdf") === "pass_wd.pdf" && sanitizeFileName("a.php.pdf") === "a_php.pdf", sanitizeFileName("a.php.pdf"));
 t("deklarasi: semua wajib", validateDeclaration([]) !== null && validateDeclaration(DECLARATION_ITEMS.map((i) => i.id)) === null && validateDeclaration(["truthful"]) !== null);
 t("envelope: honeypot terisi ditolak", !submissionEnvelope.safeParse({ product: "engineering", values: {}, declaration: { accepted: [] }, startedAt: 1, website: "x" }).success);
 t("envelope: valid", submissionEnvelope.safeParse({ product: "engineering", values: { a: 1 }, declaration: { accepted: [] }, startedAt: 1 }).success);
-t("envelope: uploadSession bukan uuid ditolak", !submissionEnvelope.safeParse({ product: "x", values: {}, declaration: { accepted: [] }, startedAt: 1, uploadSession: "abc" }).success);
 t("getProduct menolak __proto__/constructor", getProduct("__proto__") === null && getProduct("constructor") === null && getProduct("engineering") !== null);
 
 console.log(`\n${pass} lulus, ${fail} gagal`);

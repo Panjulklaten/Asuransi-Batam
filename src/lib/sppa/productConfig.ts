@@ -1,6 +1,6 @@
 // Registry produk SPPA. Menambah produk baru (Property, Liability, Motor, ...):
 // 1) buat src/lib/sppa/products/<produk>.ts yang mengekspor ProductConfig
-// 2) tambahkan ke PRODUCTS di bawah dan ke enum CHECK di supabase/migrations
+// 2) tambahkan ke PRODUCTS di bawah
 import { engineeringConfig } from "./products/engineering";
 import { marineCargoConfig } from "./products/marineCargo";
 import { marineHullConfig } from "./products/marineHull";

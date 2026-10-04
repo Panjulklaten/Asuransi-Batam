@@ -20,8 +20,8 @@ export default function KebijakanPrivasiPage() {
       <ul>
         <li>Data identitas dan kontak: nama, NIK, tanggal lahir, alamat, nomor HP/WhatsApp, email, NPWP, dan data perusahaan.</li>
         <li>Data objek dan risiko yang Anda isi pada formulir (mis. data kapal, proyek, barang, atau pekerjaan), nilai pertanggungan, dan riwayat klaim.</li>
-        <li>Dokumen yang Anda unggah secara sukarela (mis. kontrak, invoice, sertifikat).</li>
-        <li>Data teknis terbatas untuk keamanan, seperti hash alamat IP untuk mencegah penyalahgunaan formulir.</li>
+        <li>Dokumen pendukung (mis. kontrak, invoice, sertifikat) yang Anda kirimkan sendiri kepada kami melalui WhatsApp. Formulir ini tidak menerima unggahan dokumen.</li>
+        <li>Data teknis terbatas untuk keamanan, seperti alamat IP yang di-hash untuk membatasi penyalahgunaan formulir.</li>
       </ul>
 
       <h2>2. Tujuan penggunaan</h2>
@@ -32,13 +32,13 @@ export default function KebijakanPrivasiPage() {
       </ul>
 
       <h2>3. Pembagian data</h2>
-      <p>Data Anda dapat diteruskan kepada perusahaan asuransi atau pihak terkait yang diperlukan untuk memproses pengajuan Anda. Kami juga memakai penyedia layanan teknologi (penyimpanan data cloud dan layanan pesan) untuk mengoperasikan formulir dan notifikasi. Kami tidak menjual data pribadi Anda.</p>
+      <p>Data Anda dapat diteruskan kepada perusahaan asuransi atau pihak terkait yang diperlukan untuk memproses pengajuan Anda. Kami juga memakai penyedia layanan teknologi (layanan pengiriman email dan pesan WhatsApp) untuk meneruskan pengajuan kepada kami. Kami tidak menjual data pribadi Anda.</p>
 
       <h2>4. Keamanan</h2>
-      <p>Data formulir disimpan di penyimpanan yang tidak dapat diakses publik, dan dokumen disimpan secara privat. Tidak ada sistem yang sepenuhnya bebas risiko, namun kami berupaya menerapkan langkah pengamanan yang wajar.</p>
+      <p>Formulir ini tidak menyimpan jawaban Anda di database situs; pengajuan dikirim ke email admin kami (data lengkap) dan notifikasi WhatsApp ringkas tanpa NIK, NPWP, atau nilai pertanggungan. Tidak ada sistem yang sepenuhnya bebas risiko, namun kami berupaya menerapkan langkah pengamanan yang wajar.</p>
 
       <h2>5. Penyimpanan</h2>
-      <p>Data disimpan selama diperlukan untuk memproses pengajuan dan memenuhi kewajiban hukum yang berlaku.</p>
+      <p>Data yang kami terima melalui email dan WhatsApp disimpan selama diperlukan untuk memproses pengajuan dan memenuhi kewajiban hukum yang berlaku.</p>
 
       <h2>6. Hak Anda</h2>
       <p>Anda dapat meminta akses, perbaikan, atau penghapusan data pribadi Anda, serta menarik persetujuan, sesuai ketentuan peraturan yang berlaku. Hubungi kami melalui <a href="mailto:rio@asuransibatam.com">rio@asuransibatam.com</a> atau WhatsApp yang tertera di halaman <a href="/kontak">Kontak</a>.</p>

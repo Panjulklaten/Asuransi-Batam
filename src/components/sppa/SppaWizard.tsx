@@ -6,15 +6,14 @@ import { flattenFields, visibleFieldNames, visibleSteps } from "@/lib/sppa/condi
 import { validateDeclaration } from "@/lib/sppa/declaration";
 import { getProduct, PRODUCT_LIST } from "@/lib/sppa/productConfig";
 import type { ProductConfig, ProductId, StepId } from "@/lib/sppa/types";
-import { missingDocuments, validateStep, validateSubmission } from "@/lib/sppa/validation";
+import { requestedDocuments, validateStep, validateSubmission } from "@/lib/sppa/validation";
 import { DeclarationStep } from "./DeclarationStep";
-import { DocumentsStep } from "./DocumentsStep";
+import { DocumentsInfoStep } from "./DocumentsInfoStep";
 import { StepFields } from "./FieldRenderer";
 import { ReviewStep } from "./ReviewStep";
 import { StepProgress } from "./StepProgress";
 import { SuccessView, type SubmitResult } from "./SuccessView";
 import { btnPrimary, btnSecondary, cardCls, errCls } from "./ui";
-import { useUploads } from "./useUploads";
 
 type StepKey = "product" | StepId | "review" | "declaration";
 type Values = Record<string, unknown>;
@@ -56,7 +55,6 @@ export default function SppaWizard() {
   const startedAt = useRef<number>(0);
   const honeypot = useRef<HTMLInputElement>(null);
   const topRef = useRef<HTMLDivElement>(null);
-  const uploads = useUploads(productId);
 
   const product = getProduct(productId);
 
@@ -126,7 +124,6 @@ export default function SppaWizard() {
     setProductId(p.id);
     setValues(defaultsFor(p));
     setAccepted([]);
-    uploads.reset();
     setErrors({});
   };
 
@@ -157,10 +154,6 @@ export default function SppaWizard() {
     if (stepKey === "product") {
       const r = validateStep(product, "product", values);
       if (!r.ok) { setErrors(r.errors); focusFirstError(r.errors); return; }
-    } else if (stepKey === "documents") {
-      const clean = validateSubmission(product, values).values;
-      const missing = missingDocuments(product, clean, uploads.docs.map((d) => d.docKey));
-      if (missing.length) { setErrors({ documents: `Dokumen wajib belum diunggah: ${missing.map((m) => m.label).join(", ")}.` }); focusFirstError({ documents: "x" }); return; }
     } else if (stepKey === "review") {
       const r = validateSubmission(product, values);
       if (!r.ok) {
@@ -197,7 +190,6 @@ export default function SppaWizard() {
           product: product.id,
           values,
           declaration: { accepted },
-          uploadSession: uploads.session,
           website: honeypot.current?.value ?? "",
           startedAt: startedAt.current,
         }),
@@ -212,7 +204,6 @@ export default function SppaWizard() {
       if (json?.errors && Object.keys(json.errors).length) {
         const first = Object.keys(json.errors)[0].split(".")[0];
         if (first === "declaration") setErrors(json.errors);
-        else if (first === "documents") { setStepKey("documents"); setErrors(json.errors); }
         else { setStepKey(stepOfField(first)); setErrors(json.errors); focusFirstError(json.errors); }
       }
       setSubmitError(json?.message ?? "Pengajuan belum berhasil dikirim. Silakan coba lagi.");
@@ -280,10 +271,10 @@ export default function SppaWizard() {
         )}
 
         {product && stepKey === "documents" && (
-          <DocumentsStep product={product} values={validateSubmission(product, values).values} docs={uploads.docs} busy={uploads.busy} errors={uploads.errors} stepError={errors.documents} onUpload={uploads.upload} onRemove={uploads.remove} />
+          <DocumentsInfoStep docs={requestedDocuments(product, validateSubmission(product, values).values)} />
         )}
 
-        {product && stepKey === "review" && <ReviewStep product={product} values={values} docs={uploads.docs} onEdit={(k) => go(k as StepKey)} />}
+        {product && stepKey === "review" && <ReviewStep product={product} values={values} onEdit={(k) => go(k as StepKey)} />}
 
         {stepKey === "declaration" && <DeclarationStep accepted={accepted} onToggle={(id) => { setErrors({}); setAccepted((a) => (a.includes(id) ? a.filter((x) => x !== id) : [...a, id])); }} error={errors.declaration} />}
       </div>

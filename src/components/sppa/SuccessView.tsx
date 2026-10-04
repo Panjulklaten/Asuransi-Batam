@@ -11,6 +11,7 @@ export interface SubmitResult {
   applicantName: string;
   submittedAt: string;
   status: string;
+  documents?: { label: string; required: boolean }[];
 }
 
 export function SuccessView({ result }: { result: SubmitResult }) {
@@ -45,13 +46,22 @@ export function SuccessView({ result }: { result: SubmitResult }) {
         ))}
       </dl>
 
+      {result.documents && result.documents.length > 0 && (
+        <div className="mt-5 rounded-xl border border-[#c9a84c] bg-[#c9a84c]/10 p-4 text-left">
+          <p className="font-display font-bold text-[#0a1628]">Langkah berikutnya: kirim dokumen via WhatsApp</p>
+          <ul className="mt-2 grid gap-1 list-disc pl-5 text-sm text-[#0a1628]">
+            {result.documents.map((d) => <li key={d.label}>{d.label}{d.required && <span className="font-semibold"> (wajib)</span>}</li>)}
+          </ul>
+        </div>
+      )}
+
       <p className="mt-5 text-xs text-[#64748b] leading-relaxed">
         Pengajuan ini belum berarti risiko otomatis diterima atau ditutup oleh perusahaan asuransi, dan bukan merupakan polis.
       </p>
 
       <div className="mt-6 grid gap-3 sm:grid-cols-2">
-        <a href={WHATSAPP_URL(`Halo, saya sudah mengirim SPPA dengan nomor referensi ${result.referenceNo} (${result.product}). Mohon dicek.`)} target="_blank" rel="noopener noreferrer" className={btnPrimary}>
-          Konfirmasi via WhatsApp
+        <a href={WHATSAPP_URL(`Halo, saya sudah mengirim SPPA dengan nomor referensi ${result.referenceNo} (${result.product}). Saya ingin mengirim dokumen pendukung.`)} target="_blank" rel="noopener noreferrer" className={btnPrimary}>
+          Kirim Dokumen via WhatsApp
         </a>
         <Link href="/" className={btnSecondary}>Kembali ke Beranda</Link>
       </div>
