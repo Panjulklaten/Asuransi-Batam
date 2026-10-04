@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { checkFileMeta, MAX_FILES_PER_DOCUMENT, sanitizeFileName } from "@/lib/sppa/fileCheck";
 import { getProduct } from "@/lib/sppa/productConfig";
-import { clientIp, DOCS_BUCKET, getAdminClient, hashIp } from "@/lib/sppa/server/supabase";
+import { clientIp, DOCS_BUCKET, getAdminClient, hashIp, logDbError } from "@/lib/sppa/server/supabase";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -47,7 +47,8 @@ export async function POST(req: Request) {
   const ipHash = hashIp(clientIp(req));
 
   const since = new Date(Date.now() - 3600_000).toISOString();
-  const { count: ipCount } = await db.from("sppa_documents").select("id", { count: "exact", head: true }).eq("ip_hash", ipHash).gte("created_at", since);
+  const { count: ipCount, error: cntErr } = await db.from("sppa_documents").select("id", { count: "exact", head: true }).eq("ip_hash", ipHash).gte("created_at", since);
+  if (cntErr) logDbError("rate-limit sppa_documents", cntErr);
   if ((ipCount ?? 0) >= MAX_UPLOADS_PER_IP_PER_HOUR) return fail(429, "Terlalu banyak unggahan. Silakan coba lagi nanti.");
 
   const { data: existing } = await db.from("sppa_documents").select("doc_key").eq("upload_session", session).is("submission_id", null);
@@ -63,12 +64,12 @@ export async function POST(req: Request) {
   const path = `${session}/${b.docKey}/${randomUUID()}.${ext}`;
 
   const { data: signed, error } = await db.storage.from(DOCS_BUCKET).createSignedUploadUrl(path);
-  if (error || !signed) return fail(500, "Gagal menyiapkan unggahan. Silakan coba lagi.");
+  if (error || !signed) { logDbError("createSignedUploadUrl (bucket sppa-documents)", error); return fail(500, "Gagal menyiapkan unggahan. Silakan coba lagi."); }
 
   const { error: insErr } = await db.from("sppa_documents").insert({
     upload_session: session, doc_key: b.docKey, file_name: safeName, mime_type: b.type, size_bytes: b.size, storage_path: path, ip_hash: ipHash,
   });
-  if (insErr) return fail(500, "Gagal menyiapkan unggahan. Silakan coba lagi.");
+  if (insErr) { logDbError("insert sppa_documents", insErr); return fail(500, "Gagal menyiapkan unggahan. Silakan coba lagi."); }
 
   return NextResponse.json({ ok: true, uploadSession: session, path, signedUrl: signed.signedUrl, token: signed.token }, { headers: { "Cache-Control": "no-store" } });
 }

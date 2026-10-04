@@ -24,3 +24,8 @@ export function clientIp(req: Request): string {
 export function hashIp(ip: string): string {
   return createHash("sha256").update(`${process.env.SPPA_IP_SALT ?? ""}|${ip}`).digest("hex").slice(0, 32);
 }
+
+/** Log galat Supabase ke Vercel Logs tanpa data pribadi (hanya konteks, kode, dan pesan galat dari database/storage). */
+export function logDbError(where: string, err: { code?: string; message?: string; hint?: string; details?: string; name?: string; statusCode?: string | number } | null | undefined) {
+  console.error(`[sppa] ${where} gagal`, { code: err?.code ?? err?.statusCode, name: err?.name, message: err?.message, hint: err?.hint, details: err?.details });
+}
