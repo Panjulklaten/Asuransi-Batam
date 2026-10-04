@@ -47,10 +47,12 @@ create table if not exists public.sppa_documents (
   size_bytes      integer not null check (size_bytes > 0 and size_bytes <= 8388608),
   storage_path    text not null unique,
   verified        boolean not null default false,   -- true setelah magic-bytes dicek server
+  ip_hash         text,                              -- untuk pembatasan laju upload
   created_at      timestamptz not null default now()
 );
 create index if not exists sppa_documents_submission_idx on public.sppa_documents (submission_id);
 create index if not exists sppa_documents_session_idx on public.sppa_documents (upload_session);
+create index if not exists sppa_documents_ip_idx on public.sppa_documents (ip_hash, created_at);
 
 create table if not exists public.sppa_status_history (
   id             bigint generated always as identity primary key,
