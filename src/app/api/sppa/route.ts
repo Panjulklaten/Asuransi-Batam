@@ -7,7 +7,7 @@ import { getProduct } from "@/lib/sppa/productConfig";
 import { generateReferenceNo } from "@/lib/sppa/reference";
 import { submissionEnvelope } from "@/lib/sppa/schema";
 import { buildEmail, emailConfigured, sendEmail } from "@/lib/sppa/server/email";
-import { buildAdminMessage, sendWhatsApp } from "@/lib/sppa/server/notify";
+import { buildAdminMessage, buildApplicantMessage, sendWhatsApp } from "@/lib/sppa/server/notify";
 import { clientIp, hashIp, rateLimited } from "@/lib/sppa/server/request";
 import { extractSummary, requestedDocuments, validateSubmission } from "@/lib/sppa/validation";
 
@@ -65,11 +65,18 @@ export async function POST(req: Request) {
     return fail(502, "Pengajuan belum berhasil dikirim. Silakan coba lagi, atau hubungi kami via WhatsApp.");
   }
 
+  // WA setelah respons dikirim; kegagalan tidak membatalkan pengajuan (email sudah terkirim).
   after(async () => {
+    // 1) Konfirmasi ke pemohon: "data diterima, kami akan menghubungi".
+    if (summary.applicantPhone) {
+      const ok = await sendWhatsApp(buildApplicantMessage({ applicantName: summary.applicantName ?? "", referenceNo, productLabel: product.label }), summary.applicantPhone);
+      if (!ok.ok) console.error("[sppa] WA ke pemohon gagal", { error: ok.error });
+    }
+    // 2) Notifikasi ringkas ke admin (opsional; dilewati jika ADMIN_WA_NUMBER kosong).
     const wa = await sendWhatsApp(
       buildAdminMessage({ referenceNo, productLabel: product.label, applicantName: summary.applicantName, applicantPhone: summary.applicantPhone, submittedAt: now }),
     );
-    if (!wa.ok) console.error("[sppa] kirim WA gagal", { error: wa.error });
+    if (!wa.ok && wa.error !== "not_configured") console.error("[sppa] WA ke admin gagal", { error: wa.error });
   });
 
   return NextResponse.json(

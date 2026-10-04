@@ -24,9 +24,21 @@ export function buildAdminMessage(n: AdminNotice): string {
   ].filter(Boolean).join("\n");
 }
 
-export async function sendWhatsApp(message: string): Promise<{ ok: boolean; error?: string }> {
+/** Konfirmasi ke pemohon: hanya nomor referensi & produk, tanpa data sensitif. */
+export function buildApplicantMessage(n: { applicantName: string; referenceNo: string; productLabel: string }): string {
+  return [
+    `Halo ${stripWaMarkup(n.applicantName)},`,
+    `Terima kasih. Pengajuan SPPA ${n.productLabel} Anda dengan nomor referensi ${n.referenceNo} sudah kami terima.`,
+    "Kami akan menghubungi Anda untuk kelengkapan data.",
+    "",
+    "Asuransi Batam",
+  ].join("\n");
+}
+
+/** Kirim WA via Fonnte. Tanpa `target` → ke ADMIN_WA_NUMBER. */
+export async function sendWhatsApp(message: string, to?: string): Promise<{ ok: boolean; error?: string }> {
   const token = process.env.FONNTE_TOKEN;
-  const target = process.env.ADMIN_WA_NUMBER;
+  const target = to ?? process.env.ADMIN_WA_NUMBER;
   if (!token || !target) return { ok: false, error: "not_configured" };
   try {
     const res = await fetch("https://api.fonnte.com/send", {
