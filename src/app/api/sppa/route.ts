@@ -8,7 +8,7 @@ import { generateReferenceNo } from "@/lib/sppa/reference";
 import { submissionEnvelope } from "@/lib/sppa/schema";
 import { verifyDocuments, type DocRow } from "@/lib/sppa/server/documents";
 import { buildAdminMessage, sendWhatsApp } from "@/lib/sppa/server/notify";
-import { clientIp, getAdminClient, hashIp } from "@/lib/sppa/server/supabase";
+import { clientIp, getAdminClient, hashIp, logDbError } from "@/lib/sppa/server/supabase";
 import { extractSummary, missingDocuments, validateSubmission } from "@/lib/sppa/validation";
 
 export const runtime = "nodejs";
@@ -49,7 +49,8 @@ export async function POST(req: Request) {
   // Rate limit berbasis database (tahan terhadap instance serverless yang berbeda-beda).
   const ipHash = hashIp(clientIp(req));
   const since = new Date(Date.now() - 3600_000).toISOString();
-  const { count } = await db.from("sppa_submissions").select("id", { count: "exact", head: true }).eq("ip_hash", ipHash).gte("created_at", since);
+  const { count, error: rlErr } = await db.from("sppa_submissions").select("id", { count: "exact", head: true }).eq("ip_hash", ipHash).gte("created_at", since);
+  if (rlErr) logDbError("rate-limit sppa_submissions", rlErr);
   if ((count ?? 0) >= MAX_PER_IP_PER_HOUR) return fail(429, "Terlalu banyak pengajuan dari perangkat ini. Silakan coba lagi nanti atau hubungi kami via WhatsApp.");
 
   // Dokumen: hanya yang lolos verifikasi isi file yang dipakai.
@@ -100,7 +101,7 @@ export async function POST(req: Request) {
       .select("id")
       .single();
     if (!error && data) { submissionId = data.id as string; referenceNo = candidate; }
-    else if (error?.code !== "23505") return fail(500, "Pengajuan belum berhasil disimpan. Silakan coba lagi.");
+    else if (error?.code !== "23505") { logDbError("insert sppa_submissions", error); return fail(500, "Pengajuan belum berhasil disimpan. Silakan coba lagi."); }
   }
   if (!submissionId) return fail(500, "Pengajuan belum berhasil disimpan. Silakan coba lagi.");
 
