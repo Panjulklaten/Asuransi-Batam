@@ -4,7 +4,7 @@ import CTASection from "./CTASection";
 import AuthorAvatar from "./AuthorAvatar";
 import CalculatorPromoCard, { type CalculatorCardVariant } from "./CalculatorPromoCard";
 import SuretyQuoteButton from "./surety/SuretyQuoteButton";
-import SuretyRequirements from "./surety/SuretyRequirements";
+
 
 interface FAQ { q: string; a: string; }
 interface Benefit { icon: string; title: string; desc: string; href?: string; }
