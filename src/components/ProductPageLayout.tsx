@@ -4,7 +4,6 @@ import CTASection from "./CTASection";
 import AuthorAvatar from "./AuthorAvatar";
 import CalculatorPromoCard, { type CalculatorCardVariant } from "./CalculatorPromoCard";
 import SuretyQuoteButton from "./surety/SuretyQuoteButton";
-import SuretyRequirements from "./surety/SuretyRequirements";
 
 interface FAQ { q: string; a: string; }
 interface Benefit { icon: string; title: string; desc: string; href?: string; }
@@ -238,9 +237,6 @@ export default function ProductPageLayout({
         </section>
       )}
 
-      {/* Persyaratan penerbitan surety bond */}
-      {cluster === "surety" && <SuretyRequirements lang={lang} />}
-
       {/* FAQ */}
       <section className="section-padding bg-[#faf8f3]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -263,12 +259,14 @@ export default function ProductPageLayout({
       </section>
 
       {/* ✅ lang prop now passed so CTA defaults to correct language */}
-      <CTASection
-        lang={lang}
-        cluster={cluster}
-        tertiaryLabel={calculatorCta?.label}
-        tertiaryHref={calculatorCta?.href}
-      />
+      {/* Cluster surety: banner CTA bawah dihilangkan (tombol sudah ada di hero) */}
+      {cluster !== "surety" && (
+        <CTASection
+          lang={lang}
+          tertiaryLabel={calculatorCta?.label}
+          tertiaryHref={calculatorCta?.href}
+        />
+      )}
     </>
   );
 }

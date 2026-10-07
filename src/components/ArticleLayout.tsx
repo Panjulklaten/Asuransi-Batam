@@ -2,7 +2,6 @@
 import Link from "next/link";
 import CTASection from "./CTASection";
 import AuthorAvatar from "./AuthorAvatar";
-import SuretyRequirements from "./surety/SuretyRequirements";
 
 interface Breadcrumb { label: string; href: string; }
 
@@ -16,16 +15,16 @@ interface ArticleLayoutProps {
   schema: Record<string, unknown>;
   /** Optional FAQPage JSON-LD. Pass the same object used for the visual FAQ list. */
   faqSchema?: Record<string, unknown>;
-  /** Cluster surety bond: CTA bawah memakai tombol "Minta Penawaran" (popup → WhatsApp). */
+  /** Cluster surety bond: banner CTA bawah tidak ditampilkan (cukup tombol "Minta Penawaran" di hero). */
   cluster?: "surety";
-  /** Tampilkan tabel persyaratan penerbitan sebelum CTA (untuk sub-halaman produk, bukan artikel blog). */
+  /** @deprecated Tidak dipakai lagi — persyaratan penerbitan kini hanya ada di popup "Minta Penawaran". */
   suretyRequirements?: boolean;
   children: React.ReactNode;
 }
 
 export default function ArticleLayout({
   title, description, date, category, readTime,
-  breadcrumbs, schema, faqSchema, cluster, suretyRequirements, children,
+  breadcrumbs, schema, faqSchema, cluster, children,
 }: ArticleLayoutProps) {
   // Auto-detect language from breadcrumb href — same pattern as ProductPageLayout & Footer
   const isEN = breadcrumbs[0]?.href?.startsWith("/en");
@@ -130,9 +129,9 @@ export default function ArticleLayout({
         </div>
       </section>
 
-      {cluster === "surety" && suretyRequirements && <SuretyRequirements lang={isEN ? "en" : "id"} />}
-
-      <CTASection lang={isEN ? "en" : "id"} cluster={cluster} />
+      {/* Cluster surety: tidak ada tabel persyaratan & banner CTA bawah.
+          Persyaratan sudah ada di popup "Minta Penawaran" (tombol di hero). */}
+      {cluster !== "surety" && <CTASection lang={isEN ? "en" : "id"} />}
     </>
   );
 }

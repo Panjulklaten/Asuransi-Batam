@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { generateSEO } from "@/lib/seo";
 import Link from "next/link";
 import { Shield, Clock } from "lucide-react";
-import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = generateSEO({
   title: "Panduan OB 23: Cara Mengurus Impor Sementara untuk Pameran & Proyek di Batam",
@@ -276,7 +275,6 @@ export default function PanduanOB23BatamPage() {
           </p>
         </div>
       </article>
-      <CTASection cluster="surety" />
     </>
   );
 }

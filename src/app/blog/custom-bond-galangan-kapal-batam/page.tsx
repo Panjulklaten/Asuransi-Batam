@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { generateSEO } from "@/lib/seo";
 import Link from "next/link";
 import { Anchor, Ship, Wrench, Clock, Factory } from "lucide-react";
-import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = generateSEO({
   title: "Custom Bond untuk Galangan Kapal Batam: Panduan Lengkap Impor Peralatan Proyek",
@@ -267,7 +266,6 @@ export default function CustomBondGalanganKapalPage() {
           </p>
         </div>
       </article>
-      <CTASection cluster="surety" />
     </>
   );
 }
