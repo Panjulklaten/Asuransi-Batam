@@ -196,6 +196,7 @@ function BondStagesTable() {
 export default function ArticleCaraMendapatkanSuretyBondTenderProyekBatamPage() {
   return (
     <ArticleLayout
+      cluster="surety"
       title="Cara Mendapatkan Surety Bond untuk Tender Proyek di Batam: Panduan Lengkap"
       description="Bagi kontraktor di Batam, surety bond bukan sekadar syarat administratif tender — ia adalah instrumen yang menjaga arus kas tetap sehat sekaligus membangun kepercayaan di mata pemilik proyek. Berikut panduan lengkap dari tahap tender hingga pasca serah terima."
       date="2 Juli 2026"

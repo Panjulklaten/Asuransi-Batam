@@ -137,6 +137,7 @@ export default function CustomBondENPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <ProductPageLayout
+        cluster="surety"
         title="Custom Bond Batam"
         subtitle="Customs Guarantee for Import & Export"
         description="As a Free Trade Zone (FTZ) city, import-export activity in Batam is intense — and nearly every customs facility requires a guarantee. Custom bond lets your company secure OB 23, KITE, or Bonded Zone facilities without locking up cash as collateral the way a bank guarantee does."

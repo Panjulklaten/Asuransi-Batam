@@ -276,7 +276,7 @@ export default function PanduanOB23BatamPage() {
           </p>
         </div>
       </article>
-      <CTASection />
+      <CTASection cluster="surety" />
     </>
   );
 }

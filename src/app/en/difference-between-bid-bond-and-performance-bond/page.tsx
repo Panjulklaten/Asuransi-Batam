@@ -665,7 +665,7 @@ export default function BidBondVsPerformanceBondPage() {
         </div>
       </article>
 
-      <CTASection />
+      <CTASection lang="en" cluster="surety" />
     </>
   );
 }

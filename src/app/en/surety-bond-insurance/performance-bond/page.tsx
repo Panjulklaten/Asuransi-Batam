@@ -101,6 +101,8 @@ export default function PerformanceBondENPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       <ArticleLayout
+        cluster="surety"
+        suretyRequirements
       title="Performance Bond Batam: Guaranteeing Contract Execution"
       description="A complete guide to performance bonds in Batam — what they cover, who is required to submit one, how much they cost, required documents, and how the claims process works for construction and procurement projects."
       date="2025"

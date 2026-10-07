@@ -206,6 +206,7 @@ function IllustrationTable() {
 export default function ArticleBiayaPremiSuretyBondBatamPage() {
   return (
     <ArticleLayout
+      cluster="surety"
       title="Biaya dan Premi Surety Bond di Batam: Faktor yang Mempengaruhi Tarif"
       description="Salah satu pertanyaan paling sering dari kontraktor di Batam: berapa sebenarnya biaya surety bond? Jawabannya tidak flat — tarif ditentukan lewat kombinasi beberapa faktor. Berikut cara kerjanya secara rinci."
       date="2 Juli 2026"

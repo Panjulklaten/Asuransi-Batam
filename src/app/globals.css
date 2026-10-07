@@ -136,3 +136,22 @@ body {
     display: none;
   }
 }
+
+/* ─── Surety quote: animasi popup & tabel persyaratan ─── */
+@keyframes sb-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes sb-pop {
+  from { opacity: 0; transform: translateY(28px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes sb-rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.sb-fade { animation: sb-fade 0.25s ease-out both; }
+.sb-pop  { animation: sb-pop 0.4s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.sb-rise { animation: sb-rise 0.45s ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sb-fade, .sb-pop, .sb-rise { animation: none; }
+}
