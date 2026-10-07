@@ -1,6 +1,7 @@
 // components/ProductPageLayout.tsx
 import Link from "next/link";
 import CTASection from "./CTASection";
+import SuretyQuoteCard from "./surety/SuretyQuoteCard";
 import AuthorAvatar from "./AuthorAvatar";
 import CalculatorPromoCard, { type CalculatorCardVariant } from "./CalculatorPromoCard";
 import SuretyQuoteButton from "./surety/SuretyQuoteButton";
@@ -259,8 +260,10 @@ export default function ProductPageLayout({
       </section>
 
       {/* ✅ lang prop now passed so CTA defaults to correct language */}
-      {/* Cluster surety: banner CTA bawah dihilangkan (tombol sudah ada di hero) */}
-      {cluster !== "surety" && (
+      {/* Cluster surety: hanya satu kartu dengan satu tombol "Minta Penawaran" (popup) */}
+      {cluster === "surety" ? (
+        <SuretyQuoteCard lang={lang} />
+      ) : (
         <CTASection
           lang={lang}
           tertiaryLabel={calculatorCta?.label}

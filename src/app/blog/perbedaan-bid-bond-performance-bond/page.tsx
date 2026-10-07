@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { generateSEO } from "@/lib/seo";
 import Link from "next/link";
 import { FileText, CheckCircle, AlertCircle, ArrowRight, Clock, Shield } from "lucide-react";
+import SuretyQuoteCard from "@/components/surety/SuretyQuoteCard";
 
 export const metadata: Metadata = generateSEO({
   title: "Bid Bond vs Performance Bond: Perbedaan, Fungsi & Kapan Dipakai | Asuransi Batam",
@@ -682,6 +683,7 @@ export default function PerbedaanBidBondPerformanceBondPage() {
           </div>
         </div>
       </section>
+      <SuretyQuoteCard />
     </>
   );
 }

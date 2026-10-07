@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { generateSEO } from "@/lib/seo";
 import Link from "next/link";
 import { GitCompareArrows, Clock, Compass, ShieldCheck } from "lucide-react";
+import SuretyQuoteCard from "@/components/surety/SuretyQuoteCard";
 
 export const metadata: Metadata = generateSEO({
   title: "OB 23 vs KITE: Mana yang Tepat untuk Bisnis Impor-Ekspor Anda di Batam?",
@@ -255,6 +256,7 @@ export default function OB23VsKitePage() {
           </p>
         </div>
       </article>
+      <SuretyQuoteCard />
     </>
   );
 }

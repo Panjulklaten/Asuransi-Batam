@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { generateSEO } from "@/lib/seo";
 import Link from "next/link";
 import { Shield, Clock } from "lucide-react";
+import SuretyQuoteCard from "@/components/surety/SuretyQuoteCard";
 
 export const metadata: Metadata = generateSEO({
   title: "OB 23 Guide: How to Handle Temporary Import for Exhibitions & Projects in Batam",
@@ -276,6 +277,7 @@ export default function OB23GuideENPage() {
           </p>
         </div>
       </article>
+      <SuretyQuoteCard />
     </>
   );
 }

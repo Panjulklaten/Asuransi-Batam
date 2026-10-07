@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { generateSEO } from "@/lib/seo";
 import Link from "next/link";
 import { ClipboardCheck, FileWarning, Clock, ShieldAlert } from "lucide-react";
+import SuretyQuoteCard from "@/components/surety/SuretyQuoteCard";
 
 export const metadata: Metadata = generateSEO({
   title: "Checklist Dokumen Custom Bond yang Paling Sering Ditolak Bea Cukai",
@@ -217,6 +218,7 @@ export default function ChecklistDokumenCustomBondPage() {
           </p>
         </div>
       </article>
+      <SuretyQuoteCard />
     </>
   );
 }

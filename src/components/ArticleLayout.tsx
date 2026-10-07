@@ -1,6 +1,7 @@
 // components/ArticleLayout.tsx
 import Link from "next/link";
 import CTASection from "./CTASection";
+import SuretyQuoteCard from "./surety/SuretyQuoteCard";
 import AuthorAvatar from "./AuthorAvatar";
 
 interface Breadcrumb { label: string; href: string; }
@@ -15,7 +16,7 @@ interface ArticleLayoutProps {
   schema: Record<string, unknown>;
   /** Optional FAQPage JSON-LD. Pass the same object used for the visual FAQ list. */
   faqSchema?: Record<string, unknown>;
-  /** Cluster surety bond: banner CTA bawah tidak ditampilkan (cukup tombol "Minta Penawaran" di hero). */
+  /** Cluster surety bond: CTA bawah berupa satu kartu dengan tombol "Minta Penawaran" (popup → WhatsApp). */
   cluster?: "surety";
   /** @deprecated Tidak dipakai lagi — persyaratan penerbitan kini hanya ada di popup "Minta Penawaran". */
   suretyRequirements?: boolean;
@@ -129,9 +130,12 @@ export default function ArticleLayout({
         </div>
       </section>
 
-      {/* Cluster surety: tidak ada tabel persyaratan & banner CTA bawah.
-          Persyaratan sudah ada di popup "Minta Penawaran" (tombol di hero). */}
-      {cluster !== "surety" && <CTASection lang={isEN ? "en" : "id"} />}
+      {/* Cluster surety: hanya satu kartu dengan satu tombol "Minta Penawaran" (popup). */}
+      {cluster === "surety" ? (
+        <SuretyQuoteCard lang={isEN ? "en" : "id"} />
+      ) : (
+        <CTASection lang={isEN ? "en" : "id"} />
+      )}
     </>
   );
 }
