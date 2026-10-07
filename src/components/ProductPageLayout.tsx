@@ -3,8 +3,9 @@ import Link from "next/link";
 import CTASection from "./CTASection";
 import AuthorAvatar from "./AuthorAvatar";
 import CalculatorPromoCard, { type CalculatorCardVariant } from "./CalculatorPromoCard";
-import SuretyQuoteButton from "./surety/SuretyQuoteButton";
-import SuretyRequirements from "./surety/SuretyRequirements";
+import QuoteButton from "./quote/QuoteButton";
+import QuoteRequirements from "./quote/QuoteRequirements";
+import type { QuoteClusterKey } from "@/lib/quote";
 
 interface FAQ { q: string; a: string; }
 interface Benefit { icon: string; title: string; desc: string; href?: string; }
@@ -23,8 +24,8 @@ interface ProductPageProps {
   calculatorCta?: { label: string; href: string };
   /** Tampilkan kartu ajakan kalkulator premi properti (sub-halaman properti). */
   calculatorCard?: CalculatorCardVariant;
-  /** Cluster surety bond: tombol "Minta Penawaran" (popup → WhatsApp) + tabel persyaratan penerbitan. */
-  cluster?: "surety";
+  /** Cluster produk ("surety" | "marine"): tombol "Minta Penawaran" (popup → WhatsApp) + tabel persyaratan penerbitan. */
+  cluster?: QuoteClusterKey;
   children?: React.ReactNode;
 }
 
@@ -149,8 +150,8 @@ export default function ProductPageLayout({
               >
                 {t.cta}
               </a>
-              {cluster === "surety" ? (
-                <SuretyQuoteButton lang={lang} variant="onDark" />
+              {cluster ? (
+                <QuoteButton cluster={cluster} lang={lang} variant="onDark" />
               ) : (
                 <a
                   href="https://wa.me/6281373336728"
@@ -238,8 +239,8 @@ export default function ProductPageLayout({
         </section>
       )}
 
-      {/* Persyaratan penerbitan surety bond */}
-      {cluster === "surety" && <SuretyRequirements lang={lang} />}
+      {/* Persyaratan penerbitan */}
+      {cluster && <QuoteRequirements cluster={cluster} lang={lang} />}
 
       {/* FAQ */}
       <section className="section-padding bg-[#faf8f3]">

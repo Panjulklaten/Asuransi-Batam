@@ -71,6 +71,7 @@ const NAMED_INSURED = [
 export default function BuildersRiskShipyardPage() {
   return (
     <ArticleLayout
+      cluster="marine"
       title="Builders Risk Insurance for Shipyards in Batam – Complete Guide"
       description="A vessel under construction is at its most physically vulnerable. Builders Risk is the only product designed specifically for this phase."
       date="May 7, 2026"

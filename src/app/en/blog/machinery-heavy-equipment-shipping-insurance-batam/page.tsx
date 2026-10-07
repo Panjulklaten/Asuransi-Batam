@@ -346,6 +346,8 @@ export default function MachineryShippingInsuranceENPage() {
         </div>
       </section>
       <CTASection
+        cluster="marine"
+        lang="en"
         title="Protect Your Machinery from the First Voyage"
         waMsg="Hello Rio, I need cargo insurance for shipping machinery/heavy equipment from Batam"
       />

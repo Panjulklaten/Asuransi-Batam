@@ -312,6 +312,8 @@ export default function MarineCargoPremiENPage() {
         </div>
       </section>
       <CTASection
+        cluster="marine"
+        lang="en"
         title="Get Your Marine Cargo Premium Calculated"
         waMsg="Hello Rio, I would like a premium estimate for marine cargo insurance from Batam"
       />

@@ -346,6 +346,7 @@ export default function MesinAlatBeratPage() {
         </div>
       </section>
       <CTASection
+        cluster="marine"
         title="Lindungi Mesin Anda Sejak Perjalanan Pertama"
         waMsg="Halo Rio, saya butuh asuransi cargo untuk pengiriman mesin/alat berat dari Batam"
       />

@@ -216,6 +216,7 @@ export default function ArticlePremiAsuransiKapal() {
 
   return (
     <ArticleLayout
+      cluster="marine"
       title="Berapa Premi Asuransi Kapal di Batam? Panduan Lengkap Tahun 2026"
       description="Kisaran tarif, faktor penentu, simulasi perhitungan, dan tips menekan biaya premi — disusun dari pengalaman nyata mendampingi pemilik armada di Batam selama 8+ tahun."
       date="15 Januari 2026"

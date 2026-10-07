@@ -2,7 +2,8 @@
 import Link from "next/link";
 import CTASection from "./CTASection";
 import AuthorAvatar from "./AuthorAvatar";
-import SuretyRequirements from "./surety/SuretyRequirements";
+import QuoteRequirements from "./quote/QuoteRequirements";
+import type { QuoteClusterKey } from "@/lib/quote";
 
 interface Breadcrumb { label: string; href: string; }
 
@@ -16,16 +17,16 @@ interface ArticleLayoutProps {
   schema: Record<string, unknown>;
   /** Optional FAQPage JSON-LD. Pass the same object used for the visual FAQ list. */
   faqSchema?: Record<string, unknown>;
-  /** Cluster surety bond: CTA bawah memakai tombol "Minta Penawaran" (popup → WhatsApp). */
-  cluster?: "surety";
+  /** Cluster produk ("surety" | "marine"): CTA bawah memakai tombol "Minta Penawaran" (popup → WhatsApp). */
+  cluster?: QuoteClusterKey;
   /** Tampilkan tabel persyaratan penerbitan sebelum CTA (untuk sub-halaman produk, bukan artikel blog). */
-  suretyRequirements?: boolean;
+  showRequirements?: boolean;
   children: React.ReactNode;
 }
 
 export default function ArticleLayout({
   title, description, date, category, readTime,
-  breadcrumbs, schema, faqSchema, cluster, suretyRequirements, children,
+  breadcrumbs, schema, faqSchema, cluster, showRequirements, children,
 }: ArticleLayoutProps) {
   // Auto-detect language from breadcrumb href — same pattern as ProductPageLayout & Footer
   const isEN = breadcrumbs[0]?.href?.startsWith("/en");
@@ -130,7 +131,7 @@ export default function ArticleLayout({
         </div>
       </section>
 
-      {cluster === "surety" && suretyRequirements && <SuretyRequirements lang={isEN ? "en" : "id"} />}
+      {cluster && showRequirements && <QuoteRequirements cluster={cluster} lang={isEN ? "en" : "id"} />}
 
       <CTASection lang={isEN ? "en" : "id"} cluster={cluster} />
     </>

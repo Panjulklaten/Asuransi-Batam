@@ -111,7 +111,7 @@ export default function PerformanceBondPage() {
       />
       <ArticleLayout
         cluster="surety"
-        suretyRequirements
+        showRequirements
       title="Performance Bond Batam: Jaminan Pelaksanaan Proyek Sesuai Kontrak"
       description="Panduan lengkap performance bond di Batam — pengertian, fungsi, nilai, dokumen yang dibutuhkan, dan cara mengajukan jaminan pelaksanaan untuk proyek konstruksi, EPC, dan pengadaan barang/jasa."
       date="2025"

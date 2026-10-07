@@ -94,7 +94,7 @@ export default function MaintenanceBondPage() {
       />
       <ArticleLayout
         cluster="surety"
-        suretyRequirements
+        showRequirements
       title="Maintenance Bond Batam: Jaminan Pemeliharaan Setelah Proyek Selesai"
       description="Panduan lengkap maintenance bond di Batam — pengertian, fungsi, nilai jaminan, masa berlaku, dan cara pengajuan jaminan pemeliharaan untuk proyek konstruksi dan pengadaan pemerintah maupun swasta."
       date="2025"

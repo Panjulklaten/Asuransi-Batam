@@ -104,6 +104,7 @@ const schema = {
 export default function MarineInsurancePage() {
   return (
     <ProductPageLayout
+      cluster="marine"
       title="Marine Insurance Batam"
       subtitle="Marine Hull, Cargo & Builder's Risk"
       description="Batam's position as a maritime hub makes reliable marine protection essential. Our marine insurance products safeguard your vessels, cargo, and maritime assets from the risks of the sea."

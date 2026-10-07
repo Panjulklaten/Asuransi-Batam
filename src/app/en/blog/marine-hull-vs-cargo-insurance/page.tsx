@@ -40,6 +40,7 @@ const schema = {
 export default function MarineHullVsCargoPage() {
   return (
     <ArticleLayout
+      cluster="marine"
       title="Marine Hull vs Marine Cargo Insurance: How They Differ and Why It Matters"
       description="Insuring the ship doesn't mean your goods are covered too. Here's the core distinction between these two products, laid out before you have to find out the hard way."
       date="May 7, 2026"

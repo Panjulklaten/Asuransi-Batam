@@ -31,6 +31,7 @@ const schema = {
 export default function CaraKlaimMarineCargoPage() {
   return (
     <ArticleLayout
+      cluster="marine"
       title="Cara Klaim Asuransi Marine Cargo yang Benar – Panduan Lengkap"
       description="Dokumen wajib, batas waktu pelaporan, dan langkah-langkah yang benar agar klaim marine cargo Anda tidak ditolak."
       date="7 Mei 2026"

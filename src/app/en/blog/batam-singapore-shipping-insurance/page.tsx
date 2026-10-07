@@ -60,6 +60,7 @@ const RISKS = [
 export default function BatamSingaporeShippingInsurancePage() {
   return (
     <ArticleLayout
+      cluster="marine"
       title="Batam–Singapore Cargo Shipping Insurance – Complete Guide for Exporters"
       description="Less than 20 kilometres of water, but the risks of the Batam–Singapore corridor are real. A guide to choosing the right cargo insurance for this route."
       date="May 7, 2026"

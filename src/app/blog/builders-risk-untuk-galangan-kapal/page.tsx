@@ -91,6 +91,7 @@ const schema = {
 export default function BuildersRiskGalanganKapalPage() {
   return (
     <ArticleLayout
+      cluster="marine"
       title="Builders Risk untuk Galangan Kapal – Asuransi Pembangunan Kapal di Batam"
       description="Kapal dalam proses pembangunan berada dalam kondisi paling rentan. Builders Risk adalah satu-satunya produk yang dirancang khusus untuk fase ini."
       date="7 Mei 2026"

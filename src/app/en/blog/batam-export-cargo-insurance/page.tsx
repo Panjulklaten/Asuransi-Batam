@@ -345,6 +345,8 @@ export default function BatamExportCargoENPage() {
         </div>
       </section>
       <CTASection
+        cluster="marine"
+        lang="en"
         title="Secure Your Export Policy Before You Ship"
         waMsg="Hello Rio, I am an exporter in Batam and need cargo insurance for international shipments"
       />

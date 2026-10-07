@@ -77,6 +77,7 @@ const schema = {
 export default function AsuransiPengirimanBatamSingapurePage() {
   return (
     <ArticleLayout
+      cluster="marine"
       title="Asuransi Pengiriman Barang Rute Batam–Singapura: Panduan untuk Eksportir dan Importir"
       description="Jaraknya cuma sekitar 20 km, tapi jangan tertipu — jalur Batam–Singapura punya profil risikonya sendiri. Berikut cara memilih polis yang pas untuk rute ini."
       date="7 Mei 2026"

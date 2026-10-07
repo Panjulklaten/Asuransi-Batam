@@ -332,6 +332,7 @@ export default function PremiMarineCargoPage() {
         </div>
       </section>
       <CTASection
+        cluster="marine"
         title="Minta Kalkulasi Premi Marine Cargo Anda"
         waMsg="Halo Rio, saya ingin estimasi premi asuransi marine cargo untuk pengiriman dari Batam"
       />

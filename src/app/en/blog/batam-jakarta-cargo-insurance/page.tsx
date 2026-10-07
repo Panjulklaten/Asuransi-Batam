@@ -322,6 +322,8 @@ export default function BatamJakartaCargoENPage() {
         </div>
       </section>
       <CTASection
+        cluster="marine"
+        lang="en"
         title="Ready to Protect Your Batam–Jakarta Shipment?"
         waMsg="Hello Rio, I would like cargo insurance for my shipment from Batam to Jakarta"
       />

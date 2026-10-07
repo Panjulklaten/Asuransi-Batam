@@ -5,6 +5,7 @@ import {
   Building2,
   Check,
   CheckCircle2,
+  ChevronDown,
   ChevronLeft,
   ChevronRight,
   Landmark,
@@ -14,50 +15,38 @@ import {
   Sparkles,
   X,
 } from "lucide-react";
-import { RequirementsPanel } from "./SuretyRequirements";
+import { RequirementsPanel } from "./QuoteRequirements";
 import {
-  ANALYSIS_FLAGS,
-  SURETY_TYPES,
+  QUOTE_CLUSTERS,
   buildQuoteMessage,
   compactRupiah,
   formatDigits,
+  initialValues,
+  isVisible,
+  missingFields,
   pick,
   quoteWaUrl,
+  type FieldDef,
   type Lang,
-  type PeriodUnit,
-  type ProjectScope,
-  type QuoteForm,
-  type SuretyTypeKey,
-} from "@/lib/surety";
+  type QuoteClusterKey,
+  type QuoteState,
+} from "@/lib/quote";
 
 const T = {
   id: {
-    title: "Permintaan Penawaran Surety Bond",
-    subtitle: "Isi data singkat — kami analisa awal dan balas lewat WhatsApp.",
+    selectPh: "Pilih",
     step1: "Kebutuhan",
     step2: "Data & Analisa",
-    bondType: "Jenis surety bond",
-    scope: "Jenis proyek",
-    gov: "Pemerintah / BUMN",
-    priv: "Swasta",
-    amount: "Jumlah jaminan",
-    amountPh: "mis. 2.500.000.000",
-    period: "Lama periode",
-    periodPh: "mis. 12",
     month: "Bulan",
     day: "Hari",
     name: "Nama lengkap",
     company: "Nama perusahaan",
     phone: "No. WhatsApp",
     phonePh: "08xxxxxxxxxx",
-    targetDate: "Target tanggal terbit",
     optional: "opsional",
-    client: "Pemberi kerja / nama proyek",
-    clientPh: "mis. Dinas PUPR Kota Batam / PT ABC",
     analysis: "Bahan analisa awal",
     analysisHint: "Semakin lengkap informasinya, semakin cepat kami bisa memberi gambaran awal.",
     note: "Catatan tambahan",
-    notePh: "mis. lokasi proyek, nilai kontrak, kendala agunan, atau info lain yang menurut Anda penting.",
     next: "Lanjut",
     back: "Kembali",
     cancel: "Batal",
@@ -68,39 +57,24 @@ const T = {
     doneBody:
       "Pesan permintaan penawaran Anda sudah terisi otomatis. Tinggal tekan kirim di WhatsApp, lalu admin akan membalas untuk analisa awal.",
     doneRetry: "Buka WhatsApp lagi",
-    errAmount: "Isi jumlah jaminan.",
-    errPeriod: "Isi lama periode.",
+    errRequired: "Wajib diisi.",
     errName: "Isi nama Anda.",
     errCompany: "Isi nama perusahaan.",
     errPhone: "Nomor WhatsApp belum valid.",
   },
   en: {
-    title: "Surety Bond Quote Request",
-    subtitle: "Fill in a few details — we'll do an initial assessment and reply on WhatsApp.",
     step1: "Requirement",
     step2: "Details & Notes",
-    bondType: "Surety bond type",
-    scope: "Project type",
-    gov: "Government / SOE",
-    priv: "Private",
-    amount: "Guarantee amount",
-    amountPh: "e.g. 2,500,000,000",
-    period: "Period",
-    periodPh: "e.g. 12",
     month: "Months",
     day: "Days",
     name: "Full name",
     company: "Company name",
     phone: "WhatsApp number",
     phonePh: "08xxxxxxxxxx",
-    targetDate: "Target issuance date",
     optional: "optional",
-    client: "Employer / project name",
-    clientPh: "e.g. Batam City Public Works / PT ABC",
     analysis: "Initial assessment notes",
     analysisHint: "The more complete the information, the faster we can give you an initial view.",
     note: "Additional notes",
-    notePh: "e.g. project location, contract value, collateral concerns, or anything else you think matters.",
     next: "Next",
     back: "Back",
     cancel: "Cancel",
@@ -111,8 +85,7 @@ const T = {
     doneBody:
       "Your quote request message is pre-filled. Just press send in WhatsApp and our admin will reply with an initial assessment.",
     doneRetry: "Open WhatsApp again",
-    errAmount: "Enter the guarantee amount.",
-    errPeriod: "Enter the period.",
+    errRequired: "Required.",
     errName: "Enter your name.",
     errCompany: "Enter your company name.",
     errPhone: "WhatsApp number looks invalid.",
@@ -129,15 +102,17 @@ function Field({
   label,
   error,
   optional,
+  className = "",
   children,
 }: {
   label: string;
   error?: string;
   optional?: string;
+  className?: string;
   children: React.ReactNode;
 }) {
   return (
-    <label className="block">
+    <label className={`block ${className}`}>
       <span className="mb-1.5 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#475569]">
         {label}
         {optional && <span className="font-medium normal-case tracking-normal text-[#94a3b8]">({optional})</span>}
@@ -152,16 +127,19 @@ function Field({
   );
 }
 
-export default function SuretyQuoteModal({
+export default function QuoteModal({
+  cluster: clusterKey,
   lang,
   defaultType,
   onClose,
 }: {
+  cluster: QuoteClusterKey;
   lang: Lang;
-  defaultType: SuretyTypeKey;
+  defaultType: string;
   onClose: () => void;
 }) {
   const t = T[lang];
+  const cluster = QUOTE_CLUSTERS[clusterKey];
   const panelRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef(onClose);
   closeRef.current = onClose;
@@ -169,12 +147,9 @@ export default function SuretyQuoteModal({
   const [sent, setSent] = useState(false);
   const [waUrl, setWaUrl] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [form, setForm] = useState<QuoteForm>({
-    type: defaultType,
-    scope: "gov",
-    amount: "",
-    period: "",
-    unit: "month",
+  const [form, setForm] = useState<QuoteState>({
+    type: cluster.types.some((x) => x.key === defaultType) ? defaultType : "unsure",
+    values: initialValues(cluster),
     name: "",
     company: "",
     phone: "",
@@ -184,9 +159,13 @@ export default function SuretyQuoteModal({
     note: "",
   });
 
-  const set = <K extends keyof QuoteForm>(k: K, v: QuoteForm[K]) => {
+  const setTop = <K extends keyof QuoteState>(k: K, v: QuoteState[K]) => {
     setForm((f) => ({ ...f, [k]: v }));
     if (errors[k as string]) setErrors((e) => ({ ...e, [k as string]: "" }));
+  };
+  const setVal = (k: string, v: string) => {
+    setForm((f) => ({ ...f, values: { ...f.values, [k]: v } }));
+    if (errors[k]) setErrors((e) => ({ ...e, [k]: "" }));
   };
 
   // Esc, fokus terkunci di dalam dialog, dan kunci scroll halaman
@@ -227,8 +206,7 @@ export default function SuretyQuoteModal({
 
   const validateStep1 = () => {
     const e: Record<string, string> = {};
-    if (!Number(form.amount)) e.amount = t.errAmount;
-    if (!Number(form.period)) e.period = t.errPeriod;
+    for (const k of missingFields(cluster, form.type, form.values)) e[k] = t.errRequired;
     setErrors(e);
     return Object.keys(e).length === 0;
   };
@@ -244,14 +222,17 @@ export default function SuretyQuoteModal({
 
   const submit = () => {
     if (!validateStep2()) return;
-    const url = quoteWaUrl(buildQuoteMessage(form, lang));
+    const url = quoteWaUrl(buildQuoteMessage(cluster, form, lang));
     setWaUrl(url);
     window.open(url, "_blank", "noopener,noreferrer");
     setSent(true);
   };
 
   const toggleFlag = (k: string) =>
-    set("flags", form.flags.includes(k) ? form.flags.filter((x) => x !== k) : [...form.flags, k]);
+    setTop("flags", form.flags.includes(k) ? form.flags.filter((x) => x !== k) : [...form.flags, k]);
+
+  const visibleFields = cluster.fields.filter((f) => isVisible(f, form.type));
+  const visibleFlags = cluster.flags.filter((f) => isVisible(f, form.type));
 
   const stepper = (
     <ol className="mt-5 flex items-center gap-3" aria-label="Progress">
@@ -288,35 +269,157 @@ export default function SuretyQuoteModal({
     </ol>
   );
 
-  const periodUnitBtn = (u: PeriodUnit, label: string) => (
-    <button
-      key={u}
-      type="button"
-      onClick={() => set("unit", u)}
-      aria-pressed={form.unit === u}
-      className={`rounded-lg px-3.5 py-2 text-xs font-bold transition-all ${
-        form.unit === u ? "bg-[#0a1628] text-[#f0d080] shadow" : "text-[#475569] hover:text-[#0a1628]"
-      }`}
-    >
-      {label}
-    </button>
-  );
+  const renderField = (f: FieldDef) => {
+    const label = pick(f.label, lang);
+    const opt = f.optional ? t.optional : undefined;
+    const half = f.half ?? f.kind === "number";
+    const span = half ? "" : "sm:col-span-2";
+    const val = form.values[f.key] ?? "";
 
-  const scopeBtn = (s: ProjectScope, label: string, Icon: typeof Landmark) => (
-    <button
-      key={s}
-      type="button"
-      role="radio"
-      aria-checked={form.scope === s}
-      onClick={() => set("scope", s)}
-      className={`relative z-10 flex flex-1 items-center justify-center gap-2 rounded-lg px-3 py-2.5 text-sm font-semibold transition-colors ${
-        form.scope === s ? "text-[#f0d080]" : "text-[#475569] hover:text-[#0a1628]"
-      }`}
-    >
-      <Icon size={16} />
-      {label}
-    </button>
-  );
+    switch (f.kind) {
+      case "segmented": {
+        const idx = Math.max(0, f.options.findIndex((o) => o.value === val));
+        return (
+          <fieldset key={f.key} className={span}>
+            <legend className="mb-2 text-xs font-bold uppercase tracking-wider text-[#475569]">{label}</legend>
+            <div role="radiogroup" className="relative flex rounded-xl border border-[#e2e8f0] bg-white p-1">
+              <span
+                aria-hidden
+                className="absolute inset-y-1 left-1 rounded-lg bg-[#0a1628] shadow transition-transform duration-300 ease-out"
+                style={{
+                  width: `calc((100% - 8px) / ${f.options.length})`,
+                  transform: `translateX(${idx * 100}%)`,
+                }}
+              />
+              {f.options.map((o) => {
+                const Icon = o.icon === "gov" ? Landmark : o.icon === "private" ? Building2 : null;
+                return (
+                  <button
+                    key={o.value}
+                    type="button"
+                    role="radio"
+                    aria-checked={val === o.value}
+                    onClick={() => setVal(f.key, o.value)}
+                    className={`relative z-10 flex flex-1 items-center justify-center gap-2 rounded-lg px-3 py-2.5 text-sm font-semibold transition-colors ${
+                      val === o.value ? "text-[#f0d080]" : "text-[#475569] hover:text-[#0a1628]"
+                    }`}
+                  >
+                    {Icon && <Icon size={16} />}
+                    {pick(o.label, lang)}
+                  </button>
+                );
+              })}
+            </div>
+          </fieldset>
+        );
+      }
+      case "money":
+        return (
+          <Field key={f.key} label={label} error={errors[f.key]} optional={opt} className={span}>
+            <div className="relative">
+              <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-sm font-bold text-[#a07830]">
+                Rp
+              </span>
+              <input
+                inputMode="numeric"
+                autoComplete="off"
+                className={`${inputCls} pl-11`}
+                placeholder={pick(f.placeholder, lang)}
+                value={formatDigits(val, lang)}
+                onChange={(e) => setVal(f.key, e.target.value.replace(/\D/g, "").slice(0, 15))}
+              />
+            </div>
+            {compactRupiah(val, lang) && (
+              <span className="mt-1.5 block text-xs font-semibold text-[#a07830]">{compactRupiah(val, lang)}</span>
+            )}
+          </Field>
+        );
+      case "period": {
+        const unitKey = `${f.key}_unit`;
+        const unit = form.values[unitKey] ?? "month";
+        return (
+          <Field key={f.key} label={label} error={errors[f.key]} optional={opt} className={span}>
+            <div className="flex gap-2">
+              <input
+                inputMode="numeric"
+                autoComplete="off"
+                className={inputCls}
+                placeholder={pick(f.placeholder, lang)}
+                value={val}
+                onChange={(e) => setVal(f.key, e.target.value.replace(/\D/g, "").slice(0, 4))}
+              />
+              <div className="flex shrink-0 items-center rounded-xl border border-[#e2e8f0] bg-white p-1">
+                {(["month", "day"] as const).map((u) => (
+                  <button
+                    key={u}
+                    type="button"
+                    onClick={() => setVal(unitKey, u)}
+                    aria-pressed={unit === u}
+                    className={`rounded-lg px-3.5 py-2 text-xs font-bold transition-all ${
+                      unit === u ? "bg-[#0a1628] text-[#f0d080] shadow" : "text-[#475569] hover:text-[#0a1628]"
+                    }`}
+                  >
+                    {u === "month" ? t.month : t.day}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </Field>
+        );
+      }
+      case "select":
+        return (
+          <Field key={f.key} label={label} error={errors[f.key]} optional={opt} className={span}>
+            <div className="relative">
+              <select
+                className={`${inputCls} appearance-none pr-10 ${val ? "" : "text-[#94a3b8]"}`}
+                value={val}
+                onChange={(e) => setVal(f.key, e.target.value)}
+              >
+                <option value="">{pick(f.placeholder, lang)}</option>
+                {f.options.map((o) => (
+                  <option key={o.value} value={o.value} className="text-[#0a1628]">
+                    {pick(o.label, lang)}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown size={16} className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#64748b]" />
+            </div>
+          </Field>
+        );
+      case "number":
+        return (
+          <Field key={f.key} label={label} error={errors[f.key]} optional={opt} className={span}>
+            <div className="relative">
+              <input
+                inputMode="numeric"
+                autoComplete="off"
+                className={`${inputCls} ${f.suffix ? "pr-16" : ""}`}
+                placeholder={pick(f.placeholder, lang)}
+                value={val}
+                onChange={(e) => setVal(f.key, e.target.value.replace(/\D/g, "").slice(0, 6))}
+              />
+              {f.suffix && (
+                <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-[#a07830]">
+                  {pick(f.suffix, lang)}
+                </span>
+              )}
+            </div>
+          </Field>
+        );
+      default:
+        return (
+          <Field key={f.key} label={label} error={errors[f.key]} optional={opt} className={span}>
+            <input
+              className={inputCls}
+              placeholder={pick(f.placeholder, lang)}
+              value={val}
+              onChange={(e) => setVal(f.key, e.target.value.slice(0, 120))}
+            />
+          </Field>
+        );
+    }
+  };
 
   const modal = (
     <div
@@ -351,9 +454,9 @@ export default function SuretyQuoteModal({
             </span>
             <div>
               <h2 id="sq-title" className="font-display text-xl font-bold leading-tight text-white sm:text-2xl">
-                {t.title}
+                {pick(cluster.copy.modalTitle, lang)}
               </h2>
-              <p className="mt-1 text-sm text-white/70">{t.subtitle}</p>
+              <p className="mt-1 text-sm text-white/70">{pick(cluster.copy.modalSubtitle, lang)}</p>
             </div>
           </div>
           {stepper}
@@ -390,10 +493,10 @@ export default function SuretyQuoteModal({
                   <>
                     <fieldset>
                       <legend className="mb-2 text-xs font-bold uppercase tracking-wider text-[#475569]">
-                        {t.bondType}
+                        {pick(cluster.typeLegend, lang)}
                       </legend>
                       <div role="radiogroup" className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-                        {SURETY_TYPES.map((x) => {
+                        {cluster.types.map((x) => {
                           const on = form.type === x.key;
                           return (
                             <button
@@ -401,7 +504,10 @@ export default function SuretyQuoteModal({
                               type="button"
                               role="radio"
                               aria-checked={on}
-                              onClick={() => set("type", x.key)}
+                              onClick={() => {
+                                setTop("type", x.key);
+                                setErrors({});
+                              }}
                               className={`relative rounded-xl border-2 p-3 text-left transition-all ${
                                 on
                                   ? "border-[#c9a84c] bg-[#c9a84c]/10 shadow-sm"
@@ -425,59 +531,10 @@ export default function SuretyQuoteModal({
                       </div>
                     </fieldset>
 
-                    <fieldset>
-                      <legend className="mb-2 text-xs font-bold uppercase tracking-wider text-[#475569]">
-                        {t.scope}
-                      </legend>
-                      <div role="radiogroup" className="relative flex rounded-xl border border-[#e2e8f0] bg-white p-1">
-                        <span
-                          aria-hidden
-                          className={`absolute inset-y-1 left-1 w-[calc(50%-4px)] rounded-lg bg-[#0a1628] shadow transition-transform duration-300 ease-out ${
-                            form.scope === "private" ? "translate-x-full" : "translate-x-0"
-                          }`}
-                        />
-                        {scopeBtn("gov", t.gov, Landmark)}
-                        {scopeBtn("private", t.priv, Building2)}
-                      </div>
-                    </fieldset>
-
-                    <Field label={t.amount} error={errors.amount}>
-                      <div className="relative">
-                        <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-sm font-bold text-[#a07830]">
-                          Rp
-                        </span>
-                        <input
-                          inputMode="numeric"
-                          autoComplete="off"
-                          className={`${inputCls} pl-11`}
-                          placeholder={t.amountPh}
-                          value={formatDigits(form.amount, lang)}
-                          onChange={(e) => set("amount", e.target.value.replace(/\D/g, "").slice(0, 15))}
-                        />
-                      </div>
-                      {compactRupiah(form.amount, lang) && (
-                        <span className="mt-1.5 block text-xs font-semibold text-[#a07830]">
-                          {compactRupiah(form.amount, lang)}
-                        </span>
-                      )}
-                    </Field>
-
-                    <Field label={t.period} error={errors.period}>
-                      <div className="flex gap-2">
-                        <input
-                          inputMode="numeric"
-                          autoComplete="off"
-                          className={inputCls}
-                          placeholder={t.periodPh}
-                          value={form.period}
-                          onChange={(e) => set("period", e.target.value.replace(/\D/g, "").slice(0, 4))}
-                        />
-                        <div className="flex shrink-0 items-center rounded-xl border border-[#e2e8f0] bg-white p-1">
-                          {periodUnitBtn("month", t.month)}
-                          {periodUnitBtn("day", t.day)}
-                        </div>
-                      </div>
-                    </Field>
+                    {/* Bidang menyesuaikan jenis produk yang dipilih */}
+                    <div key={form.type} className="sb-rise grid gap-5 sm:grid-cols-2">
+                      {visibleFields.map(renderField)}
+                    </div>
                   </>
                 ) : (
                   <>
@@ -487,7 +544,7 @@ export default function SuretyQuoteModal({
                           className={inputCls}
                           autoComplete="name"
                           value={form.name}
-                          onChange={(e) => set("name", e.target.value)}
+                          onChange={(e) => setTop("name", e.target.value)}
                         />
                       </Field>
                       <Field label={t.company} error={errors.company}>
@@ -495,7 +552,7 @@ export default function SuretyQuoteModal({
                           className={inputCls}
                           autoComplete="organization"
                           value={form.company}
-                          onChange={(e) => set("company", e.target.value)}
+                          onChange={(e) => setTop("company", e.target.value)}
                         />
                       </Field>
                       <Field label={t.phone} error={errors.phone}>
@@ -506,25 +563,25 @@ export default function SuretyQuoteModal({
                           className={inputCls}
                           placeholder={t.phonePh}
                           value={form.phone}
-                          onChange={(e) => set("phone", e.target.value.replace(/[^\d+\s-]/g, ""))}
+                          onChange={(e) => setTop("phone", e.target.value.replace(/[^\d+\s-]/g, ""))}
                         />
                       </Field>
-                      <Field label={t.targetDate} optional={t.optional}>
+                      <Field label={pick(cluster.copy.dateLabel, lang)} optional={t.optional}>
                         <input
                           type="date"
                           className={inputCls}
                           value={form.targetDate}
-                          onChange={(e) => set("targetDate", e.target.value)}
+                          onChange={(e) => setTop("targetDate", e.target.value)}
                         />
                       </Field>
                     </div>
 
-                    <Field label={t.client} optional={t.optional}>
+                    <Field label={pick(cluster.copy.clientLabel, lang)} optional={t.optional}>
                       <input
                         className={inputCls}
-                        placeholder={t.clientPh}
+                        placeholder={pick(cluster.copy.clientPh, lang)}
                         value={form.client}
-                        onChange={(e) => set("client", e.target.value)}
+                        onChange={(e) => setTop("client", e.target.value)}
                       />
                     </Field>
 
@@ -535,7 +592,7 @@ export default function SuretyQuoteModal({
                       </p>
                       <p className="mb-3 text-xs text-[#64748b]">{t.analysisHint}</p>
                       <div className="flex flex-wrap gap-2">
-                        {ANALYSIS_FLAGS.map((f) => {
+                        {visibleFlags.map((f) => {
                           const on = form.flags.includes(f.key);
                           return (
                             <button
@@ -561,18 +618,23 @@ export default function SuretyQuoteModal({
                       <textarea
                         rows={4}
                         className={`${inputCls} resize-y`}
-                        placeholder={t.notePh}
+                        placeholder={pick(cluster.copy.notePh, lang)}
                         value={form.note}
-                        onChange={(e) => set("note", e.target.value.slice(0, 600))}
+                        onChange={(e) => setTop("note", e.target.value.slice(0, 600))}
                       />
                     </Field>
                   </>
                 )}
+                {step === 1 && form.type === "unsure" && (
+                  <p className="rounded-xl border border-dashed border-[#c9a84c]/50 bg-[#c9a84c]/5 p-3 text-xs leading-relaxed text-[#7a5c14]">
+                    {pick(cluster.copy.unsureNote, lang)}
+                  </p>
+                )}
               </div>
 
-              {/* Persyaratan mengikuti jenis bond terpilih */}
+              {/* Persyaratan mengikuti jenis produk terpilih */}
               <aside className="lg:sticky lg:top-0 lg:self-start">
-                <RequirementsPanel lang={lang} type={form.type} />
+                <RequirementsPanel cluster={cluster} lang={lang} type={form.type} />
               </aside>
             </div>
           )}

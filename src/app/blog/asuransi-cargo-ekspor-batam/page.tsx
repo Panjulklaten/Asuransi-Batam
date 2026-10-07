@@ -346,6 +346,7 @@ export default function CargoEksporBatamPage() {
         </div>
       </section>
       <CTASection
+        cluster="marine"
         title="Siapkan Polis Cargo Ekspor Sebelum Kirim"
         waMsg="Halo Rio, saya eksportir di Batam dan butuh asuransi cargo untuk pengiriman ke luar negeri"
       />

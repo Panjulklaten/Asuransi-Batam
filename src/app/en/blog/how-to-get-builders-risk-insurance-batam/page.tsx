@@ -100,6 +100,7 @@ const faqSchema = {
 export default function HowToGetBuildersRiskPage() {
   return (
     <ArticleLayout
+      cluster="marine"
       title="How to Choose the Right Builders Risk Insurance in Batam"
       description="A real claim walkthrough from a Batam shipyard, plus the steps for picking a Builders Risk policy that actually holds up when something goes wrong."
       date="June 23, 2026"

@@ -2,6 +2,8 @@
 import Link from "next/link";
 import { ChevronRight, Star } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/constants";
+import QuoteButton from "@/components/quote/QuoteButton";
+import type { QuoteClusterKey } from "@/lib/quote";
 
 // ─── Breadcrumb ───────────────────────────────────────────────
 interface BreadcrumbItem {
@@ -29,14 +31,26 @@ export function Breadcrumb({ items }: { items: BreadcrumbItem[] }) {
 
 // ─── CTA Section ─────────────────────────────────────────────
 export function CTASection({
-  title = "Siap Melindungi Aset Anda?",
-  subtitle = "Konsultasi gratis dengan Rio. Dapatkan penawaran terbaik sesuai kebutuhan Anda.",
+  title,
+  subtitle,
   waMsg = "Halo Rio, saya ingin konsultasi asuransi",
+  cluster,
+  lang = "id",
 }: {
   title?: string;
   subtitle?: string;
   waMsg?: string;
+  /** "surety" | "marine": tombol kalkulator mobil diganti tombol "Minta Penawaran" (popup → WhatsApp). */
+  cluster?: QuoteClusterKey;
+  lang?: "id" | "en";
 }) {
+  const en = lang === "en";
+  const heading = title ?? (en ? "Ready to Protect Your Assets?" : "Siap Melindungi Aset Anda?");
+  const sub =
+    subtitle ??
+    (en
+      ? "Free consultation with Rio. Get the best quote tailored to your needs."
+      : "Konsultasi gratis dengan Rio. Dapatkan penawaran terbaik sesuai kebutuhan Anda.");
   return (
     <section
       className="py-16 px-4 text-center"
@@ -48,9 +62,9 @@ export function CTASection({
         className="text-2xl md:text-3xl font-bold text-white mb-3"
         style={{ fontFamily: "Syne, sans-serif" }}
       >
-        {title}
+        {heading}
       </h2>
-      <p className="text-gray-300 mb-8 max-w-xl mx-auto">{subtitle}</p>
+      <p className="text-gray-300 mb-8 max-w-xl mx-auto">{sub}</p>
       <div className="flex flex-col sm:flex-row gap-3 justify-center">
         <a
           href={WHATSAPP_URL(waMsg)}
@@ -59,14 +73,18 @@ export function CTASection({
           className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold rounded-xl transition-all hover:scale-105"
           style={{ background: "linear-gradient(135deg, #c9a84c, #f0d080)", color: "#0a1628" }}
         >
-          Konsultasi Gratis
+          {en ? "Free Consultation" : "Konsultasi Gratis"}
         </a>
-        <Link
-          href="/kalkulator-premi-mobil"
-          className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold text-white border-2 border-white/30 rounded-xl hover:border-yellow-400 hover:text-yellow-400 transition-all"
-        >
-          Hitung Premi
-        </Link>
+        {cluster ? (
+          <QuoteButton cluster={cluster} lang={lang} variant="onDark" className="!py-3.5 !font-semibold" />
+        ) : (
+          <Link
+            href="/kalkulator-premi-mobil"
+            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold text-white border-2 border-white/30 rounded-xl hover:border-yellow-400 hover:text-yellow-400 transition-all"
+          >
+            Hitung Premi
+          </Link>
+        )}
       </div>
     </section>
   );

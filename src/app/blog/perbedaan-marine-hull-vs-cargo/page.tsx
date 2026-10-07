@@ -51,6 +51,7 @@ const schema = {
 export default function PerbedaanMarineHullVsCargoPage() {
   return (
     <ArticleLayout
+      cluster="marine"
       title="Perbedaan Marine Hull dan Marine Cargo – Mana yang Anda Butuhkan?"
       description="Kapal sudah diasuransikan belum tentu muatannya aman. Pahami perbedaan mendasar dua produk ini sebelum memilih."
       date="7 Mei 2026"

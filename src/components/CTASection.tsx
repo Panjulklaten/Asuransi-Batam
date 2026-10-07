@@ -1,5 +1,6 @@
 import Link from "next/link";
-import SuretyQuoteButton from "./surety/SuretyQuoteButton";
+import QuoteButton from "./quote/QuoteButton";
+import type { QuoteClusterKey } from "@/lib/quote";
 
 interface CTASectionProps {
   title?: string;
@@ -15,10 +16,10 @@ interface CTASectionProps {
   /** Pass "en" to use English defaults. All explicit props still override. */
   lang?: "id" | "en";
   /**
-   * Cluster halaman. "surety" mengganti tombol sekunder (kalkulator premi mobil yang
+   * Cluster halaman ("surety" | "marine"). Mengganti tombol sekunder (kalkulator premi mobil yang
    * tidak relevan) dengan tombol "Minta Penawaran" yang membuka popup form → WhatsApp admin.
    */
-  cluster?: "surety";
+  cluster?: QuoteClusterKey;
 }
 
 const DEFAULTS = {
@@ -83,8 +84,8 @@ export default function CTASection({
           >
             {resolvedPrimaryLabel}
           </a>
-          {cluster === "surety" ? (
-            <SuretyQuoteButton lang={lang} variant="onDark" />
+          {cluster ? (
+            <QuoteButton cluster={cluster} lang={lang} variant="onDark" />
           ) : (
             <Link
               href={resolvedSecondaryHref}

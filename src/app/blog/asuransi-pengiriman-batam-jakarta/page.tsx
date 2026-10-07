@@ -322,6 +322,7 @@ export default function BatamJakartaCargoPage() {
         </div>
       </section>
       <CTASection
+        cluster="marine"
         title="Siap Lindungi Kiriman Batam–Jakarta Anda?"
         waMsg="Halo Rio, saya ingin asuransi cargo untuk pengiriman barang dari Batam ke Jakarta"
       />

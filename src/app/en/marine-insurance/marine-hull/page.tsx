@@ -4,6 +4,8 @@ import { generateSEO, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
 import { WHATSAPP_URL } from "@/lib/constants";
 import { Breadcrumb, CTASection, SectionHeader } from "@/components/ui/index";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
+import QuoteButton from "@/components/quote/QuoteButton";
+import QuoteRequirements from "@/components/quote/QuoteRequirements";
 import { Ship, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = generateSEO({
@@ -151,15 +153,18 @@ export default function MarineHullENPage() {
           <p className="text-gray-300 text-lg mb-8 max-w-2xl">
             Total protection for your vessel — hull, engines, and navigation systems covered against every major marine peril. From Batam's busy waterways to international voyages.
           </p>
-          <a
-            href={WHATSAPP_URL("Hello Rio, I need Marine Hull Insurance for my vessel in Batam")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold rounded-xl text-navy"
-            style={{ background: "linear-gradient(135deg, #c9a84c, #f0d080)" }}
-          >
-            Consult Marine Hull Coverage
-          </a>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a
+              href={WHATSAPP_URL("Hello Rio, I need Marine Hull Insurance for my vessel in Batam")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold rounded-xl text-navy"
+              style={{ background: "linear-gradient(135deg, #c9a84c, #f0d080)" }}
+            >
+              Consult Marine Hull Coverage
+            </a>
+            <QuoteButton cluster="marine" lang="en" variant="onDark" className="!py-3.5 !font-semibold" />
+          </div>
         </div>
       </section>
 
@@ -233,7 +238,11 @@ export default function MarineHullENPage() {
         </div>
       </section>
 
+      <QuoteRequirements cluster="marine" lang="en" />
+
       <CTASection
+        cluster="marine"
+        lang="en"
         title="Protect Your Vessel Today"
         waMsg="Hello Rio, I would like Marine Hull Insurance for my vessel in Batam"
       />
