@@ -3,6 +3,8 @@ import Link from "next/link";
 import CTASection from "./CTASection";
 import AuthorAvatar from "./AuthorAvatar";
 import CalculatorPromoCard, { type CalculatorCardVariant } from "./CalculatorPromoCard";
+import SuretyQuoteButton from "./surety/SuretyQuoteButton";
+import SuretyRequirements from "./surety/SuretyRequirements";
 
 interface FAQ { q: string; a: string; }
 interface Benefit { icon: string; title: string; desc: string; href?: string; }
@@ -21,13 +23,15 @@ interface ProductPageProps {
   calculatorCta?: { label: string; href: string };
   /** Tampilkan kartu ajakan kalkulator premi properti (sub-halaman properti). */
   calculatorCard?: CalculatorCardVariant;
+  /** Cluster surety bond: tombol "Minta Penawaran" (popup → WhatsApp) + tabel persyaratan penerbitan. */
+  cluster?: "surety";
   children?: React.ReactNode;
 }
 
 export default function ProductPageLayout({
   title, subtitle, description,
   benefits, faqs, policyComparison,
-  breadcrumbs, schema, calculatorCta, calculatorCard, children,
+  breadcrumbs, schema, calculatorCta, calculatorCard, cluster, children,
 }: ProductPageProps) {
   // Detect language from first breadcrumb href
   const isEN = breadcrumbs[0]?.href?.startsWith("/en");
@@ -145,14 +149,18 @@ export default function ProductPageLayout({
               >
                 {t.cta}
               </a>
-              <a
-                href="https://wa.me/6281373336728"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-all text-center"
-              >
-                WhatsApp Sekarang
-              </a>
+              {cluster === "surety" ? (
+                <SuretyQuoteButton lang={lang} variant="onDark" />
+              ) : (
+                <a
+                  href="https://wa.me/6281373336728"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-all text-center"
+                >
+                  WhatsApp Sekarang
+                </a>
+              )}
             </div>
           </div>
         </div>
@@ -230,6 +238,9 @@ export default function ProductPageLayout({
         </section>
       )}
 
+      {/* Persyaratan penerbitan surety bond */}
+      {cluster === "surety" && <SuretyRequirements lang={lang} />}
+
       {/* FAQ */}
       <section className="section-padding bg-[#faf8f3]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -254,6 +265,7 @@ export default function ProductPageLayout({
       {/* ✅ lang prop now passed so CTA defaults to correct language */}
       <CTASection
         lang={lang}
+        cluster={cluster}
         tertiaryLabel={calculatorCta?.label}
         tertiaryHref={calculatorCta?.href}
       />

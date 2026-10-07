@@ -256,7 +256,7 @@ export default function OB23VsKitePage() {
           </p>
         </div>
       </article>
-      <CTASection />
+      <CTASection cluster="surety" />
     </>
   );
 }

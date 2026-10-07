@@ -138,6 +138,7 @@ export default function CustomBondPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <ProductPageLayout
+        cluster="surety"
         title="Custom Bond Batam"
         subtitle="Jaminan Kepabeanan untuk Impor & Ekspor"
         description="Sebagai kota dengan status Kawasan Perdagangan Bebas (FTZ), aktivitas impor-ekspor di Batam sangat intensif — dan hampir semua fasilitas kepabeanan mensyaratkan jaminan. Custom bond memungkinkan perusahaan Anda mendapatkan fasilitas OB 23, KITE, atau Kawasan Berikat tanpa harus mengunci dana tunai sebagai agunan seperti pada bank garansi."

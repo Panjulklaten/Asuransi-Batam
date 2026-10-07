@@ -134,6 +134,7 @@ const schema = {
 export default function SuretyBondPage() {
   return (
     <ProductPageLayout
+      cluster="surety"
       title="Asuransi Surety Bond Batam"
       subtitle="Jaminan Proyek & Kontrak Terpercaya"
       description="Kontraktor dan perusahaan di Batam membutuhkan surety bond yang cepat terbit, diakui pemerintah dan swasta, tanpa menguras likuiditas. Kami menyediakan bid bond, performance bond, advance payment bond, dan maintenance bond dengan proses mudah dan premi kompetitif."

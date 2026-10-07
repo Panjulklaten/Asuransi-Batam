@@ -683,7 +683,7 @@ export default function PerbedaanBidBondPerformanceBondPage() {
           </div>
         </div>
       </section>
-      <CTASection />
+      <CTASection cluster="surety" />
     </>
   );
 }

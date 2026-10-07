@@ -93,6 +93,8 @@ export default function MaintenanceBondENPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       <ArticleLayout
+        cluster="surety"
+        suretyRequirements
       title="Maintenance Bond Batam: Post-Project Defect & Retention Guarantee"
       description="A complete guide to maintenance bonds in Batam — what they cover, bond value, maintenance period durations, and how contractors can use them to release cash retention and improve project cash flow."
       date="2025"

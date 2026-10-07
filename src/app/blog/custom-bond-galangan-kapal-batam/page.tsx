@@ -267,7 +267,7 @@ export default function CustomBondGalanganKapalPage() {
           </p>
         </div>
       </article>
-      <CTASection />
+      <CTASection cluster="surety" />
     </>
   );
 }

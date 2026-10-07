@@ -218,7 +218,7 @@ export default function ChecklistDokumenCustomBondPage() {
           </p>
         </div>
       </article>
-      <CTASection />
+      <CTASection cluster="surety" />
     </>
   );
 }

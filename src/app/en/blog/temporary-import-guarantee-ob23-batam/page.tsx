@@ -277,7 +277,7 @@ export default function OB23GuideENPage() {
           </p>
         </div>
       </article>
-      <CTASection />
+      <CTASection lang="en" cluster="surety" />
     </>
   );
 }

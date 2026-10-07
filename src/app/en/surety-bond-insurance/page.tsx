@@ -129,6 +129,7 @@ const schema = {
 export default function SuretyBondInsurancePage() {
   return (
     <ProductPageLayout
+      cluster="surety"
       title="Surety Bond Insurance Batam"
       subtitle="Trusted Project & Contract Guarantee"
       description="Contractors and companies in Batam need surety bonds that are issued quickly, recognized by government and private entities, without draining liquidity. We provide bid bonds, performance bonds, advance payment bonds, and maintenance bonds with a simple process and competitive premiums."
