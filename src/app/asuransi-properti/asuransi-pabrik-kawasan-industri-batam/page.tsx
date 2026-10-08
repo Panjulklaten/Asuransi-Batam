@@ -119,7 +119,7 @@ const schema = {
 
 export default function AsuransiPabrikBatamPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="property"
       title="Asuransi Pabrik & Kawasan Industri Batam"
       subtitle="Properti Industri All Risk – Gedung, Mesin, Stok & Liability"
       description="Batam adalah kota industri. Pabrik elektronik, galangan kapal, fasilitas logistik, dan kawasan industri terpadu membutuhkan perlindungan properti yang dirancang khusus — bukan sekadar polis properti biasa. Kami membantu Anda mendapatkan cakupan yang benar-benar sesuai."

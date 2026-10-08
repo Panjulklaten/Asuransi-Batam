@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { generateSEO } from "@/lib/seo";
 import Link from "next/link";
 import { Shield, Clock, CheckCircle, AlertCircle, ArrowRight, Calculator } from "lucide-react";
-import CTASection from "@/components/CTASection";
+import QuoteCard from "@/components/quote/QuoteCard";
 
 export const metadata: Metadata = generateSEO({
   title: "Asuransi Motor Batam 2026: Premi, Tarif OJK Wilayah 1 & Tips Pilih All Risk vs TLO",
@@ -403,7 +403,7 @@ export default function AsuransiMotorBatamPage() {
         </div>
       </article>
 
-      <CTASection />
+      <QuoteCard cluster="vehicle" />
     </>
   );
 }

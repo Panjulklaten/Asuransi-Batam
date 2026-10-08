@@ -122,7 +122,7 @@ function IconList({ items }: { items: { icon: React.ElementType; title?: string;
 
 export default function ArticleAsuransiPropertiKomersialBatamPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="property"
       title="Asuransi Properti Komersial Batam: Panduan untuk Pemilik Ruko, Gudang & Gedung"
       description="Batam berkembang sebagai kota industri dan perdagangan. Properti komersial di sini bukan sekadar bangunan — melainkan aset yang menopang bisnis dan mata pencaharian. Melindunginya bukan pilihan; ini adalah keharusan."
       date="6 Mei 2026"

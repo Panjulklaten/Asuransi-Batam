@@ -134,7 +134,7 @@ function Steps({ items }: { items: { title: string; desc?: React.ReactNode }[] }
 
 export default function ArticleBanjirBatam2026AsuransiKendaraanPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="vehicle"
       title="Banjir Batam dan Asuransi Kendaraan: Apakah Mobil Anda Terlindungi?"
       description="Video mobil yang terseret arus ke parit di Bengkong Indah sempat ramai dibicarakan warga Batam. Di balik kejadian itu, ada satu hal yang jarang disadari pemilik kendaraan: All Risk tidak selalu berarti bebas risiko banjir."
       date="24 September 2026"

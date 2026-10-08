@@ -75,7 +75,7 @@ const schema = {
 
 export default function KawasanLogistikBatamPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="property"
       title="Peta Risiko Logistik & Pergudangan Batam: Batu Ampar, Sekupang, dan Tanjung Uncang"
       description="Tiga simpul logistik utama Batam punya karakter operasional dan risiko yang berbeda-beda. Berikut gambaran mendalam yang perlu diketahui forwarder, PPJK, dan operator gudang sebelum menentukan proteksi asuransi yang tepat."
       date="22 September 2026"

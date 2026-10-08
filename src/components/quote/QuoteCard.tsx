@@ -1,6 +1,7 @@
 "use client";
 import { usePathname } from "next/navigation";
 import QuoteButton from "./QuoteButton";
+import QuoteCalcButton from "./QuoteCalcButton";
 import type { Lang, QuoteClusterKey } from "@/lib/quote";
 
 const T = {
@@ -15,8 +16,8 @@ const T = {
 } as const;
 
 /**
- * Satu-satunya CTA di bagian bawah halaman cluster produk (surety, marine, ...):
- * kartu navy dengan SATU tombol emas (shimmer) → membuka popup form + persyaratan.
+ * CTA bawah halaman cluster produk: kartu navy dengan tombol "Minta Penawaran" (emas, shimmer) → popup.
+ * Untuk cluster yang punya kalkulator premi (properti, kendaraan), ditambah satu tombol kalkulator.
  */
 export default function QuoteCard({ cluster, lang: langProp }: { cluster: QuoteClusterKey; lang?: Lang }) {
   const pathname = usePathname();
@@ -28,7 +29,10 @@ export default function QuoteCard({ cluster, lang: langProp }: { cluster: QuoteC
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-4 rounded-2xl bg-gradient-to-r from-[#0a1628] to-[#1a4fa0] p-6 sm:flex-row">
           <p className="max-w-xl text-center text-sm text-white/80 sm:text-left">{t.text}</p>
-          <QuoteButton cluster={cluster} lang={lang} variant="gold" label={t.btn} />
+          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+            <QuoteCalcButton cluster={cluster} lang={lang} variant="onDark" />
+            <QuoteButton cluster={cluster} lang={lang} variant="gold" label={t.btn} />
+          </div>
         </div>
       </div>
     </section>

@@ -85,7 +85,7 @@ const products = [
 
 export default function AsuransiPropertiPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="property"
       title="Asuransi Properti Batam"
       subtitle="Perlindungan Properti Terpercaya"
       description="Lindungi investasi properti Anda di Batam dari risiko kebakaran, bencana alam, dan kerusakan struktural. Kami menyediakan polis yang disesuaikan untuk rumah tinggal, hotel, dan gedung komersial."

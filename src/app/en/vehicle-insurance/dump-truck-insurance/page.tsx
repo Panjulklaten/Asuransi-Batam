@@ -37,7 +37,7 @@ const schema = {
 
 export default function DumpTruckInsurancePage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="vehicle"
       title="Dump Truck Insurance Batam"
       subtitle="Heavy Commercial Vehicle Protection"
       description="Dump trucks are the backbone of construction and mining operations in Batam. With the right insurance, your fleet is protected from the risks of damage, accidents, and theft — without disrupting your operations."

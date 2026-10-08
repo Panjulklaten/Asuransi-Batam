@@ -91,7 +91,7 @@ const schema = {
 
 export default function AsuransiRukoBatamPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="property"
       title="Asuransi Ruko Batam"
       subtitle="Proteksi Bangunan, Stok & Kelangsungan Usaha Anda"
       description="Ruko adalah aset sekaligus sumber pendapatan. Satu kebakaran, satu banjir, atau satu kejadian pencurian bisa menghentikan roda usaha yang sudah dibangun bertahun-tahun. Dengan asuransi ruko yang tepat, Anda tidak perlu memulai dari nol ketika musibah datang — bangunan, stok, dan kelangsungan bisnis Anda tetap terlindungi."

@@ -86,7 +86,7 @@ const schema = {
 
 export default function AsuransiMobilBatamPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="vehicle"
       title="Asuransi Mobil Batam"
       subtitle="Proteksi All Risk & TLO – Tenang Berkendara, Klaim Tanpa Ribet"
       description="Mobil adalah aset berharga yang menemani aktivitas harian Anda di Batam. Satu kecelakaan, satu kejadian tak terduga, bisa menguras biaya jutaan rupiah. Dengan asuransi mobil yang tepat — All Risk untuk perlindungan menyeluruh atau TLO untuk proteksi hemat — Anda tidak perlu khawatir lagi. Hitung estimasi premi kendaraan Anda sekarang menggunakan kalkulator online kami, gratis dan hasilnya langsung tampil tanpa perlu daftar."

@@ -118,7 +118,7 @@ const schema = {
 
 export default function FactoryInsuranceBatamPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="property"
       title="Factory & Industrial Property Insurance Batam"
       subtitle="Industrial All Risk – Buildings, Machinery, Stock & Liability"
       description="Batam is an industrial city. Electronics manufacturers, shipyards, logistics facilities, and integrated industrial estates all require property protection specifically designed for industrial risk — not a standard commercial policy. We help you get coverage that genuinely fits."

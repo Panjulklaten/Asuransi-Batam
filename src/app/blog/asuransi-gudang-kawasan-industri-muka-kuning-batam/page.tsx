@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { generateSEO } from "@/lib/seo";
 import Link from "next/link";
 import { Shield, Clock, CheckCircle, AlertCircle } from "lucide-react";
-import CTASection from "@/components/CTASection";
+import QuoteCard from "@/components/quote/QuoteCard";
 
 export const metadata: Metadata = generateSEO({
   title: "Asuransi Gudang Kawasan Industri Muka Kuning & Batam: Panduan Lengkap 2026",
@@ -337,7 +337,7 @@ export default function AsuransiGudangMukaKuningBatamPage() {
           </p>
         </div>
       </article>
-      <CTASection />
+      <QuoteCard cluster="property" />
     </>
   );
 }

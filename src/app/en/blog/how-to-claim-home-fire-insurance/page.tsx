@@ -78,7 +78,7 @@ const TIMELINE = [
 
 export default function ArticleHomeFireInsuranceClaimPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="property"
       title="How to Claim Home Fire Insurance: Documents, Procedure & Fatal Mistakes to Avoid"
       description="The fire has happened. The house is damaged. The policy is active. But the claim is rejected — this happens more often than you'd think. Here's the complete guide to getting your claim approved."
       date="6 May 2026"

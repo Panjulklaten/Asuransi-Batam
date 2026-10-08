@@ -49,7 +49,7 @@ const schema = {
 
 export default function CarInsuranceBatamPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="vehicle"
       title="Car Insurance Batam"
       subtitle="All Risk & TLO Protection – Drive with Confidence"
       description="Your car is a valuable asset that accompanies your daily activities in Batam. One accident, one unexpected incident, could drain millions of rupiah. With the right car insurance — All Risk for comprehensive coverage or TLO for economical protection — you no longer need to worry. Calculate your vehicle premium estimate now using our free online calculator."

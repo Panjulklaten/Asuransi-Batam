@@ -77,7 +77,7 @@ const faqSchema = {
 
 export default function ArticleAsuransiMobilBatamPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="vehicle"
       title="Cara Klaim Asuransi Mobil di Batam: Langkah Demi Langkah Agar Tidak Ditolak"
       description="Klaim ditolak bukan berarti asuransi Anda buruk — tapi bisa jadi karena prosedur yang terlewat. Ini panduan lengkapnya."
       date="30 April 2026"

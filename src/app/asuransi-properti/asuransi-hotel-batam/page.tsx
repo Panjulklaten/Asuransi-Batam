@@ -51,7 +51,7 @@ const schema = {
 
 export default function AsuransiHotelBatamPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="property"
       title="Asuransi Hotel Batam"
       subtitle="Perlindungan Lengkap Industri Perhotelan"
       description="Bisnis hotel dan penginapan di Batam adalah investasi besar yang melayani tamu internasional dari Singapura dan Malaysia. Satu insiden — kebakaran di dapur restoran, kecelakaan tamu di kolam renang, atau banjir yang merusak puluhan kamar — bisa mengancam kelangsungan bisnis tanpa perlindungan yang tepat."

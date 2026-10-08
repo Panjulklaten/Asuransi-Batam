@@ -46,7 +46,7 @@ const schema = {
 
 export default function HotelInsuranceBatamPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="property"
       title="Hotel Insurance Batam"
       subtitle="Comprehensive Hotel Asset Protection"
       description="Your hotel is a major investment in Batam's growing hospitality sector. From building structure to guest liability, we provide tailored insurance solutions to protect every aspect of your hotel operations."
