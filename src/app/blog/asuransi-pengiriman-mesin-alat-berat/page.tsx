@@ -1,7 +1,7 @@
 // app/blog/asuransi-pengiriman-mesin-alat-berat/page.tsx
 import type { Metadata } from "next";
+import QuoteButton from "@/components/quote/QuoteButton";
 import { generateSEO, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
-import { WHATSAPP_URL } from "@/lib/constants";
 import { Breadcrumb, SectionHeader } from "@/components/ui/index";
 import QuoteCard from "@/components/quote/QuoteCard";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
@@ -160,15 +160,7 @@ export default function MesinAlatBeratPage() {
             selama pengiriman laut — mulai dari korosi air laut, guncangan gelombang, hingga
             kerusakan saat bongkar muat. Pastikan investasi Anda terlindungi sejak perjalanan pertama.
           </p>
-          <a
-            href={WHATSAPP_URL("Halo Rio, saya butuh asuransi cargo untuk pengiriman mesin/alat berat dari Batam")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold rounded-xl"
-            style={{ background: "linear-gradient(135deg, #c9a84c, #f0d080)", color: "#0a1628" }}
-          >
-            Konsultasi Asuransi Mesin
-          </a>
+          <QuoteButton cluster="marine" lang="id" variant="gold" className="!rounded-xl !px-6 !py-3 !text-sm" />
         </div>
       </section>
 

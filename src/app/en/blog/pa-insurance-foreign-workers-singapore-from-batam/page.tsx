@@ -1,5 +1,6 @@
 // app/en/blog/pa-insurance-foreign-workers-singapore-from-batam/page.tsx
 import type { Metadata } from "next";
+import QuoteButton from "@/components/quote/QuoteButton";
 import { generateSEO } from "@/lib/seo";
 import ArticleLayout from "@/components/ArticleLayout";
 import Link from "next/link";
@@ -253,11 +254,7 @@ export default function PAForeignWorkersSingaporeENPage() {
           work-pass status ahead of a Singapore trip — whether it's one person or a whole project team.
         </p>
         <div className="flex flex-col sm:flex-row gap-3">
-          <a href="https://wa.me/6281373336728?text=Hi%20Rio%2C%20I%27d%20like%20to%20ask%20about%20PA%20insurance%20for%20foreign%20staff%20travelling%20to%20Singapore"
-            target="_blank" rel="noopener noreferrer"
-            className="px-5 py-3 bg-[#c9a84c] text-[#0a1628] font-bold rounded-xl text-sm text-center hover:bg-[#f0d080] transition-colors">
-            Chat with Rio on WhatsApp
-          </a>
+          <QuoteButton cluster="pa" lang="en" variant="gold" className="!rounded-xl !px-6 !py-3 !text-sm" />
           <Link href="/en/personal-accident-insurance/individual-family-pa"
             className="px-5 py-3 border border-white/30 text-white font-semibold rounded-xl text-sm text-center hover:bg-white/10 transition-colors">
             View Individual PA Plan

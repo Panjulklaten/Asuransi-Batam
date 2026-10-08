@@ -1,5 +1,6 @@
 // app/en/blog/builders-risk-shipyard-insurance-batam/page.tsx
 import type { Metadata } from "next";
+import QuoteButton from "@/components/quote/QuoteButton";
 import { generateSEO } from "@/lib/seo";
 import ArticleLayout from "@/components/ArticleLayout";
 import Link from "next/link";
@@ -199,11 +200,7 @@ export default function BuildersRiskShipyardPage() {
           I assist Batam shipyards and vessel buyers in designing the right insurance framework for new builds and major conversions — from Builders Risk during construction through to Marine Hull for the operational life of the vessel.
         </p>
         <div className="flex flex-col sm:flex-row gap-3">
-          <a href="https://wa.me/6281373336728?text=Hello%20Rio%2C%20I%20would%20like%20to%20consult%20about%20builders%20risk%20insurance%20for%20a%20shipyard%20project"
-            target="_blank" rel="noopener noreferrer"
-            className="px-5 py-3 bg-[#c9a84c] text-[#0a1628] font-bold rounded-xl text-sm text-center hover:bg-[#f0d080] transition-colors">
-            WhatsApp Consultation
-          </a>
+          <QuoteButton cluster="marine" lang="en" variant="gold" className="!rounded-xl !px-6 !py-3 !text-sm" />
           <Link href="/en/marine-insurance/builders-risk"
             className="px-5 py-3 border border-white/30 text-white font-semibold rounded-xl text-sm text-center hover:bg-white/10 transition-colors">
             Builders Risk Insurance

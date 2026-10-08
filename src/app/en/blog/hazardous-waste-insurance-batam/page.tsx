@@ -1,5 +1,6 @@
 // src/app/en/blog/hazardous-waste-insurance-batam/page.tsx
 import type { Metadata } from "next";
+import QuoteButton from "@/components/quote/QuoteButton";
 import { generateSEO } from "@/lib/seo";
 import Link from "next/link";
 import ArticleLayout from "@/components/ArticleLayout";
@@ -225,14 +226,7 @@ export default function ArticleHazardousWasteInsuranceENPage() {
           >
             B3 Insurance Details
           </Link>
-          <a
-            href="https://wa.me/6281373336728"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-2.5 border border-[#0a1628] text-[#0a1628] font-semibold rounded-xl text-sm"
-          >
-            Free Consultation
-          </a>
+          <QuoteButton cluster="liability" lang="en" variant="gold" className="!rounded-xl !px-6 !py-3 !text-sm" />
         </div>
       </div>
     

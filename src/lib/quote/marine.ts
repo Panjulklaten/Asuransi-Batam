@@ -17,6 +17,7 @@ const BUILD = ["builders"];
 
 export const MARINE: QuoteCluster = {
   key: "marine",
+  noHeroWhatsApp: true,
   typeLegend: { id: "Jenis asuransi marine", en: "Marine insurance type" },
   typeLine: { id: "Jenis asuransi", en: "Insurance type" },
   types: [

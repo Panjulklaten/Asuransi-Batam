@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import QuoteButton from "@/components/quote/QuoteButton";
 import { generateSEO } from "@/lib/seo";
 import Link from "next/link";
 import ArticleLayout from "@/components/ArticleLayout";
@@ -307,9 +308,7 @@ export default function ArticleLimbahB3Page() {
           <Link href="/asuransi-liability/asuransi-limbah-b3" className="px-6 py-2.5 bg-[#0a1628] text-white font-semibold rounded-xl text-sm">
             Info Asuransi Limbah B3
           </Link>
-          <a href="https://wa.me/6281373336728" target="_blank" rel="noopener noreferrer" className="px-6 py-2.5 border border-[#0a1628] text-[#0a1628] font-semibold rounded-xl text-sm">
-            Konsultasi Gratis
-          </a>
+          <QuoteButton cluster="liability" lang="id" variant="gold" className="!rounded-xl !px-6 !py-3 !text-sm" />
         </div>
       </div>
     

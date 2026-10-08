@@ -1,7 +1,7 @@
 // app/en/blog/batam-export-cargo-insurance/page.tsx
 import type { Metadata } from "next";
+import QuoteButton from "@/components/quote/QuoteButton";
 import { generateSEO, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
-import { WHATSAPP_URL } from "@/lib/constants";
 import { Breadcrumb, SectionHeader } from "@/components/ui/index";
 import QuoteCard from "@/components/quote/QuoteCard";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
@@ -166,15 +166,7 @@ export default function BatamExportCargoENPage() {
             and manufactured goods are shipped to Singapore, Malaysia, and dozens of countries every
             day. Protect the value of your exports with the right cargo insurance.
           </p>
-          <a
-            href={WHATSAPP_URL("Hello Rio, I am an exporter in Batam and need cargo insurance for international shipments")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold rounded-xl"
-            style={{ background: "linear-gradient(135deg, #c9a84c, #f0d080)", color: "#0a1628" }}
-          >
-            Consultation for Exporters
-          </a>
+          <QuoteButton cluster="marine" lang="en" variant="gold" className="!rounded-xl !px-6 !py-3 !text-sm" />
         </div>
       </section>
 

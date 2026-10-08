@@ -1,9 +1,9 @@
 // app/blog/berapa-premi-asuransi-builders-risk-kapal-batam/page.tsx
 import type { Metadata } from "next";
+import QuoteButton from "@/components/quote/QuoteButton";
 import Image from "next/image";
 import Link from "next/link";
 import { generateSEO, schemaArticle, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
-import { WHATSAPP_URL } from "@/lib/constants";
 import ArticleLayout from "@/components/ArticleLayout";
 import {
   Calculator,
@@ -458,17 +458,7 @@ export default function Page() {
           spesifikasi proyek Anda untuk mendapatkan gambaran cakupan dan estimasi premi yang
           akurat.
         </p>
-        <a
-          href={WHATSAPP_URL(
-            "Halo Rio, saya ingin konsultasi estimasi premi Builder's Risk Insurance untuk proyek kapal saya di Batam."
-          )}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-[#c9a84c] hover:bg-[#f0d080] text-[#0a1628] font-semibold px-6 py-3 rounded-xl transition-colors relative z-10"
-        >
-          <PhoneCall className="w-4 h-4" />
-          Konsultasi via WhatsApp
-        </a>
+        <QuoteButton cluster="marine" lang="id" variant="gold" className="!rounded-xl !px-6 !py-3 !text-sm" />
       </div>
     
       {/* Related Links */}

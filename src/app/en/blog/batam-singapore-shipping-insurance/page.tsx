@@ -1,5 +1,6 @@
 // app/en/blog/batam-singapore-shipping-insurance/page.tsx
 import type { Metadata } from "next";
+import QuoteButton from "@/components/quote/QuoteButton";
 import { generateSEO } from "@/lib/seo";
 import ArticleLayout from "@/components/ArticleLayout";
 import Link from "next/link";
@@ -192,11 +193,7 @@ export default function BatamSingaporeShippingInsurancePage() {
           I assist exporters and importers across Batam in selecting the correct policy aligned to their Incoterms, cargo type, and shipment frequency — including structuring Open Cover for regular shippers on this corridor.
         </p>
         <div className="flex flex-col sm:flex-row gap-3">
-          <a href="https://wa.me/6281373336728?text=Hello%20Rio%2C%20I%20would%20like%20to%20consult%20about%20cargo%20insurance%20Batam%20Singapore"
-            target="_blank" rel="noopener noreferrer"
-            className="px-5 py-3 bg-[#c9a84c] text-[#0a1628] font-bold rounded-xl text-sm text-center hover:bg-[#f0d080] transition-colors">
-            WhatsApp Consultation
-          </a>
+          <QuoteButton cluster="marine" lang="en" variant="gold" className="!rounded-xl !px-6 !py-3 !text-sm" />
           <Link href="/en/marine-insurance/marine-cargo"
             className="px-5 py-3 border border-white/30 text-white font-semibold rounded-xl text-sm text-center hover:bg-white/10 transition-colors">
             Marine Cargo Insurance
