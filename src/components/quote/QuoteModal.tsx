@@ -141,6 +141,7 @@ export default function QuoteModal({
   const t = T[lang];
   const cluster = QUOTE_CLUSTERS[clusterKey];
   const panelRef = useRef<HTMLDivElement>(null);
+  const bodyRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef(onClose);
   closeRef.current = onClose;
   const [step, setStep] = useState<1 | 2>(1);
@@ -205,6 +206,13 @@ export default function QuoteModal({
   }, []);
 
   const companyOptional = !!cluster.companyOptionalFor?.includes(form.type);
+
+  // Pindah langkah / selesai kirim → isi popup otomatis kembali ke atas,
+  // supaya isian berikutnya langsung terlihat tanpa scroll manual.
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    bodyRef.current?.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+  }, [step, sent]);
 
   const validateStep1 = () => {
     const e: Record<string, string> = {};
@@ -465,7 +473,7 @@ export default function QuoteModal({
         </div>
 
         {/* Body */}
-        <div className="flex-1 overflow-y-auto">
+        <div ref={bodyRef} className="flex-1 overflow-y-auto">
           {sent ? (
             <div className="sb-rise mx-auto flex max-w-md flex-col items-center px-6 py-14 text-center">
               <span className="sb-pop mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-[#c9a84c] to-[#f0d080] text-[#0a1628] shadow-xl shadow-[#c9a84c]/30">
