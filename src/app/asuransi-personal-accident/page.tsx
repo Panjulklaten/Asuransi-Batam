@@ -9,8 +9,7 @@ import {
   Anchor, 
   Clock, 
   HeartPulse, 
-  ChevronRight, 
-  PhoneCall 
+  ChevronRight 
 } from 'lucide-react';
 
 // --- METADATA SEO & HREFLANG ---
@@ -102,9 +101,7 @@ export default function PersonalAccidentPageID() {
                 Solusi Asuransi Kecelakaan Diri (PA) yang dirancang khusus untuk pekerja galangan kapal, manufaktur, dan sektor maritim. Jaminan keamanan finansial melengkapi BPJS Ketenagakerjaan Anda.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="#konsultasi" className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-dark text-navy font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
-                  <PhoneCall size={20} /> Konsultasi Gratis
-                </Link>
+                <QuoteButton cluster="pa" lang="id" variant="gold" className="!rounded-full !px-8 !py-3.5" />
                 <Link href="#produk" className="inline-flex items-center justify-center gap-2 border-2 border-cream hover:border-gold hover:text-gold font-bold py-3 px-8 rounded-full transition-all duration-300">
                   Lihat Skema Proteksi
                 </Link>

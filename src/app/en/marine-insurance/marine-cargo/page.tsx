@@ -1,7 +1,6 @@
 // app/en/marine-insurance/marine-cargo/page.tsx
 import type { Metadata } from "next";
 import { generateSEO, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
-import { WHATSAPP_URL } from "@/lib/constants";
 import { Breadcrumb, SectionHeader } from "@/components/ui/index";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import QuoteButton from "@/components/quote/QuoteButton";
@@ -154,16 +153,8 @@ export default function MarineCargoENPage() {
             Your shipment is protected from the sender's warehouse to the receiver's door. Whether exporting, importing, or shipping domestically — every risk during the sea voyage is covered.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
-            <a
-              href={WHATSAPP_URL("Hello Rio, I need Marine Cargo Insurance for a shipment from Batam")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold rounded-xl text-navy"
-              style={{ background: "linear-gradient(135deg, #c9a84c, #f0d080)" }}
-            >
-              Consult Cargo Coverage
-            </a>
-            <QuoteButton cluster="marine" lang="en" variant="onDark" className="!py-3.5 !font-semibold" />
+            
+            <QuoteButton cluster="marine" lang="en" variant="gold" className="!py-3.5 !font-semibold" />
           </div>
         </div>
       </section>

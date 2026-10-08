@@ -1,5 +1,6 @@
 // app/blog/asuransi-pengiriman-batam-singapore/page.tsx
 import type { Metadata } from "next";
+import QuoteButton from "@/components/quote/QuoteButton";
 import { generateSEO } from "@/lib/seo";
 import ArticleLayout from "@/components/ArticleLayout";
 import Link from "next/link";
@@ -200,11 +201,7 @@ export default function AsuransiPengirimanBatamSingapurePage() {
           skema Open Cover untuk pengiriman reguler.
         </p>
         <div className="flex flex-col sm:flex-row gap-3">
-          <a href="https://wa.me/6281373336728?text=Halo%20Rio%2C%20saya%20ingin%20konsultasi%20asuransi%20kargo%20Batam%20Singapura"
-            target="_blank" rel="noopener noreferrer"
-            className="px-5 py-3 bg-[#c9a84c] text-[#0a1628] font-bold rounded-xl text-sm text-center hover:bg-[#f0d080] transition-colors">
-            Konsultasi via WhatsApp
-          </a>
+          <QuoteButton cluster="marine" lang="id" variant="gold" className="!rounded-xl !px-6 !py-3 !text-sm" />
           <Link href="/asuransi-marine/marine-cargo"
             className="px-5 py-3 border border-white/30 text-white font-semibold rounded-xl text-sm text-center hover:bg-white/10 transition-colors">
             Lihat Produk Marine Cargo

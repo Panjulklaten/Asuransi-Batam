@@ -6,6 +6,7 @@ const B3 = ["b3"];
 
 export const LIABILITY: QuoteCluster = {
   key: "liability",
+  noHeroWhatsApp: true,
   typeLegend: { id: "Jenis liability", en: "Liability type" },
   typeLine: { id: "Jenis liability", en: "Liability type" },
   types: [

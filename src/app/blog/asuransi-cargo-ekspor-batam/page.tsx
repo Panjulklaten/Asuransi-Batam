@@ -1,7 +1,7 @@
 // app/blog/asuransi-cargo-ekspor-batam/page.tsx
 import type { Metadata } from "next";
+import QuoteButton from "@/components/quote/QuoteButton";
 import { generateSEO, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
-import { WHATSAPP_URL } from "@/lib/constants";
 import { Breadcrumb, SectionHeader } from "@/components/ui/index";
 import QuoteCard from "@/components/quote/QuoteCard";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
@@ -166,15 +166,7 @@ export default function CargoEksporBatamPage() {
             dan produk manufaktur lainnya dikirim ke Singapura, Malaysia, dan puluhan negara setiap
             harinya. Lindungi nilai ekspor Anda dengan cargo insurance yang tepat.
           </p>
-          <a
-            href={WHATSAPP_URL("Halo Rio, saya eksportir di Batam dan butuh asuransi cargo untuk pengiriman ke luar negeri")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold rounded-xl"
-            style={{ background: "linear-gradient(135deg, #c9a84c, #f0d080)", color: "#0a1628" }}
-          >
-            Konsultasi untuk Eksportir
-          </a>
+          <QuoteButton cluster="marine" lang="id" variant="gold" className="!rounded-xl !px-6 !py-3 !text-sm" />
         </div>
       </section>
 

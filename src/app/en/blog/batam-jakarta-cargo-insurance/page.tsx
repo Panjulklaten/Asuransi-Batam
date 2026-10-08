@@ -1,7 +1,7 @@
 // app/en/blog/batam-jakarta-cargo-insurance/page.tsx
 import type { Metadata } from "next";
+import QuoteButton from "@/components/quote/QuoteButton";
 import { generateSEO, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
-import { WHATSAPP_URL } from "@/lib/constants";
 import { Breadcrumb, SectionHeader } from "@/components/ui/index";
 import QuoteCard from "@/components/quote/QuoteCard";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
@@ -145,15 +145,7 @@ export default function BatamJakartaCargoENPage() {
             the value of your shipment against sea risks, extreme weather, and port handling damage —
             from the moment goods leave your warehouse until they reach their destination.
           </p>
-          <a
-            href={WHATSAPP_URL("Hello Rio, I need cargo insurance for a shipment from Batam to Jakarta")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold rounded-xl"
-            style={{ background: "linear-gradient(135deg, #c9a84c, #f0d080)", color: "#0a1628" }}
-          >
-            Free Consultation via WhatsApp
-          </a>
+          <QuoteButton cluster="marine" lang="en" variant="gold" className="!rounded-xl !px-6 !py-3 !text-sm" />
         </div>
       </section>
 

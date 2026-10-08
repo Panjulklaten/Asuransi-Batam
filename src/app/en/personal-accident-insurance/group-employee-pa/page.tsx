@@ -4,7 +4,7 @@ import QuoteButton from '@/components/quote/QuoteButton';
 import { generateSEO } from '@/lib/seo';
 import { 
   Building2, Users, ShieldCheck, FileText, Clock, ChevronRight, 
-  MapPin, AlertTriangle, CheckCircle, PhoneCall, ArrowRight, 
+  MapPin, AlertTriangle, CheckCircle, ArrowRight, 
   Landmark, FileCheck, UserCheck, Car 
 } from 'lucide-react';
 
@@ -113,9 +113,7 @@ export default function GroupEmployeePA_EN() {
                   Does your company operate in Batamindo, Mukakuning, or Tanjung Uncang? Protect your workforce from workplace accident risks with our <strong>Group Personal Accident</strong> solution that supplements BPJS Ketenagakerjaan. Focus on productivity, let us handle the risks.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link href="#free-consultation" className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-dark text-navy font-bold py-4 px-8 rounded-full transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
-                    <PhoneCall size={20} /> Free Premium Consultation
-                  </Link>
+                  <QuoteButton cluster="pa" lang="en" variant="gold" className="!rounded-full !px-8 !py-3.5" />
                   <Link href="#case-study" className="inline-flex items-center justify-center gap-2 border-2 border-cream/50 hover:border-gold text-cream font-bold py-4 px-8 rounded-full transition-all">
                     View Claim Scenario
                   </Link>

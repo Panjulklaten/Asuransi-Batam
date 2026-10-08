@@ -1,5 +1,6 @@
 // app/en/blog/marine-hull-vs-cargo-insurance/page.tsx
 import type { Metadata } from "next";
+import QuoteButton from "@/components/quote/QuoteButton";
 import { generateSEO } from "@/lib/seo";
 import ArticleLayout from "@/components/ArticleLayout";
 import Link from "next/link";
@@ -187,11 +188,7 @@ export default function MarineHullVsCargoPage() {
         <p className="text-white/70 text-sm mb-4 leading-relaxed">
           Not sure if you need hull cover, cargo cover, or both? It comes down to your role in the supply chain and the Incoterms you're working under. Happy to walk through it with you.
         </p>
-        <a href="https://wa.me/6281373336728?text=Hello%20Rio%2C%20I%20would%20like%20to%20consult%20about%20marine%20insurance"
-          target="_blank" rel="noopener noreferrer"
-          className="inline-block px-5 py-3 bg-[#c9a84c] text-[#0a1628] font-bold rounded-xl text-sm text-center hover:bg-[#f0d080] transition-colors">
-          WhatsApp Consultation
-        </a>
+        <QuoteButton cluster="marine" lang="en" variant="gold" className="!rounded-xl !px-6 !py-3 !text-sm" />
       </div>
 
       <div className="mt-6 p-5 bg-[#faf8f3] rounded-2xl border border-[#e2e8f0] not-prose">

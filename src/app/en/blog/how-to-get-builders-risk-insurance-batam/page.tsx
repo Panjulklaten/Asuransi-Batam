@@ -1,5 +1,6 @@
 // app/en/blog/how-to-get-builders-risk-insurance-batam/page.tsx
 import type { Metadata } from "next";
+import QuoteButton from "@/components/quote/QuoteButton";
 import { generateSEO } from "@/lib/seo";
 import Image from "next/image";
 import ArticleLayout from "@/components/ArticleLayout";
@@ -391,14 +392,7 @@ export default function HowToGetBuildersRiskPage() {
           I help set the sum insured correctly, make sure every relevant party is actually named on the policy, and stay involved if a claim ever happens — grounded in hands-on claims experience, not just premium comparisons.
         </p>
         <div className="flex flex-col sm:flex-row gap-3">
-          <a
-            href="https://wa.me/6281373336728?text=Hi%20Rio%2C%20I%27d%20like%20to%20consult%20about%20Builders%20Risk%20insurance"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-5 py-3 bg-[#c9a84c] text-[#0a1628] font-bold rounded-xl text-sm text-center hover:bg-[#f0d080] transition-colors"
-          >
-            Consult via WhatsApp
-          </a>
+          <QuoteButton cluster="marine" lang="en" variant="gold" className="!rounded-xl !px-6 !py-3 !text-sm" />
           <Link
             href="/en/marine-insurance/builders-risk"
             className="px-5 py-3 border border-white/30 text-white font-semibold rounded-xl text-sm text-center hover:bg-white/10 transition-colors"

@@ -2,7 +2,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { generateSEO, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
-import { WHATSAPP_URL } from "@/lib/constants";
 import { Breadcrumb, SectionHeader } from "@/components/ui/index";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import QuoteButton from "@/components/quote/QuoteButton";
@@ -212,16 +211,8 @@ export default function MarineCargoPage() {
             Barang kiriman Anda terlindungi dari gudang pengirim hingga tangan penerima. Ekspor, impor, maupun pengiriman domestik — semua risiko selama perjalanan laut tertanggung.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
-            <a
-              href={WHATSAPP_URL("Halo Rio, saya butuh Marine Cargo Insurance untuk pengiriman barang dari Batam")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold rounded-xl text-navy"
-              style={{ background: "linear-gradient(135deg, #c9a84c, #f0d080)" }}
-            >
-              Konsultasi Marine Cargo
-            </a>
-            <QuoteButton cluster="marine" lang="id" variant="onDark" className="!py-3.5 !font-semibold" />
+            
+            <QuoteButton cluster="marine" lang="id" variant="gold" className="!py-3.5 !font-semibold" />
           </div>
         </div>
       </section>

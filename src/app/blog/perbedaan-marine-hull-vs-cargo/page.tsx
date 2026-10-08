@@ -1,5 +1,6 @@
 // app/blog/perbedaan-marine-hull-vs-cargo/page.tsx
 import type { Metadata } from "next";
+import QuoteButton from "@/components/quote/QuoteButton";
 import { generateSEO } from "@/lib/seo";
 import ArticleLayout from "@/components/ArticleLayout";
 import Link from "next/link";
@@ -169,11 +170,7 @@ export default function PerbedaanMarineHullVsCargoPage() {
         <p className="text-white/70 text-sm mb-4 leading-relaxed">
           Tidak yakin harus membeli hull, cargo, atau keduanya? Tergantung model bisnis dan posisi Anda dalam rantai pengiriman. Saya bantu analisis dari awal.
         </p>
-        <a href="https://wa.me/6281373336728?text=Halo%20Rio%2C%20saya%20ingin%20konsultasi%20asuransi%20marine"
-          target="_blank" rel="noopener noreferrer"
-          className="inline-block px-5 py-3 bg-[#c9a84c] text-[#0a1628] font-bold rounded-xl text-sm text-center hover:bg-[#f0d080] transition-colors">
-          Konsultasi via WhatsApp
-        </a>
+        <QuoteButton cluster="marine" lang="id" variant="gold" className="!rounded-xl !px-6 !py-3 !text-sm" />
       </div>
 
       <div className="mt-6 p-5 bg-[#faf8f3] rounded-2xl border border-[#e2e8f0] not-prose">

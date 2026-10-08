@@ -1,7 +1,7 @@
 // app/en/blog/machinery-heavy-equipment-shipping-insurance-batam/page.tsx
 import type { Metadata } from "next";
+import QuoteButton from "@/components/quote/QuoteButton";
 import { generateSEO, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
-import { WHATSAPP_URL } from "@/lib/constants";
 import { Breadcrumb, SectionHeader } from "@/components/ui/index";
 import QuoteCard from "@/components/quote/QuoteCard";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
@@ -160,15 +160,7 @@ export default function MachineryShippingInsuranceENPage() {
             during sea transit — from saltwater corrosion and wave shock to port handling damage.
             Make sure your investment is protected from the first leg of the journey.
           </p>
-          <a
-            href={WHATSAPP_URL("Hello Rio, I need cargo insurance for shipping machinery/heavy equipment from Batam")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold rounded-xl"
-            style={{ background: "linear-gradient(135deg, #c9a84c, #f0d080)", color: "#0a1628" }}
-          >
-            Consult Machinery Cargo Insurance
-          </a>
+          <QuoteButton cluster="marine" lang="en" variant="gold" className="!rounded-xl !px-6 !py-3 !text-sm" />
         </div>
       </section>
 

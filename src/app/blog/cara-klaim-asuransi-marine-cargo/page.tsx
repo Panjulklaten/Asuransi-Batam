@@ -1,5 +1,6 @@
 // app/blog/cara-klaim-asuransi-marine-cargo/page.tsx
 import type { Metadata } from "next";
+import QuoteButton from "@/components/quote/QuoteButton";
 import { generateSEO } from "@/lib/seo";
 import ArticleLayout from "@/components/ArticleLayout";
 import Link from "next/link";
@@ -249,11 +250,7 @@ export default function CaraKlaimMarineCargoPage() {
           Proses klaim marine cargo bisa rumit, terutama jika melibatkan beberapa moda transportasi atau transit di beberapa pelabuhan. Sebagai praktisi berbasis di Batam dengan pengalaman di jalur Batam–Singapura–Jakarta, saya siap membantu dari awal hingga klaim cair.
         </p>
         <div className="flex flex-col sm:flex-row gap-3">
-          <a href="https://wa.me/6281373336728?text=Halo%20Rio%2C%20saya%20ingin%20konsultasi%20klaim%20marine%20cargo"
-            target="_blank" rel="noopener noreferrer"
-            className="px-5 py-3 bg-[#c9a84c] text-[#0a1628] font-bold rounded-xl text-sm text-center hover:bg-[#f0d080] transition-colors">
-            Konsultasi via WhatsApp
-          </a>
+          <QuoteButton cluster="marine" lang="id" variant="gold" className="!rounded-xl !px-6 !py-3 !text-sm" />
           <Link href="/asuransi-marine/marine-cargo"
             className="px-5 py-3 border border-white/30 text-white font-semibold rounded-xl text-sm text-center hover:bg-white/10 transition-colors">
             Lihat Produk Marine Cargo

@@ -10,6 +10,7 @@ const GRP = ["group"];
 
 export const PA: QuoteCluster = {
   key: "pa",
+  noHeroWhatsApp: true,
   typeLegend: { id: "Jenis perlindungan", en: "Cover type" },
   typeLine: { id: "Jenis perlindungan", en: "Cover type" },
   types: [

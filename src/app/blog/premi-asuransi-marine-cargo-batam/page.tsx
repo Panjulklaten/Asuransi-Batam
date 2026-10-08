@@ -1,7 +1,7 @@
 // app/blog/premi-asuransi-marine-cargo-batam/page.tsx
 import type { Metadata } from "next";
+import QuoteButton from "@/components/quote/QuoteButton";
 import { generateSEO, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
-import { WHATSAPP_URL } from "@/lib/constants";
 import { Breadcrumb, SectionHeader } from "@/components/ui/index";
 import QuoteCard from "@/components/quote/QuoteCard";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
@@ -153,15 +153,7 @@ export default function PremiMarineCargoPage() {
             Pelajari cara perhitungannya, apa yang mempengaruhi angkanya, dan bagaimana mendapatkan
             coverage terbaik dengan harga yang efisien.
           </p>
-          <a
-            href={WHATSAPP_URL("Halo Rio, saya ingin tahu estimasi premi asuransi marine cargo untuk pengiriman dari Batam")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold rounded-xl"
-            style={{ background: "linear-gradient(135deg, #c9a84c, #f0d080)", color: "#0a1628" }}
-          >
-            Minta Estimasi Premi Gratis
-          </a>
+          <QuoteButton cluster="marine" lang="id" variant="gold" className="!rounded-xl !px-6 !py-3 !text-sm" />
         </div>
       </section>
 
