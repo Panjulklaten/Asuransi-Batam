@@ -2,7 +2,8 @@
 import type { Metadata } from "next";
 import { generateSEO, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
 import { WHATSAPP_URL } from "@/lib/constants";
-import { Breadcrumb, CTASection, SectionHeader } from "@/components/ui/index";
+import { Breadcrumb, SectionHeader } from "@/components/ui/index";
+import QuoteCard from "@/components/quote/QuoteCard";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { Package, CheckCircle2, AlertTriangle, Truck } from "lucide-react";
 
@@ -321,12 +322,7 @@ export default function BatamJakartaCargoENPage() {
           </div>
         </div>
       </section>
-      <CTASection
-        cluster="marine"
-        lang="en"
-        title="Ready to Protect Your Batam–Jakarta Shipment?"
-        waMsg="Hello Rio, I would like cargo insurance for my shipment from Batam to Jakarta"
-      />
+      <QuoteCard cluster="marine" />
     </>
   );
         }

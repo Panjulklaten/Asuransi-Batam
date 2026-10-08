@@ -4,7 +4,7 @@ import CTASection from "./CTASection";
 import AuthorAvatar from "./AuthorAvatar";
 import CalculatorPromoCard, { type CalculatorCardVariant } from "./CalculatorPromoCard";
 import QuoteButton from "./quote/QuoteButton";
-import QuoteRequirements from "./quote/QuoteRequirements";
+import QuoteCard from "./quote/QuoteCard";
 import type { QuoteClusterKey } from "@/lib/quote";
 
 interface FAQ { q: string; a: string; }
@@ -239,9 +239,6 @@ export default function ProductPageLayout({
         </section>
       )}
 
-      {/* Persyaratan penerbitan */}
-      {cluster && <QuoteRequirements cluster={cluster} lang={lang} />}
-
       {/* FAQ */}
       <section className="section-padding bg-[#faf8f3]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -263,13 +260,16 @@ export default function ProductPageLayout({
         </div>
       </section>
 
-      {/* ✅ lang prop now passed so CTA defaults to correct language */}
-      <CTASection
-        lang={lang}
-        cluster={cluster}
-        tertiaryLabel={calculatorCta?.label}
-        tertiaryHref={calculatorCta?.href}
-      />
+      {/* Cluster produk: hanya satu kartu dengan satu tombol "Minta Penawaran" (popup) */}
+      {cluster ? (
+        <QuoteCard cluster={cluster} lang={lang} />
+      ) : (
+        <CTASection
+          lang={lang}
+          tertiaryLabel={calculatorCta?.label}
+          tertiaryHref={calculatorCta?.href}
+        />
+      )}
     </>
   );
 }

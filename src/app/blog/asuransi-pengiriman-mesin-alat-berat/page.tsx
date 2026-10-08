@@ -2,7 +2,8 @@
 import type { Metadata } from "next";
 import { generateSEO, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
 import { WHATSAPP_URL } from "@/lib/constants";
-import { Breadcrumb, CTASection, SectionHeader } from "@/components/ui/index";
+import { Breadcrumb, SectionHeader } from "@/components/ui/index";
+import QuoteCard from "@/components/quote/QuoteCard";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { CheckCircle2, Wrench, AlertTriangle } from "lucide-react";
 
@@ -345,11 +346,7 @@ export default function MesinAlatBeratPage() {
           </div>
         </div>
       </section>
-      <CTASection
-        cluster="marine"
-        title="Lindungi Mesin Anda Sejak Perjalanan Pertama"
-        waMsg="Halo Rio, saya butuh asuransi cargo untuk pengiriman mesin/alat berat dari Batam"
-      />
+      <QuoteCard cluster="marine" />
     </>
   );
       }

@@ -3,10 +3,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { generateSEO, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
 import { WHATSAPP_URL } from "@/lib/constants";
-import { Breadcrumb, CTASection, SectionHeader } from "@/components/ui/index";
+import { Breadcrumb, SectionHeader } from "@/components/ui/index";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import QuoteButton from "@/components/quote/QuoteButton";
-import QuoteRequirements from "@/components/quote/QuoteRequirements";
+import QuoteCard from "@/components/quote/QuoteCard";
 import { Package, CheckCircle2, AlertTriangle, FileText, Phone, Ship, Plane, Truck } from "lucide-react";
 
 export const metadata: Metadata = generateSEO({
@@ -481,13 +481,7 @@ export default function MarineCargoPage() {
         </div>
       </section>
 
-      <QuoteRequirements cluster="marine" lang="id" />
-
-      <CTASection
-        cluster="marine"
-        title="Lindungi Barang Kiriman Anda"
-        waMsg="Halo Rio, saya ingin Marine Cargo Insurance untuk pengiriman dari Batam"
-      />
+      <QuoteCard cluster="marine" />
     </>
   );
 }

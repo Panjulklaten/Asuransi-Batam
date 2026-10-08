@@ -2,10 +2,10 @@
 import type { Metadata } from "next";
 import { generateSEO, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
 import { WHATSAPP_URL } from "@/lib/constants";
-import { Breadcrumb, CTASection, SectionHeader } from "@/components/ui/index";
+import { Breadcrumb, SectionHeader } from "@/components/ui/index";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import QuoteButton from "@/components/quote/QuoteButton";
-import QuoteRequirements from "@/components/quote/QuoteRequirements";
+import QuoteCard from "@/components/quote/QuoteCard";
 import { Wrench, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = generateSEO({
@@ -256,14 +256,7 @@ export default function BuildersRiskENPage() {
         </div>
       </section>
 
-      <QuoteRequirements cluster="marine" lang="en" />
-
-      <CTASection
-        cluster="marine"
-        lang="en"
-        title="Secure Your Shipbuilding Project"
-        waMsg="Hello Rio, I would like Builder's Risk Insurance for vessel construction in Batam"
-      />
+      <QuoteCard cluster="marine" />
     </>
   );
 }

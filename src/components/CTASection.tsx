@@ -1,6 +1,4 @@
 import Link from "next/link";
-import QuoteButton from "./quote/QuoteButton";
-import type { QuoteClusterKey } from "@/lib/quote";
 
 interface CTASectionProps {
   title?: string;
@@ -15,11 +13,6 @@ interface CTASectionProps {
   tertiaryHref?: string;
   /** Pass "en" to use English defaults. All explicit props still override. */
   lang?: "id" | "en";
-  /**
-   * Cluster halaman ("surety" | "marine"). Mengganti tombol sekunder (kalkulator premi mobil yang
-   * tidak relevan) dengan tombol "Minta Penawaran" yang membuka popup form → WhatsApp admin.
-   */
-  cluster?: QuoteClusterKey;
 }
 
 const DEFAULTS = {
@@ -52,7 +45,6 @@ export default function CTASection({
   secondaryHref,
   tertiaryLabel,
   tertiaryHref,
-  cluster,
 }: CTASectionProps) {
   const d = DEFAULTS[lang];
 
@@ -84,16 +76,12 @@ export default function CTASection({
           >
             {resolvedPrimaryLabel}
           </a>
-          {cluster ? (
-            <QuoteButton cluster={cluster} lang={lang} variant="onDark" />
-          ) : (
-            <Link
-              href={resolvedSecondaryHref}
-              className="px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-all text-center"
-            >
-              {resolvedSecondaryLabel}
-            </Link>
-          )}
+          <Link
+            href={resolvedSecondaryHref}
+            className="px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-all text-center"
+          >
+            {resolvedSecondaryLabel}
+          </Link>
           {tertiaryLabel && tertiaryHref && (
             <Link
               href={tertiaryHref}

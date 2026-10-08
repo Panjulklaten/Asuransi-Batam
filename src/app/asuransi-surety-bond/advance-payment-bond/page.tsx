@@ -91,7 +91,6 @@ export default function AdvancePaymentBondPage() {
       />
       <ArticleLayout
         cluster="surety"
-        showRequirements
       title="Advance Payment Bond Batam: Jaminan Keamanan Uang Muka Proyek"
       description="Panduan lengkap advance payment bond di Batam — pengertian, fungsi, besaran nilai, mekanisme pengurangan, dan cara mendapatkan jaminan uang muka untuk proyek konstruksi dan pengadaan."
       date="2025"

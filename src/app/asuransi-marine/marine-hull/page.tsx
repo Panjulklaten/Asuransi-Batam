@@ -3,10 +3,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { generateSEO, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
 import { WHATSAPP_URL } from "@/lib/constants";
-import { Breadcrumb, CTASection, SectionHeader } from "@/components/ui/index";
+import { Breadcrumb, SectionHeader } from "@/components/ui/index";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import QuoteButton from "@/components/quote/QuoteButton";
-import QuoteRequirements from "@/components/quote/QuoteRequirements";
+import QuoteCard from "@/components/quote/QuoteCard";
 import { Ship, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = generateSEO({
@@ -257,13 +257,7 @@ export default function MarineHullPage() {
         </div>
       </section>
 
-      <QuoteRequirements cluster="marine" lang="id" />
-
-      <CTASection
-        cluster="marine"
-        title="Lindungi Kapal Anda Sekarang"
-        waMsg="Halo Rio, saya ingin Marine Hull Insurance untuk kapal saya di Batam"
-      />
+      <QuoteCard cluster="marine" />
     </>
   );
 }
