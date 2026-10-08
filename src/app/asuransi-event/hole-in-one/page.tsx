@@ -67,7 +67,7 @@ const schema = {
 
 export default function AsuransiHoleInOnePage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="event"
       title="Asuransi Hole in One Batam"
       subtitle="Jaminan Hadiah Turnamen Golf"
       description="Batam punya tujuh lapangan golf berstandar internasional dengan turnamen yang digelar hampir setiap bulan. Alih-alih menanggung sendiri nilai penuh hadiah hole in one, panitia cukup membayar premi — kami membantu merancang polis sesuai jarak hole, jumlah peserta, dan nilai hadiah turnamen Anda."

@@ -67,7 +67,7 @@ const schema = {
 
 export default function AsuransiMotorCrossPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="event"
       title="Asuransi Event Motor Cross Batam"
       subtitle="Personal Accident Pembalap & Liability Penonton"
       description="Dari Sirkuit Golden Prawn Bengkong hingga kompleks Temenggung Abdul Jamal, ajang grasstrack dan motocross di Kepri terus bertambah ramai. Kami membantu panitia klub, IMI Kepri, dan event organizer merancang perlindungan bagi pembalap dan penonton sesuai skala event."

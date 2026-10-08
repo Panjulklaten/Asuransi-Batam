@@ -101,7 +101,7 @@ const schema = {
 
 export default function FFLPanduanLengkapPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="liability"
       title="Asuransi Freight Forwarders Liability (FFL) Batam: Panduan Lengkap untuk Forwarder & PPJK"
       description="Batam adalah simpul logistik dengan lalu lintas dokumen dan kargo terpadat di Kepulauan Riau. Berikut panduan lengkap memahami, memilih, dan mengklaim asuransi FFL untuk bisnis forwarding Anda."
       date="22 September 2026"

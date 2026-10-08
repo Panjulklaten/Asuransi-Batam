@@ -112,7 +112,7 @@ function CoverageCard({ icon: Icon, title, desc }: { icon: React.ElementType; ti
 
 export default function AsuransiMotorCrossBatamPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="event"
       title="Panduan Lengkap Asuransi Event Motor Cross Batam & Kepri: Dari Pembalap sampai Penonton"
       description="Panduan lengkap perlindungan risiko event motor cross dan grasstrack di Kepulauan Riau — jaminan personal accident, public liability, dan tips memilih perlindungan yang tepat."
       date="17 September 2026"

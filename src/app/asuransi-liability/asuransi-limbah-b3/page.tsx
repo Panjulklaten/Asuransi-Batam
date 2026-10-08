@@ -140,7 +140,7 @@ const schema = {
 // ─────────────────────────────────────────────
 export default function AsuransiLimbahB3Page() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="liability"
       title="Asuransi Limbah B3 Batam"
       subtitle="Kewajiban Hukum PP 22/2021 & Perlindungan Lingkungan Kepulauan"
       description="Setiap industri penghasil limbah B3 di Batam wajib memiliki jaminan finansial berupa asuransi berdasarkan PP No. 22 Tahun 2021. Tanpa perlindungan ini, satu insiden kebocoran limbah bisa berujung pada tuntutan hukum senilai miliaran rupiah, pencabutan izin usaha, hingga sanksi pidana. Kami membantu industri di Batam dan Kepulauan Riau memenuhi kewajiban regulasi sekaligus terlindungi secara finansial dari risiko lingkungan yang nyata."

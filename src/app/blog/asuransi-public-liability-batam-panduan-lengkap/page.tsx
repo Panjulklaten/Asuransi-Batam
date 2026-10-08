@@ -178,7 +178,7 @@ function SectorTable() {
 
 export default function ArticleAsuransiPublicLiabilityBatamPanduanLengkapPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="liability"
       title="Asuransi Public Liability di Batam: Panduan Lengkap untuk Subkontraktor Galangan Kapal, Hotel & Bisnis Publik"
       description="Dari galangan kapal di Tanjung Uncang hingga hotel di Nongsa, hampir setiap bisnis yang berinteraksi langsung dengan pihak ketiga — pengunjung, klien, atau principal — punya eksposur tanggung gugat yang nyata. Berikut panduan lengkap Asuransi Public Liability di Batam."
       date="2 Juli 2026"

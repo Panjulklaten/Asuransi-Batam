@@ -135,7 +135,7 @@ function Steps({ items }: { items: { title: string; desc?: string }[] }) {
 
 export default function ArticleLimbahB3Page() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="liability"
       title="Pentingnya Asuransi Limbah B3 untuk Industri di Batam"
       description="Kewajiban hukum dan perlindungan bisnis dari risiko pencemaran limbah berbahaya."
       date="20 Februari 2025"

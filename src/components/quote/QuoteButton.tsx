@@ -8,13 +8,15 @@ import { QUOTE_CLUSTERS, type Lang, type QuoteClusterKey } from "@/lib/quote";
 // Modal baru dimuat saat tombol diklik, supaya tidak menambah beban halaman.
 const QuoteModal = dynamic(() => import("./QuoteModal"), { ssr: false });
 
-type Variant = "gold" | "onDark";
+type Variant = "gold" | "onDark" | "navy";
 
 const VARIANTS: Record<Variant, string> = {
   // Emas penuh dengan kilau — untuk latar terang atau sebagai aksi utama
   gold: "btn-shimmer bg-gradient-to-r from-[#c9a84c] to-[#f0d080] text-[#0a1628] shadow-lg shadow-[#c9a84c]/20 hover:shadow-xl hover:shadow-[#c9a84c]/30",
   // Outline putih — selaras dengan tombol sekunder di hero/CTA berlatar navy
   onDark: "border-2 border-white/30 text-white hover:border-[#c9a84c] hover:bg-white/10",
+  // Navy berkilau — untuk bagian CTA berlatar emas pada halaman berlayout kustom (PA, event EN)
+  navy: "btn-shimmer bg-navy text-cream shadow-xl hover:bg-navy-light hover:shadow-2xl",
 };
 
 export default function QuoteButton({

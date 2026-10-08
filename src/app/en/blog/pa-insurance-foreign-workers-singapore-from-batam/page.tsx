@@ -103,7 +103,7 @@ const schema = {
 
 export default function PAForeignWorkersSingaporeENPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="pa"
       title="Personal Accident Insurance for Foreign Workers Travelling to Singapore from Batam"
       description="Plenty of companies based in Batam send foreign technicians, project engineers, and other staff across to Singapore on short notice — a site visit, an installation job, commissioning, a client meeting. Here's how the insurance picture actually changes depending on nationality and the type of pass someone's travelling on."
       date="September 22, 2026"

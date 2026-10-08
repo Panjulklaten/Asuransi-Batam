@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import QuoteButton from '@/components/quote/QuoteButton';
 import { generateSEO, schemaInsuranceProduct } from '@/lib/seo';
 import { 
   ShieldCheck, 
@@ -277,9 +278,7 @@ export default function PersonalAccidentPageEN() {
             <p className="text-navy/80 mb-8 max-w-2xl mx-auto">
                 Our experts are ready to help your company in Batam design an effective and cost-efficient employee protection scheme.
             </p>
-            <Link href="https://wa.me/6281373336728?text=Hello,%20I%20am%20interested%20in%20PA%20Insurance%20Batam" target="_blank" className="inline-flex items-center gap-2 bg-navy hover:bg-navy-light text-cream font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
-                <PhoneCall size={22} /> Contact Batam Sales Team
-            </Link>
+            <QuoteButton cluster="pa" lang="en" variant="navy" className="!rounded-full !px-10 !py-4 !text-lg hover:-translate-y-1" />
           </div>
         </section>
 

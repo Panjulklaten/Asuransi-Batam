@@ -10,7 +10,7 @@ import {
   FileText,
   Phone,
 } from "lucide-react";
-import CTASection from "@/components/CTASection";
+import QuoteCard from "@/components/quote/QuoteCard";
 
 export const metadata: Metadata = generateSEO({
   title: "Klaim Asuransi Limbah B3 di Kawasan Industri Batam: Prosedur, Regulasi & Contoh Kasus",
@@ -729,7 +729,7 @@ export default function KlaimLimbahB3Page() {
           </div>
         </div>
       </section>
-      <CTASection />
+      <QuoteCard cluster="liability" lang="id" />
     </>
   );
 }

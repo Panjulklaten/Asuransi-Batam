@@ -63,7 +63,7 @@ const schema = {
 
 export default function AsuransiEventPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="event"
       title="Asuransi Event Batam"
       subtitle="Konser Musik, Motor Cross & Hole in One"
       description="Dari panggung konser hingga trek balap dan lapangan golf — setiap event punya risiko tersendiri yang bisa berujung kerugian besar jika tidak dilindungi. Kami membantu promotor, panitia, dan event organizer di Batam merancang perlindungan yang sesuai skala dan jenis acara."

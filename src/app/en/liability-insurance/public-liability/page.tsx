@@ -124,7 +124,7 @@ const schema = {
 
 export default function PublicLiabilityENPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="liability"
       title="Public Liability Insurance Batam"
       subtitle="Mandatory for Shipyard Subcontractors & Businesses Serving the Public"
       description="A single incident at your work site or business premises can lead to a legal claim worth hundreds of millions to billions of rupiah. In Batam, major shipyards such as PT. Paxocean require every vendor and subcontractor to hold Public Liability Insurance before they are allowed to operate on-site. We help you secure a policy that meets your principal's requirements — complete with a Certificate of Insurance (COI) — within 1–3 working days."

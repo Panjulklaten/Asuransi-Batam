@@ -159,7 +159,7 @@ const schema = {
 // ─────────────────────────────────────────────
 export default function FreightForwardersLiabilityPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="liability"
       title="Freight Forwarders Liability Insurance Batam"
       subtitle="Proteksi Wajib untuk Perusahaan Forwarding, PPJK & EMKL"
       description="Sebagai simpul logistik utama di Kepulauan Riau, Batam memproses ribuan pengiriman lintas moda setiap bulan — dari kontainer di Batu Ampar, kargo konsolidasi di Sekupang, hingga suplai galangan kapal di Tanjung Uncang. Satu kesalahan dokumen kepabeanan atau kargo yang hilang saat berada dalam penguasaan Anda bisa berujung tuntutan ratusan juta rupiah dari klien. Kami membantu perusahaan forwarding dan PPJK di Batam mendapatkan polis FFL yang sesuai profil operasional — lengkap dengan Certificate of Insurance (COI) — dalam 1–3 hari kerja."

@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import QuoteButton from '@/components/quote/QuoteButton';
 import { generateSEO, schemaInsuranceProduct } from '@/lib/seo';
 import { 
   ShieldCheck, 
@@ -300,10 +301,7 @@ export default function PersonalAccidentPageID() {
             <p className="text-navy/80 mb-8 max-w-2xl mx-auto">
                 Tim ahli kami siap membantu perusahaan Anda di Batam merancang skema proteksi karyawan yang efektif dan efisien biaya.
             </p>
-            {/* Asumsi komponen tombol WA dinamis ada, atau gunakan Link biasa */}
-            <Link href="https://wa.me/6281373336728?text=Halo,%20saya%20tertarik%20dengan%20Asuransi%20PA%20Batam" target="_blank" className="inline-flex items-center gap-2 bg-navy hover:bg-navy-light text-cream font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
-                <PhoneCall size={22} /> Hubungi Tim Sales Batam
-            </Link>
+                        <QuoteButton cluster="pa" lang="id" variant="navy" className="!rounded-full !px-10 !py-4 !text-lg hover:-translate-y-1" />
           </div>
         </section>
 

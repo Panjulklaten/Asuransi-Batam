@@ -204,6 +204,8 @@ export default function QuoteModal({
     };
   }, []);
 
+  const companyOptional = !!cluster.companyOptionalFor?.includes(form.type);
+
   const validateStep1 = () => {
     const e: Record<string, string> = {};
     for (const k of missingFields(cluster, form.type, form.values)) e[k] = t.errRequired;
@@ -214,7 +216,7 @@ export default function QuoteModal({
   const validateStep2 = () => {
     const e: Record<string, string> = {};
     if (!form.name.trim()) e.name = t.errName;
-    if (!form.company.trim()) e.company = t.errCompany;
+    if (!companyOptional && !form.company.trim()) e.company = t.errCompany;
     if (form.phone.replace(/\D/g, "").length < 9) e.phone = t.errPhone;
     setErrors(e);
     return Object.keys(e).length === 0;
@@ -547,7 +549,11 @@ export default function QuoteModal({
                           onChange={(e) => setTop("name", e.target.value)}
                         />
                       </Field>
-                      <Field label={t.company} error={errors.company}>
+                      <Field
+                        label={cluster.copy.companyLabel ? pick(cluster.copy.companyLabel, lang) : t.company}
+                        optional={companyOptional ? t.optional : undefined}
+                        error={errors.company}
+                      >
                         <input
                           className={inputCls}
                           autoComplete="organization"

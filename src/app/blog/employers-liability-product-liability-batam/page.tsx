@@ -183,7 +183,7 @@ function ComparisonTable() {
 
 export default function ArticleEmployersLiabilityProductLiabilityBatamPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="liability"
       title="Employers Liability & Product Liability di Batam: Perlindungan yang Sering Terlewat"
       description="Banyak perusahaan di Batam sudah memiliki Public Liability, tapi melewatkan dua risiko besar lain: tuntutan hukum dari karyawan sendiri, dan tuntutan atas produk yang mereka produksi atau distribusikan. Berikut kenapa keduanya layak dipertimbangkan serius."
       date="2 Juli 2026"

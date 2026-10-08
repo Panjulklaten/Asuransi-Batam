@@ -1,5 +1,8 @@
 import { SITE } from "@/lib/constants";
+import { EVENT } from "./event";
+import { LIABILITY } from "./liability";
 import { MARINE } from "./marine";
+import { PA } from "./pa";
 import { SURETY } from "./surety";
 import type { Bi, FieldDef, Lang, QuoteCluster, QuoteClusterKey, QuoteState } from "./types";
 
@@ -11,6 +14,9 @@ export const QUOTE_WA_NUMBER: string = SITE.phoneWA;
 export const QUOTE_CLUSTERS: Record<QuoteClusterKey, QuoteCluster> = {
   surety: SURETY,
   marine: MARINE,
+  event: EVENT,
+  liability: LIABILITY,
+  pa: PA,
 };
 
 export const pick = (b: Bi, lang: Lang) => b[lang];
@@ -111,7 +117,7 @@ export function buildQuoteMessage(c: QuoteCluster, s: QuoteState, lang: Lang): s
     "",
     id ? "*Pemohon*" : "*Applicant*",
     `${id ? "Nama" : "Name"}: ${s.name.trim()}`,
-    `${id ? "Perusahaan" : "Company"}: ${s.company.trim()}`,
+    ...(s.company.trim() ? [`${id ? "Perusahaan" : "Company"}: ${s.company.trim()}`] : []),
     `WhatsApp: ${s.phone.trim()}`,
   );
 

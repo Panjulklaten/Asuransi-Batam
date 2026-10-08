@@ -102,7 +102,7 @@ const schema = {
 
 export default function PAPekerjaAsingSingapuraPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="pa"
       title="Asuransi PA untuk Pekerja Asing ke Singapura dari Batam: Panduan Ketentuan ICA & MOM"
       description="Banyak perusahaan di Batam mengirim teknisi, engineer proyek, dan staf asing untuk keperluan sementara ke Singapura — site visit, instalasi, commissioning, atau urusan bisnis. Berikut aturan asuransi yang berlaku menurut kewarganegaraan dan jenis pass yang dipegang."
       date="22 September 2026"

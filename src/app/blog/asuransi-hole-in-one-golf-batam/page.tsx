@@ -121,7 +121,7 @@ function TCCard({
 
 export default function AsuransiHoleInOneGolfBatamPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="event"
       title="Panduan Lengkap Asuransi Hole in One Batam: Syarat, Ketentuan & Cara Kerja"
       description="Panduan lengkap bagi panitia turnamen golf di Batam — memahami syarat peserta, jarak minimum hole, risiko sendiri, dan cara kerja klaim hadiah hole in one."
       date="17 September 2026"

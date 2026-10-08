@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import QuoteButton from '@/components/quote/QuoteButton';
 import { generateSEO, schemaInsuranceProduct } from '@/lib/seo';
 import {
   ChevronRight, PhoneCall, Users, Mic2, CloudRain, Wrench,
@@ -212,9 +213,7 @@ export default function ConcertInsurancePageEN() {
           <div className="container mx-auto px-6 text-center">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-navy mb-4">Ready to Protect Your Show?</h2>
             <p className="text-navy/80 mb-8 max-w-2xl mx-auto">Tell us about your event and we'll put together a coverage plan that fits.</p>
-            <Link href="https://wa.me/6281373336728?text=Hello,%20I%20am%20interested%20in%20Concert%20Insurance%20Batam" target="_blank" className="inline-flex items-center gap-2 bg-navy hover:bg-navy-light text-cream font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
-              <PhoneCall size={22} /> Chat via WhatsApp
-            </Link>
+            <QuoteButton cluster="event" lang="en" variant="navy" className="!rounded-full !px-10 !py-4 !text-lg hover:-translate-y-1" />
           </div>
         </section>
 

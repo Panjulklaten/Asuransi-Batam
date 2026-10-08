@@ -3,7 +3,7 @@
 
 export type Lang = "id" | "en";
 export type Bi = { id: string; en: string };
-export type QuoteClusterKey = "surety" | "marine";
+export type QuoteClusterKey = "surety" | "marine" | "event" | "liability" | "pa";
 
 export type Option = { value: string; label: Bi };
 export type Requirement = { doc: Bi; note: Bi; must: boolean };
@@ -37,6 +37,8 @@ export interface QuoteCluster {
   /** Termasuk entri "unsure" (belum yakin). */
   types: { key: string; label: Bi; hint: Bi }[];
   inferType: (pathname: string) => string;
+  /** Jenis produk yang nama perusahaannya tidak wajib diisi (mis. PA perorangan). */
+  companyOptionalFor?: string[];
   fields: FieldDef[];
   flags: { key: string; label: Bi; showFor?: string[] }[];
   general: Requirement[];
@@ -55,6 +57,8 @@ export interface QuoteCluster {
     msgIntro: Bi;
     msgOutro: Bi;
     unsureNote: Bi;
+    /** Label kolom nama perusahaan di langkah 2 (bawaan: "Nama perusahaan"). */
+    companyLabel?: Bi;
   };
 }
 

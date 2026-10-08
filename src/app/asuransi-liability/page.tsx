@@ -45,7 +45,7 @@ const schema = {
 };
 export default function AsuransiLiabilityPage() {
   return (
-    <ProductPageLayout title="Asuransi Liability Batam" subtitle="Perlindungan Tanggung Gugat Bisnis & Industri"
+    <ProductPageLayout cluster="liability" title="Asuransi Liability Batam" subtitle="Perlindungan Tanggung Gugat Bisnis & Industri"
       description="Satu kejadian tak terduga — tamu terpeleset di hotel Anda, produk menyebabkan cedera, atau limbah mencemari lingkungan — bisa mengancam bisnis dengan tuntutan hukum miliaran rupiah. Asuransi liability melindungi Anda dari risiko tanggung jawab hukum kepada pihak ketiga di Batam."
       benefits={benefits} faqs={faqs} policyComparison={policyComparison}
       breadcrumbs={[{ label: "Asuransi Liability", href: "/asuransi-liability" }]}

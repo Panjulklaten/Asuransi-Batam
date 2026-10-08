@@ -141,7 +141,7 @@ const schema = {
 // ─────────────────────────────────────────────
 export default function PublicLiabilityPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="liability"
       title="Public Liability Insurance Batam"
       subtitle="Wajib untuk Subkon Galangan Kapal & Bisnis yang Melayani Publik"
       description="Satu insiden di area kerja atau bisnis Anda bisa berujung tuntutan hukum senilai ratusan juta hingga miliaran rupiah. Di Batam, galangan kapal besar seperti PT. Paxocean mewajibkan seluruh vendor dan subkontraktor memiliki Public Liability Insurance sebelum boleh beroperasi di area mereka. Kami membantu Anda mendapatkan polis yang sesuai persyaratan principal — lengkap dengan Certificate of Insurance (COI) — dalam 1–3 hari kerja."

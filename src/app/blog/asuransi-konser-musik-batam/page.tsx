@@ -121,7 +121,7 @@ function CoverageCard({
 
 export default function AsuransiKonserMusikBatamPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="event"
       title="Panduan Lengkap Asuransi Konser Musik Batam: Liability, Pembatalan & Non-Appearance Artis"
       description="Panduan lengkap perlindungan risiko konser musik untuk promotor, event organizer, dan pengelola venue — dari liability penonton hingga pembatalan mendadak."
       date="17 September 2026"

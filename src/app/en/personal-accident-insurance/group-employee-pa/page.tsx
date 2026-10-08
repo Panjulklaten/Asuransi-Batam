@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import QuoteButton from '@/components/quote/QuoteButton';
 import { generateSEO } from '@/lib/seo';
 import { 
   Building2, Users, ShieldCheck, FileText, Clock, ChevronRight, 
@@ -458,10 +459,7 @@ export default function GroupEmployeePA_EN() {
             <p className="text-navy/80 mb-8 max-w-2xl mx-auto text-lg">
                 Don't let accident risks disrupt your company's financial stability and your employees' families. Contact us now for the best Group PA quote in Batam.
             </p>
-            <Link href="https://wa.me/6281373336728?text=Hello,%20I%20would%20like%20to%20consult%20on%20Group%20PA%20Insurance%20for%20my%20company%20in%20Batam." 
-                  className="inline-flex items-center gap-2 bg-navy hover:bg-navy-mid text-cream font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 text-lg">
-                <PhoneCall size={22} /> Free WhatsApp Consultation
-            </Link>
+            <QuoteButton cluster="pa" lang="en" variant="navy" className="!rounded-full !px-10 !py-4 !text-lg hover:-translate-y-1" />
           </div>
         </section>
 

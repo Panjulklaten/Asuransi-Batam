@@ -165,7 +165,7 @@ function CaseCard({
 
 export default function ArticleCaraKlaimAsuransiPublicLiabilityBatamPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="liability"
       title="Cara Klaim Asuransi Public Liability di Batam: Prosedur & Simulasi Kasus"
       description="Punya polis Public Liability saja tidak cukup — memahami cara mengajukan klaim dengan benar sama pentingnya. Berikut prosedur lengkap, dokumen yang dibutuhkan, dan simulasi kasus nyata dari berbagai sektor di Batam."
       date="2 Juli 2026"

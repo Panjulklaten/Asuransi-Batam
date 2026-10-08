@@ -10,7 +10,7 @@ import {
   FileText,
   Phone,
 } from "lucide-react";
-import CTASection from "@/components/CTASection";
+import QuoteCard from "@/components/quote/QuoteCard";
 
 export const metadata: Metadata = generateSEO({
   title: "Hazardous Waste (B3) Insurance Claims in Batam Industrial Estates: Procedure, Regulations & Case Studies",
@@ -722,7 +722,7 @@ export default function HazardousWasteInsuranceBatamPage() {
         </div>
       </article>
 
-      <CTASection />
+      <QuoteCard cluster="liability" lang="en" />
     </>
   );
 }

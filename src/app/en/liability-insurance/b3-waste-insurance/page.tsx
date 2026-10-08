@@ -46,7 +46,7 @@ const schema = {
 
 export default function B3WasteInsurancePage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="liability"
       title="B3 Hazardous Waste Insurance Batam"
       subtitle="Legal Obligation & Environmental Protection"
       description="Industries that produce B3 hazardous waste in Batam are legally required to hold financial guarantees in the form of insurance. Protect your business from environmental legal claims that can reach billions of rupiah."

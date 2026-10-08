@@ -99,7 +99,7 @@ const PROCESS_STEPS = [
 
 export default function ArticleHazardousWasteInsuranceENPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="liability"
       title="Hazardous Waste (B3) Insurance for Industry in Batam: Legal Requirements & Coverage"
       description="Legal obligations and financial protection from hazardous material contamination risks — what every industry in Batam needs to know."
       date="20 February 2025"

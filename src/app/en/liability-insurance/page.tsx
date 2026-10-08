@@ -47,7 +47,7 @@ const schema = {
 
 export default function LiabilityInsurancePage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="liability"
       title="Liability Insurance Batam"
       subtitle="Business Legal Liability Protection"
       description="A single unexpected event can expose your business to billion-rupiah legal claims. Liability insurance protects you from the risk of legal responsibility to third parties."

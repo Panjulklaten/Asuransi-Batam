@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import QuoteButton from '@/components/quote/QuoteButton';
 import { generateSEO, schemaInsuranceProduct } from '@/lib/seo';
 import { 
   HeartHandshake, Car, Ship, ShieldAlert, ChevronRight, 
@@ -502,10 +503,7 @@ export default function IndividualFamilyPA_ID() {
             <p className="text-navy/80 mb-8 max-w-2xl mx-auto text-lg">
                 Investasi kecil hari ini, ketenangan pikiran untuk masa depan. Konsultasikan kebutuhan Anda secara GRATIS dengan tim kami.
             </p>
-            <Link href="https://wa.me/6281373336728?text=Halo,%20saya%20tertarik%20dengan%20PA%20Individu%20untuk%20diri%20sendiri/keluarga%20di%20Batam.%20Mohon%20infonya." 
-                  className="inline-flex items-center gap-2 bg-navy hover:bg-navy-mid text-cream font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 text-lg">
-                <PhoneCall size={22} /> Chat via WhatsApp
-            </Link>
+            <QuoteButton cluster="pa" lang="id" variant="navy" className="!rounded-full !px-10 !py-4 !text-lg hover:-translate-y-1" />
           </div>
         </section>
 

@@ -182,7 +182,7 @@ function DisabilityTable() {
 
 export default function ArticleAsuransiKecelakaanDiriPekerjaIndustriBatamPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="pa"
       title="Asuransi Kecelakaan Diri (PA) untuk Pekerja Industri Batam: Panduan Lengkap"
       description="Batam adalah salah satu pusat galangan kapal dan manufaktur terbesar di Indonesia. Bagi pekerja di sektor ini, risiko kecelakaan kerja bukan kemungkinan jauh — melainkan bagian dari realitas harian yang perlu dimitigasi secara finansial."
       date="2 Juli 2026"

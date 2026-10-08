@@ -67,7 +67,7 @@ const schema = {
 
 export default function AsuransiKonserMusikPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="event"
       title="Asuransi Konser Musik Batam"
       subtitle="Liability, Non-Appearance & Event Cancellation"
       description="Sport Hall Temenggung Abdul Jamal, hotel-hotel besar di Harbour Bay, dan venue MICE lainnya di Batam kian rutin menggelar konser — termasuk yang mendatangkan artis dari Malaysia dan Singapura. Kami membantu promotor dan event organizer merancang perlindungan yang sesuai skala acara, mulai dari liability penonton hingga risiko artis batal tampil."

@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import QuoteButton from '@/components/quote/QuoteButton';
 import { generateSEO } from '@/lib/seo';
 import { 
   Building2, Users, ShieldCheck, FileText, Clock, ChevronRight, 
@@ -506,10 +507,7 @@ export default function GroupEmployeePA_ID() {
             <p className="text-navy/80 mb-8 max-w-2xl mx-auto text-lg">
                 Jangan biarkan risiko kecelakaan mengganggu stabilitas keuangan perusahaan dan keluarga karyawan Anda. Hubungi tim kami sekarang untuk penawaran premi PA Grup terbaik di Batam.
             </p>
-            <Link href="https://wa.me/6281373336728?text=Halo,%20saya%20ingin%20konsultasi%20Asuransi%20PA%20Grup%20untuk%20perusahaan%20di%20Batam.%20Karyawan%20kami%20berjumlah%20..." 
-                  className="inline-flex items-center gap-2 bg-navy hover:bg-navy-mid text-cream font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 text-lg">
-                <PhoneCall size={22} /> Konsultasi Gratis via WhatsApp
-            </Link>
+            <QuoteButton cluster="pa" lang="id" variant="navy" className="!rounded-full !px-10 !py-4 !text-lg hover:-translate-y-1" />
           </div>
         </section>
 

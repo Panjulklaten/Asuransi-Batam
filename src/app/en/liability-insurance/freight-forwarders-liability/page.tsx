@@ -142,7 +142,7 @@ const schema = {
 
 export default function FreightForwardersLiabilityENPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="liability"
       title="Freight Forwarders Liability Insurance Batam"
       subtitle="Essential Protection for Forwarding Companies, Customs Brokers & Agents"
       description="As the Riau Islands' main logistics hub, Batam processes thousands of intermodal shipments every month — containers through Batu Ampar, consolidated cargo through Sekupang, and shipyard supply chains through Tanjung Uncang. One customs documentation error or one lost shipment while in your care can lead to a claim worth hundreds of millions of rupiah from a client. We help forwarding companies and customs brokers in Batam secure an FFL policy matched to their operational profile — complete with a Certificate of Insurance (COI) — within 1–3 working days."
