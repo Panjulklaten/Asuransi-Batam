@@ -120,7 +120,7 @@ const schema = {
 
 export default function AsuransiAlatBeratPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="machinery"
       title="Asuransi Alat Berat Batam"
       subtitle="Equipment All Risk – Perlindungan Total untuk Aset Berat Anda"
       description={

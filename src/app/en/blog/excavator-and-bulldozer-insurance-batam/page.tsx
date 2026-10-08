@@ -78,7 +78,7 @@ const statusStyle: Record<string, { color: string; icon: typeof CircleCheck; lab
 
 export default function ArticleExcavatorBulldozerInsurancePage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="machinery"
       title="Excavator and Bulldozer Insurance in Batam: Coverage, Protection & How to Claim"
       description="A single excavator unit can be worth billions of rupiah. Without the right insurance, one breakdown in the field could bring your entire project to a halt."
       date="6 May 2026"

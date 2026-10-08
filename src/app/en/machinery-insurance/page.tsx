@@ -51,7 +51,7 @@ const schema = {
 
 export default function MachineryInsurancePage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="machinery"
       title="Machinery Insurance Batam"
       subtitle="Protection for Machines & Industrial Equipment"
       description="Machinery and heavy equipment are the heartbeat of your business operations. With the right machinery insurance, downtime from breakdowns no longer threatens your business continuity."

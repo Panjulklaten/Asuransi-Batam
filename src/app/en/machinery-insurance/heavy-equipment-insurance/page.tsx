@@ -121,7 +121,7 @@ const schema = {
 
 export default function HeavyEquipmentInsurancePage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="machinery"
       title="Heavy Equipment Insurance Batam"
       subtitle="Equipment All Risk – Total Protection for Your Heavy Assets"
       description={

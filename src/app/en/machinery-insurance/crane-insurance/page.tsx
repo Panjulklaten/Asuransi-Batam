@@ -95,7 +95,7 @@ const schema = {
 
 export default function CraneInsurancePage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="machinery"
       title="Crane Insurance Batam"
       subtitle="Tower Crane & Mobile Crane Protection"
       description="Tower cranes and mobile cranes are high-risk assets on Batam's construction projects. A single incident — a dropped boom, a snapped cable, or a structural collision — can cause losses worth billions of rupiah and expose you to major legal claims. Make sure your asset and your third-party liability are properly protected."

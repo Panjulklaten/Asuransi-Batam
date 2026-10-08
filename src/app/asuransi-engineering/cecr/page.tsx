@@ -3,8 +3,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { generateSEO, schemaFAQ, schemaBreadcrumb, schemaInsuranceProduct } from "@/lib/seo";
-import { WHATSAPP_URL } from "@/lib/constants";
-import { Breadcrumb, CTASection, SectionHeader } from "@/components/ui/index";
+import { Breadcrumb, SectionHeader } from "@/components/ui/index";
+import QuoteButton from "@/components/quote/QuoteButton";
+import QuoteCard from "@/components/quote/QuoteCard";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 
 // ─── Data Halaman ──────────────────────────────────────────────
@@ -102,15 +103,7 @@ export default function CECRPage() {
             pemilik aset/operasional.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href={WHATSAPP_URL("Halo Rio, saya ingin konsultasi asuransi CECR")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold rounded-xl"
-              style={{ background: "linear-gradient(135deg, #c9a84c, #f0d080)", color: "#0a1628" }}
-            >
-              Konsultasi CECR Sekarang
-            </a>
+            <QuoteButton cluster="engineering" lang="id" variant="gold" className="!rounded-xl !px-8 !py-3.5" />
             <Link
               href="/asuransi-engineering/contractor-all-risk"
               className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold text-white border border-white/30 rounded-xl hover:border-yellow-400 hover:text-yellow-400 transition-all"
@@ -438,11 +431,7 @@ export default function CECRPage() {
       </div>
 
       {/* ─── CTA ──────────────────────────────────────────────── */}
-      <CTASection
-        title="Punya Proyek Talud, Dermaga, atau Infrastruktur Sipil di Batam?"
-        subtitle="Konsultasikan kebutuhan CECR Anda bersama Rio — survei lapangan, simulasi premi, dan pendampingan klaim ditangani langsung."
-        waMsg="Halo Rio, saya ingin konsultasi asuransi CECR untuk proyek saya"
-      />
+      <QuoteCard cluster="engineering" lang="id" />
     </>
   );
 }

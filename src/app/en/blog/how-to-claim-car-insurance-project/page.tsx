@@ -1,5 +1,6 @@
 // app/en/blog/how-to-claim-car-insurance-project/page.tsx
 import type { Metadata } from "next";
+import QuoteButton from "@/components/quote/QuoteButton";
 import { generateSEO } from "@/lib/seo";
 
 export const metadata: Metadata = generateSEO({
@@ -277,14 +278,7 @@ export default function BlogHowToClaimCARPage() {
           <p className="text-gray-600 mb-5">
             Rio is available to assist — from policy selection through to claims support.
           </p>
-          <a
-            href="https://wa.me/6281373336728"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-xl transition"
-          >
-            Chat on WhatsApp
-          </a>
+          <QuoteButton cluster="engineering" lang="en" variant="gold" className="!rounded-xl !px-8 !py-3" />
           <p className="text-sm text-gray-400 mt-3">+62-813-7333-6728 &middot; Rio, Batam Insurance Agent</p>
         </div>
 
