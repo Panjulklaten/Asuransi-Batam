@@ -81,7 +81,7 @@ const AGENT_TIPS = [
 
 export default function ArticleCommercialPropertyInsuranceBatamPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="property"
       title="Commercial Property Insurance Batam: Guide for Shophouse, Warehouse & Building Owners"
       description="Batam is growing as an industrial and trading city. Commercial property here is not just a building — it's the asset that sustains a business and a livelihood. Protecting it isn't optional; it's essential."
       date="6 May 2026"

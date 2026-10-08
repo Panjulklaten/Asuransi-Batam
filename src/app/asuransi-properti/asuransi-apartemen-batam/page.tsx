@@ -119,7 +119,7 @@ const schema = {
 
 export default function AsuransiApartemenBatamPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="property"
       title="Asuransi Apartemen Batam"
       subtitle="Proteksi Unit, Isi Rumah & Tanggung Jawab Pemilik"
       description="Memiliki unit apartemen atau kondotel di Batam adalah investasi yang perlu dilindungi dengan tepat. Dari kebakaran hingga kebocoran yang merusak unit tetangga — asuransi apartemen memastikan investasi Anda terlindungi dari risiko yang tidak terduga."

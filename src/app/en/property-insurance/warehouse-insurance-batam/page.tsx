@@ -95,7 +95,7 @@ const schema = {
 
 export default function WarehouseInsuranceBatamPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="property"
       title="Warehouse Insurance Batam"
       subtitle="Protect Your Building, Stock & Logistics Operations"
       description="Your warehouse is the most critical point in your business distribution chain. A single fire or flood event without adequate coverage can wipe out billions in stock and shut down operations for months. The right warehouse insurance is not a formality — it is the safety net that determines whether your business can recover or not after a disaster."

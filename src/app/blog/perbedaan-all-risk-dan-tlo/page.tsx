@@ -75,7 +75,7 @@ export const metadata: Metadata = generateSEO({
 const schema = { "@context": "https://schema.org", "@type": "Article", headline: "Perbedaan Asuransi All Risk dan TLO", datePublished: "2025-03-05", author: { "@type": "Person", name: "Rio" }, publisher: { "@type": "Organization", name: "Asuransi Batam" } };
 export default function ArticleAllRiskTLOPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="vehicle"
       title="Perbedaan Asuransi All Risk dan TLO: Mana yang Lebih Baik untuk Mobil Anda?"
       description="Panduan memilih antara All Risk dan TLO berdasarkan nilai kendaraan, usia, dan kebutuhan Anda."
       date="5 Maret 2025" category="Kendaraan" readTime="6 menit"

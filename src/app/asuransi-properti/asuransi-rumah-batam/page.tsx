@@ -42,7 +42,7 @@ const schema = {
 
 export default function AsuransiRumahBatamPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="property"
       title="Asuransi Rumah Batam"
       subtitle="Proteksi Hunian & Isi Rumah Keluarga Anda"
       description="Rumah adalah investasi terbesar keluarga Anda di Batam. Kebakaran, banjir, dan pencurian adalah risiko nyata yang bisa menghancurkan aset dalam semalam. Dengan asuransi rumah yang tepat, nilai investasi properti Anda tetap terlindungi — premi mulai dari ratusan ribu rupiah per tahun."

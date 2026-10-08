@@ -38,7 +38,7 @@ const schema = {
 
 export default function HomeInsuranceBatamPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="property"
       title="Home Insurance Batam"
       subtitle="Protect Your Residence"
       description="Your home is your family's largest investment. Protect it with the right property insurance — from fire and flood to theft. Premiums starting from just a few hundred thousand rupiah per year."

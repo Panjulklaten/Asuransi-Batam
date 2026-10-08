@@ -143,7 +143,7 @@ function Steps({ items }: { items: { title: string; desc?: React.ReactNode }[] }
 
 export default function ArticleCaraKlaimAsuransiKebakaranRumahPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="property"
       title="Prosedur Klaim Asuransi Kebakaran Rumah: Dokumen, Tahapan & Penyebab Klaim Ditolak"
       description="Api sudah padam, rumah sudah rusak, polis masih aktif — tapi klaim tetap bisa ditolak. Ini terjadi lebih sering dari yang dibayangkan kebanyakan orang. Berikut panduan lengkap agar klaim Anda diproses tanpa hambatan."
       date="6 Mei 2026"

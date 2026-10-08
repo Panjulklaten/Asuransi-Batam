@@ -52,7 +52,7 @@ const RECOMMENDATIONS = [
 
 export default function ArticleAllRiskTLOENPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="vehicle"
       title="All Risk vs TLO Car Insurance: Which One Is Right for You?"
       description="A practical guide to choosing between Comprehensive and Total Loss Only cover — based on your vehicle's value, age, and how you use it."
       date="5 March 2025"

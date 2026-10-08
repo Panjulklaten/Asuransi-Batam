@@ -53,7 +53,7 @@ const schema = {
 
 export default function VehicleInsurancePage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="vehicle"
       title="Vehicle Insurance Batam"
       subtitle="All Risk & TLO for All Vehicle Types"
       description="From private cars to dump truck fleets – we provide comprehensive vehicle protection in Batam. All Risk, TLO, and special packages for commercial vehicles."

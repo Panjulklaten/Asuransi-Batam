@@ -118,7 +118,7 @@ const schema = {
 
 export default function ApartmentInsuranceBatamPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="property"
       title="Apartment Insurance Batam"
       subtitle="Unit, Contents & Owner Liability Coverage"
       description="Owning an apartment or condotel unit in Batam is an investment that deserves proper protection. From fire to a water leak damaging a neighbour's unit — apartment insurance ensures your investment is covered against the unexpected."

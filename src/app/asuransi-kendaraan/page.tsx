@@ -51,7 +51,7 @@ const schema = {
 
 export default function AsuransiKendaraanPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="vehicle"
       title="Asuransi Kendaraan Batam"
       subtitle="All Risk & TLO untuk Semua Jenis Kendaraan"
       description="Dari mobil pribadi keluarga hingga armada dump truck operasional — kami menyediakan perlindungan kendaraan komprehensif di Batam. Dengan lalu lintas yang padat di Batam Center, Nagoya, dan jalan-jalan menuju kawasan industri, risiko kecelakaan adalah nyata setiap harinya. Lindungi aset kendaraan Anda mulai hari ini."

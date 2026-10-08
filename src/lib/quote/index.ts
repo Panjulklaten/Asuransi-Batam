@@ -3,6 +3,8 @@ import { EVENT } from "./event";
 import { LIABILITY } from "./liability";
 import { MARINE } from "./marine";
 import { PA } from "./pa";
+import { PROPERTY } from "./property";
+import { VEHICLE } from "./vehicle";
 import { SURETY } from "./surety";
 import type { Bi, FieldDef, Lang, QuoteCluster, QuoteClusterKey, QuoteState } from "./types";
 
@@ -17,6 +19,8 @@ export const QUOTE_CLUSTERS: Record<QuoteClusterKey, QuoteCluster> = {
   event: EVENT,
   liability: LIABILITY,
   pa: PA,
+  property: PROPERTY,
+  vehicle: VEHICLE,
 };
 
 export const pick = (b: Bi, lang: Lang) => b[lang];

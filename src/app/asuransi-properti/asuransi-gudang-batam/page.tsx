@@ -95,7 +95,7 @@ const schema = {
 
 export default function AsuransiGudangBatamPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="property"
       title="Asuransi Gudang Batam"
       subtitle="Proteksi Bangunan, Stok & Operasional Logistik Anda"
       description="Gudang adalah titik paling kritis dalam rantai distribusi bisnis Anda. Satu insiden kebakaran atau banjir yang tidak terlindungi bisa menghancurkan stok senilai miliaran dan menghentikan operasional selama berbulan-bulan. Asuransi gudang yang tepat bukan sekadar formalitas — ini adalah jaring pengaman yang menentukan apakah bisnis Anda bisa bangkit atau tidak setelah musibah."

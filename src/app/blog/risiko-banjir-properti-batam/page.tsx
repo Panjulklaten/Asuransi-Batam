@@ -134,7 +134,7 @@ function Steps({ items }: { items: { title: string; desc?: React.ReactNode }[] }
 
 export default function ArticleBanjirBatam2026AsuransiPropertiPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="property"
       title="Risiko Banjir Batam untuk Properti Anda: Apa yang Benar-Benar Ditanggung Asuransi?"
       description="Hujan deras selama satu setengah sampai dua jam saja sudah cukup merendam sejumlah kawasan Batam hingga setinggi 1 meter. Ini yang perlu diketahui pemilik rumah, ruko, dan gudang sebelum hujan berikutnya turun."
       date="24 September 2026"

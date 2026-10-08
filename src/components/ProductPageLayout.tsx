@@ -4,6 +4,8 @@ import CTASection from "./CTASection";
 import AuthorAvatar from "./AuthorAvatar";
 import CalculatorPromoCard, { type CalculatorCardVariant } from "./CalculatorPromoCard";
 import QuoteButton from "./quote/QuoteButton";
+import QuoteHeroActions from "./quote/QuoteHeroActions";
+import { QUOTE_CLUSTERS } from "@/lib/quote";
 import QuoteCard from "./quote/QuoteCard";
 import type { QuoteClusterKey } from "@/lib/quote";
 
@@ -143,24 +145,32 @@ export default function ProductPageLayout({
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href={t.phone}
-                target="_blank" rel="noopener noreferrer"
-                className="px-8 py-4 bg-gradient-to-r from-[#c9a84c] to-[#f0d080] text-[#0a1628] font-bold rounded-xl hover:shadow-xl transition-all text-center"
-              >
-                {t.cta}
-              </a>
-              {cluster ? (
-                <QuoteButton cluster={cluster} lang={lang} variant="onDark" />
+              {/* Cluster dengan kalkulator (properti, kendaraan): [Hitung Premi] + [Minta Penawaran], tanpa tombol WhatsApp
+                  (sudah ada tombol WA melayang). */}
+              {cluster && QUOTE_CLUSTERS[cluster].calculator ? (
+                <QuoteHeroActions cluster={cluster} lang={lang} />
               ) : (
-                <a
-                  href="https://wa.me/6281373336728"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-all text-center"
-                >
-                  WhatsApp Sekarang
-                </a>
+                <>
+                  <a
+                    href={t.phone}
+                    target="_blank" rel="noopener noreferrer"
+                    className="px-8 py-4 bg-gradient-to-r from-[#c9a84c] to-[#f0d080] text-[#0a1628] font-bold rounded-xl hover:shadow-xl transition-all text-center"
+                  >
+                    {t.cta}
+                  </a>
+                  {cluster ? (
+                    <QuoteButton cluster={cluster} lang={lang} variant="onDark" />
+                  ) : (
+                    <a
+                      href="https://wa.me/6281373336728"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-all text-center"
+                    >
+                      WhatsApp Sekarang
+                    </a>
+                  )}
+                </>
               )}
             </div>
           </div>

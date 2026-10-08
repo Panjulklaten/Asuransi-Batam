@@ -45,7 +45,7 @@ const schema = {
 };
 export default function AsuransiDumpTruckPage() {
   return (
-    <ProductPageLayout title="Asuransi Dump Truck Batam" subtitle="Perlindungan Armada Kendaraan Berat & Niaga"
+    <ProductPageLayout cluster="vehicle" title="Asuransi Dump Truck Batam" subtitle="Perlindungan Armada Kendaraan Berat & Niaga"
       description="Armada dump truck adalah aset vital dan sumber pendapatan bisnis Anda. Di Batam — kota dengan proyek reklamasi, konstruksi kawasan industri, dan galian aktif — dump truck bekerja di kondisi paling berat. Satu kecelakaan atau kerusakan mesin yang tidak terlindungi bisa menghentikan operasional dan menguras kas bisnis."
       benefits={benefits} faqs={faqs} policyComparison={policyComparison}
       breadcrumbs={[{ label: "Asuransi Kendaraan", href: "/asuransi-kendaraan" }, { label: "Asuransi Dump Truck", href: "/asuransi-kendaraan/asuransi-dumptruck" }]}

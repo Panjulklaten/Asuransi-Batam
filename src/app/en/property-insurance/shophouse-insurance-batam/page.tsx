@@ -91,7 +91,7 @@ const schema = {
 
 export default function ShophouseInsuranceBatamPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="property"
       title="Shophouse Insurance Batam"
       subtitle="Protect Your Building, Stock & Business Continuity"
       description="A shophouse is both an asset and a source of income. One fire, one flood, or one theft incident can stop a business that took years to build. With the right shophouse insurance, you don't have to start from scratch when disaster strikes — your building, stock, and business continuity are all protected."

@@ -73,7 +73,7 @@ const TIPS = [
 
 export default function ArticleCarInsuranceClaimBatamPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="vehicle"
       title="How to Claim Car Insurance in Batam: Step-by-Step to Avoid Rejection"
       description="A rejected claim doesn't mean your insurance is bad — it often comes down to a missed procedure. Here's the complete guide."
       date="30 April 2026"

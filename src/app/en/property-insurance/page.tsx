@@ -94,7 +94,7 @@ const products = [
 
 export default function PropertyInsurancePage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="property"
       title="Property Insurance Batam"
       subtitle="Trusted Property Protection"
       description="Protect your property investment in Batam from fire, natural disasters, and structural damage. We provide tailored policies for residences, hotels, and commercial buildings."
