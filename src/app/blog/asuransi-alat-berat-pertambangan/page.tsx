@@ -137,7 +137,7 @@ function Steps({ items }: { items: { title: string; desc?: React.ReactNode }[] }
 
 export default function ArticleAsuransiAlatBeratPertambanganPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="machinery"
       title="Asuransi Alat Berat Pertambangan: Wajib, Apa yang Ditanggung & Cara Pilihnya"
       description="Area pertambangan adalah salah satu lingkungan kerja paling keras di dunia. Alat berat yang beroperasi di sana menghadapi risiko yang jauh lebih tinggi dibanding proyek konstruksi biasa."
       date="6 Mei 2026"

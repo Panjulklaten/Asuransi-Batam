@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { generateSEO, schemaInsuranceProduct, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
-import { WHATSAPP_URL } from "@/lib/constants";
-import { Breadcrumb, CTASection, SectionHeader } from "@/components/ui/index";
+import { Breadcrumb, SectionHeader } from "@/components/ui/index";
+import QuoteButton from "@/components/quote/QuoteButton";
+import QuoteCard from "@/components/quote/QuoteCard";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { Hammer, CheckCircle2 } from "lucide-react";
 
@@ -75,11 +76,7 @@ export default function ErectionAllRiskPage() {
           <p className="text-gray-300 text-lg mb-8 max-w-2xl">
             Perlindungan all risk untuk proyek pemasangan mesin, plant industri, dan instalasi peralatan — dari mobilisasi hingga commissioning dan maintenance period.
           </p>
-          <a href={WHATSAPP_URL("Halo Rio, saya butuh Erection All Risk Insurance")} target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold rounded-xl text-navy"
-            style={{ background: "linear-gradient(135deg, #c9a84c, #f0d080)" }}>
-            Konsultasi Proyek Anda
-          </a>
+          <QuoteButton cluster="engineering" lang="id" variant="gold" className="!rounded-xl !px-8 !py-3.5" />
         </div>
       </section>
 
@@ -187,7 +184,7 @@ export default function ErectionAllRiskPage() {
         </div>
       </section>
 
-      <CTASection title="Proteksi Proyek Erection Anda" waMsg="Halo Rio, saya ingin Erection All Risk Insurance" />
+      <QuoteCard cluster="engineering" lang="id" />
     </>
   );
 }

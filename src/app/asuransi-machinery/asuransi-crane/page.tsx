@@ -45,7 +45,7 @@ const schema = {
 };
 export default function AsuransiCranePage() {
   return (
-    <ProductPageLayout title="Asuransi Crane Batam" subtitle="Perlindungan Tower Crane & Mobile Crane"
+    <ProductPageLayout cluster="machinery" title="Asuransi Crane Batam" subtitle="Perlindungan Tower Crane & Mobile Crane"
       description="Tower crane dan mobile crane adalah peralatan berisiko tinggi di proyek konstruksi Batam. Satu kejadian — boom jatuh, kabel putus, atau tabrakan struktur — bisa mengakibatkan kerugian miliaran dan tuntutan hukum besar. Pastikan aset dan tanggung jawab pihak ketiga Anda terlindungi."
       benefits={benefits} faqs={faqs} policyComparison={policyComparison}
       breadcrumbs={[{ label: "Asuransi Machinery", href: "/asuransi-machinery" }, { label: "Asuransi Crane", href: "/asuransi-machinery/asuransi-crane" }]}

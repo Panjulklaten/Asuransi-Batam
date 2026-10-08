@@ -73,7 +73,7 @@ const faqSchema = {
 
 export default function ArticleAsuransiExcavatorBulldozerPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="machinery"
       title="Asuransi Excavator dan Bulldozer Batam: Risiko Lapangan, Cakupan Polis & Proses Klaim"
       description="Nilai satu unit excavator bisa menembus miliaran rupiah. Tanpa proteksi yang tepat, satu insiden di lapangan saja bisa menghentikan seluruh jalannya proyek."
       date="6 Mei 2026"

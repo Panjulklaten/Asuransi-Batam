@@ -123,7 +123,7 @@ function Steps({ items }: { items: { title: string; desc?: React.ReactNode }[] }
 
 export default function ArticleAsuransiAlatBeratKonstruksiPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="machinery"
       title="Asuransi Alat Berat untuk Proyek Konstruksi: Panduan Lengkap Kontraktor"
       description="Memahami perbedaan EAR dan CAR, menentukan nilai pertanggungan yang tepat, dan tahu apa yang harus dilakukan saat klaim — ini tiga hal yang menentukan apakah asuransi alat berat Anda benar-benar melindungi atau hanya formalitas."
       date="6 Mei 2026"

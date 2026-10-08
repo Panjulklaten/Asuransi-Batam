@@ -62,7 +62,7 @@ const schema = {
 
 export default function ErectionAllRiskENPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="engineering"
       title="Erection All Risk (EAR) Insurance Batam"
       subtitle="Machinery & Plant Installation – Mobilisation to Commissioning"
       description="All risk protection for machinery installation, industrial plant, and equipment erection projects — from mobilisation through commissioning and the maintenance period. Batam's industrial zone demands specialist coverage."

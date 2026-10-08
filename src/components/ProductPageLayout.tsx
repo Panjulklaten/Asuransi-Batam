@@ -145,9 +145,9 @@ export default function ProductPageLayout({
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              {/* Cluster dengan kalkulator (properti, kendaraan): [Hitung Premi] + [Minta Penawaran], tanpa tombol WhatsApp
+              {/* Cluster tanpa tombol WA di hero (properti, kendaraan, engineering, machinery): [Hitung Premi bila ada] + [Minta Penawaran]
                   (sudah ada tombol WA melayang). */}
-              {cluster && QUOTE_CLUSTERS[cluster].calculator ? (
+              {cluster && (QUOTE_CLUSTERS[cluster].calculator || QUOTE_CLUSTERS[cluster].noHeroWhatsApp) ? (
                 <QuoteHeroActions cluster={cluster} lang={lang} />
               ) : (
                 <>

@@ -35,7 +35,7 @@ const policyComparison = [
 const schema = { "@context": "https://schema.org", "@type": "Service", name: "Asuransi Engineering Batam", provider: { "@type": "InsuranceAgency", name: "Asuransi Batam – Rio", telephone: "+6281373336728" } };
 export default function AsuransiEngineeringPage() {
   return (
-    <ProductPageLayout title="Asuransi Engineering Batam" subtitle="CAR, EAR & Proyek Konstruksi"
+    <ProductPageLayout cluster="engineering" title="Asuransi Engineering Batam" subtitle="CAR, EAR & Proyek Konstruksi"
       description="Proyek konstruksi dan pemasangan instalasi di Batam penuh dengan risiko. Dengan asuransi engineering yang tepat, nilai investasi proyek Anda terlindungi dari awal hingga selesai."
       benefits={benefits} faqs={faqs} policyComparison={policyComparison}
       breadcrumbs={[{ label: "Asuransi Engineering", href: "/asuransi-engineering" }]}

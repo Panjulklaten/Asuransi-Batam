@@ -79,7 +79,7 @@ export default function BlogConstructionBatamENPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <ArticleLayout
+      <ArticleLayout cluster="engineering"
         title="Choosing Construction Insurance in Batam: A Practical Guide for Contractors and Developers"
         description="Batam doesn't behave like a typical Indonesian construction market. Free trade zone status, proximity to Singapore, and constant construction activity all shape a risk profile that's genuinely its own — a CAR policy that's perfectly adequate in Jakarta can be missing exactly what a Batam project actually needs."
         date="Updated 8 August 2026"

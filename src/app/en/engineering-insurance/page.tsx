@@ -58,7 +58,7 @@ const schema = {
 
 export default function EngineeringInsurancePage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout cluster="engineering"
       title="Engineering Insurance Batam"
       subtitle="CAR, EAR & Construction Projects"
       description="Construction and installation projects in Batam carry significant risks. With the right engineering insurance, your project investment is protected from start to finish."

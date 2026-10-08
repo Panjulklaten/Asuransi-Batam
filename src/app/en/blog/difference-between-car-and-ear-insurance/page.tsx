@@ -73,7 +73,7 @@ export default function BlogCARvsEARENPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <ArticleLayout
+      <ArticleLayout cluster="engineering"
         title="CAR vs EAR Insurance: What's the Difference and Which One Does Your Project Actually Need?"
         description="In construction and industrial installation, two engineering insurance products appear most often in project tenders: CAR (Contractor All Risk) and EAR (Erection All Risk). They sound similar and are often confused — but choosing the wrong one can leave your project entirely unprotected."
         date="7 May 2026"

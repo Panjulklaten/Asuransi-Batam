@@ -88,7 +88,7 @@ const FAQS = [
 
 export default function ArticleHeavyEquipmentInsuranceConstructionPage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="machinery"
       title="Heavy Equipment Insurance for Construction Projects: A Complete Guide for Contractors"
       description="Understanding the difference between EAR and CAR, setting the right sum insured, and knowing exactly what to do at claim time — these three things determine whether your heavy equipment insurance truly protects you or is just a formality."
       date="6 May 2026"

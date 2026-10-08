@@ -5,9 +5,9 @@ import QuoteCalcButton from "./QuoteCalcButton";
 import { QUOTE_CLUSTERS, type Lang, type QuoteClusterKey } from "@/lib/quote";
 
 /**
- * Tombol hero untuk cluster yang punya kalkulator premi (properti, kendaraan):
+ * Tombol hero untuk cluster tanpa tombol WhatsApp (properti, kendaraan, engineering, machinery):
  * [Hitung Premi] + [Minta Penawaran]. WhatsApp tidak ditampilkan di sini karena sudah ada tombol WA melayang.
- * Jenis tanpa kalkulator (mis. dump truck) hanya menampilkan "Minta Penawaran" sebagai aksi utama.
+ * Halaman tanpa kalkulator (mis. dump truck, engineering, machinery) hanya menampilkan "Minta Penawaran" sebagai aksi utama.
  */
 export default function QuoteHeroActions({ cluster, lang }: { cluster: QuoteClusterKey; lang: Lang }) {
   const pathname = usePathname() ?? "";

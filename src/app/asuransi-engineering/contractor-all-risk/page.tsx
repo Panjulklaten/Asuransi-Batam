@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { generateSEO, schemaInsuranceProduct, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
-import { WHATSAPP_URL } from "@/lib/constants";
-import { Breadcrumb, CTASection, SectionHeader } from "@/components/ui/index";
+import { Breadcrumb, SectionHeader } from "@/components/ui/index";
+import QuoteButton from "@/components/quote/QuoteButton";
+import QuoteCard from "@/components/quote/QuoteCard";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { Hammer, CheckCircle2 } from "lucide-react";
 
@@ -81,11 +82,7 @@ export default function ContractorAllRiskPage() {
           <p className="text-gray-300 text-lg mb-8 max-w-2xl">
             Proteksi menyeluruh untuk proyek konstruksi Anda di Batam — dari ground breaking hingga masa pemeliharaan. Material, peralatan, dan tanggung jawab pihak ketiga semua terlindungi.
           </p>
-          <a href={WHATSAPP_URL("Halo Rio, saya butuh Contractor All Risk Insurance untuk proyek di Batam")} target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold rounded-xl text-navy"
-            style={{ background: "linear-gradient(135deg, #c9a84c, #f0d080)" }}>
-            Konsultasi Proyek Anda
-          </a>
+          <QuoteButton cluster="engineering" lang="id" variant="gold" className="!rounded-xl !px-8 !py-3.5" />
         </div>
       </section>
 
@@ -193,7 +190,7 @@ export default function ContractorAllRiskPage() {
         </div>
       </section>
 
-      <CTASection title="Amankan Proyek Konstruksi Anda" waMsg="Halo Rio, saya ingin Contractor All Risk Insurance" />
+      <QuoteCard cluster="engineering" lang="id" />
     </>
   );
 }

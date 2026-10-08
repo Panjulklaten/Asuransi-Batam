@@ -3,7 +3,7 @@
 
 export type Lang = "id" | "en";
 export type Bi = { id: string; en: string };
-export type QuoteClusterKey = "surety" | "marine" | "event" | "liability" | "pa" | "property" | "vehicle";
+export type QuoteClusterKey = "surety" | "marine" | "event" | "liability" | "pa" | "property" | "vehicle" | "engineering" | "machinery";
 
 export type Option = { value: string; label: Bi };
 export type Requirement = { doc: Bi; note: Bi; must: boolean };
@@ -39,6 +39,8 @@ export interface QuoteCluster {
   inferType: (pathname: string) => string;
   /** Jenis produk yang nama perusahaannya tidak wajib diisi (mis. PA perorangan). */
   companyOptionalFor?: string[];
+  /** Hero tidak menampilkan tombol WhatsApp (sudah ada tombol WA melayang): hanya kalkulator (bila ada) + Minta Penawaran. */
+  noHeroWhatsApp?: boolean;
   /**
    * Tautan kalkulator premi untuk jenis produk tertentu (null = tidak ada kalkulator).
    * Bila diisi, tombol WhatsApp di hero diganti tombol kalkulator + tombol "Minta Penawaran".

@@ -76,7 +76,7 @@ const TIPS = [
 
 export default function ArticleMiningHeavyEquipmentInsurancePage() {
   return (
-    <ArticleLayout
+    <ArticleLayout cluster="machinery"
       title="Mining Heavy Equipment Insurance: Mandatory, What's Covered & How to Choose"
       description="Mining sites are among the harshest working environments in the world. Heavy equipment operating there faces risks far greater than those on a typical construction project."
       date="6 May 2026"

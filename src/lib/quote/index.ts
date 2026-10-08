@@ -1,6 +1,8 @@
 import { SITE } from "@/lib/constants";
+import { ENGINEERING } from "./engineering";
 import { EVENT } from "./event";
 import { LIABILITY } from "./liability";
+import { MACHINERY } from "./machinery";
 import { MARINE } from "./marine";
 import { PA } from "./pa";
 import { PROPERTY } from "./property";
@@ -21,6 +23,8 @@ export const QUOTE_CLUSTERS: Record<QuoteClusterKey, QuoteCluster> = {
   pa: PA,
   property: PROPERTY,
   vehicle: VEHICLE,
+  engineering: ENGINEERING,
+  machinery: MACHINERY,
 };
 
 export const pick = (b: Bi, lang: Lang) => b[lang];

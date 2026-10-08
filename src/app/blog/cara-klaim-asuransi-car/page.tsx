@@ -1,5 +1,6 @@
 // app/blog/cara-klaim-asuransi-car/page.tsx
 import type { Metadata } from "next";
+import QuoteButton from "@/components/quote/QuoteButton";
 import { generateSEO } from "@/lib/seo";
 import {
   ListChecks,
@@ -321,14 +322,7 @@ export default function BlogCaraKlaimCARPage() {
           <p className="text-white/70 mb-5">
             Rio siap membantu — dari pemilihan polis hingga pendampingan proses klaim.
           </p>
-          <a
-            href="https://wa.me/6281373336728"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-[#c9a84c] hover:bg-[#f0d080] text-[#0a1628] font-bold px-8 py-3 rounded-xl transition"
-          >
-            Hubungi via WhatsApp
-          </a>
+          <QuoteButton cluster="engineering" lang="id" variant="gold" className="!rounded-xl !px-8 !py-3" />
           <p className="text-sm text-white/40 mt-3">0813-7333-6728 &middot; Rio, Agen Asuransi Batam</p>
         </div>
 
