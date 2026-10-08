@@ -3,8 +3,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { generateSEO, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
 import { WHATSAPP_URL } from "@/lib/constants";
-import { Breadcrumb, CTASection, SectionHeader } from "@/components/ui/index";
+import { Breadcrumb, SectionHeader } from "@/components/ui/index";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
+import QuoteButton from "@/components/quote/QuoteButton";
+import QuoteCard from "@/components/quote/QuoteCard";
 import { Package, CheckCircle2, AlertTriangle, FileText, Phone, Ship, Plane, Truck } from "lucide-react";
 
 export const metadata: Metadata = generateSEO({
@@ -209,15 +211,18 @@ export default function MarineCargoPage() {
           <p className="text-gray-300 text-lg mb-8 max-w-2xl">
             Barang kiriman Anda terlindungi dari gudang pengirim hingga tangan penerima. Ekspor, impor, maupun pengiriman domestik — semua risiko selama perjalanan laut tertanggung.
           </p>
-          <a
-            href={WHATSAPP_URL("Halo Rio, saya butuh Marine Cargo Insurance untuk pengiriman barang dari Batam")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold rounded-xl text-navy"
-            style={{ background: "linear-gradient(135deg, #c9a84c, #f0d080)" }}
-          >
-            Konsultasi Marine Cargo
-          </a>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a
+              href={WHATSAPP_URL("Halo Rio, saya butuh Marine Cargo Insurance untuk pengiriman barang dari Batam")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold rounded-xl text-navy"
+              style={{ background: "linear-gradient(135deg, #c9a84c, #f0d080)" }}
+            >
+              Konsultasi Marine Cargo
+            </a>
+            <QuoteButton cluster="marine" lang="id" variant="onDark" className="!py-3.5 !font-semibold" />
+          </div>
         </div>
       </section>
 
@@ -476,10 +481,7 @@ export default function MarineCargoPage() {
         </div>
       </section>
 
-      <CTASection
-        title="Lindungi Barang Kiriman Anda"
-        waMsg="Halo Rio, saya ingin Marine Cargo Insurance untuk pengiriman dari Batam"
-      />
+      <QuoteCard cluster="marine" />
     </>
   );
 }

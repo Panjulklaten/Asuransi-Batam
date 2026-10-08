@@ -224,6 +224,7 @@ export default function ArticleJenisAsuransiKapal() {
 
   return (
     <ArticleLayout
+      cluster="marine"
       title="Jenis-Jenis Asuransi Kapal yang Wajib Diketahui Pemilik Armada di Batam"
       description="Panduan menyeluruh dari praktisi berpengalaman: mulai Marine Hull, P&I, hingga War Risk — lengkap dengan studi kasus nyata tongkang di kawasan Nongsa, Batam."
       date="1 Juli 2025"

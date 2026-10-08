@@ -90,7 +90,6 @@ export default function AdvancePaymentBondENPage() {
       />
       <ArticleLayout
         cluster="surety"
-        suretyRequirements
       title="Advance Payment Bond Batam: Securing Your Project's Down Payment"
       description="A complete guide to advance payment bonds in Batam — what they cover, how the reduction mechanism works, who needs one, required documents, and how to apply."
       date="2025"

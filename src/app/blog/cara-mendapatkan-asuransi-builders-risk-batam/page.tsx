@@ -100,6 +100,7 @@ const faqSchema = {
 export default function CaraMendapatkanBuildersRiskPage() {
   return (
     <ArticleLayout
+      cluster="marine"
       title="Cara Mendapatkan Asuransi Builders Risk yang Tepat di Batam"
       description="Studi kasus klaim nyata di galangan kapal Batam dan langkah-langkah memilih polis Builders Risk yang benar-benar melindungi proyek Anda."
       date="23 Juni 2026"

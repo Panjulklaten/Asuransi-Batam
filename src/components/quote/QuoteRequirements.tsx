@@ -3,27 +3,19 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { CheckCircle2, Circle, FileCheck2, Info } from "lucide-react";
 import Reveal from "./Reveal";
-import SuretyQuoteButton from "./SuretyQuoteButton";
+import QuoteButton from "./QuoteButton";
 import {
-  GENERAL_REQUIREMENTS,
-  REQUIREMENTS_DISCLAIMER,
-  SPECIFIC_REQUIREMENTS,
-  SURETY_TYPES,
-  inferSuretyType,
+  QUOTE_CLUSTERS,
   pick,
   typeLabel,
   type Lang,
+  type QuoteCluster,
+  type QuoteClusterKey,
   type Requirement,
-  type SuretySpecificKey,
-  type SuretyTypeKey,
-} from "@/lib/surety";
+} from "@/lib/quote";
 
 const T = {
   id: {
-    eyebrow: "Persyaratan Penerbitan",
-    title: "Dokumen yang Disiapkan untuk Surety Bond",
-    subtitle:
-      "Pilih jenis bond untuk melihat dokumen khususnya. Dokumen perusahaan berlaku untuk semua jenis.",
     colNo: "No",
     colDoc: "Dokumen",
     colNote: "Keterangan",
@@ -31,18 +23,14 @@ const T = {
     must: "Wajib",
     ifAny: "Jika ada",
     specificTitle: "Dokumen khusus",
-    generalTitle: "Dokumen perusahaan",
-    generalSub: "Berlaku untuk semua jenis bond",
+    generalTitle: "Dokumen pemohon",
+    generalSub: "Berlaku untuk semua jenis",
     cta: "Siap mengajukan? Isi data singkat, tim kami analisa awalnya.",
     ctaBtn: "Minta Penawaran",
     panelTitle: "Persyaratan Penerbitan",
-    panelPick: "Pilih jenis bond untuk melihat dokumen khususnya.",
+    panelPick: "Pilih jenis di samping untuk melihat dokumen khususnya.",
   },
   en: {
-    eyebrow: "Issuance Requirements",
-    title: "Documents to Prepare for a Surety Bond",
-    subtitle:
-      "Choose a bond type to see its specific documents. Company documents apply to every type.",
     colNo: "No",
     colDoc: "Document",
     colNote: "Notes",
@@ -50,12 +38,12 @@ const T = {
     must: "Required",
     ifAny: "If available",
     specificTitle: "Specific documents",
-    generalTitle: "Company documents",
-    generalSub: "Applies to every bond type",
+    generalTitle: "Applicant documents",
+    generalSub: "Applies to every type",
     cta: "Ready to apply? Fill in a short form and we'll do the initial assessment.",
     ctaBtn: "Request a Quote",
     panelTitle: "Issuance Requirements",
-    panelPick: "Choose a bond type to see its specific documents.",
+    panelPick: "Choose a type alongside to see its specific documents.",
   },
 } as const;
 
@@ -112,9 +100,9 @@ function ReqTable({ items, lang, startAt = 1 }: { items: Requirement[]; lang: La
 }
 
 /** Kartu ringkas di sisi popup: persyaratan mengikuti jenis bond yang dipilih. */
-export function RequirementsPanel({ lang, type }: { lang: Lang; type: SuretyTypeKey }) {
+export function RequirementsPanel({ cluster, lang, type }: { cluster: QuoteCluster; lang: Lang; type: string }) {
   const t = T[lang];
-  const specific = type === "unsure" ? [] : SPECIFIC_REQUIREMENTS[type as SuretySpecificKey];
+  const specific = cluster.specific[type] ?? [];
   const Row = ({ r, i }: { r: Requirement; i: number }) => (
     <li className="sb-rise flex gap-2.5" style={{ animationDelay: `${i * 45}ms` }}>
       {r.must ? (
@@ -137,7 +125,7 @@ export function RequirementsPanel({ lang, type }: { lang: Lang; type: SuretyType
         </span>
         <div>
           <h3 className="font-display text-sm font-bold text-[#0a1628]">{t.panelTitle}</h3>
-          <p className="text-xs text-[#64748b]">{type === "unsure" ? t.panelPick : typeLabel(type, lang)}</p>
+          <p className="text-xs text-[#64748b]">{type === "unsure" ? t.panelPick : typeLabel(cluster, type, lang)}</p>
         </div>
       </div>
 
@@ -155,7 +143,7 @@ export function RequirementsPanel({ lang, type }: { lang: Lang; type: SuretyType
       <div>
         <p className="mb-2 text-[11px] font-bold uppercase tracking-wider text-[#a07830]">{t.generalTitle}</p>
         <ul className="space-y-2">
-          {GENERAL_REQUIREMENTS.map((r, i) => (
+          {cluster.general.map((r, i) => (
             <Row key={r.doc.id} r={r} i={i} />
           ))}
         </ul>
@@ -163,56 +151,59 @@ export function RequirementsPanel({ lang, type }: { lang: Lang; type: SuretyType
 
       <p className="mt-4 flex gap-2 border-t border-[#e2e8f0] pt-3 text-[11px] leading-relaxed text-[#64748b]">
         <Info size={13} className="mt-0.5 shrink-0" />
-        {pick(REQUIREMENTS_DISCLAIMER, lang)}
+        {pick(cluster.disclaimer, lang)}
       </p>
     </div>
   );
 }
 
-/** Bagian halaman penuh: tab jenis bond + tabel persyaratan. */
-export default function SuretyRequirements({
+/** Bagian halaman penuh: tab jenis produk + tabel persyaratan. */
+export default function QuoteRequirements({
+  cluster: clusterKey,
   lang: langProp,
   defaultType,
   className = "",
 }: {
+  cluster: QuoteClusterKey;
   lang?: Lang;
-  defaultType?: SuretyTypeKey;
+  defaultType?: string;
   className?: string;
 }) {
   const pathname = usePathname();
+  const cluster = QUOTE_CLUSTERS[clusterKey];
   const lang: Lang = langProp ?? (pathname?.startsWith("/en") ? "en" : "id");
   const t = T[lang];
-  const inferred = defaultType ?? inferSuretyType(pathname);
-  const tabs = SURETY_TYPES.filter((x) => x.key !== "unsure") as { key: SuretySpecificKey; label: { id: string; en: string }; hint: { id: string; en: string } }[];
-  const [tab, setTab] = useState<SuretySpecificKey>(inferred === "unsure" ? "bid" : (inferred as SuretySpecificKey));
+  const tabs = cluster.types.filter((x) => x.key !== "unsure");
+  const inferred = defaultType ?? cluster.inferType(pathname ?? "");
+  const [tab, setTab] = useState<string>(tabs.some((x) => x.key === inferred) ? inferred : tabs[0].key);
+  const idp = `qreq-${clusterKey}`;
 
   return (
-    <section className={`section-padding bg-[#faf8f3] ${className}`} aria-labelledby="surety-req-title">
+    <section className={`section-padding bg-[#faf8f3] ${className}`} aria-labelledby={`${idp}-title`}>
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="mb-10 text-center">
             <span className="mb-3 inline-block rounded-full bg-[#f0d080]/25 px-3 py-1 text-xs font-bold uppercase tracking-widest text-[#a07830]">
-              {t.eyebrow}
+              {pick(cluster.copy.reqEyebrow, lang)}
             </span>
-            <h2 id="surety-req-title" className="font-display text-3xl font-bold text-[#0a1628] md:text-4xl">
-              {t.title}
+            <h2 id={`${idp}-title`} className="font-display text-3xl font-bold text-[#0a1628] md:text-4xl">
+              {pick(cluster.copy.reqTitle, lang)}
             </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-[#475569]">{t.subtitle}</p>
+            <p className="mx-auto mt-3 max-w-2xl text-[#475569]">{pick(cluster.copy.reqSubtitle, lang)}</p>
           </div>
         </Reveal>
 
         <Reveal delay={100}>
-          {/* Tabs */}
-          <div role="tablist" aria-label={t.eyebrow} className="mb-6 flex gap-2 overflow-x-auto pb-1 md:justify-center">
+          <div role="tablist" aria-label={pick(cluster.copy.reqEyebrow, lang)} className="mb-6 flex gap-2 overflow-x-auto pb-1 md:justify-center">
             {tabs.map((x) => {
               const active = tab === x.key;
               return (
                 <button
                   key={x.key}
                   role="tab"
-                  id={`sreq-tab-${x.key}`}
+                  id={`${idp}-tab-${x.key}`}
                   aria-selected={active}
-                  aria-controls={`sreq-panel-${x.key}`}
+                  aria-controls={`${idp}-panel-${x.key}`}
                   onClick={() => setTab(x.key)}
                   className={`whitespace-nowrap rounded-full border px-4 py-2 text-sm font-semibold transition-all ${
                     active
@@ -231,8 +222,8 @@ export default function SuretyRequirements({
             <div
               key={x.key}
               role="tabpanel"
-              id={`sreq-panel-${x.key}`}
-              aria-labelledby={`sreq-tab-${x.key}`}
+              id={`${idp}-panel-${x.key}`}
+              aria-labelledby={`${idp}-tab-${x.key}`}
               hidden={tab !== x.key}
               className="grid gap-6 lg:grid-cols-5"
             >
@@ -241,7 +232,7 @@ export default function SuretyRequirements({
                   <span className="h-5 w-1 rounded-full bg-gradient-to-b from-[#c9a84c] to-[#f0d080]" />
                   {t.specificTitle} · {pick(x.label, lang)}
                 </p>
-                <ReqTable items={SPECIFIC_REQUIREMENTS[x.key]} lang={lang} />
+                <ReqTable items={cluster.specific[x.key]} lang={lang} />
               </div>
               <div className="lg:col-span-2">
                 <p className="mb-3 flex items-center gap-2 font-display text-lg font-bold text-[#0a1628]">
@@ -251,7 +242,7 @@ export default function SuretyRequirements({
                 <div className="rounded-2xl border border-[#e2e8f0] bg-white p-5 shadow-sm">
                   <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-[#64748b]">{t.generalSub}</p>
                   <ul className="space-y-3">
-                    {GENERAL_REQUIREMENTS.map((r, i) => (
+                    {cluster.general.map((r, i) => (
                       <li key={r.doc.id} className="sb-rise flex gap-2.5" style={{ animationDelay: `${i * 50}ms` }}>
                         {r.must ? (
                           <CheckCircle2 size={17} className="mt-0.5 shrink-0 text-[#c9a84c]" />
@@ -273,11 +264,11 @@ export default function SuretyRequirements({
 
           <div className="mt-8 flex flex-col items-center justify-between gap-4 rounded-2xl bg-gradient-to-r from-[#0a1628] to-[#1a4fa0] p-6 sm:flex-row">
             <p className="max-w-xl text-center text-sm text-white/80 sm:text-left">{t.cta}</p>
-            <SuretyQuoteButton lang={lang} defaultType={tab} variant="gold" label={t.ctaBtn} />
+            <QuoteButton cluster={clusterKey} lang={lang} defaultType={tab} variant="gold" label={t.ctaBtn} />
           </div>
           <p className="mt-4 flex items-start justify-center gap-2 text-center text-xs text-[#64748b]">
             <Info size={13} className="mt-0.5 shrink-0" />
-            {pick(REQUIREMENTS_DISCLAIMER, lang)}
+            {pick(cluster.disclaimer, lang)}
           </p>
         </Reveal>
       </div>

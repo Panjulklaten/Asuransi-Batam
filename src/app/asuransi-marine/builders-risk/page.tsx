@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { generateSEO, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
 import { WHATSAPP_URL } from "@/lib/constants";
-import { Breadcrumb, CTASection, SectionHeader } from "@/components/ui/index";
+import { Breadcrumb, SectionHeader } from "@/components/ui/index";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
+import QuoteButton from "@/components/quote/QuoteButton";
+import QuoteCard from "@/components/quote/QuoteCard";
 import {
   Wrench,
   CheckCircle2,
@@ -220,17 +222,20 @@ export default function BuildersRiskPage() {
             trial, setiap tahap konstruksi kapal Anda di Batam terlindungi dengan Builder&apos;s
             Risk Insurance.
           </p>
-          <a
-            href={WHATSAPP_URL(
-              "Halo Rio, saya butuh Builder's Risk Insurance untuk pembangunan kapal di Batam"
-            )}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold rounded-xl text-navy"
-            style={{ background: "linear-gradient(135deg, #c9a84c, #f0d080)" }}
-          >
-            Konsultasi Builder&apos;s Risk
-          </a>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a
+              href={WHATSAPP_URL(
+                "Halo Rio, saya butuh Builder's Risk Insurance untuk pembangunan kapal di Batam"
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold rounded-xl text-navy"
+              style={{ background: "linear-gradient(135deg, #c9a84c, #f0d080)" }}
+            >
+              Konsultasi Builder&apos;s Risk
+            </a>
+            <QuoteButton cluster="marine" lang="id" variant="onDark" className="!py-3.5 !font-semibold" />
+          </div>
         </div>
       </section>
 
@@ -539,10 +544,7 @@ export default function BuildersRiskPage() {
         </div>
       </section>
 
-      <CTASection
-        title="Amankan Proyek Pembangunan Kapal Anda"
-        waMsg="Halo Rio, saya ingin Builder's Risk Insurance untuk pembangunan kapal di Batam"
-      />
+      <QuoteCard cluster="marine" />
     </>
   );
 }

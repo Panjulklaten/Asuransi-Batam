@@ -1,10 +1,11 @@
 // components/ProductPageLayout.tsx
 import Link from "next/link";
 import CTASection from "./CTASection";
-import SuretyQuoteCard from "./surety/SuretyQuoteCard";
 import AuthorAvatar from "./AuthorAvatar";
 import CalculatorPromoCard, { type CalculatorCardVariant } from "./CalculatorPromoCard";
-import SuretyQuoteButton from "./surety/SuretyQuoteButton";
+import QuoteButton from "./quote/QuoteButton";
+import QuoteCard from "./quote/QuoteCard";
+import type { QuoteClusterKey } from "@/lib/quote";
 
 interface FAQ { q: string; a: string; }
 interface Benefit { icon: string; title: string; desc: string; href?: string; }
@@ -23,8 +24,8 @@ interface ProductPageProps {
   calculatorCta?: { label: string; href: string };
   /** Tampilkan kartu ajakan kalkulator premi properti (sub-halaman properti). */
   calculatorCard?: CalculatorCardVariant;
-  /** Cluster surety bond: tombol "Minta Penawaran" (popup → WhatsApp) + tabel persyaratan penerbitan. */
-  cluster?: "surety";
+  /** Cluster produk ("surety" | "marine"): tombol "Minta Penawaran" (popup → WhatsApp) + tabel persyaratan penerbitan. */
+  cluster?: QuoteClusterKey;
   children?: React.ReactNode;
 }
 
@@ -149,8 +150,8 @@ export default function ProductPageLayout({
               >
                 {t.cta}
               </a>
-              {cluster === "surety" ? (
-                <SuretyQuoteButton lang={lang} variant="onDark" />
+              {cluster ? (
+                <QuoteButton cluster={cluster} lang={lang} variant="onDark" />
               ) : (
                 <a
                   href="https://wa.me/6281373336728"
@@ -259,10 +260,9 @@ export default function ProductPageLayout({
         </div>
       </section>
 
-      {/* ✅ lang prop now passed so CTA defaults to correct language */}
-      {/* Cluster surety: hanya satu kartu dengan satu tombol "Minta Penawaran" (popup) */}
-      {cluster === "surety" ? (
-        <SuretyQuoteCard lang={lang} />
+      {/* Cluster produk: hanya satu kartu dengan satu tombol "Minta Penawaran" (popup) */}
+      {cluster ? (
+        <QuoteCard cluster={cluster} lang={lang} />
       ) : (
         <CTASection
           lang={lang}

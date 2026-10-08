@@ -105,6 +105,7 @@ const schema = {
 export default function AsuransiMarinePage() {
   return (
     <ProductPageLayout
+      cluster="marine"
       title="Asuransi Marine Batam"
       subtitle="Marine Hull, Cargo & Builder's Risk"
       description="Batam sebagai kota kepulauan dengan lalu lintas laut yang tinggi membutuhkan perlindungan yang andal. Asuransi marine kami menjaga kapal, muatan, dan aset maritim Anda dari risiko di lautan."

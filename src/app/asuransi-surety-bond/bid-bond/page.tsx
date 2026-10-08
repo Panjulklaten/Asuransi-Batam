@@ -110,7 +110,6 @@ export default function BidBondPage() {
       />
       <ArticleLayout
         cluster="surety"
-        suretyRequirements
       title="Bid Bond Batam: Jaminan Penawaran untuk Tender & Lelang"
       description="Panduan lengkap bid bond di Batam — pengertian, fungsi, besaran nilai, syarat dokumen, dan cara cepat mendapatkan jaminan penawaran untuk tender pemerintah maupun swasta."
       date="2025"

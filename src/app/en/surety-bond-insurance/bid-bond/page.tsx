@@ -110,7 +110,6 @@ export default function BidBondENPage() {
       />
       <ArticleLayout
         cluster="surety"
-        suretyRequirements
       title="Bid Bond Batam: Tender Bid Guarantee"
       description="A complete guide to bid bonds in Batam — definition, purpose, guarantee value, required documents, and how to quickly obtain a bid guarantee for government and private tenders."
       date="2025"

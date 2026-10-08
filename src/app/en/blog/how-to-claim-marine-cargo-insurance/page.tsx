@@ -79,6 +79,7 @@ const HABITS = [
 export default function HowToClaimMarineCargoPage() {
   return (
     <ArticleLayout
+      cluster="marine"
       title="How to Claim Marine Cargo Insurance the Right Way – Complete Guide"
       description="Required documents, reporting deadlines, and the correct steps to ensure your marine cargo claim is paid without rejection."
       date="May 7, 2026"

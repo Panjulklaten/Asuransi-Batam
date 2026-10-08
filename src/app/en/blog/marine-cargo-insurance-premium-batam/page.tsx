@@ -2,7 +2,8 @@
 import type { Metadata } from "next";
 import { generateSEO, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
 import { WHATSAPP_URL } from "@/lib/constants";
-import { Breadcrumb, CTASection, SectionHeader } from "@/components/ui/index";
+import { Breadcrumb, SectionHeader } from "@/components/ui/index";
+import QuoteCard from "@/components/quote/QuoteCard";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { TrendingDown, Calculator, ArrowRight } from "lucide-react";
 
@@ -311,10 +312,7 @@ export default function MarineCargoPremiENPage() {
           </div>
         </div>
       </section>
-      <CTASection
-        title="Get Your Marine Cargo Premium Calculated"
-        waMsg="Hello Rio, I would like a premium estimate for marine cargo insurance from Batam"
-      />
+      <QuoteCard cluster="marine" />
     </>
   );
 }

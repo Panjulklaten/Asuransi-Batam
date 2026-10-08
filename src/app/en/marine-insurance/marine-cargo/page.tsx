@@ -2,8 +2,10 @@
 import type { Metadata } from "next";
 import { generateSEO, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
 import { WHATSAPP_URL } from "@/lib/constants";
-import { Breadcrumb, CTASection, SectionHeader } from "@/components/ui/index";
+import { Breadcrumb, SectionHeader } from "@/components/ui/index";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
+import QuoteButton from "@/components/quote/QuoteButton";
+import QuoteCard from "@/components/quote/QuoteCard";
 import { Package, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = generateSEO({
@@ -151,15 +153,18 @@ export default function MarineCargoENPage() {
           <p className="text-gray-300 text-lg mb-8 max-w-2xl">
             Your shipment is protected from the sender's warehouse to the receiver's door. Whether exporting, importing, or shipping domestically — every risk during the sea voyage is covered.
           </p>
-          <a
-            href={WHATSAPP_URL("Hello Rio, I need Marine Cargo Insurance for a shipment from Batam")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold rounded-xl text-navy"
-            style={{ background: "linear-gradient(135deg, #c9a84c, #f0d080)" }}
-          >
-            Consult Cargo Coverage
-          </a>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a
+              href={WHATSAPP_URL("Hello Rio, I need Marine Cargo Insurance for a shipment from Batam")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold rounded-xl text-navy"
+              style={{ background: "linear-gradient(135deg, #c9a84c, #f0d080)" }}
+            >
+              Consult Cargo Coverage
+            </a>
+            <QuoteButton cluster="marine" lang="en" variant="onDark" className="!py-3.5 !font-semibold" />
+          </div>
         </div>
       </section>
 
@@ -245,10 +250,7 @@ export default function MarineCargoENPage() {
         </div>
       </section>
 
-      <CTASection
-        title="Protect Your Shipment Today"
-        waMsg="Hello Rio, I would like Marine Cargo Insurance for my shipment from Batam"
-      />
+      <QuoteCard cluster="marine" />
     </>
   );
         }

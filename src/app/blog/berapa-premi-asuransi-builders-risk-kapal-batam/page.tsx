@@ -73,6 +73,7 @@ export default function Page() {
 
   return (
     <ArticleLayout
+      cluster="marine"
       title="Berapa Premi Asuransi Builder's Risk untuk Proyek Kapal di Batam?"
       description="Simulasi perhitungan premi, faktor penentu rate, studi kasus klaim nyata, dan langkah tepat mendapatkan polis Builder's Risk untuk proyek pembangunan kapal di galangan Batam."
       date="26 Juni 2026"

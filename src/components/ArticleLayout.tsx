@@ -1,8 +1,9 @@
 // components/ArticleLayout.tsx
 import Link from "next/link";
 import CTASection from "./CTASection";
-import SuretyQuoteCard from "./surety/SuretyQuoteCard";
 import AuthorAvatar from "./AuthorAvatar";
+import QuoteCard from "./quote/QuoteCard";
+import type { QuoteClusterKey } from "@/lib/quote";
 
 interface Breadcrumb { label: string; href: string; }
 
@@ -16,10 +17,8 @@ interface ArticleLayoutProps {
   schema: Record<string, unknown>;
   /** Optional FAQPage JSON-LD. Pass the same object used for the visual FAQ list. */
   faqSchema?: Record<string, unknown>;
-  /** Cluster surety bond: CTA bawah berupa satu kartu dengan tombol "Minta Penawaran" (popup → WhatsApp). */
-  cluster?: "surety";
-  /** @deprecated Tidak dipakai lagi — persyaratan penerbitan kini hanya ada di popup "Minta Penawaran". */
-  suretyRequirements?: boolean;
+  /** Cluster produk ("surety" | "marine"): CTA bawah berupa satu kartu dengan tombol "Minta Penawaran" (popup → WhatsApp). */
+  cluster?: QuoteClusterKey;
   children: React.ReactNode;
 }
 
@@ -130,9 +129,9 @@ export default function ArticleLayout({
         </div>
       </section>
 
-      {/* Cluster surety: hanya satu kartu dengan satu tombol "Minta Penawaran" (popup). */}
-      {cluster === "surety" ? (
-        <SuretyQuoteCard lang={isEN ? "en" : "id"} />
+      {/* Cluster produk: hanya satu kartu dengan satu tombol "Minta Penawaran" (popup). */}
+      {cluster ? (
+        <QuoteCard cluster={cluster} lang={isEN ? "en" : "id"} />
       ) : (
         <CTASection lang={isEN ? "en" : "id"} />
       )}

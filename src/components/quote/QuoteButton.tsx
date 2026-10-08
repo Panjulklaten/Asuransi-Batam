@@ -3,10 +3,10 @@ import { useState } from "react";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { FileText } from "lucide-react";
-import { inferSuretyType, type Lang, type SuretyTypeKey } from "@/lib/surety";
+import { QUOTE_CLUSTERS, type Lang, type QuoteClusterKey } from "@/lib/quote";
 
 // Modal baru dimuat saat tombol diklik, supaya tidak menambah beban halaman.
-const SuretyQuoteModal = dynamic(() => import("./SuretyQuoteModal"), { ssr: false });
+const QuoteModal = dynamic(() => import("./QuoteModal"), { ssr: false });
 
 type Variant = "gold" | "onDark";
 
@@ -17,15 +17,17 @@ const VARIANTS: Record<Variant, string> = {
   onDark: "border-2 border-white/30 text-white hover:border-[#c9a84c] hover:bg-white/10",
 };
 
-export default function SuretyQuoteButton({
+export default function QuoteButton({
+  cluster,
   lang: langProp,
   defaultType,
   variant = "onDark",
   label,
   className = "",
 }: {
+  cluster: QuoteClusterKey;
   lang?: Lang;
-  defaultType?: SuretyTypeKey;
+  defaultType?: string;
   variant?: Variant;
   label?: string;
   className?: string;
@@ -33,7 +35,8 @@ export default function SuretyQuoteButton({
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const lang: Lang = langProp ?? (pathname?.startsWith("/en") ? "en" : "id");
-  const type = defaultType ?? inferSuretyType(pathname);
+  const config = QUOTE_CLUSTERS[cluster];
+  const type = defaultType ?? config.inferType(pathname ?? "");
   const text = label ?? (lang === "id" ? "Minta Penawaran" : "Request a Quote");
 
   return (
@@ -47,7 +50,7 @@ export default function SuretyQuoteButton({
         <FileText size={18} className={variant === "onDark" ? "text-[#c9a84c]" : ""} />
         <span>{text}</span>
       </button>
-      {open && <SuretyQuoteModal lang={lang} defaultType={type} onClose={() => setOpen(false)} />}
+      {open && <QuoteModal cluster={cluster} lang={lang} defaultType={type} onClose={() => setOpen(false)} />}
     </>
   );
 }

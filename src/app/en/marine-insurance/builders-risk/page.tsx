@@ -2,8 +2,10 @@
 import type { Metadata } from "next";
 import { generateSEO, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
 import { WHATSAPP_URL } from "@/lib/constants";
-import { Breadcrumb, CTASection, SectionHeader } from "@/components/ui/index";
+import { Breadcrumb, SectionHeader } from "@/components/ui/index";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
+import QuoteButton from "@/components/quote/QuoteButton";
+import QuoteCard from "@/components/quote/QuoteCard";
 import { Wrench, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = generateSEO({
@@ -176,17 +178,20 @@ export default function BuildersRiskENPage() {
             phase of your vessel&apos;s construction in Batam is protected with Builder&apos;s Risk
             Insurance.
           </p>
-          <a
-            href={WHATSAPP_URL(
-              "Hello Rio, I need Builder's Risk Insurance for vessel construction in Batam"
-            )}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold rounded-xl text-navy"
-            style={{ background: "linear-gradient(135deg, #c9a84c, #f0d080)" }}
-          >
-            Consult Builder&apos;s Risk Coverage
-          </a>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a
+              href={WHATSAPP_URL(
+                "Hello Rio, I need Builder's Risk Insurance for vessel construction in Batam"
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold rounded-xl text-navy"
+              style={{ background: "linear-gradient(135deg, #c9a84c, #f0d080)" }}
+            >
+              Consult Builder&apos;s Risk Coverage
+            </a>
+            <QuoteButton cluster="marine" lang="en" variant="onDark" className="!py-3.5 !font-semibold" />
+          </div>
         </div>
       </section>
 
@@ -251,10 +256,7 @@ export default function BuildersRiskENPage() {
         </div>
       </section>
 
-      <CTASection
-        title="Secure Your Shipbuilding Project"
-        waMsg="Hello Rio, I would like Builder's Risk Insurance for vessel construction in Batam"
-      />
+      <QuoteCard cluster="marine" />
     </>
   );
 }

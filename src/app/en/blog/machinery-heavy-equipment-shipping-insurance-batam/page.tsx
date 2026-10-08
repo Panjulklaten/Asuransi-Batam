@@ -2,7 +2,8 @@
 import type { Metadata } from "next";
 import { generateSEO, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
 import { WHATSAPP_URL } from "@/lib/constants";
-import { Breadcrumb, CTASection, SectionHeader } from "@/components/ui/index";
+import { Breadcrumb, SectionHeader } from "@/components/ui/index";
+import QuoteCard from "@/components/quote/QuoteCard";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { CheckCircle2, Wrench, AlertTriangle } from "lucide-react";
 
@@ -345,10 +346,7 @@ export default function MachineryShippingInsuranceENPage() {
           </div>
         </div>
       </section>
-      <CTASection
-        title="Protect Your Machinery from the First Voyage"
-        waMsg="Hello Rio, I need cargo insurance for shipping machinery/heavy equipment from Batam"
-      />
+      <QuoteCard cluster="marine" />
     </>
   );
                                     }
