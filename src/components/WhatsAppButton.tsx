@@ -1,13 +1,12 @@
 "use client";
 import { usePathname } from "next/navigation";
+import { getWhatsAppMessage } from "@/lib/whatsapp-topic";
 
 export default function WhatsAppButton() {
   const pathname = usePathname();
   const isEN = pathname.startsWith("/en");
 
-  const text = isEN
-    ? "Hello%20Rio%2C%20I%20would%20like%20to%20consult%20about%20insurance"
-    : "Halo%20Rio%2C%20saya%20ingin%20konsultasi%20asuransi";
+  const text = encodeURIComponent(getWhatsAppMessage(pathname));
 
   const label = isEN ? "Free Consultation" : "Konsultasi Gratis";
 
