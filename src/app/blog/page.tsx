@@ -172,12 +172,12 @@ const articles: Article[] = [
     readTime: "12 menit",
   },
   {
-    title: "Employers Liability & Product Liability di Batam",
+    title: "BPJS & Public Liability Belum Cukup? Dua Celah Risiko di Perusahaan Batam",
     slug: "employers-liability-product-liability-batam",
     date: "2 Juli 2026",
     category: "Liability",
     excerpt:
-      "Dua jenis liability yang sering terlewat perusahaan di Batam: Employers Liability (tuntutan karyawan di luar BPJS TK) dan Product Liability (tuntutan atas produk yang diproduksi/didistribusikan).",
+      "Sudah punya BPJS dan Public Liability, tapi masih bisa dituntut karyawan atau pembeli produk? Pahami dua celah yang sering terlewat di perusahaan Batam.",
     readTime: "10 menit",
   },
   {

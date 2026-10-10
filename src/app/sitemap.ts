@@ -174,7 +174,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/blog/pentingnya-asuransi-limbah-b3`,         lastModified: new Date("2025-02-20"), changeFrequency: "yearly",  priority: 0.7 },
     { url: `${BASE_URL}/blog/asuransi-public-liability-batam-panduan-lengkap`, lastModified: new Date("2026-07-02"), changeFrequency: "yearly",  priority: 0.7 },
     { url: `${BASE_URL}/blog/cara-klaim-asuransi-public-liability-batam`, lastModified: new Date("2026-07-02"), changeFrequency: "yearly",  priority: 0.7 },
-    { url: `${BASE_URL}/blog/employers-liability-product-liability-batam`, lastModified: new Date("2026-07-02"), changeFrequency: "yearly",  priority: 0.7 },
+    { url: `${BASE_URL}/blog/employers-liability-product-liability-batam`, lastModified: new Date("2026-10-10"), changeFrequency: "yearly",  priority: 0.7 },
     // Engineering
     { url: `${BASE_URL}/blog/asuransi-proyek-konstruksi-batam`,      lastModified: new Date("2026-05-07"), changeFrequency: "yearly",  priority: 0.7 },
     { url: `${BASE_URL}/blog/cara-klaim-asuransi-car`,               lastModified: new Date("2026-05-07"), changeFrequency: "yearly",  priority: 0.7 },

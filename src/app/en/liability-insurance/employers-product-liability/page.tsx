@@ -26,12 +26,12 @@ const benefits = [
 
 const faqs = [
   {
-    q: "What is the difference between Employers' Liability and BPJS Ketenagakerjaan?",
-    a: "BPJS Ketenagakerjaan pays benefits under its own programme rules, and the company must still meet its enrolment obligations. Employers' Liability is not a replacement. It covers compensation claims brought by employees or their heirs under the company's legal liability, including defence costs, as far as the policy covers them and they are not excluded.",
+    q: "What limit and deductible should I choose?",
+    a: "There is no standard figure. The limit is usually set against contract values, headcount or sales volume, and buyer or principal requirements, while the deductible reflects how much risk the company can retain itself. We prepare several limit and deductible options to compare before you decide.",
   },
   {
-    q: "Who should take Product Liability?",
-    a: "Companies that manufacture, assemble, import or distribute products: electronics and general manufacturers, food and beverage producers, component suppliers and distributors. Buyers and principals also often require it as a contract or vendor-qualification condition.",
+    q: "Can I take Employers' Liability only, or Product Liability only?",
+    a: "Yes. They are separate covers, so they can be arranged individually or together. The choice is available in the quote request form, and the final structure follows the insurer's underwriting position.",
   },
   {
     q: "What does Product Liability usually not cover?",
@@ -107,12 +107,19 @@ export default function EmployersProductLiabilityENPage() {
       </div>
 
       <div className="mb-12 max-w-4xl mx-auto">
-        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3 text-center">Why It Matters in Batam</h2>
+        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3 text-center">What We Settle With You Before Quoting</h2>
         <p className="text-[#475569] leading-relaxed mb-4">
-          Batam has an export manufacturing base in industrial estates such as Batamindo, Muka Kuning and Kabil, plus shipyards and fabrication yards around Tanjung Uncang. These two profiles face different risks: work at height, welding and lifting at shipyards make worker claims a real exposure, while products shipped to many countries carry a claims exposure in jurisdictions that cannot be controlled from Batam.
+          An Employers&apos; and Product Liability quotation cannot be built from a single figure. The decisions below determine how far the policy really protects you, and are best agreed before the policy is issued:
         </p>
+        <ul className="list-disc pl-6 space-y-2 text-[#475569] leading-relaxed mb-4">
+          <li>The limit per occurrence and the annual aggregate, matched to contract values and your exposure.</li>
+          <li>The deductible, or the amount of risk you are comfortable retaining.</li>
+          <li>The policy basis (occurrence or claims-made) and the retroactive date, especially for Product Liability.</li>
+          <li>Territory and jurisdiction: which export destinations are covered and which are excluded.</li>
+          <li>Optional extensions, such as vendors for distributors, and any certificate of insurance (COI) required by a buyer or principal.</li>
+        </ul>
         <p className="text-[#475569] leading-relaxed">
-          In practice, buyers and principals often ask for these policies as a contract or vendor-qualification condition. Having them in place before they are requested usually saves time during tenders or vendor audits.
+          Employers&apos; Liability only, Product Liability only, or both can be selected directly in the quote request form.
         </p>
       </div>
 

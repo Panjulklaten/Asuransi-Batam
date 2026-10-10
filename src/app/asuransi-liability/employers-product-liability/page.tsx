@@ -26,12 +26,12 @@ const benefits = [
 
 const faqs = [
   {
-    q: "Apa bedanya Employers' Liability dengan BPJS Ketenagakerjaan?",
-    a: "BPJS Ketenagakerjaan memberikan manfaat sesuai ketentuan programnya dan kepesertaannya tetap harus dipenuhi perusahaan. Employers' Liability bukan pengganti BPJS. Polis ini menanggung tuntutan ganti rugi yang diajukan pekerja atau ahli warisnya berdasarkan tanggung gugat hukum perusahaan, termasuk biaya pembelaan, sejauh dijamin polis dan tidak dikecualikan.",
+    q: "Berapa limit dan deductible yang sebaiknya dipilih?",
+    a: "Tidak ada angka baku. Limit biasanya disesuaikan dengan nilai kontrak, jumlah pekerja atau volume penjualan, dan persyaratan buyer atau principal, sedangkan deductible disesuaikan dengan kemampuan perusahaan menanggung risiko sendiri. Kami menyusun beberapa opsi limit dan deductible untuk dibandingkan sebelum Anda memutuskan.",
   },
   {
-    q: "Siapa yang sebaiknya mengambil Product Liability?",
-    a: "Perusahaan yang memproduksi, merakit, mengimpor, atau mendistribusikan produk: pabrik elektronik dan manufaktur, produsen makanan dan minuman, pemasok komponen, hingga distributor. Persyaratan ini juga sering muncul dari buyer atau principal sebagai syarat kontrak atau kualifikasi vendor.",
+    q: "Bisakah saya mengambil Employers' Liability saja atau Product Liability saja?",
+    a: "Bisa. Keduanya merupakan perlindungan yang terpisah, sehingga dapat diajukan sendiri-sendiri atau digabung. Pilihannya tersedia di form permintaan penawaran, dan susunan akhirnya mengikuti kebijakan penanggung.",
   },
   {
     q: "Apa yang umumnya tidak ditanggung Product Liability?",
@@ -107,12 +107,19 @@ export default function EmployersProductLiabilityPage() {
       </div>
 
       <div className="mb-12 max-w-4xl mx-auto">
-        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3 text-center">Mengapa Relevan di Batam</h2>
+        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3 text-center">Yang Kami Tentukan Bersama Anda Sebelum Penawaran</h2>
         <p className="text-[#475569] leading-relaxed mb-4">
-          Batam punya basis manufaktur ekspor di kawasan industri seperti Batamindo, Muka Kuning, dan Kabil, serta galangan kapal dan fabrikasi di Tanjung Uncang dan sekitarnya. Dua profil ini menghadapi risiko yang berbeda: pekerjaan di ketinggian, pengelasan, dan pengangkatan di galangan membuat tuntutan dari pekerja menjadi risiko nyata, sedangkan produk yang dikirim ke banyak negara membawa eksposur gugatan di yurisdiksi yang tidak bisa dikendalikan dari Batam.
+          Penawaran Employers&apos; dan Product Liability tidak bisa dibuat dari satu angka. Beberapa keputusan berikut menentukan seberapa jauh polis benar-benar melindungi, dan sebaiknya disepakati sebelum polis diterbitkan:
         </p>
+        <ul className="list-disc pl-6 space-y-2 text-[#475569] leading-relaxed mb-4">
+          <li>Limit pertanggungan per kejadian dan agregat per tahun, disesuaikan dengan nilai kontrak dan eksposur usaha.</li>
+          <li>Deductible atau risiko sendiri yang masih sanggup Anda tanggung.</li>
+          <li>Basis polis (occurrence atau claims-made) dan tanggal retroaktif, terutama untuk Product Liability.</li>
+          <li>Wilayah dan yurisdiksi: negara tujuan ekspor yang dicakup dan yang dikecualikan.</li>
+          <li>Perluasan opsional, seperti vendors untuk distributor, serta persyaratan sertifikat asuransi (COI) dari buyer atau principal.</li>
+        </ul>
         <p className="text-[#475569] leading-relaxed">
-          Dalam praktik, polis ini juga sering diminta oleh buyer atau principal sebagai syarat kontrak atau kualifikasi vendor. Menyiapkannya sebelum diminta biasanya menghemat waktu saat tender atau audit vendor.
+          Employers&apos; Liability saja, Product Liability saja, atau keduanya bisa dipilih langsung di form permintaan penawaran.
         </p>
       </div>
 
@@ -143,8 +150,8 @@ export default function EmployersProductLiabilityPage() {
             <p className="text-[#475569] text-sm">Santunan kecelakaan diri bagi karyawan, berbeda dari tanggung gugat perusahaan.</p>
           </Link>
           <Link href="/blog/employers-liability-product-liability-batam" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Panduan Lengkap EL &amp; PL</h3>
-            <p className="text-[#475569] text-sm">Artikel mendalam tentang kapan dan bagaimana mengambil kedua polis ini.</p>
+            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Mengapa EL &amp; PL Sering Terlewat</h3>
+            <p className="text-[#475569] text-sm">Artikel tentang celah di luar BPJS dan Public Liability, serta siapa yang paling rentan.</p>
           </Link>
         </div>
       </div>

@@ -21,8 +21,8 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = generateSEO({
-  title: "Employers Liability & Product Liability di Batam – Perlindungan yang Sering Terlewat",
-  description: "Dua jenis asuransi liability yang jarang disadari perusahaan di Batam: Employers Liability (tuntutan karyawan di luar BPJS TK) dan Product Liability (tuntutan atas produk yang diproduksi/didistribusikan). Panduan lengkap siapa yang butuh dan kenapa.",
+  title: "BPJS & Public Liability Belum Cukup? Dua Celah Risiko di Perusahaan Batam",
+  description: "Sudah punya BPJS dan Public Liability, tapi masih bisa dituntut karyawan atau pembeli produk? Pahami dua celah yang sering terlewat di perusahaan Batam.",
   canonical: "https://asuransibatam.com/blog/employers-liability-product-liability-batam",
 });
 
@@ -30,9 +30,9 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline:
-    "Employers Liability & Product Liability di Batam: Perlindungan yang Sering Terlewat",
+    "BPJS & Public Liability Belum Cukup? Dua Celah Risiko di Perusahaan Batam",
   datePublished: "2026-07-02",
-  dateModified: "2026-07-02",
+  dateModified: "2026-10-10",
   author: { "@type": "Person", name: "Rio" },
   publisher: { "@type": "Organization", name: "Asuransi Batam" },
 };
@@ -184,14 +184,14 @@ function ComparisonTable() {
 export default function ArticleEmployersLiabilityProductLiabilityBatamPage() {
   return (
     <ArticleLayout cluster="liability"
-      title="Employers Liability & Product Liability di Batam: Perlindungan yang Sering Terlewat"
+      title="BPJS & Public Liability Belum Cukup? Dua Celah Risiko di Perusahaan Batam"
       description="Banyak perusahaan di Batam sudah memiliki Public Liability, tapi melewatkan dua risiko besar lain: tuntutan hukum dari karyawan sendiri, dan tuntutan atas produk yang mereka produksi atau distribusikan. Berikut kenapa keduanya layak dipertimbangkan serius."
       date="2 Juli 2026"
       category="Liability"
       readTime="10 menit baca"
       breadcrumbs={[
         {
-          label: "Employers Liability & Product Liability di Batam",
+          label: "BPJS & Public Liability Belum Cukup?",
           href: "/blog/employers-liability-product-liability-batam",
         },
       ]}
