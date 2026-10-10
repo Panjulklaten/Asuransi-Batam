@@ -8,7 +8,7 @@ import { personalAccidentConfig } from "./products/personalAccident";
 import type { ProductConfig, ProductId } from "./types";
 
 /** Naikkan setiap kali struktur field berubah; disimpan bersama tiap pengajuan. */
-export const SPPA_SCHEMA_VERSION = "2026-10-04.1";
+export const SPPA_SCHEMA_VERSION = "2026-10-10.1";
 
 export const PRODUCTS: Record<ProductId, ProductConfig> = {
   engineering: engineeringConfig,

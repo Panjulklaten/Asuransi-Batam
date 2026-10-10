@@ -39,15 +39,18 @@ const URL_MAP: Record<string, string> = {
   "/asuransi-machinery": "/en/machinery-insurance",
   "/asuransi-machinery/asuransi-alat-berat": "/en/machinery-insurance/heavy-equipment-insurance",
   "/asuransi-machinery/asuransi-crane": "/en/machinery-insurance/crane-insurance",
+  "/asuransi-machinery/machinery-breakdown": "/en/machinery-insurance/machinery-breakdown",
   // Liability
   "/asuransi-liability": "/en/liability-insurance",
   "/asuransi-liability/asuransi-limbah-b3": "/en/liability-insurance/b3-waste-insurance",
   "/asuransi-liability/public-liability": "/en/liability-insurance/public-liability",
+  "/asuransi-liability/employers-product-liability": "/en/liability-insurance/employers-product-liability",
   "/asuransi-liability/freight-forwarders-liability": "/en/liability-insurance/freight-forwarders-liability",
   // Engineering
   "/asuransi-engineering": "/en/engineering-insurance",
   "/asuransi-engineering/contractor-all-risk": "/en/engineering-insurance/contractor-all-risk",
   "/asuransi-engineering/erection-all-risk": "/en/engineering-insurance/erection-all-risk",
+  "/asuransi-engineering/cecr": "/en/engineering-insurance/cecr",
 
   // Personal Accident
   "/asuransi-personal-accident": "/en/personal-accident-insurance",
@@ -153,6 +156,7 @@ const productsID: NavItem[] = [
     children: [
       { label: "Asuransi Alat Berat", href: "/asuransi-machinery/asuransi-alat-berat", desc: "Excavator, bulldozer" },
       { label: "Asuransi Crane", href: "/asuransi-machinery/asuransi-crane", desc: "Tower & mobile crane" },
+      { label: "Machinery Breakdown", href: "/asuransi-machinery/machinery-breakdown", desc: "Mesin pabrik & produksi" },
     ],
   },
   {
@@ -161,6 +165,7 @@ const productsID: NavItem[] = [
     children: [
       { label: "Asuransi Limbah B3", href: "/asuransi-liability/asuransi-limbah-b3", desc: "Pencemaran lingkungan" },
       { label: "Public Liability", href: "/asuransi-liability/public-liability", desc: "Tanggung jawab publik" },
+      { label: "Employers & Product Liability", href: "/asuransi-liability/employers-product-liability", desc: "Karyawan & produk" },
       { label: "Freight Forwarders Liability", href: "/asuransi-liability/freight-forwarders-liability", desc: "Forwarder & PPJK" },
     ],
   },
@@ -170,6 +175,7 @@ const productsID: NavItem[] = [
     children: [
       { label: "Contractor All Risk", href: "/asuransi-engineering/contractor-all-risk", desc: "CAR proyek konstruksi" },
       { label: "Erection All Risk", href: "/asuransi-engineering/erection-all-risk", desc: "EAR instalasi mesin" },
+      { label: "CECR", href: "/asuransi-engineering/cecr", desc: "Struktur sipil pasca-BAST" },
     ],
   },
   {
@@ -238,6 +244,7 @@ const productsEN: NavItem[] = [
     children: [
       { label: "Heavy Equipment", href: "/en/machinery-insurance/heavy-equipment-insurance", desc: "Excavator, bulldozer" },
       { label: "Crane Insurance", href: "/en/machinery-insurance/crane-insurance", desc: "Tower & mobile crane" },
+      { label: "Machinery Breakdown", href: "/en/machinery-insurance/machinery-breakdown", desc: "Factory & production machinery" },
     ],
   },
   {
@@ -246,6 +253,7 @@ const productsEN: NavItem[] = [
     children: [
       { label: "B3 Waste Insurance", href: "/en/liability-insurance/b3-waste-insurance", desc: "Environmental liability" },
       { label: "Public Liability", href: "/en/liability-insurance/public-liability", desc: "Third-party liability" },
+      { label: "Employers & Product Liability", href: "/en/liability-insurance/employers-product-liability", desc: "Employees & products" },
       { label: "Freight Forwarders Liability", href: "/en/liability-insurance/freight-forwarders-liability", desc: "Forwarders & customs brokers" },
     ],
   },
@@ -255,6 +263,7 @@ const productsEN: NavItem[] = [
     children: [
       { label: "Contractor All Risk", href: "/en/engineering-insurance/contractor-all-risk", desc: "CAR construction projects" },
       { label: "Erection All Risk", href: "/en/engineering-insurance/erection-all-risk", desc: "EAR machinery installation" },
+      { label: "CECR", href: "/en/engineering-insurance/cecr", desc: "Completed civil structures" },
     ],
   },
   {

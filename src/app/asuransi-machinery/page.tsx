@@ -73,10 +73,11 @@ export default function AsuransiMachineryPage() {
         </div>
       </div>
       <h2 className="font-display font-bold text-3xl text-[#0a1628] mb-6 text-center">Produk Machinery Kami</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {[
           { title: "Asuransi Alat Berat", desc: "Perlindungan excavator, bulldozer, dan alat berat konstruksi dari kerusakan fisik, kecelakaan, dan bencana alam selama proyek.", href: "/asuransi-machinery/asuransi-alat-berat" },
           { title: "Asuransi Crane", desc: "Perlindungan menyeluruh untuk tower crane dan mobile crane termasuk tanggung jawab pihak ketiga (TPL) yang krusial di area padat.", href: "/asuransi-machinery/asuransi-crane" },
+          { title: "Machinery Breakdown", desc: "Perlindungan kerusakan mendadak pada mesin pabrik, mesin produksi, genset, dan kompresor yang sudah terpasang.", href: "/asuransi-machinery/machinery-breakdown" },
         ].map((p) => (
           <Link key={p.href} href={p.href} className="group p-6 bg-white rounded-2xl border-2 border-[#e2e8f0] hover:border-[#c9a84c]/50 hover:shadow-lg transition-all">
             <h3 className="font-display font-bold text-lg text-[#0a1628] group-hover:text-[#1a4fa0] mb-2">{p.title}</h3>

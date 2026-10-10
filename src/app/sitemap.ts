@@ -15,18 +15,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ────────────────────────────────────────────────────────────────────────
     { url: `${BASE_URL}/asuransi-properti`,    lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/asuransi-kendaraan`,   lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/asuransi-machinery`,   lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/asuransi-liability`,   lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/asuransi-engineering`, lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/asuransi-machinery`,   lastModified: new Date("2026-10-10"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/asuransi-liability`,   lastModified: new Date("2026-10-10"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/asuransi-engineering`, lastModified: new Date("2026-10-10"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/asuransi-marine`,      lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/asuransi-surety-bond`, lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.9 },
 
     // PILLAR PAGES – EN
     { url: `${BASE_URL}/en/property-insurance`,    lastModified: new Date("2026-07-12"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/en/vehicle-insurance`,     lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/en/machinery-insurance`,   lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/en/liability-insurance`,   lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/en/engineering-insurance`, lastModified: new Date("2026-06-27"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/en/machinery-insurance`,   lastModified: new Date("2026-10-10"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/en/liability-insurance`,   lastModified: new Date("2026-10-10"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/en/engineering-insurance`, lastModified: new Date("2026-10-10"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/en/marine-insurance`,      lastModified: new Date("2026-06-27"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/en/surety-bond-insurance`, lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.9 },
 
@@ -84,9 +84,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ────────────────────────────────────────────────────────────────────────
     { url: `${BASE_URL}/asuransi-machinery/asuransi-alat-berat`,                      lastModified: new Date("2026-06-28"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/asuransi-machinery/asuransi-crane`,                           lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/asuransi-machinery/machinery-breakdown`, lastModified: new Date("2026-10-10"), changeFrequency: "monthly", priority: 0.8 },
 
     { url: `${BASE_URL}/en/machinery-insurance/heavy-equipment-insurance`,            lastModified: new Date("2026-06-27"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/en/machinery-insurance/crane-insurance`,                      lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/en/machinery-insurance/machinery-breakdown`, lastModified: new Date("2026-10-10"), changeFrequency: "monthly", priority: 0.8 },
 
     // ────────────────────────────────────────────────────────────────────────
     // SUB-PAGES – LIABILITY
@@ -94,10 +96,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/asuransi-liability/asuransi-limbah-b3`,                       lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/asuransi-liability/public-liability`,                         lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/asuransi-liability/freight-forwarders-liability`,             lastModified: new Date("2026-09-22"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/asuransi-liability/employers-product-liability`, lastModified: new Date("2026-10-10"), changeFrequency: "monthly", priority: 0.8 },
 
     { url: `${BASE_URL}/en/liability-insurance/b3-waste-insurance`,                   lastModified: new Date("2026-06-27"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/en/liability-insurance/public-liability`,                     lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/en/liability-insurance/freight-forwarders-liability`,         lastModified: new Date("2026-09-22"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/en/liability-insurance/employers-product-liability`, lastModified: new Date("2026-10-10"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/en/hazardous-waste-insurance-batam`,                          lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.7 },
 
     // ────────────────────────────────────────────────────────────────────────
@@ -105,10 +109,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ────────────────────────────────────────────────────────────────────────
     { url: `${BASE_URL}/asuransi-engineering/contractor-all-risk`,                    lastModified: new Date("2026-06-28"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/asuransi-engineering/erection-all-risk`,                      lastModified: new Date("2026-06-28"), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE_URL}/asuransi-engineering/cecr`,                                   lastModified: new Date("2026-06-27"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/asuransi-engineering/cecr`,                                   lastModified: new Date("2026-10-10"), changeFrequency: "monthly", priority: 0.8 },
 
     { url: `${BASE_URL}/en/engineering-insurance/contractor-all-risk`,                lastModified: new Date("2026-06-27"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/en/engineering-insurance/erection-all-risk`,                  lastModified: new Date("2026-06-27"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/en/engineering-insurance/cecr`, lastModified: new Date("2026-10-10"), changeFrequency: "monthly", priority: 0.8 },
 
     // ────────────────────────────────────────────────────────────────────────
     // SUB-PAGES – MARINE

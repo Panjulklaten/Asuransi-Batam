@@ -3,18 +3,20 @@ import { claimsFields, companyApplicantFields, currencyFields, money, opts, peri
 
 const PROJECT: Condition = { field: "subType", in: ["car", "ear"] };
 const EQUIPMENT: Condition = { field: "subType", in: ["cpm", "mb", "eei", "boiler"] };
+const CECR: Condition = { field: "subType", equals: "cecr" };
 const OTHER: Condition = { field: "subType", equals: "other" };
 const WORK_RISK: Condition = { field: "subType", in: ["car", "ear", "other"] };
-const NOT_PROJECT: Condition = { field: "subType", in: ["cpm", "mb", "eei", "boiler", "other"] };
+const NOT_PROJECT: Condition = { field: "subType", in: ["cpm", "mb", "eei", "boiler", "cecr", "other"] };
 
 const S_PROJECT = "Informasi Proyek";
 const S_WORK = "Detail Pekerjaan";
 const S_EQUIP = "Data Peralatan";
+const S_CECR = "Data Struktur Sipil";
 
 export const engineeringConfig: ProductConfig = {
   id: "engineering",
   label: "Engineering",
-  description: "CAR, EAR, alat berat kontraktor, mesin, peralatan elektronik, boiler.",
+  description: "CAR, EAR, CECR, alat berat kontraktor, mesin, peralatan elektronik, boiler.",
   subTypeField: {
     name: "subType",
     label: "Jenis pertanggungan Engineering",
@@ -23,6 +25,7 @@ export const engineeringConfig: ProductConfig = {
     options: opts([
       ["car", "Contractor's All Risks (CAR)"],
       ["ear", "Erection All Risks (EAR)"],
+      ["cecr", "Civil Engineering Completed Risk (CECR)"],
       ["cpm", "Contractor's Plant & Machinery (CPM)"],
       ["mb", "Machinery Breakdown (MB)"],
       ["eei", "Electronic Equipment Insurance (EEI)"],
@@ -96,6 +99,14 @@ export const engineeringConfig: ProductConfig = {
         { name: "equipmentLocation", label: "Lokasi peralatan", type: "textarea", required: true, maxLength: 500, showIf: EQUIPMENT, section: S_EQUIP },
         { name: "equipmentDescription", label: "Keterangan tambahan", type: "textarea", maxLength: 1000, showIf: EQUIPMENT, section: S_EQUIP },
 
+        // ── CECR ──
+        { name: "cecrStructureName", label: "Nama struktur / aset", type: "text", required: true, maxLength: 200, placeholder: "mis. Revetment Dermaga Batu Ampar", showIf: CECR, section: S_CECR },
+        { name: "cecrStructureType", label: "Jenis struktur", type: "text", required: true, maxLength: 150, placeholder: "mis. revetment, dermaga, jalan, jembatan", showIf: CECR, section: S_CECR },
+        { name: "cecrLocation", label: "Lokasi struktur", type: "textarea", required: true, maxLength: 500, showIf: CECR, section: S_CECR },
+        { name: "cecrOwner", label: "Pemilik / operator aset", type: "text", required: true, maxLength: 150, showIf: CECR, section: S_CECR },
+        { name: "cecrBastDate", label: "Tanggal BAST / selesai dibangun", type: "date", showIf: CECR, section: S_CECR },
+        { name: "cecrDescription", label: "Keterangan tambahan (kondisi, riwayat perbaikan)", type: "textarea", maxLength: 1000, showIf: CECR, section: S_CECR },
+
         // ── Lainnya ──
         { name: "otherDescription", label: "Jelaskan objek yang ingin diasuransikan", type: "textarea", required: true, maxLength: 2000, showIf: OTHER, section: "Objek Pertanggungan" },
       ],
@@ -139,6 +150,8 @@ export const engineeringConfig: ProductConfig = {
     { key: "projectSchedule", label: "Project Schedule", showIf: PROJECT },
     { key: "sitePlan", label: "Site Plan", showIf: PROJECT },
     { key: "layout", label: "Denah / Layout", showIf: PROJECT },
+    { key: "bastDoc", label: "Berita Acara Serah Terima (BAST)", showIf: CECR },
+    { key: "asBuilt", label: "Gambar As-Built", showIf: CECR },
     { key: "riskSurvey", label: "Risk Survey (jika ada)" },
     { key: "sitePhotos", label: "Foto lokasi", multiple: true },
     { key: "technicalDocs", label: "Dokumen teknis", multiple: true },

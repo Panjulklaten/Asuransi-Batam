@@ -17,6 +17,7 @@ const benefits = [
   { icon: "🏗️", title: "Contractor All Risk (CAR)", desc: "Protection for construction projects against all risks during the build period.", href: "/en/engineering-insurance/contractor-all-risk", },
   { icon: "⚙️", title: "Erection All Risk (EAR)", desc: "Protection for machinery installation, factories, and industrial equipment setup." },
   { icon: "🔧", title: "Plant & Machinery (CPM)", desc: "Protection for construction plant and equipment throughout the project." },
+  { icon: "🌊", title: "CECR (Completed Risk)", desc: "Protection for revetments, jetties and roads after handover, when construction cover has ended.", href: "/en/engineering-insurance/cecr" },
   { icon: "👷", title: "Third-Party Liability", desc: "Property damage and third-party injuries around the project site." },
   { icon: "💼", title: "Maintenance Period", desc: "Extended protection during the maintenance period after construction is complete." },
   { icon: "🌊", title: "Natural Disasters (Project)", desc: "Flooding, typhoons, and earthquakes damaging the project during construction." },

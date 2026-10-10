@@ -45,6 +45,10 @@ export const metadata: Metadata = generateSEO({
   description:
     "Konsultasi asuransi CECR (Civil Engineering Completed Risk) di Batam untuk talud, revetment, dermaga, dan infrastruktur sipil pasca-konstruksi. Simulasi premi, survei lapangan, dan klaim dibantu langsung oleh Rio, praktisi asuransi berpengalaman 8+ tahun.",
   canonical: metadata_url,
+  languages: {
+    id: "https://asuransibatam.com/asuransi-engineering/cecr",
+    en: "https://asuransibatam.com/en/engineering-insurance/cecr",
+  },
 });
 
 const jsonLdFAQ = schemaFAQ(FAQS_CECR);

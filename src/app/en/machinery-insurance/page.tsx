@@ -61,7 +61,7 @@ export default function MachineryInsurancePage() {
       schema={schema}
     >
       <h2 className="font-display font-bold text-3xl text-[#0a1628] mb-6 text-center">Our Machinery Products</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {[
           {
             title: "Heavy Equipment Insurance",
@@ -72,6 +72,11 @@ export default function MachineryInsurancePage() {
             title: "Crane Insurance",
             desc: "Comprehensive protection for cranes and lifting equipment.",
             href: "/en/machinery-insurance/crane-insurance",
+          },
+          {
+            title: "Machinery Breakdown",
+            desc: "Cover for sudden damage to installed factory machinery, production lines, generators and compressors.",
+            href: "/en/machinery-insurance/machinery-breakdown",
           },
         ].map((p) => (
           <Link

@@ -3,11 +3,13 @@ import type { QuoteCluster } from "./types";
 const HEAVY = ["heavy"];
 const CRANE = ["crane"];
 const BOTH = ["heavy", "crane"];
+const MB = ["mb"];
+const ALL = ["heavy", "crane", "mb"];
 
 export const MACHINERY: QuoteCluster = {
   key: "machinery",
-  typeLegend: { id: "Jenis alat", en: "Equipment type" },
-  typeLine: { id: "Jenis alat", en: "Equipment type" },
+  typeLegend: { id: "Jenis asuransi machinery", en: "Machinery insurance type" },
+  typeLine: { id: "Jenis asuransi", en: "Insurance type" },
   noHeroWhatsApp: true,
   types: [
     {
@@ -20,11 +22,32 @@ export const MACHINERY: QuoteCluster = {
       label: { id: "Crane", en: "Crane" },
       hint: { id: "Mobile, tower & overhead crane", en: "Mobile, tower & overhead cranes" },
     },
+    {
+      key: "mb",
+      label: { id: "Machinery Breakdown", en: "Machinery Breakdown" },
+      hint: { id: "Mesin pabrik, produksi & genset", en: "Factory & production machinery, generators" },
+    },
   ],
   inferType(pathname) {
-    return /crane/.test(pathname.toLowerCase()) ? "crane" : "heavy";
+    const p = pathname.toLowerCase();
+    if (/breakdown/.test(p)) return "mb";
+    return /crane/.test(p) ? "crane" : "heavy";
   },
   fields: [
+    {
+      key: "machineKind",
+      kind: "select",
+      showFor: MB,
+      label: { id: "Jenis mesin", en: "Machine type" },
+      placeholder: { id: "Pilih jenis mesin", en: "Select machine type" },
+      options: [
+        { value: "production", label: { id: "Lini / mesin produksi (SMT, injeksi, CNC)", en: "Production line / machinery (SMT, injection, CNC)" } },
+        { value: "power", label: { id: "Genset & peralatan tenaga", en: "Generators & power equipment" } },
+        { value: "compressor", label: { id: "Kompresor, pompa & blower", en: "Compressors, pumps & blowers" } },
+        { value: "fabrication", label: { id: "Mesin fabrikasi & galangan", en: "Fabrication & shipyard machinery" } },
+        { value: "other", label: { id: "Lainnya", en: "Other" } },
+      ],
+    },
     {
       key: "craneType",
       kind: "select",
@@ -48,21 +71,21 @@ export const MACHINERY: QuoteCluster = {
     {
       key: "model",
       kind: "text",
-      showFor: BOTH,
+      showFor: ALL,
       label: { id: "Merek & tipe", en: "Make & model" },
       placeholder: { id: "mis. Komatsu PC200-8 / Tadano GR-500", en: "e.g. Komatsu PC200-8 / Tadano GR-500" },
     },
     {
       key: "year",
       kind: "number",
-      showFor: BOTH,
+      showFor: ALL,
       label: { id: "Tahun pembuatan", en: "Year of manufacture" },
       placeholder: { id: "mis. 2019", en: "e.g. 2019" },
     },
     {
       key: "units",
       kind: "number",
-      showFor: BOTH,
+      showFor: ALL,
       label: { id: "Jumlah unit", en: "Number of units" },
       placeholder: { id: "mis. 3", en: "e.g. 3" },
       suffix: { id: "unit", en: "units" },
@@ -70,9 +93,22 @@ export const MACHINERY: QuoteCluster = {
     {
       key: "value",
       kind: "money",
-      showFor: BOTH,
+      showFor: ALL,
       label: { id: "Nilai alat (per unit)", en: "Equipment value (per unit)" },
       placeholder: { id: "mis. 1.800.000.000", en: "e.g. 1,800,000,000" },
+    },
+    {
+      key: "maintenance",
+      kind: "select",
+      showFor: MB,
+      optional: true,
+      label: { id: "Pola perawatan", en: "Maintenance approach" },
+      placeholder: { id: "Pilih pola perawatan", en: "Select maintenance approach" },
+      options: [
+        { value: "contract", label: { id: "Kontrak servis berkala dengan vendor / pabrikan", en: "Periodic service contract with vendor / manufacturer" } },
+        { value: "inhouse", label: { id: "Perawatan internal terjadwal", en: "Scheduled in-house maintenance" } },
+        { value: "adhoc", label: { id: "Perawatan seperlunya (ad hoc)", en: "As-needed (ad hoc) maintenance" } },
+      ],
     },
     {
       key: "capacity",
@@ -100,7 +136,7 @@ export const MACHINERY: QuoteCluster = {
     {
       key: "ownership",
       kind: "select",
-      showFor: BOTH,
+      showFor: ALL,
       optional: true,
       label: { id: "Status alat", en: "Equipment status" },
       placeholder: { id: "Pilih status", en: "Select status" },
@@ -112,9 +148,12 @@ export const MACHINERY: QuoteCluster = {
     },
   ],
   flags: [
-    { key: "breakdown", label: { id: "Perlu perlindungan kerusakan mesin (breakdown)", en: "Need machinery breakdown cover" } },
-    { key: "tpl", label: { id: "Perlu tanggung gugat pihak ketiga (TPL)", en: "Need third-party liability (TPL)" } },
-    { key: "operator", label: { id: "Perlu santunan kecelakaan operator", en: "Need operator accident cover" } },
+    { key: "breakdown", showFor: BOTH, label: { id: "Perlu perlindungan kerusakan mesin (breakdown)", en: "Need machinery breakdown cover" } },
+    { key: "tpl", showFor: BOTH, label: { id: "Perlu tanggung gugat pihak ketiga (TPL)", en: "Need third-party liability (TPL)" } },
+    { key: "operator", showFor: BOTH, label: { id: "Perlu santunan kecelakaan operator", en: "Need operator accident cover" } },
+    { key: "bi", showFor: MB, label: { id: "Perlu perluasan Business Interruption (kerugian penghasilan)", en: "Need a Business Interruption extension (loss of income)" } },
+    { key: "critical", showFor: MB, label: { id: "Mesin kritikal: kerusakan menghentikan lini produksi", en: "Critical machine: a breakdown stops the production line" } },
+    { key: "servicecontract", showFor: MB, label: { id: "Ada kontrak servis berkala dengan vendor / pabrikan", en: "Periodic service contract with vendor / manufacturer in place" } },
     { key: "certified", showFor: CRANE, label: { id: "Operator & crane bersertifikat (SIO/SIA)", en: "Certified operator & crane (SIO/SIA)" } },
     { key: "appraisal", label: { id: "Perlu bantuan appraisal nilai alat", en: "Need help appraising the equipment value" } },
     { key: "fleet", label: { id: "Banyak unit — minta penawaran program", en: "Many units — request a programme quote" } },
@@ -150,6 +189,33 @@ export const MACHINERY: QuoteCluster = {
     },
   ],
   specific: {
+    mb: [
+      {
+        doc: { id: "Spesifikasi mesin & foto nameplate", en: "Machine specification & nameplate photo" },
+        note: { id: "Merek, model, nomor seri, kapasitas, dan tahun pembuatan", en: "Make, model, serial number, capacity, and year of manufacture" },
+        must: true,
+      },
+      {
+        doc: { id: "Riwayat perawatan & servis", en: "Maintenance & service history" },
+        note: { id: "Log perawatan atau kontrak servis berkala", en: "Maintenance log or periodic service contract" },
+        must: true,
+      },
+      {
+        doc: { id: "Riwayat kerusakan 3–5 tahun terakhir", en: "Breakdown history, last 3–5 years" },
+        note: { id: "Laporan kerusakan, penyebab, dan lama waktu henti", en: "Breakdown reports, causes, and downtime length" },
+        must: true,
+      },
+      {
+        doc: { id: "Nilai penggantian baru (replacement cost)", en: "Replacement cost new" },
+        note: { id: "Sebaiknya termasuk biaya angkut, bea masuk, dan pemasangan untuk mesin impor", en: "Ideally including freight, import duty, and installation for imported machines" },
+        must: true,
+      },
+      {
+        doc: { id: "Laporan inspeksi atau sertifikat kelayakan", en: "Inspection report or fitness certificate" },
+        note: { id: "Bila relevan, mis. genset, kompresor, atau bejana tekan", en: "Where relevant, e.g. generators, compressors, or pressure vessels" },
+        must: false,
+      },
+    ],
     heavy: [
       {
         doc: { id: "Estimasi nilai pasar atau nilai buku", en: "Estimated market or book value" },
@@ -185,16 +251,16 @@ export const MACHINERY: QuoteCluster = {
     en: "This list is a general guide. For standard equipment with complete documents, a cover note is usually issued in 1–2 working days and the final policy in 7–10 working days. A physical survey may be requested before issuance.",
   },
   copy: {
-    modalTitle: { id: "Permintaan Penawaran Asuransi Alat Berat", en: "Heavy Equipment Insurance Quote Request" },
+    modalTitle: { id: "Permintaan Penawaran Asuransi Machinery", en: "Machinery Insurance Quote Request" },
     modalSubtitle: {
       id: "Isi data singkat alat Anda — kami analisa awal dan balas lewat WhatsApp.",
       en: "Share a few details about your equipment — we'll assess and reply on WhatsApp.",
     },
     reqEyebrow: { id: "Persyaratan Penerbitan", en: "Issuance Requirements" },
-    reqTitle: { id: "Dokumen yang Disiapkan untuk Asuransi Alat Berat", en: "Documents to Prepare for Heavy Equipment Insurance" },
+    reqTitle: { id: "Dokumen yang Disiapkan untuk Asuransi Machinery", en: "Documents to Prepare for Machinery Insurance" },
     reqSubtitle: {
-      id: "Pilih jenis alat untuk melihat dokumen khususnya. Dokumen umum berlaku untuk semua jenis.",
-      en: "Choose an equipment type to see its specific documents. General documents apply to every type.",
+      id: "Pilih jenis asuransi untuk melihat dokumen khususnya. Dokumen umum berlaku untuk semua jenis.",
+      en: "Choose an insurance type to see its specific documents. General documents apply to every type.",
     },
     dateLabel: { id: "Target polis mulai berlaku", en: "Target policy start date" },
     clientLabel: { id: "Nama proyek / site (opsional)", en: "Project / site name (optional)" },
@@ -204,8 +270,8 @@ export const MACHINERY: QuoteCluster = {
       en: "e.g. equipment condition, damage history, or anything else you think matters.",
     },
     msgIntro: {
-      id: "Halo Rio, saya ingin *meminta penawaran Asuransi Alat Berat*.",
-      en: "Hello Rio, I would like to *request a Heavy Equipment Insurance quotation*.",
+      id: "Halo Rio, saya ingin *meminta penawaran Asuransi Machinery*.",
+      en: "Hello Rio, I would like to *request a Machinery Insurance quotation*.",
     },
     msgOutro: {
       id: "Mohon dibantu analisa awal, estimasi premi, dan daftar dokumen yang dibutuhkan. Terima kasih.",

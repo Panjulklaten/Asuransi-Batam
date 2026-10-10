@@ -3,6 +3,7 @@ import type { QuoteCluster } from "./types";
 const PUBLIC = ["public"];
 const FFL = ["ffl"];
 const B3 = ["b3"];
+const ELPL = ["elpl"];
 
 export const LIABILITY: QuoteCluster = {
   key: "liability",
@@ -25,9 +26,15 @@ export const LIABILITY: QuoteCluster = {
       label: { id: "Limbah B3", en: "Hazardous Waste (B3)" },
       hint: { id: "Pencemaran & tanggung gugat limbah B3", en: "Pollution & hazardous-waste liability" },
     },
+    {
+      key: "elpl",
+      label: { id: "Employers' & Product Liability", en: "Employers' & Product Liability" },
+      hint: { id: "Tuntutan karyawan & gugatan atas produk", en: "Employee claims & product claims" },
+    },
   ],
   inferType(pathname) {
     const p = pathname.toLowerCase();
+    if (/employer|product-liability|elpl/.test(p)) return "elpl";
     if (/freight|forwarder|ffl/.test(p)) return "ffl";
     if (/b3|limbah|waste|hazardous/.test(p)) return "b3";
     return "public";
@@ -56,7 +63,7 @@ export const LIABILITY: QuoteCluster = {
     {
       key: "employees",
       kind: "number",
-      showFor: ["public", "ffl"],
+      showFor: ["public", "ffl", "elpl"],
       optional: true,
       label: { id: "Jumlah karyawan", en: "Number of employees" },
       placeholder: { id: "mis. 40", en: "e.g. 40" },
@@ -90,6 +97,43 @@ export const LIABILITY: QuoteCluster = {
       optional: true,
       label: { id: "Estimasi nilai kargo ditangani per tahun", en: "Estimated cargo value handled per year" },
       placeholder: { id: "mis. 50.000.000.000", en: "e.g. 50,000,000,000" },
+    },
+    // ── Employers' & Product Liability ──
+    {
+      key: "coverNeed",
+      kind: "select",
+      showFor: ELPL,
+      label: { id: "Perlindungan yang dibutuhkan", en: "Cover needed" },
+      placeholder: { id: "Pilih kebutuhan", en: "Select what you need" },
+      options: [
+        { value: "el", label: { id: "Employers' Liability saja", en: "Employers' Liability only" } },
+        { value: "pl", label: { id: "Product Liability saja", en: "Product Liability only" } },
+        { value: "both", label: { id: "Keduanya", en: "Both" } },
+      ],
+    },
+    {
+      key: "products",
+      kind: "text",
+      showFor: ELPL,
+      optional: true,
+      label: { id: "Produk yang dihasilkan / dijual", en: "Products made / sold" },
+      placeholder: { id: "mis. komponen elektronik, kabel, peralatan kapal", en: "e.g. electronic components, cables, marine equipment" },
+    },
+    {
+      key: "turnover",
+      kind: "money",
+      showFor: ELPL,
+      optional: true,
+      label: { id: "Omzet tahunan (untuk Product Liability)", en: "Annual turnover (for Product Liability)" },
+      placeholder: { id: "mis. 25.000.000.000", en: "e.g. 25,000,000,000" },
+    },
+    {
+      key: "markets",
+      kind: "text",
+      showFor: ELPL,
+      optional: true,
+      label: { id: "Negara tujuan penjualan / ekspor", en: "Sales / export destinations" },
+      placeholder: { id: "mis. Singapura, Malaysia, AS", en: "e.g. Singapore, Malaysia, USA" },
     },
     // ── Limbah B3 ──
     {
@@ -125,6 +169,8 @@ export const LIABILITY: QuoteCluster = {
   flags: [
     { key: "additional", showFor: PUBLIC, label: { id: "Principal meminta Additional Insured", en: "Principal requires Additional Insured" } },
     { key: "permit", showFor: B3, label: { id: "Izin lingkungan & Pertek tersedia", en: "Environmental permit & technical approval available" } },
+    { key: "bpjs", showFor: ELPL, label: { id: "Seluruh karyawan terdaftar BPJS Ketenagakerjaan", en: "All employees enrolled in BPJS Ketenagakerjaan" } },
+    { key: "usexport", showFor: ELPL, label: { id: "Produk diekspor ke AS / Kanada", en: "Products exported to the USA / Canada" } },
     { key: "coi", label: { id: "Perlu Certificate of Insurance (COI)", en: "Need a Certificate of Insurance (COI)" } },
     { key: "contract", label: { id: "Polis jadi syarat kontrak / kualifikasi vendor", en: "Policy is a contract / vendor-qualification requirement" } },
     { key: "claims", label: { id: "Ada riwayat klaim 3 tahun terakhir", en: "Claims history in the last 3 years" } },
@@ -177,6 +223,33 @@ export const LIABILITY: QuoteCluster = {
         must: false,
       },
     ],
+    elpl: [
+      {
+        doc: { id: "Profil usaha & data karyawan", en: "Business profile & employee data" },
+        note: { id: "Kegiatan usaha, jumlah karyawan, dan total gaji per tahun", en: "Activity, headcount, and total annual payroll" },
+        must: true,
+      },
+      {
+        doc: { id: "Bukti kepesertaan BPJS Ketenagakerjaan", en: "Proof of BPJS Ketenagakerjaan enrolment" },
+        note: { id: "Untuk Employers' Liability", en: "For Employers' Liability" },
+        must: false,
+      },
+      {
+        doc: { id: "Deskripsi produk, omzet & negara tujuan", en: "Product description, turnover & destinations" },
+        note: { id: "Untuk Product Liability; sebutkan bila ada ekspor ke AS / Kanada", en: "For Product Liability; state any exports to the USA / Canada" },
+        must: false,
+      },
+      {
+        doc: { id: "Riwayat komplain produk & kecelakaan kerja", en: "Product complaint & workplace accident history" },
+        note: { id: "3 tahun terakhir, bila ada", en: "Last 3 years, if any" },
+        must: false,
+      },
+      {
+        doc: { id: "Persyaratan buyer / principal", en: "Buyer / principal requirements" },
+        note: { id: "Format COI atau limit minimum bila disyaratkan kontrak", en: "COI format or minimum limit if the contract requires it" },
+        must: false,
+      },
+    ],
     b3: [
       {
         doc: { id: "Dokumen lingkungan", en: "Environmental documents" },
@@ -201,8 +274,8 @@ export const LIABILITY: QuoteCluster = {
     ],
   },
   disclaimer: {
-    id: "Daftar bersifat umum. Dengan dokumen lengkap, Public Liability umumnya terbit 1–3 hari kerja; underwriting limbah B3 umumnya 7–14 hari kerja.",
-    en: "This list is a general guide. With complete documents, Public Liability is usually issued in 1–3 working days; hazardous-waste underwriting usually takes 7–14 working days.",
+    id: "Daftar bersifat umum. Dengan dokumen lengkap, Public Liability umumnya terbit 1–3 hari kerja; underwriting limbah B3 umumnya 7–14 hari kerja. Employers' / Product Liability menjalani underwriting yang lebih panjang, estimasi waktunya kami sampaikan setelah data lengkap.",
+    en: "This list is a general guide. With complete documents, Public Liability is usually issued in 1–3 working days; hazardous-waste underwriting usually takes 7–14 working days. Employers' / Product Liability goes through longer underwriting; we will give a time estimate once your details are complete.",
   },
   copy: {
     modalTitle: { id: "Permintaan Penawaran Asuransi Liability", en: "Liability Insurance Quote Request" },

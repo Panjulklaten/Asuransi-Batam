@@ -380,6 +380,12 @@ export default function ArticleEmployersLiabilityProductLiabilityBatamPage() {
             Lihat Semua Produk Liability
           </Link>
           <Link
+            href="/asuransi-liability/employers-product-liability"
+            className="px-6 py-2.5 border border-[#c9a84c] text-[#0a1628] font-semibold rounded-xl text-sm"
+          >
+            Employers &amp; Product Liability
+          </Link>
+          <Link
             href="/asuransi-liability/public-liability"
             className="px-6 py-2.5 border border-[#0a1628] text-[#0a1628] font-semibold rounded-xl text-sm"
           >
