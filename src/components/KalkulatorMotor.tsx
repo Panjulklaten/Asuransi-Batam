@@ -66,7 +66,7 @@ export default function KalkulatorMotor({ lang = "id" }: KalkulatorMotorProps) {
   function calculate() {
     const val = parseFloat(motorValue.replace(/[^0-9]/g, ""));
     if (!val) return;
-    const rate = type === "allrisk" ? { min: 1.76, max: 2.35 } : { min: 0.47, max: 0.56 };
+    const rate = type === "allrisk" ? { min: 3.18, max: 3.50 } : { min: 1.76, max: 2.11 };
     setResult({ min: (val * rate.min) / 100, max: (val * rate.max) / 100 });
   }
 

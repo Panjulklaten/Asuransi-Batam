@@ -11,6 +11,8 @@ const productLinksID = [
   { label: "Asuransi Rumah Batam", href: "/asuransi-properti/asuransi-rumah-batam" },
   { label: "Asuransi Kendaraan",   href: "/asuransi-kendaraan" },
   { label: "Asuransi Mobil Batam", href: "/asuransi-kendaraan/asuransi-mobil-batam" },
+  { label: "Asuransi Motor Batam", href: "/asuransi-kendaraan/asuransi-motor-batam" },
+  { label: "Asuransi Perjalanan", href: "/asuransi-personal-accident/asuransi-perjalanan" },
   { label: "Asuransi Dump Truck",  href: "/asuransi-kendaraan/asuransi-dumptruck" },
 ];
 const productLinksID2 = [
@@ -45,6 +47,8 @@ const productLinksEN = [
   { label: "Home Insurance Batam",   href: "/en/property-insurance/home-insurance-batam" },
   { label: "Vehicle Insurance",      href: "/en/vehicle-insurance" },
   { label: "Car Insurance Batam",    href: "/en/vehicle-insurance/car-insurance-batam" },
+  { label: "Motorcycle Insurance Batam", href: "/en/vehicle-insurance/motorcycle-insurance-batam" },
+  { label: "Travel Insurance", href: "/en/personal-accident-insurance/travel-insurance" },
   { label: "Dump Truck Insurance",   href: "/en/vehicle-insurance/dump-truck-insurance" },
 ];
 const productLinksEN2 = [

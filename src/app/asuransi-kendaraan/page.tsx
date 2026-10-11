@@ -83,9 +83,10 @@ export default function AsuransiKendaraanPage() {
         </div>
       </div>
       <h2 className="font-display font-bold text-3xl text-[#0a1628] mb-6 text-center">Produk Kendaraan Kami</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {[
           { title: "Asuransi Mobil Batam", desc: "All Risk & TLO untuk mobil pribadi dan keluarga. Dilengkapi kalkulator premi online dan pilihan bengkel rekanan terpercaya di Batam.", href: "/asuransi-kendaraan/asuransi-mobil-batam" },
+          { title: "Asuransi Motor Batam", desc: "All Risk dan TLO untuk motor harian, sport, dan operasional, dengan estimasi premi berdasarkan tarif OJK.", href: "/asuransi-kendaraan/asuransi-motor-batam" },
           { title: "Asuransi Dump Truck", desc: "Perlindungan All Risk, TLO, dan fleet insurance untuk dump truck serta kendaraan berat komersial operasional di Batam.", href: "/asuransi-kendaraan/asuransi-dumptruck" },
         ].map((p) => (
           <Link key={p.href} href={p.href} className="group p-6 bg-white rounded-2xl border-2 border-[#e2e8f0] hover:border-[#c9a84c]/50 hover:shadow-lg transition-all">

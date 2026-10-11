@@ -63,12 +63,17 @@ export default function VehicleInsurancePage() {
       schema={schema}
     >
       <h2 className="font-display font-bold text-3xl text-[#0a1628] mb-6 text-center">Our Vehicle Products</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {[
           {
             title: "Car Insurance Batam",
             desc: "All Risk & TLO for private cars with an online premium calculator.",
             href: "/en/vehicle-insurance/car-insurance-batam",
+          },
+          {
+            title: "Motorcycle Insurance Batam",
+            desc: "All Risk & TLO for daily, sport and work motorcycles, with premium estimates based on OJK rates.",
+            href: "/en/vehicle-insurance/motorcycle-insurance-batam",
           },
           {
             title: "Dump Truck Insurance",

@@ -5,7 +5,7 @@ import KalkulatorMotor from "@/components/KalkulatorMotor";
 
 export const metadata: Metadata = generateSEO({
   title: "Motorcycle Premium Calculator Batam",
-  description: "How much is motorcycle insurance in Batam? Calculate instantly using official OJK rates — All Risk from 1.76%, TLO from 0.47%. Instant results, no sign-up, contact an agent directly.",
+  description: "How much is motorcycle insurance in Batam? Calculate instantly using official OJK rates — All Risk from 3.18%, TLO from 1.76%. Instant results, no sign-up, contact an agent directly.",
   canonical: "https://asuransibatam.com/en/motorcycle-premium-calculator",
   languages: {
       id: "https://asuransibatam.com/kalkulator-premi-motor",

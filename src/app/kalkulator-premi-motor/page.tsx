@@ -4,7 +4,7 @@ import KalkulatorMotor from "@/components/KalkulatorMotor";
 
 export const metadata: Metadata = generateSEO({
   title: "Kalkulator Premi Asuransi Motor Batam – Cek Tarif OJK Sekarang, Gratis",
-  description: "Berapa premi asuransi motor Anda di Batam? Hitung langsung pakai tarif resmi OJK — All Risk mulai 1,76%, TLO mulai 0,47%. Hasil instan, tanpa daftar, langsung hubungi agen.",
+  description: "Berapa premi asuransi motor Anda di Batam? Hitung langsung pakai tarif resmi OJK — All Risk mulai 3,18%, TLO mulai 1,76%. Hasil instan, tanpa daftar, langsung hubungi agen.",
   canonical: "https://asuransibatam.com/kalkulator-premi-motor",
   languages: {
       id: "https://asuransibatam.com/kalkulator-premi-motor",

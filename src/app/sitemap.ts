@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // PILLAR PAGES – ID
     // ────────────────────────────────────────────────────────────────────────
     { url: `${BASE_URL}/asuransi-properti`,    lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/asuransi-kendaraan`,   lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/asuransi-kendaraan`,   lastModified: new Date("2026-10-11"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/asuransi-machinery`,   lastModified: new Date("2026-10-10"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/asuransi-liability`,   lastModified: new Date("2026-10-11"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/asuransi-engineering`, lastModified: new Date("2026-10-10"), changeFrequency: "monthly", priority: 0.9 },
@@ -23,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // PILLAR PAGES – EN
     { url: `${BASE_URL}/en/property-insurance`,    lastModified: new Date("2026-07-12"), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/en/vehicle-insurance`,     lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/en/vehicle-insurance`,     lastModified: new Date("2026-10-11"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/en/machinery-insurance`,   lastModified: new Date("2026-10-10"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/en/liability-insurance`,   lastModified: new Date("2026-10-11"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/en/engineering-insurance`, lastModified: new Date("2026-10-10"), changeFrequency: "monthly", priority: 0.9 },
@@ -51,17 +51,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // SUB-PAGES – KENDARAAN / VEHICLE
     // ────────────────────────────────────────────────────────────────────────
     { url: `${BASE_URL}/asuransi-kendaraan/asuransi-mobil-batam`,                     lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/asuransi-kendaraan/asuransi-motor-batam`, lastModified: new Date("2026-10-11"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/asuransi-kendaraan/asuransi-dumptruck`,                       lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.8 },
 
     { url: `${BASE_URL}/en/vehicle-insurance/car-insurance-batam`,                    lastModified: new Date("2026-06-27"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/en/vehicle-insurance/motorcycle-insurance-batam`, lastModified: new Date("2026-10-11"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/en/vehicle-insurance/dump-truck-insurance`,                   lastModified: new Date("2026-06-27"), changeFrequency: "monthly", priority: 0.8 },
 
     // ────────────────────────────────────────────────────────────────────────
     // PILLAR + SUB-PAGES – PERSONAL ACCIDENT (sebelumnya hilang dari sitemap)
     // ────────────────────────────────────────────────────────────────────────
-    { url: `${BASE_URL}/asuransi-personal-accident`,                                  lastModified: new Date("2026-06-28"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/asuransi-personal-accident`,                                  lastModified: new Date("2026-10-11"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/asuransi-personal-accident/pa-individu-keluarga`,             lastModified: new Date("2026-06-28"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/asuransi-personal-accident/pa-karyawan-grup`,                 lastModified: new Date("2026-06-28"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/asuransi-personal-accident/asuransi-perjalanan`, lastModified: new Date("2026-10-11"), changeFrequency: "monthly", priority: 0.8 },
 
     // ── Asuransi Event ─────────────────────────────────────────────────────
     { url: `${BASE_URL}/asuransi-event`,                    lastModified: new Date("2026-09-17"), changeFrequency: "monthly", priority: 0.9 },
@@ -69,9 +72,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/asuransi-event/motor-cross`,        lastModified: new Date("2026-09-17"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/asuransi-event/hole-in-one`,        lastModified: new Date("2026-09-17"), changeFrequency: "monthly", priority: 0.8 },
 
-    { url: `${BASE_URL}/en/personal-accident-insurance`,                              lastModified: new Date("2026-06-27"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/en/personal-accident-insurance`,                              lastModified: new Date("2026-10-11"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/en/personal-accident-insurance/individual-family-pa`,         lastModified: new Date("2026-06-27"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/en/personal-accident-insurance/group-employee-pa`,           lastModified: new Date("2026-06-27"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/en/personal-accident-insurance/travel-insurance`, lastModified: new Date("2026-10-11"), changeFrequency: "monthly", priority: 0.8 },
 
     // ── EN: Event Insurance ──────────────────────────────────────────────────
     { url: `${BASE_URL}/en/event-insurance`,                                     lastModified: new Date("2026-09-17"), changeFrequency: "monthly", priority: 0.9 },
@@ -148,8 +152,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // TOOLS / KALKULATOR
     // ────────────────────────────────────────────────────────────────────────
     { url: `${BASE_URL}/kalkulator-premi-mobil`,           lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE_URL}/kalkulator-premi-motor`,           lastModified: new Date("2026-07-12"), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE_URL}/en/motorcycle-premium-calculator`, lastModified: new Date("2026-07-12"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE_URL}/kalkulator-premi-motor`,           lastModified: new Date("2026-10-11"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE_URL}/en/motorcycle-premium-calculator`, lastModified: new Date("2026-10-11"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/en/car-premium-calculator`,        lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/form-sppa`,                       lastModified: new Date("2026-10-04"), changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/kalkulator-premi-properti`,        lastModified: new Date("2026-10-03"), changeFrequency: "monthly", priority: 0.8 },
@@ -194,7 +198,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/blog/jenis-jenis-asuransi-kapal-armada`,               lastModified: new Date("2026-05-07"), changeFrequency: "yearly",  priority: 0.7 },
     { url: `${BASE_URL}/blog/premi-asuransi-kapal-batam-2026`,                  lastModified: new Date("2026-05-08"), changeFrequency: "yearly",  priority: 0.7 },
     // Tambahan blog yang sebelumnya hilang dari sitemap
-    { url: `${BASE_URL}/blog/asuransi-motor-batam`,                            lastModified: new Date("2026-05-06"), changeFrequency: "yearly",  priority: 0.7 },
+    { url: `${BASE_URL}/blog/asuransi-motor-batam`,                            lastModified: new Date("2026-10-11"), changeFrequency: "yearly",  priority: 0.7 },
     { url: `${BASE_URL}/blog/asuransi-dump-truck-batam-proyek-konstruksi`,     lastModified: new Date("2026-05-06"), changeFrequency: "yearly",  priority: 0.7 },
     { url: `${BASE_URL}/blog/asuransi-erection-all-risk-batam`,                lastModified: new Date("2026-05-07"), changeFrequency: "yearly",  priority: 0.7 },
     { url: `${BASE_URL}/blog/asuransi-gudang-kawasan-industri-muka-kuning-batam`, lastModified: new Date("2026-05-08"), changeFrequency: "yearly", priority: 0.7 },

@@ -5,15 +5,14 @@ import { Shield, Clock, CheckCircle, AlertCircle, ArrowRight, Calculator } from 
 import QuoteCard from "@/components/quote/QuoteCard";
 
 export const metadata: Metadata = generateSEO({
-  title: "Asuransi Motor Batam 2026: Premi, Tarif OJK Wilayah 1 & Tips Pilih All Risk vs TLO",
-  description: "Panduan lengkap asuransi motor di Batam. Tarif OJK Wilayah 1, perbedaan all risk dan TLO motor, estimasi premi, proses klaim, dan tips memilih polis terbaik sesuai jenis motor Anda.",
+  title: "Tarif OJK & Estimasi Premi Asuransi Motor 2026: All Risk atau TLO?",
+  description: "Rincian tarif OJK Wilayah 1 untuk sepeda motor, simulasi premi motor populer, perbedaan all risk dan TLO, serta syarat klaim kehilangan di Batam.",
   keywords: [
-    "asuransi motor Batam",
+    "tarif OJK asuransi motor wilayah 1",
     "premi asuransi motor Batam 2026",
-    "asuransi motor all risk Batam",
+    "simulasi premi asuransi motor",
     "asuransi TLO motor Batam",
-    "tarif OJK asuransi motor",
-    "asuransi kendaraan Batam",
+    "all risk atau TLO motor",
   ],
   canonical: "https://asuransibatam.com/blog/asuransi-motor-batam",
   languages: { id: "https://asuransibatam.com/blog/asuransi-motor-batam" },
@@ -22,9 +21,9 @@ export const metadata: Metadata = generateSEO({
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Asuransi Motor Batam 2026: Premi, Tarif OJK Wilayah 1 & Tips Pilih All Risk vs TLO",
+  headline: "Tarif OJK & Estimasi Premi Asuransi Motor 2026: All Risk atau TLO?",
   datePublished: "2026-05-29",
-  dateModified: "2026-05-29",
+  dateModified: "2026-10-11",
   author: { "@type": "Organization", name: "Tim Asuransi Batam", url: "https://asuransibatam.com" },
   publisher: { "@type": "Organization", name: "Asuransi Batam – Rio", url: "https://asuransibatam.com" },
 };
@@ -46,7 +45,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "Berapa kisaran premi asuransi motor all risk di Batam?",
-      acceptedAnswer: { "@type": "Answer", text: "Berdasarkan tarif OJK untuk Wilayah 1 (termasuk Kepulauan Riau/Batam), premi all risk motor berkisar antara 1,76%–2,59% dari harga motor per tahun, tergantung kategori harga. Motor seharga Rp 25 juta misalnya akan membayar sekitar Rp 440 ribu–650 ribu per tahun." },
+      acceptedAnswer: { "@type": "Answer", text: "Berdasarkan tarif OJK untuk Wilayah 1 (termasuk Kepulauan Riau/Batam), premi all risk motor berkisar 3,18% – 3,50% dari harga motor per tahun, sedangkan TLO 1,76% – 2,11%. Untuk sepeda motor, OJK menetapkan satu kategori untuk semua rentang harga. Motor seharga Rp 25 juta misalnya sekitar Rp 795 – 875 ribu per tahun untuk all risk dan Rp 440 – 528 ribu untuk TLO, belum termasuk biaya administrasi dan materai." },
     },
     {
       "@type": "Question",
@@ -62,16 +61,16 @@ const faqSchema = {
 };
 
 const tarifOJK = [
-  { kategori: "Kategori 1 (s/d Rp 15 juta)", allRisk: "1,76% – 2,59%", tlo: "0,47% – 0,56%" },
-  { kategori: "Kategori 2 (Rp 15–30 juta)", allRisk: "1,76% – 2,59%", tlo: "0,47% – 0,56%" },
-  { kategori: "Kategori 3 (di atas Rp 30 juta)", allRisk: "1,76% – 2,59%", tlo: "0,47% – 0,56%" },
+  { kategori: "Wilayah 1 (Sumatera & kepulauan, termasuk Batam)", allRisk: "3,18% – 3,50%", tlo: "1,76% – 2,11%" },
+  { kategori: "Wilayah 2 (DKI Jakarta, Jawa Barat, Banten)", allRisk: "3,18% – 3,50%", tlo: "1,80% – 2,16%" },
+  { kategori: "Wilayah 3 (daerah lainnya)", allRisk: "3,18% – 3,50%", tlo: "0,67% – 0,80%" },
 ];
 
 const ilustrasiPremi = [
-  { motor: "Honda Beat / Vario (Rp 20 juta)", allRisk: "Rp 352 – 518 ribu/thn", tlo: "Rp 94 – 112 ribu/thn" },
-  { motor: "Honda PCX / Yamaha NMAX (Rp 35 juta)", allRisk: "Rp 616 – 906 ribu/thn", tlo: "Rp 164 – 196 ribu/thn" },
-  { motor: "Honda ADV / CB500 (Rp 70 juta)", allRisk: "Rp 1,23 – 1,81 juta/thn", tlo: "Rp 329 – 392 ribu/thn" },
-  { motor: "Kawasaki Ninja ZX-25R (Rp 100 juta)", allRisk: "Rp 1,76 – 2,59 juta/thn", tlo: "Rp 470 – 560 ribu/thn" },
+  { motor: "Honda Beat / Vario (Rp 20 juta)", allRisk: "Rp 636 – 700 ribu/thn", tlo: "Rp 352 – 422 ribu/thn" },
+  { motor: "Honda PCX / Yamaha NMAX (Rp 35 juta)", allRisk: "Rp 1,11 – 1,23 juta/thn", tlo: "Rp 616 – 739 ribu/thn" },
+  { motor: "Honda ADV / CB500 (Rp 70 juta)", allRisk: "Rp 2,23 – 2,45 juta/thn", tlo: "Rp 1,23 – 1,48 juta/thn" },
+  { motor: "Kawasaki Ninja ZX-25R (Rp 100 juta)", allRisk: "Rp 3,18 – 3,50 juta/thn", tlo: "Rp 1,76 – 2,11 juta/thn" },
 ];
 
 const risikoKhususBatam = [
@@ -94,7 +93,7 @@ const claimDocs = [
 const faqs = [
   { q: "Apakah asuransi motor wajib di Batam?", a: "Asuransi motor tidak wajib secara hukum di luar SWDKLLJ yang sudah termasuk dalam STNK. Namun mengingat tingkat risiko pencurian dan kecelakaan di Batam, sangat disarankan memiliki perlindungan tambahan, terutama untuk motor dengan harga di atas Rp 20 juta." },
   { q: "Apa perbedaan all risk dan TLO untuk motor?", a: "All risk menanggung semua risiko kerusakan — dari goresan kecil hingga kerusakan total dan kehilangan. TLO (Total Loss Only) hanya menanggung jika motor hilang atau rusak lebih dari 75% nilai motor. Premi all risk lebih mahal tetapi perlindungannya jauh lebih komprehensif." },
-  { q: "Berapa kisaran premi asuransi motor all risk di Batam?", a: "Berdasarkan tarif OJK untuk Wilayah 1 (termasuk Kepulauan Riau/Batam), premi all risk motor berkisar antara 1,76%–2,59% dari harga motor per tahun. Motor seharga Rp 25 juta akan membayar sekitar Rp 440–650 ribu per tahun." },
+  { q: "Berapa kisaran premi asuransi motor all risk di Batam?", a: "Berdasarkan tarif OJK untuk Wilayah 1 (termasuk Kepulauan Riau/Batam), premi all risk motor berkisar 3,18% – 3,50% dari harga motor per tahun, sedangkan TLO 1,76% – 2,11%. Untuk sepeda motor, OJK menetapkan satu kategori untuk semua rentang harga. Motor seharga Rp 25 juta misalnya sekitar Rp 795 – 875 ribu per tahun untuk all risk dan Rp 440 – 528 ribu untuk TLO, belum termasuk biaya administrasi dan materai." },
   { q: "Apakah klaim bisa diproses jika motor hilang dicuri di parkiran?", a: "Ya, untuk polis all risk atau TLO yang mencakup risiko pencurian. Syaratnya: laporan polisi dalam 24–72 jam, menyerahkan kunci dan STNK asli, serta menunggu proses investigasi (biasanya 14–30 hari kerja untuk klaim kehilangan)." },
   { q: "Motor modifikasi apakah bisa diasuransikan?", a: "Bisa, namun perlu deklarasi saat pengajuan polis. Nilai pertanggungan harus disesuaikan dengan nilai motor termasuk modifikasi. Beberapa modifikasi yang meningkatkan risiko dapat mempengaruhi premi atau klausul polis." },
 ];
@@ -106,7 +105,7 @@ const breadcrumbListSchema = {
     { "@type": "ListItem", position: 1, name: "Beranda", item: "https://asuransibatam.com" },
     { "@type": "ListItem", position: 2, name: "Blog", item: "https://asuransibatam.com/blog" },
     { "@type": "ListItem", position: 3, name: "Kendaraan", item: "https://asuransibatam.com/asuransi-kendaraan" },
-    { "@type": "ListItem", position: 4, name: "Asuransi Motor Batam", item: "https://asuransibatam.com/blog/asuransi-motor-batam" },
+    { "@type": "ListItem", position: 4, name: "Tarif & Premi Asuransi Motor", item: "https://asuransibatam.com/blog/asuransi-motor-batam" },
   ],
 };
 
@@ -129,16 +128,16 @@ export default function AsuransiMotorBatamPage() {
             <span>/</span>
             <Link href="/asuransi-kendaraan" className="hover:text-[#c9a84c] transition-colors">Kendaraan</Link>
             <span>/</span>
-            <span className="text-white/70">Asuransi Motor Batam</span>
+            <span className="text-white/70">Tarif &amp; Premi Asuransi Motor</span>
           </nav>
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#c9a84c]/20 border border-[#c9a84c]/30 rounded-full text-[#c9a84c] text-sm font-semibold mb-6">
             <Shield className="w-4 h-4" />
             Asuransi Kendaraan
           </div>
           <h1 className="font-display font-bold text-4xl md:text-5xl text-white leading-tight mb-6">
-            Asuransi Motor Batam 2026:<br />
-            <span className="text-gradient-gold">Premi, Tarif OJK</span><br />
-            & Tips Pilih All Risk vs TLO
+            Tarif OJK & Premi<br />
+            <span className="text-gradient-gold">Asuransi Motor 2026:</span><br />
+            All Risk atau TLO?
           </h1>
           <p className="text-white/70 text-lg leading-relaxed mb-8 max-w-3xl">
             Panduan lengkap memilih asuransi motor di Batam — tarif resmi OJK Wilayah 1, perbandingan all risk dan TLO, estimasi premi motor populer, dan proses klaim.
@@ -163,7 +162,7 @@ export default function AsuransiMotorBatamPage() {
             dibuat, tapi karena tidak punya asuransi, ia harus menanggung sendiri kerugian Rp 32 juta.
           </p>
           <p className="text-[#475569] mt-3 text-sm leading-relaxed">
-            Jika ia memiliki polis TLO seharga sekitar <strong>Rp 150 ribu per tahun</strong>, motor tersebut
+            Jika ia memiliki polis TLO seharga sekitar <strong>Rp 560 – 680 ribu per tahun</strong>, motor tersebut
             akan diganti penuh oleh perusahaan asuransi. Selisih antara terlindungi dan tidak hanyalah
             keputusan kecil yang sering diabaikan.
           </p>
@@ -215,7 +214,7 @@ export default function AsuransiMotorBatamPage() {
                   ["Kehilangan / pencurian", "✅ Ditanggung", "✅ Ditanggung"],
                   ["Kerusakan akibat banjir", "✅ Ditanggung (dengan endorsemen)", "❌ Tidak ditanggung"],
                   ["Tanggung jawab pihak ketiga", "✅ Bisa ditambahkan", "✅ Bisa ditambahkan"],
-                  ["Range premi (Wil. 1)", "1,76% – 2,59%/tahun", "0,47% – 0,56%/tahun"],
+                  ["Range premi (Wil. 1)", "3,18% – 3,50%/tahun", "1,76% – 2,11%/tahun"],
                   ["Cocok untuk motor", "Motor baru / motor mahal", "Motor tua / cicilan hampir lunas"],
                 ].map(([aspek, allRisk, tlo], i) => (
                   <tr key={aspek} className={i % 2 === 0 ? "bg-white" : "bg-[#faf8f3]"}>
@@ -266,7 +265,7 @@ export default function AsuransiMotorBatamPage() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-[#faf8f3] border-b border-[#e2e8f0]">
-                  <th className="text-left px-5 py-3.5 font-display font-bold text-[#0a1628]">Kategori Harga Motor</th>
+                  <th className="text-left px-5 py-3.5 font-display font-bold text-[#0a1628]">Wilayah (sepeda motor, semua harga)</th>
                   <th className="text-left px-5 py-3.5 font-display font-bold text-[#0a1628]">All Risk</th>
                   <th className="text-left px-5 py-3.5 font-display font-bold text-[#0a1628]">TLO</th>
                 </tr>
@@ -376,6 +375,7 @@ export default function AsuransiMotorBatamPage() {
           <h2 className="font-display font-bold text-xl text-[#0a1628] mb-5">Artikel & Halaman Terkait</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
+              { title: "Asuransi Motor Batam", href: "/asuransi-kendaraan/asuransi-motor-batam", desc: "Pilih All Risk atau TLO dan ajukan penawaran motor Anda" },
               { title: "Kalkulator Premi Motor", href: "/kalkulator-premi-motor", desc: "Hitung estimasi premi motor Anda secara online" },
               { title: "Kalkulator Premi Mobil", href: "/kalkulator-premi-mobil", desc: "Estimasi premi kendaraan roda empat" },
               { title: "Perbedaan All Risk dan TLO", href: "/blog/perbedaan-all-risk-dan-tlo", desc: "Panduan lengkap memilih jenis polis kendaraan" },
@@ -396,7 +396,7 @@ export default function AsuransiMotorBatamPage() {
 
         <div className="border-t border-[#e2e8f0] pt-8">
           <p className="text-[#94a3b8] text-xs leading-relaxed italic">
-            Tarif premi dalam artikel ini mengacu pada ketentuan OJK untuk kendaraan bermotor Wilayah 1.
+            Tarif premi dalam artikel ini mengacu pada ketentuan OJK (SEOJK 6/SEOJK.05/2017) untuk sepeda motor Wilayah 1.
             Estimasi yang tercantum bersifat ilustrasi umum — premi aktual ditentukan oleh perusahaan asuransi
             berdasarkan profil risiko spesifik. Untuk penawaran akurat, konsultasikan langsung dengan tim kami.
           </p>

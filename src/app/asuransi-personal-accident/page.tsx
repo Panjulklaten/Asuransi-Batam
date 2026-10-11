@@ -229,7 +229,11 @@ export default function PersonalAccidentPageID() {
             <h2 className="font-display text-2xl md:text-3xl font-bold text-navy mb-8 text-center">
               Sering Dipadukan Dengan
             </h2>
-            <div className="grid md:grid-cols-3 gap-6 text-center">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+              <Link href="/asuransi-personal-accident/asuransi-perjalanan" className="group bg-white p-6 rounded-2xl shadow-sm card-hover border border-navy/5">
+                <h3 className="font-bold text-navy group-hover:text-gold transition-colors">Asuransi Perjalanan</h3>
+                <p className="text-sm text-navy/60 mt-2">Biaya medis, pembatalan, dan bagasi saat ke luar negeri, termasuk syarat visa Schengen.</p>
+              </Link>
               <Link href="/asuransi-engineering" className="group bg-white p-6 rounded-2xl shadow-sm card-hover border border-navy/5">
                 <h3 className="font-bold text-navy group-hover:text-gold transition-colors">Asuransi Engineering (CAR/EAR)</h3>
                 <p className="text-sm text-navy/60 mt-2">Proteksi proyek konstruksi & instalasi pabrik.</p>

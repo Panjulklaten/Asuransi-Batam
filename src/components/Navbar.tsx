@@ -34,6 +34,7 @@ const URL_MAP: Record<string, string> = {
   // Kendaraan
   "/asuransi-kendaraan": "/en/vehicle-insurance",
   "/asuransi-kendaraan/asuransi-mobil-batam": "/en/vehicle-insurance/car-insurance-batam",
+  "/asuransi-kendaraan/asuransi-motor-batam": "/en/vehicle-insurance/motorcycle-insurance-batam",
   "/asuransi-kendaraan/asuransi-dumptruck": "/en/vehicle-insurance/dump-truck-insurance",
   // Machinery
   "/asuransi-machinery": "/en/machinery-insurance",
@@ -57,6 +58,7 @@ const URL_MAP: Record<string, string> = {
   "/asuransi-personal-accident": "/en/personal-accident-insurance",
   "/asuransi-personal-accident/pa-individu-keluarga": "/en/personal-accident-insurance/individual-family-pa",
   "/asuransi-personal-accident/pa-karyawan-grup": "/en/personal-accident-insurance/group-employee-pa",
+  "/asuransi-personal-accident/asuransi-perjalanan": "/en/personal-accident-insurance/travel-insurance",
 
   // Surety Bond
   "/asuransi-surety-bond": "/en/surety-bond-insurance",
@@ -147,6 +149,7 @@ const productsID: NavItem[] = [
     href: "/asuransi-kendaraan",
     children: [
       { label: "Asuransi Mobil", href: "/asuransi-kendaraan/asuransi-mobil-batam", desc: "All risk & TLO" },
+      { label: "Asuransi Motor", href: "/asuransi-kendaraan/asuransi-motor-batam", desc: "All risk & TLO motor" },
       { label: "Asuransi Dump Truck", href: "/asuransi-kendaraan/asuransi-dumptruck", desc: "Truk & armada" },
     ],
   },
@@ -185,6 +188,7 @@ const productsID: NavItem[] = [
     children: [
       { label: "PA Individu & Keluarga", href: "/asuransi-personal-accident/pa-individu-keluarga", desc: "Proteksi diri & keluarga" },
       { label: "PA Karyawan Grup", href: "/asuransi-personal-accident/pa-karyawan-grup", desc: "Proteksi tim & perusahaan" },
+      { label: "Asuransi Perjalanan", href: "/asuransi-personal-accident/asuransi-perjalanan", desc: "Travel insurance luar negeri" },
     ],
   },
   {
@@ -236,6 +240,7 @@ const productsEN: NavItem[] = [
     href: "/en/vehicle-insurance",
     children: [
       { label: "Car Insurance", href: "/en/vehicle-insurance/car-insurance-batam", desc: "All risk & TLO" },
+      { label: "Motorcycle Insurance", href: "/en/vehicle-insurance/motorcycle-insurance-batam", desc: "All risk & TLO" },
       { label: "Dump Truck Insurance", href: "/en/vehicle-insurance/dump-truck-insurance", desc: "Trucks & fleets" },
     ],
   },
@@ -274,6 +279,7 @@ const productsEN: NavItem[] = [
     children: [
       { label: "Individual & Family PA", href: "/en/personal-accident-insurance/individual-family-pa", desc: "Personal & family protection" },
       { label: "Group Employee PA", href: "/en/personal-accident-insurance/group-employee-pa", desc: "Team & company protection" },
+      { label: "Travel Insurance", href: "/en/personal-accident-insurance/travel-insurance", desc: "Overseas trip cover" },
     ],
   },
   {

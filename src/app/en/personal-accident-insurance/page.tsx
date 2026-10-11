@@ -223,6 +223,19 @@ export default function PersonalAccidentPageEN() {
           </div>
         </section>
 
+        {/* TRAVEL INSURANCE */}
+        <section className="section-padding bg-white">
+          <div className="container mx-auto px-6 max-w-4xl text-center">
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-navy mb-4">Travelling Abroad?</h2>
+            <p className="text-navy/70 mb-6 leading-relaxed">
+              Everyday PA cover does not replace travel insurance. For overseas medical costs, evacuation, trip cancellation, baggage and Schengen visa requirements, see our travel insurance guide.
+            </p>
+            <Link href="/en/personal-accident-insurance/travel-insurance" className="inline-flex items-center gap-2 font-bold text-navy hover:text-gold transition-colors">
+              Explore Travel Insurance <ChevronRight size={18} />
+            </Link>
+          </div>
+        </section>
+
         {/* FAQ SECTION (EEAT) */}
         <section className="section-padding bg-cream">
           <div className="container mx-auto px-6 max-w-3xl">

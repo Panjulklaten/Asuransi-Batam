@@ -16,6 +16,7 @@ const PAGE_TOPICS: Record<string, Label> = {
   // Kendaraan
   "/asuransi-kendaraan": ["Kendaraan"],
   "/asuransi-kendaraan/asuransi-mobil-batam": ["Mobil"],
+  "/asuransi-kendaraan/asuransi-motor-batam": ["Sepeda Motor", "Motorcycle"],
   "/asuransi-kendaraan/asuransi-dumptruck": ["Dump Truck"],
   "/kalkulator-premi-mobil": ["Mobil"],
   "/kalkulator-premi-motor": ["Motor"],
@@ -40,6 +41,7 @@ const PAGE_TOPICS: Record<string, Label> = {
   "/asuransi-personal-accident": ["Personal Accident"],
   "/asuransi-personal-accident/pa-individu-keluarga": ["Personal Accident Individu & Keluarga", "Personal Accident for Individuals & Families"],
   "/asuransi-personal-accident/pa-karyawan-grup": ["Personal Accident Karyawan Grup", "Group Employee Personal Accident"],
+  "/asuransi-personal-accident/asuransi-perjalanan": ["Asuransi Perjalanan", "Travel Insurance"],
   // Surety Bond
   "/asuransi-surety-bond": ["Surety Bond"],
   "/asuransi-surety-bond/bid-bond": ["Bid Bond"],
@@ -116,6 +118,7 @@ const PAGE_TOPICS: Record<string, Label> = {
   "/en/property-premium-calculator": ["Properti", "Property"],
   "/en/vehicle-insurance": ["Kendaraan", "Vehicle"],
   "/en/vehicle-insurance/car-insurance-batam": ["Mobil", "Car"],
+  "/en/vehicle-insurance/motorcycle-insurance-batam": ["Sepeda Motor", "Motorcycle"],
   "/en/vehicle-insurance/dump-truck-insurance": ["Dump Truck"],
   "/en/car-premium-calculator": ["Mobil", "Car"],
   "/en/motorcycle-premium-calculator": ["Motor", "Motorcycle"],
@@ -137,6 +140,7 @@ const PAGE_TOPICS: Record<string, Label> = {
   "/en/personal-accident-insurance": ["Personal Accident"],
   "/en/personal-accident-insurance/individual-family-pa": ["Personal Accident Individu & Keluarga", "Personal Accident for Individuals & Families"],
   "/en/personal-accident-insurance/group-employee-pa": ["Personal Accident Karyawan Grup", "Group Employee Personal Accident"],
+  "/en/personal-accident-insurance/travel-insurance": ["Asuransi Perjalanan", "Travel Insurance"],
   "/en/surety-bond-insurance": ["Surety Bond"],
   "/en/surety-bond-insurance/bid-bond": ["Bid Bond"],
   "/en/surety-bond-insurance/performance-bond": ["Performance Bond"],

@@ -43,12 +43,12 @@ const articles: Article[] = [
     readTime: "5 menit",
   },
   {
-    title: "Asuransi Motor Batam 2026: Premi, Tarif OJK & Tips Pilih Polis",
+    title: "Tarif OJK & Estimasi Premi Asuransi Motor 2026: All Risk atau TLO?",
     slug: "asuransi-motor-batam",
     date: "29 Mei 2026",
     category: "Kendaraan",
     excerpt:
-      "Panduan lengkap asuransi motor di Batam. Tarif OJK Wilayah 1, perbedaan all risk dan TLO motor, estimasi premi, dan tips memilih polis terbaik.",
+      "Rincian tarif OJK Wilayah 1 untuk sepeda motor, simulasi premi motor populer, perbedaan all risk dan TLO, serta syarat klaim kehilangan di Batam.",
     readTime: "7 menit",
   },
   {

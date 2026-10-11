@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Motorcycle Insurance Premium Calculator Batam – Check OJK Rates, Free",
   description:
-    "Calculate your motorcycle insurance premium in Batam instantly. OJK Region 1 official rates — All Risk from 1.76%, TLO from 0.47%. Free, no registration required. Contact Rio: +62-813-7333-6728.",
+    "Calculate your motorcycle insurance premium in Batam instantly. OJK Region 1 official rates — All Risk from 3.18%, TLO from 1.76%. Free, no registration required. Contact Rio: +62-813-7333-6728.",
   alternates: {
     canonical: "https://asuransibatam.com/en/motorcycle-premium-calculator",
     languages: {
