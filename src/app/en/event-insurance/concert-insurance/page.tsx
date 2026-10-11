@@ -3,7 +3,7 @@ import Link from 'next/link';
 import QuoteButton from '@/components/quote/QuoteButton';
 import { generateSEO, schemaInsuranceProduct } from '@/lib/seo';
 import {
-  ChevronRight, PhoneCall, Users, Mic2, CloudRain, Wrench,
+  ChevronRight, Users, Mic2, CloudRain, Wrench,
   Gavel, FileText, AlertTriangle
 } from 'lucide-react';
 
@@ -95,9 +95,7 @@ export default function ConcertInsurancePageEN() {
                 organizers cover audience liability, artist non-appearance, and cancellation risk.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="#consultation" className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-dark text-navy font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
-                  <PhoneCall size={20} /> Get a Quote
-                </Link>
+                <QuoteButton cluster="event" lang="en" variant="gold" className="!rounded-full !px-8 !py-3" />
                 <Link href="/blog/asuransi-konser-musik-batam" className="inline-flex items-center justify-center gap-2 border-2 border-cream hover:border-gold hover:text-gold font-bold py-3 px-8 rounded-full transition-all duration-300">
                   Read the Full Guide
                 </Link>

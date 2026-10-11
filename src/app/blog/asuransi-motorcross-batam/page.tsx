@@ -1,5 +1,6 @@
 // app/blog/asuransi-motorcross-batam/page.tsx
 import type { Metadata } from "next";
+import QuoteButton from "@/components/quote/QuoteButton";
 import Image from "next/image";
 import Link from "next/link";
 import { generateSEO } from "@/lib/seo";
@@ -330,9 +331,7 @@ export default function AsuransiMotorCrossBatamPage() {
           <Link href="/asuransi-event/motor-cross" className="px-6 py-2.5 bg-[#0a1628] text-white font-semibold rounded-xl text-sm">
             Lihat Cakupan & Ajukan
           </Link>
-          <a href="https://wa.me/6281373336728?text=Halo%2C%20saya%20ingin%20konsultasi%20asuransi%20event%20motor%20cross" target="_blank" rel="noopener noreferrer" className="px-6 py-2.5 border border-[#0a1628] text-[#0a1628] font-semibold rounded-xl text-sm">
-            Chat via WhatsApp
-          </a>
+          <QuoteButton cluster="event" lang="id" variant="gold" className="!rounded-xl !px-6 !py-2.5 !text-sm" />
         </div>
       </div>
 

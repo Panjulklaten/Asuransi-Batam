@@ -3,7 +3,7 @@ import Link from 'next/link';
 import QuoteButton from '@/components/quote/QuoteButton';
 import { generateSEO, schemaInsuranceProduct } from '@/lib/seo';
 import {
-  ChevronRight, PhoneCall, Trophy, Ruler, Users, Percent, Eye, FileText
+  ChevronRight, Trophy, Ruler, Users, Percent, Eye, FileText
 } from 'lucide-react';
 
 export const metadata: Metadata = generateSEO({
@@ -94,9 +94,7 @@ export default function HoleInOneInsurancePageEN() {
                 that prize instead of setting aside its full value.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="#consultation" className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-dark text-navy font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
-                  <PhoneCall size={20} /> Get a Quote
-                </Link>
+                <QuoteButton cluster="event" lang="en" variant="gold" className="!rounded-full !px-8 !py-3" />
                 <Link href="/blog/asuransi-hole-in-one-golf-batam" className="inline-flex items-center justify-center gap-2 border-2 border-cream hover:border-gold hover:text-gold font-bold py-3 px-8 rounded-full transition-all duration-300">
                   Read the Full Guide
                 </Link>

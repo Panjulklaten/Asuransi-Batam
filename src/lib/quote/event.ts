@@ -12,6 +12,7 @@ const CROWD = ["konser", "motocross"];
 
 export const EVENT: QuoteCluster = {
   key: "event",
+  noHeroWhatsApp: true,
   typeLegend: { id: "Jenis event", en: "Event type" },
   typeLine: { id: "Jenis event", en: "Event type" },
   types: [
