@@ -1,5 +1,6 @@
 // app/en/blog/difference-between-car-and-ear-insurance/page.tsx
 import type { Metadata } from "next";
+import QuoteButton from "@/components/quote/QuoteButton";
 import { generateSEO } from "@/lib/seo";
 import ArticleLayout from "@/components/ArticleLayout";
 import {
@@ -212,14 +213,7 @@ export default function BlogCARvsEARENPage() {
           <p className="text-[#475569] mb-4">
             Speak directly with Rio for a free consultation — no commitment required.
           </p>
-          <a
-            href="https://wa.me/6281373336728"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-6 py-2.5 bg-[#0a1628] text-white font-semibold rounded-xl text-sm"
-          >
-            Chat on WhatsApp
-          </a>
+          <QuoteButton cluster="engineering" lang="en" variant="gold" className="!rounded-xl !px-6 !py-3 !text-sm" />
           <p className="text-sm text-[#475569] mt-3">+62-813-7333-6728 · Rio, Batam Insurance Agent</p>
         </div>
 

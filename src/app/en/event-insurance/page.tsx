@@ -4,7 +4,7 @@ import QuoteButton from '@/components/quote/QuoteButton';
 import { generateSEO, schemaInsuranceProduct } from '@/lib/seo';
 import {
   Music4, Bike, Flag, ShieldCheck, Users, CloudRain,
-  ChevronRight, PhoneCall, Trophy
+  ChevronRight, Trophy
 } from 'lucide-react';
 
 export const metadata: Metadata = generateSEO({
@@ -93,12 +93,10 @@ export default function EventInsurancePageEN() {
                 Batam design protection that fits the scale and type of their event.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="#categories" className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-dark text-navy font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
+                <Link href="#categories" className="inline-flex items-center justify-center gap-2 border-2 border-cream hover:border-gold hover:text-gold font-bold py-3 px-8 rounded-full transition-all duration-300">
                   <ShieldCheck size={20} /> View Event Categories
                 </Link>
-                <Link href="#consultation" className="inline-flex items-center justify-center gap-2 border-2 border-cream hover:border-gold hover:text-gold font-bold py-3 px-8 rounded-full transition-all duration-300">
-                  <PhoneCall size={18} /> Free Consultation
-                </Link>
+                <QuoteButton cluster="event" lang="en" variant="gold" className="!rounded-full !px-8 !py-3" />
               </div>
             </div>
           </div>
