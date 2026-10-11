@@ -139,6 +139,7 @@ const SPECIFIC: Record<string, Requirement[]> = {
 
 export const SURETY: QuoteCluster = {
   key: "surety",
+  noHeroWhatsApp: true,
   typeLegend: { id: "Jenis surety bond", en: "Surety bond type" },
   typeLine: { id: "Jenis bond", en: "Bond type" },
   types: [
