@@ -24,16 +24,11 @@ import {
   Scale,
   Siren,
   Users,
-  ClipboardList,
-  FileQuestion,
-  Calculator,
-  FileCheck2,
-  Send,
 } from "lucide-react";
 
 export const metadata: Metadata = generateSEO({
-  title: "Hazardous Waste (B3) Insurance for Industry in Batam – Legal Requirements & Coverage",
-  description: "Indonesian law requires industries handling hazardous waste (B3) to hold financial guarantees. Learn what the regulations say, what the penalties are for non-compliance, and how insurance is the most practical solution for industries in Batam.",
+  title: "Is Hazardous Waste (B3) Insurance Mandatory in Batam? PP 22/2021 Explained",
+  description: "Is B3 hazardous waste insurance a legal requirement? What Government Regulation 22/2021 says about financial guarantees, the three ways to comply, and the penalties for non-compliance for industries in Batam.",
   canonical: "https://asuransibatam.com/en/blog/hazardous-waste-insurance-batam",
   languages: {
       id: "https://asuransibatam.com/blog/pentingnya-asuransi-limbah-b3",
@@ -44,7 +39,7 @@ export const metadata: Metadata = generateSEO({
 const schema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Hazardous Waste (B3) Insurance for Industry in Batam: Legal Requirements & Coverage",
+  headline: "Is Hazardous Waste (B3) Insurance Mandatory in Batam? PP 22/2021 Explained",
   datePublished: "2025-02-20",
   dateModified: "2025-02-20",
   author: { "@type": "Person", name: "Rio" },
@@ -90,19 +85,11 @@ const COVERAGE = [
   { icon: Gavel, text: "Claims brought by government authorities and affected members of the public" },
 ];
 
-const PROCESS_STEPS = [
-  { icon: FileQuestion, title: "Risk assessment", desc: "By an insurance specialist familiar with industrial environmental liability." },
-  { icon: ClipboardList, title: "Completion of a detailed questionnaire", desc: "Covering the types, volumes, and handling methods of the hazardous waste your facility produces." },
-  { icon: Calculator, title: "Determination of an appropriate sum insured", desc: "Based on the scale of your operations and potential remediation costs." },
-  { icon: FileCheck2, title: "Policy issuance and premium payment", desc: "Once the underwriter has reviewed and accepted the risk." },
-  { icon: Send, title: "The policy document is submitted", desc: "To the relevant authority as formal proof of the financial guarantee required under PP 22/2021." },
-];
-
 export default function ArticleHazardousWasteInsuranceENPage() {
   return (
     <ArticleLayout cluster="liability"
-      title="Hazardous Waste (B3) Insurance for Industry in Batam: Legal Requirements & Coverage"
-      description="Legal obligations and financial protection from hazardous material contamination risks — what every industry in Batam needs to know."
+      title="Is Hazardous Waste (B3) Insurance Mandatory in Batam? PP 22/2021 Explained"
+      description="What the law requires of industries that produce hazardous waste, the three ways to meet the financial guarantee obligation, and what non-compliance costs."
       date="20 February 2025"
       category="Liability"
       readTime="8 min read"
@@ -184,7 +171,7 @@ export default function ArticleHazardousWasteInsuranceENPage() {
         ))}
       </div>
 
-      <h2>What Does B3 Hazardous Waste Insurance Cover?</h2>
+      <h2>What a Qualifying Insurance Policy Typically Covers</h2>
       <div className="not-prose grid grid-cols-1 sm:grid-cols-2 gap-3 my-6">
         {COVERAGE.map(({ icon: Icon, text }) => (
           <div key={text} className="flex items-start gap-3 p-4 rounded-xl bg-white border border-[#e2e8f0] shadow-sm">
@@ -194,21 +181,19 @@ export default function ArticleHazardousWasteInsuranceENPage() {
         ))}
       </div>
 
-      <h2>How to Obtain B3 Hazardous Waste Insurance</h2>
-      <p>The process for securing B3 insurance involves several steps that an experienced insurance agent can guide you through efficiently:</p>
-      <div className="not-prose space-y-3 my-6">
-        {PROCESS_STEPS.map(({ icon: Icon, title, desc }, i) => (
-          <div key={title} className="flex items-start gap-4 p-4 rounded-xl bg-[#faf8f3] border border-[#e2e8f0]">
-            <div className="w-9 h-9 rounded-lg flex items-center justify-center text-white flex-shrink-0" style={{ background: "#0a1628" }}>
-              <Icon size={16} />
-            </div>
-            <div>
-              <p className="font-semibold text-sm" style={{ color: "#0a1628" }}>{i + 1}. {title}</p>
-              <p className="text-sm text-[#475569] mt-0.5">{desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
+      <h2>Where to Go Next</h2>
+      <p>
+        Once you know the obligation applies to your facility, the practical questions are cost, documents
+        and how to arrange the policy — these are covered on the{" "}
+        <Link href="/en/liability-insurance/b3-waste-insurance" className="text-[#1a4fa0] font-semibold hover:underline">
+          B3 Hazardous Waste Insurance Batam
+        </Link>{" "}
+        page. If an incident has already happened, follow the{" "}
+        <Link href="/en/hazardous-waste-insurance-batam" className="text-[#1a4fa0] font-semibold hover:underline">
+          B3 insurance claim procedure
+        </Link>
+        .
+      </p>
 
       <div className="my-8 p-6 bg-[#faf8f3] rounded-2xl border border-[#e2e8f0]">
         <h3 className="font-display font-bold text-[#0a1628] mb-3">
@@ -216,8 +201,7 @@ export default function ArticleHazardousWasteInsuranceENPage() {
         </h3>
         <p className="text-[#475569] mb-4">
           Rio assists industries across Batam in meeting their environmental liability
-          obligations — from assessing the right level of coverage to submitting the
-          policy as proof of financial guarantee to the relevant authorities.
+          obligations under PP 22/2021.
         </p>
         <div className="flex flex-wrap gap-3">
           <Link
@@ -238,6 +222,7 @@ export default function ArticleHazardousWasteInsuranceENPage() {
             <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#c9a84c" }}>Products &amp; Services</p>
             <ul className="space-y-2">
               <li><a href="/en/liability-insurance/b3-waste-insurance" className="text-sm text-blue-700 hover:underline font-medium">→ B3 Hazardous Waste Insurance Batam</a></li>
+              <li><a href="/en/hazardous-waste-insurance-batam" className="text-sm text-blue-700 hover:underline font-medium">→ How to File a B3 Insurance Claim in Batam</a></li>
               <li><a href="/en/liability-insurance/public-liability" className="text-sm text-blue-700 hover:underline font-medium">→ Public Liability Insurance Batam</a></li>
               <li><a href="/en/liability-insurance" className="text-sm text-blue-700 hover:underline font-medium">→ Liability Insurance Batam</a></li>
             </ul>

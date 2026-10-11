@@ -13,15 +13,14 @@ import {
 import QuoteCard from "@/components/quote/QuoteCard";
 
 export const metadata: Metadata = generateSEO({
-  title: "Hazardous Waste (B3) Insurance Claims in Batam Industrial Estates: Procedure, Regulations & Case Studies",
-  description: "Complete guide to filing hazardous waste (B3) insurance claims for factories in Batam's industrial zones. KLHK regulations, required documents, real case examples from Kabil and Muka Kuning, premium estimates.",
+  title: "How to File a Hazardous Waste (B3) Insurance Claim in Batam: 7-Step Procedure & Real Cases",
+  description: "Step-by-step guide to filing a B3 hazardous waste insurance claim after a spill or leak at a Batam factory. Incident reporting, claim documents, loss adjuster survey, and real cases from Kabil, Muka Kuning and Batu Ampar.",
   keywords: [
-    "hazardous waste insurance Batam",
-    "B3 liability insurance Batam",
-    "environmental impairment liability Batam",
-    "industrial pollution insurance Batam",
-    "EIL insurance Batam",
-    "B3 waste claim Batam",
+    "B3 waste insurance claim Batam",
+    "how to claim hazardous waste insurance",
+    "B3 spill claim procedure Batam",
+    "pollution claim documents Batam",
+    "B3 incident reporting DLHK Batam",
   ],
   canonical: "https://asuransibatam.com/en/hazardous-waste-insurance-batam",
   languages: {
@@ -36,9 +35,9 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline:
-    "Hazardous Waste (B3) Insurance Claims in Batam Industrial Estates: Procedure, Regulations & Case Studies",
+    "How to File a Hazardous Waste (B3) Insurance Claim in Batam: 7-Step Procedure & Real Cases",
   description:
-    "A complete guide to filing hazardous waste insurance claims for factories in Batam's industrial zones.",
+    "A step-by-step guide to filing a hazardous waste insurance claim after an incident at a factory in Batam's industrial zones.",
   datePublished: "2026-05-29",
   dateModified: "2026-05-29",
   author: {
@@ -240,19 +239,7 @@ const kasusNyata = [
   },
 ];
 
-const premiEstimasi = [
-  { jenis: "Mid-scale electronics factory", limit: "IDR 10 billion", premi: "IDR 25–50 million/year" },
-  { jenis: "Metal processing facility", limit: "IDR 20 billion", premi: "IDR 50–100 million/year" },
-  { jenis: "Chemical storage warehouse", limit: "IDR 15 billion", premi: "IDR 35–75 million/year" },
-  { jenis: "Galvanising / coating facility", limit: "IDR 25 billion", premi: "IDR 60–120 million/year" },
-  { jenis: "B3 waste treatment facility", limit: "IDR 50 billion", premi: "IDR 100–200 million/year" },
-];
-
 const faqs = [
-  {
-    q: "Is B3 hazardous waste insurance mandatory for all factories in Batam?",
-    a: "Under Government Regulation 22/2021, holders of B3 waste management permits are legally required to maintain financial guarantees for pollution risk. In practice, industrial estates such as Batamindo and BP Batam require proof of environmental insurance as a condition for tenant operating licences.",
-  },
   {
     q: "Does public liability insurance cover B3 hazardous waste contamination?",
     a: "Generally, no. Standard public liability policies explicitly exclude pollution and environmental contamination, including B3 waste spills. A separate Liability B3 or Environmental Impairment Liability (EIL) policy is required.",
@@ -319,14 +306,14 @@ export default function HazardousWasteInsuranceBatamPage() {
           </div>
 
           <h1 className="font-display font-bold text-4xl md:text-5xl text-white leading-tight mb-6">
-            Hazardous Waste (B3) Insurance Claims<br />
-            in <span className="text-gradient-gold">Batam Industrial Estates:</span><br />
-            Procedure, Regulations & Cases
+            How to File a Hazardous Waste (B3)<br />
+            Insurance Claim in <span className="text-gradient-gold">Batam:</span><br />
+            7-Step Procedure & Real Cases
           </h1>
 
           <p className="text-white/70 text-lg leading-relaxed mb-8 max-w-3xl">
-            A complete guide to the claims process, applicable KLHK regulations, real incident examples from
-            Kabil and Muka Kuning, and how to ensure your policy actually protects your business.
+            What to do in the first 24 hours after a B3 incident, which documents the insurer will ask for,
+            how the loss adjuster survey works, and real claim examples from Kabil, Muka Kuning and Batu Ampar.
           </p>
 
           <div className="flex flex-wrap items-center gap-6 text-sm text-white/50">
@@ -429,12 +416,15 @@ export default function HazardousWasteInsuranceBatamPage() {
         {/* ── SECTION 2: Regulations ── */}
         <section className="mb-14">
           <h2 className="font-display font-bold text-3xl text-[#0a1628] mb-5">
-            Regulations Binding B3 Waste Managers in Batam
+            Rules That Shape a B3 Claim in Batam
           </h2>
           <p className="text-[#475569] leading-relaxed mb-6">
-            Despite its Free Trade Zone (FTZ) and Special Economic Zone (KEK) status, Batam remains fully
-            subject to national environmental regulations. The following are the key frameworks relevant to
-            B3 waste managers in Batam's industrial estates:
+            Four rules directly affect how an incident is reported, investigated and paid. For the full legal
+            obligation to hold a financial guarantee and the penalties for non-compliance, read our{" "}
+            <Link href="/en/blog/hazardous-waste-insurance-batam" className="text-[#1a4fa0] font-semibold hover:underline">
+              guide to B3 insurance legal requirements
+            </Link>
+            .
           </p>
 
           <div className="space-y-4">
@@ -604,45 +594,23 @@ export default function HazardousWasteInsuranceBatamPage() {
           </div>
         </section>
 
-        {/* ── SECTION 6: Premium estimates ── */}
+        {/* ── SECTION 6: Not insured yet? (premium table lives on the product page) ── */}
         <section className="mb-14">
-          <h2 className="font-display font-bold text-3xl text-[#0a1628] mb-3">
-            Liability B3 Premium Estimates for Batam Industry
-          </h2>
-          <p className="text-[#475569] leading-relaxed mb-6">
-            Premiums for Liability B3 policies are influenced by the type and volume of waste generated,
-            incident history, existing management systems, location, and coverage limit. The following
-            figures are general illustrations only:
-          </p>
-
-          <div className="overflow-x-auto rounded-2xl border border-[#e2e8f0] shadow-sm mb-4">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="bg-[#faf8f3] border-b border-[#e2e8f0]">
-                  <th className="text-left px-5 py-3.5 font-display font-bold text-[#0a1628]">Facility Type</th>
-                  <th className="text-left px-5 py-3.5 font-display font-bold text-[#0a1628]">Limit</th>
-                  <th className="text-left px-5 py-3.5 font-display font-bold text-[#0a1628]">Estimated Premium</th>
-                </tr>
-              </thead>
-              <tbody>
-                {premiEstimasi.map((row, i) => (
-                  <tr key={row.jenis} className={i % 2 === 0 ? "bg-white" : "bg-[#faf8f3]"}>
-                    <td className="px-5 py-3 text-[#0a1628] font-medium">{row.jenis}</td>
-                    <td className="px-5 py-3 text-[#475569]">{row.limit}</td>
-                    <td className="px-5 py-3 text-[#475569]">{row.premi}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <p className="text-[#94a3b8] text-xs leading-relaxed">
-            * Figures above are general illustrations. Actual premiums are determined after underwriting based
-            on your facility's specific risk profile.{" "}
-            <Link href="/en/liability-insurance/b3-waste-insurance" className="text-[#1a4fa0] font-semibold hover:underline">
-              Contact us for an accurate quote →
+          <div className="bg-[#faf8f3] border border-[#e2e8f0] rounded-2xl p-6">
+            <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3">
+              Not Insured Yet? Check Cover Before an Incident Happens
+            </h2>
+            <p className="text-[#475569] leading-relaxed mb-4">
+              A claim can only be filed on a policy that was in force when the incident occurred. Premium
+              estimates, required documents and how to arrange a B3 policy are on our product page.
+            </p>
+            <Link
+              href="/en/liability-insurance/b3-waste-insurance"
+              className="inline-block px-6 py-2.5 bg-[#0a1628] text-white font-semibold rounded-xl text-sm"
+            >
+              B3 Hazardous Waste Insurance Batam →
             </Link>
-          </p>
+          </div>
         </section>
 
         {/* ── SECTION 7: FAQ ── */}

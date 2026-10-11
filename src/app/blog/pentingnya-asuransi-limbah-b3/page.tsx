@@ -32,8 +32,8 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = generateSEO({
-  title: "Pentingnya Asuransi Limbah B3 untuk Industri di Batam",
-  description: "Mengapa asuransi limbah B3 wajib dimiliki industri di Batam. Regulasi PP 22/2021, sanksi, dan cara mendapatkan jaminan finansial limbah B3 yang tepat.",
+  title: "Apakah Asuransi Limbah B3 Wajib di Batam? Penjelasan PP 22/2021",
+  description: "Apakah asuransi limbah B3 wajib secara hukum? Isi PP 22/2021 tentang jaminan finansial, tiga cara memenuhinya, dan sanksi jika tidak dipenuhi bagi industri di Batam.",
   canonical: "https://asuransibatam.com/blog/pentingnya-asuransi-limbah-b3",
   languages: {
     id: "https://asuransibatam.com/blog/pentingnya-asuransi-limbah-b3",
@@ -44,7 +44,7 @@ export const metadata: Metadata = generateSEO({
 const schema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Pentingnya Asuransi Limbah B3 untuk Industri di Batam",
+  headline: "Apakah Asuransi Limbah B3 Wajib di Batam? Penjelasan PP 22/2021",
   datePublished: "2025-02-20",
   author: { "@type": "Person", name: "Rio" },
   publisher: { "@type": "Organization", name: "Asuransi Batam" },
@@ -137,8 +137,8 @@ function Steps({ items }: { items: { title: string; desc?: string }[] }) {
 export default function ArticleLimbahB3Page() {
   return (
     <ArticleLayout cluster="liability"
-      title="Pentingnya Asuransi Limbah B3 untuk Industri di Batam"
-      description="Kewajiban hukum dan perlindungan bisnis dari risiko pencemaran limbah berbahaya."
+      title="Apakah Asuransi Limbah B3 Wajib di Batam? Penjelasan PP 22/2021"
+      description="Apa yang diwajibkan hukum bagi industri penghasil limbah berbahaya, tiga cara memenuhi jaminan finansial, dan akibat jika tidak dipenuhi."
       date="20 Februari 2025"
       category="Liability"
       readTime="8 menit"
@@ -259,24 +259,18 @@ export default function ArticleLimbahB3Page() {
         ]}
       />
 
-      <SectionHeading icon={ClipboardList}>Bagaimana Cara Mendapatkan Asuransi Limbah B3?</SectionHeading>
-      <p>Proses mendapatkan asuransi limbah B3 umumnya melalui lima langkah berikut:</p>
-      <Steps
-        items={[
-          { title: "Assessment risiko", desc: "Dilakukan oleh konsultan asuransi terhadap operasional perusahaan." },
-          { title: "Pengisian questionnaire", desc: "Mencakup jenis dan volume limbah yang dihasilkan." },
-          { title: "Penentuan nilai pertanggungan", desc: "Disesuaikan dengan skala risiko dan operasional." },
-          { title: "Penerbitan polis & pembayaran premi", desc: "Setelah nilai pertanggungan disepakati." },
-          { title: "Polis diterima", desc: "Menjadi bukti sah pemenuhan jaminan finansial sesuai PP 22/2021." },
-        ]}
-      />
+      <SectionHeading icon={ClipboardList}>Langkah Selanjutnya</SectionHeading>
       <p>
-        Jika perusahaan Anda belum yakin jenis perlindungan liability apa yang paling sesuai,
-        Anda bisa mempelajari lebih lanjut ragam{" "}
-        <Link href="/asuransi-liability" className="font-medium">
-          produk asuransi liability
-        </Link>{" "}
-        yang tersedia sebelum menentukan nilai pertanggungan.
+        Setelah tahu kewajiban ini berlaku untuk fasilitas Anda, pertanyaan praktisnya adalah biaya, dokumen,
+        dan cara mengurus polis. Semuanya dibahas di halaman{" "}
+        <Link href="/asuransi-liability/asuransi-limbah-b3" className="font-medium">
+          Asuransi Limbah B3 Batam
+        </Link>
+        . Jika insiden sudah terjadi, ikuti{" "}
+        <Link href="/blog/klaim-asuransi-limbah-b3-kawasan-industri-batam" className="font-medium">
+          prosedur klaim asuransi limbah B3
+        </Link>
+        .
       </p>
 
       <SectionHeading icon={FileSearch}>Pertanyaan yang Sering Diajukan</SectionHeading>

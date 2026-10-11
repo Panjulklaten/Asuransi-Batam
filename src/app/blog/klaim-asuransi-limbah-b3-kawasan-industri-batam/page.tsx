@@ -13,15 +13,14 @@ import {
 import QuoteCard from "@/components/quote/QuoteCard";
 
 export const metadata: Metadata = generateSEO({
-  title: "Klaim Asuransi Limbah B3 di Kawasan Industri Batam: Prosedur, Regulasi & Contoh Kasus",
-  description: "Panduan lengkap prosedur klaim asuransi limbah B3 untuk pabrik di kawasan industri Batam. Regulasi KLHK, dokumen yang dibutuhkan, contoh kasus di Kabil dan Muka Kuning, estimasi premi.",
+  title: "Cara Klaim Asuransi Limbah B3 di Batam: Prosedur 7 Langkah & Kasus Nyata",
+  description: "Panduan klaim asuransi limbah B3 setelah kebocoran atau tumpahan di pabrik Batam: pelaporan insiden, dokumen klaim, survei loss adjuster, dan kasus nyata di Kabil, Muka Kuning, dan Batu Ampar.",
   keywords: [
     "klaim asuransi limbah B3 Batam",
-    "liability limbah kawasan industri",
-    "asuransi limbah B3 Batam",
-    "asuransi pencemaran lingkungan Batam",
-    "asuransi liability B3 Kabil",
-    "asuransi tanggung jawab lingkungan Batam",
+    "cara klaim asuransi limbah B3",
+    "prosedur klaim pencemaran limbah B3",
+    "dokumen klaim limbah B3 Batam",
+    "pelaporan insiden B3 DLHK Batam",
   ],
   canonical: "https://asuransibatam.com/blog/klaim-asuransi-limbah-b3-kawasan-industri-batam",
   languages: {
@@ -36,7 +35,7 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline:
-    "Klaim Asuransi Limbah B3 di Kawasan Industri Batam: Prosedur, Regulasi & Contoh Kasus",
+    "Cara Klaim Asuransi Limbah B3 di Batam: Prosedur 7 Langkah & Kasus Nyata",
   description:
     "Panduan lengkap prosedur klaim asuransi limbah B3 untuk pabrik di kawasan industri Batam.",
   datePublished: "2026-05-29",
@@ -240,19 +239,7 @@ const kasusNyata = [
   },
 ];
 
-const premiEstimasi = [
-  { jenis: "Pabrik elektronik skala menengah", limit: "Rp 10 M", premi: "Rp 25–50 juta/tahun" },
-  { jenis: "Fasilitas pengolahan logam", limit: "Rp 20 M", premi: "Rp 50–100 juta/tahun" },
-  { jenis: "Gudang bahan kimia", limit: "Rp 15 M", premi: "Rp 35–75 juta/tahun" },
-  { jenis: "Pabrik galvanis / coating", limit: "Rp 25 M", premi: "Rp 60–120 juta/tahun" },
-  { jenis: "Fasilitas pengolahan limbah B3", limit: "Rp 50 M", premi: "Rp 100–200 juta/tahun" },
-];
-
 const faqs = [
-  {
-    q: "Apakah asuransi limbah B3 wajib bagi semua pabrik di Batam?",
-    a: "Secara hukum, pemegang izin pengelolaan limbah B3 berdasarkan PP 22/2021 wajib memiliki jaminan finansial atas risiko pencemaran. Dalam praktiknya, kawasan industri seperti Batamindo dan BP Batam mensyaratkan bukti asuransi lingkungan sebagai salah satu syarat operasional tenant.",
-  },
   {
     q: "Apakah asuransi public liability sudah mencakup pencemaran limbah B3?",
     a: "Umumnya tidak. Polis public liability standar mengecualikan polusi dan pencemaran lingkungan. Untuk risiko limbah B3, diperlukan polis Liability B3 atau Environmental Impairment Liability (EIL) yang terpisah.",
@@ -309,14 +296,14 @@ export default function KlaimLimbahB3Page() {
           </div>
 
           <h1 className="font-display font-bold text-4xl md:text-5xl text-white leading-tight mb-6">
-            Klaim Asuransi Limbah B3<br />
-            di <span className="text-gradient-gold">Kawasan Industri Batam:</span><br />
-            Prosedur, Regulasi & Kasus Nyata
+            Cara Klaim Asuransi<br />
+            Limbah B3 di <span className="text-gradient-gold">Batam:</span><br />
+            Prosedur 7 Langkah & Kasus Nyata
           </h1>
 
           <p className="text-white/70 text-lg leading-relaxed mb-8 max-w-3xl">
-            Panduan lengkap langkah klaim, regulasi KLHK yang berlaku, contoh insiden di Kabil dan Muka Kuning,
-            serta cara memastikan polis Anda benar-benar melindungi bisnis.
+            Apa yang harus dilakukan dalam 24 jam pertama setelah insiden B3, dokumen yang diminta penanggung,
+            cara kerja survei loss adjuster, dan contoh klaim nyata di Kabil, Muka Kuning, dan Batu Ampar.
           </p>
 
           <div className="flex flex-wrap items-center gap-6 text-sm text-white/50">
@@ -420,11 +407,15 @@ export default function KlaimLimbahB3Page() {
         {/* ── SECTION 2: Regulasi ── */}
         <section className="mb-14">
           <h2 className="font-display font-bold text-3xl text-[#0a1628] mb-5">
-            Regulasi yang Mengikat Pengelola Limbah B3 di Batam
+            Aturan yang Menentukan Jalannya Klaim B3 di Batam
           </h2>
           <p className="text-[#475569] leading-relaxed mb-6">
-            Batam sebagai kawasan FTZ dan KEK tetap tunduk pada regulasi lingkungan nasional.
-            Berikut regulasi utama yang relevan bagi pengelola limbah B3 di kawasan industri Batam:
+            Empat aturan berikut langsung memengaruhi cara insiden dilaporkan, diselidiki, dan dibayar.
+            Untuk kewajiban memiliki jaminan finansial dan sanksi jika tidak dipenuhi, baca{" "}
+            <Link href="/blog/pentingnya-asuransi-limbah-b3" className="text-[#1a4fa0] font-semibold hover:underline">
+              panduan kewajiban hukum asuransi limbah B3
+            </Link>
+            .
           </p>
 
           <div className="space-y-4">
@@ -594,45 +585,23 @@ export default function KlaimLimbahB3Page() {
           </div>
         </section>
 
-        {/* ── SECTION 6: Estimasi premi ── */}
+        {/* ── SECTION 6: Belum punya polis? (tabel premi ada di halaman produk) ── */}
         <section className="mb-14">
-          <h2 className="font-display font-bold text-3xl text-[#0a1628] mb-3">
-            Estimasi Premi Liability B3 untuk Industri di Batam
-          </h2>
-          <p className="text-[#475569] leading-relaxed mb-6">
-            Premi polis Liability B3 dipengaruhi oleh jenis dan volume limbah yang dihasilkan,
-            rekam jejak insiden, sistem pengelolaan yang ada, lokasi, dan limit pertanggungan.
-            Berikut gambaran umum ilustratif:
-          </p>
-
-          <div className="overflow-x-auto rounded-2xl border border-[#e2e8f0] shadow-sm mb-4">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="bg-[#faf8f3] border-b border-[#e2e8f0]">
-                  <th className="text-left px-5 py-3.5 font-display font-bold text-[#0a1628]">Jenis Fasilitas</th>
-                  <th className="text-left px-5 py-3.5 font-display font-bold text-[#0a1628]">Limit</th>
-                  <th className="text-left px-5 py-3.5 font-display font-bold text-[#0a1628]">Estimasi Premi</th>
-                </tr>
-              </thead>
-              <tbody>
-                {premiEstimasi.map((row, i) => (
-                  <tr key={row.jenis} className={i % 2 === 0 ? "bg-white" : "bg-[#faf8f3]"}>
-                    <td className="px-5 py-3 text-[#0a1628] font-medium">{row.jenis}</td>
-                    <td className="px-5 py-3 text-[#475569]">{row.limit}</td>
-                    <td className="px-5 py-3 text-[#475569]">{row.premi}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <p className="text-[#94a3b8] text-xs leading-relaxed">
-            * Angka di atas adalah ilustrasi umum. Premi aktual ditentukan setelah underwriting berdasarkan
-            profil risiko spesifik fasilitas Anda.{" "}
-            <Link href="/asuransi-liability/asuransi-limbah-b3" className="text-[#1a4fa0] font-semibold hover:underline">
-              Hubungi kami untuk penawaran yang akurat →
+          <div className="bg-[#faf8f3] border border-[#e2e8f0] rounded-2xl p-6">
+            <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3">
+              Belum Punya Polis? Cek Perlindungan Sebelum Insiden Terjadi
+            </h2>
+            <p className="text-[#475569] leading-relaxed mb-4">
+              Klaim hanya bisa diajukan pada polis yang berlaku saat insiden terjadi. Estimasi premi,
+              dokumen yang dibutuhkan, dan cara mengurus polis limbah B3 ada di halaman produk kami.
+            </p>
+            <Link
+              href="/asuransi-liability/asuransi-limbah-b3"
+              className="inline-block px-6 py-2.5 bg-[#0a1628] text-white font-semibold rounded-xl text-sm"
+            >
+              Asuransi Limbah B3 Batam →
             </Link>
-          </p>
+          </div>
         </section>
 
         {/* ── SECTION 7: FAQ ── */}

@@ -3,10 +3,11 @@ import type { Metadata } from "next";
 import { generateSEO } from "@/lib/seo";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = generateSEO({
-  title: "Contact – Reach Rio, Batam Insurance Practitioner",
-  description: "Contact Rio for a free insurance consultation in Batam. WhatsApp +62-813-7333-6728, email rio@asuransibatam.com. Batam Center.",
+  title: "Contact & Location – Reach Rio, Batam Insurance Practitioner, Batam Center",
+  description: "Contact Rio for a free insurance consultation in Batam. WhatsApp +62-813-7333-6728, email rio@asuransibatam.com. Office in Batam Center, serving Batam and the Riau Islands.",
   canonical: "https://asuransibatam.com/en/contact",
   languages: {
       id: "https://asuransibatam.com/kontak",
@@ -23,10 +24,44 @@ const breadcrumbListSchema = {
   ],
 };
 
+const AREAS_SERVED = ["Batam Center","Nagoya","Baloi","Sekupang","Batu Aji","Tanjung Uncang","Tanjung Pinang","Bintan","Karimun","Lingga","Batamindo Industrial Zone","Kabil Industrial Zone","Muka Kuning"];
+
+const LOCAL_FAQS = [
+  { q: "Where is the Batam Insurance office located?", a: "Our office is located in Batam Center, Batam City, Riau Islands. We also offer on-site visits to clients throughout Batam." },
+  { q: "Is consultation available outside office hours?", a: "Yes, for urgent matters or corporate clients, we can arrange consultations outside regular office hours. Contact us via WhatsApp to schedule." },
+  { q: "Do you serve areas outside Batam?", a: "Yes, we serve all of the Riau Islands including Tanjung Pinang, Bintan, Karimun, and other islands. Consultations can also be conducted online." },
+];
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "InsuranceAgency",
+  "@id": `${SITE.url}/#localbusiness`,
+  name: "Batam Insurance – Rio",
+  url: SITE.url,
+  telephone: SITE.phone,
+  email: SITE.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Batam Center",
+    addressLocality: "Batam",
+    addressRegion: "Kepulauan Riau",
+    postalCode: "29461",
+    addressCountry: "ID",
+  },
+  geo: { "@type": "GeoCoordinates", latitude: 1.1277, longitude: 104.0196 },
+  hasMap: "https://maps.google.com/?q=Batam+Center+Batam",
+  openingHoursSpecification: [
+    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "08:00", closes: "17:00" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday"], opens: "09:00", closes: "13:00" },
+  ],
+  areaServed: AREAS_SERVED.map((a) => ({ "@type": "City", name: a })),
+};
+
 export default function ContactPageEN() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbListSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <section className="pt-24 pb-16 bg-gradient-to-br from-[#0a1628] via-[#132040] to-[#1a4fa0]">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <nav className="flex items-center justify-center gap-2 text-sm text-white/50 mb-6 flex-wrap" aria-label="Breadcrumb">
@@ -93,6 +128,75 @@ export default function ContactPageEN() {
         </div>
       </section>
 
+
+      <section className="py-14 px-4 bg-white">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+          <div>
+            <h2 className="text-2xl font-bold mb-6 font-display text-[#0a1628]">Office Hours & Map</h2>
+            <div className="space-y-4">
+              <div className="p-4 rounded-xl bg-[#f8faff] border border-[#dbeafe]">
+                <div className="font-semibold text-sm text-[#0a1628]">📍 Address</div>
+                <div className="text-sm text-[#475569] mt-0.5">Batam Center, Batam, Riau Islands 29461</div>
+              </div>
+              <div className="p-4 rounded-xl bg-[#f8faff] border border-[#dbeafe]">
+                <div className="font-semibold text-sm text-[#0a1628]">🕗 Office Hours</div>
+                <div className="text-sm text-[#475569] mt-0.5">
+                  Monday – Friday: 08:00 – 17:00 WIB<br />
+                  Saturday: 09:00 – 13:00 WIB<br />
+                  WhatsApp: flexible
+                </div>
+              </div>
+            </div>
+            <a
+              href="https://maps.google.com/?q=Batam+Center+Batam"
+              target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 mt-6 px-6 py-3 rounded-xl font-semibold text-sm border-2 border-[#1a4fa0] text-[#1a4fa0] hover:bg-[#eff6ff] transition-all"
+            >
+              🧭 Open in Google Maps
+            </a>
+          </div>
+          <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm aspect-[4/3]">
+            <iframe
+              title="Batam Insurance – Rio office location"
+              src="https://maps.google.com/maps?q=Batam+Center+Kota+Batam+Kepulauan+Riau&output=embed&z=13"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="py-14 px-4 bg-[#faf8f3]">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold mb-2 text-center font-display text-[#0a1628]">Areas We Serve</h2>
+          <p className="text-center text-gray-500 text-sm mb-8">We serve clients across Batam and the Riau Islands — on-site visits or online consultation.</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {AREAS_SERVED.map((area) => (
+              <span key={area} className="px-4 py-2 rounded-full bg-white border border-gray-200 text-sm font-medium text-gray-700 shadow-sm">
+                📍 {area}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-14 px-4 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold mb-6 text-center font-display text-[#0a1628]">Location Questions</h2>
+          <div className="space-y-4">
+            {LOCAL_FAQS.map((f) => (
+              <div key={f.q} className="bg-gray-50 rounded-xl p-5 border border-gray-100">
+                <h3 className="font-semibold text-sm mb-2 text-[#0a1628]">{f.q}</h3>
+                <p className="text-gray-600 text-sm">{f.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       <CTASection />
     </>
   );
