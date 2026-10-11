@@ -64,6 +64,10 @@ const nextConfig: NextConfig = {
       // 3) Versi EN artikel premi kapal belum pernah dibuat — arahkan ke halaman
       //    marine insurance EN yang paling relevan, bukan ke blog index generik
       { source: "/en/blog/ship-insurance-premium-batam-2026", destination: "https://asuransibatam.com/en/marine-insurance", permanent: true },
+      // 4) Halaman lokasi digabung ke halaman kontak (isi peta, jam, area layanan, FAQ
+      //    dipindah ke /kontak dan /en/contact) supaya tidak bersaing dengan halaman kontak.
+      { source: "/lokasi", destination: "https://asuransibatam.com/kontak", permanent: true },
+      { source: "/en/location", destination: "https://asuransibatam.com/en/contact", permanent: true },
     ];
   },
 };

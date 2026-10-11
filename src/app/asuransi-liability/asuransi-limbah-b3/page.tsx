@@ -65,16 +65,12 @@ const faqs = [
     a: "Di Batam, industri yang wajib memiliki asuransi ini antara lain: (1) Galangan kapal dan industri maritim (kawasan Tanjung Uncang & Sekupang) — menghasilkan limbah cat, oli, dan solven; (2) Industri manufaktur elektronik (kawasan Muka Kuning & Batamindo Industrial Park) — menghasilkan limbah timbal dan bahan kimia; (3) Rumah sakit dan klinik besar (limbah medis infeksius & bahan farmasi); (4) Bengkel otomotif dan industri logam; (5) Laboratorium riset dan kalibrasi; serta (6) Perusahaan oil & gas yang beroperasi di Kepulauan Riau.",
   },
   {
-    q: "Bagaimana simulasi klaim asuransi limbah B3 yang nyata?",
-    a: "Contoh simulasi kasus nyata: Sebuah perusahaan galangan kapal di Batam mengalami kebocoran tangki penyimpanan oli bekas (solar oil) sebesar 2.000 liter ke perairan pantai sekitar fasilitas. Total kerugian mencakup: biaya respons darurat & penyedotan limbah Rp 180 juta, biaya remediation tanah & sedimen pantai Rp 650 juta, ganti rugi nelayan setempat atas kehilangan mata pencaharian Rp 300 juta, dan biaya pengacara menghadapi gugatan warga Rp 120 juta. Total eksposur: Rp 1,25 miliar — seluruhnya ditanggung polis Comprehensive, sementara perusahaan hanya menanggung deductible sesuai kesepakatan polis.",
-  },
-  {
     q: "Apa saja dokumen yang diperlukan untuk mengajukan polis asuransi limbah B3?",
     a: "Dokumen standar yang dibutuhkan: (1) Dokumen legal perusahaan: NIB, SIUP/TDP, NPWP, Akta Pendirian; (2) Dokumen lingkungan: Persetujuan Lingkungan (AMDAL/UKL-UPL), Persetujuan Teknis Pengelolaan Limbah B3 (Pertek), Neraca Limbah B3 tahun terakhir; (3) Manifest limbah B3 6 bulan terakhir; (4) Data teknis fasilitas: layout area penyimpanan limbah, kapasitas tangki, jenis dan volume limbah yang dihasilkan per bulan; (5) Rekam jejak insiden lingkungan (jika ada) dalam 3 tahun terakhir. Proses underwriting umumnya membutuhkan 7–14 hari kerja setelah dokumen lengkap.",
   },
   {
-    q: "Bagaimana prosedur klaim jika terjadi insiden pencemaran?",
-    a: "Langkah klaim yang harus segera dilakukan: (1) Notifikasi darurat — hubungi penanggung (pihak asuransi) maksimal 48 jam setelah insiden diketahui via hotline klaim; (2) Dokumentasi insiden — foto, video, laporan internal, dan laporan ke instansi terkait (DLHK Batam/BP Batam); (3) Pemasangan containment barrier untuk mencegah pencemaran meluas — biaya ini termasuk yang diganti asuransi; (4) Pengajuan klaim resmi — lengkapi formulir klaim, laporan kronologi insiden, dan estimasi biaya pemulihan dari kontraktor remediation bersertifikat; (5) Survei adjuster — penanggung akan mengirim loss adjuster dalam 3–5 hari kerja; (6) Persetujuan klaim dan pembayaran dilakukan bertahap sesuai progress pemulihan.",
+    q: "Apa yang harus dilakukan jika insiden pencemaran sudah terjadi?",
+    a: "Segera hubungi penanggung dan dokumentasikan kejadian. Langkah klaim lengkap, dokumen yang diminta, dan contoh kasus nyata ada di panduan klaim asuransi limbah B3 kami yang ditautkan di bawah.",
   },
   {
     q: "Batam termasuk kawasan industri kepulauan — mengapa risiko lingkungannya lebih tinggi?",
@@ -153,6 +149,40 @@ export default function AsuransiLimbahB3Page() {
       ]}
       schema={schema}
     >
+      <div className="mb-12 max-w-4xl mx-auto">
+        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Estimasi Premi Asuransi Limbah B3 untuk Industri di Batam</h2>
+        <p className="text-center text-[#475569] mb-8">Premi dipengaruhi jenis dan volume limbah, riwayat insiden, sistem pengelolaan, lokasi, dan limit pertanggungan. Angka berikut adalah ilustrasi pada kisaran 0,3%–0,8% per tahun dari limit pertanggungan.</p>
+        <div className="overflow-x-auto rounded-2xl border border-[#e2e8f0]">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="bg-[#0a1628] text-white">
+                <th className="text-left p-4 font-semibold">Jenis Fasilitas</th>
+                <th className="text-left p-4 font-semibold">Limit</th>
+                <th className="text-left p-4 font-semibold">Estimasi Premi</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ["Pabrik elektronik skala menengah", "Rp 10 M", "Rp 30–80 juta/tahun"],
+                ["Fasilitas pengolahan logam", "Rp 20 M", "Rp 60–160 juta/tahun"],
+                ["Gudang bahan kimia", "Rp 15 M", "Rp 45–120 juta/tahun"],
+                ["Pabrik galvanis / coating", "Rp 25 M", "Rp 75–200 juta/tahun"],
+                ["Fasilitas pengolahan limbah B3", "Rp 50 M", "Rp 150–400 juta/tahun"],
+              ].map(([jenis, limit, premi], i) => (
+                <tr key={jenis} className={i % 2 === 0 ? "border-b border-[#e2e8f0]" : "border-b border-[#e2e8f0] bg-[#f8faff]"}>
+                  <td className="p-4 text-[#0a1628] font-medium">{jenis}</td>
+                  <td className="p-4 text-[#475569]">{limit}</td>
+                  <td className="p-4 text-[#1a4fa0] font-semibold">{premi}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-[#475569] mt-3 text-center">
+          * Premi final ditentukan setelah underwriting. Ingin tahu apakah kewajiban ini berlaku untuk fasilitas Anda? Baca{" "}
+          <Link href="/blog/pentingnya-asuransi-limbah-b3" className="text-[#1a4fa0] font-semibold hover:underline">penjelasan PP 22/2021</Link>.
+        </p>
+      </div>
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Lengkapi Kepatuhan Industri Anda</h2>
         <div className="grid md:grid-cols-3 gap-6 mt-8">

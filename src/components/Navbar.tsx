@@ -81,7 +81,6 @@ const URL_MAP: Record<string, string> = {
   // Info
   "/tentang-kami": "/en/about-us",
   "/kontak": "/en/contact",
-  "/lokasi": "/en/location",
   // Blog – index
   "/blog": "/en/blog",
   // Blog – Kendaraan

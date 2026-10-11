@@ -68,7 +68,7 @@ const blogLinksEN = [
   { label: "How to File a Car Insurance Claim",  href: "/en/blog/how-to-claim-car-insurance-batam" },
   { label: "All Risk vs TLO Insurance",          href: "/en/blog/all-risk-vs-tlo-car-insurance" },
   { label: "Marine Hull vs Cargo Insurance",     href: "/en/blog/marine-hull-vs-cargo-insurance" },
-  { label: "Hazardous Waste (B3) Insurance",     href: "/en/hazardous-waste-insurance-batam" },
+  { label: "How to File a B3 Insurance Claim",   href: "/en/hazardous-waste-insurance-batam" },
 ];
 
 export default function Footer() {

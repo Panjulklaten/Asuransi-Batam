@@ -255,11 +255,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // INFO PAGES
     // ────────────────────────────────────────────────────────────────────────
     { url: `${BASE_URL}/tentang-kami`, lastModified: new Date("2026-07-08"), changeFrequency: "monthly", priority: 0.6 },
-    { url: `${BASE_URL}/kontak`,       lastModified: new Date("2026-07-12"), changeFrequency: "monthly", priority: 0.6 },
-    { url: `${BASE_URL}/lokasi`,       lastModified: new Date("2026-07-12"), changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/kontak`,       lastModified: new Date("2026-10-12"), changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/en/about-us`,  lastModified: new Date("2026-07-12"), changeFrequency: "monthly", priority: 0.6 },
-    { url: `${BASE_URL}/en/contact`,   lastModified: new Date("2026-07-12"), changeFrequency: "monthly", priority: 0.6 },
-    { url: `${BASE_URL}/en/location`,  lastModified: new Date("2026-07-12"), changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/en/contact`,   lastModified: new Date("2026-10-12"), changeFrequency: "monthly", priority: 0.6 },
   ];
 
   return staticPages;
