@@ -26,6 +26,7 @@ export const metadata: Metadata = generateSEO({
   canonical: "https://asuransibatam.com/blog/klaim-asuransi-limbah-b3-kawasan-industri-batam",
   languages: {
       id: "https://asuransibatam.com/blog/klaim-asuransi-limbah-b3-kawasan-industri-batam",
+      en: "https://asuransibatam.com/en/hazardous-waste-insurance-batam",
     },
 });
 
