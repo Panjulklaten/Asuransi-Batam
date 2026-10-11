@@ -57,7 +57,7 @@ export default function LiabilityInsurancePage() {
       schema={schema}
     >
       <h2 className="font-display font-bold text-3xl text-[#0a1628] mb-6 text-center">Our Liability Products</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {[
           {
             title: "B3 Hazardous Waste Insurance",
@@ -78,6 +78,11 @@ export default function LiabilityInsurancePage() {
             title: "Employers' & Product Liability",
             desc: "Liability for employee claims and for products already on the market, complementing Public Liability and BPJS Ketenagakerjaan.",
             href: "/en/liability-insurance/employers-product-liability",
+          },
+          {
+            title: "Ship Repairer's Liability",
+            desc: "Liability for shipyards and repair contractors over customers' vessels in their care.",
+            href: "/en/liability-insurance/ship-repairers-liability",
           },
         ].map((p) => (
           <Link

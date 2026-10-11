@@ -504,7 +504,7 @@ export default function BuildersRiskPage() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <SectionHeader eyebrow="Lengkapi Proteksi Galangan" title="Produk & Artikel Terkait" center />
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Link href="/asuransi-surety-bond/performance-bond" className="block p-6 rounded-2xl border border-gray-100 hover:border-[#c9a84c] transition-all bg-gray-50">
               <h3 className="font-bold text-[#0a1628] mb-2">Performance Bond</h3>
               <p className="text-sm text-gray-600">Jaminan pelaksanaan kontrak pembangunan kapal di galangan.</p>
@@ -512,6 +512,10 @@ export default function BuildersRiskPage() {
             <Link href="/asuransi-personal-accident/pa-karyawan-grup" className="block p-6 rounded-2xl border border-gray-100 hover:border-[#c9a84c] transition-all bg-gray-50">
               <h3 className="font-bold text-[#0a1628] mb-2">PA Karyawan Grup</h3>
               <p className="text-sm text-gray-600">Lindungi pekerja galangan kapal dari risiko kecelakaan kerja.</p>
+            </Link>
+            <Link href="/asuransi-liability/ship-repairers-liability" className="block p-6 rounded-2xl border border-gray-100 hover:border-[#c9a84c] transition-all bg-gray-50">
+              <h3 className="font-bold text-[#0a1628] mb-2">Ship Repairer&apos;s Liability</h3>
+              <p className="text-sm text-gray-600">Tanggung gugat galangan atas kapal pelanggan yang berada dalam penguasaannya.</p>
             </Link>
             <Link href="/blog/builders-risk-untuk-galangan-kapal" className="block p-6 rounded-2xl border border-gray-100 hover:border-[#c9a84c] transition-all bg-gray-50">
               <h3 className="font-bold text-[#0a1628] mb-2">Builder&apos;s Risk untuk Galangan Kapal</h3>

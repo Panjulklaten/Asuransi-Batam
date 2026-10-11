@@ -45,6 +45,7 @@ const URL_MAP: Record<string, string> = {
   "/asuransi-liability/asuransi-limbah-b3": "/en/liability-insurance/b3-waste-insurance",
   "/asuransi-liability/public-liability": "/en/liability-insurance/public-liability",
   "/asuransi-liability/employers-product-liability": "/en/liability-insurance/employers-product-liability",
+  "/asuransi-liability/ship-repairers-liability": "/en/liability-insurance/ship-repairers-liability",
   "/asuransi-liability/freight-forwarders-liability": "/en/liability-insurance/freight-forwarders-liability",
   // Engineering
   "/asuransi-engineering": "/en/engineering-insurance",
@@ -166,6 +167,7 @@ const productsID: NavItem[] = [
       { label: "Asuransi Limbah B3", href: "/asuransi-liability/asuransi-limbah-b3", desc: "Pencemaran lingkungan" },
       { label: "Public Liability", href: "/asuransi-liability/public-liability", desc: "Tanggung jawab publik" },
       { label: "Employers & Product Liability", href: "/asuransi-liability/employers-product-liability", desc: "Karyawan & produk" },
+      { label: "Ship Repairer's Liability", href: "/asuransi-liability/ship-repairers-liability", desc: "Galangan reparasi kapal" },
       { label: "Freight Forwarders Liability", href: "/asuransi-liability/freight-forwarders-liability", desc: "Forwarder & PPJK" },
     ],
   },
@@ -254,6 +256,7 @@ const productsEN: NavItem[] = [
       { label: "B3 Waste Insurance", href: "/en/liability-insurance/b3-waste-insurance", desc: "Environmental liability" },
       { label: "Public Liability", href: "/en/liability-insurance/public-liability", desc: "Third-party liability" },
       { label: "Employers & Product Liability", href: "/en/liability-insurance/employers-product-liability", desc: "Employees & products" },
+      { label: "Ship Repairer's Liability", href: "/en/liability-insurance/ship-repairers-liability", desc: "Ship repair yards" },
       { label: "Freight Forwarders Liability", href: "/en/liability-insurance/freight-forwarders-liability", desc: "Forwarders & customs brokers" },
     ],
   },

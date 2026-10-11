@@ -4,6 +4,7 @@ const PUBLIC = ["public"];
 const FFL = ["ffl"];
 const B3 = ["b3"];
 const ELPL = ["elpl"];
+const SRL = ["srl"];
 
 export const LIABILITY: QuoteCluster = {
   key: "liability",
@@ -31,9 +32,15 @@ export const LIABILITY: QuoteCluster = {
       label: { id: "Employers' & Product Liability", en: "Employers' & Product Liability" },
       hint: { id: "Tuntutan karyawan & gugatan atas produk", en: "Employee claims & product claims" },
     },
+    {
+      key: "srl",
+      label: { id: "Ship Repairer's Liability", en: "Ship Repairer's Liability" },
+      hint: { id: "Tanggung gugat galangan reparasi kapal", en: "Shipyard & ship repair liability" },
+    },
   ],
   inferType(pathname) {
     const p = pathname.toLowerCase();
+    if (/ship-?repair|repairer/.test(p)) return "srl";
     if (/employer|product-liability|elpl/.test(p)) return "elpl";
     if (/freight|forwarder|ffl/.test(p)) return "ffl";
     if (/b3|limbah|waste|hazardous/.test(p)) return "b3";
@@ -135,6 +142,42 @@ export const LIABILITY: QuoteCluster = {
       label: { id: "Negara tujuan penjualan / ekspor", en: "Sales / export destinations" },
       placeholder: { id: "mis. Singapura, Malaysia, AS", en: "e.g. Singapore, Malaysia, USA" },
     },
+    // ── Ship Repairer's Liability ──
+    {
+      key: "yardType",
+      kind: "select",
+      showFor: SRL,
+      label: { id: "Jenis usaha", en: "Type of business" },
+      placeholder: { id: "Pilih jenis usaha", en: "Select business type" },
+      options: [
+        { value: "repair", label: { id: "Galangan reparasi kapal", en: "Ship repair yard" } },
+        { value: "newbuild", label: { id: "Galangan bangun baru yang juga reparasi", en: "Newbuilding yard that also repairs" } },
+        { value: "contractor", label: { id: "Kontraktor reparasi / subkontraktor di atas kapal", en: "Repair contractor / subcontractor working on vessels" } },
+      ],
+    },
+    {
+      key: "maxVesselValue",
+      kind: "money",
+      showFor: SRL,
+      label: { id: "Nilai kapal tertinggi yang mungkin ada di galangan", en: "Highest vessel value possibly in the yard" },
+      placeholder: { id: "mis. 150.000.000.000", en: "e.g. 150,000,000,000" },
+    },
+    {
+      key: "vesselsPerYear",
+      kind: "number",
+      showFor: SRL,
+      optional: true,
+      label: { id: "Perkiraan jumlah kapal per tahun", en: "Estimated vessels per year" },
+      placeholder: { id: "mis. 40", en: "e.g. 40" },
+    },
+    {
+      key: "dockType",
+      kind: "text",
+      showFor: SRL,
+      optional: true,
+      label: { id: "Fasilitas dok", en: "Dock facilities" },
+      placeholder: { id: "mis. floating dock, graving dock, slipway", en: "e.g. floating dock, graving dock, slipway" },
+    },
     // ── Limbah B3 ──
     {
       key: "wasteType",
@@ -169,6 +212,8 @@ export const LIABILITY: QuoteCluster = {
   flags: [
     { key: "additional", showFor: PUBLIC, label: { id: "Principal meminta Additional Insured", en: "Principal requires Additional Insured" } },
     { key: "permit", showFor: B3, label: { id: "Izin lingkungan & Pertek tersedia", en: "Environmental permit & technical approval available" } },
+    { key: "hotwork", showFor: SRL, label: { id: "Ada pekerjaan panas (pengelasan / pemotongan) di atas kapal", en: "Hot work (welding / cutting) carried out on vessels" } },
+    { key: "subcon", showFor: SRL, label: { id: "Menggunakan subkontraktor di area galangan", en: "Subcontractors work in the yard" } },
     { key: "bpjs", showFor: ELPL, label: { id: "Seluruh karyawan terdaftar BPJS Ketenagakerjaan", en: "All employees enrolled in BPJS Ketenagakerjaan" } },
     { key: "usexport", showFor: ELPL, label: { id: "Produk diekspor ke AS / Kanada", en: "Products exported to the USA / Canada" } },
     { key: "coi", label: { id: "Perlu Certificate of Insurance (COI)", en: "Need a Certificate of Insurance (COI)" } },
@@ -220,6 +265,38 @@ export const LIABILITY: QuoteCluster = {
       {
         doc: { id: "Format COI dari prinsipal / klien", en: "COI format from principal / client" },
         note: { id: "Bila disyaratkan dalam kontrak layanan", en: "If required in the service contract" },
+        must: false,
+      },
+    ],
+    srl: [
+      {
+        doc: { id: "Profil galangan & fasilitas dok", en: "Yard profile & dock facilities" },
+        note: { id: "Jenis dok, kapasitas, dan jenis kapal yang biasa dikerjakan", en: "Dock types, capacity, and the vessel types normally handled" },
+        must: true,
+      },
+      {
+        doc: { id: "Nilai kapal tertinggi & jumlah kapal per tahun", en: "Highest vessel value & vessels per year" },
+        note: { id: "Dasar penentuan limit pertanggungan", en: "Basis for setting the limit" },
+        must: true,
+      },
+      {
+        doc: { id: "Contoh kontrak reparasi / syarat standar", en: "Sample repair contract / standard terms" },
+        note: { id: "Termasuk klausul tanggung jawab dan persyaratan asuransi", en: "Including liability clauses and insurance requirements" },
+        must: true,
+      },
+      {
+        doc: { id: "Daftar subkontraktor & bukti asuransinya", en: "Subcontractor list & proof of their insurance" },
+        note: { id: "Bila ada subkontraktor di area galangan", en: "If subcontractors work in the yard" },
+        must: false,
+      },
+      {
+        doc: { id: "Prosedur K3 & pengendalian pekerjaan panas", en: "HSE procedures & hot work controls" },
+        note: { id: "Izin kerja panas, fire watch, dan inspeksi sebelum pekerjaan", en: "Hot work permits, fire watch, and pre-work inspection" },
+        must: false,
+      },
+      {
+        doc: { id: "Riwayat klaim 3–5 tahun", en: "Claims history, 3–5 years" },
+        note: { id: "Bila ada", en: "If any" },
         must: false,
       },
     ],

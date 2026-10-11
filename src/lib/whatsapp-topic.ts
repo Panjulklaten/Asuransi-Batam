@@ -29,6 +29,7 @@ const PAGE_TOPICS: Record<string, Label> = {
   "/asuransi-liability/asuransi-limbah-b3": ["Limbah B3"],
   "/asuransi-liability/public-liability": ["Public Liability"],
   "/asuransi-liability/employers-product-liability": ["Employers' & Product Liability"],
+  "/asuransi-liability/ship-repairers-liability": ["Ship Repairer's Liability"],
   "/asuransi-liability/freight-forwarders-liability": ["Freight Forwarders Liability"],
   // Engineering
   "/asuransi-engineering": ["Engineering"],
@@ -126,6 +127,7 @@ const PAGE_TOPICS: Record<string, Label> = {
   "/en/liability-insurance/b3-waste-insurance": ["Limbah B3", "Hazardous Waste (B3)"],
   "/en/liability-insurance/public-liability": ["Public Liability"],
   "/en/liability-insurance/employers-product-liability": ["Employers' & Product Liability"],
+  "/en/liability-insurance/ship-repairers-liability": ["Ship Repairer's Liability"],
   "/en/liability-insurance/freight-forwarders-liability": ["Freight Forwarders Liability"],
   "/en/hazardous-waste-insurance-batam": ["Limbah B3", "Hazardous Waste (B3)"],
   "/en/engineering-insurance": ["Engineering"],
