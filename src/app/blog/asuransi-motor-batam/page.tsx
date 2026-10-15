@@ -5,8 +5,8 @@ import { Shield, Clock, CheckCircle, AlertCircle, ArrowRight, Calculator } from 
 import QuoteCard from "@/components/quote/QuoteCard";
 
 export const metadata: Metadata = generateSEO({
-  title: "Tarif OJK & Estimasi Premi Asuransi Motor 2026: All Risk atau TLO?",
-  description: "Rincian tarif OJK Wilayah 1 untuk sepeda motor, simulasi premi motor populer, perbedaan all risk dan TLO, serta syarat klaim kehilangan di Batam.",
+  title: "Cara Membaca Tarif OJK Asuransi Motor 2026: All Risk atau TLO?",
+  description: "Penjelasan cara membaca tarif OJK Wilayah 1 untuk sepeda motor, contoh simulasi motor populer, perbedaan all risk dan TLO, serta syarat klaim kehilangan di Batam. Ingin langsung menghitung? Pakai kalkulator premi motor.",
   keywords: [
     "tarif OJK asuransi motor wilayah 1",
     "premi asuransi motor Batam 2026",
@@ -21,7 +21,7 @@ export const metadata: Metadata = generateSEO({
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Tarif OJK & Estimasi Premi Asuransi Motor 2026: All Risk atau TLO?",
+  headline: "Cara Membaca Tarif OJK Asuransi Motor 2026: All Risk atau TLO?",
   datePublished: "2026-05-29",
   dateModified: "2026-10-11",
   author: { "@type": "Organization", name: "Tim Asuransi Batam", url: "https://asuransibatam.com" },
@@ -135,7 +135,7 @@ export default function AsuransiMotorBatamPage() {
             Asuransi Kendaraan
           </div>
           <h1 className="font-display font-bold text-4xl md:text-5xl text-white leading-tight mb-6">
-            Tarif OJK & Premi<br />
+            Cara Membaca Tarif OJK<br />
             <span className="text-gradient-gold">Asuransi Motor 2026:</span><br />
             All Risk atau TLO?
           </h1>

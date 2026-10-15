@@ -5,9 +5,9 @@ import { generateSEO } from "@/lib/seo";
 import ProductPageLayout from "@/components/ProductPageLayout";
 
 export const metadata: Metadata = generateSEO({
-  title: "Asuransi Motor Batam – All Risk & TLO | Hitung Premi Motor Gratis",
+  title: "Asuransi Motor Batam – All Risk & TLO dari Praktisi Lokal",
   description:
-    "Asuransi motor di Batam: pilih All Risk atau TLO, tambah perluasan banjir, tanggung gugat pihak ketiga, dan PA pengemudi. Hitung estimasi premi online dan konsultasi dengan Rio: 0813-7333-6728.",
+    "Asuransi motor di Batam: pilih All Risk atau TLO, tambah perluasan banjir, tanggung gugat pihak ketiga, dan PA pengemudi. Konsultasi langsung dengan Rio: 0813-7333-6728.",
   canonical: "https://asuransibatam.com/asuransi-kendaraan/asuransi-motor-batam",
   languages: {
     id: "https://asuransibatam.com/asuransi-kendaraan/asuransi-motor-batam",

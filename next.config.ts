@@ -62,8 +62,8 @@ const nextConfig: NextConfig = {
       // 2) Slug lama sebelum artikel klaim mobil EN dipecah jadi -batam & -project
       { source: "/en/blog/how-to-claim-car-insurance", destination: "https://asuransibatam.com/en/blog/how-to-claim-car-insurance-batam", permanent: true },
       // 3) Versi EN artikel premi kapal belum pernah dibuat — arahkan ke halaman
-      //    marine insurance EN yang paling relevan, bukan ke blog index generik
-      { source: "/en/blog/ship-insurance-premium-batam-2026", destination: "https://asuransibatam.com/en/marine-insurance", permanent: true },
+      //    Marine Hull EN (topik premi kapal = hull), bukan ke pilar marine yang generik
+      { source: "/en/blog/ship-insurance-premium-batam-2026", destination: "https://asuransibatam.com/en/marine-insurance/marine-hull", permanent: true },
       // 4) Halaman lokasi digabung ke halaman kontak (isi peta, jam, area layanan, FAQ
       //    dipindah ke /kontak dan /en/contact) supaya tidak bersaing dengan halaman kontak.
       { source: "/lokasi", destination: "https://asuransibatam.com/kontak", permanent: true },
