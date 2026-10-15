@@ -5,9 +5,9 @@ import { generateSEO } from "@/lib/seo";
 import ProductPageLayout from "@/components/ProductPageLayout";
 
 export const metadata: Metadata = generateSEO({
-  title: "Motorcycle Insurance Batam – All Risk & TLO | Free Premium Calculator",
+  title: "Motorcycle Insurance Batam – All Risk & TLO Cover from a Local Practitioner",
   description:
-    "Motorcycle insurance in Batam: choose All Risk or TLO, add flood cover, third-party liability and rider PA. Estimate your premium online and talk to Rio: +62 813-7333-6728.",
+    "Motorcycle insurance in Batam: choose All Risk or TLO, add flood cover, third-party liability and rider PA. Talk to Rio directly: +62 813-7333-6728.",
   canonical: "https://asuransibatam.com/en/vehicle-insurance/motorcycle-insurance-batam",
   languages: {
     id: "https://asuransibatam.com/asuransi-kendaraan/asuransi-motor-batam",

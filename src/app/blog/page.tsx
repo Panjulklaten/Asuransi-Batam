@@ -43,7 +43,7 @@ const articles: Article[] = [
     readTime: "5 menit",
   },
   {
-    title: "Tarif OJK & Estimasi Premi Asuransi Motor 2026: All Risk atau TLO?",
+    title: "Cara Membaca Tarif OJK Asuransi Motor 2026: All Risk atau TLO?",
     slug: "asuransi-motor-batam",
     date: "29 Mei 2026",
     category: "Kendaraan",
