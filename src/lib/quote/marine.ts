@@ -14,6 +14,7 @@ const VESSELS: Option[] = [
 const HULL = ["hull"];
 const CARGO = ["cargo"];
 const BUILD = ["builders"];
+const PI = ["pi"];
 
 export const MARINE: QuoteCluster = {
   key: "marine",
@@ -37,6 +38,11 @@ export const MARINE: QuoteCluster = {
       hint: { id: "Pembangunan kapal di galangan", en: "Vessel construction at a shipyard" },
     },
     {
+      key: "pi",
+      label: { id: "P&I (Protection & Indemnity)", en: "P&I (Protection & Indemnity)" },
+      hint: { id: "Tanggung jawab hukum pemilik kapal", en: "Shipowner's legal liabilities" },
+    },
+    {
       key: "unsure",
       label: { id: "Belum yakin", en: "Not sure yet" },
       hint: { id: "Bantu saya menentukan", en: "Help me decide" },
@@ -45,6 +51,7 @@ export const MARINE: QuoteCluster = {
   inferType(pathname) {
     const p = pathname.toLowerCase();
     const rules: [RegExp, string][] = [
+      [/protection-and-indemnity|(^|[-/])pi([-/]|$)/, "pi"],
       [/hull-vs-cargo/, "unsure"],
       [/builders-risk|galangan|shipyard/, "builders"],
       [/marine-hull|asuransi-kapal|jenis-jenis-asuransi-kapal/, "hull"],
@@ -191,6 +198,65 @@ export const MARINE: QuoteCluster = {
       placeholder: { id: "mis. galangan di Tanjung Uncang, Batam", en: "e.g. shipyard in Tanjung Uncang, Batam" },
     },
 
+    // ── P&I (Protection & Indemnity) ──
+    {
+      key: "piVesselType",
+      kind: "select",
+      showFor: PI,
+      label: { id: "Jenis kapal", en: "Vessel type" },
+      placeholder: { id: "Pilih jenis kapal", en: "Select vessel type" },
+      options: VESSELS,
+    },
+    {
+      key: "piGt",
+      kind: "number",
+      showFor: PI,
+      label: { id: "Ukuran kapal", en: "Vessel size" },
+      placeholder: { id: "mis. 500", en: "e.g. 500" },
+      suffix: { id: "GT", en: "GT" },
+    },
+    {
+      key: "piCrew",
+      kind: "number",
+      showFor: PI,
+      optional: true,
+      label: { id: "Jumlah awak kapal", en: "Crew on board" },
+      placeholder: { id: "mis. 12", en: "e.g. 12" },
+      suffix: { id: "orang", en: "crew" },
+    },
+    {
+      key: "piArea",
+      kind: "select",
+      showFor: PI,
+      label: { id: "Daerah pelayaran", en: "Trading area" },
+      placeholder: { id: "Pilih daerah pelayaran", en: "Select trading area" },
+      options: [
+        { value: "batam", label: { id: "Perairan Batam & Kepulauan Riau", en: "Batam & Riau Islands waters" } },
+        { value: "domestic", label: { id: "Antar pulau (domestik)", en: "Inter-island (domestic)" } },
+        { value: "intl", label: { id: "Internasional (mis. Singapura, Malaysia)", en: "International (e.g. Singapore, Malaysia)" } },
+      ],
+    },
+    {
+      key: "piNeed",
+      kind: "select",
+      showFor: PI,
+      label: { id: "Perlindungan yang dicari", en: "Cover required" },
+      placeholder: { id: "Pilih kebutuhan", en: "Select requirement" },
+      options: [
+        { value: "full", label: { id: "P&I menyeluruh (awak, pihak ketiga, pencemaran)", en: "Full P&I (crew, third party, pollution)" } },
+        { value: "wreck", label: { id: "Penyingkiran kerangka kapal (wreck removal) saja", en: "Wreck removal only" } },
+        { value: "advise", label: { id: "Belum tahu — mohon disarankan", en: "Not sure — please advise" } },
+      ],
+    },
+    {
+      key: "piPeriod",
+      kind: "period",
+      showFor: PI,
+      label: { id: "Periode pertanggungan", en: "Policy period" },
+      placeholder: { id: "mis. 12", en: "e.g. 12" },
+      defaultUnit: "month",
+    },
+
     // ── Belum yakin ──
     {
       key: "estValue",
@@ -204,13 +270,17 @@ export const MARINE: QuoteCluster = {
   flags: [
     { key: "classed", showFor: HULL, label: { id: "Kapal berkelas / sertifikat lengkap", en: "Classed vessel / complete certificates" } },
     { key: "survey", showFor: HULL, label: { id: "Bersedia disurvei kondisi kapalnya", en: "Open to a vessel condition survey" } },
-    { key: "claim", showFor: ["hull", "cargo"], label: { id: "Pernah klaim dalam 3 tahun terakhir", en: "Claim made in the last 3 years" } },
-    { key: "renewal", showFor: ["hull", "cargo"], label: { id: "Perpanjangan polis yang sudah ada", en: "Renewal of an existing policy" } },
+    { key: "claim", showFor: ["hull", "cargo", "pi"], label: { id: "Pernah klaim dalam 3 tahun terakhir", en: "Claim made in the last 3 years" } },
+    { key: "renewal", showFor: ["hull", "cargo", "pi"], label: { id: "Perpanjangan polis yang sudah ada", en: "Renewal of an existing policy" } },
     { key: "special", showFor: CARGO, label: { id: "Barang berisiko khusus (mesin, mudah pecah, B3)", en: "Special-risk goods (machinery, fragile, hazardous)" } },
     { key: "lc", showFor: CARGO, label: { id: "Ada syarat asuransi dari L/C atau pembeli", en: "Insurance required by L/C or buyer" } },
     { key: "yardExp", showFor: BUILD, label: { id: "Galangan pernah membangun kapal sejenis", en: "Yard has built similar vessels" } },
     { key: "classBuild", showFor: BUILD, label: { id: "Pembangunan diawasi lembaga klasifikasi (class)", en: "Build supervised by a classification society" } },
-    { key: "urgent", label: { id: "Dibutuhkan mendesak (≤ 3 hari kerja)", en: "Urgent (≤ 3 working days)" } },
+    { key: "piHull", showFor: PI, label: { id: "Kapal sudah punya polis Marine Hull", en: "Vessel already has a Marine Hull policy" } },
+    { key: "piRequired", showFor: PI, label: { id: "Diminta charterer, pelabuhan, atau terminal", en: "Required by charterer, port, or terminal" } },
+    { key: "piPassenger", showFor: PI, label: { id: "Mengangkut penumpang", en: "Carries passengers" } },
+    { key: "piHazard", showFor: PI, label: { id: "Mengangkut muatan minyak / berbahaya", en: "Carries oil / hazardous cargo" } },
+    { key: "piCross", showFor: PI, label: { id: "Beroperasi lintas negara", en: "Operates across borders" } },
     { key: "multi", label: { id: "Perlu lebih dari satu jenis polis marine", en: "Need more than one marine policy" } },
   ],
   general: [
@@ -339,6 +409,48 @@ export const MARINE: QuoteCluster = {
       {
         doc: { id: "Daftar subkontraktor", en: "Subcontractor list" },
         note: { id: "Bila ada pihak lain yang perlu dicakup", en: "If other parties need to be covered" },
+        must: false,
+      },
+    ],
+    pi: [
+      {
+        doc: { id: "Dokumen kepemilikan & registrasi kapal", en: "Ownership & registration documents" },
+        note: { id: "Mis. grosse akta, surat tanda kebangsaan, dan surat ukur kapal", en: "E.g. grosse deed, nationality certificate, and tonnage certificate" },
+        must: true,
+      },
+      {
+        doc: { id: "Spesifikasi kapal", en: "Vessel specifications" },
+        note: { id: "Jenis, GT, tahun bangun, bendera, dan kelas kapal", en: "Type, GT, year built, flag, and class" },
+        must: true,
+      },
+      {
+        doc: { id: "Daerah pelayaran & jenis operasi", en: "Trading area & type of operation" },
+        note: { id: "Rute, pelabuhan yang sering disinggahi, dan jenis usaha (charter, angkutan, penunjang)", en: "Routes, regular ports of call, and trade (charter, carriage, support)" },
+        must: true,
+      },
+      {
+        doc: { id: "Data awak kapal", en: "Crew details" },
+        note: { id: "Jumlah, kebangsaan, dan sertifikat pelaut", en: "Number, nationality, and seafarer certificates" },
+        must: true,
+      },
+      {
+        doc: { id: "Jenis muatan & kontrak charter / angkutan", en: "Cargo type & charter / carriage contracts" },
+        note: { id: "Terutama bila ada muatan minyak, berbahaya, atau penumpang", en: "Especially for oil, hazardous cargo, or passengers" },
+        must: false,
+      },
+      {
+        doc: { id: "Polis Marine Hull yang berjalan", en: "Current Marine Hull policy" },
+        note: { id: "Agar cakupan keduanya selaras dan tidak tumpang tindih", en: "So both covers align without gaps or overlap" },
+        must: false,
+      },
+      {
+        doc: { id: "Riwayat klaim & insiden 3–5 tahun", en: "Claims & incident record, 3–5 years" },
+        note: { id: "Termasuk tuntutan pihak ketiga dan klaim awak kapal", en: "Including third-party and crew claims" },
+        must: false,
+      },
+      {
+        doc: { id: "Persyaratan asuransi dari charterer / pelabuhan / terminal", en: "Insurance requirements from charterer / port / terminal" },
+        note: { id: "Bila ada, agar bentuk polis sesuai permintaan", en: "If any, so the policy form matches the request" },
         must: false,
       },
     ],

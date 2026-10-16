@@ -156,6 +156,24 @@ const articles: Article[] = [
     readTime: "6 min",
   },
   {
+    title: "P&I vs Marine Hull Insurance for Shipowners",
+    slug: "pi-vs-marine-hull-insurance",
+    date: "October 16, 2026",
+    category: "Marine",
+    excerpt:
+      "Marine Hull protects the vessel; P&I covers liability claims from others. See how both respond in the same incident and how to choose.",
+    readTime: "6 min",
+  },
+  {
+    title: "How to Claim P&I Insurance: Steps and Documents",
+    slug: "how-to-claim-pi-insurance",
+    date: "October 16, 2026",
+    category: "Marine",
+    excerpt:
+      "How to claim P&I insurance after a vessel incident: notifying the insurer, securing evidence, documents to prepare, and mistakes to avoid.",
+    readTime: "6 min",
+  },
+  {
     title: "Batam–Singapore Shipping Insurance",
     slug: "batam-singapore-shipping-insurance",
     date: "May 7, 2026",

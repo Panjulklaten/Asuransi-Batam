@@ -1,5 +1,6 @@
 // app/en/marine-insurance/marine-hull/page.tsx
 import type { Metadata } from "next";
+import Link from "next/link";
 import { generateSEO, schemaFAQ, schemaBreadcrumb } from "@/lib/seo";
 import { Breadcrumb, SectionHeader } from "@/components/ui/index";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
@@ -69,6 +70,10 @@ const FAQS = [
   {
     q: "How is the insured value of a vessel determined?",
     a: "The insured value is typically set on an Agreed Value basis (a value agreed between the owner and the insurer) or Market Value. An independent marine survey is generally required for larger vessels.",
+  },
+  {
+    q: "Does Marine Hull already include P&I?",
+    a: "No. Marine Hull protects your own vessel and usually includes part of the collision liability to other ships. Liability to crew, passengers, cargo owners, piers, and pollution sits in a separate P&I (Protection & Indemnity) policy.",
   },
   {
     q: "Does Marine Hull cover damage caused by crew negligence?",
@@ -213,6 +218,31 @@ export default function MarineHullENPage() {
                 <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related products & articles */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <SectionHeader eyebrow="Complete Your Marine Protection" title="Related Products & Articles" center />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Link href="/en/marine-insurance/protection-and-indemnity" className="block p-6 rounded-2xl border border-gray-100 hover:border-[#c9a84c] transition-all bg-gray-50">
+              <h3 className="font-bold text-[#0a1628] mb-2">P&amp;I Insurance</h3>
+              <p className="text-sm text-gray-600">Add liability cover for third-party claims against the shipowner.</p>
+            </Link>
+            <Link href="/en/marine-insurance/marine-cargo" className="block p-6 rounded-2xl border border-gray-100 hover:border-[#c9a84c] transition-all bg-gray-50">
+              <h3 className="font-bold text-[#0a1628] mb-2">Marine Cargo Insurance</h3>
+              <p className="text-sm text-gray-600">Protect goods in transit, separate from the vessel itself.</p>
+            </Link>
+            <Link href="/en/marine-insurance/builders-risk" className="block p-6 rounded-2xl border border-gray-100 hover:border-[#c9a84c] transition-all bg-gray-50">
+              <h3 className="font-bold text-[#0a1628] mb-2">Builder&apos;s Risk (DSU)</h3>
+              <p className="text-sm text-gray-600">For vessels still under construction at a shipyard.</p>
+            </Link>
+            <Link href="/en/blog/pi-vs-marine-hull-insurance" className="block p-6 rounded-2xl border border-gray-100 hover:border-[#c9a84c] transition-all bg-gray-50">
+              <h3 className="font-bold text-[#0a1628] mb-2">P&amp;I vs Marine Hull</h3>
+              <p className="text-sm text-gray-600">See how the two policies split roles in one incident.</p>
+            </Link>
           </div>
         </div>
       </section>

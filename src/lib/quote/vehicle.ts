@@ -113,7 +113,6 @@ export const VEHICLE: QuoteCluster = {
     { key: "financed", label: { id: "Masih leasing / kredit (syarat lembaga pembiayaan)", en: "Still on lease / loan (financier requirement)" } },
     { key: "claim", label: { id: "Pernah klaim dalam 3 tahun terakhir", en: "Claim made in the last 3 years" } },
     { key: "renewal", label: { id: "Perpanjangan polis yang sudah ada", en: "Renewal of an existing policy" } },
-    { key: "urgent", label: { id: "Dibutuhkan mendesak (≤ 3 hari kerja)", en: "Urgent (≤ 3 working days)" } },
   ],
   general: [
     {

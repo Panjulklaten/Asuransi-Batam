@@ -54,6 +54,7 @@ const PAGE_TOPICS: Record<string, Label> = {
   "/asuransi-marine/marine-hull": ["Marine Hull"],
   "/asuransi-marine/marine-cargo": ["Marine Cargo"],
   "/asuransi-marine/builders-risk": ["Builders Risk"],
+  "/asuransi-marine/protection-and-indemnity": ["P&I (Protection & Indemnity)", "P&I (Protection & Indemnity)"],
   // Event
   "/asuransi-event": ["Event"],
   "/asuransi-event/konser-musik": ["Konser Musik", "Concert"],
@@ -102,6 +103,8 @@ const PAGE_TOPICS: Record<string, Label> = {
   "/blog/perbedaan-bid-bond-performance-bond": ["Surety Bond"],
   "/blog/perbedaan-car-dan-ear": ["Engineering"],
   "/blog/perbedaan-marine-hull-vs-cargo": ["Marine"],
+  "/blog/perbedaan-pi-dan-marine-hull": ["P&I (Protection & Indemnity)"],
+  "/blog/cara-klaim-asuransi-pi-kapal": ["P&I (Protection & Indemnity)"],
   "/blog/premi-asuransi-kapal-batam-2026": ["Marine Hull"],
   "/blog/premi-asuransi-marine-cargo-batam": ["Marine Cargo"],
   "/blog/risiko-banjir-kendaraan-batam": ["Kendaraan"],
@@ -152,6 +155,7 @@ const PAGE_TOPICS: Record<string, Label> = {
   "/en/marine-insurance/marine-hull": ["Marine Hull"],
   "/en/marine-insurance/marine-cargo": ["Marine Cargo"],
   "/en/marine-insurance/builders-risk": ["Builders Risk"],
+  "/en/marine-insurance/protection-and-indemnity": ["P&I (Protection & Indemnity)"],
   "/en/event-insurance": ["Event"],
   "/en/event-insurance/concert-insurance": ["Konser Musik", "Concert"],
   "/en/event-insurance/motocross-insurance": ["Motocross"],
@@ -176,6 +180,8 @@ const PAGE_TOPICS: Record<string, Label> = {
   "/en/blog/machinery-heavy-equipment-shipping-insurance-batam": ["Marine Cargo"],
   "/en/blog/marine-cargo-insurance-premium-batam": ["Marine Cargo"],
   "/en/blog/marine-hull-vs-cargo-insurance": ["Marine"],
+  "/en/blog/pi-vs-marine-hull-insurance": ["P&I (Protection & Indemnity)"],
+  "/en/blog/how-to-claim-pi-insurance": ["P&I (Protection & Indemnity)"],
   "/en/blog/mining-heavy-equipment-insurance": ["Alat Berat", "Heavy Equipment"],
   "/en/blog/pa-insurance-foreign-workers-singapore-from-batam": ["Personal Accident"],
 };

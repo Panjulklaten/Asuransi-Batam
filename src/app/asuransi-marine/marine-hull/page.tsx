@@ -72,6 +72,10 @@ const FAQS = [
     a: "Nilai pertanggungan biasanya ditentukan berdasarkan Agreed Value (nilai yang disepakati antara pemilik kapal dan penanggung) atau Market Value (nilai pasar kapal). Survei kapal oleh surveyor independen umumnya diperlukan untuk kapal berukuran besar.",
   },
   {
+    q: "Apakah Marine Hull sudah termasuk P&I?",
+    a: "Tidak. Marine Hull melindungi fisik kapal Anda dan umumnya memuat sebagian tanggung jawab tabrakan antarkapal. Tanggung jawab kepada awak, penumpang, pemilik muatan, dermaga, dan pencemaran berada di polis P&I (Protection & Indemnity) yang terpisah.",
+  },
+  {
     q: "Apakah Marine Hull menanggung kecelakaan akibat kelalaian kru?",
     a: "Ya. Berdasarkan klausul Institute Time Clauses – Hull (ITC), kelalaian kru, nakhoda, atau pilot yang menyebabkan kerusakan fisik kapal umumnya ditanggung, selama tidak ada unsur kesengajaan dari pemilik kapal.",
   },
@@ -219,7 +223,11 @@ export default function MarineHullPage() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <SectionHeader eyebrow="Lengkapi Proteksi Maritim" title="Produk & Artikel Terkait" center />
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Link href="/asuransi-marine/protection-and-indemnity" className="block p-6 rounded-2xl border border-gray-100 hover:border-[#c9a84c] transition-all bg-gray-50">
+              <h3 className="font-bold text-[#0a1628] mb-2">Asuransi P&amp;I</h3>
+              <p className="text-sm text-gray-600">Lengkapi hull dengan perlindungan tanggung jawab kepada pihak ketiga.</p>
+            </Link>
             <Link href="/asuransi-marine/marine-cargo" className="block p-6 rounded-2xl border border-gray-100 hover:border-[#c9a84c] transition-all bg-gray-50">
               <h3 className="font-bold text-[#0a1628] mb-2">Marine Cargo Insurance</h3>
               <p className="text-sm text-gray-600">Lindungi muatan/barang yang diangkut, terpisah dari fisik kapal.</p>
@@ -231,6 +239,10 @@ export default function MarineHullPage() {
             <Link href="/blog/perbedaan-marine-hull-vs-cargo" className="block p-6 rounded-2xl border border-gray-100 hover:border-[#c9a84c] transition-all bg-gray-50">
               <h3 className="font-bold text-[#0a1628] mb-2">Perbedaan Marine Hull vs Cargo</h3>
               <p className="text-sm text-gray-600">Baca penjelasan lengkap agar memilih polis yang tepat.</p>
+            </Link>
+            <Link href="/blog/perbedaan-pi-dan-marine-hull" className="block p-6 rounded-2xl border border-gray-100 hover:border-[#c9a84c] transition-all bg-gray-50">
+              <h3 className="font-bold text-[#0a1628] mb-2">Perbedaan P&amp;I dan Marine Hull</h3>
+              <p className="text-sm text-gray-600">Lihat pembagian peran kedua polis dalam satu insiden.</p>
             </Link>
           </div>
         </div>

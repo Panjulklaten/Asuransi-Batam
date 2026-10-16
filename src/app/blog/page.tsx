@@ -327,6 +327,24 @@ const articles: Article[] = [
     readTime: "8 menit",
   },
   {
+    title: "Perbedaan P&I dan Marine Hull untuk Pemilik Kapal",
+    slug: "perbedaan-pi-dan-marine-hull",
+    date: "16 Oktober 2026",
+    category: "Marine",
+    excerpt:
+      "Marine Hull melindungi fisik kapal, P&I melindungi tanggung jawab hukum kepada pihak lain. Contoh kejadian dan cara memilih susunan polis yang tepat.",
+    readTime: "6 menit",
+  },
+  {
+    title: "Cara Klaim Asuransi P&I Kapal: Langkah dan Dokumen",
+    slug: "cara-klaim-asuransi-pi-kapal",
+    date: "16 Oktober 2026",
+    category: "Marine",
+    excerpt:
+      "Langkah klaim asuransi P&I setelah insiden kapal: notifikasi, pengamanan bukti, dokumen yang disiapkan, dan kesalahan yang perlu dihindari.",
+    readTime: "6 menit",
+  },
+  {
     title: "Berapa Premi Asuransi Builder's Risk Kapal di Batam?",
     slug: "berapa-premi-asuransi-builders-risk-kapal-batam",
     date: "7 Mei 2026",

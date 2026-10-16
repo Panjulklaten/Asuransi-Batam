@@ -72,6 +72,7 @@ const URL_MAP: Record<string, string> = {
   "/asuransi-marine/marine-hull": "/en/marine-insurance/marine-hull",
   "/asuransi-marine/marine-cargo": "/en/marine-insurance/marine-cargo",
   "/asuransi-marine/builders-risk": "/en/marine-insurance/builders-risk",
+  "/asuransi-marine/protection-and-indemnity": "/en/marine-insurance/protection-and-indemnity",
   "/asuransi-event": "/en/event-insurance",
   "/asuransi-event/konser-musik": "/en/event-insurance/concert-insurance",
   "/asuransi-event/motor-cross": "/en/event-insurance/motocross-insurance",
@@ -107,6 +108,8 @@ const URL_MAP: Record<string, string> = {
   "/blog/asuransi-pengiriman-batam-singapore": "/en/blog/batam-singapore-shipping-insurance",
   "/blog/asuransi-pengiriman-batam-jakarta": "/en/blog/batam-jakarta-cargo-insurance",
   "/blog/premi-asuransi-marine-cargo-batam": "/en/blog/marine-cargo-insurance-premium-batam",
+  "/blog/perbedaan-pi-dan-marine-hull": "/en/blog/pi-vs-marine-hull-insurance",
+  "/blog/cara-klaim-asuransi-pi-kapal": "/en/blog/how-to-claim-pi-insurance",
   "/blog/asuransi-cargo-ekspor-batam": "/en/blog/batam-export-cargo-insurance",
   "/blog/builders-risk-untuk-galangan-kapal": "/en/blog/builders-risk-shipyard-insurance-batam",
   "/blog/cara-mendapatkan-asuransi-builders-risk-batam": "/en/blog/how-to-get-builders-risk-insurance-batam",
@@ -209,6 +212,7 @@ const productsID: NavItem[] = [
       { label: "Marine Hull", href: "/asuransi-marine/marine-hull", desc: "Lambung & mesin kapal" },
       { label: "Marine Cargo", href: "/asuransi-marine/marine-cargo", desc: "Muatan & pengiriman laut" },
       { label: "Builder's Risk", href: "/asuransi-marine/builders-risk", desc: "Pembangunan kapal" },
+      { label: "P&I (Protection & Indemnity)", href: "/asuransi-marine/protection-and-indemnity", desc: "Tanggung jawab pemilik kapal" },
     ],
   },
   {
@@ -300,6 +304,7 @@ const productsEN: NavItem[] = [
       { label: "Marine Hull", href: "/en/marine-insurance/marine-hull", desc: "Hull & vessel machinery" },
       { label: "Marine Cargo", href: "/en/marine-insurance/marine-cargo", desc: "Cargo & sea freight" },
       { label: "Builder's Risk", href: "/en/marine-insurance/builders-risk", desc: "Vessel construction" },
+      { label: "P&I (Protection & Indemnity)", href: "/en/marine-insurance/protection-and-indemnity", desc: "Shipowner's liability" },
     ],
   },
   {
@@ -360,6 +365,8 @@ const blogCategoriesID: BlogCategory[] = [
     articles: [
       { label: "Cara Klaim Asuransi Marine Cargo", href: "/blog/cara-klaim-asuransi-marine-cargo" },
       { label: "Perbedaan Marine Hull vs Cargo", href: "/blog/perbedaan-marine-hull-vs-cargo" },
+      { label: "Perbedaan P&I dan Marine Hull", href: "/blog/perbedaan-pi-dan-marine-hull" },
+      { label: "Cara Klaim Asuransi P&I Kapal", href: "/blog/cara-klaim-asuransi-pi-kapal" },
       { label: "Asuransi Pengiriman Batam–Singapore", href: "/blog/asuransi-pengiriman-batam-singapore" },
       { label: "Asuransi Pengiriman Batam–Jakarta", href: "/blog/asuransi-pengiriman-batam-jakarta" },
       { label: "Premi Asuransi Marine Cargo Batam", href: "/blog/premi-asuransi-marine-cargo-batam" },
@@ -419,6 +426,8 @@ const blogCategoriesEN: BlogCategory[] = [
     articles: [
       { label: "How to Claim Marine Cargo Insurance", href: "/en/blog/how-to-claim-marine-cargo-insurance" },
       { label: "Marine Hull vs Cargo Insurance", href: "/en/blog/marine-hull-vs-cargo-insurance" },
+      { label: "P&I vs Marine Hull Insurance", href: "/en/blog/pi-vs-marine-hull-insurance" },
+      { label: "How to Claim P&I Insurance", href: "/en/blog/how-to-claim-pi-insurance" },
       { label: "Batam–Singapore Shipping Insurance", href: "/en/blog/batam-singapore-shipping-insurance" },
       { label: "Batam–Jakarta Cargo Insurance", href: "/en/blog/batam-jakarta-cargo-insurance" },
       { label: "Marine Cargo Premium Batam", href: "/en/blog/marine-cargo-insurance-premium-batam" },

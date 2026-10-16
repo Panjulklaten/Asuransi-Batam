@@ -208,6 +208,7 @@ export default function MarineHullVsCargoPage() {
             <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#c9a84c" }}>Products &amp; Services</p>
             <ul className="space-y-2">
               <li><a href="/en/marine-insurance/marine-hull" className="text-sm text-blue-700 hover:underline font-medium">→ Marine Hull Insurance Batam</a></li>
+              <li><a href="/en/marine-insurance/protection-and-indemnity" className="text-sm text-blue-700 hover:underline font-medium">→ P&amp;I Insurance Batam</a></li>
               <li><a href="/en/marine-insurance/marine-cargo" className="text-sm text-blue-700 hover:underline font-medium">→ Marine Cargo Insurance Batam</a></li>
               <li><a href="/en/marine-insurance" className="text-sm text-blue-700 hover:underline font-medium">→ Marine Insurance Batam</a></li>
             </ul>

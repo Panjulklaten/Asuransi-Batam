@@ -127,10 +127,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/asuransi-marine/marine-hull`,                                 lastModified: new Date("2026-06-28"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/asuransi-marine/marine-cargo`,                                lastModified: new Date("2026-06-28"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/asuransi-marine/builders-risk`,                               lastModified: new Date("2026-06-28"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/asuransi-marine/protection-and-indemnity`,                     lastModified: new Date("2026-10-16"), changeFrequency: "monthly", priority: 0.8 },
 
     { url: `${BASE_URL}/en/marine-insurance/marine-hull`,                             lastModified: new Date("2026-06-27"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/en/marine-insurance/marine-cargo`,                            lastModified: new Date("2026-06-27"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/en/marine-insurance/builders-risk`,                           lastModified: new Date("2026-06-27"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/en/marine-insurance/protection-and-indemnity`,                 lastModified: new Date("2026-10-16"), changeFrequency: "monthly", priority: 0.8 },
 
     // ────────────────────────────────────────────────────────────────────────
     // SUB-PAGES – SURETY BOND
@@ -188,6 +190,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Marine
     { url: `${BASE_URL}/blog/cara-klaim-asuransi-marine-cargo`,      lastModified: new Date("2026-05-07"), changeFrequency: "yearly",  priority: 0.7 },
     { url: `${BASE_URL}/blog/perbedaan-marine-hull-vs-cargo`,        lastModified: new Date("2026-05-07"), changeFrequency: "yearly",  priority: 0.7 },
+    { url: `${BASE_URL}/blog/perbedaan-pi-dan-marine-hull`,          lastModified: new Date("2026-10-16"), changeFrequency: "yearly",  priority: 0.7 },
+    { url: `${BASE_URL}/blog/cara-klaim-asuransi-pi-kapal`,          lastModified: new Date("2026-10-16"), changeFrequency: "yearly",  priority: 0.7 },
     { url: `${BASE_URL}/blog/asuransi-pengiriman-batam-singapore`,   lastModified: new Date("2026-05-07"), changeFrequency: "yearly",  priority: 0.7 },
     { url: `${BASE_URL}/blog/asuransi-pengiriman-batam-jakarta`,     lastModified: new Date("2026-05-08"), changeFrequency: "yearly",  priority: 0.7 },
     { url: `${BASE_URL}/blog/premi-asuransi-marine-cargo-batam`,     lastModified: new Date("2026-05-08"), changeFrequency: "yearly",  priority: 0.7 },
@@ -246,6 +250,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Marine
     { url: `${BASE_URL}/en/blog/how-to-claim-marine-cargo-insurance`,                    lastModified: new Date("2026-04-30"), changeFrequency: "yearly", priority: 0.7 },
     { url: `${BASE_URL}/en/blog/marine-hull-vs-cargo-insurance`,                         lastModified: new Date("2026-05-07"), changeFrequency: "yearly", priority: 0.7 },
+    { url: `${BASE_URL}/en/blog/pi-vs-marine-hull-insurance`,                            lastModified: new Date("2026-10-16"), changeFrequency: "yearly", priority: 0.7 },
+    { url: `${BASE_URL}/en/blog/how-to-claim-pi-insurance`,                              lastModified: new Date("2026-10-16"), changeFrequency: "yearly", priority: 0.7 },
     { url: `${BASE_URL}/en/blog/batam-singapore-shipping-insurance`,                     lastModified: new Date("2026-05-07"), changeFrequency: "yearly", priority: 0.7 },
     { url: `${BASE_URL}/en/blog/batam-jakarta-cargo-insurance`,                          lastModified: new Date("2026-05-08"), changeFrequency: "yearly", priority: 0.7 },
     { url: `${BASE_URL}/en/blog/marine-cargo-insurance-premium-batam`,                   lastModified: new Date("2026-05-08"), changeFrequency: "yearly", priority: 0.7 },
