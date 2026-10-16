@@ -765,6 +765,7 @@ export default function ArticlePremiAsuransiKapal() {
             <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#c9a84c" }}>Produk &amp; Layanan</p>
             <ul className="space-y-2">
               <li><a href="/asuransi-marine/marine-hull" className="text-sm text-blue-700 hover:underline font-medium">→ Marine Hull Insurance Batam</a></li>
+              <li><a href="/asuransi-marine/protection-and-indemnity" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi P&amp;I Batam</a></li>
               <li><a href="/asuransi-marine/builders-risk" className="text-sm text-blue-700 hover:underline font-medium">→ Builders Risk Galangan Kapal Batam</a></li>
               <li><a href="/asuransi-marine" className="text-sm text-blue-700 hover:underline font-medium">→ Asuransi Marine Batam</a></li>
             </ul>

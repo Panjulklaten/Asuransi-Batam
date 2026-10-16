@@ -5,8 +5,8 @@ import Link from "next/link";
 import ProductPageLayout from "@/components/ProductPageLayout";
 
 export const metadata: Metadata = generateSEO({
-  title: "Asuransi Marine Batam – Marine Hull, Cargo & Builder's Risk",
-  description: "Asuransi marine di Batam mencakup Marine Hull, Marine Cargo, dan Builder's Risk. Perlindungan kapal, muatan, dan pembangunan kapal.",
+  title: "Asuransi Marine Batam – Hull, Cargo, Builder's Risk & P&I",
+  description: "Asuransi marine di Batam mencakup Marine Hull, Marine Cargo, Builder's Risk, dan P&I. Perlindungan kapal, muatan, pembangunan kapal, dan tanggung jawab pemilik kapal.",
   canonical: "https://asuransibatam.com/asuransi-marine",
   languages: {
       id: "https://asuransibatam.com/asuransi-marine",
@@ -37,6 +37,7 @@ const benefits = [
     icon: "⚓",
     title: "Protection & Indemnity (P&I)",
     desc: "Perlindungan tanggung jawab hukum pemilik kapal kepada pihak ketiga, termasuk kru, penumpang, dan pencemaran lingkungan.",
+    href: "/asuransi-marine/protection-and-indemnity",
   },
   {
     icon: "🌊",
@@ -54,6 +55,10 @@ const faqs = [
   {
     q: "Apa perbedaan Marine Hull dan Marine Cargo?",
     a: "Marine Hull melindungi fisik kapal beserta mesinnya, sementara Marine Cargo melindungi muatan atau barang yang diangkut oleh kapal. Keduanya bisa dimiliki oleh pihak yang berbeda — pemilik kapal mengambil Hull, sedangkan pemilik barang mengambil Cargo.",
+  },
+  {
+    q: "Apakah Marine Hull sudah termasuk P&I?",
+    a: "Tidak. Marine Hull melindungi fisik kapal, sedangkan P&I melindungi tanggung jawab hukum pemilik kapal kepada awak, penumpang, pemilik muatan, dermaga, dan pencemaran. Keduanya saling melengkapi; penjelasan lengkap ada di halaman asuransi P&I.",
   },
   {
     q: "Apakah kapal nelayan dan speedboat bisa diasuransikan?",
@@ -83,7 +88,7 @@ const schema = {
   "@type": "Service",
   name: "Asuransi Marine Batam",
   description:
-    "Layanan asuransi marine di Batam mencakup Marine Hull, Marine Cargo, dan Builder's Risk untuk perlindungan kapal dan pengiriman laut.",
+    "Layanan asuransi marine di Batam mencakup Marine Hull, Marine Cargo, Builder's Risk, dan P&I untuk perlindungan kapal, pengiriman laut, dan tanggung jawab pemilik kapal.",
   provider: {
     "@type": "InsuranceAgency",
     name: "Asuransi Batam – Rio",
@@ -98,6 +103,7 @@ const schema = {
       { "@type": "Offer", name: "Marine Hull Insurance" },
       { "@type": "Offer", name: "Marine Cargo Insurance" },
       { "@type": "Offer", name: "Builder's Risk Insurance" },
+      { "@type": "Offer", name: "P&I (Protection & Indemnity) Insurance" },
     ],
   },
 };
@@ -107,7 +113,7 @@ export default function AsuransiMarinePage() {
     <ProductPageLayout
       cluster="marine"
       title="Asuransi Marine Batam"
-      subtitle="Marine Hull, Cargo & Builder's Risk"
+      subtitle="Marine Hull, Cargo, Builder's Risk & P&I"
       description="Batam sebagai kota kepulauan dengan lalu lintas laut yang tinggi membutuhkan perlindungan yang andal. Asuransi marine kami menjaga kapal, muatan, dan aset maritim Anda dari risiko di lautan."
       benefits={benefits}
       faqs={faqs}
@@ -118,7 +124,7 @@ export default function AsuransiMarinePage() {
       <div className="mb-12">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Produk Asuransi Marine Kami</h2>
         <p className="text-center text-[#475569] mb-8 max-w-2xl mx-auto">Pilih perlindungan yang sesuai dengan kebutuhan maritim dan pengiriman Anda di Batam.</p>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <Link href="/asuransi-marine/marine-hull" className="group block p-6 rounded-2xl border-2 border-[#e2e8f0] hover:border-[#c9a84c]/50 hover:shadow-lg transition-all">
             <h3 className="font-display font-bold text-lg text-[#0a1628] group-hover:text-[#1a4fa0] mb-2">Marine Hull Insurance</h3>
             <p className="text-[#475569] text-sm">Perlindungan menyeluruh untuk lambung kapal, mesin, dan perlengkapan navigasi dari tabrakan, kandas, dan kebakaran.</p>
@@ -130,6 +136,10 @@ export default function AsuransiMarinePage() {
           <Link href="/asuransi-marine/builders-risk" className="group block p-6 rounded-2xl border-2 border-[#e2e8f0] hover:border-[#c9a84c]/50 hover:shadow-lg transition-all">
             <h3 className="font-display font-bold text-lg text-[#0a1628] group-hover:text-[#1a4fa0] mb-2">Builder&apos;s Risk (DSU)</h3>
             <p className="text-[#475569] text-sm">Perlindungan selama pembangunan kapal di galangan Batam, dari keel laying hingga sea trial selesai.</p>
+          </Link>
+          <Link href="/asuransi-marine/protection-and-indemnity" className="group block p-6 rounded-2xl border-2 border-[#e2e8f0] hover:border-[#c9a84c]/50 hover:shadow-lg transition-all">
+            <h3 className="font-display font-bold text-lg text-[#0a1628] group-hover:text-[#1a4fa0] mb-2">P&amp;I (Protection &amp; Indemnity)</h3>
+            <p className="text-[#475569] text-sm">Tanggung jawab hukum pemilik kapal kepada awak, penumpang, pemilik muatan, dermaga, dan pencemaran.</p>
           </Link>
         </div>
       </div>

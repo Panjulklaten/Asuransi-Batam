@@ -76,6 +76,8 @@ const OG_IMAGE_BY_BLOG_SLUG: Record<string, string> = {
   "cara-mendapatkan-asuransi-builders-risk-batam": "marine",
   "jenis-jenis-asuransi-kapal-armada": "marine",
   "perbedaan-marine-hull-vs-cargo": "marine",
+  "perbedaan-pi-dan-marine-hull": "marine",
+  "cara-klaim-asuransi-pi-kapal": "marine",
   "premi-asuransi-kapal-batam-2026": "marine",
   "premi-asuransi-marine-cargo-batam": "marine",
   "batam-export-cargo-insurance": "marine",
@@ -87,6 +89,8 @@ const OG_IMAGE_BY_BLOG_SLUG: Record<string, string> = {
   "machinery-heavy-equipment-shipping-insurance-batam": "marine",
   "marine-cargo-insurance-premium-batam": "marine",
   "marine-hull-vs-cargo-insurance": "marine",
+  "pi-vs-marine-hull-insurance": "marine",
+  "how-to-claim-pi-insurance": "marine",
   // ── Properti ──
   "asuransi-gudang-kawasan-industri-muka-kuning-batam": "properti",
   "asuransi-properti-komersial-batam": "properti",

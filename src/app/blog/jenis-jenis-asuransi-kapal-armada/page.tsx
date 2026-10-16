@@ -136,6 +136,8 @@ const insuranceTypes = [
     ],
     description:
       "P&I Insurance melindungi pemilik kapal dari tuntutan hukum pihak ketiga. Di kawasan Batam — Bintan yang berbatasan langsung dengan perairan internasional, standar P&I dari P&I Clubs internasional sering menjadi syarat masuk ke terminal-terminal besar.",
+    internalLink: "/asuransi-marine/protection-and-indemnity",
+    internalLabel: "Pelajari Asuransi P&I →",
     badge: "Wajib Internasional",
   },
   {

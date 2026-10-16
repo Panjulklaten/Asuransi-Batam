@@ -193,7 +193,6 @@ export const SURETY: QuoteCluster = {
     { key: "fin2y", label: { id: "Laporan keuangan 2 tahun terakhir tersedia", en: "2 years of financial statements available" } },
     { key: "license", label: { id: "Izin usaha / SBU sesuai bidang tersedia", en: "Relevant licence / SBU available" } },
     { key: "noCollateral", label: { id: "Ingin tanpa agunan tunai", en: "Prefer no cash collateral" } },
-    { key: "urgent", label: { id: "Dibutuhkan mendesak (≤ 3 hari kerja)", en: "Urgent (≤ 3 working days)" } },
     { key: "multi", label: { id: "Perlu lebih dari satu jenis bond", en: "Need more than one bond type" } },
   ],
   general: GENERAL,

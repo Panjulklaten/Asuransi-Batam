@@ -180,7 +180,6 @@ export const PROPERTY: QuoteCluster = {
     { key: "flood", label: { id: "Perlu perluasan banjir / gempa / huru-hara", en: "Need flood / earthquake / riot extensions" } },
     { key: "claim", label: { id: "Pernah klaim dalam 3 tahun terakhir", en: "Claim made in the last 3 years" } },
     { key: "renewal", label: { id: "Perpanjangan polis yang sudah ada", en: "Renewal of an existing policy" } },
-    { key: "urgent", label: { id: "Dibutuhkan mendesak (≤ 3 hari kerja)", en: "Urgent (≤ 3 working days)" } },
   ],
   general: [
     {

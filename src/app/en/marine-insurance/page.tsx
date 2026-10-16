@@ -4,8 +4,8 @@ import { generateSEO } from "@/lib/seo";
 import ProductPageLayout from "@/components/ProductPageLayout";
 
 export const metadata: Metadata = generateSEO({
-  title: "Marine Insurance Batam – Marine Hull, Cargo & Builder's Risk",
-  description: "Marine insurance in Batam covering Marine Hull, Marine Cargo, and Builder's Risk. Protect your vessel, cargo, and shipbuilding projects. Consult Rio at +62-813-7333-6728.",
+  title: "Marine Insurance Batam – Hull, Cargo, Builder's Risk & P&I",
+  description: "Marine insurance in Batam covering Marine Hull, Marine Cargo, Builder's Risk, and P&I. Protect your vessel, cargo, shipbuilding projects, and shipowner liability. Consult Rio at +62-813-7333-6728.",
   canonical: "https://asuransibatam.com/en/marine-insurance",
   languages: {
       id: "https://asuransibatam.com/asuransi-marine",
@@ -36,6 +36,7 @@ const benefits = [
     icon: "⚓",
     title: "Protection & Indemnity (P&I)",
     desc: "Legal liability coverage for shipowners towards third parties, including crew, passengers, and environmental pollution.",
+    href: "/en/marine-insurance/protection-and-indemnity",
   },
   {
     icon: "🌊",
@@ -53,6 +54,10 @@ const faqs = [
   {
     q: "What is the difference between Marine Hull and Marine Cargo Insurance?",
     a: "Marine Hull protects the physical vessel and its machinery, while Marine Cargo protects the goods or commodities being transported. The two can be held by different parties — the shipowner takes out Hull insurance, while the cargo owner takes out Cargo insurance.",
+  },
+  {
+    q: "Does Marine Hull already include P&I?",
+    a: "No. Marine Hull protects the physical vessel, while P&I covers the shipowner's legal liability to crew, passengers, cargo owners, piers, and pollution. They complement each other; the full explanation is on the P&I insurance page.",
   },
   {
     q: "Can fishing boats and speedboats be insured?",
@@ -82,7 +87,7 @@ const schema = {
   "@type": "Service",
   name: "Marine Insurance Batam",
   description:
-    "Marine insurance services in Batam covering Marine Hull, Marine Cargo, and Builder's Risk for vessel and maritime asset protection.",
+    "Marine insurance services in Batam covering Marine Hull, Marine Cargo, Builder's Risk, and P&I for vessel, cargo, and shipowner liability protection.",
   provider: {
     "@type": "InsuranceAgency",
     name: "Batam Insurance – Rio",
@@ -97,6 +102,7 @@ const schema = {
       { "@type": "Offer", name: "Marine Hull Insurance" },
       { "@type": "Offer", name: "Marine Cargo Insurance" },
       { "@type": "Offer", name: "Builder's Risk Insurance" },
+      { "@type": "Offer", name: "P&I (Protection & Indemnity) Insurance" },
     ],
   },
 };
@@ -106,7 +112,7 @@ export default function MarineInsurancePage() {
     <ProductPageLayout
       cluster="marine"
       title="Marine Insurance Batam"
-      subtitle="Marine Hull, Cargo & Builder's Risk"
+      subtitle="Marine Hull, Cargo, Builder's Risk & P&I"
       description="Batam's position as a maritime hub makes reliable marine protection essential. Our marine insurance products safeguard your vessels, cargo, and maritime assets from the risks of the sea."
       benefits={benefits}
       faqs={faqs}
