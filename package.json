@@ -10,6 +10,7 @@
     "submit-indexnow": "tsx scripts/submit-all-indexnow.ts"
   },
   "dependencies": {
+    "framer-motion": "^14.3.0",
     "lucide-react": "^1.58.0",
     "next": "^16.4.2",
     "react": "^19.3.1",
