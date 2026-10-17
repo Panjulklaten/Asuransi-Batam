@@ -14,6 +14,7 @@ import {
   Network,
   MessageCircleMore,
   CheckCircle2,
+  HelpCircle,
 } from "lucide-react";
 
 function SectionHeading({ icon: Icon, children }: { icon: React.ElementType; children: React.ReactNode }) {
@@ -101,12 +102,35 @@ const serviceSchema = schemaInsuranceProduct({
   category: "Surety Bond",
 });
 
+const BID_BOND_FAQS = [
+  { q: "What is the difference between a bid bond and a performance bond?", a: "A bid bond guarantees that the winning bidder will sign the contract and not withdraw. A performance bond comes after the contract is signed and guarantees that the work will be completed as agreed. The two are issued at different stages of the same project.", link: true },
+  { q: "How much does a bid bond need to be?", a: "Under government procurement regulations (Presidential Regulation 16/2018 as amended by 12/2021), a bid bond generally ranges from 1% to 3% of the Owner Estimate (HPS). For a project with an HPS of IDR 10 billion, that is roughly IDR 100 million to IDR 300 million. For private tenders, the amount is set in the tender documents.", link: false },
+  { q: "How long does it take to get a bid bond, and is collateral required?", a: "Once the documents are complete, an insurance bid bond can generally be issued within 1 to 3 business days. Unlike a bank guarantee, it does not require you to place a deposit or collateral at a bank, so your company's liquidity stays intact.", link: false },
+  { q: "How long is a bid bond valid, and can it be extended?", a: "The typical validity period is 30 to 90 days from the issuance date, following the tender document requirements. If the tender process is extended, the bid bond can be extended accordingly.", link: false },
+  { q: "When can the project owner claim a bid bond?", a: "If the winning bidder defaults: for example, by not signing the contract according to the submitted bid, not submitting the required Performance Bond and Advance Payment Bond by the deadline, or withdrawing unilaterally after the winner is announced. The project owner can then claim the bid bond to cover the cost of re-tendering or other losses.", link: false },
+  { q: "Can a new contractor without audited financial statements get a bid bond?", a: "Possibly. The standard application asks for financial statements for the last 2 years (or the annual tax return), but for new contractors or companies without audited statements, alternative processes can still be discussed with our consultants.", link: false },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: BID_BOND_FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 export default function BidBondENPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <ArticleLayout
         cluster="surety"
@@ -240,6 +264,21 @@ export default function BidBondENPage() {
           { title: "Issuance", desc: "The bid bond is printed and delivered (physical or digital as needed) within 1–3 business days." },
         ]}
       />
+
+      {/* ── H2: FAQ ── */}
+      <SectionHeading icon={HelpCircle}>Bid Bond FAQ</SectionHeading>
+      {BID_BOND_FAQS.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+          {f.link && (
+            <p>
+              Want the full comparison? Read{" "}
+              <Link href="/en/difference-between-bid-bond-and-performance-bond">Bid Bond vs Performance Bond: Differences, Functions & When to Use Each</Link>.
+            </p>
+          )}
+        </div>
+      ))}
 
       {/* ── H2: Internal Links ── */}
       <SectionHeading icon={Network}>Other Surety Bonds You May Need</SectionHeading>

@@ -14,6 +14,7 @@ import {
   Network,
   MessageCircleMore,
   CheckCircle2,
+  HelpCircle,
 } from "lucide-react";
 
 function SectionHeading({ icon: Icon, children }: { icon: React.ElementType; children: React.ReactNode }) {
@@ -101,12 +102,35 @@ const serviceSchema = schemaInsuranceProduct({
   category: "Surety Bond",
 });
 
+const BID_BOND_FAQS = [
+  { q: "Apa perbedaan bid bond dan performance bond?", a: "Bid bond menjamin pemenang tender akan menandatangani kontrak dan tidak mundur. Performance bond datang setelah kontrak ditandatangani dan menjamin pekerjaan diselesaikan sesuai kesepakatan. Keduanya diterbitkan pada tahap berbeda dalam proyek yang sama.", link: true },
+  { q: "Berapa nilai bid bond yang harus disiapkan?", a: "Berdasarkan regulasi pengadaan pemerintah (Perpres 16/2018 jo. Perpres 12/2021), bid bond umumnya 1% hingga 3% dari Harga Perkiraan Sendiri (HPS). Untuk proyek dengan HPS Rp 10 miliar, berarti sekitar Rp 100 juta sampai Rp 300 juta. Untuk tender swasta, besarannya mengikuti dokumen tender.", link: false },
+  { q: "Berapa lama bid bond terbit, dan apakah perlu jaminan atau agunan?", a: "Setelah dokumen lengkap, bid bond asuransi umumnya dapat terbit dalam 1 sampai 3 hari kerja. Berbeda dengan bank garansi, Anda tidak perlu menempatkan deposit atau agunan di bank, sehingga likuiditas perusahaan tetap aman.", link: false },
+  { q: "Berapa lama masa berlaku bid bond, dan bisa diperpanjang?", a: "Masa berlaku umumnya 30 hingga 90 hari sejak tanggal penerbitan, sesuai ketentuan dokumen tender. Jika proses tender memanjang, bid bond dapat diperpanjang.", link: false },
+  { q: "Kapan pemilik proyek bisa mencairkan bid bond?", a: "Jika pemenang tender ingkar janji, misalnya tidak menandatangani kontrak sesuai penawaran, tidak menyerahkan Performance Bond dan Advance Payment Bond dalam batas waktu, atau menarik diri secara sepihak setelah pengumuman pemenang. Pemilik proyek dapat mencairkan bid bond untuk menutup biaya tender ulang atau kerugian lain.", link: false },
+  { q: "Apakah kontraktor baru tanpa laporan keuangan audit bisa mendapat bid bond?", a: "Bisa dibicarakan. Pengajuan standar meminta laporan keuangan 2 tahun terakhir (atau SPT tahunan), tetapi untuk kontraktor baru atau perusahaan tanpa laporan keuangan audit, proses alternatif tetap dapat didiskusikan dengan konsultan kami.", link: false },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: BID_BOND_FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 export default function BidBondPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <ArticleLayout
         cluster="surety"
@@ -239,6 +263,21 @@ export default function BidBondPage() {
           { title: "Penerbitan", desc: "Bid bond dicetak dan diserahkan (fisik atau digital sesuai kebutuhan) dalam 1–3 hari kerja." },
         ]}
       />
+
+      {/* ── H2: FAQ ── */}
+      <SectionHeading icon={HelpCircle}>Pertanyaan Umum tentang Bid Bond</SectionHeading>
+      {BID_BOND_FAQS.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+          {f.link && (
+            <p>
+              Ingin perbandingan lengkapnya? Baca{" "}
+              <Link href="/blog/perbedaan-bid-bond-performance-bond">Bid Bond vs Performance Bond: Perbedaan, Fungsi & Kapan Dipakai</Link>.
+            </p>
+          )}
+        </div>
+      ))}
 
       {/* ── H2: Internal Links ── */}
       <SectionHeading icon={Network}>Jenis Surety Bond Lainnya yang Mungkin Anda Butuhkan</SectionHeading>
