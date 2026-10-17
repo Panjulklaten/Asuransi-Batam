@@ -9,12 +9,16 @@ import {
   useState,
 } from "react";
 import {
+  animate,
   motion,
+  useMotionTemplate,
+  useMotionValue,
   useMotionValueEvent,
   useReducedMotion,
   useScroll,
   useSpring,
   useTransform,
+  type MotionValue,
 } from "framer-motion";
 
 type Stop = {
@@ -69,6 +73,39 @@ const stops: Stop[] = [
 
 const GOLD = "#c9a84c";
 const GOLD_LIGHT = "#f0d080";
+
+// Cahaya emas yang mengelilingi border kartu: hanya garis tepi yang terlihat.
+function BorderGlow({
+  angle,
+  opacity,
+}: {
+  angle: MotionValue<number>;
+  opacity: MotionValue<number>;
+}) {
+  const background = useMotionTemplate`conic-gradient(from ${angle}deg, transparent 0deg, transparent 240deg, rgba(201,168,76,0.9) 320deg, #f0d080 350deg, transparent 360deg)`;
+  return (
+    <motion.div
+      aria-hidden="true"
+      className="pointer-events-none absolute -inset-px rounded-2xl"
+      style={{
+        opacity,
+        filter: "drop-shadow(0 0 8px rgba(240,208,128,0.85))",
+      }}
+    >
+      <motion.div
+        className="h-full w-full rounded-2xl p-[2px]"
+        style={{
+          background,
+          WebkitMask:
+            "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
+          WebkitMaskComposite: "xor",
+          mask: "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
+          maskComposite: "exclude",
+        }}
+      />
+    </motion.div>
+  );
+}
 
 const useIsoLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
@@ -153,6 +190,32 @@ export default function CareerTimeline() {
   useEffect(() => {
     evaluate(progress.get());
   }, [evaluate, progress]);
+
+  // Setelah garis tiba di node terakhir, cahaya berputar mengelilingi kartu
+  // terakhir sebentar (2 putaran), lalu menghilang.
+  const lastReached = active === stops.length - 1;
+  const glowAngle = useMotionValue(0);
+  const glowOpacity = useMotionValue(0);
+  useEffect(() => {
+    if (!lastReached || reduce) return;
+    glowAngle.set(0);
+    const a = animate(glowAngle, 720, {
+      duration: 3.6,
+      ease: "linear",
+      delay: 0.5,
+    });
+    const o = animate(glowOpacity, [0, 1, 1, 0], {
+      duration: 3.6,
+      times: [0, 0.1, 0.85, 1],
+      ease: "linear",
+      delay: 0.5,
+    });
+    return () => {
+      a.stop();
+      o.stop();
+      glowOpacity.set(0);
+    };
+  }, [lastReached, reduce, glowAngle, glowOpacity]);
 
   const cardTransition = reduce
     ? { duration: 0 }
@@ -263,7 +326,7 @@ export default function CareerTimeline() {
                 }}
                 transition={cardTransition}
                 style={{ transformOrigin: "left center" }}
-                className={`rounded-2xl border p-5 ${
+                className={`relative rounded-2xl border p-5 ${
                   s.current
                     ? "border-[#c9a84c]/40 bg-[#0a1628]"
                     : "border-[#e2e8f0] bg-[#faf8f3]"
@@ -302,6 +365,9 @@ export default function CareerTimeline() {
                 >
                   {s.desc}
                 </p>
+                {i === stops.length - 1 && (
+                  <BorderGlow angle={glowAngle} opacity={glowOpacity} />
+                )}
               </motion.div>
             </li>
           );

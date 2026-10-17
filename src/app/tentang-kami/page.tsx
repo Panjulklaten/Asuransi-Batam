@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import CareerTimeline from "@/components/CareerTimeline";
+import FieldGallery from "@/components/FieldGallery";
 import LinkedInCard from "@/components/LinkedInCard";
 import KonsultasiForm from "./KonsultasiForm";
 
@@ -267,29 +268,7 @@ export default function TentangKamiPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {fieldPhotos.map((photo) => (
-              <div
-                key={photo.src}
-                className="group bg-white rounded-2xl overflow-hidden border border-[#e2e8f0] hover:shadow-xl transition-all duration-300"
-              >
-                <div className="relative w-full aspect-[4/3] overflow-hidden">
-                  <Image
-                    src={photo.src}
-                    alt={photo.alt}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-                <div className="p-5">
-                  <p className="font-display font-bold text-[#0a1628] mb-1">{photo.caption}</p>
-                  <p className="text-[#475569] text-sm leading-relaxed">{photo.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <FieldGallery photos={fieldPhotos} />
         </div>
       </section>
 
