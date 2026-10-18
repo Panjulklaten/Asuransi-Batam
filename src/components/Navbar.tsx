@@ -911,7 +911,7 @@ export default function Navbar() {
               <div className="logo-shimmer w-8 h-8 bg-gradient-to-br from-[#c9a84c] to-[#f0d080] rounded-lg flex items-center justify-center">
                 <span className="text-[#0a1628] font-bold text-sm">AB</span>
               </div>
-              <span className="font-bold text-white text-lg leading-tight">
+              <span className="brand-shimmer font-bold text-white text-lg leading-tight" data-text="AsuransiBatam">
                 Asuransi<span className="text-[#c9a84c]">Batam</span>
               </span>
             </Link>

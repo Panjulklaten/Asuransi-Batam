@@ -116,7 +116,7 @@ export default function Footer() {
               <div className="logo-shimmer w-8 h-8 bg-gradient-to-br from-[#c9a84c] to-[#f0d080] rounded-lg flex items-center justify-center">
                 <span className="text-[#0a1628] font-display font-bold text-sm">AB</span>
               </div>
-              <span className="font-display font-bold text-xl">
+              <span className="brand-shimmer font-display font-bold text-xl" data-text={isEN ? "BatamInsurance" : "AsuransiBatam"}>
                 {isEN ? <>Batam<span className="text-[#c9a84c]">Insurance</span></> : <>Asuransi<span className="text-[#c9a84c]">Batam</span></>}
               </span>
             </Link>
