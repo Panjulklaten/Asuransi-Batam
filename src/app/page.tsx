@@ -9,6 +9,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 import CountUp from "@/components/motion/CountUp";
 import ScrollProgress from "@/components/motion/ScrollProgress";
+import NeonGlow from "@/components/motion/NeonGlow";
 
 export const metadata: Metadata = generateSEO({
   title: "Asuransi Batam Terpercaya – Properti, Kendaraan, Alat Berat & Liability | Rio",
@@ -340,7 +341,8 @@ export default function HomePage() {
             {products.map((p) => (
               <StaggerItem key={p.href}>
               <Link href={p.href} className="group block h-full">
-                <div className="h-full p-7 rounded-2xl border-2 border-[#e2e8f0] group-hover:border-[#c9a84c]/60 group-hover:shadow-xl transition-all card-hover bg-white">
+                <div className="relative h-full p-7 rounded-2xl border-2 border-[#e2e8f0] group-hover:border-[#c9a84c]/60 group-hover:shadow-xl transition-all card-hover bg-white">
+                  <NeonGlow />
                   <div className="text-4xl mb-4">{p.icon}</div>
                   <h3 className="font-display font-bold text-xl text-[#0a1628] mb-3 group-hover:text-[#1a4fa0] transition-colors">
                     {p.title}
@@ -363,7 +365,8 @@ export default function HomePage() {
             {/* Kalkulator card */}
             <StaggerItem>
             <Link href="/kalkulator-premi-mobil" className="group block h-full">
-              <div className="h-full p-7 rounded-2xl bg-gradient-to-br from-[#0a1628] to-[#1a4fa0] group-hover:shadow-xl transition-all card-hover">
+              <div className="relative h-full p-7 rounded-2xl bg-gradient-to-br from-[#0a1628] to-[#1a4fa0] group-hover:shadow-xl transition-all card-hover">
+                <NeonGlow />
                 <div className="text-4xl mb-4">🧮</div>
                 <h3 className="font-display font-bold text-xl text-white mb-3">
                   Kalkulator Premi
