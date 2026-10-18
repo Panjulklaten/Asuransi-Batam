@@ -4,6 +4,10 @@ import { generateSEO } from "@/lib/seo";
 import Link from "next/link";
 import { Shield, Star, Clock, Users, CheckCircle } from "lucide-react";
 import TestimonialMarquee from "@/components/TestimonialMarquee";
+import { Reveal } from "@/components/motion/Reveal";
+import { Stagger, StaggerItem } from "@/components/motion/Stagger";
+import CountUp from "@/components/motion/CountUp";
+import ScrollProgress from "@/components/motion/ScrollProgress";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = generateSEO({
@@ -141,57 +145,64 @@ export default function HomePageEN() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
       />
+      <ScrollProgress />
 
       {/* ── HERO ── */}
       <section className="relative min-h-screen flex items-center bg-gradient-to-br from-[#0a1628] via-[#132040] to-[#1a4fa0] overflow-hidden pt-16">
         {/* Decorative circles */}
-        <div className="absolute top-1/4 right-0 w-96 h-96 bg-[#c9a84c]/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-[#1a4fa0]/40 rounded-full blur-3xl" />
-        <div className="absolute top-20 left-10 w-2 h-2 bg-[#c9a84c] rounded-full opacity-60" />
+        <div className="absolute top-1/4 right-0 w-96 h-96 bg-[#c9a84c]/10 rounded-full blur-3xl animate-float-slow motion-reduce:animate-none" />
+        <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-[#1a4fa0]/40 rounded-full blur-3xl animate-float-slow-alt motion-reduce:animate-none" />
+        <div className="absolute top-20 left-10 w-2 h-2 bg-[#c9a84c] rounded-full opacity-60 animate-pulse motion-reduce:animate-none" />
         <div className="absolute top-40 right-20 w-3 h-3 bg-[#c9a84c]/40 rounded-full" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#c9a84c]/20 border border-[#c9a84c]/30 rounded-full text-[#c9a84c] text-sm font-semibold mb-6">
-                <Shield className="w-4 h-4" />
-                Insurance Practitioner Batam
-              </div>
+              <Reveal>
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#c9a84c]/20 border border-[#c9a84c]/30 rounded-full text-[#c9a84c] text-sm font-semibold mb-6">
+                  <Shield className="w-4 h-4" />
+                  Insurance Practitioner Batam
+                </div>
+              </Reveal>
               <h1 className="font-display font-bold text-5xl md:text-6xl text-white leading-tight mb-6">
                 Protect Your<br />
                 <span className="text-gradient-gold">Assets & Business</span><br />
                 in Batam
               </h1>
-              <p className="text-white/70 text-xl leading-relaxed mb-10">
-                Rio, an insurance practitioner with 8+ years of experience in Batam.
-                The right solution for property, vehicles, heavy equipment, liability, and engineering.
-              </p>
-              <div className="flex flex-wrap gap-6">
-                {[
-                  { icon: <CheckCircle className="w-4 h-4" />, text: "OJK-Registered" },
-                  { icon: <CheckCircle className="w-4 h-4" />, text: "8+ Years Experience" },
-                  { icon: <CheckCircle className="w-4 h-4" />, text: "Fast Claim Process" },
-                ].map((item) => (
-                  <div key={item.text} className="flex items-center gap-2 text-white/70 text-sm">
-                    <span className="text-[#c9a84c]">{item.icon}</span>
-                    {item.text}
-                  </div>
-                ))}
-              </div>
+              <Reveal delay={0.15}>
+                <p className="text-white/70 text-xl leading-relaxed mb-10">
+                  Rio, an insurance practitioner with 8+ years of experience in Batam.
+                  The right solution for property, vehicles, heavy equipment, liability, and engineering.
+                </p>
+              </Reveal>
+              <Reveal delay={0.3}>
+                <div className="flex flex-wrap gap-6">
+                  {[
+                    { icon: <CheckCircle className="w-4 h-4" />, text: "OJK-Registered" },
+                    { icon: <CheckCircle className="w-4 h-4" />, text: "8+ Years Experience" },
+                    { icon: <CheckCircle className="w-4 h-4" />, text: "Fast Claim Process" },
+                  ].map((item) => (
+                    <div key={item.text} className="flex items-center gap-2 text-white/70 text-sm">
+                      <span className="text-[#c9a84c]">{item.icon}</span>
+                      {item.text}
+                    </div>
+                  ))}
+                </div>
+              </Reveal>
             </div>
-            <div className="hidden lg:grid grid-cols-2 gap-4">
+            <Stagger className="hidden lg:grid grid-cols-2 gap-4" delay={0.2} gap={0.12}>
               {[
                 { val: "8+", label: "Years of Experience", bg: "bg-[#c9a84c]/20", color: "text-[#c9a84c]" },
                 { val: "200+", label: "Active Clients", bg: "bg-white/10", color: "text-white" },
                 { val: "98%", label: "Claim Success Rate", bg: "bg-white/10", color: "text-white" },
                 { val: "24/7", label: "Emergency Service", bg: "bg-[#c9a84c]/20", color: "text-[#c9a84c]" },
               ].map((s) => (
-                <div key={s.label} className={`${s.bg} backdrop-blur rounded-2xl p-8 text-center`}>
+                <StaggerItem key={s.label} variant="pop" className={`${s.bg} backdrop-blur rounded-2xl p-8 text-center`}>
                   <div className={`font-display font-black text-5xl ${s.color} mb-2`}>{s.val}</div>
                   <div className="text-white/60 text-sm">{s.label}</div>
-                </div>
+                </StaggerItem>
               ))}
-            </div>
+            </Stagger>
           </div>
         </div>
       </section>
@@ -199,7 +210,7 @@ export default function HomePageEN() {
       {/* ── PRODUCTS ── */}
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
+          <Reveal className="text-center mb-14">
             <p className="text-[#8a6d1f] font-semibold uppercase tracking-widest text-sm mb-2">Featured Products</p>
             <h2 className="font-display font-bold text-4xl text-[#0a1628] mb-4">
               All Your Insurance Needs in One Place
@@ -207,10 +218,11 @@ export default function HomePageEN() {
             <p className="text-[#475569] text-lg max-w-2xl mx-auto">
               From property to engineering — we provide complete non-life insurance solutions for individuals and businesses in Batam.
             </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          </Reveal>
+          <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((p) => (
-              <Link key={p.href} href={p.href} className="group">
+              <StaggerItem key={p.href}>
+              <Link href={p.href} className="group block h-full">
                 <div className="h-full p-7 rounded-2xl border-2 border-[#e2e8f0] group-hover:border-[#c9a84c]/60 group-hover:shadow-xl transition-all card-hover bg-white">
                   <div className="text-4xl mb-4">{p.icon}</div>
                   <h3 className="font-display font-bold text-xl text-[#0a1628] mb-3 group-hover:text-[#1a4fa0] transition-colors">
@@ -226,9 +238,11 @@ export default function HomePageEN() {
                   </div>
                 </div>
               </Link>
+              </StaggerItem>
             ))}
             {/* Calculator card */}
-            <Link href="/en/car-premium-calculator" className="group">
+            <StaggerItem>
+            <Link href="/en/car-premium-calculator" className="group block h-full">
               <div className="h-full p-7 rounded-2xl bg-gradient-to-br from-[#0a1628] to-[#1a4fa0] group-hover:shadow-xl transition-all card-hover">
                 <div className="text-4xl mb-4">🧮</div>
                 <h3 className="font-display font-bold text-xl text-white mb-3">Premium Calculator</h3>
@@ -245,7 +259,8 @@ export default function HomePageEN() {
                 </div>
               </div>
             </Link>
-          </div>
+            </StaggerItem>
+          </Stagger>
         </div>
       </section>
 
@@ -254,15 +269,17 @@ export default function HomePageEN() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="text-[#8a6d1f] font-semibold uppercase tracking-widest text-sm mb-2">Our Advantages</p>
-              <h2 className="font-display font-bold text-4xl text-[#0a1628] mb-6">
-                Why Trust Us with Your Insurance?
-              </h2>
-              <p className="text-[#475569] text-lg leading-relaxed mb-8">
-                With 8+ years of experience in the Batam non-life insurance industry,
-                Rio is here as a trusted partner who understands local needs.
-              </p>
-              <div className="space-y-5">
+              <Reveal>
+                <p className="text-[#8a6d1f] font-semibold uppercase tracking-widest text-sm mb-2">Our Advantages</p>
+                <h2 className="font-display font-bold text-4xl text-[#0a1628] mb-6">
+                  Why Trust Us with Your Insurance?
+                </h2>
+                <p className="text-[#475569] text-lg leading-relaxed mb-8">
+                  With 8+ years of experience in the Batam non-life insurance industry,
+                  Rio is here as a trusted partner who understands local needs.
+                </p>
+              </Reveal>
+              <Stagger className="space-y-5">
                 {[
                   {
                     icon: <Users className="w-5 h-5" />,
@@ -285,7 +302,7 @@ export default function HomePageEN() {
                     desc: "We compare multiple insurers to secure the best premium rates for you.",
                   },
                 ].map((item) => (
-                  <div key={item.title} className="flex gap-4">
+                  <StaggerItem key={item.title} variant="left" className="flex gap-4">
                     <div className="w-10 h-10 bg-[#0a1628] text-[#c9a84c] rounded-xl flex items-center justify-center flex-shrink-0">
                       {item.icon}
                     </div>
@@ -293,23 +310,23 @@ export default function HomePageEN() {
                       <h3 className="font-display font-bold text-[#0a1628] mb-1">{item.title}</h3>
                       <p className="text-[#475569] text-sm">{item.desc}</p>
                     </div>
-                  </div>
+                  </StaggerItem>
                 ))}
-              </div>
+              </Stagger>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <Stagger className="grid grid-cols-2 gap-4" gap={0.12}>
               {[
                 { val: "8+", label: "Years of Experience", bg: "bg-[#0a1628]", color: "text-[#c9a84c]" },
                 { val: "200+", label: "Active Clients", bg: "bg-[#c9a84c]", color: "text-[#0a1628]" },
                 { val: "98%", label: "Claim Success Rate", bg: "bg-[#1a4fa0]", color: "text-white" },
                 { val: "24/7", label: "Emergency Service", bg: "bg-[#132040]", color: "text-[#f0d080]" },
               ].map((s) => (
-                <div key={s.label} className={`${s.bg} rounded-2xl p-4 sm:p-6 lg:p-8 text-center overflow-hidden`}>
-                  <div className={`font-display font-black text-3xl sm:text-4xl lg:text-5xl ${s.color} mb-2 leading-none`}>{s.val}</div>
+                <StaggerItem key={s.label} variant="pop" className={`${s.bg} rounded-2xl p-4 sm:p-6 lg:p-8 text-center overflow-hidden`}>
+                  <div className={`font-display font-black text-3xl sm:text-4xl lg:text-5xl ${s.color} mb-2 leading-none`}><CountUp value={s.val} /></div>
                   <div className="text-white/60 text-xs sm:text-sm mt-1">{s.label}</div>
-                </div>
+                </StaggerItem>
               ))}
-            </div>
+            </Stagger>
           </div>
         </div>
       </section>
@@ -317,12 +334,12 @@ export default function HomePageEN() {
       {/* ── TESTIMONIALS ── */}
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <Reveal className="text-center mb-12">
             <p className="text-[#8a6d1f] font-semibold uppercase tracking-widest text-sm mb-2">Testimonials</p>
             <h2 className="font-display font-bold text-4xl text-[#0a1628] mb-4">
               What Our Clients Say
             </h2>
-          </div>
+          </Reveal>
         </div>
         <TestimonialMarquee items={testimonials} />
       </section>
