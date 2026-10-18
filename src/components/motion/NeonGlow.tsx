@@ -3,13 +3,14 @@
 import { useRef } from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 
+// Pendar hanya di sisi bawah kartu: offset ke bawah + spread negatif agar sisi kiri/kanan tetap bersih.
 const NEON_ON =
-  "0 0 0 1.5px rgba(77,163,255,0.95), 0 0 16px 2px rgba(45,123,255,0.65), 0 0 44px 6px rgba(45,123,255,0.35)";
+  "0 12px 22px -10px rgba(45,123,255,0.60), 0 26px 46px -16px rgba(45,123,255,0.40)";
 const NEON_OFF =
-  "0 0 0 1.5px rgba(77,163,255,0), 0 0 0px 0px rgba(45,123,255,0), 0 0 0px 0px rgba(45,123,255,0)";
+  "0 0px 0px 0px rgba(45,123,255,0), 0 0px 0px 0px rgba(45,123,255,0)";
 
 /**
- * Cahaya biru neon di sekeliling kartu saat kartu berada di area tengah layar
+ * Bayangan biru neon di bawah kartu saat kartu berada di area tengah layar
  * (sekitar 30% tinggi layar di tengah), memudar lagi saat kartu menjauh.
  * Taruh sebagai anak pertama elemen kartu yang punya `relative`.
  */
@@ -22,7 +23,7 @@ export default function NeonGlow() {
     <motion.div
       ref={ref}
       aria-hidden="true"
-      className="pointer-events-none absolute -inset-0.5 rounded-2xl"
+      className="pointer-events-none absolute inset-0 rounded-2xl"
       initial={false}
       animate={{
         opacity: on ? 1 : 0,
