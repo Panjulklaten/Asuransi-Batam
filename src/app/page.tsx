@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Shield, Star, Clock, Users, ArrowRight, CheckCircle, Phone, Camera, MapPin } from "lucide-react";
 import CTASection from "@/components/CTASection";
+import TestimonialMarquee from "@/components/TestimonialMarquee";
 
 export const metadata: Metadata = generateSEO({
   title: "Asuransi Batam Terpercaya – Properti, Kendaraan, Alat Berat & Liability | Rio",
@@ -508,26 +509,8 @@ export default function HomePage() {
               Kata Klien Kami
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
-              <div
-                key={t.name}
-                className="p-7 rounded-2xl bg-[#faf8f3] border border-[#e2e8f0] hover:shadow-lg transition-all"
-              >
-                <div className="flex text-[#c9a84c] mb-4">
-                  {[...Array(t.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-current" />
-                  ))}
-                </div>
-                <p className="text-[#475569] text-sm leading-relaxed mb-5 italic">"{t.text}"</p>
-                <div>
-                  <div className="font-display font-bold text-[#0a1628]">{t.name}</div>
-                  <div className="text-[#8a6d1f] text-sm">{t.company}</div>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
+        <TestimonialMarquee items={testimonials} />
       </section>
 
       {/* ── FAQ ── */}
