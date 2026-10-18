@@ -56,12 +56,13 @@ body {
   .section-padding { padding: 48px 0; }
 }
 
-/* Logo shimmer — a light sweep that plays briefly, then pauses before repeating */
+/* Logo shimmer — kilau emas singkat (~1 detik) yang hanya muncul sekali tiap 18 detik.
+   Kilau menyapu badge "AB" lebih dulu, lalu menyambung ke tulisan nama (brand-shimmer). */
 @keyframes logo-shimmer-sweep {
-  0%   { transform: translateX(-150%) rotate(20deg); opacity: 0; }
-  4%   { opacity: 0.9; }
-  14%  { transform: translateX(150%) rotate(20deg); opacity: 0; }
-  100% { transform: translateX(150%) rotate(20deg); opacity: 0; }
+  0%     { transform: translateX(-150%) rotate(20deg); opacity: 0; }
+  1.2%   { opacity: 0.9; }
+  3.9%   { transform: translateX(150%) rotate(20deg); opacity: 0; }
+  100%   { transform: translateX(150%) rotate(20deg); opacity: 0; }
 }
 
 .logo-shimmer {
@@ -82,12 +83,49 @@ body {
     rgba(255, 255, 255, 0.85) 50%,
     rgba(255, 255, 255, 0) 100%
   );
-  animation: logo-shimmer-sweep 5s ease-in-out infinite;
+  animation: logo-shimmer-sweep 18s ease-in-out 3s infinite;
+  pointer-events: none;
+}
+
+/* Kilau emas yang hanya jatuh pada huruf (salinan teks dengan background-clip: text) */
+@keyframes brand-shimmer-sweep {
+  0%     { background-position: 100% 0; }
+  7%     { background-position: 0% 0; }
+  100%   { background-position: 0% 0; }
+}
+
+.brand-shimmer {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.brand-shimmer::after {
+  content: attr(data-text);
+  content: attr(data-text) / "";
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  background-image: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 44%,
+    #ffe08a 50%,
+    transparent 56%,
+    transparent 100%
+  );
+  background-size: 300% 100%;
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: brand-shimmer-sweep 18s ease-in-out 3.5s infinite;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .logo-shimmer::after {
+  .logo-shimmer::after,
+  .brand-shimmer::after {
     animation: none;
     display: none;
   }
