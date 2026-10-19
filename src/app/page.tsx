@@ -10,6 +10,7 @@ import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 import CountUp from "@/components/motion/CountUp";
 import ScrollProgress from "@/components/motion/ScrollProgress";
 import NeonGlow from "@/components/motion/NeonGlow";
+import { getProductImage } from "@/lib/product-images";
 
 export const metadata: Metadata = generateSEO({
   title: "Asuransi Batam Terpercaya – Properti, Kendaraan, Alat Berat & Liability | Rio",
@@ -27,6 +28,7 @@ const products = [
     title: "Asuransi Properti",
     desc: "Perlindungan hotel, rumah, gudang, pabrik, dan properti komersial dari risiko kebakaran, bencana, dan kerusakan.",
     href: "/asuransi-properti",
+    slug: "properti",
     tags: ["Hotel", "Gudang", "Pabrik", "Ruko"],
   },
   {
@@ -34,6 +36,7 @@ const products = [
     title: "Asuransi Kendaraan",
     desc: "All Risk & TLO untuk mobil, dump truck, dan kendaraan niaga. Kalkulator premi online tersedia.",
     href: "/asuransi-kendaraan",
+    slug: "kendaraan",
     tags: ["Mobil", "Dump Truck", "All Risk"],
   },
   {
@@ -41,6 +44,7 @@ const products = [
     title: "Asuransi Machinery",
     desc: "Perlindungan alat berat, crane, dan mesin industri dari kerusakan operasional dan kecelakaan.",
     href: "/asuransi-machinery",
+    slug: "machinery",
     tags: ["Alat Berat", "Crane", "Mesin"],
   },
   {
@@ -48,6 +52,7 @@ const products = [
     title: "Asuransi Liability",
     desc: "Perlindungan tanggung gugat pihak ketiga, limbah B3, dan public liability untuk usaha Anda.",
     href: "/asuransi-liability",
+    slug: "liability",
     tags: ["Limbah B3", "Public Liability"],
   },
   {
@@ -55,6 +60,7 @@ const products = [
     title: "Asuransi Engineering",
     desc: "Perlindungan proyek konstruksi (CAR), pemasangan mesin (EAR), dan infrastruktur dari risiko pembangunan.",
     href: "/asuransi-engineering",
+    slug: "engineering",
     tags: ["CAR", "EAR", "Konstruksi"],
   },
   {
@@ -62,6 +68,7 @@ const products = [
     title: "Asuransi Marine",
     desc: "Perlindungan pengiriman kargo, rangka kapal (hull), dan proyek bangunan kapal (builders risk) di jalur laut Batam.",
     href: "/asuransi-marine",
+    slug: "marine",
     tags: ["Cargo", "Hull", "Builders Risk"],
   },
   {
@@ -69,6 +76,7 @@ const products = [
     title: "Surety Bond",
     desc: "Jaminan proyek pemerintah & swasta: bid bond, performance bond, advance payment bond, dan maintenance bond.",
     href: "/asuransi-surety-bond",
+    slug: "surety-bond",
     tags: ["Bid Bond", "Performance", "Advance"],
   },
   {
@@ -76,9 +84,12 @@ const products = [
     title: "Asuransi Personal Accident",
     desc: "Perlindungan kecelakaan diri untuk karyawan (Group PA) maupun individu & keluarga dengan premi terjangkau.",
     href: "/asuransi-personal-accident",
+    slug: "personal-accident",
     tags: ["Group PA", "Individu", "Keluarga"],
   },
 ];
+
+const productCards = products.map((p) => ({ ...p, image: getProductImage(p.slug) }));
 
 const fieldProofs = [
   {
@@ -338,15 +349,32 @@ export default function HomePage() {
             </p>
           </Reveal>
           <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {products.map((p) => (
+            {productCards.map((p) => (
               <StaggerItem key={p.href}>
               <Link href={p.href} className="group block h-full">
                 <div className="relative h-full p-7 rounded-2xl border-2 border-[#e2e8f0] group-hover:border-[#c9a84c]/60 group-hover:shadow-xl transition-all card-hover bg-white">
                   <NeonGlow />
-                  <div className="text-4xl mb-4">{p.icon}</div>
-                  <h3 className="font-display font-bold text-xl text-[#0a1628] mb-3 group-hover:text-[#1a4fa0] transition-colors">
-                    {p.title}
-                  </h3>
+                  {p.image && (
+                    <div className="relative -mx-7 -mt-7 mb-5 aspect-[16/9] overflow-hidden rounded-t-[14px]">
+                      <Image
+                        src={p.image}
+                        alt={`Ilustrasi ${p.title}`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                  )}
+                  <div className={p.image ? "mb-3 flex items-center gap-3" : ""}>
+                    <div className={p.image ? "text-3xl leading-none" : "text-4xl mb-4"}>{p.icon}</div>
+                    <h3
+                      className={`font-display font-bold text-xl text-[#0a1628] group-hover:text-[#1a4fa0] transition-colors ${
+                        p.image ? "" : "mb-3"
+                      }`}
+                    >
+                      {p.title}
+                    </h3>
+                  </div>
                   <p className="text-[#475569] text-sm leading-relaxed mb-4">{p.desc}</p>
                   <div className="flex flex-wrap gap-2">
                     {p.tags.map((tag) => (

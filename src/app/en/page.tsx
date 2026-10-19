@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { generateSEO } from "@/lib/seo";
 import Link from "next/link";
+import Image from "next/image";
 import { Shield, Star, Clock, Users, CheckCircle } from "lucide-react";
 import TestimonialMarquee from "@/components/TestimonialMarquee";
 import { Reveal } from "@/components/motion/Reveal";
@@ -9,6 +10,7 @@ import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 import CountUp from "@/components/motion/CountUp";
 import ScrollProgress from "@/components/motion/ScrollProgress";
 import NeonGlow from "@/components/motion/NeonGlow";
+import { getProductImage } from "@/lib/product-images";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = generateSEO({
@@ -27,6 +29,7 @@ const products = [
     title: "Property Insurance",
     desc: "Protection for hotels, homes, shophouses, and warehouses against fire, natural disasters, and damage.",
     href: "/en/property-insurance",
+    slug: "properti",
     tags: ["Hotel", "Home", "Shophouse", "Warehouse"],
   },
   {
@@ -34,6 +37,7 @@ const products = [
     title: "Vehicle Insurance",
     desc: "All Risk & TLO for cars, dump trucks, and commercial vehicles. Online premium calculator available.",
     href: "/en/vehicle-insurance",
+    slug: "kendaraan",
     tags: ["Car", "Dump Truck", "All Risk"],
   },
   {
@@ -41,6 +45,7 @@ const products = [
     title: "Machinery Insurance",
     desc: "Protection for heavy equipment, cranes, and industrial machinery against operational damage.",
     href: "/en/machinery-insurance",
+    slug: "machinery",
     tags: ["Heavy Equipment", "Crane", "Machinery"],
   },
   {
@@ -48,6 +53,7 @@ const products = [
     title: "Liability Insurance",
     desc: "Third-party liability coverage, B3 hazardous waste, and public liability protection.",
     href: "/en/liability-insurance",
+    slug: "liability",
     tags: ["B3 Waste", "Public Liability"],
   },
   {
@@ -55,9 +61,12 @@ const products = [
     title: "Engineering Insurance",
     desc: "Coverage for construction projects, machinery installation, and infrastructure works.",
     href: "/en/engineering-insurance",
+    slug: "engineering",
     tags: ["CAR", "EAR", "Construction"],
   },
 ];
+
+const productCards = products.map((p) => ({ ...p, image: getProductImage(p.slug) }));
 
 const testimonials = [
   {
@@ -221,15 +230,32 @@ export default function HomePageEN() {
             </p>
           </Reveal>
           <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {products.map((p) => (
+            {productCards.map((p) => (
               <StaggerItem key={p.href}>
               <Link href={p.href} className="group block h-full">
                 <div className="relative h-full p-7 rounded-2xl border-2 border-[#e2e8f0] group-hover:border-[#c9a84c]/60 group-hover:shadow-xl transition-all card-hover bg-white">
                   <NeonGlow />
-                  <div className="text-4xl mb-4">{p.icon}</div>
-                  <h3 className="font-display font-bold text-xl text-[#0a1628] mb-3 group-hover:text-[#1a4fa0] transition-colors">
-                    {p.title}
-                  </h3>
+                  {p.image && (
+                    <div className="relative -mx-7 -mt-7 mb-5 aspect-[16/9] overflow-hidden rounded-t-[14px]">
+                      <Image
+                        src={p.image}
+                        alt={`${p.title} illustration`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                  )}
+                  <div className={p.image ? "mb-3 flex items-center gap-3" : ""}>
+                    <div className={p.image ? "text-3xl leading-none" : "text-4xl mb-4"}>{p.icon}</div>
+                    <h3
+                      className={`font-display font-bold text-xl text-[#0a1628] group-hover:text-[#1a4fa0] transition-colors ${
+                        p.image ? "" : "mb-3"
+                      }`}
+                    >
+                      {p.title}
+                    </h3>
+                  </div>
                   <p className="text-[#475569] text-sm leading-relaxed mb-4">{p.desc}</p>
                   <div className="flex flex-wrap gap-2">
                     {p.tags.map((tag) => (
