@@ -193,3 +193,13 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .sb-fade, .sb-pop, .sb-rise { animation: none; }
 }
+
+/* ─── Navbar "Tentang Kami" mega menu: fade-in + slide-down ─── */
+@keyframes mm-drop {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.mm-drop { animation: mm-drop 0.22s cubic-bezier(0.16, 1, 0.3, 1) both; }
+@media (prefers-reduced-motion: reduce) {
+  .mm-drop { animation: none; }
+}

@@ -14,6 +14,7 @@ import {
   FileText,
   ArrowRight,
 } from "lucide-react";
+import { AboutMegaPanel, AboutMobileCard } from "./AboutMegaMenu";
 import { QUOTE_CLUSTERS, type QuoteClusterKey } from "@/lib/quote";
 
 // Modal penawaran baru dimuat saat dibuka, supaya tidak menambah beban halaman.
@@ -583,6 +584,7 @@ function MegaMenu({
   const productsOn = active === "products";
   const calcOn = active === "calc";
   const blogOn = active === "Blog";
+  const aboutOn = active === "about";
 
   return (
     <div className="hidden lg:flex items-center gap-0.5">
@@ -761,13 +763,34 @@ function MegaMenu({
         )}
       </div>
 
-      {/* ── Tentang ── */}
-      <Link
-        href={aboutHref}
-        className="px-3 py-2 text-sm text-white/80 hover:text-[#c9a84c] hover:bg-white/5 font-medium rounded-lg transition-colors"
+      {/* ── Tentang: mega menu profil 2 kolom ── */}
+      <div
+        data-menu-root
+        className="relative flex items-center h-16"
+        onMouseEnter={() => open("about")}
+        onMouseLeave={close}
       >
-        {aboutLabel}
-      </Link>
+        <button
+          type="button"
+          className={triggerCls(aboutOn)}
+          aria-expanded={aboutOn}
+          aria-haspopup="true"
+          onClick={() => open("about")}
+        >
+          {aboutLabel}
+          <Chevron on={aboutOn} />
+        </button>
+
+        {aboutOn && (
+          <div
+            className="absolute top-full right-0 pt-2 z-50 w-[min(680px,calc(100vw-2rem))]"
+            onMouseEnter={stay}
+            onMouseLeave={close}
+          >
+            <AboutMegaPanel lang={lang} onNavigate={menu.hide} />
+          </div>
+        )}
+      </div>
     </div>
   );
 }
@@ -1107,13 +1130,34 @@ export default function Navbar() {
               </div>
 
               {/* About */}
-              <Link
-                href={t.aboutHref}
-                className="block px-3 py-2.5 text-white/85 font-semibold hover:text-[#c9a84c] transition-colors text-sm"
-                onClick={() => setMobileOpen(false)}
-              >
-                {t.aboutLabel}
-              </Link>
+              <div>
+                <div className="flex items-center justify-between">
+                  <Link
+                    href={t.aboutHref}
+                    className="flex-1 px-3 py-2.5 text-white/85 font-semibold hover:text-[#c9a84c] transition-colors text-sm"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {t.aboutLabel}
+                  </Link>
+                  <button
+                    className="px-3 py-2.5 text-white/40 hover:text-[#c9a84c] transition-colors"
+                    onClick={() =>
+                      setMobileExpanded(mobileExpanded === "About" ? null : "About")
+                    }
+                    aria-label="Expand About"
+                    aria-expanded={mobileExpanded === "About"}
+                  >
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-200 ${
+                        mobileExpanded === "About" ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                </div>
+                {mobileExpanded === "About" && (
+                  <AboutMobileCard lang={lang} onNavigate={() => setMobileOpen(false)} />
+                )}
+              </div>
 
               {/* Language switcher */}
               <div className="pt-2">
