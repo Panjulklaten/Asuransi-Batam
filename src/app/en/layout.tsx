@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     alternateLocale: "id_ID",
     url: "https://asuransibatam.com/en",
     siteName: "Batam Insurance",
-    title: "Batam Insurance – Trusted Insurance Practitioner",
+    title: "Batam Insurance – Insurance Practitioner",
     description:
       "Insurance practitioner in Batam. Property, vehicle, heavy equipment, liability & engineering.",
     images: [{ url: "/images/og-image.jpg", width: 1200, height: 630 }],

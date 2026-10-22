@@ -22,7 +22,7 @@ const syne = Syne({
 export const metadata: Metadata = {
   metadataBase: new URL("https://asuransibatam.com"),
   title: {
-    default: "Asuransi Batam – Praktisi Asuransi Terpercaya | Rio",
+    default: "Asuransi Batam – Praktisi Asuransi | Rio",
     template: "%s | Asuransi Batam",
   },
   description:
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     alternateLocale: "en_US",          // ← tambahan bilingual
     url: "https://asuransibatam.com",
     siteName: "Asuransi Batam",
-    title: "Asuransi Batam – Praktisi Asuransi Terpercaya",
+    title: "Asuransi Batam – Praktisi Asuransi",
     description:
       "Praktisi asuransi kerugian profesional di Batam. Properti, kendaraan, alat berat, liability & engineering.",
     images: [{ url: "/images/og-image.jpg", width: 1200, height: 630 }],

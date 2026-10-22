@@ -13,7 +13,7 @@ import NeonGlow from "@/components/motion/NeonGlow";
 import { getProductImage } from "@/lib/product-images";
 
 export const metadata: Metadata = generateSEO({
-  title: "Asuransi Batam Terpercaya – Properti, Kendaraan, Alat Berat & Liability | Rio",
+  title: "Asuransi Batam – Properti, Kendaraan, Alat Berat & Liability | Rio",
   description: "Rio, praktisi asuransi di Batam dengan pengalaman 8+ tahun. Melayani asuransi properti, kendaraan, alat berat, liability, engineering, marine, surety bond, dan personal accident. Konsultasi gratis, respons cepat via WhatsApp. Hubungi sekarang: 0813-7333-6728.",
   canonical: "https://asuransibatam.com",
   languages: {

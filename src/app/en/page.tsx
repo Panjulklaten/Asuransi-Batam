@@ -14,7 +14,7 @@ import { getProductImage } from "@/lib/product-images";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = generateSEO({
-  title: "Trusted Insurance Batam – Property, Vehicle, Heavy Equipment & Liability | Rio",
+  title: "Insurance Batam – Property, Vehicle, Heavy Equipment & Liability | Rio",
   description: "Rio, an insurance practitioner in Batam with 8+ years of experience. Serving property, vehicle, heavy equipment, liability, and engineering insurance. Free consultation, fast response via WhatsApp. Call now: 0813-7333-6728.",
   canonical: "https://asuransibatam.com/en",
   languages: {
