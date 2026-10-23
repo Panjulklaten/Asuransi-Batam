@@ -2,7 +2,7 @@
 import { usePathname } from "next/navigation";
 import QuoteButton from "./QuoteButton";
 import QuoteCalcButton from "./QuoteCalcButton";
-import type { Lang, QuoteClusterKey } from "@/lib/quote";
+import { QUOTE_CLUSTERS, type Lang, type QuoteClusterKey } from "@/lib/quote";
 
 const T = {
   id: {
@@ -23,12 +23,14 @@ export default function QuoteCard({ cluster, lang: langProp }: { cluster: QuoteC
   const pathname = usePathname();
   const lang: Lang = langProp ?? (pathname?.startsWith("/en") ? "en" : "id");
   const t = T[lang];
+  // Cluster mobil: teks pengantar disembunyikan, hanya tombol yang tampil.
+  const hideText = cluster === "vehicle" && QUOTE_CLUSTERS.vehicle.inferType(pathname ?? "") === "car";
 
   return (
     <section className="border-t border-[#e2e8f0] bg-[#faf8f3] py-12">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center justify-between gap-4 rounded-2xl bg-gradient-to-r from-[#0a1628] to-[#1a4fa0] p-6 sm:flex-row">
-          <p className="max-w-xl text-center text-sm text-white/80 sm:text-left">{t.text}</p>
+        <div className={`flex flex-col items-center gap-4 rounded-2xl bg-gradient-to-r from-[#0a1628] to-[#1a4fa0] p-6 sm:flex-row ${hideText ? "justify-center" : "justify-between"}`}>
+          {!hideText && <p className="max-w-xl text-center text-sm text-white/80 sm:text-left">{t.text}</p>}
           <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
             <QuoteCalcButton cluster={cluster} lang={lang} variant="onDark" />
             <QuoteButton cluster={cluster} lang={lang} variant="gold" label={t.btn} />

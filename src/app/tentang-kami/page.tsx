@@ -6,7 +6,6 @@ import CTASection from "@/components/CTASection";
 import CareerTimeline from "@/components/CareerTimeline";
 import FieldGallery from "@/components/FieldGallery";
 import LinkedInCard from "@/components/LinkedInCard";
-import KonsultasiForm from "./KonsultasiForm";
 
 export const metadata: Metadata = generateSEO({
   title: "Tentang Kami – Rio Mardiansyah, Praktisi Asuransi Batam",
@@ -297,49 +296,7 @@ export default function TentangKamiPage() {
         </div>
       </section>
 
-      {/* Contact + Form */}
-      <section className="section-padding bg-[#faf8f3]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-              <h2 className="font-display font-bold text-3xl text-[#0a1628] mb-6">Hubungi Kami</h2>
-              <div className="space-y-5">
-                {[
-                  { icon: "📱", label: "WhatsApp / Telepon", value: "0813-7333-6728", href: "https://wa.me/6281373336728" },
-                  { icon: "📧", label: "Email", value: "rio@asuransibatam.com", href: "mailto:rio@asuransibatam.com" },
-                  { icon: "📍", label: "Alamat", value: "Batam Center, Kepulauan Riau", href: null },
-                  { icon: "🕐", label: "Jam Operasional", value: "Senin–Jumat, 08:00–17:00", href: null },
-                ].map((c) => (
-                  <div key={c.label} className="flex gap-4">
-                    <div className="w-10 h-10 bg-[#0a1628] rounded-xl flex items-center justify-center text-lg flex-shrink-0">
-                      {c.icon}
-                    </div>
-                    <div>
-                      <div className="text-[#475569] text-sm">{c.label}</div>
-                      {c.href ? (
-                        <a
-                          href={c.href}
-                          target={c.href.startsWith("http") ? "_blank" : undefined}
-                          rel="noopener noreferrer"
-                          className="font-semibold text-[#0a1628] hover:text-[#c9a84c] transition-colors"
-                        >
-                          {c.value}
-                        </a>
-                      ) : (
-                        <div className="font-semibold text-[#0a1628]">{c.value}</div>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <KonsultasiForm />
-          </div>
-        </div>
-      </section>
-
-            <CTASection />
+      <CTASection />
     </>
   );
 }
