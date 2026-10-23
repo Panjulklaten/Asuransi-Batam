@@ -8,7 +8,7 @@ export default function WhatsAppButton() {
 
   const text = encodeURIComponent(getWhatsAppMessage(pathname));
 
-  const label = isEN ? "Free Consultation" : "Konsultasi Gratis";
+  const label = isEN ? "Live Chat" : "online";
 
   return (
     <a
