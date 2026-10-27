@@ -4,6 +4,17 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   images: { remotePatterns: [] },
 
+  // File font hasil build (.woff2) tidak perlu masuk indeks Google. noindex lewat
+  // header tidak menghalangi Googlebot mengambil font untuk rendering halaman.
+  async headers() {
+    return [
+      {
+        source: "/_next/static/:path*.woff2",
+        headers: [{ key: "X-Robots-Tag", value: "noindex" }],
+      },
+    ];
+  },
+
   async redirects() {
     return [
       // --- Kombinasi host lama/www + file .html: redirect LANGSUNG (1 hop)
