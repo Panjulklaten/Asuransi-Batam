@@ -18,3 +18,17 @@ export function getProductImage(slug: string): string | undefined {
   }
   return undefined;
 }
+
+/**
+ * Hanya produk ini yang memakai foto besar di atas kartu. Produk lain yang punya foto
+ * memakai foto kecil di samping judul dan deskripsi (kartu kompak), supaya halaman
+ * tidak terlalu penuh di HP. Ubah daftar ini untuk memilih produk berfoto besar.
+ */
+export const FEATURED_PRODUCT_SLUGS: readonly string[] = ["properti", "kendaraan", "machinery"];
+
+export type ProductCardLayout = "photo" | "compact" | "plain";
+
+export function getProductLayout(slug: string, image?: string): ProductCardLayout {
+  if (!image) return "plain";
+  return FEATURED_PRODUCT_SLUGS.includes(slug) ? "photo" : "compact";
+}
