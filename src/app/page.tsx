@@ -10,7 +10,7 @@ import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 import CountUp from "@/components/motion/CountUp";
 import ScrollProgress from "@/components/motion/ScrollProgress";
 import NeonGlow from "@/components/motion/NeonGlow";
-import { getProductImage } from "@/lib/product-images";
+import { getProductImage, getProductLayout } from "@/lib/product-images";
 
 export const metadata: Metadata = generateSEO({
   title: "Asuransi Batam Terpercaya – Properti, Kendaraan, Alat Berat & Liability | Rio",
@@ -89,7 +89,10 @@ const products = [
   },
 ];
 
-const productCards = products.map((p) => ({ ...p, image: getProductImage(p.slug) }));
+const productCards = products.map((p) => {
+  const image = getProductImage(p.slug);
+  return { ...p, image, layout: getProductLayout(p.slug, image) };
+});
 
 const fieldProofs = [
   {
@@ -352,9 +355,13 @@ export default function HomePage() {
             {productCards.map((p) => (
               <StaggerItem key={p.href}>
               <Link href={p.href} className="group block h-full">
-                <div className="relative h-full p-7 rounded-2xl border-2 border-[#e2e8f0] group-hover:border-[#c9a84c]/60 group-hover:shadow-xl transition-all card-hover bg-white">
+                <div
+                  className={`relative h-full rounded-2xl border-2 border-[#e2e8f0] group-hover:border-[#c9a84c]/60 group-hover:shadow-xl transition-all card-hover bg-white ${
+                    p.layout === "compact" ? "p-3 sm:p-4" : "p-7"
+                  }`}
+                >
                   <NeonGlow />
-                  {p.image && (
+                  {p.layout === "photo" && p.image && (
                     <div className="relative -mx-7 -mt-7 mb-5 aspect-[16/9] overflow-hidden rounded-t-[14px]">
                       <Image
                         src={p.image}
@@ -365,27 +372,64 @@ export default function HomePage() {
                       />
                     </div>
                   )}
-                  <div className={p.image ? "mb-3 flex items-center gap-3" : ""}>
-                    <div className={p.image ? "text-3xl leading-none" : "text-4xl mb-4"}>{p.icon}</div>
-                    <h3
-                      className={`font-display font-bold text-xl text-[#0a1628] group-hover:text-[#1a4fa0] transition-colors ${
-                        p.image ? "" : "mb-3"
-                      }`}
-                    >
-                      {p.title}
-                    </h3>
-                  </div>
-                  <p className="text-[#475569] text-sm leading-relaxed mb-4">{p.desc}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {p.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 bg-[#faf8f3] text-[#1a4fa0] text-xs font-semibold rounded-full border border-[#e2e8f0]"
+                  {p.layout === "compact" ? (
+                    <div className="flex gap-3 sm:gap-4">
+                      <div className="relative min-h-[84px] w-[84px] shrink-0 self-stretch overflow-hidden rounded-xl sm:w-28">
+                        <Image
+                          src={p.image!}
+                          alt={`Ilustrasi ${p.title}`}
+                          fill
+                          sizes="(max-width: 640px) 84px, 112px"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <div className="mb-1.5 flex items-center gap-2">
+                          <div className="text-2xl leading-none">{p.icon}</div>
+                          <h3 className="font-display text-base font-bold leading-snug text-[#0a1628] transition-colors group-hover:text-[#1a4fa0] sm:text-lg">
+                            {p.title}
+                          </h3>
+                        </div>
+                        <p className="mb-2.5 line-clamp-3 text-[13px] leading-snug text-[#475569] sm:line-clamp-none sm:text-sm sm:leading-relaxed">
+                          {p.desc}
+                        </p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {p.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="rounded-full border border-[#e2e8f0] bg-[#faf8f3] px-2.5 py-0.5 text-[11px] font-semibold text-[#1a4fa0]"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <>
+                    <div className={p.layout === "photo" ? "mb-3 flex items-center gap-3" : ""}>
+                      <div className={p.layout === "photo" ? "text-3xl leading-none" : "text-4xl mb-4"}>{p.icon}</div>
+                      <h3
+                        className={`font-display font-bold text-xl text-[#0a1628] group-hover:text-[#1a4fa0] transition-colors ${
+                          p.layout === "photo" ? "" : "mb-3"
+                        }`}
                       >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                        {p.title}
+                      </h3>
+                    </div>
+                    <p className="text-[#475569] text-sm leading-relaxed mb-4">{p.desc}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {p.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-3 py-1 bg-[#faf8f3] text-[#1a4fa0] text-xs font-semibold rounded-full border border-[#e2e8f0]"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    </>
+                  )}
                 </div>
               </Link>
               </StaggerItem>
