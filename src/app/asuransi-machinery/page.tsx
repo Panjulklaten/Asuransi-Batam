@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { generateSEO } from "@/lib/seo";
 import ProductPageLayout from "@/components/ProductPageLayout";
+import { Anchor, ArrowRight, Briefcase, Cog, Construction, Factory, HardHat, Settings, ShieldAlert, Tractor, TrendingDown, Zap } from "lucide-react";
 import Link from "next/link";
 export const metadata: Metadata = generateSEO({
   title: "Asuransi Machinery Batam – Lindungi Mesin & Alat Berat dari Breakdown",
@@ -12,12 +13,12 @@ export const metadata: Metadata = generateSEO({
     },
 });
 const benefits = [
-  { icon: "⚙️", title: "Kerusakan Mesin (Machinery Breakdown)", desc: "Perlindungan kerusakan tiba-tiba dan tidak terduga pada mesin produksi, generator, kompresor, dan peralatan industri akibat kegagalan mekanis internal." },
-  { icon: "💥", title: "Kecelakaan Operasional", desc: "Kerusakan akibat benturan, terjatuh, kesalahan operator, atau kecelakaan fisik lain saat mesin sedang atau tidak beroperasi." },
-  { icon: "⚡", title: "Kerusakan Listrik & Elektrikal", desc: "Lonjakan tegangan, korsleting, sambaran petir, dan kerusakan komponen elektrikal yang merusak sistem kontrol dan motor mesin." },
-  { icon: "🏗️", title: "Selama Pemasangan & Commissioning", desc: "Perlindungan saat mesin baru sedang dipasang, dikalibrasi, atau dalam proses uji coba pertama sebelum beroperasi penuh." },
-  { icon: "💼", title: "Biaya Pengiriman Suku Cadang Darurat", desc: "Biaya pengiriman ekspres suku cadang dari luar negeri atau luar kota Batam untuk mempercepat perbaikan dan meminimalkan downtime." },
-  { icon: "📉", title: "Kehilangan Keuntungan (Loss of Profit)", desc: "Kompensasi atas hilangnya margin keuntungan selama mesin tidak dapat beroperasi akibat kerusakan yang ditanggung polis." },
+  { icon: "⚙️", Icon: Settings, title: "Kerusakan Mesin (Machinery Breakdown)", desc: "Perlindungan kerusakan tiba-tiba dan tidak terduga pada mesin produksi, generator, kompresor, dan peralatan industri akibat kegagalan mekanis internal." },
+  { icon: "💥", Icon: ShieldAlert, title: "Kecelakaan Operasional", desc: "Kerusakan akibat benturan, terjatuh, kesalahan operator, atau kecelakaan fisik lain saat mesin sedang atau tidak beroperasi." },
+  { icon: "⚡", Icon: Zap, title: "Kerusakan Listrik & Elektrikal", desc: "Lonjakan tegangan, korsleting, sambaran petir, dan kerusakan komponen elektrikal yang merusak sistem kontrol dan motor mesin." },
+  { icon: "🏗️", Icon: HardHat, title: "Selama Pemasangan & Commissioning", desc: "Perlindungan saat mesin baru sedang dipasang, dikalibrasi, atau dalam proses uji coba pertama sebelum beroperasi penuh." },
+  { icon: "💼", Icon: Briefcase, title: "Biaya Pengiriman Suku Cadang Darurat", desc: "Biaya pengiriman ekspres suku cadang dari luar negeri atau luar kota Batam untuk mempercepat perbaikan dan meminimalkan downtime." },
+  { icon: "📉", Icon: TrendingDown, title: "Kehilangan Keuntungan (Loss of Profit)", desc: "Kompensasi atas hilangnya margin keuntungan selama mesin tidak dapat beroperasi akibat kerusakan yang ditanggung polis." },
 ];
 const faqs = [
   { q: "Apa itu Machinery Breakdown Insurance dan siapa yang butuh?", a: "Machinery Breakdown Insurance menanggung kerusakan tiba-tiba dan tidak terduga pada mesin dan peralatan industri, termasuk kerusakan mekanis dan elektrikal. Produk ini sangat dibutuhkan oleh pabrik manufaktur di Muka Kuning dan Kabil, galangan kapal di Tanjung Uncang, fasilitas pengolahan di Batam, dan bisnis apa pun yang bergantung pada mesin untuk operasional harian." },
@@ -45,43 +46,46 @@ const schema = {
 };
 export default function AsuransiMachineryPage() {
   return (
-    <ProductPageLayout cluster="machinery" title="Asuransi Machinery Batam" subtitle="Perlindungan Mesin, Alat Berat & Equipment Industri"
+    <ProductPageLayout cluster="machinery" rich
+      heroImage={{ src: "/images/produk/machinery.webp", alt: "Crane dan alat berat proyek konstruksi saat senja, ilustrasi asuransi machinery di Batam", badge: "Mesin dan alat berat tetap aman beroperasi", shape: "landscape" }} title="Asuransi Machinery Batam" subtitle="Perlindungan Mesin, Alat Berat & Equipment Industri"
       description="Mesin adalah jantung operasional bisnis Anda. Di Batam — kota industri dengan ratusan pabrik, galangan kapal, dan fasilitas produksi — satu kerusakan mesin bisa menghentikan seluruh lini produksi dan mengakibatkan kerugian puluhan hingga ratusan juta rupiah per hari. Dengan asuransi machinery yang tepat, downtime tidak lagi mengancam keberlangsungan bisnis."
       benefits={benefits} faqs={faqs} policyComparison={policyComparison}
       breadcrumbs={[{ label: "Asuransi Machinery", href: "/asuransi-machinery" }]}
       schema={schema}
     >
       <div className="mb-12">
-        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Industri di Batam yang Paling Membutuhkan Asuransi Mesin</h2>
+        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Industri di Batam yang Paling Membutuhkan Asuransi Mesin</h2><div aria-hidden="true" className="mx-auto mb-4 h-1 w-14 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-center text-[#475569] mb-8 max-w-2xl mx-auto">Dari kawasan industri Muka Kuning hingga galangan kapal Tanjung Uncang, industri-industri ini sangat bergantung pada proteksi mesin.</p>
         <div className="grid md:grid-cols-3 gap-6 mb-8">
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
-            <p className="text-2xl mb-2">🏭</p>
-            <h3 className="font-bold text-[#0a1628] mb-1">Manufaktur Elektronik & Batam</h3>
-            <p className="text-sm text-[#475569]">Pabrik PCB, komponen elektronik, dan peralatan presisi di Kabil dan Muka Kuning mengoperasikan mesin senilai puluhan miliar yang butuh perlindungan machinery breakdown 24/7.</p>
+          <div className="p-6 rounded-2xl border border-[#e2e8f0] bg-gradient-to-b from-white to-[#faf8f3] hover:border-[#c9a84c]/40 hover:shadow-md transition-all">
+            <span className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#0a1628] to-[#1a4fa0] text-[#f0d080] shadow-md shadow-[#0a1628]/15"><Factory size={24} strokeWidth={1.75} aria-hidden="true" /></span>
+            <h3 className="font-display font-bold text-[#0a1628] mb-1.5">Manufaktur Elektronik & Batam</h3>
+            <p className="text-[15px] leading-relaxed text-[#475569]">Pabrik PCB, komponen elektronik, dan peralatan presisi di Kabil dan Muka Kuning mengoperasikan mesin senilai puluhan miliar yang butuh perlindungan machinery breakdown 24/7.</p>
           </div>
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
-            <p className="text-2xl mb-2">⚓</p>
-            <h3 className="font-bold text-[#0a1628] mb-1">Galangan Kapal Tanjung Uncang</h3>
-            <p className="text-sm text-[#475569]">Crane, gantry, mesin las, dan peralatan shipyard senilai ratusan miliar perlu perlindungan equipment all risk selama proses pembangunan dan perbaikan kapal berlangsung.</p>
+          <div className="p-6 rounded-2xl border border-[#e2e8f0] bg-gradient-to-b from-white to-[#faf8f3] hover:border-[#c9a84c]/40 hover:shadow-md transition-all">
+            <span className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#0a1628] to-[#1a4fa0] text-[#f0d080] shadow-md shadow-[#0a1628]/15"><Anchor size={24} strokeWidth={1.75} aria-hidden="true" /></span>
+            <h3 className="font-display font-bold text-[#0a1628] mb-1.5">Galangan Kapal Tanjung Uncang</h3>
+            <p className="text-[15px] leading-relaxed text-[#475569]">Crane, gantry, mesin las, dan peralatan shipyard senilai ratusan miliar perlu perlindungan equipment all risk selama proses pembangunan dan perbaikan kapal berlangsung.</p>
           </div>
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
-            <p className="text-2xl mb-2">🏗️</p>
-            <h3 className="font-bold text-[#0a1628] mb-1">Proyek Konstruksi Aktif</h3>
-            <p className="text-sm text-[#475569]">Excavator, bulldozer, crane mobile, dan concrete pump yang beroperasi di proyek properti dan infrastruktur Batam membutuhkan perlindungan equipment all risk selama masa proyek.</p>
+          <div className="p-6 rounded-2xl border border-[#e2e8f0] bg-gradient-to-b from-white to-[#faf8f3] hover:border-[#c9a84c]/40 hover:shadow-md transition-all">
+            <span className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#0a1628] to-[#1a4fa0] text-[#f0d080] shadow-md shadow-[#0a1628]/15"><HardHat size={24} strokeWidth={1.75} aria-hidden="true" /></span>
+            <h3 className="font-display font-bold text-[#0a1628] mb-1.5">Proyek Konstruksi Aktif</h3>
+            <p className="text-[15px] leading-relaxed text-[#475569]">Excavator, bulldozer, crane mobile, dan concrete pump yang beroperasi di proyek properti dan infrastruktur Batam membutuhkan perlindungan equipment all risk selama masa proyek.</p>
           </div>
         </div>
       </div>
-      <h2 className="font-display font-bold text-3xl text-[#0a1628] mb-6 text-center">Produk Machinery Kami</h2>
+      <h2 className="font-display font-bold text-3xl text-[#0a1628] mb-2 text-center">Produk Machinery Kami</h2><div aria-hidden="true" className="mx-auto mb-8 h-1 w-14 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {[
-          { title: "Asuransi Alat Berat", desc: "Perlindungan excavator, bulldozer, dan alat berat konstruksi dari kerusakan fisik, kecelakaan, dan bencana alam selama proyek.", href: "/asuransi-machinery/asuransi-alat-berat" },
-          { title: "Asuransi Crane", desc: "Perlindungan menyeluruh untuk tower crane dan mobile crane termasuk tanggung jawab pihak ketiga (TPL) yang krusial di area padat.", href: "/asuransi-machinery/asuransi-crane" },
-          { title: "Machinery Breakdown", desc: "Perlindungan kerusakan mendadak pada mesin pabrik, mesin produksi, genset, dan kompresor yang sudah terpasang.", href: "/asuransi-machinery/machinery-breakdown" },
+          { title: "Asuransi Alat Berat", desc: "Perlindungan excavator, bulldozer, dan alat berat konstruksi dari kerusakan fisik, kecelakaan, dan bencana alam selama proyek.", href: "/asuransi-machinery/asuransi-alat-berat", Icon: Tractor },
+          { title: "Asuransi Crane", desc: "Perlindungan menyeluruh untuk tower crane dan mobile crane termasuk tanggung jawab pihak ketiga (TPL) yang krusial di area padat.", href: "/asuransi-machinery/asuransi-crane", Icon: Construction },
+          { title: "Machinery Breakdown", desc: "Perlindungan kerusakan mendadak pada mesin pabrik, mesin produksi, genset, dan kompresor yang sudah terpasang.", href: "/asuransi-machinery/machinery-breakdown", Icon: Cog },
         ].map((p) => (
-          <Link key={p.href} href={p.href} className="group p-6 bg-white rounded-2xl border-2 border-[#e2e8f0] hover:border-[#c9a84c]/50 hover:shadow-lg transition-all">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] group-hover:text-[#1a4fa0] mb-2">{p.title}</h3>
-            <p className="text-[#475569] text-sm">{p.desc}</p>
+          <Link key={p.href} href={p.href} className="group flex h-full flex-col p-7 bg-white rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/60 hover:shadow-xl hover:-translate-y-1 transition-all">
+            {p.Icon && <span className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#c9a84c]/12 text-[#a07830] ring-1 ring-[#c9a84c]/30 transition-colors group-hover:bg-gradient-to-br group-hover:from-[#c9a84c] group-hover:to-[#f0d080] group-hover:text-[#0a1628]"><p.Icon size={26} strokeWidth={1.75} aria-hidden="true" /></span>}
+            <h3 className="font-display font-bold text-lg text-[#0a1628] group-hover:text-[#1a4fa0] mb-2 transition-colors">{p.title}</h3>
+            <p className="text-[#475569] text-[15px] leading-relaxed">{p.desc}</p>
+            <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#1a4fa0]">Lihat detail<ArrowRight size={16} className="transition-transform group-hover:translate-x-1" aria-hidden="true" /></span>
           </Link>
         ))}
       </div>

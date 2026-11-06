@@ -109,6 +109,8 @@ const localRisks = [
     Icon: Droplets,
     title: "Banjir & Genangan",
     desc: "Kawasan perumahan di cekungan rendah dan dekat aliran air bisa tergenang saat hujan deras. Perluasan jaminan banjir membantu menutup biaya perbaikan dan penggantian isi.",
+    href: "/blog/risiko-banjir-properti-batam",
+    cta: "Baca panduan klaim banjir",
   },
   {
     Icon: Landmark,
@@ -189,6 +191,12 @@ export default function AsuransiPropertiPage() {
                     </span>
                     <h3 className="font-display font-bold text-lg text-white mb-2">{r.title}</h3>
                     <p className="text-white/70 text-[15px] leading-relaxed">{r.desc}</p>
+                    {r.href && (
+                      <Link href={r.href} className="group mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#f0d080] hover:text-white transition-colors">
+                        {r.cta}
+                        <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                      </Link>
+                    )}
                   </div>
                 ))}
               </div>

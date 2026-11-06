@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { generateSEO } from "@/lib/seo";
 import Link from "next/link";
 import ProductPageLayout from "@/components/ProductPageLayout";
+import { Anchor, ArrowRight, FileCheck2, Hammer, HardHat, Package, Search, ShieldCheck, Ship, Users, Waves } from "lucide-react";
 
 export const metadata: Metadata = generateSEO({
   title: "Asuransi Marine Batam – Hull, Cargo, Builder's Risk & P&I",
@@ -16,36 +17,36 @@ export const metadata: Metadata = generateSEO({
 
 const benefits = [
   {
-    icon: "🚢",
+    icon: "🚢", Icon: Ship,
     title: "Marine Hull Insurance",
     desc: "Perlindungan menyeluruh untuk lambung kapal, mesin penggerak, dan perlengkapan navigasi dari risiko tabrakan, kandas, tenggelam, dan kebakaran.",
     href: "/asuransi-marine/marine-hull",
   },
   {
-    icon: "📦",
+    icon: "📦", Icon: Package,
     title: "Marine Cargo Insurance",
     desc: "Perlindungan barang kiriman selama proses pengiriman laut dari pelabuhan asal hingga tujuan akhir, termasuk bongkar muat.",
     href: "/asuransi-marine/marine-cargo",
   },
   {
-    icon: "🏗️",
+    icon: "🏗️", Icon: HardHat,
     title: "Builder's Risk (DSU)",
     desc: "Perlindungan selama proses pembangunan dan perbaikan kapal di galangan, dari tahap keel laying hingga sea trial.",
     href: "/asuransi-marine/builders-risk",
   },
   {
-    icon: "⚓",
+    icon: "⚓", Icon: Anchor,
     title: "Protection & Indemnity (P&I)",
     desc: "Perlindungan tanggung jawab hukum pemilik kapal kepada pihak ketiga, termasuk kru, penumpang, dan pencemaran lingkungan.",
     href: "/asuransi-marine/protection-and-indemnity",
   },
   {
-    icon: "🌊",
+    icon: "🌊", Icon: Waves,
     title: "War & Strikes Risk",
     desc: "Perlindungan tambahan terhadap risiko perang, pembajakan, dan mogok buruh yang dapat berdampak pada operasional kapal.",
   },
   {
-    icon: "🔍",
+    icon: "🔍", Icon: Search,
     title: "Total Loss & Salvage",
     desc: "Kompensasi kerugian total kapal dan biaya penyelamatan, termasuk biaya pengangkatan bangkai kapal jika diperlukan.",
   },
@@ -111,7 +112,8 @@ const schema = {
 export default function AsuransiMarinePage() {
   return (
     <ProductPageLayout
-      cluster="marine"
+      cluster="marine" rich
+      heroImage={{ src: "/images/produk/marine.webp", alt: "Kapal kargo pengangkut kontainer di laut, ilustrasi asuransi marine di Batam", badge: "Kapal, muatan, dan galangan di perairan Batam", shape: "square" }}
       title="Asuransi Marine Batam"
       subtitle="Marine Hull, Cargo, Builder's Risk & P&I"
       description="Batam sebagai kota kepulauan dengan lalu lintas laut yang tinggi membutuhkan perlindungan yang andal. Asuransi marine kami menjaga kapal, muatan, dan aset maritim Anda dari risiko di lautan."
@@ -122,42 +124,42 @@ export default function AsuransiMarinePage() {
       schema={schema}
     >
       <div className="mb-12">
-        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Produk Asuransi Marine Kami</h2>
+        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Produk Asuransi Marine Kami</h2><div aria-hidden="true" className="mx-auto mb-4 h-1 w-14 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-center text-[#475569] mb-8 max-w-2xl mx-auto">Pilih perlindungan yang sesuai dengan kebutuhan maritim dan pengiriman Anda di Batam.</p>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <Link href="/asuransi-marine/marine-hull" className="group block p-6 rounded-2xl border-2 border-[#e2e8f0] hover:border-[#c9a84c]/50 hover:shadow-lg transition-all">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] group-hover:text-[#1a4fa0] mb-2">Marine Hull Insurance</h3>
-            <p className="text-[#475569] text-sm">Perlindungan menyeluruh untuk lambung kapal, mesin, dan perlengkapan navigasi dari tabrakan, kandas, dan kebakaran.</p>
-          </Link>
-          <Link href="/asuransi-marine/marine-cargo" className="group block p-6 rounded-2xl border-2 border-[#e2e8f0] hover:border-[#c9a84c]/50 hover:shadow-lg transition-all">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] group-hover:text-[#1a4fa0] mb-2">Marine Cargo Insurance</h3>
-            <p className="text-[#475569] text-sm">Perlindungan barang kiriman selama pengiriman laut dari Batam ke seluruh Indonesia dan mancanegara.</p>
-          </Link>
-          <Link href="/asuransi-marine/builders-risk" className="group block p-6 rounded-2xl border-2 border-[#e2e8f0] hover:border-[#c9a84c]/50 hover:shadow-lg transition-all">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] group-hover:text-[#1a4fa0] mb-2">Builder&apos;s Risk (DSU)</h3>
-            <p className="text-[#475569] text-sm">Perlindungan selama pembangunan kapal di galangan Batam, dari keel laying hingga sea trial selesai.</p>
-          </Link>
-          <Link href="/asuransi-marine/protection-and-indemnity" className="group block p-6 rounded-2xl border-2 border-[#e2e8f0] hover:border-[#c9a84c]/50 hover:shadow-lg transition-all">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] group-hover:text-[#1a4fa0] mb-2">P&amp;I (Protection &amp; Indemnity)</h3>
-            <p className="text-[#475569] text-sm">Tanggung jawab hukum pemilik kapal kepada awak, penumpang, pemilik muatan, dermaga, dan pencemaran.</p>
-          </Link>
+          <Link href="/asuransi-marine/marine-hull" className="group flex h-full flex-col p-7 bg-white rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/60 hover:shadow-xl hover:-translate-y-1 transition-all"><span className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#c9a84c]/12 text-[#a07830] ring-1 ring-[#c9a84c]/30 transition-colors group-hover:bg-gradient-to-br group-hover:from-[#c9a84c] group-hover:to-[#f0d080] group-hover:text-[#0a1628]"><Ship size={26} strokeWidth={1.75} aria-hidden="true" /></span>
+            <h3 className="font-display font-bold text-lg text-[#0a1628] group-hover:text-[#1a4fa0] mb-2 transition-colors">Marine Hull Insurance</h3>
+            <p className="text-[#475569] text-[15px] leading-relaxed">Perlindungan menyeluruh untuk lambung kapal, mesin, dan perlengkapan navigasi dari tabrakan, kandas, dan kebakaran.</p>
+          <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#1a4fa0]">Lihat detail<ArrowRight size={16} className="transition-transform group-hover:translate-x-1" aria-hidden="true" /></span></Link>
+          <Link href="/asuransi-marine/marine-cargo" className="group flex h-full flex-col p-7 bg-white rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/60 hover:shadow-xl hover:-translate-y-1 transition-all"><span className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#c9a84c]/12 text-[#a07830] ring-1 ring-[#c9a84c]/30 transition-colors group-hover:bg-gradient-to-br group-hover:from-[#c9a84c] group-hover:to-[#f0d080] group-hover:text-[#0a1628]"><Package size={26} strokeWidth={1.75} aria-hidden="true" /></span>
+            <h3 className="font-display font-bold text-lg text-[#0a1628] group-hover:text-[#1a4fa0] mb-2 transition-colors">Marine Cargo Insurance</h3>
+            <p className="text-[#475569] text-[15px] leading-relaxed">Perlindungan barang kiriman selama pengiriman laut dari Batam ke seluruh Indonesia dan mancanegara.</p>
+          <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#1a4fa0]">Lihat detail<ArrowRight size={16} className="transition-transform group-hover:translate-x-1" aria-hidden="true" /></span></Link>
+          <Link href="/asuransi-marine/builders-risk" className="group flex h-full flex-col p-7 bg-white rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/60 hover:shadow-xl hover:-translate-y-1 transition-all"><span className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#c9a84c]/12 text-[#a07830] ring-1 ring-[#c9a84c]/30 transition-colors group-hover:bg-gradient-to-br group-hover:from-[#c9a84c] group-hover:to-[#f0d080] group-hover:text-[#0a1628]"><Hammer size={26} strokeWidth={1.75} aria-hidden="true" /></span>
+            <h3 className="font-display font-bold text-lg text-[#0a1628] group-hover:text-[#1a4fa0] mb-2 transition-colors">Builder&apos;s Risk (DSU)</h3>
+            <p className="text-[#475569] text-[15px] leading-relaxed">Perlindungan selama pembangunan kapal di galangan Batam, dari keel laying hingga sea trial selesai.</p>
+          <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#1a4fa0]">Lihat detail<ArrowRight size={16} className="transition-transform group-hover:translate-x-1" aria-hidden="true" /></span></Link>
+          <Link href="/asuransi-marine/protection-and-indemnity" className="group flex h-full flex-col p-7 bg-white rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/60 hover:shadow-xl hover:-translate-y-1 transition-all"><span className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#c9a84c]/12 text-[#a07830] ring-1 ring-[#c9a84c]/30 transition-colors group-hover:bg-gradient-to-br group-hover:from-[#c9a84c] group-hover:to-[#f0d080] group-hover:text-[#0a1628]"><Anchor size={26} strokeWidth={1.75} aria-hidden="true" /></span>
+            <h3 className="font-display font-bold text-lg text-[#0a1628] group-hover:text-[#1a4fa0] mb-2 transition-colors">P&amp;I (Protection &amp; Indemnity)</h3>
+            <p className="text-[#475569] text-[15px] leading-relaxed">Tanggung jawab hukum pemilik kapal kepada awak, penumpang, pemilik muatan, dermaga, dan pencemaran.</p>
+          <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#1a4fa0]">Lihat detail<ArrowRight size={16} className="transition-transform group-hover:translate-x-1" aria-hidden="true" /></span></Link>
         </div>
       </div>
       <div>
-        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Sering Dipadukan Dengan</h2>
+        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Sering Dipadukan Dengan</h2><div aria-hidden="true" className="mx-auto mb-4 h-1 w-14 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-center text-[#475569] mb-8 max-w-2xl mx-auto">Galangan kapal dan pelaku usaha maritim biasanya butuh lebih dari satu jenis polis.</p>
         <div className="grid md:grid-cols-3 gap-6">
-          <Link href="/asuransi-surety-bond/performance-bond" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
+          <Link href="/asuransi-surety-bond/performance-bond" className="group flex h-full flex-col p-6 rounded-2xl border border-[#e2e8f0] bg-gradient-to-b from-white to-[#faf8f3] hover:border-[#c9a84c]/50 hover:shadow-lg hover:-translate-y-0.5 transition-all"><span className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-[#0a1628] to-[#1a4fa0] text-[#f0d080]"><FileCheck2 size={22} strokeWidth={1.75} aria-hidden="true" /></span>
             <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Performance Bond</h3>
-            <p className="text-[#475569] text-sm">Sering disyaratkan untuk kontrak pembangunan kapal di galangan.</p>
+            <p className="text-[#475569] text-[15px] leading-relaxed">Sering disyaratkan untuk kontrak pembangunan kapal di galangan.</p>
           </Link>
-          <Link href="/asuransi-personal-accident/pa-karyawan-grup" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
+          <Link href="/asuransi-personal-accident/pa-karyawan-grup" className="group flex h-full flex-col p-6 rounded-2xl border border-[#e2e8f0] bg-gradient-to-b from-white to-[#faf8f3] hover:border-[#c9a84c]/50 hover:shadow-lg hover:-translate-y-0.5 transition-all"><span className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-[#0a1628] to-[#1a4fa0] text-[#f0d080]"><Users size={22} strokeWidth={1.75} aria-hidden="true" /></span>
             <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">PA Karyawan Grup</h3>
-            <p className="text-[#475569] text-sm">Lindungi pekerja shipyard dari risiko kecelakaan kerja maritim.</p>
+            <p className="text-[#475569] text-[15px] leading-relaxed">Lindungi pekerja shipyard dari risiko kecelakaan kerja maritim.</p>
           </Link>
-          <Link href="/asuransi-liability/public-liability" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
+          <Link href="/asuransi-liability/public-liability" className="group flex h-full flex-col p-6 rounded-2xl border border-[#e2e8f0] bg-gradient-to-b from-white to-[#faf8f3] hover:border-[#c9a84c]/50 hover:shadow-lg hover:-translate-y-0.5 transition-all"><span className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-[#0a1628] to-[#1a4fa0] text-[#f0d080]"><ShieldCheck size={22} strokeWidth={1.75} aria-hidden="true" /></span>
             <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Public Liability</h3>
-            <p className="text-[#475569] text-sm">Tanggung jawab hukum atas kerusakan/cedera pihak ketiga di area pelabuhan.</p>
+            <p className="text-[#475569] text-[15px] leading-relaxed">Tanggung jawab hukum atas kerusakan/cedera pihak ketiga di area pelabuhan.</p>
           </Link>
         </div>
       </div>

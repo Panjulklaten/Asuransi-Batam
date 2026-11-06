@@ -31,7 +31,7 @@ interface ProductPageProps {
   /** Cluster produk ("surety" | "marine"): tombol "Minta Penawaran" (popup → WhatsApp) + tabel persyaratan penerbitan. */
   cluster?: QuoteClusterKey;
   /** Foto hero opsional (layout dua kolom). Halaman lain tidak terpengaruh bila tidak diisi. */
-  heroImage?: { src: string; alt: string; badge?: string };
+  heroImage?: { src: string; alt: string; badge?: string; /** "square" untuk foto 1:1 (mis. 400x400); default lanskap 16:9. */ shape?: "square" | "landscape" };
   /** Tampilan premium opsional untuk kartu manfaat, tabel perbandingan, dan FAQ. */
   rich?: boolean;
   children?: React.ReactNode;
@@ -219,26 +219,26 @@ export default function ProductPageLayout({
           </div>
 
           {heroImage && (
-            <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
+            <div className={`relative mx-auto w-full ${heroImage.shape === "square" ? "max-w-sm lg:ml-auto lg:max-w-[420px]" : "max-w-xl lg:max-w-none"}`}>
               <div aria-hidden="true" className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-[#c9a84c]/50 via-transparent to-[#1a4fa0]/50 blur-xl" />
               <div className="relative overflow-hidden rounded-3xl border border-white/20 shadow-2xl shadow-black/40">
-                <div className="relative aspect-[5/4] w-full">
+                {/* Foto produk berwatermark di pojok: tampil utuh (tanpa crop) dan tanpa overlay di tepi bawah. */}
+                <div className={`relative w-full ${heroImage.shape === "square" ? "aspect-square" : "aspect-video"}`}>
                   <Image
                     src={heroImage.src}
                     alt={heroImage.alt}
                     fill
                     priority
-                    className="object-cover object-[50%_30%]"
-                    sizes="(max-width: 1024px) 100vw, 560px"
+                    className="object-cover"
+                    sizes={heroImage.shape === "square" ? "(max-width: 1024px) 384px, 420px" : "(max-width: 1024px) 100vw, 560px"}
                   />
-                  <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/70 via-transparent to-transparent" />
                 </div>
                 {heroImage.badge && (
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center gap-3 rounded-2xl border border-white/20 bg-[#0a1628]/70 p-3.5 backdrop-blur-md">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#c9a84c] to-[#f0d080] text-[#0a1628]">
-                      <ShieldCheck size={22} aria-hidden="true" />
+                  <div className="absolute right-3 top-3 flex max-w-[80%] items-center gap-2 rounded-xl border border-white/30 bg-[#0a1628]/75 px-3 py-2 backdrop-blur-md">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#c9a84c] to-[#f0d080] text-[#0a1628]">
+                      <ShieldCheck size={16} aria-hidden="true" />
                     </span>
-                    <span className="text-sm font-medium leading-snug text-white">{heroImage.badge}</span>
+                    <span className="text-xs font-medium leading-snug text-white">{heroImage.badge}</span>
                   </div>
                 )}
               </div>
