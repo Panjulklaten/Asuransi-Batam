@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { generateSEO } from "@/lib/seo";
 import ProductPageLayout from "@/components/ProductPageLayout";
+import { tone } from "@/components/card-tones";
 import { ArrowRight, Biohazard, ClipboardList, Factory, Scale, ShieldCheck, Users, Wrench } from "lucide-react";
 import Link from "next/link";
 export const metadata: Metadata = generateSEO({
@@ -53,39 +54,35 @@ export default function AsuransiLiabilityPage() {
       breadcrumbs={[{ label: "Asuransi Liability", href: "/asuransi-liability" }]}
       schema={schema}
     >
-      <div className="mb-12">
-        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Mengapa Bisnis di Batam Wajib Punya Liability Insurance</h2><div aria-hidden="true" className="mx-auto mb-4 h-1 w-14 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
-        <p className="text-center text-[#475569] mb-8 max-w-2xl mx-auto">Batam adalah kota industri dengan risiko tanggung gugat yang lebih tinggi dari kota biasa — galangan kapal, pabrik elektronik, kawasan logistik, dan pariwisata internasional beroperasi berdampingan.</p>
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
-          <div className="p-6 rounded-2xl border border-[#e2e8f0] bg-gradient-to-b from-white to-[#faf8f3] hover:border-[#c9a84c]/40 hover:shadow-md transition-all">
-            <p className="mb-1 bg-gradient-to-r from-[#1a4fa0] to-[#2c6fd8] bg-clip-text font-display text-3xl font-bold text-transparent">200+</p>
-            <p className="text-[15px] leading-relaxed text-[#475569]">Perusahaan manufaktur aktif di kawasan industri Batam yang wajib memiliki jaminan pencemaran lingkungan</p>
+      <div className="mb-6 md:mb-8">
+        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Mengapa Bisnis di Batam Wajib Punya Liability Insurance</h2><div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <p className="text-center text-[#475569] mb-4 text-sm md:text-base max-w-2xl mx-auto">Batam adalah kota industri dengan risiko tanggung gugat yang lebih tinggi dari kota biasa — galangan kapal, pabrik elektronik, kawasan logistik, dan pariwisata internasional beroperasi berdampingan.</p>
+        <div className="grid md:grid-cols-3 gap-3 mb-5">
+          <div className={`rounded-xl border p-3.5 transition-all hover:shadow-md ${tone(0).card}`}>
+            <p className="mb-1 bg-gradient-to-r from-[#1a4fa0] to-[#2c6fd8] bg-clip-text font-display text-2xl font-bold text-transparent">200+</p>
+            <p className="text-[13px] leading-snug text-[#475569]">Perusahaan manufaktur aktif di kawasan industri Batam yang wajib memiliki jaminan pencemaran lingkungan</p>
           </div>
-          <div className="p-6 rounded-2xl border border-[#e2e8f0] bg-gradient-to-b from-white to-[#faf8f3] hover:border-[#c9a84c]/40 hover:shadow-md transition-all">
-            <p className="mb-1 bg-gradient-to-r from-[#1a4fa0] to-[#2c6fd8] bg-clip-text font-display text-3xl font-bold text-transparent">Rp 5 M+</p>
-            <p className="text-[15px] leading-relaxed text-[#475569]">Potensi kerugian tuntutan hukum tunggal di industri berat — tanpa asuransi bisa menguras modal kerja perusahaan</p>
+          <div className={`rounded-xl border p-3.5 transition-all hover:shadow-md ${tone(1).card}`}>
+            <p className="mb-1 bg-gradient-to-r from-[#1a4fa0] to-[#2c6fd8] bg-clip-text font-display text-2xl font-bold text-transparent">Rp 5 M+</p>
+            <p className="text-[13px] leading-snug text-[#475569]">Potensi kerugian tuntutan hukum tunggal di industri berat — tanpa asuransi bisa menguras modal kerja perusahaan</p>
           </div>
-          <div className="p-6 rounded-2xl border border-[#e2e8f0] bg-gradient-to-b from-white to-[#faf8f3] hover:border-[#c9a84c]/40 hover:shadow-md transition-all">
-            <p className="mb-1 bg-gradient-to-r from-[#1a4fa0] to-[#2c6fd8] bg-clip-text font-display text-3xl font-bold text-transparent">PP 22/2021</p>
-            <p className="text-[15px] leading-relaxed text-[#475569]">Regulasi KLHK yang mewajibkan industri penghasil limbah B3 di Batam memiliki asuransi pencemaran lingkungan</p>
+          <div className={`rounded-xl border p-3.5 transition-all hover:shadow-md ${tone(2).card}`}>
+            <p className="mb-1 bg-gradient-to-r from-[#1a4fa0] to-[#2c6fd8] bg-clip-text font-display text-2xl font-bold text-transparent">PP 22/2021</p>
+            <p className="text-[13px] leading-snug text-[#475569]">Regulasi KLHK yang mewajibkan industri penghasil limbah B3 di Batam memiliki asuransi pencemaran lingkungan</p>
           </div>
         </div>
       </div>
-      <h2 className="font-display font-bold text-3xl text-[#0a1628] mb-2 text-center">Produk Liability Kami</h2><div aria-hidden="true" className="mx-auto mb-8 h-1 w-14 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Produk Liability Kami</h2><div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-5xl mx-auto">
         {[
           { title: "Asuransi Limbah B3", desc: "Perlindungan khusus industri penghasil limbah Bahan Berbahaya & Beracun di kawasan industri Batam. Wajib untuk izin lingkungan.", href: "/asuransi-liability/asuransi-limbah-b3", Icon: Biohazard },
           { title: "Public Liability Insurance", desc: "Perlindungan tanggung gugat terhadap publik, tamu, pelanggan, dan pihak ketiga yang mengalami kerugian akibat operasional bisnis Anda.", href: "/asuransi-liability/public-liability", Icon: ShieldCheck },
           { title: "Freight Forwarders Liability (FFL)", desc: "Proteksi bagi perusahaan forwarding, PPJK & EMKL dari tuntutan kehilangan, kerusakan, dan kesalahan dokumen kargo di Batu Ampar, Sekupang & Tanjung Uncang.", href: "/asuransi-liability/freight-forwarders-liability" },
           { title: "Employers & Product Liability", desc: "Tanggung gugat atas tuntutan karyawan dan gugatan produk yang sudah beredar, melengkapi Public Liability dan BPJS Ketenagakerjaan.", href: "/asuransi-liability/employers-product-liability", Icon: Users },
           { title: "Ship Repairer's Liability", desc: "Tanggung gugat galangan dan kontraktor reparasi atas kapal pelanggan yang berada dalam penguasaan mereka.", href: "/asuransi-liability/ship-repairers-liability", Icon: Wrench },
-        ].map((p) => (
-          <Link key={p.href} href={p.href} className="group flex h-full flex-col p-7 bg-white rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/60 hover:shadow-xl hover:-translate-y-1 transition-all">
-            {p.Icon && <span className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#c9a84c]/12 text-[#a07830] ring-1 ring-[#c9a84c]/30 transition-colors group-hover:bg-gradient-to-br group-hover:from-[#c9a84c] group-hover:to-[#f0d080] group-hover:text-[#0a1628]"><p.Icon size={26} strokeWidth={1.75} aria-hidden="true" /></span>}
-            <h3 className="font-display font-bold text-lg text-[#0a1628] group-hover:text-[#1a4fa0] mb-2 transition-colors">{p.title}</h3>
-            <p className="text-[#475569] text-[15px] leading-relaxed">{p.desc}</p>
-            <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#1a4fa0]">Lihat detail<ArrowRight size={16} className="transition-transform group-hover:translate-x-1" aria-hidden="true" /></span>
-          </Link>
+        ].map((p, i) => (
+          <Link key={p.href} href={p.href} className={`group flex items-start gap-3 rounded-xl border p-3.5 transition-all hover:-translate-y-0.5 hover:shadow-md ${tone(i).card}`}>{p.Icon && <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl shadow-sm ${tone(i).tile}`}><p.Icon size={20} strokeWidth={2} aria-hidden="true" /></span>}<div className="min-w-0 flex-1"><h3 className="font-display font-bold text-[15px] leading-tight text-[#0a1628] group-hover:text-[#1a4fa0] mb-1 transition-colors">{p.title}</h3>
+            <p className="text-[#475569] text-[13px] leading-snug">{p.desc}</p><span className={`mt-2 inline-flex items-center gap-1 text-xs font-semibold ${tone(i).text}`}>Lihat detail<ArrowRight size={14} className="transition-transform group-hover:translate-x-1" aria-hidden="true" /></span></div></Link>
         ))}
       </div>
     </ProductPageLayout>

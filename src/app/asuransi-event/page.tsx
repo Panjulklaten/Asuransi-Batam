@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { generateSEO } from "@/lib/seo";
 import Link from "next/link";
 import ProductPageLayout from "@/components/ProductPageLayout";
+import { tone } from "@/components/card-tones";
 import { ArrowRight, Bike, Car, ClipboardList, CloudRain, Flag, HeartPulse, Mic, Scale, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = generateSEO({
@@ -73,41 +74,29 @@ export default function AsuransiEventPage() {
       breadcrumbs={[{ label: "Asuransi Event", href: "/asuransi-event" }]}
       schema={schema}
     >
-      <div className="mb-12">
-        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Pilih Jenis Event Anda</h2><div aria-hidden="true" className="mx-auto mb-4 h-1 w-14 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
-        <p className="text-center text-[#475569] mb-8 max-w-2xl mx-auto">
+      <div className="mb-6 md:mb-8">
+        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Pilih Jenis Event Anda</h2><div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <p className="text-center text-[#475569] mb-4 text-sm md:text-base max-w-2xl mx-auto">
           Setiap jenis acara punya profil risiko berbeda — lihat cakupan spesifik dan cara pengajuan untuk masing-masing.
         </p>
-        <div className="grid md:grid-cols-3 gap-6">
-          <Link href="/asuransi-event/konser-musik" className="group flex h-full flex-col p-7 bg-white rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/60 hover:shadow-xl hover:-translate-y-1 transition-all"><span className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#c9a84c]/12 text-[#a07830] ring-1 ring-[#c9a84c]/30 transition-colors group-hover:bg-gradient-to-br group-hover:from-[#c9a84c] group-hover:to-[#f0d080] group-hover:text-[#0a1628]"><Mic size={26} strokeWidth={1.75} aria-hidden="true" /></span>
-            <h3 className="font-display font-bold text-lg text-[#0a1628] group-hover:text-[#1a4fa0] mb-2 transition-colors">Asuransi Konser Musik</h3>
-            <p className="text-[#475569] text-[15px] leading-relaxed">Liability penonton, non-appearance artis, dan event cancellation untuk promotor dan venue.</p>
-          <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#1a4fa0]">Lihat detail<ArrowRight size={16} className="transition-transform group-hover:translate-x-1" aria-hidden="true" /></span></Link>
-          <Link href="/asuransi-event/motor-cross" className="group flex h-full flex-col p-7 bg-white rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/60 hover:shadow-xl hover:-translate-y-1 transition-all"><span className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#c9a84c]/12 text-[#a07830] ring-1 ring-[#c9a84c]/30 transition-colors group-hover:bg-gradient-to-br group-hover:from-[#c9a84c] group-hover:to-[#f0d080] group-hover:text-[#0a1628]"><Bike size={26} strokeWidth={1.75} aria-hidden="true" /></span>
-            <h3 className="font-display font-bold text-lg text-[#0a1628] group-hover:text-[#1a4fa0] mb-2 transition-colors">Asuransi Motor Cross</h3>
-            <p className="text-[#475569] text-[15px] leading-relaxed">Personal accident pembalap dan public liability penonton untuk event grasstrack dan motocross.</p>
-          <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#1a4fa0]">Lihat detail<ArrowRight size={16} className="transition-transform group-hover:translate-x-1" aria-hidden="true" /></span></Link>
-          <Link href="/asuransi-event/hole-in-one" className="group flex h-full flex-col p-7 bg-white rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/60 hover:shadow-xl hover:-translate-y-1 transition-all"><span className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#c9a84c]/12 text-[#a07830] ring-1 ring-[#c9a84c]/30 transition-colors group-hover:bg-gradient-to-br group-hover:from-[#c9a84c] group-hover:to-[#f0d080] group-hover:text-[#0a1628]"><Flag size={26} strokeWidth={1.75} aria-hidden="true" /></span>
-            <h3 className="font-display font-bold text-lg text-[#0a1628] group-hover:text-[#1a4fa0] mb-2 transition-colors">Asuransi Hole in One</h3>
-            <p className="text-[#475569] text-[15px] leading-relaxed">Jaminan hadiah hole in one untuk turnamen golf — syarat peserta, jarak hole, dan risiko sendiri.</p>
-          <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#1a4fa0]">Lihat detail<ArrowRight size={16} className="transition-transform group-hover:translate-x-1" aria-hidden="true" /></span></Link>
+        <div className="grid md:grid-cols-3 gap-3">
+          <Link href="/asuransi-event/konser-musik" className={`group flex items-start gap-3 rounded-xl border p-3.5 transition-all hover:-translate-y-0.5 hover:shadow-md ${tone(0).card}`}><span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl shadow-sm ${tone(0).tile}`}><Mic size={20} strokeWidth={2} aria-hidden="true" /></span><div className="min-w-0 flex-1"><h3 className="font-display font-bold text-[15px] leading-tight text-[#0a1628] group-hover:text-[#1a4fa0] mb-1 transition-colors">Asuransi Konser Musik</h3>
+            <p className="text-[#475569] text-[13px] leading-snug">Liability penonton, non-appearance artis, dan event cancellation untuk promotor dan venue.</p><span className={`mt-2 inline-flex items-center gap-1 text-xs font-semibold ${tone(0).text}`}>Lihat detail<ArrowRight size={14} className="transition-transform group-hover:translate-x-1" aria-hidden="true" /></span></div></Link>
+          <Link href="/asuransi-event/motor-cross" className={`group flex items-start gap-3 rounded-xl border p-3.5 transition-all hover:-translate-y-0.5 hover:shadow-md ${tone(1).card}`}><span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl shadow-sm ${tone(1).tile}`}><Bike size={20} strokeWidth={2} aria-hidden="true" /></span><div className="min-w-0 flex-1"><h3 className="font-display font-bold text-[15px] leading-tight text-[#0a1628] group-hover:text-[#1a4fa0] mb-1 transition-colors">Asuransi Motor Cross</h3>
+            <p className="text-[#475569] text-[13px] leading-snug">Personal accident pembalap dan public liability penonton untuk event grasstrack dan motocross.</p><span className={`mt-2 inline-flex items-center gap-1 text-xs font-semibold ${tone(1).text}`}>Lihat detail<ArrowRight size={14} className="transition-transform group-hover:translate-x-1" aria-hidden="true" /></span></div></Link>
+          <Link href="/asuransi-event/hole-in-one" className={`group flex items-start gap-3 rounded-xl border p-3.5 transition-all hover:-translate-y-0.5 hover:shadow-md ${tone(2).card}`}><span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl shadow-sm ${tone(2).tile}`}><Flag size={20} strokeWidth={2} aria-hidden="true" /></span><div className="min-w-0 flex-1"><h3 className="font-display font-bold text-[15px] leading-tight text-[#0a1628] group-hover:text-[#1a4fa0] mb-1 transition-colors">Asuransi Hole in One</h3>
+            <p className="text-[#475569] text-[13px] leading-snug">Jaminan hadiah hole in one untuk turnamen golf — syarat peserta, jarak hole, dan risiko sendiri.</p><span className={`mt-2 inline-flex items-center gap-1 text-xs font-semibold ${tone(2).text}`}>Lihat detail<ArrowRight size={14} className="transition-transform group-hover:translate-x-1" aria-hidden="true" /></span></div></Link>
         </div>
       </div>
       <div>
-        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Sering Dipadukan Dengan</h2><div aria-hidden="true" className="mx-auto mb-4 h-1 w-14 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Link href="/asuransi-liability" className="group flex h-full flex-col p-6 rounded-2xl border border-[#e2e8f0] bg-gradient-to-b from-white to-[#faf8f3] hover:border-[#c9a84c]/50 hover:shadow-lg hover:-translate-y-0.5 transition-all"><span className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-[#0a1628] to-[#1a4fa0] text-[#f0d080]"><Scale size={22} strokeWidth={1.75} aria-hidden="true" /></span>
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Asuransi Liability</h3>
-            <p className="text-[#475569] text-[15px] leading-relaxed">Perluasan tanggung gugat untuk bisnis dan venue yang menyelenggarakan acara secara rutin.</p>
-          </Link>
-          <Link href="/asuransi-personal-accident" className="group flex h-full flex-col p-6 rounded-2xl border border-[#e2e8f0] bg-gradient-to-b from-white to-[#faf8f3] hover:border-[#c9a84c]/50 hover:shadow-lg hover:-translate-y-0.5 transition-all"><span className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-[#0a1628] to-[#1a4fa0] text-[#f0d080]"><HeartPulse size={22} strokeWidth={1.75} aria-hidden="true" /></span>
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Asuransi Personal Accident</h3>
-            <p className="text-[#475569] text-[15px] leading-relaxed">Lindungi kru, kru medis, dan panitia yang bertugas langsung di lokasi acara.</p>
-          </Link>
-          <Link href="/asuransi-kendaraan" className="group flex h-full flex-col p-6 rounded-2xl border border-[#e2e8f0] bg-gradient-to-b from-white to-[#faf8f3] hover:border-[#c9a84c]/50 hover:shadow-lg hover:-translate-y-0.5 transition-all"><span className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-[#0a1628] to-[#1a4fa0] text-[#f0d080]"><Car size={22} strokeWidth={1.75} aria-hidden="true" /></span>
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Asuransi Kendaraan</h3>
-            <p className="text-[#475569] text-[15px] leading-relaxed">Lengkapi proteksi kendaraan operasional atau kendaraan pembalap di luar unit balap.</p>
-          </Link>
+        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Sering Dipadukan Dengan</h2><div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 mt-8">
+          <Link href="/asuransi-liability" className={`group flex items-start gap-3 rounded-xl border p-3.5 transition-all hover:-translate-y-0.5 hover:shadow-md ${tone(0).card}`}><span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl shadow-sm ${tone(0).tile}`}><Scale size={20} strokeWidth={2} aria-hidden="true" /></span><div className="min-w-0 flex-1"><h3 className="font-display font-bold text-[15px] leading-tight text-[#0a1628] mb-1">Asuransi Liability</h3>
+            <p className="text-[#475569] text-[13px] leading-snug">Perluasan tanggung gugat untuk bisnis dan venue yang menyelenggarakan acara secara rutin.</p></div></Link>
+          <Link href="/asuransi-personal-accident" className={`group flex items-start gap-3 rounded-xl border p-3.5 transition-all hover:-translate-y-0.5 hover:shadow-md ${tone(1).card}`}><span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl shadow-sm ${tone(1).tile}`}><HeartPulse size={20} strokeWidth={2} aria-hidden="true" /></span><div className="min-w-0 flex-1"><h3 className="font-display font-bold text-[15px] leading-tight text-[#0a1628] mb-1">Asuransi Personal Accident</h3>
+            <p className="text-[#475569] text-[13px] leading-snug">Lindungi kru, kru medis, dan panitia yang bertugas langsung di lokasi acara.</p></div></Link>
+          <Link href="/asuransi-kendaraan" className={`group flex items-start gap-3 rounded-xl border p-3.5 transition-all hover:-translate-y-0.5 hover:shadow-md ${tone(2).card}`}><span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl shadow-sm ${tone(2).tile}`}><Car size={20} strokeWidth={2} aria-hidden="true" /></span><div className="min-w-0 flex-1"><h3 className="font-display font-bold text-[15px] leading-tight text-[#0a1628] mb-1">Asuransi Kendaraan</h3>
+            <p className="text-[#475569] text-[13px] leading-snug">Lengkapi proteksi kendaraan operasional atau kendaraan pembalap di luar unit balap.</p></div></Link>
         </div>
       </div>
     </ProductPageLayout>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { generateSEO } from "@/lib/seo";
 import ProductPageLayout from "@/components/ProductPageLayout";
+import { tone } from "@/components/card-tones";
 import { ArrowRight, Bike, Car, Flame, KeyRound, ShieldAlert, Siren, Truck, Users, Waves } from "lucide-react";
 import Link from "next/link";
 
@@ -63,40 +64,36 @@ export default function AsuransiKendaraanPage() {
       breadcrumbs={[{ label: "Asuransi Kendaraan", href: "/asuransi-kendaraan" }]}
       schema={schema}
     >
-      <div className="mb-12 max-w-4xl mx-auto">
-        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Mengapa Pemilik Kendaraan di Batam Perlu Asuransi?</h2><div aria-hidden="true" className="mx-auto mb-4 h-1 w-14 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
-        <p className="text-center text-[#475569] mb-8 max-w-2xl mx-auto">Batam memiliki keunikan risiko yang berbeda dari kota lain di Indonesia.</p>
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
-          <div className="p-6 rounded-2xl border border-[#e2e8f0] bg-gradient-to-b from-white to-[#faf8f3] hover:border-[#c9a84c]/40 hover:shadow-md transition-all">
-            <span className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#0a1628] to-[#1a4fa0] text-[#f0d080] shadow-md shadow-[#0a1628]/15"><Waves size={24} strokeWidth={1.75} aria-hidden="true" /></span>
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
+        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Mengapa Pemilik Kendaraan di Batam Perlu Asuransi?</h2><div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <p className="text-center text-[#475569] mb-4 text-sm md:text-base max-w-2xl mx-auto">Batam memiliki keunikan risiko yang berbeda dari kota lain di Indonesia.</p>
+        <div className="grid md:grid-cols-3 gap-3 mb-5">
+          <div className={`rounded-xl border p-3.5 transition-all hover:shadow-md ${tone(0).card}`}>
+            <span className={`mb-2 flex h-10 w-10 items-center justify-center rounded-xl shadow-sm ${tone(0).tile}`}><Waves size={20} strokeWidth={2} aria-hidden="true" /></span>
             <h3 className="font-display font-bold text-[#0a1628] mb-1.5">Risiko Banjir Musiman</h3>
-            <p className="text-[15px] leading-relaxed text-[#475569]">Kawasan Sekupang, Batu Aji, dan beberapa titik di Batam Center rutin terdampak banjir saat musim hujan. Mesin mobil yang terendam bisa mengakibatkan kerusakan total yang tidak murah diperbaiki.</p>
+            <p className="text-[13px] leading-snug text-[#475569]">Kawasan Sekupang, Batu Aji, dan beberapa titik di Batam Center rutin terdampak banjir saat musim hujan. Mesin mobil yang terendam bisa mengakibatkan kerusakan total yang tidak murah diperbaiki.</p>
           </div>
-          <div className="p-6 rounded-2xl border border-[#e2e8f0] bg-gradient-to-b from-white to-[#faf8f3] hover:border-[#c9a84c]/40 hover:shadow-md transition-all">
-            <span className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#0a1628] to-[#1a4fa0] text-[#f0d080] shadow-md shadow-[#0a1628]/15"><Truck size={24} strokeWidth={1.75} aria-hidden="true" /></span>
+          <div className={`rounded-xl border p-3.5 transition-all hover:shadow-md ${tone(1).card}`}>
+            <span className={`mb-2 flex h-10 w-10 items-center justify-center rounded-xl shadow-sm ${tone(1).tile}`}><Truck size={20} strokeWidth={2} aria-hidden="true" /></span>
             <h3 className="font-display font-bold text-[#0a1628] mb-1.5">Lalu Lintas Kendaraan Berat</h3>
-            <p className="text-[15px] leading-relaxed text-[#475569]">Kendaraan berat dari kawasan industri Muka Kuning, Kabil, dan Tanjung Uncang berbagi jalan dengan kendaraan pribadi — meningkatkan risiko kecelakaan, terutama di jam sibuk pagi dan sore.</p>
+            <p className="text-[13px] leading-snug text-[#475569]">Kendaraan berat dari kawasan industri Muka Kuning, Kabil, dan Tanjung Uncang berbagi jalan dengan kendaraan pribadi — meningkatkan risiko kecelakaan, terutama di jam sibuk pagi dan sore.</p>
           </div>
-          <div className="p-6 rounded-2xl border border-[#e2e8f0] bg-gradient-to-b from-white to-[#faf8f3] hover:border-[#c9a84c]/40 hover:shadow-md transition-all">
-            <span className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#0a1628] to-[#1a4fa0] text-[#f0d080] shadow-md shadow-[#0a1628]/15"><KeyRound size={24} strokeWidth={1.75} aria-hidden="true" /></span>
+          <div className={`rounded-xl border p-3.5 transition-all hover:shadow-md ${tone(2).card}`}>
+            <span className={`mb-2 flex h-10 w-10 items-center justify-center rounded-xl shadow-sm ${tone(2).tile}`}><KeyRound size={20} strokeWidth={2} aria-hidden="true" /></span>
             <h3 className="font-display font-bold text-[#0a1628] mb-1.5">Angka Pencurian Kendaraan</h3>
-            <p className="text-[15px] leading-relaxed text-[#475569]">Sebagai kota perbatasan dengan mobilitas tinggi, risiko pencurian kendaraan di Batam lebih tinggi dibanding rata-rata kota di Indonesia — terutama untuk kendaraan niaga yang diparkir di lokasi terpencil.</p>
+            <p className="text-[13px] leading-snug text-[#475569]">Sebagai kota perbatasan dengan mobilitas tinggi, risiko pencurian kendaraan di Batam lebih tinggi dibanding rata-rata kota di Indonesia — terutama untuk kendaraan niaga yang diparkir di lokasi terpencil.</p>
           </div>
         </div>
       </div>
-      <h2 className="font-display font-bold text-3xl text-[#0a1628] mb-2 text-center">Produk Kendaraan Kami</h2><div aria-hidden="true" className="mx-auto mb-8 h-1 w-14 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Produk Kendaraan Kami</h2><div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-5xl mx-auto">
         {[
           { title: "Asuransi Mobil Batam", desc: "All Risk & TLO untuk mobil pribadi dan keluarga. Dilengkapi kalkulator premi online dan pilihan bengkel rekanan terpercaya di Batam.", href: "/asuransi-kendaraan/asuransi-mobil-batam", Icon: Car },
           { title: "Asuransi Motor Batam", desc: "All Risk dan TLO untuk motor harian, sport, dan operasional, dengan estimasi premi berdasarkan tarif OJK.", href: "/asuransi-kendaraan/asuransi-motor-batam", Icon: Bike },
           { title: "Asuransi Dump Truck", desc: "Perlindungan All Risk, TLO, dan fleet insurance untuk dump truck serta kendaraan berat komersial operasional di Batam.", href: "/asuransi-kendaraan/asuransi-dumptruck", Icon: Truck },
-        ].map((p) => (
-          <Link key={p.href} href={p.href} className="group flex h-full flex-col p-7 bg-white rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/60 hover:shadow-xl hover:-translate-y-1 transition-all">
-            {p.Icon && <span className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#c9a84c]/12 text-[#a07830] ring-1 ring-[#c9a84c]/30 transition-colors group-hover:bg-gradient-to-br group-hover:from-[#c9a84c] group-hover:to-[#f0d080] group-hover:text-[#0a1628]"><p.Icon size={26} strokeWidth={1.75} aria-hidden="true" /></span>}
-            <h3 className="font-display font-bold text-lg text-[#0a1628] group-hover:text-[#1a4fa0] mb-2 transition-colors">{p.title}</h3>
-            <p className="text-[#475569] text-[15px] leading-relaxed">{p.desc}</p>
-            <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#1a4fa0]">Lihat detail<ArrowRight size={16} className="transition-transform group-hover:translate-x-1" aria-hidden="true" /></span>
-          </Link>
+        ].map((p, i) => (
+          <Link key={p.href} href={p.href} className={`group flex items-start gap-3 rounded-xl border p-3.5 transition-all hover:-translate-y-0.5 hover:shadow-md ${tone(i).card}`}>{p.Icon && <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl shadow-sm ${tone(i).tile}`}><p.Icon size={20} strokeWidth={2} aria-hidden="true" /></span>}<div className="min-w-0 flex-1"><h3 className="font-display font-bold text-[15px] leading-tight text-[#0a1628] group-hover:text-[#1a4fa0] mb-1 transition-colors">{p.title}</h3>
+            <p className="text-[#475569] text-[13px] leading-snug">{p.desc}</p><span className={`mt-2 inline-flex items-center gap-1 text-xs font-semibold ${tone(i).text}`}>Lihat detail<ArrowRight size={14} className="transition-transform group-hover:translate-x-1" aria-hidden="true" /></span></div></Link>
         ))}
       </div>
     </ProductPageLayout>

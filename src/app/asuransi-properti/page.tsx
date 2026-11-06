@@ -9,6 +9,7 @@ import {
   ArrowRight, CloudLightning, Droplets, Landmark,
   MessageCircle, ClipboardList, FileCheck2,
 } from "lucide-react";
+import { tone } from "@/components/card-tones";
 import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 import { Reveal } from "@/components/motion/Reveal";
 
@@ -144,30 +145,32 @@ export default function AsuransiPropertiPage() {
         badge: "Polis disesuaikan untuk rumah, ruko, hotel, hingga pabrik",
       }}
     >
-      <div className="space-y-20 md:space-y-24">
+      <div className="space-y-6 md:space-y-8">
         {/* Produk */}
         <div>
-          <h2 className="font-display font-bold text-3xl text-[#0a1628] mb-2 text-center">Produk Properti Kami</h2>
-          <div aria-hidden="true" className="mx-auto mb-4 h-1 w-14 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
-          <p className="text-center text-[#475569] mb-12 max-w-2xl mx-auto">
+          <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Produk Properti Kami</h2>
+          <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+          <p className="text-center text-[#475569] mb-4 text-sm md:text-base max-w-2xl mx-auto">
             Pilih jenis properti Anda untuk melihat cakupan dan penawaran yang lebih rinci.
           </p>
-          <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {products.map((p) => (
+          <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 max-w-6xl mx-auto">
+            {products.map((p, i) => (
               <StaggerItem key={p.href} className="h-full">
                 <Link
                   href={p.href}
-                  className="group flex h-full flex-col p-7 bg-white rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/60 hover:shadow-xl hover:-translate-y-1 transition-all"
+                  className={`group flex h-full items-start gap-3 rounded-xl border p-3.5 transition-all hover:-translate-y-0.5 hover:shadow-md ${tone(i).card}`}
                 >
-                  <span className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#c9a84c]/12 text-[#a07830] ring-1 ring-[#c9a84c]/30 transition-colors group-hover:bg-gradient-to-br group-hover:from-[#c9a84c] group-hover:to-[#f0d080] group-hover:text-[#0a1628]">
-                    <p.Icon size={26} strokeWidth={1.75} aria-hidden="true" />
+                  <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl shadow-sm ${tone(i).tile}`}>
+                    <p.Icon size={20} strokeWidth={2} aria-hidden="true" />
                   </span>
-                  <h3 className="font-display font-bold text-lg text-[#0a1628] group-hover:text-[#1a4fa0] mb-2 transition-colors">{p.title}</h3>
-                  <p className="text-[#475569] text-[15px] leading-relaxed mb-5">{p.desc}</p>
-                  <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-[#1a4fa0]">
-                    Lihat detail
-                    <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                  </span>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-display font-bold text-[15px] leading-tight text-[#0a1628] group-hover:text-[#1a4fa0] mb-1 transition-colors">{p.title}</h3>
+                    <p className="text-[13px] leading-snug text-[#475569]">{p.desc}</p>
+                    <span className={`mt-2 inline-flex items-center gap-1 text-xs font-semibold ${tone(i).text}`}>
+                      Lihat detail
+                      <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                    </span>
+                  </div>
                 </Link>
               </StaggerItem>
             ))}
@@ -176,57 +179,55 @@ export default function AsuransiPropertiPage() {
 
         {/* Risiko lokal */}
         <Reveal>
-          <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl bg-gradient-to-br from-[#0a1628] via-[#132040] to-[#1e3a6e] px-6 py-12 md:px-12 md:py-14">
-            <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[#c9a84c]/15 blur-3xl" />
-            <div className="relative">
-              <h2 className="font-display font-bold text-2xl md:text-3xl text-white mb-3 text-center">Mengapa Properti di Batam Perlu Diproteksi?</h2>
-              <p className="text-white/70 text-center max-w-2xl mx-auto mb-10">
-                Kondisi pulau, cuaca, dan nilai aset di Batam membuat perlindungan properti lebih dari sekadar formalitas.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                {localRisks.map((r) => (
-                  <div key={r.title} className="rounded-2xl border border-white/10 bg-white/[0.06] p-6 backdrop-blur-sm">
-                    <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#c9a84c] to-[#f0d080] text-[#0a1628]">
-                      <r.Icon size={24} strokeWidth={1.75} aria-hidden="true" />
+          <div className="mx-auto max-w-6xl rounded-2xl border border-sky-200 bg-gradient-to-br from-sky-50 via-white to-amber-50 p-4 md:p-5">
+            <span className="inline-flex items-center rounded-full bg-[#0a1628] px-3 py-1 text-xs font-semibold text-[#f0d080]">Risiko di Batam</span>
+            <h2 className="font-display font-bold text-xl md:text-2xl text-[#0a1628] mt-2 mb-1">Mengapa Properti di Batam Perlu Diproteksi?</h2>
+            <p className="text-sm text-[#475569] mb-3">
+              Kondisi pulau, cuaca, dan nilai aset di Batam membuat perlindungan properti lebih dari sekadar formalitas.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+              {localRisks.map((r, i) => (
+                <div key={r.title} className={`rounded-xl border p-3.5 ${tone(i + 3).card}`}>
+                  <div className="mb-1.5 flex items-center gap-2.5">
+                    <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg shadow-sm ${tone(i + 3).tile}`}>
+                      <r.Icon size={18} strokeWidth={2} aria-hidden="true" />
                     </span>
-                    <h3 className="font-display font-bold text-lg text-white mb-2">{r.title}</h3>
-                    <p className="text-white/70 text-[15px] leading-relaxed">{r.desc}</p>
-                    {r.href && (
-                      <Link href={r.href} className="group mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#f0d080] hover:text-white transition-colors">
-                        {r.cta}
-                        <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                      </Link>
-                    )}
+                    <h3 className="font-display font-bold text-[15px] leading-tight text-[#0a1628]">{r.title}</h3>
                   </div>
-                ))}
-              </div>
+                  <p className="text-[13px] leading-snug text-[#475569]">{r.desc}</p>
+                  {r.href && (
+                    <Link href={r.href} className={`group mt-2 inline-flex items-center gap-1 text-xs font-semibold ${tone(i + 3).text}`}>
+                      {r.cta}
+                      <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                    </Link>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </Reveal>
 
         {/* Langkah */}
-        <div>
-          <h2 className="font-display font-bold text-3xl text-[#0a1628] mb-2 text-center">Tiga Langkah Mendapat Perlindungan</h2>
-          <div aria-hidden="true" className="mx-auto mb-4 h-1 w-14 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
-          <p className="text-center text-[#475569] mb-12 max-w-2xl mx-auto">
-            Prosesnya sederhana dan didampingi langsung oleh Rio.
-          </p>
-          <Stagger className="relative grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="mx-auto max-w-6xl rounded-2xl border border-amber-200 bg-amber-50/60 p-4 md:p-5">
+          <span className="inline-flex items-center rounded-full bg-amber-400 px-3 py-1 text-xs font-bold text-[#0a1628]">Cara Mudah</span>
+          <h2 className="font-display font-bold text-xl md:text-2xl text-[#0a1628] mt-2 mb-3">Tiga Langkah Mendapat Perlindungan</h2>
+          <ol className="grid grid-cols-1 gap-3 md:grid-cols-3">
             {steps.map((st, i) => (
-              <StaggerItem key={st.title} className="h-full">
-                <div className="relative h-full rounded-2xl border border-[#e2e8f0] bg-white p-7 text-center shadow-sm">
-                  <span className="absolute -top-4 left-1/2 flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full bg-[#0a1628] text-sm font-bold text-[#f0d080] ring-4 ring-[#faf8f3]">
-                    {i + 1}
-                  </span>
-                  <span className="mx-auto mb-4 mt-2 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#0a1628] to-[#1a4fa0] text-[#f0d080]">
-                    <st.Icon size={26} strokeWidth={1.75} aria-hidden="true" />
-                  </span>
-                  <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">{st.title}</h3>
-                  <p className="text-[#475569] text-[15px] leading-relaxed">{st.desc}</p>
+              <li key={st.title} className="flex gap-3">
+                <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-400 text-sm font-bold text-[#0a1628] shadow-sm">
+                  {i + 1}
+                </span>
+                <div className="min-w-0">
+                  <h3 className="font-display font-bold text-[15px] leading-tight text-[#0a1628] mb-0.5">{st.title}</h3>
+                  <p className="text-[13px] leading-snug text-[#475569]">{st.desc}</p>
                 </div>
-              </StaggerItem>
+              </li>
             ))}
-          </Stagger>
+          </ol>
+          <div className="mt-3 rounded-lg bg-white px-3 py-2 text-[13px] leading-snug text-[#475569]">
+            <span aria-hidden="true">💡 </span>
+            Siapkan alamat, jenis bangunan, dan estimasi nilai properti agar penawaran bisa disusun lebih cepat.
+          </div>
         </div>
       </div>
     </ProductPageLayout>
