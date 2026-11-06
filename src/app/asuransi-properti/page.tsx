@@ -179,7 +179,7 @@ export default function AsuransiPropertiPage() {
 
         {/* Risiko lokal */}
         <Reveal>
-          <div className="mx-auto max-w-6xl rounded-2xl border border-sky-200 bg-gradient-to-br from-sky-50 via-white to-amber-50 p-4 md:p-5">
+          <div className="mx-auto max-w-6xl rounded-2xl border border-[#c7d9f5] bg-gradient-to-br from-[#eef4ff] via-white to-[#fbf6e6] p-4 md:p-5">
             <span className="inline-flex items-center rounded-full bg-[#0a1628] px-3 py-1 text-xs font-semibold text-[#f0d080]">Risiko di Batam</span>
             <h2 className="font-display font-bold text-xl md:text-2xl text-[#0a1628] mt-2 mb-1">Mengapa Properti di Batam Perlu Diproteksi?</h2>
             <p className="text-sm text-[#475569] mb-3">
@@ -208,13 +208,13 @@ export default function AsuransiPropertiPage() {
         </Reveal>
 
         {/* Langkah */}
-        <div className="mx-auto max-w-6xl rounded-2xl border border-amber-200 bg-amber-50/60 p-4 md:p-5">
-          <span className="inline-flex items-center rounded-full bg-amber-400 px-3 py-1 text-xs font-bold text-[#0a1628]">Cara Mudah</span>
+        <div className="mx-auto max-w-6xl rounded-2xl border border-[#ecdca0] bg-[#fbf6e6]/70 p-4 md:p-5">
+          <span className="inline-flex items-center rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080] px-3 py-1 text-xs font-bold text-[#0a1628]">Cara Mudah</span>
           <h2 className="font-display font-bold text-xl md:text-2xl text-[#0a1628] mt-2 mb-3">Tiga Langkah Mendapat Perlindungan</h2>
           <ol className="grid grid-cols-1 gap-3 md:grid-cols-3">
             {steps.map((st, i) => (
               <li key={st.title} className="flex gap-3">
-                <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-400 text-sm font-bold text-[#0a1628] shadow-sm">
+                <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#c9a84c] to-[#f0d080] text-sm font-bold text-[#0a1628] shadow-sm">
                   {i + 1}
                 </span>
                 <div className="min-w-0">
