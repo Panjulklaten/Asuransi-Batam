@@ -142,6 +142,10 @@ describe("webmail integrasi", { skip: !RUN }, () => {
     assert.equal(sent.subject, "Re: Tanya premi mobil");
     assert.equal(sent.from, `Asuransi Batam <${OWN}>`);
     assert.ok(sent.html.includes("blockquote") && sent.html.includes("berapa") && !sent.html.includes("<script"), "kutipan aman");
+    assert.ok(sent.html.includes("rio-signature.png") && sent.text.includes("Telp / WA"), "tanda tangan ikut terkirim");
+    assert.ok(sent.html.indexOf("rio-signature.png") < sent.html.indexOf("blockquote"), "tanda tangan di atas kutipan");
+    const rowHtml = psql(`select html_body from email_messages where thread_id='${T1}' and direction='outbound'`, "mailit");
+    assert.ok(!rowHtml.includes("rio-signature.png"), "riwayat thread tidak menduplikasi tanda tangan");
     outMid = sentMessageIds.get(sentPayloads.at(-1)!.id)!;
     const row = JSON.parse(psql(`select row_to_json(m) from email_messages m where thread_id='${T1}' and direction='outbound'`, "mailit"));
     assert.equal(row.message_id, outMid); assert.equal(row.in_reply_to, firstInMid); assert.deepEqual(row.references_ids, [firstInMid]);
@@ -277,6 +281,13 @@ describe("webmail integrasi", { skip: !RUN }, () => {
     const d = await store.getThreadDetail(T1);
     const first = d.messages[0];
     assert.ok(first.html.includes("<b>berapa</b>") && !first.html.includes("<script"));
+  });
+
+  test("tanda tangan bisa dimatikan per email", async () => {
+    const r = await outbound.sendMail({ to: ["x@y.com"], cc: [], subject: "Tanpa TTD", text: "Singkat.", threadId: null, replyToMessageId: null, requestId: randomUUID(), files: [], signature: false });
+    assert.ok(r.ok);
+    const p = sentPayloads.at(-1)!.payload as { html: string; text: string };
+    assert.ok(!p.html.includes("rio-signature.png") && !p.text.includes("Telp / WA"));
   });
 
   test("email baru (bukan balasan) membuat thread 'sent' dengan lampiran tersimpan", async () => {

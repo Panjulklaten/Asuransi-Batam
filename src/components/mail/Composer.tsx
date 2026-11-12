@@ -2,6 +2,7 @@
 import { useRef, useState } from "react";
 import { Loader2, Paperclip, Send, X } from "lucide-react";
 import type { MessageView } from "@/lib/mail/types";
+import { signatureHtml } from "@/lib/mail/signature";
 import { api, formatBytes } from "./utils";
 
 const MAX_FILES = 5;
@@ -33,6 +34,7 @@ export default function Composer({ target, selfAddress, onClose, onSent, variant
   const [subject, setSubject] = useState(target.subject);
   const [text, setText] = useState("");
   const [files, setFiles] = useState<File[]>([]);
+  const [signature, setSignature] = useState(true);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const requestId = useRef(crypto.randomUUID()); // dipakai ulang saat coba lagi → Resend tidak mengirim ganda
@@ -58,7 +60,7 @@ export default function Composer({ target, selfAddress, onClose, onSent, variant
     if (!text.trim()) return setError("Isi email tidak boleh kosong.");
     setBusy(true);
     const fd = new FormData();
-    fd.set("to", to); fd.set("cc", cc); fd.set("subject", subject); fd.set("text", text); fd.set("requestId", requestId.current);
+    fd.set("to", to); fd.set("cc", cc); fd.set("subject", subject); fd.set("text", text); fd.set("requestId", requestId.current); fd.set("signature", signature ? "1" : "0");
     if (target.threadId) fd.set("threadId", target.threadId);
     if (target.replyTo) fd.set("replyToMessageId", target.replyTo.id);
     files.forEach((f) => fd.append("files", f));
@@ -94,6 +96,15 @@ export default function Composer({ target, selfAddress, onClose, onSent, variant
           </div>
         )}
         <textarea aria-label="Isi email" value={text} onChange={(e) => setText(e.target.value)} rows={variant === "modal" ? 12 : 6} className="mt-2 w-full resize-y bg-transparent text-sm leading-relaxed outline-none" placeholder="Tulis pesan…" />
+        <label className="mb-2 flex items-center gap-2 text-xs text-slate-600">
+          <input type="checkbox" checked={signature} onChange={(e) => setSignature(e.target.checked)} /> Sertakan tanda tangan
+        </label>
+        {signature && (
+          <div className="mb-2 overflow-x-auto rounded-lg border border-dashed border-slate-200 bg-slate-50 px-3 pb-3" aria-label="Pratinjau tanda tangan">
+            {/* HTML statis & tepercaya dari kode kita (bukan input pengguna) */}
+            <div dangerouslySetInnerHTML={{ __html: signatureHtml() }} />
+          </div>
+        )}
         {files.length > 0 && (
           <ul className="mb-2 flex flex-wrap gap-2">
             {files.map((f, i) => (
