@@ -7,20 +7,27 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "submit-indexnow": "tsx scripts/submit-all-indexnow.ts"
+    "submit-indexnow": "tsx scripts/submit-all-indexnow.ts",
+    "mail:hash-password": "tsx scripts/mail-hash-password.ts",
+    "mail:test": "node --conditions react-server --import tsx --test tests/mail/*.test.ts"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.119.0",
     "framer-motion": "^14.3.0",
     "lucide-react": "^1.58.0",
     "next": "^16.4.2",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
+    "sanitize-html": "^2.18.1",
+    "server-only": "^0.0.1",
+    "svix": "^2.10.0",
     "zod": "^4.6.7"
   },
   "devDependencies": {
     "@types/node": "^22.20.5",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
+    "@types/sanitize-html": "^2.16.2",
     "autoprefixer": "^10.6.1",
     "eslint": "^9",
     "eslint-config-next": "^16.4.2",

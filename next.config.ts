@@ -12,6 +12,24 @@ const nextConfig: NextConfig = {
         source: "/_next/static/:path*.woff2",
         headers: [{ key: "X-Robots-Tag", value: "noindex" }],
       },
+      // Webmail: tidak boleh di-cache, diindeks, atau dibingkai.
+      {
+        source: "/mail/:path*",
+        headers: [
+          { key: "Cache-Control", value: "no-store, max-age=0" },
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+          { key: "X-Frame-Options", value: "DENY" },
+          { key: "Referrer-Policy", value: "same-origin" },
+        ],
+      },
+      {
+        source: "/mail",
+        headers: [
+          { key: "Cache-Control", value: "no-store, max-age=0" },
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+          { key: "X-Frame-Options", value: "DENY" },
+        ],
+      },
     ];
   },
 

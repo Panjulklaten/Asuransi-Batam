@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import HtmlLangSync from "@/components/HtmlLangSync";
+import SiteChrome from "@/components/SiteChrome";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -86,10 +87,9 @@ export default function RootLayout({
       */}
       <body className="font-sans antialiased">
         <HtmlLangSync />
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <WhatsAppButton />
+        <SiteChrome header={<Navbar />} footer={<Footer />} floating={<WhatsAppButton />}>
+          {children}
+        </SiteChrome>
       </body>
     </html>
   );
