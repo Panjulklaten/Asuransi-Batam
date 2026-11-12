@@ -147,3 +147,18 @@ test("lampiran: allowlist, ukuran, magic bytes", () => {
   assert.equal(safeDownloadType("image/svg+xml"), "application/octet-stream");
   assert.equal(safeDownloadType("application/pdf"), "application/pdf");
 });
+
+test("tanda tangan: HTML email-safe, gambar absolut https, tanpa script, tautan benar", async () => {
+  const { signatureHtml, signatureText } = await import("../../src/lib/mail/signature");
+  const h = signatureHtml();
+  assert.ok(!/<script|<style|onerror|javascript:/i.test(h));
+  const imgs = [...h.matchAll(/<img src="([^"]+)"/g)].map((m) => m[1]);
+  assert.equal(imgs.length, 5);
+  for (const u of imgs) assert.match(u, /^https:\/\/asuransibatam\.com\/images\/email\/[\w-]+\.png$/);
+  assert.match(h, /href="mailto:rio@asuransibatam\.com"/);
+  assert.match(h, /href="https:\/\/wa\.me\/6281373336728"/);
+  assert.match(signatureText(), /rio@asuransibatam\.com/);
+  for (const f of ["rio-signature", "icon-linkedin", "icon-whatsapp", "icon-email", "icon-website"]) {
+    assert.ok((await import("node:fs")).existsSync(`public/images/email/${f}.png`), `${f}.png ada di repo`);
+  }
+});

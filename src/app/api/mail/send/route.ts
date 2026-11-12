@@ -61,7 +61,7 @@ export async function POST(req: Request) {
   }
 
   try {
-    const r = await sendMail({ to, cc, subject, text, threadId, replyToMessageId, requestId, files });
+    const r = await sendMail({ to, cc, subject, text, threadId, replyToMessageId, requestId, files, signature: str(form.get("signature")) !== "0" });
     return r.ok ? ok({ threadId: r.threadId, messageId: r.messageId, warning: r.warning ?? null }) : fail(r.status, r.message);
   } catch (e) {
     console.error("[mail] send error", e);

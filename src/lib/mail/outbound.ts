@@ -6,6 +6,7 @@ import { mailEnv, missingEnv } from "./config";
 import { safeDisplayName } from "./addresses";
 import { getSentEmail, sendEmail } from "./resend";
 import { escapeHtml, htmlToText, sanitizeEmailHtml, textToHtml } from "./sanitize";
+import { signatureHtml, signatureText } from "./signature";
 import { createThread, getAccountId, markThread, must, storeAttachment } from "./store";
 import { buildReplyHeaders, makeSnippet, normalizeMessageId, normalizeSubject, replySubject } from "./threading";
 
@@ -19,6 +20,7 @@ export interface SendInput {
   threadId: string | null;
   replyToMessageId: string | null; // id baris email_messages yang dibalas
   requestId: string; // UUID dari klien → kunci idempotensi
+  signature?: boolean; // tambahkan tanda tangan Asuransi Batam di email yang dikirim (tidak disimpan di riwayat thread)
   files: OutFile[];
 }
 export type SendResult = { ok: true; threadId: string; messageId: string; warning?: string } | { ok: false; status: number; message: string };
@@ -105,8 +107,9 @@ export async function sendMail(input: SendInput): Promise<SendResult> {
 
   const subject = thread ? replySubject((input.subject.trim() || (thread.subject as string) || "").slice(0, 300)) : input.subject.trim().slice(0, 300);
   const quote = parent ? quotedBlock(parent) : null;
-  const html = textToHtml(input.text) + (quote?.html ?? "");
-  const text = input.text + (quote?.text ?? "");
+  const sig = input.signature !== false;
+  const html = textToHtml(input.text) + (sig ? signatureHtml() : "") + (quote?.html ?? "");
+  const text = input.text + (sig ? `\n\n${signatureText()}` : "") + (quote?.text ?? "");
 
   const from = `${safeDisplayName(mailEnv.fromName()) || "Asuransi Batam"} <${mailEnv.fromAddress()}>`;
   const sent = await sendEmail(
