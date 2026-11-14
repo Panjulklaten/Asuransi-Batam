@@ -1,11 +1,12 @@
 // POST /api/mail/send (multipart/form-data) — email baru atau balasan dalam thread.
-// Fields: to, cc, subject, text, threadId?, replyToMessageId?, requestId (UUID), files[]
+// Fields: to, cc, subject, html (isi dari editor) ATAU text (polos), threadId?, replyToMessageId?, requestId (UUID), files[]
 import { ALLOWED_EXT, extOf, validateOutgoingContent, validateOutgoingFiles, type OutFile } from "@/lib/mail/attachments";
 import { parseAddressListStrict } from "@/lib/mail/addresses";
 import { MAIL_LIMITS } from "@/lib/mail/config";
 import { guard } from "@/lib/mail/guard";
 import { fail, ok, UUID_RE } from "@/lib/mail/http";
 import { sendMail } from "@/lib/mail/outbound";
+import { prepareRichBody } from "@/lib/mail/richtext";
 import { safeFilename } from "@/lib/mail/store";
 
 export const runtime = "nodejs";
@@ -43,7 +44,11 @@ export async function POST(req: Request) {
   if (!threadId && !subject) return fail(422, "Subjek wajib diisi.");
   if (subject.length > MAIL_LIMITS.maxSubject) return fail(422, `Subjek maksimal ${MAIL_LIMITS.maxSubject} karakter.`);
 
-  const text = str(form.get("text")).replace(/\r\n?/g, "\n");
+  // Isi dari editor (HTML) disanitasi ulang di server; fallback ke teks polos untuk klien lama.
+  const rawHtml = str(form.get("html"));
+  if (rawHtml.length > MAIL_LIMITS.maxBodyChars * 2) return fail(422, "Isi email terlalu panjang.");
+  const rich = rawHtml ? prepareRichBody(rawHtml) : null;
+  const text = rawHtml ? (rich?.text ?? "") : str(form.get("text")).replace(/\r\n?/g, "\n");
   if (!text.trim()) return fail(422, "Isi email tidak boleh kosong.");
   if (text.length > MAIL_LIMITS.maxBodyChars) return fail(422, "Isi email terlalu panjang.");
 
@@ -61,7 +66,7 @@ export async function POST(req: Request) {
   }
 
   try {
-    const r = await sendMail({ to, cc, subject, text, threadId, replyToMessageId, requestId, files, signature: str(form.get("signature")) !== "0" });
+    const r = await sendMail({ to, cc, subject, text, bodyHtml: rich?.html ?? null, threadId, replyToMessageId, requestId, files, signature: str(form.get("signature")) !== "0" });
     return r.ok ? ok({ threadId: r.threadId, messageId: r.messageId, warning: r.warning ?? null }) : fail(r.status, r.message);
   } catch (e) {
     console.error("[mail] send error", e);

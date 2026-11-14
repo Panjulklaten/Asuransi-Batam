@@ -162,3 +162,23 @@ test("tanda tangan: HTML email-safe, gambar absolut https, tanpa script, tautan 
     assert.ok((await import("node:fs")).existsSync(`public/images/email/${f}.png`), `${f}.png ada di repo`);
   }
 });
+
+test("editor: isi HTML disanitasi ulang & dikonversi ke teks (daftar, rata teks, tautan)", async () => {
+  const { prepareRichBody, htmlToPlain } = await import("../../src/lib/mail/richtext");
+  const raw = `<div>Halo <b>Bapak</b> <i>Budi</i> <u>garis</u></div><div style="text-align: center;">Tengah</div><div style="text-align:right">Kanan</div>` +
+    `<ol><li>Satu</li><li>Dua</li></ol><ul><li>Poin A</li><li>Poin B</li></ul><div><a href="https://asuransibatam.com/x?a=1&b=2">Situs</a></div>`;
+  const r = prepareRichBody(raw)!;
+  assert.match(r.html, /<b>Bapak<\/b>/); assert.match(r.html, /<i>Budi<\/i>/); assert.match(r.html, /<u>garis<\/u>/);
+  assert.match(r.html, /text-align:\s*center/); assert.match(r.html, /<ol><li>Satu<\/li>/);
+  assert.match(r.text, /^Halo Bapak Budi garis$/m);
+  assert.match(r.text, /^1\. Satu$/m); assert.match(r.text, /^2\. Dua$/m); assert.match(r.text, /^• Poin A$/m);
+  assert.match(r.text, /Situs \(https:\/\/asuransibatam\.com\/x\?a=1&b=2\)/);
+  assert.equal(htmlToPlain("<p>a</p><p>b</p>"), "a\nb");
+  assert.equal(htmlToPlain("a<br><br><br><br>b"), "a\n\nb");
+  assert.equal(prepareRichBody("<div><br></div>"), null);
+  assert.equal(prepareRichBody("   "), null);
+  // serangan dari klien dinetralkan
+  const evil = prepareRichBody(`<p onclick="x()">ok</p><script>alert(1)</script><img src="https://t.example/p.gif"><a href="javascript:alert(1)">klik</a><iframe src="//e"></iframe><div style="position:fixed;color:red">x</div>`)!;
+  assert.ok(!/<script|onclick|<img|javascript:|<iframe|position/i.test(evil.html), evil.html);
+  assert.match(evil.text, /ok/);
+});

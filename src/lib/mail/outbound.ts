@@ -16,7 +16,8 @@ export interface SendInput {
   to: string[];
   cc: string[];
   subject: string;
-  text: string;
+  text: string; // versi teks polos
+  bodyHtml?: string | null; // isi dari editor yang SUDAH disanitasi (prepareRichBody); null = pakai teks polos
   threadId: string | null;
   replyToMessageId: string | null; // id baris email_messages yang dibalas
   requestId: string; // UUID dari klien → kunci idempotensi
@@ -108,7 +109,8 @@ export async function sendMail(input: SendInput): Promise<SendResult> {
   const subject = thread ? replySubject((input.subject.trim() || (thread.subject as string) || "").slice(0, 300)) : input.subject.trim().slice(0, 300);
   const quote = parent ? quotedBlock(parent) : null;
   const sig = input.signature !== false;
-  const html = textToHtml(input.text) + (sig ? signatureHtml() : "") + (quote?.html ?? "");
+  const bodyHtml = input.bodyHtml ?? textToHtml(input.text);
+  const html = bodyHtml + (sig ? signatureHtml() : "") + (quote?.html ?? "");
   const text = input.text + (sig ? `\n\n${signatureText()}` : "") + (quote?.text ?? "");
 
   const from = `${safeDisplayName(mailEnv.fromName()) || "Asuransi Batam"} <${mailEnv.fromAddress()}>`;
@@ -136,7 +138,7 @@ export async function sendMail(input: SendInput): Promise<SendResult> {
     const ins = await db().from("email_messages").insert({
       thread_id: threadId, account_id: accountId, direction: "outbound", message_id: null, in_reply_to: replyHeaders?.inReplyTo ?? null,
       references_ids: replyHeaders?.references ?? [], resend_email_id: resendId, from_email: mailEnv.fromAddress(), from_name: mailEnv.fromName(),
-      to_emails: input.to, cc_emails: input.cc, subject, text_body: input.text, html_body: textToHtml(input.text), snippet: makeSnippet(input.text),
+      to_emails: input.to, cc_emails: input.cc, subject, text_body: input.text, html_body: bodyHtml, snippet: makeSnippet(input.text),
       sent_at: nowIso, read_at: nowIso,
     }).select("id").single();
     const msgRow = must(ins, "insert_outbound") as Row;
