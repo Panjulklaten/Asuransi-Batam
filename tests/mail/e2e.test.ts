@@ -170,6 +170,8 @@ describe("webmail e2e (Next.js sungguhan)", { skip: !RUN }, () => {
     assert.equal((await send({ to: "a@b.com\r\nBcc: x@y.com", subject: "x", text: "y" })).status, 422);
     assert.equal((await send({ to: "a@b.com", subject: "", text: "y" })).status, 422);
     assert.equal((await send({ to: "a@b.com", subject: "x", text: "   " })).status, 422);
+    assert.equal((await send({ to: "a@b.com", subject: "x", html: "<div><br></div>" })).status, 422, "editor kosong");
+    assert.equal((await send({ to: "a@b.com", subject: "x", html: "<script>alert(1)</script>" })).status, 422, "hanya script → kosong setelah sanitasi");
     assert.equal((await send({ to: "a@b.com", subject: "x", text: "y", requestId: "bukan-uuid" })).status, 400);
     const exe = await send({ to: "a@b.com", subject: "x", text: "y" }, [{ name: "virus.exe", data: Buffer.from("MZ") }]);
     assert.equal(exe.status, 422); assert.match((await exe.json()).message, /tidak diizinkan/);

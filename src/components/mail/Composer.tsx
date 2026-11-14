@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { Loader2, Paperclip, Send, X } from "lucide-react";
 import type { MessageView } from "@/lib/mail/types";
 import { signatureHtml } from "@/lib/mail/signature";
+import RichEditor from "./RichEditor";
 import { api, formatBytes } from "./utils";
 
 const MAX_FILES = 5;
@@ -32,7 +33,7 @@ export default function Composer({ target, selfAddress, onClose, onSent, variant
   const [cc, setCc] = useState(init.cc);
   const [showCc, setShowCc] = useState(!!init.cc);
   const [subject, setSubject] = useState(target.subject);
-  const [text, setText] = useState("");
+  const editor = useRef<HTMLDivElement | null>(null);
   const [files, setFiles] = useState<File[]>([]);
   const [signature, setSignature] = useState(true);
   const [busy, setBusy] = useState(false);
@@ -57,10 +58,11 @@ export default function Composer({ target, selfAddress, onClose, onSent, variant
     setError("");
     if (!to.trim()) return setError("Isi penerima.");
     if (!isReply && !subject.trim()) return setError("Isi subjek.");
-    if (!text.trim()) return setError("Isi email tidak boleh kosong.");
+    const html = editor.current?.innerHTML ?? "";
+    if (!(editor.current?.innerText ?? "").trim()) return setError("Isi email tidak boleh kosong.");
     setBusy(true);
     const fd = new FormData();
-    fd.set("to", to); fd.set("cc", cc); fd.set("subject", subject); fd.set("text", text); fd.set("requestId", requestId.current); fd.set("signature", signature ? "1" : "0");
+    fd.set("to", to); fd.set("cc", cc); fd.set("subject", subject); fd.set("html", html); fd.set("requestId", requestId.current); fd.set("signature", signature ? "1" : "0");
     if (target.threadId) fd.set("threadId", target.threadId);
     if (target.replyTo) fd.set("replyToMessageId", target.replyTo.id);
     files.forEach((f) => fd.append("files", f));
@@ -95,7 +97,7 @@ export default function Composer({ target, selfAddress, onClose, onSent, variant
             <input id="c-sub" className={field} value={subject} onChange={(e) => setSubject(e.target.value)} maxLength={300} />
           </div>
         )}
-        <textarea aria-label="Isi email" value={text} onChange={(e) => setText(e.target.value)} rows={variant === "modal" ? 12 : 6} className="mt-2 w-full resize-y bg-transparent text-sm leading-relaxed outline-none" placeholder="Tulis pesan…" />
+        <RichEditor editorRef={editor} minHeight={variant === "modal" ? 220 : 120} />
         <label className="mb-2 flex items-center gap-2 text-xs text-slate-600">
           <input type="checkbox" checked={signature} onChange={(e) => setSignature(e.target.checked)} /> Sertakan tanda tangan
         </label>
