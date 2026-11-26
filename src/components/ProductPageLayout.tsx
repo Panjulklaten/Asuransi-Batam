@@ -257,20 +257,25 @@ export default function ProductPageLayout({
           <h2 className={`font-display font-bold ${rich ? "text-2xl" : "text-3xl"} text-[#0a1628] mb-2 text-center`}>{t.benefitsTitle}</h2>
           {rich && <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />}
           <p className={`text-center text-[#475569] ${rich ? "mb-5 text-sm md:text-base" : "mb-12"} max-w-2xl mx-auto`}>{t.benefitsSubtitle}</p>
-          <div className={benefitsVariant === "circle" ? "grid grid-cols-2 lg:grid-cols-3 gap-x-3 gap-y-5 md:gap-x-6 md:gap-y-7" : `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ${rich ? "gap-3" : "gap-6"}`}>
+          <div className={benefitsVariant === "circle" ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 md:gap-x-6 md:gap-y-6" : `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ${rich ? "gap-3" : "gap-6"}`}>
             {benefits.map((b, i) => {
               if (benefitsVariant === "circle") {
                 const circle = (
                   <>
-                    <span className="relative mb-2.5 flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-full border-2 border-[#c9a84c] bg-white shadow-sm shadow-[#c9a84c]/20">
+                    <span className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-2 border-[#c9a84c] bg-white shadow-sm shadow-[#c9a84c]/20">
                       {b.Icon ? <b.Icon size={24} strokeWidth={2} className="text-[#1a4fa0]" aria-hidden="true" /> : <span className="text-2xl" aria-hidden="true">{b.icon}</span>}
                       <span aria-hidden="true" className="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-[#0a1628] text-xs font-bold text-[#f0d080] ring-2 ring-white">{i + 1}</span>
                     </span>
-                    <h3 className="font-display font-bold text-[14px] md:text-base leading-tight text-[#0a1628] mb-1">{b.title}</h3>
-                    <p className="text-[12.5px] md:text-sm leading-snug text-[#475569]">{b.desc}</p>
+                    {i < benefits.length - 1 && (
+                      <span aria-hidden="true" className="absolute left-[27px] top-14 -bottom-4 border-l-2 border-dashed border-[#c9a84c]/70 md:hidden" />
+                    )}
+                    <div className="min-w-0 pt-0.5">
+                      <h3 className="font-display font-bold text-[16px] md:text-lg leading-tight text-[#0a1628] mb-0.5">{b.title}</h3>
+                      <p className="text-[13.5px] md:text-sm leading-snug text-[#475569]">{b.desc}</p>
+                    </div>
                   </>
                 );
-                const cls = "flex flex-col items-center text-center px-1";
+                const cls = "relative flex items-start gap-3.5";
                 return b.href ? (
                   <Link key={i} href={b.href} className={`${cls} hover:opacity-80 transition-opacity`}>{circle}</Link>
                 ) : (
