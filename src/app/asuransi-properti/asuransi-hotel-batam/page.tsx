@@ -54,7 +54,7 @@ export default function AsuransiHotelBatamPage() {
     <ProductPageLayout cluster="property"
       title="Asuransi Hotel Batam"
       subtitle="Perlindungan Lengkap Industri Perhotelan"
-      description="Bisnis hotel dan penginapan di Batam adalah investasi besar yang melayani tamu internasional dari Singapura dan Malaysia. Satu insiden — kebakaran di dapur restoran, kecelakaan tamu di kolam renang, atau banjir yang merusak puluhan kamar — bisa mengancam kelangsungan bisnis tanpa perlindungan yang tepat."
+      description="Hotel dan penginapan di Batam melayani tamu internasional dari Singapura dan Malaysia. Satu insiden — kebakaran dapur restoran, kecelakaan tamu di kolam renang, atau banjir yang merusak puluhan kamar — bisa mengancam kelangsungan bisnis tanpa perlindungan yang tepat."
       benefits={benefits}
       faqs={faqs}
       policyComparison={policyComparison}
@@ -64,45 +64,48 @@ export default function AsuransiHotelBatamPage() {
       ]}
       schema={schema}
       calculatorCard="hotel"
+      rich
     >
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Studi Kasus: Klaim Hotel di Batam</h2>
-        <p className="text-center text-[#475569] mb-8">Ilustrasi nyata pentingnya asuransi hotel di kota wisata internasional seperti Batam.</p>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-6 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">🔥 Kasus 1 — Kebakaran Dapur, Hotel di Nagoya</h3>
-            <p className="text-[#475569] text-sm mb-3">Kebakaran di dapur restoran hotel bintang 3 kawasan Nagoya menghanguskan dapur, ruang makan, dan merusak 12 kamar di lantai atas. Hotel tutup selama 3 bulan untuk renovasi.</p>
-            <div className="bg-white rounded-xl p-4 text-sm">
-              <p className="text-[#0a1628] font-semibold mb-1">Kerugian yang terjadi:</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <p className="text-center text-[#475569] text-sm md:text-base mb-4 md:mb-6">Ilustrasi nyata pentingnya asuransi hotel di kota wisata internasional seperti Batam.</p>
+        <div className="grid md:grid-cols-2 gap-3 md:gap-4">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1.5">🔥 Kasus 1 — Kebakaran Dapur, Hotel di Nagoya</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug md:leading-relaxed mb-2.5">Kebakaran di dapur restoran hotel bintang 3 kawasan Nagoya menghanguskan dapur, ruang makan, dan merusak 12 kamar di lantai atas. Hotel tutup selama 3 bulan untuk renovasi.</p>
+            <div className="bg-white rounded-lg p-3 text-[13px] md:text-sm leading-snug">
+              <p className="text-[#0a1628] font-semibold mb-0.5">Kerugian yang terjadi:</p>
               <p className="text-[#475569]">Renovasi bangunan & perabot: Rp 3,8 M | Kehilangan pendapatan 3 bulan (BI): Rp 1,2 M</p>
-              <p className="text-green-700 font-semibold mt-2">✅ Seluruh klaim ditanggung. Hotel kembali beroperasi tanpa menguras modal sendiri.</p>
+              <p className="text-green-700 font-semibold mt-1.5">✅ Seluruh klaim ditanggung. Hotel kembali beroperasi tanpa menguras modal sendiri.</p>
             </div>
           </div>
-          <div className="p-6 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">🏊 Kasus 2 — Tamu WNA Kecelakaan di Kolam Renang</h3>
-            <p className="text-[#475569] text-sm mb-3">Tamu asal Singapura terpeleset di area kolam renang resort di Nongsa dan mengalami cedera tulang belakang. Keluarga mengajukan tuntutan kompensasi medis dan kerugian immateriil.</p>
-            <div className="bg-white rounded-xl p-4 text-sm">
-              <p className="text-[#0a1628] font-semibold mb-1">Tuntutan yang diajukan:</p>
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1.5">🏊 Kasus 2 — Tamu WNA Kecelakaan di Kolam Renang</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug md:leading-relaxed mb-2.5">Tamu asal Singapura terpeleset di area kolam renang resort di Nongsa dan mengalami cedera tulang belakang. Keluarga mengajukan tuntutan kompensasi medis dan kerugian immateriil.</p>
+            <div className="bg-white rounded-lg p-3 text-[13px] md:text-sm leading-snug">
+              <p className="text-[#0a1628] font-semibold mb-0.5">Tuntutan yang diajukan:</p>
               <p className="text-[#475569]">Biaya medis di Singapura: SGD 45.000 | Kompensasi immateriil: Rp 800 jt | Biaya hukum: Rp 150 jt</p>
-              <p className="text-green-700 font-semibold mt-2">✅ Liability insurance menanggung seluruh klaim dan biaya hukum. Resort terlindungi dari kebangkrutan.</p>
+              <p className="text-green-700 font-semibold mt-1.5">✅ Liability insurance menanggung seluruh klaim dan biaya hukum. Resort terlindungi dari kebangkrutan.</p>
             </div>
           </div>
         </div>
       </div>
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Properti Komersial Lainnya di Batam</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Link href="/asuransi-properti/asuransi-ruko-batam" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Asuransi Ruko Batam</h3>
-            <p className="text-[#475569] text-sm">Untuk pemilik usaha komersial di kawasan bisnis Batam Center, Nagoya, dan Batu Aji.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
+          <Link href="/asuransi-properti/asuransi-ruko-batam" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Asuransi Ruko Batam</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Untuk pemilik usaha komersial di kawasan bisnis Batam Center, Nagoya, dan Batu Aji.</p>
           </Link>
-          <Link href="/asuransi-properti/asuransi-apartemen-batam" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Asuransi Apartemen / Kondotel</h3>
-            <p className="text-[#475569] text-sm">Proteksi unit dan tanggung jawab pemilik kondotel yang disewakan kepada tamu.</p>
+          <Link href="/asuransi-properti/asuransi-apartemen-batam" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Asuransi Apartemen / Kondotel</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Proteksi unit dan tanggung jawab pemilik kondotel yang disewakan kepada tamu.</p>
           </Link>
-          <Link href="/blog/asuransi-properti-komersial-batam" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Panduan Asuransi Properti Komersial</h3>
-            <p className="text-[#475569] text-sm">Tips memilih perlindungan yang tepat untuk bisnis properti Anda di Batam.</p>
+          <Link href="/blog/asuransi-properti-komersial-batam" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Panduan Asuransi Properti Komersial</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Tips memilih perlindungan yang tepat untuk bisnis properti Anda di Batam.</p>
           </Link>
         </div>
       </div>
