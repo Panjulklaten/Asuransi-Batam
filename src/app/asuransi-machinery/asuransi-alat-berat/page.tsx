@@ -120,7 +120,7 @@ const schema = {
 
 export default function AsuransiAlatBeratPage() {
   return (
-    <ProductPageLayout cluster="machinery"
+    <ProductPageLayout rich benefitsVariant="circle" cluster="machinery"
       title="Asuransi Alat Berat Batam"
       subtitle="Equipment All Risk – Perlindungan Total untuk Aset Berat Anda"
       description={
@@ -145,10 +145,10 @@ export default function AsuransiAlatBeratPage() {
     >
       {/* ── KONTEKS LOKAL BATAM ── */}
       <section className="mb-14">
-        <h2 className="font-display font-bold text-2xl md:text-3xl text-[#0a1628] mb-4">
+        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3">
           Mengapa Asuransi Alat Berat Sangat Penting di Batam?
         </h2>
-        <p className="text-[#475569] leading-relaxed mb-8 max-w-3xl">
+        <p className="text-[#475569] leading-relaxed mb-4 md:mb-6 max-w-3xl">
           Di Batam, alat berat bukan sekadar mesin kerja — ia adalah aset strategis
           yang menentukan jalannya proyek konstruksi, pengembangan kawasan industri,
           hingga aktivitas galangan kapal (shipyard). Tanpa proteksi yang tepat, satu
@@ -156,7 +156,7 @@ export default function AsuransiAlatBeratPage() {
           secara signifikan.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-white">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#e2e8f0] bg-white">
             <TrendingUp size={22} className="text-[#c9a84c] mb-3" />
             <div className="font-display font-bold text-lg text-[#0a1628]">
               Rp 800 jt – 1,5 M
@@ -165,7 +165,7 @@ export default function AsuransiAlatBeratPage() {
               Nilai satu unit excavator kelas menengah
             </p>
           </div>
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-white">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#e2e8f0] bg-white">
             <Construction size={22} className="text-[#c9a84c] mb-3" />
             <div className="font-display font-bold text-lg text-[#0a1628]">
               &gt; Rp 5 M
@@ -174,7 +174,7 @@ export default function AsuransiAlatBeratPage() {
               Nilai crane besar di fasilitas docking
             </p>
           </div>
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-white">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#e2e8f0] bg-white">
             <CloudRain size={22} className="text-[#c9a84c] mb-3" />
             <div className="font-display font-bold text-lg text-[#0a1628]">
               Risiko Pesisir
@@ -188,7 +188,7 @@ export default function AsuransiAlatBeratPage() {
 
       {/* ── STUDI KASUS NYATA ── */}
       <section className="mb-14">
-        <h2 className="font-display font-bold text-2xl md:text-3xl text-[#0a1628] mb-6">
+        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3">
           Studi Kasus Nyata: Galangan Kapal di Batam
         </h2>
         <div className="rounded-2xl border border-[#e2e8f0] bg-white overflow-hidden">
@@ -251,10 +251,10 @@ export default function AsuransiAlatBeratPage() {
 
       {/* ── SIMULASI KLAIM ── */}
       <section className="mb-14">
-        <h2 className="font-display font-bold text-2xl md:text-3xl text-[#0a1628] mb-2">
+        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2">
           Simulasi Klaim: Excavator Terguling di Proyek Reklamasi
         </h2>
-        <p className="text-[#475569] leading-relaxed mb-8 max-w-3xl">
+        <p className="text-[#475569] leading-relaxed mb-4 md:mb-6 max-w-3xl">
           <strong className="text-[#0a1628]">Skenario:</strong> Sebuah excavator Komatsu
           PC 200 sedang mengerjakan proyek reklamasi di area pesisir Nongsa. Akibat
           tanah yang tidak stabil, unit terguling ke arah lereng dan mengalami
@@ -289,7 +289,7 @@ export default function AsuransiAlatBeratPage() {
           ].map((step, i) => (
             <div
               key={i}
-              className="flex items-start gap-4 p-5 rounded-2xl border border-[#e2e8f0] bg-white"
+              className="flex items-start gap-4 p-3.5 md:p-5 rounded-xl border border-[#e2e8f0] bg-white"
             >
               <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-[#0a1628] flex items-center justify-center">
                 <step.icon size={18} className="text-[#c9a84c]" />
@@ -318,7 +318,7 @@ export default function AsuransiAlatBeratPage() {
 
       {/* ── SYARAT DOKUMEN ── */}
       <section className="mb-14">
-        <h2 className="font-display font-bold text-2xl md:text-3xl text-[#0a1628] mb-2">
+        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2">
           Syarat Dokumen Pengajuan Asuransi Alat Berat
         </h2>
         <p className="text-[#475569] leading-relaxed mb-6 max-w-3xl">
@@ -378,13 +378,13 @@ export default function AsuransiAlatBeratPage() {
 
       {/* ── INTERNAL LINKING ── */}
       <section>
-        <h2 className="font-display font-bold text-2xl md:text-3xl text-[#0a1628] mb-6">
+        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3">
           Perlindungan Mesin &amp; Alat Industri Lainnya di Batam
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           <Link
             href="/asuransi-machinery"
-            className="block p-5 rounded-2xl border border-[#e2e8f0] bg-white hover:border-[#c9a84c]/40 hover:shadow-lg transition-all"
+            className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all"
           >
             <Truck size={20} className="text-[#c9a84c] mb-3" />
             <div className="font-display font-semibold text-[#0a1628] mb-1">
@@ -397,7 +397,7 @@ export default function AsuransiAlatBeratPage() {
           </Link>
           <Link
             href="/asuransi-machinery/asuransi-crane"
-            className="block p-5 rounded-2xl border border-[#e2e8f0] bg-white hover:border-[#c9a84c]/40 hover:shadow-lg transition-all"
+            className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all"
           >
             <Construction size={20} className="text-[#c9a84c] mb-3" />
             <div className="font-display font-semibold text-[#0a1628] mb-1">
@@ -410,7 +410,7 @@ export default function AsuransiAlatBeratPage() {
           </Link>
           <Link
             href="/asuransi-engineering/contractor-all-risk"
-            className="block p-5 rounded-2xl border border-[#e2e8f0] bg-white hover:border-[#c9a84c]/40 hover:shadow-lg transition-all"
+            className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all"
           >
             <Ship size={20} className="text-[#c9a84c] mb-3" />
             <div className="font-display font-semibold text-[#0a1628] mb-1">

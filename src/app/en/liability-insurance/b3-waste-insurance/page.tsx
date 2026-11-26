@@ -71,7 +71,7 @@ const schema = {
 
 export default function B3WasteInsurancePage() {
   return (
-    <ProductPageLayout cluster="liability"
+    <ProductPageLayout rich benefitsVariant="circle" cluster="liability"
       title="B3 Hazardous Waste Insurance Batam"
       subtitle="Legal Obligation & Environmental Protection"
       description="Industries that produce B3 hazardous waste in Batam are legally required to hold financial guarantees in the form of insurance. Protect your business from environmental legal claims that can reach billions of rupiah."
@@ -82,9 +82,10 @@ export default function B3WasteInsurancePage() {
       ]}
       schema={schema}
     >
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">B3 Insurance Premium Estimates for Batam Industry</h2>
-        <p className="text-center text-[#475569] mb-8">Premiums depend on the type and volume of waste, incident history, management systems, location and limit. These are illustrations at roughly 0.3%–0.8% of the limit per year.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <p className="text-center text-[#475569] text-sm md:text-base mb-4 md:mb-6">Premiums depend on the type and volume of waste, incident history, management systems, location and limit. These are illustrations at roughly 0.3%–0.8% of the limit per year.</p>
         <div className="overflow-x-auto rounded-2xl border border-[#e2e8f0]">
           <table className="w-full text-sm">
             <thead>
@@ -108,9 +109,10 @@ export default function B3WasteInsurancePage() {
         <p className="text-xs text-[#475569] mt-3 text-center">* Actual premiums are set after underwriting based on your facility&apos;s specific risk profile. Free consultation: +62-813-7333-6728.</p>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">How to Arrange B3 Hazardous Waste Insurance</h2>
-        <p className="text-center text-[#475569] mb-8">Five steps an experienced insurance agent can guide you through.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <p className="text-center text-[#475569] text-sm md:text-base mb-4 md:mb-6">Five steps an experienced insurance agent can guide you through.</p>
         <ol className="space-y-3">
           {steps.map((st, i) => (
             <li key={st.title} className="flex items-start gap-4 p-4 rounded-xl bg-[#faf8f3] border border-[#e2e8f0]">
@@ -126,18 +128,19 @@ export default function B3WasteInsurancePage() {
 
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Complete Your Industrial Compliance</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Link href="/en/blog/hazardous-waste-insurance-batam" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Is B3 Insurance Mandatory?</h3>
-            <p className="text-[#475569] text-sm">What PP 22/2021 requires, the three ways to comply, and the penalties for non-compliance.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
+          <Link href="/en/blog/hazardous-waste-insurance-batam" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Is B3 Insurance Mandatory?</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">What PP 22/2021 requires, the three ways to comply, and the penalties for non-compliance.</p>
           </Link>
-          <Link href="/en/hazardous-waste-insurance-batam" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">How to File a B3 Claim</h3>
-            <p className="text-[#475569] text-sm">The 7-step claim procedure and real incident cases from Batam industrial estates.</p>
+          <Link href="/en/hazardous-waste-insurance-batam" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">How to File a B3 Claim</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">The 7-step claim procedure and real incident cases from Batam industrial estates.</p>
           </Link>
-          <Link href="/en/liability-insurance/public-liability" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Public Liability</h3>
-            <p className="text-[#475569] text-sm">Broader legal liability cover for risks outside B3 waste.</p>
+          <Link href="/en/liability-insurance/public-liability" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Public Liability</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Broader legal liability cover for risks outside B3 waste.</p>
           </Link>
         </div>
       </div>

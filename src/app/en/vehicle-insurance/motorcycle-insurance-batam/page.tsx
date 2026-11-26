@@ -85,11 +85,11 @@ const schema = {
   areaServed: { "@type": "City", name: "Batam" },
 };
 
-const card = "block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover";
+const card = "block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all";
 
 export default function MotorcycleInsuranceBatamPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout rich benefitsVariant="circle"
       cluster="vehicle"
       title="Motorcycle Insurance Batam"
       subtitle="All Risk & TLO Cover for Daily, Sport and Work Motorcycles"
@@ -103,8 +103,9 @@ export default function MotorcycleInsuranceBatamPage() {
       ]}
       schema={schema}
     >
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">OJK Motorcycle Premium Rates (Region 1 – Batam)</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-center text-[#475569] mb-6">The base premium is the motorcycle&apos;s value multiplied by an annual rate. For motorcycles, OJK sets a single category for all price ranges.</p>
         <div className="overflow-x-auto rounded-2xl border border-gray-200">
           <table className="w-full text-sm">
@@ -133,42 +134,44 @@ export default function MotorcycleInsuranceBatamPage() {
         </p>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Choose Cover to Match Your Motorcycle</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-center text-[#475569] mb-6">Not every motorcycle needs the same protection. These are the considerations we usually raise.</p>
         <div className="grid md:grid-cols-2 gap-5">
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
             <h3 className="font-display font-bold text-[#0a1628] mb-2">🛵 Daily scooters &amp; commuters</h3>
             <p className="text-sm text-[#475569]">For a moderately valued bike ridden to the industrial estates, TLO is often enough for the biggest risk, which is theft. Choose All Risk if the bike is new or you want minor damage covered as well.</p>
           </div>
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
             <h3 className="font-display font-bold text-[#0a1628] mb-2">🏍️ Sport &amp; big bikes</h3>
             <p className="text-sm text-[#475569]">Higher value and a greater risk of skidding or theft make All Risk more sensible. Availability of All Risk for particular models differs between insurers, so check early.</p>
           </div>
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
             <h3 className="font-display font-bold text-[#0a1628] mb-2">🔧 Modified motorcycles</h3>
             <p className="text-sm text-[#475569]">Accessories not stated in the policy are generally not covered. Declare the exhaust, rims and other valuable equipment, and align the sum insured with the bike&apos;s condition after modification.</p>
           </div>
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
             <h3 className="font-display font-bold text-[#0a1628] mb-2">📦 Work &amp; delivery motorcycles</h3>
             <p className="text-sm text-[#475569]">Motorcycles used for deliveries or ride-hailing must be declared according to their actual use. Use that differs from the policy can be excluded at claim time.</p>
           </div>
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
             <h3 className="font-display font-bold text-[#0a1628] mb-2">⚡ Electric motorcycles</h3>
             <p className="text-sm text-[#475569]">They can be applied for, but terms and availability vary. Rates still follow the current OJK rules while a dedicated electric vehicle tariff is under review.</p>
           </div>
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
             <h3 className="font-display font-bold text-[#0a1628] mb-2">💳 Financed motorcycles</h3>
             <p className="text-sm text-[#475569]">Some financiers require insurance with particular clauses. State the financing status at application so the policy is set up to meet their requirements.</p>
           </div>
         </div>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">What Is and Is Not Covered</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-center text-[#475569] mb-6">A general picture of the standard motor vehicle policy. Final details follow the insurer&apos;s wording.</p>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-6 rounded-2xl border border-[#e2e8f0]">
+        <div className="grid md:grid-cols-2 gap-3 md:gap-4">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#e2e8f0]">
             <h3 className="font-display font-bold text-lg text-[#0a1628] mb-3">✅ Generally covered</h3>
             <ul className="list-disc pl-5 space-y-1.5 text-sm text-[#475569]">
               <li>Collision, impact, overturning, skidding or falling into a hole (All Risk).</li>
@@ -178,7 +181,7 @@ export default function MotorcycleInsuranceBatamPage() {
               <li>Optional extensions: flood and storm, riot and terrorism, earthquake and tsunami, rider and passenger PA, and third-party legal liability.</li>
             </ul>
           </div>
-          <div className="p-6 rounded-2xl border border-[#e2e8f0]">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#e2e8f0]">
             <h3 className="font-display font-bold text-lg text-[#0a1628] mb-3">⚠️ Generally not covered</h3>
             <ul className="list-disc pl-5 space-y-1.5 text-sm text-[#475569]">
               <li>Riding without a suitable licence, or under the influence of alcohol or prohibited drugs.</li>
@@ -192,8 +195,9 @@ export default function MotorcycleInsuranceBatamPage() {
         </div>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3 text-center">Riding Conditions in Batam</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-[#475569] leading-relaxed mb-4">
           Many riders in Batam travel busy routes to Muka Kuning, Kabil and Batamindo, park in crowded public areas, and ride through stretches that flood in heavy rain. Those three conditions explain why theft, accidents and flooding are the three risks we most often discuss with motorcycle owners.
         </p>
@@ -202,8 +206,9 @@ export default function MotorcycleInsuranceBatamPage() {
         </p>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-4 text-center">How to Apply</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <ol className="space-y-3">
           {[
             ["Estimate the premium", "Use the calculator to see the range for All Risk and TLO."],
@@ -222,18 +227,19 @@ export default function MotorcycleInsuranceBatamPage() {
 
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Read &amp; Complement</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
           <Link href="/en/motorcycle-premium-calculator" className={card}>
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Motorcycle Premium Calculator</h3>
-            <p className="text-[#475569] text-sm">Estimate All Risk and TLO premiums from your motorcycle&apos;s price.</p>
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Motorcycle Premium Calculator</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Estimate All Risk and TLO premiums from your motorcycle&apos;s price.</p>
           </Link>
           <Link href="/en/blog/all-risk-vs-tlo-car-insurance" className={card}>
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">All Risk vs TLO</h3>
-            <p className="text-[#475569] text-sm">Understand the difference before choosing your cover.</p>
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">All Risk vs TLO</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Understand the difference before choosing your cover.</p>
           </Link>
           <Link href="/en/personal-accident-insurance/individual-family-pa" className={card}>
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Individual &amp; Family PA</h3>
-            <p className="text-[#475569] text-sm">Protect the rider, not just the motorcycle.</p>
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Individual &amp; Family PA</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Protect the rider, not just the motorcycle.</p>
           </Link>
         </div>
       </div>

@@ -124,7 +124,7 @@ const schema = {
 
 export default function PublicLiabilityENPage() {
   return (
-    <ProductPageLayout cluster="liability"
+    <ProductPageLayout rich benefitsVariant="circle" cluster="liability"
       title="Public Liability Insurance Batam"
       subtitle="Mandatory for Shipyard Subcontractors & Businesses Serving the Public"
       description="A single incident at your work site or business premises can lead to a legal claim worth hundreds of millions to billions of rupiah. In Batam, major shipyards such as PT. Paxocean require every vendor and subcontractor to hold Public Liability Insurance before they are allowed to operate on-site. We help you secure a policy that meets your principal's requirements — complete with a Certificate of Insurance (COI) — within 1–3 working days."
@@ -139,22 +139,23 @@ export default function PublicLiabilityENPage() {
     >
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Often Needed Together</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-          <Link href="/en/marine-insurance/builders-risk" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Shipyard Builder&apos;s Risk</h3>
-            <p className="text-[#475569] text-sm">Complete the protection of your shipbuilding project's assets at the shipyard.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mt-4">
+          <Link href="/en/marine-insurance/builders-risk" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Shipyard Builder&apos;s Risk</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Complete the protection of your shipbuilding project's assets at the shipyard.</p>
           </Link>
-          <Link href="/en/liability-insurance/b3-waste-insurance" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Hazardous Waste (B3) Insurance</h3>
-            <p className="text-[#475569] text-sm">Mandatory for industries generating B3 waste under Government Regulation 22/2021.</p>
+          <Link href="/en/liability-insurance/b3-waste-insurance" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Hazardous Waste (B3) Insurance</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Mandatory for industries generating B3 waste under Government Regulation 22/2021.</p>
           </Link>
-          <Link href="/en/engineering-insurance/contractor-all-risk" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Contractor All Risk (CAR)</h3>
-            <p className="text-[#475569] text-sm">For construction projects that also need physical asset protection.</p>
+          <Link href="/en/engineering-insurance/contractor-all-risk" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Contractor All Risk (CAR)</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">For construction projects that also need physical asset protection.</p>
           </Link>
-          <Link href="/en/liability-insurance/freight-forwarders-liability" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Freight Forwarders Liability</h3>
-            <p className="text-[#475569] text-sm">For forwarding companies and customs brokers also serving visitors at their warehouse/office.</p>
+          <Link href="/en/liability-insurance/freight-forwarders-liability" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Freight Forwarders Liability</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">For forwarding companies and customs brokers also serving visitors at their warehouse/office.</p>
           </Link>
         </div>
       </div>

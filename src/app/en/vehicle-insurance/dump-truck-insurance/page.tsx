@@ -52,7 +52,7 @@ const schema = {
 
 export default function DumpTruckInsurancePage() {
   return (
-    <ProductPageLayout cluster="vehicle"
+    <ProductPageLayout rich benefitsVariant="circle" cluster="vehicle"
       title="Dump Truck Insurance Batam"
       subtitle="Heavy & Commercial Fleet Protection"
       description="Your dump truck fleet is a vital asset and a source of business income. In Batam — a city of active reclamation, industrial estate construction, and excavation — dump trucks work in the toughest conditions. A single accident or engine failure left uninsured can halt operations and drain your cash."
@@ -63,9 +63,10 @@ export default function DumpTruckInsurancePage() {
       ]}
       schema={schema}
     >
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Estimated Dump Truck Premiums in Batam</h2>
-        <p className="text-center text-[#475569] mb-8">A pricing guide for protecting your heavy vehicle fleet.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <p className="text-center text-[#475569] text-sm md:text-base mb-4 md:mb-6">A pricing guide for protecting your heavy vehicle fleet.</p>
         <div className="overflow-x-auto rounded-2xl border border-[#e2e8f0]">
           <table className="w-full text-sm">
             <thead>
@@ -102,18 +103,19 @@ export default function DumpTruckInsurancePage() {
       </div>
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Complementary Cover for Mining & Project Operations</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Link href="/en/machinery-insurance/heavy-equipment-insurance" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Heavy Equipment Insurance</h3>
-            <p className="text-[#475569] text-sm">Protect the excavators and bulldozers that work alongside your dump truck fleet.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
+          <Link href="/en/machinery-insurance/heavy-equipment-insurance" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Heavy Equipment Insurance</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Protect the excavators and bulldozers that work alongside your dump truck fleet.</p>
           </Link>
-          <Link href="/en/liability-insurance/public-liability" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Public Liability</h3>
-            <p className="text-[#475569] text-sm">Extend the legal liability cover of your fleet operations beyond the limits of a standard vehicle policy.</p>
+          <Link href="/en/liability-insurance/public-liability" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Public Liability</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Extend the legal liability cover of your fleet operations beyond the limits of a standard vehicle policy.</p>
           </Link>
-          <Link href="/en/blog/mining-heavy-equipment-insurance" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Mining Equipment Insurance Guide</h3>
-            <p className="text-[#475569] text-sm">How to protect heavy equipment and haulage fleets in mining and excavation operations.</p>
+          <Link href="/en/blog/mining-heavy-equipment-insurance" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Mining Equipment Insurance Guide</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">How to protect heavy equipment and haulage fleets in mining and excavation operations.</p>
           </Link>
         </div>
       </div>

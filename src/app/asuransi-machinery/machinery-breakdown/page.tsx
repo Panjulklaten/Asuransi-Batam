@@ -70,7 +70,7 @@ const schema = {
 
 export default function MachineryBreakdownPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout rich benefitsVariant="circle"
       cluster="machinery"
       title="Asuransi Machinery Breakdown Batam"
       subtitle="Perlindungan Mesin Pabrik & Mesin Produksi"
@@ -83,8 +83,9 @@ export default function MachineryBreakdownPage() {
       ]}
       schema={schema}
     >
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">MB atau Polis Lain? Ini Perbedaannya</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-center text-[#475569] mb-6">Mesin bisa tercakup di beberapa polis. Yang berbeda adalah penyebab kerusakan dan tahap hidup mesinnya.</p>
         <div className="overflow-x-auto rounded-2xl border border-gray-200">
           <table className="w-full text-sm">
@@ -106,8 +107,9 @@ export default function MachineryBreakdownPage() {
         <p className="text-xs text-gray-500 mt-3">Tabel ini bersifat umum. Cakupan dan pengecualian final mengikuti wording polis masing-masing penanggung.</p>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3 text-center">Mengapa Penting bagi Industri di Batam</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-[#475569] leading-relaxed mb-4">
           Kawasan industri Batam seperti Batamindo, Muka Kuning, dan Kabil menampung pabrik elektronik, manufaktur komponen, dan fabrikasi dengan mesin yang bekerja nyaris tanpa henti: lini SMT, mesin injeksi plastik, CNC, genset, hingga kompresor. Pada mesin seperti ini, biaya terbesar sering bukan perbaikannya, melainkan waktu henti produksi sambil menunggu suku cadang.
         </p>
@@ -116,7 +118,7 @@ export default function MachineryBreakdownPage() {
         </p>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto p-5 rounded-xl border" style={{ background: "#f0d08015", borderColor: "#c9a84c40" }}>
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto p-5 rounded-xl border" style={{ background: "#f0d08015", borderColor: "#c9a84c40" }}>
         <p className="text-sm text-gray-700 leading-relaxed">
           <strong>Ingin langsung mengajukan?</strong> Selain tombol Minta Penawaran, Anda bisa mengisi{" "}
           <Link href="/form-sppa" className="font-semibold text-[#1a4fa0] hover:underline">Form SPPA Online</Link>{" "}
@@ -126,18 +128,19 @@ export default function MachineryBreakdownPage() {
 
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Pelengkap untuk Aset Industri</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Link href="/asuransi-properti/asuransi-pabrik-kawasan-industri-batam" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Asuransi Pabrik &amp; Kawasan Industri</h3>
-            <p className="text-[#475569] text-sm">Perlindungan bangunan dan isi pabrik dari kebakaran dan bahaya alam.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
+          <Link href="/asuransi-properti/asuransi-pabrik-kawasan-industri-batam" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Asuransi Pabrik &amp; Kawasan Industri</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Perlindungan bangunan dan isi pabrik dari kebakaran dan bahaya alam.</p>
           </Link>
-          <Link href="/asuransi-engineering/erection-all-risk" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Erection All Risk (EAR)</h3>
-            <p className="text-[#475569] text-sm">Untuk masa pemasangan dan commissioning mesin baru, sebelum MB berlaku.</p>
+          <Link href="/asuransi-engineering/erection-all-risk" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Erection All Risk (EAR)</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Untuk masa pemasangan dan commissioning mesin baru, sebelum MB berlaku.</p>
           </Link>
-          <Link href="/asuransi-machinery/asuransi-alat-berat" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Asuransi Alat Berat</h3>
-            <p className="text-[#475569] text-sm">Untuk peralatan bergerak di proyek, bukan mesin pabrik yang terpasang tetap.</p>
+          <Link href="/asuransi-machinery/asuransi-alat-berat" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Asuransi Alat Berat</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Untuk peralatan bergerak di proyek, bukan mesin pabrik yang terpasang tetap.</p>
           </Link>
         </div>
       </div>

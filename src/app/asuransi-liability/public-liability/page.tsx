@@ -141,7 +141,7 @@ const schema = {
 // ─────────────────────────────────────────────
 export default function PublicLiabilityPage() {
   return (
-    <ProductPageLayout cluster="liability"
+    <ProductPageLayout rich benefitsVariant="circle" cluster="liability"
       title="Public Liability Insurance Batam"
       subtitle="Wajib untuk Subkon Galangan Kapal & Bisnis yang Melayani Publik"
       description="Satu insiden di area kerja atau bisnis Anda bisa berujung tuntutan hukum senilai ratusan juta hingga miliaran rupiah. Di Batam, galangan kapal besar seperti PT. Paxocean mewajibkan seluruh vendor dan subkontraktor memiliki Public Liability Insurance sebelum boleh beroperasi di area mereka. Kami membantu Anda mendapatkan polis yang sesuai persyaratan principal — lengkap dengan Certificate of Insurance (COI) — dalam 1–3 hari kerja."
@@ -156,22 +156,23 @@ export default function PublicLiabilityPage() {
     >
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Sering Dibutuhkan Bersamaan</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-          <Link href="/asuransi-marine/builders-risk" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Builder&apos;s Risk Galangan Kapal</h3>
-            <p className="text-[#475569] text-sm">Lengkapi proteksi aset proyek pembangunan kapal Anda di galangan.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mt-4">
+          <Link href="/asuransi-marine/builders-risk" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Builder&apos;s Risk Galangan Kapal</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Lengkapi proteksi aset proyek pembangunan kapal Anda di galangan.</p>
           </Link>
-          <Link href="/asuransi-liability/asuransi-limbah-b3" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Asuransi Limbah B3</h3>
-            <p className="text-[#475569] text-sm">Wajib bagi industri penghasil limbah B3 sesuai PP 22/2021.</p>
+          <Link href="/asuransi-liability/asuransi-limbah-b3" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Asuransi Limbah B3</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Wajib bagi industri penghasil limbah B3 sesuai PP 22/2021.</p>
           </Link>
-          <Link href="/asuransi-engineering/contractor-all-risk" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Contractor All Risk (CAR)</h3>
-            <p className="text-[#475569] text-sm">Untuk proyek konstruksi yang juga butuh proteksi aset fisik.</p>
+          <Link href="/asuransi-engineering/contractor-all-risk" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Contractor All Risk (CAR)</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Untuk proyek konstruksi yang juga butuh proteksi aset fisik.</p>
           </Link>
-          <Link href="/asuransi-liability/freight-forwarders-liability" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Freight Forwarders Liability</h3>
-            <p className="text-[#475569] text-sm">Untuk perusahaan forwarding & PPJK yang juga melayani publik di area gudang/kantor.</p>
+          <Link href="/asuransi-liability/freight-forwarders-liability" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Freight Forwarders Liability</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Untuk perusahaan forwarding & PPJK yang juga melayani publik di area gudang/kantor.</p>
           </Link>
         </div>
       </div>

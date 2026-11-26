@@ -142,7 +142,7 @@ const schema = {
 
 export default function FreightForwardersLiabilityENPage() {
   return (
-    <ProductPageLayout cluster="liability"
+    <ProductPageLayout rich benefitsVariant="circle" cluster="liability"
       title="Freight Forwarders Liability Insurance Batam"
       subtitle="Essential Protection for Forwarding Companies, Customs Brokers & Agents"
       description="As the Riau Islands' main logistics hub, Batam processes thousands of intermodal shipments every month — containers through Batu Ampar, consolidated cargo through Sekupang, and shipyard supply chains through Tanjung Uncang. One customs documentation error or one lost shipment while in your care can lead to a claim worth hundreds of millions of rupiah from a client. We help forwarding companies and customs brokers in Batam secure an FFL policy matched to their operational profile — complete with a Certificate of Insurance (COI) — within 1–3 working days."
@@ -157,18 +157,19 @@ export default function FreightForwardersLiabilityENPage() {
     >
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Often Needed Together</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Link href="/en/marine-insurance/marine-cargo" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Marine Cargo Insurance</h3>
-            <p className="text-[#475569] text-sm">Protects the physical value of your clients' cargo, separate from the forwarder's own liability.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
+          <Link href="/en/marine-insurance/marine-cargo" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Marine Cargo Insurance</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Protects the physical value of your clients' cargo, separate from the forwarder's own liability.</p>
           </Link>
-          <Link href="/en/property-insurance/warehouse-insurance-batam" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Warehouse Insurance Batam</h3>
-            <p className="text-[#475569] text-sm">Protects the physical assets of the forwarder's own warehouse and consolidation facilities.</p>
+          <Link href="/en/property-insurance/warehouse-insurance-batam" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Warehouse Insurance Batam</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Protects the physical assets of the forwarder's own warehouse and consolidation facilities.</p>
           </Link>
-          <Link href="/en/liability-insurance/public-liability" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Public Liability Insurance</h3>
-            <p className="text-[#475569] text-sm">Covers injury to visitors or guests at your warehouse and operational offices.</p>
+          <Link href="/en/liability-insurance/public-liability" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Public Liability Insurance</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Covers injury to visitors or guests at your warehouse and operational offices.</p>
           </Link>
         </div>
       </div>

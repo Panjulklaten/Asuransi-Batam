@@ -42,7 +42,7 @@ const schema = {
 
 export default function HomeInsuranceBatamPage() {
   return (
-    <ProductPageLayout cluster="property"
+    <ProductPageLayout rich benefitsVariant="circle" cluster="property"
       title="Home Insurance Batam"
       subtitle="Protect Your Residence"
       description="Your home is your family's largest investment. Protect it with the right property insurance — from fire and flood to theft. Premiums starting from just a few hundred thousand rupiah per year."
@@ -54,9 +54,10 @@ export default function HomeInsuranceBatamPage() {
       schema={schema}
       calculatorCard="rumah"
     >
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Estimated Home Insurance Premiums in Batam</h2>
-        <p className="text-center text-[#475569] mb-8">Protection costs far less than repairing the damage yourself.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <p className="text-center text-[#475569] text-sm md:text-base mb-4 md:mb-6">Protection costs far less than repairing the damage yourself.</p>
         <div className="overflow-x-auto rounded-2xl border border-[#e2e8f0]">
           <table className="w-full text-sm">
             <thead>
@@ -92,8 +93,9 @@ export default function HomeInsuranceBatamPage() {
         <p className="text-xs text-[#475569] mt-3 text-center">* Estimates only. Actual premiums depend on building condition, location, and the cover chosen. Contact us for a specific quote.</p>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-4 text-center">What Is Not Covered</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-[#475569] leading-relaxed text-center">
           Standard home policies generally exclude wear and tear, gradual deterioration, damage from poor maintenance, intentional acts, and losses that happen without any sign of forced entry. Flood and tidal flooding need to be added as extensions, and jewellery or collectibles above the standard limit need a special endorsement. We go through these points with you before the policy is issued, so there are no surprises at claim time.
         </p>
@@ -101,18 +103,19 @@ export default function HomeInsuranceBatamPage() {
 
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Complete Your Family&apos;s Protection</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Link href="/en/blog/how-to-claim-home-fire-insurance" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">How to Claim Home Fire Insurance</h3>
-            <p className="text-[#475569] text-sm">A step-by-step guide so your home insurance claim goes smoothly.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
+          <Link href="/en/blog/how-to-claim-home-fire-insurance" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">How to Claim Home Fire Insurance</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">A step-by-step guide so your home insurance claim goes smoothly.</p>
           </Link>
-          <Link href="/en/personal-accident-insurance/individual-family-pa" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Individual &amp; Family PA</h3>
-            <p className="text-[#475569] text-sm">Protect yourself and your family against accidents as well.</p>
+          <Link href="/en/personal-accident-insurance/individual-family-pa" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Individual &amp; Family PA</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Protect yourself and your family against accidents as well.</p>
           </Link>
-          <Link href="/en/property-insurance/apartment-insurance-batam" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Apartment Insurance Batam</h3>
-            <p className="text-[#475569] text-sm">Living in an apartment instead? See how cover differs for units.</p>
+          <Link href="/en/property-insurance/apartment-insurance-batam" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Apartment Insurance Batam</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Living in an apartment instead? See how cover differs for units.</p>
           </Link>
         </div>
       </div>

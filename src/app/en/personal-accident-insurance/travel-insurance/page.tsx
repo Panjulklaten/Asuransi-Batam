@@ -76,11 +76,11 @@ const schema = {
   areaServed: { "@type": "City", name: "Batam" },
 };
 
-const card = "block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover";
+const card = "block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all";
 
 export default function TravelInsuranceENPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout rich benefitsVariant="circle"
       cluster="pa"
       title="Travel Insurance Batam"
       subtitle="Cover for Holidays, Business Trips and Study Abroad"
@@ -93,39 +93,41 @@ export default function TravelInsuranceENPage() {
       ]}
       schema={schema}
     >
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Where Are You Travelling From Batam?</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-center text-[#475569] mb-6">Cover needs differ with the destination and the type of trip.</p>
         <div className="grid md:grid-cols-2 gap-5">
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
             <h3 className="font-display font-bold text-[#0a1628] mb-2">⛴️ Singapore &amp; Malaysia</h3>
             <p className="text-sm text-[#475569]">Short, frequent trips. Look at the medical limit and consider an annual policy if you shuttle back and forth. Ask whether the ferry crossing falls within the period of cover.</p>
           </div>
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
             <h3 className="font-display font-bold text-[#0a1628] mb-2">💼 Business trips</h3>
             <p className="text-sm text-[#475569]">Check whether your company already has corporate travel cover so you do not duplicate it. For foreign workers travelling from Batam, see our dedicated guide in Indonesian.</p>
           </div>
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
             <h3 className="font-display font-bold text-[#0a1628] mb-2">🌴 Family holidays</h3>
             <p className="text-sm text-[#475569]">Register every traveller with the correct age. Children and older travellers have different terms, and cancellation cover matters when flights and hotels are paid in advance.</p>
           </div>
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
             <h3 className="font-display font-bold text-[#0a1628] mb-2">🇪🇺 Europe (Schengen)</h3>
             <p className="text-sm text-[#475569]">Insurance meeting minimum conditions is required for the visa. Choose a policy whose certificate states the medical cover, repatriation and territory explicitly.</p>
           </div>
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
             <h3 className="font-display font-bold text-[#0a1628] mb-2">🎓 Study &amp; long stays</h3>
             <p className="text-sm text-[#475569]">Trips lasting months have duration limits and dedicated products. State the length of stay from the start so the policy you choose actually fits.</p>
           </div>
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
             <h3 className="font-display font-bold text-[#0a1628] mb-2">🏔️ Adventure activities</h3>
             <p className="text-sm text-[#475569]">Diving, high-altitude trekking or skiing are generally high-risk sports that are excluded unless extended. Mention your planned activities when applying.</p>
           </div>
         </div>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Choosing a Travel Zone</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-center text-[#475569] mb-6">Insurers divide travel territory into zones. Names and groupings can differ between products.</p>
         <div className="overflow-x-auto rounded-2xl border border-gray-200">
           <table className="w-full text-sm">
@@ -146,8 +148,8 @@ export default function TravelInsuranceENPage() {
         <p className="text-xs text-gray-500 mt-3">This table is a general guide. Zones, limits and exclusions follow each insurer&apos;s policy wording.</p>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto p-6 rounded-2xl border" style={{ background: "#f0d08015", borderColor: "#c9a84c40" }}>
-        <h2 className="font-display font-bold text-xl text-[#0a1628] mb-3">Insurance Requirements for a Schengen Visa</h2>
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto p-6 rounded-2xl border" style={{ background: "#f0d08015", borderColor: "#c9a84c40" }}>
+        <h2 className="font-display font-bold text-lg text-[#0a1628] mb-2">Insurance Requirements for a Schengen Visa</h2>
         <ul className="list-disc pl-5 space-y-2 text-sm text-[#475569] leading-relaxed">
           <li>Medical cover of at least <strong>EUR 30,000</strong>.</li>
           <li>Covering emergency medical treatment, medical repatriation and repatriation of remains.</li>
@@ -157,8 +159,9 @@ export default function TravelInsuranceENPage() {
         </ul>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3 text-center">What Is Generally Not Covered</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <ul className="list-disc pl-6 space-y-2 text-[#475569] leading-relaxed">
           <li>Medical conditions that existed before the policy was bought, unless there is a specific provision.</li>
           <li>Pregnancy and childbirth, except certain complications the policy covers.</li>
@@ -171,8 +174,9 @@ export default function TravelInsuranceENPage() {
         <p className="text-xs text-gray-500 mt-3">This list is a general guide. Always have the policy exclusions read through before you buy.</p>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-4 text-center">If Something Happens Abroad</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <ol className="space-y-3">
           {[
             ["Call the emergency assistance centre", "The 24-hour number is on your policy card or certificate. Call before non-emergency treatment so costs can be arranged directly where possible."],
@@ -190,14 +194,15 @@ export default function TravelInsuranceENPage() {
 
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Read &amp; Complement</h2>
-        <div className="grid md:grid-cols-2 gap-6 mt-8">
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-2 gap-3 md:gap-4 mt-4">
           <Link href="/en/personal-accident-insurance/individual-family-pa" className={card}>
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Individual &amp; Family PA</h3>
-            <p className="text-[#475569] text-sm">Everyday accident cover, not only while you travel.</p>
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Individual &amp; Family PA</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Everyday accident cover, not only while you travel.</p>
           </Link>
           <Link href="/en/personal-accident-insurance/group-employee-pa" className={card}>
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Group Employee PA</h3>
-            <p className="text-[#475569] text-sm">Accident cover for teams, including business travel as set out in the policy.</p>
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Group Employee PA</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Accident cover for teams, including business travel as set out in the policy.</p>
           </Link>
         </div>
       </div>

@@ -70,7 +70,7 @@ const schema = {
 
 export default function EmployersProductLiabilityENPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout rich benefitsVariant="circle"
       cluster="liability"
       title="Employers' Liability & Product Liability Insurance Batam"
       subtitle="Liability to Your Employees and for Your Products"
@@ -83,8 +83,9 @@ export default function EmployersProductLiabilityENPage() {
       ]}
       schema={schema}
     >
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Employers&apos; Liability vs Product Liability</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-center text-[#475569] mb-6">Two policies often bought as a pair, but they protect against different things.</p>
         <div className="overflow-x-auto rounded-2xl border border-gray-200">
           <table className="w-full text-sm">
@@ -106,8 +107,9 @@ export default function EmployersProductLiabilityENPage() {
         <p className="text-xs text-gray-500 mt-3">This table is a general guide. Final cover and exclusions follow each insurer&apos;s policy wording.</p>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3 text-center">What We Settle With You Before Quoting</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-[#475569] leading-relaxed mb-4">
           An Employers&apos; and Product Liability quotation cannot be built from a single figure. The decisions below determine how far the policy really protects you, and are best agreed before the policy is issued:
         </p>
@@ -123,35 +125,37 @@ export default function EmployersProductLiabilityENPage() {
         </p>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Illustrative Scenarios</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-center text-[#475569] mb-6 text-sm">Hypothetical scenarios to aid understanding, not real cases. Claim decisions always follow the policy wording.</p>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-6 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">👷 A shipyard worker falls from scaffolding</h3>
-            <p className="text-[#475569] text-sm">A subcontractor&apos;s worker is seriously injured during work at height. Besides benefits from the BPJS Ketenagakerjaan programme, the family brings an additional compensation claim against the company. This is where Employers&apos; Liability becomes relevant, including for legal defence costs.</p>
+        <div className="grid md:grid-cols-2 gap-3 md:gap-4">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">👷 A shipyard worker falls from scaffolding</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">A subcontractor&apos;s worker is seriously injured during work at height. Besides benefits from the BPJS Ketenagakerjaan programme, the family brings an additional compensation claim against the company. This is where Employers&apos; Liability becomes relevant, including for legal defence costs.</p>
           </div>
-          <div className="p-6 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">📦 An electronic component is blamed for damage at a buyer&apos;s plant</h3>
-            <p className="text-[#475569] text-sm">A component made in Batam and built into the buyer&apos;s product is alleged to have caused property damage and injury to an end user. Product Liability can respond to the compensation and defence costs, while product recall costs generally need separate arrangements.</p>
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">📦 An electronic component is blamed for damage at a buyer&apos;s plant</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">A component made in Batam and built into the buyer&apos;s product is alleged to have caused property damage and injury to an end user. Product Liability can respond to the compensation and defence costs, while product recall costs generally need separate arrangements.</p>
           </div>
         </div>
       </div>
 
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Complementary Liability Cover</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Link href="/en/liability-insurance/public-liability" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Public Liability</h3>
-            <p className="text-[#475569] text-sm">Liability to third parties at your premises and project sites.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
+          <Link href="/en/liability-insurance/public-liability" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Public Liability</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Liability to third parties at your premises and project sites.</p>
           </Link>
-          <Link href="/en/personal-accident-insurance/group-employee-pa" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Group Employee PA</h3>
-            <p className="text-[#475569] text-sm">Accident benefits for employees, different from the company&apos;s legal liability.</p>
+          <Link href="/en/personal-accident-insurance/group-employee-pa" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Group Employee PA</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Accident benefits for employees, different from the company&apos;s legal liability.</p>
           </Link>
-          <Link href="/en/liability-insurance/b3-waste-insurance" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">B3 Waste Insurance</h3>
-            <p className="text-[#475569] text-sm">Environmental liability for facilities that generate hazardous waste.</p>
+          <Link href="/en/liability-insurance/b3-waste-insurance" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">B3 Waste Insurance</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Environmental liability for facilities that generate hazardous waste.</p>
           </Link>
         </div>
       </div>

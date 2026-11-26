@@ -91,7 +91,7 @@ const schema = {
 
 export default function AsuransiRukoBatamPage() {
   return (
-    <ProductPageLayout cluster="property"
+    <ProductPageLayout rich benefitsVariant="circle" cluster="property"
       title="Asuransi Ruko Batam"
       subtitle="Proteksi Bangunan, Stok & Kelangsungan Usaha Anda"
       description="Ruko adalah aset sekaligus sumber pendapatan. Satu kebakaran, satu banjir, atau satu kejadian pencurian bisa menghentikan roda usaha yang sudah dibangun bertahun-tahun. Dengan asuransi ruko yang tepat, Anda tidak perlu memulai dari nol ketika musibah datang — bangunan, stok, dan kelangsungan bisnis Anda tetap terlindungi."
@@ -107,18 +107,19 @@ export default function AsuransiRukoBatamPage() {
     >
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Properti Komersial Lainnya</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Link href="/asuransi-properti/asuransi-hotel-batam" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Asuransi Hotel</h3>
-            <p className="text-[#475569] text-sm">Untuk pelaku usaha perhotelan dan penginapan di Batam.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
+          <Link href="/asuransi-properti/asuransi-hotel-batam" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Asuransi Hotel</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Untuk pelaku usaha perhotelan dan penginapan di Batam.</p>
           </Link>
-          <Link href="/asuransi-properti/asuransi-gudang-batam" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Asuransi Gudang</h3>
-            <p className="text-[#475569] text-sm">Untuk pemilik ruko yang juga punya stok besar di gudang terpisah.</p>
+          <Link href="/asuransi-properti/asuransi-gudang-batam" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Asuransi Gudang</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Untuk pemilik ruko yang juga punya stok besar di gudang terpisah.</p>
           </Link>
-          <Link href="/blog/asuransi-properti-komersial-batam" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Panduan Asuransi Properti Komersial</h3>
-            <p className="text-[#475569] text-sm">Tips memilih perlindungan yang tepat untuk bisnis properti Anda.</p>
+          <Link href="/blog/asuransi-properti-komersial-batam" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Panduan Asuransi Properti Komersial</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Tips memilih perlindungan yang tepat untuk bisnis properti Anda.</p>
           </Link>
         </div>
       </div>

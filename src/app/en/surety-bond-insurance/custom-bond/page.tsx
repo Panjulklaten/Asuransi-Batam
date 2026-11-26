@@ -136,7 +136,7 @@ export default function CustomBondENPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <ProductPageLayout
+      <ProductPageLayout rich benefitsVariant="circle"
         cluster="surety"
         title="Custom Bond Batam"
         subtitle="Customs Guarantee for Import & Export"
@@ -150,10 +150,11 @@ export default function CustomBondENPage() {
         schema={schema}
       >
         {/* ── What Is Custom Bond ── */}
-        <div className="mb-16 max-w-4xl mx-auto">
-          <h2 className="font-display font-bold text-2xl md:text-3xl text-[#0a1628] mb-4 text-center">
+        <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
+          <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3 text-center">
             What Is a Custom Bond?
           </h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
           <p className="text-[#374151] leading-relaxed mb-4">
             A <strong>custom bond</strong> (customs bond) is a type of guarantee issued by an
             OJK-licensed general insurance company on behalf of the guaranteed party
@@ -171,7 +172,7 @@ export default function CustomBondENPage() {
           </p>
 
           {/* Case example */}
-          <div className="mt-8 bg-white border-l-4 border-[#c9a84c] rounded-r-2xl p-6 shadow-sm">
+          <div className="mt-4 bg-white border-l-4 border-[#c9a84c] rounded-r-xl p-4 md:p-6 shadow-sm">
             <p className="font-display font-bold text-[#0a1628] mb-2 text-sm uppercase tracking-wide">
               Case Example
             </p>
@@ -192,15 +193,16 @@ export default function CustomBondENPage() {
         </div>
 
         {/* ── Custom Bond vs Bank Guarantee ── */}
-        <div className="mb-16 max-w-5xl mx-auto">
+        <div className="mb-6 md:mb-8 max-w-5xl mx-auto">
           <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">
             Custom Bond vs Bank Guarantee
           </h2>
-          <p className="text-center text-[#475569] mb-8 max-w-2xl mx-auto">
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+          <p className="text-center text-[#475569] text-sm md:text-base mb-4 md:mb-6 max-w-2xl mx-auto">
             Both are recognized by Customs — but the impact on company finances is very different.
           </p>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="rounded-2xl border-2 border-[#c9a84c]/40 bg-[#faf8f3] p-6">
+          <div className="grid md:grid-cols-2 gap-3 md:gap-4">
+            <div className="rounded-xl border-2 border-[#c9a84c]/40 bg-[#faf8f3] p-4 md:p-6">
               <h3 className="font-display font-bold text-[#0a1628] mb-3 flex items-center gap-2">
                 <span className="text-xl">✅</span> Custom Bond (Insurance)
               </h3>
@@ -212,7 +214,7 @@ export default function CustomBondENPage() {
                 <li>• Accepted at every Customs Office in Indonesia</li>
               </ul>
             </div>
-            <div className="rounded-2xl border-2 border-[#e2e8f0] bg-white p-6">
+            <div className="rounded-xl border-2 border-[#e2e8f0] bg-white p-4 md:p-6">
               <h3 className="font-display font-bold text-[#0a1628] mb-3 flex items-center gap-2">
                 <span className="text-xl">🏦</span> Bank Guarantee
               </h3>
@@ -228,11 +230,12 @@ export default function CustomBondENPage() {
         </div>
 
         {/* ── Required Documents ── */}
-        <div className="mb-16 max-w-4xl mx-auto">
+        <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
           <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">
             Documents Required for a Custom Bond Application
           </h2>
-          <p className="text-center text-[#475569] mb-8">
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+          <p className="text-center text-[#475569] text-sm md:text-base mb-4 md:mb-6">
             Prepare these documents in advance to avoid delays in issuance.
           </p>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -258,10 +261,11 @@ export default function CustomBondENPage() {
         </div>
 
         {/* ── Issuance Process ── */}
-        <div className="mb-16 max-w-3xl mx-auto">
-          <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-8 text-center">
+        <div className="mb-6 md:mb-8 max-w-3xl mx-auto">
+          <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-4 text-center">
             Custom Bond Issuance Process
           </h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
           <ol className="space-y-5">
             {[
               { title: "Apply for a facility with Customs", desc: "The Principal applies for an import/export facility (OB 23, KITE, etc.) with the Directorate General of Customs and Excise." },
@@ -284,11 +288,12 @@ export default function CustomBondENPage() {
         </div>
 
         {/* ── Premium Estimate ── */}
-        <div className="mb-16 max-w-4xl mx-auto">
+        <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
           <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">
             Custom Bond Premium Estimate
           </h2>
-          <p className="text-center text-[#475569] mb-8 max-w-2xl mx-auto">
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+          <p className="text-center text-[#475569] text-sm md:text-base mb-4 md:mb-6 max-w-2xl mx-auto">
             Premium is calculated as a percentage of the guarantee value (not the goods value),
             depending on facility type, tenor, and the company's risk profile.
           </p>
@@ -337,25 +342,26 @@ export default function CustomBondENPage() {
           <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">
             Other Guarantees Often Needed Alongside Custom Bond
           </h2>
-          <p className="text-center text-[#475569] mb-8 max-w-2xl mx-auto">
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+          <p className="text-center text-[#475569] text-sm md:text-base mb-4 md:mb-6 max-w-2xl mx-auto">
             Import-export businesses in Batam often need more than one type of guarantee at once.
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Link href="/en/blog/temporary-import-guarantee-ob23-batam" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-              <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">OB 23 Guide</h3>
-              <p className="text-[#475569] text-sm">How to handle temporary import for exhibitions and projects, plus common mistakes to avoid.</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+            <Link href="/en/blog/temporary-import-guarantee-ob23-batam" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+              <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">OB 23 Guide</h3>
+              <p className="text-[#475569] text-[13px] md:text-sm leading-snug">How to handle temporary import for exhibitions and projects, plus common mistakes to avoid.</p>
             </Link>
-            <Link href="/en/surety-bond-insurance" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-              <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Bid Bond</h3>
-              <p className="text-[#475569] text-sm">Pre-tender guarantee for government and private procurement.</p>
+            <Link href="/en/surety-bond-insurance" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+              <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Bid Bond</h3>
+              <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Pre-tender guarantee for government and private procurement.</p>
             </Link>
-            <Link href="/en/surety-bond-insurance/advance-payment-bond" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-              <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Advance Payment Bond</h3>
-              <p className="text-[#475569] text-sm">Guarantee for down payment recovery in construction and procurement contracts.</p>
+            <Link href="/en/surety-bond-insurance/advance-payment-bond" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+              <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Advance Payment Bond</h3>
+              <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Guarantee for down payment recovery in construction and procurement contracts.</p>
             </Link>
-            <Link href="/en/marine-insurance/marine-cargo" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-              <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Marine Cargo</h3>
-              <p className="text-[#475569] text-sm">Protect the value of your import/export goods against loss or damage in transit.</p>
+            <Link href="/en/marine-insurance/marine-cargo" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+              <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Marine Cargo</h3>
+              <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Protect the value of your import/export goods against loss or damage in transit.</p>
             </Link>
           </div>
         </div>

@@ -159,7 +159,7 @@ const schema = {
 // ─────────────────────────────────────────────
 export default function FreightForwardersLiabilityPage() {
   return (
-    <ProductPageLayout cluster="liability"
+    <ProductPageLayout rich benefitsVariant="circle" cluster="liability"
       title="Freight Forwarders Liability Insurance Batam"
       subtitle="Proteksi Wajib untuk Perusahaan Forwarding, PPJK & EMKL"
       description="Sebagai simpul logistik utama di Kepulauan Riau, Batam memproses ribuan pengiriman lintas moda setiap bulan — dari kontainer di Batu Ampar, kargo konsolidasi di Sekupang, hingga suplai galangan kapal di Tanjung Uncang. Satu kesalahan dokumen kepabeanan atau kargo yang hilang saat berada dalam penguasaan Anda bisa berujung tuntutan ratusan juta rupiah dari klien. Kami membantu perusahaan forwarding dan PPJK di Batam mendapatkan polis FFL yang sesuai profil operasional — lengkap dengan Certificate of Insurance (COI) — dalam 1–3 hari kerja."
@@ -174,18 +174,19 @@ export default function FreightForwardersLiabilityPage() {
     >
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Sering Dibutuhkan Bersamaan</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Link href="/asuransi-marine/marine-cargo" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Marine Cargo Insurance</h3>
-            <p className="text-[#475569] text-sm">Lindungi nilai fisik kargo klien Anda, di luar tanggung jawab forwarder itu sendiri.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
+          <Link href="/asuransi-marine/marine-cargo" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Marine Cargo Insurance</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Lindungi nilai fisik kargo klien Anda, di luar tanggung jawab forwarder itu sendiri.</p>
           </Link>
-          <Link href="/asuransi-properti/asuransi-gudang-batam" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Asuransi Gudang Batam</h3>
-            <p className="text-[#475569] text-sm">Proteksi aset fisik gudang dan fasilitas konsolidasi milik forwarder sendiri.</p>
+          <Link href="/asuransi-properti/asuransi-gudang-batam" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Asuransi Gudang Batam</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Proteksi aset fisik gudang dan fasilitas konsolidasi milik forwarder sendiri.</p>
           </Link>
-          <Link href="/asuransi-liability/public-liability" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Public Liability Insurance</h3>
-            <p className="text-[#475569] text-sm">Tanggung gugat atas cedera pengunjung/tamu di area gudang dan kantor operasional.</p>
+          <Link href="/asuransi-liability/public-liability" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Public Liability Insurance</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Tanggung gugat atas cedera pengunjung/tamu di area gudang dan kantor operasional.</p>
           </Link>
         </div>
       </div>

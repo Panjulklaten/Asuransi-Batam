@@ -63,7 +63,7 @@ const schema = {
 
 export default function CECRENPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout rich benefitsVariant="circle"
       cluster="engineering"
       title="CECR Insurance Batam"
       subtitle="Civil Engineering Completed Risk – Protection After Handover"
@@ -76,8 +76,9 @@ export default function CECRENPage() {
       ]}
       schema={schema}
     >
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3 text-center">Where CECR Sits in the Project Lifecycle</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-[#475569] mb-4 leading-relaxed">
           Many project owners assume insurance ends automatically once the handover certificate (BAST) is signed. In fact, that is exactly when the type of risk changes. During construction, a revetment, jetty or access road is protected by{" "}
           <Link href="/en/engineering-insurance/contractor-all-risk" className="font-semibold text-[#1a4fa0] hover:underline">Contractor All Risk (CAR)</Link>
@@ -88,8 +89,9 @@ export default function CECRENPage() {
         </p>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3 text-center">Why It Matters for Batu Ampar and Port Areas</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-[#475569] leading-relaxed">
           Batu Ampar is Batam&apos;s main export-import gateway and has been going through large-scale port works, from strengthening jetties to expanding container yards. Revetments here face a distinctive exposure: waves from passing vessels, tidal movement, static loads from cargo equipment, and ground movement in reclaimed areas. A completed revetment does not mean the risk is over; it moves towards long-term operational risks such as scouring, displaced stone blocks and cracking from repeated loads.
         </p>
@@ -109,7 +111,7 @@ export default function CECRENPage() {
         </div>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto p-5 rounded-xl border" style={{ background: "#f0d08015", borderColor: "#c9a84c40" }}>
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto p-5 rounded-xl border" style={{ background: "#f0d08015", borderColor: "#c9a84c40" }}>
         <p className="text-sm text-gray-700 leading-relaxed">
           <strong>Note:</strong> CECR rates are set by the underwriter after a survey and are not fixed by a standard tariff. Standard exclusions, such as normal wear and tear, apply, and the cover follows the wording of the policy issued by each insurer.
         </p>
@@ -117,18 +119,19 @@ export default function CECRENPage() {
 
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Related Project Cover</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Link href="/en/engineering-insurance/contractor-all-risk" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Contractor All Risk (CAR)</h3>
-            <p className="text-[#475569] text-sm">Covers the construction period, up to the handover certificate (BAST).</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
+          <Link href="/en/engineering-insurance/contractor-all-risk" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Contractor All Risk (CAR)</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Covers the construction period, up to the handover certificate (BAST).</p>
           </Link>
-          <Link href="/en/engineering-insurance/erection-all-risk" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Erection All Risk (EAR)</h3>
-            <p className="text-[#475569] text-sm">Relevant when the project involves installing cranes, machinery or plant.</p>
+          <Link href="/en/engineering-insurance/erection-all-risk" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Erection All Risk (EAR)</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Relevant when the project involves installing cranes, machinery or plant.</p>
           </Link>
-          <Link href="/en/surety-bond-insurance/maintenance-bond" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Maintenance Bond</h3>
-            <p className="text-[#475569] text-sm">The contractor&apos;s guarantee during the maintenance period, a different instrument from CECR.</p>
+          <Link href="/en/surety-bond-insurance/maintenance-bond" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Maintenance Bond</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">The contractor&apos;s guarantee during the maintenance period, a different instrument from CECR.</p>
           </Link>
         </div>
       </div>

@@ -137,7 +137,7 @@ export default function CustomBondPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <ProductPageLayout
+      <ProductPageLayout rich benefitsVariant="circle"
         cluster="surety"
         title="Custom Bond Batam"
         subtitle="Jaminan Kepabeanan untuk Impor & Ekspor"
@@ -151,10 +151,11 @@ export default function CustomBondPage() {
         schema={schema}
       >
         {/* ── Apa Itu Custom Bond ── */}
-        <div className="mb-16 max-w-4xl mx-auto">
-          <h2 className="font-display font-bold text-2xl md:text-3xl text-[#0a1628] mb-4 text-center">
+        <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
+          <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3 text-center">
             Apa Itu Custom Bond?
           </h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
           <p className="text-[#374151] leading-relaxed mb-4">
             <strong>Custom bond</strong> (customs bond) adalah jenis penjaminan yang diterbitkan
             oleh perusahaan asuransi umum berlisensi OJK untuk kepentingan pihak Terjamin
@@ -173,7 +174,7 @@ export default function CustomBondPage() {
           </p>
 
           {/* Contoh kasus */}
-          <div className="mt-8 bg-white border-l-4 border-[#c9a84c] rounded-r-2xl p-6 shadow-sm">
+          <div className="mt-4 bg-white border-l-4 border-[#c9a84c] rounded-r-xl p-4 md:p-6 shadow-sm">
             <p className="font-display font-bold text-[#0a1628] mb-2 text-sm uppercase tracking-wide">
               Contoh Kasus
             </p>
@@ -196,15 +197,16 @@ export default function CustomBondPage() {
         </div>
 
         {/* ── Custom Bond vs Bank Garansi ── */}
-        <div className="mb-16 max-w-5xl mx-auto">
+        <div className="mb-6 md:mb-8 max-w-5xl mx-auto">
           <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">
             Custom Bond vs Bank Garansi
           </h2>
-          <p className="text-center text-[#475569] mb-8 max-w-2xl mx-auto">
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+          <p className="text-center text-[#475569] text-sm md:text-base mb-4 md:mb-6 max-w-2xl mx-auto">
             Keduanya diakui sah oleh Bea Cukai — tapi dampaknya ke keuangan perusahaan sangat berbeda.
           </p>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="rounded-2xl border-2 border-[#c9a84c]/40 bg-[#faf8f3] p-6">
+          <div className="grid md:grid-cols-2 gap-3 md:gap-4">
+            <div className="rounded-xl border-2 border-[#c9a84c]/40 bg-[#faf8f3] p-4 md:p-6">
               <h3 className="font-display font-bold text-[#0a1628] mb-3 flex items-center gap-2">
                 <span className="text-xl">✅</span> Custom Bond (Asuransi)
               </h3>
@@ -216,7 +218,7 @@ export default function CustomBondPage() {
                 <li>• Diterima di seluruh Kantor Pelayanan Bea Cukai di Indonesia</li>
               </ul>
             </div>
-            <div className="rounded-2xl border-2 border-[#e2e8f0] bg-white p-6">
+            <div className="rounded-xl border-2 border-[#e2e8f0] bg-white p-4 md:p-6">
               <h3 className="font-display font-bold text-[#0a1628] mb-3 flex items-center gap-2">
                 <span className="text-xl">🏦</span> Bank Garansi
               </h3>
@@ -232,11 +234,12 @@ export default function CustomBondPage() {
         </div>
 
         {/* ── Persyaratan Dokumen ── */}
-        <div className="mb-16 max-w-4xl mx-auto">
+        <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
           <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">
             Persyaratan Dokumen Pengajuan Custom Bond
           </h2>
-          <p className="text-center text-[#475569] mb-8">
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+          <p className="text-center text-[#475569] text-sm md:text-base mb-4 md:mb-6">
             Siapkan dokumen berikut agar proses penerbitan tidak tertunda.
           </p>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -262,10 +265,11 @@ export default function CustomBondPage() {
         </div>
 
         {/* ── Proses Penerbitan ── */}
-        <div className="mb-16 max-w-3xl mx-auto">
-          <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-8 text-center">
+        <div className="mb-6 md:mb-8 max-w-3xl mx-auto">
+          <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-4 text-center">
             Proses Penerbitan Custom Bond
           </h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
           <ol className="space-y-5">
             {[
               { title: "Ajukan permohonan fasilitas ke Bea Cukai", desc: "Principal mengajukan permohonan fasilitas impor/ekspor (OB 23, KITE, dll) kepada Ditjen Bea dan Cukai." },
@@ -288,11 +292,12 @@ export default function CustomBondPage() {
         </div>
 
         {/* ── Estimasi Premi ── */}
-        <div className="mb-16 max-w-4xl mx-auto">
+        <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
           <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">
             Estimasi Premi Custom Bond
           </h2>
-          <p className="text-center text-[#475569] mb-8 max-w-2xl mx-auto">
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+          <p className="text-center text-[#475569] text-sm md:text-base mb-4 md:mb-6 max-w-2xl mx-auto">
             Premi dihitung dari persentase nilai jaminan (bukan nilai barang), tergantung jenis
             fasilitas, tenor, dan profil risiko perusahaan.
           </p>
@@ -341,33 +346,34 @@ export default function CustomBondPage() {
           <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">
             Jenis Jaminan Lain yang Sering Dibutuhkan Bersamaan
           </h2>
-          <p className="text-center text-[#475569] mb-8 max-w-2xl mx-auto">
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+          <p className="text-center text-[#475569] text-sm md:text-base mb-4 md:mb-6 max-w-2xl mx-auto">
             Pelaku impor-ekspor di Batam sering membutuhkan lebih dari satu jenis jaminan sekaligus.
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Link href="/blog/panduan-ob23-impor-sementara-batam" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-              <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Panduan OB 23</h3>
-              <p className="text-[#475569] text-sm">Cara mengurus impor sementara untuk pameran dan proyek, lengkap dengan kesalahan umum yang harus dihindari.</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+            <Link href="/blog/panduan-ob23-impor-sementara-batam" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+              <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Panduan OB 23</h3>
+              <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Cara mengurus impor sementara untuk pameran dan proyek, lengkap dengan kesalahan umum yang harus dihindari.</p>
             </Link>
-            <Link href="/blog/ob23-vs-kite-batam" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-              <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">OB 23 vs KITE</h3>
-              <p className="text-[#475569] text-sm">Cara menentukan fasilitas kepabeanan yang tepat untuk bisnis impor-ekspor Anda.</p>
+            <Link href="/blog/ob23-vs-kite-batam" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+              <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">OB 23 vs KITE</h3>
+              <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Cara menentukan fasilitas kepabeanan yang tepat untuk bisnis impor-ekspor Anda.</p>
             </Link>
-            <Link href="/blog/custom-bond-galangan-kapal-batam" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-              <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Custom Bond Galangan Kapal</h3>
-              <p className="text-[#475569] text-sm">Kombinasi Kawasan Berikat dan OB 23 yang umum dipakai industri shipyard Batam.</p>
+            <Link href="/blog/custom-bond-galangan-kapal-batam" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+              <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Custom Bond Galangan Kapal</h3>
+              <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Kombinasi Kawasan Berikat dan OB 23 yang umum dipakai industri shipyard Batam.</p>
             </Link>
-            <Link href="/blog/checklist-dokumen-custom-bond-ditolak" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-              <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Checklist Dokumen Sering Ditolak</h3>
-              <p className="text-[#475569] text-sm">5 dokumen yang paling sering bikin pengajuan custom bond tertunda di Bea Cukai.</p>
+            <Link href="/blog/checklist-dokumen-custom-bond-ditolak" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+              <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Checklist Dokumen Sering Ditolak</h3>
+              <p className="text-[#475569] text-[13px] md:text-sm leading-snug">5 dokumen yang paling sering bikin pengajuan custom bond tertunda di Bea Cukai.</p>
             </Link>
-            <Link href="/asuransi-surety-bond/bid-bond" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-              <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Bid Bond</h3>
-              <p className="text-[#475569] text-sm">Jaminan penawaran untuk tender pengadaan barang/jasa pemerintah dan swasta.</p>
+            <Link href="/asuransi-surety-bond/bid-bond" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+              <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Bid Bond</h3>
+              <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Jaminan penawaran untuk tender pengadaan barang/jasa pemerintah dan swasta.</p>
             </Link>
-            <Link href="/asuransi-marine/marine-cargo" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-              <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Marine Cargo</h3>
-              <p className="text-[#475569] text-sm">Lindungi nilai barang impor/ekspor Anda dari risiko kerusakan atau kehilangan selama pengiriman.</p>
+            <Link href="/asuransi-marine/marine-cargo" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+              <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Marine Cargo</h3>
+              <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Lindungi nilai barang impor/ekspor Anda dari risiko kerusakan atau kehilangan selama pengiriman.</p>
             </Link>
           </div>
         </div>

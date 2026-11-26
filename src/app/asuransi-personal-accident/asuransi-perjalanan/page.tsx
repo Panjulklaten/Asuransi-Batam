@@ -76,11 +76,11 @@ const schema = {
   areaServed: { "@type": "City", name: "Batam" },
 };
 
-const card = "block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover";
+const card = "block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all";
 
 export default function AsuransiPerjalananPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout rich benefitsVariant="circle"
       cluster="pa"
       title="Asuransi Perjalanan Batam"
       subtitle="Travel Insurance untuk Liburan, Dinas, dan Studi ke Luar Negeri"
@@ -93,39 +93,41 @@ export default function AsuransiPerjalananPage() {
       ]}
       schema={schema}
     >
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Dari Batam, ke Mana Anda Bepergian?</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-center text-[#475569] mb-6">Kebutuhan perlindungan berbeda tergantung tujuan dan jenis perjalanan.</p>
         <div className="grid md:grid-cols-2 gap-5">
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
             <h3 className="font-display font-bold text-[#0a1628] mb-2">⛴️ Singapura &amp; Malaysia</h3>
             <p className="text-sm text-[#475569]">Perjalanan singkat dan sering. Perhatikan limit biaya medis dan pertimbangkan polis tahunan bila Anda rutin bolak-balik. Tanyakan apakah masa penyeberangan feri sudah masuk periode pertanggungan.</p>
           </div>
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
             <h3 className="font-display font-bold text-[#0a1628] mb-2">💼 Perjalanan dinas</h3>
             <p className="text-sm text-[#475569]">Cek dulu apakah kantor sudah punya polis perjalanan korporat agar tidak dobel. Untuk pekerja asing yang bepergian dari Batam, lihat panduan khususnya di bawah.</p>
           </div>
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
             <h3 className="font-display font-bold text-[#0a1628] mb-2">🌴 Liburan keluarga</h3>
             <p className="text-sm text-[#475569]">Daftarkan semua peserta dengan usia yang benar. Anak dan lansia punya ketentuan berbeda, dan jaminan pembatalan penting bila tiket dan hotel sudah dibayar di muka.</p>
           </div>
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
             <h3 className="font-display font-bold text-[#0a1628] mb-2">🇪🇺 Eropa (Schengen)</h3>
             <p className="text-sm text-[#475569]">Asuransi dengan syarat minimum tertentu diwajibkan untuk visa. Pilih polis yang sertifikatnya memuat jaminan medis, pemulangan, dan wilayah berlaku secara eksplisit.</p>
           </div>
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
             <h3 className="font-display font-bold text-[#0a1628] mb-2">🎓 Studi &amp; tinggal lama</h3>
             <p className="text-sm text-[#475569]">Perjalanan berbulan-bulan punya ketentuan durasi dan produk khusus. Sampaikan lama tinggal sejak awal supaya polis yang dipilih memang sesuai.</p>
           </div>
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
             <h3 className="font-display font-bold text-[#0a1628] mb-2">🏔️ Aktivitas petualangan</h3>
             <p className="text-sm text-[#475569]">Menyelam, trekking tinggi, atau ski umumnya termasuk olahraga berisiko yang dikecualikan kecuali diperluas. Sebutkan rencana aktivitas Anda saat mengajukan.</p>
           </div>
         </div>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Pilih Zona Perjalanan</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-center text-[#475569] mb-6">Penanggung membagi wilayah perjalanan ke dalam zona. Nama dan pembagiannya bisa berbeda antar produk.</p>
         <div className="overflow-x-auto rounded-2xl border border-gray-200">
           <table className="w-full text-sm">
@@ -146,8 +148,8 @@ export default function AsuransiPerjalananPage() {
         <p className="text-xs text-gray-500 mt-3">Tabel ini bersifat umum. Zona, limit, dan pengecualian final mengikuti wording polis masing-masing penanggung.</p>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto p-6 rounded-2xl border" style={{ background: "#f0d08015", borderColor: "#c9a84c40" }}>
-        <h2 className="font-display font-bold text-xl text-[#0a1628] mb-3">Syarat Asuransi untuk Visa Schengen</h2>
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto p-6 rounded-2xl border" style={{ background: "#f0d08015", borderColor: "#c9a84c40" }}>
+        <h2 className="font-display font-bold text-lg text-[#0a1628] mb-2">Syarat Asuransi untuk Visa Schengen</h2>
         <ul className="list-disc pl-5 space-y-2 text-sm text-[#475569] leading-relaxed">
           <li>Jaminan medis minimal <strong>EUR 30.000</strong>.</li>
           <li>Mencakup perawatan medis darurat, pemulangan medis, dan pemulangan jenazah.</li>
@@ -157,8 +159,9 @@ export default function AsuransiPerjalananPage() {
         </ul>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3 text-center">Yang Umumnya Tidak Dijamin</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <ul className="list-disc pl-6 space-y-2 text-[#475569] leading-relaxed">
           <li>Kondisi medis yang sudah ada sebelum polis dibeli, kecuali ada ketentuan khusus.</li>
           <li>Kehamilan dan persalinan, kecuali komplikasi tertentu yang dijamin polis.</li>
@@ -171,8 +174,9 @@ export default function AsuransiPerjalananPage() {
         <p className="text-xs text-gray-500 mt-3">Daftar ini gambaran umum. Selalu minta bagian pengecualian polis dibacakan sebelum Anda membeli.</p>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-4 text-center">Jika Terjadi Sesuatu di Luar Negeri</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <ol className="space-y-3">
           {[
             ["Hubungi pusat bantuan darurat", "Nomor 24 jam tercantum di kartu atau sertifikat polis. Hubungi sebelum menjalani perawatan non-darurat agar biaya dapat diatur langsung bila memungkinkan."],
@@ -190,18 +194,19 @@ export default function AsuransiPerjalananPage() {
 
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Baca &amp; Lengkapi Juga</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
           <Link href="/asuransi-personal-accident/pa-individu-keluarga" className={card}>
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">PA Individu &amp; Keluarga</h3>
-            <p className="text-[#475569] text-sm">Perlindungan kecelakaan sehari-hari, bukan hanya saat bepergian.</p>
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">PA Individu &amp; Keluarga</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Perlindungan kecelakaan sehari-hari, bukan hanya saat bepergian.</p>
           </Link>
           <Link href="/blog/asuransi-pa-pekerja-asing-ke-singapura-dari-batam" className={card}>
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Pekerja Asing ke Singapura</h3>
-            <p className="text-[#475569] text-sm">Panduan PA dan asuransi untuk pekerja asing yang bepergian dari Batam.</p>
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Pekerja Asing ke Singapura</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Panduan PA dan asuransi untuk pekerja asing yang bepergian dari Batam.</p>
           </Link>
           <Link href="/asuransi-personal-accident/pa-karyawan-grup" className={card}>
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">PA Karyawan Grup</h3>
-            <p className="text-[#475569] text-sm">Perlindungan kecelakaan untuk tim, termasuk perjalanan dinas sesuai polis.</p>
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">PA Karyawan Grup</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Perlindungan kecelakaan untuk tim, termasuk perjalanan dinas sesuai polis.</p>
           </Link>
         </div>
       </div>

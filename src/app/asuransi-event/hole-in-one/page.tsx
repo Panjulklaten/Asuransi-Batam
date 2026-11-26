@@ -67,7 +67,7 @@ const schema = {
 
 export default function AsuransiHoleInOnePage() {
   return (
-    <ProductPageLayout cluster="event"
+    <ProductPageLayout rich benefitsVariant="circle" cluster="event"
       title="Asuransi Hole in One Batam"
       subtitle="Jaminan Hadiah Turnamen Golf"
       description="Batam punya tujuh lapangan golf berstandar internasional dengan turnamen yang digelar hampir setiap bulan. Alih-alih menanggung sendiri nilai penuh hadiah hole in one, panitia cukup membayar premi — kami membantu merancang polis sesuai jarak hole, jumlah peserta, dan nilai hadiah turnamen Anda."
@@ -79,7 +79,7 @@ export default function AsuransiHoleInOnePage() {
       ]}
       schema={schema}
     >
-      <div className="mb-12 max-w-3xl mx-auto text-center">
+      <div className="mb-6 md:mb-8 max-w-3xl mx-auto text-center">
         <p className="text-[#475569]">
           Ingin memahami cara kerja hole in one insurance secara rinci — kenapa jarak hole minimal 120
           meter, kenapa harus amatir, dan kesalahan umum yang membuat klaim ditolak?{" "}
@@ -90,18 +90,19 @@ export default function AsuransiHoleInOnePage() {
       </div>
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Jenis Event Lainnya</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Link href="/asuransi-event/konser-musik" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Asuransi Konser Musik</h3>
-            <p className="text-[#475569] text-sm">Liability penonton dan non-appearance artis untuk konser di Batam.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
+          <Link href="/asuransi-event/konser-musik" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Asuransi Konser Musik</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Liability penonton dan non-appearance artis untuk konser di Batam.</p>
           </Link>
-          <Link href="/asuransi-event/motor-cross" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Asuransi Motor Cross</h3>
-            <p className="text-[#475569] text-sm">Personal accident pembalap dan liability penonton untuk event grasstrack.</p>
+          <Link href="/asuransi-event/motor-cross" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Asuransi Motor Cross</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Personal accident pembalap dan liability penonton untuk event grasstrack.</p>
           </Link>
-          <Link href="/asuransi-liability" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Asuransi Liability</h3>
-            <p className="text-[#475569] text-sm">Perluasan tanggung gugat untuk klub golf yang rutin menyelenggarakan turnamen.</p>
+          <Link href="/asuransi-liability" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Asuransi Liability</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Perluasan tanggung gugat untuk klub golf yang rutin menyelenggarakan turnamen.</p>
           </Link>
         </div>
       </div>

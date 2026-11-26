@@ -121,7 +121,7 @@ const schema = {
 
 export default function HeavyEquipmentInsurancePage() {
   return (
-    <ProductPageLayout cluster="machinery"
+    <ProductPageLayout rich benefitsVariant="circle" cluster="machinery"
       title="Heavy Equipment Insurance Batam"
       subtitle="Equipment All Risk – Total Protection for Your Heavy Assets"
       description={
@@ -146,10 +146,10 @@ export default function HeavyEquipmentInsurancePage() {
     >
       {/* ── WHY IT MATTERS IN BATAM ── */}
       <section className="mb-14">
-        <h2 className="font-display font-bold text-2xl md:text-3xl text-[#0a1628] mb-4">
+        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3">
           Why Heavy Equipment Insurance Matters in Batam
         </h2>
-        <p className="text-[#475569] leading-relaxed mb-8 max-w-3xl">
+        <p className="text-[#475569] leading-relaxed mb-4 md:mb-6 max-w-3xl">
           In Batam, heavy equipment isn&apos;t just working machinery — it&apos;s a
           strategic asset that determines the progress of construction projects,
           industrial zone development, and shipyard operations. Without proper
@@ -157,7 +157,7 @@ export default function HeavyEquipmentInsurancePage() {
           significant cash flow.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-white">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#e2e8f0] bg-white">
             <TrendingUp size={22} className="text-[#c9a84c] mb-3" />
             <div className="font-display font-bold text-lg text-[#0a1628]">
               IDR 800M – 1.5B
@@ -166,7 +166,7 @@ export default function HeavyEquipmentInsurancePage() {
               Value of a mid-class excavator unit
             </p>
           </div>
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-white">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#e2e8f0] bg-white">
             <Construction size={22} className="text-[#c9a84c] mb-3" />
             <div className="font-display font-bold text-lg text-[#0a1628]">
               &gt; IDR 5B
@@ -175,7 +175,7 @@ export default function HeavyEquipmentInsurancePage() {
               Value of a large crane at docking facilities
             </p>
           </div>
-          <div className="p-5 rounded-2xl border border-[#e2e8f0] bg-white">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#e2e8f0] bg-white">
             <CloudRain size={22} className="text-[#c9a84c] mb-3" />
             <div className="font-display font-bold text-lg text-[#0a1628]">
               Coastal Risk
@@ -189,7 +189,7 @@ export default function HeavyEquipmentInsurancePage() {
 
       {/* ── REAL CASE STUDY ── */}
       <section className="mb-14">
-        <h2 className="font-display font-bold text-2xl md:text-3xl text-[#0a1628] mb-6">
+        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3">
           Real Case Study: Shipyard in Batam
         </h2>
         <div className="rounded-2xl border border-[#e2e8f0] bg-white overflow-hidden">
@@ -252,10 +252,10 @@ export default function HeavyEquipmentInsurancePage() {
 
       {/* ── CLAIM SIMULATION ── */}
       <section className="mb-14">
-        <h2 className="font-display font-bold text-2xl md:text-3xl text-[#0a1628] mb-2">
+        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2">
           Claim Simulation: Excavator Overturns on a Reclamation Project
         </h2>
-        <p className="text-[#475569] leading-relaxed mb-8 max-w-3xl">
+        <p className="text-[#475569] leading-relaxed mb-4 md:mb-6 max-w-3xl">
           <strong className="text-[#0a1628]">Scenario:</strong> A Komatsu PC 200
           excavator was working on a reclamation project on the Nongsa coast. Due to
           unstable ground, the unit overturned onto a slope, damaging the boom, arm,
@@ -290,7 +290,7 @@ export default function HeavyEquipmentInsurancePage() {
           ].map((step, i) => (
             <div
               key={i}
-              className="flex items-start gap-4 p-5 rounded-2xl border border-[#e2e8f0] bg-white"
+              className="flex items-start gap-4 p-3.5 md:p-5 rounded-xl border border-[#e2e8f0] bg-white"
             >
               <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-[#0a1628] flex items-center justify-center">
                 <step.icon size={18} className="text-[#c9a84c]" />
@@ -319,7 +319,7 @@ export default function HeavyEquipmentInsurancePage() {
 
       {/* ── REQUIRED DOCUMENTS ── */}
       <section className="mb-14">
-        <h2 className="font-display font-bold text-2xl md:text-3xl text-[#0a1628] mb-2">
+        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2">
           Required Documents for Heavy Equipment Insurance
         </h2>
         <p className="text-[#475569] leading-relaxed mb-6 max-w-3xl">
@@ -379,13 +379,13 @@ export default function HeavyEquipmentInsurancePage() {
 
       {/* ── INTERNAL LINKING ── */}
       <section>
-        <h2 className="font-display font-bold text-2xl md:text-3xl text-[#0a1628] mb-6">
+        <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3">
           Other Machinery &amp; Industrial Equipment Protection in Batam
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           <Link
             href="/en/machinery-insurance"
-            className="block p-5 rounded-2xl border border-[#e2e8f0] bg-white hover:border-[#c9a84c]/40 hover:shadow-lg transition-all"
+            className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all"
           >
             <Truck size={20} className="text-[#c9a84c] mb-3" />
             <div className="font-display font-semibold text-[#0a1628] mb-1">
@@ -398,7 +398,7 @@ export default function HeavyEquipmentInsurancePage() {
           </Link>
           <Link
             href="/en/machinery-insurance/crane-insurance"
-            className="block p-5 rounded-2xl border border-[#e2e8f0] bg-white hover:border-[#c9a84c]/40 hover:shadow-lg transition-all"
+            className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all"
           >
             <Construction size={20} className="text-[#c9a84c] mb-3" />
             <div className="font-display font-semibold text-[#0a1628] mb-1">
@@ -410,7 +410,7 @@ export default function HeavyEquipmentInsurancePage() {
           </Link>
           <Link
             href="/en/engineering-insurance/contractor-all-risk"
-            className="block p-5 rounded-2xl border border-[#e2e8f0] bg-white hover:border-[#c9a84c]/40 hover:shadow-lg transition-all"
+            className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all"
           >
             <Ship size={20} className="text-[#c9a84c] mb-3" />
             <div className="font-display font-semibold text-[#0a1628] mb-1">

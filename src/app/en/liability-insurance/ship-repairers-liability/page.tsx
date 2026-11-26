@@ -70,7 +70,7 @@ const schema = {
 
 export default function ShipRepairersLiabilityENPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout rich benefitsVariant="circle"
       cluster="liability"
       title="Ship Repairer's Liability Insurance Batam"
       subtitle="Liability Cover for Shipyards and Ship Repair Contractors"
@@ -83,8 +83,9 @@ export default function ShipRepairersLiabilityENPage() {
       ]}
       schema={schema}
     >
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Asset, Liability, or Third Party?</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-center text-[#475569] mb-6">Three policies often confused at a shipyard, though each protects something different.</p>
         <div className="overflow-x-auto rounded-2xl border border-gray-200">
           <table className="w-full text-sm">
@@ -105,8 +106,9 @@ export default function ShipRepairersLiabilityENPage() {
         <p className="text-xs text-gray-500 mt-3">This table is a general guide. Final cover and exclusions follow each insurer&apos;s policy wording.</p>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3 text-center">The Shipyard Context in Batam</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-[#475569] leading-relaxed mb-4">
           Yards around Tanjung Uncang and Kabil take in customers&apos; vessels of many kinds, such as barges, tugboats, merchant ships and offshore support vessels, for docking, plate replacement, painting and machinery repair. While in dock the vessel does not belong to the yard but is in its care, and that is where the liability gap appears.
         </p>
@@ -115,35 +117,37 @@ export default function ShipRepairersLiabilityENPage() {
         </p>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Illustrative Scenarios</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-center text-[#475569] mb-6 text-sm">Hypothetical scenarios to aid understanding, not real cases. Claim decisions always follow the policy wording.</p>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-6 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">🔥 Sparks in the engine room</h3>
-            <p className="text-[#475569] text-sm">Plate replacement work throws sparks that start a fire in the engine room of a customer&apos;s vessel in dock. The vessel owner sues the yard. This is a liability claim over a vessel in the yard&apos;s care.</p>
+        <div className="grid md:grid-cols-2 gap-3 md:gap-4">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">🔥 Sparks in the engine room</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Plate replacement work throws sparks that start a fire in the engine room of a customer&apos;s vessel in dock. The vessel owner sues the yard. This is a liability claim over a vessel in the yard&apos;s care.</p>
           </div>
-          <div className="p-6 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">⚓ A vessel strikes another during a move</h3>
-            <p className="text-[#475569] text-sm">While being moved from a floating dock to the quay, a vessel strikes and damages the hull of another vessel berthed nearby. The second owner brings a claim against the yard.</p>
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">⚓ A vessel strikes another during a move</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">While being moved from a floating dock to the quay, a vessel strikes and damages the hull of another vessel berthed nearby. The second owner brings a claim against the yard.</p>
           </div>
         </div>
       </div>
 
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Complementary Shipyard Cover</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Link href="/en/marine-insurance/builders-risk" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Builder&apos;s Risk</h3>
-            <p className="text-[#475569] text-sm">Protects the vessel asset being built or repaired, not the yard&apos;s liability.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
+          <Link href="/en/marine-insurance/builders-risk" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Builder&apos;s Risk</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Protects the vessel asset being built or repaired, not the yard&apos;s liability.</p>
           </Link>
-          <Link href="/en/liability-insurance/public-liability" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Public Liability</h3>
-            <p className="text-[#475569] text-sm">Liability for third-party injury and property damage in the work area.</p>
+          <Link href="/en/liability-insurance/public-liability" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Public Liability</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Liability for third-party injury and property damage in the work area.</p>
           </Link>
-          <Link href="/en/liability-insurance/employers-product-liability" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Employers&apos; Liability</h3>
-            <p className="text-[#475569] text-sm">Claims from the yard&apos;s own workers, including work at height and inside tanks.</p>
+          <Link href="/en/liability-insurance/employers-product-liability" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Employers&apos; Liability</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Claims from the yard&apos;s own workers, including work at height and inside tanks.</p>
           </Link>
         </div>
       </div>

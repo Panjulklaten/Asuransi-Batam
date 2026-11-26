@@ -70,7 +70,7 @@ const schema = {
 
 export default function MachineryBreakdownENPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout rich benefitsVariant="circle"
       cluster="machinery"
       title="Machinery Breakdown Insurance Batam"
       subtitle="Protection for Factory & Production Machinery"
@@ -83,8 +83,9 @@ export default function MachineryBreakdownENPage() {
       ]}
       schema={schema}
     >
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">MB or Another Policy? The Differences</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-center text-[#475569] mb-6">Machinery can fall under several policies. What differs is the cause of damage and the stage of the machine&apos;s life.</p>
         <div className="overflow-x-auto rounded-2xl border border-gray-200">
           <table className="w-full text-sm">
@@ -106,8 +107,9 @@ export default function MachineryBreakdownENPage() {
         <p className="text-xs text-gray-500 mt-3">This table is a general guide. Final cover and exclusions follow each insurer&apos;s policy wording.</p>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3 text-center">Why It Matters for Industry in Batam</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-[#475569] leading-relaxed mb-4">
           Batam&apos;s industrial estates such as Batamindo, Muka Kuning and Kabil host electronics plants, component manufacturers and fabricators whose machines run almost non-stop: SMT lines, plastic injection moulding, CNC, generators and compressors. With machinery like this, the biggest cost is often not the repair itself but the production downtime while waiting for parts.
         </p>
@@ -116,7 +118,7 @@ export default function MachineryBreakdownENPage() {
         </p>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto p-5 rounded-xl border" style={{ background: "#f0d08015", borderColor: "#c9a84c40" }}>
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto p-5 rounded-xl border" style={{ background: "#f0d08015", borderColor: "#c9a84c40" }}>
         <p className="text-sm text-gray-700 leading-relaxed">
           <strong>Want to apply right away?</strong> Besides the Request a Quote button, you can complete the{" "}
           <Link href="/form-sppa" className="font-semibold text-[#1a4fa0] hover:underline">online SPPA form</Link>{" "}
@@ -126,18 +128,19 @@ export default function MachineryBreakdownENPage() {
 
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Complementary Cover for Industrial Assets</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Link href="/en/property-insurance/factory-industrial-insurance-batam" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Factory &amp; Industrial Insurance</h3>
-            <p className="text-[#475569] text-sm">Protection for factory buildings and contents against fire and natural perils.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
+          <Link href="/en/property-insurance/factory-industrial-insurance-batam" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Factory &amp; Industrial Insurance</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Protection for factory buildings and contents against fire and natural perils.</p>
           </Link>
-          <Link href="/en/engineering-insurance/erection-all-risk" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Erection All Risk (EAR)</h3>
-            <p className="text-[#475569] text-sm">For installation and commissioning of new machinery, before MB applies.</p>
+          <Link href="/en/engineering-insurance/erection-all-risk" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Erection All Risk (EAR)</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">For installation and commissioning of new machinery, before MB applies.</p>
           </Link>
-          <Link href="/en/machinery-insurance/heavy-equipment-insurance" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Heavy Equipment Insurance</h3>
-            <p className="text-[#475569] text-sm">For mobile project equipment, not permanently installed factory machinery.</p>
+          <Link href="/en/machinery-insurance/heavy-equipment-insurance" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Heavy Equipment Insurance</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">For mobile project equipment, not permanently installed factory machinery.</p>
           </Link>
         </div>
       </div>

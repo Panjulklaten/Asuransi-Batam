@@ -95,7 +95,7 @@ const schema = {
 
 export default function CraneInsurancePage() {
   return (
-    <ProductPageLayout cluster="machinery"
+    <ProductPageLayout rich benefitsVariant="circle" cluster="machinery"
       title="Crane Insurance Batam"
       subtitle="Tower Crane & Mobile Crane Protection"
       description="Tower cranes and mobile cranes are high-risk assets on Batam's construction projects. A single incident — a dropped boom, a snapped cable, or a structural collision — can cause losses worth billions of rupiah and expose you to major legal claims. Make sure your asset and your third-party liability are properly protected."
@@ -108,23 +108,24 @@ export default function CraneInsurancePage() {
       ]}
       schema={schema}
     >
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Case Study: Crane Claims in Batam</h2>
-        <p className="text-center text-[#475569] mb-8">Real-world illustrations of why crane insurance cannot be an afterthought in Batam's active construction zones.</p>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-6 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">🏗️ Case 1 — Tower Crane Collapse, Batam Center</h3>
-            <p className="text-[#475569] text-sm mb-3">A 45-metre tower crane at an apartment project in the Batam Center area suffered a mast connection failure during strong winds. The boom fell and struck a shophouse adjacent to the project site.</p>
-            <div className="bg-white rounded-xl p-4 text-sm">
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <p className="text-center text-[#475569] text-sm md:text-base mb-4 md:mb-6">Real-world illustrations of why crane insurance cannot be an afterthought in Batam's active construction zones.</p>
+        <div className="grid md:grid-cols-2 gap-3 md:gap-4">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">🏗️ Case 1 — Tower Crane Collapse, Batam Center</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug md:leading-relaxed mb-2.5">A 45-metre tower crane at an apartment project in the Batam Center area suffered a mast connection failure during strong winds. The boom fell and struck a shophouse adjacent to the project site.</p>
+            <div className="bg-white rounded-lg p-3 text-[13px] md:text-sm leading-snug">
               <p className="text-[#0a1628] font-semibold mb-1">Losses incurred:</p>
               <p className="text-[#475569]">Physical damage to the crane: Rp 1.8 billion | Damage to the third party's shophouse: Rp 650 million | Legal & mediation costs: Rp 120 million</p>
               <p className="text-green-700 font-semibold mt-2">✅ The entire claim was covered because the owner held a Comprehensive policy with Rp 5 billion TPL.</p>
             </div>
           </div>
-          <div className="p-6 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">🚛 Case 2 — Mobile Crane Overturned, Muka Kuning Industrial Estate</h3>
-            <p className="text-[#475569] text-sm mb-3">An 80-tonne mobile crane overturned while lifting factory machinery components in Muka Kuning due to unstable ground conditions following heavy rain. The crane was a total loss and the machinery being lifted was also badly damaged.</p>
-            <div className="bg-white rounded-xl p-4 text-sm">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">🚛 Case 2 — Mobile Crane Overturned, Muka Kuning Industrial Estate</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug md:leading-relaxed mb-2.5">An 80-tonne mobile crane overturned while lifting factory machinery components in Muka Kuning due to unstable ground conditions following heavy rain. The crane was a total loss and the machinery being lifted was also badly damaged.</p>
+            <div className="bg-white rounded-lg p-3 text-[13px] md:text-sm leading-snug">
               <p className="text-[#0a1628] font-semibold mb-1">Losses incurred:</p>
               <p className="text-[#475569]">Damage to the mobile crane: Rp 4.2 billion | Lifting and salvage costs: Rp 280 million</p>
               <p className="text-green-700 font-semibold mt-2">✅ The claim was settled within 14 working days thanks to complete initial documentation.</p>
@@ -134,18 +135,19 @@ export default function CraneInsurancePage() {
       </div>
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Complementary Cover for Lifting Projects</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Link href="/en/machinery-insurance/heavy-equipment-insurance" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Heavy Equipment Insurance</h3>
-            <p className="text-[#475569] text-sm">Protect excavators, bulldozers, and other heavy equipment on your project.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
+          <Link href="/en/machinery-insurance/heavy-equipment-insurance" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Heavy Equipment Insurance</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Protect excavators, bulldozers, and other heavy equipment on your project.</p>
           </Link>
-          <Link href="/en/engineering-insurance/erection-all-risk" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Erection All Risk (EAR)</h3>
-            <p className="text-[#475569] text-sm">For machinery installation projects that often rely on crane lifts.</p>
+          <Link href="/en/engineering-insurance/erection-all-risk" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Erection All Risk (EAR)</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">For machinery installation projects that often rely on crane lifts.</p>
           </Link>
-          <Link href="/en/liability-insurance/public-liability" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Public Liability</h3>
-            <p className="text-[#475569] text-sm">Extend legal liability cover for property damage around the crane's work area.</p>
+          <Link href="/en/liability-insurance/public-liability" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Public Liability</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Extend legal liability cover for property damage around the crane's work area.</p>
           </Link>
         </div>
       </div>

@@ -86,7 +86,7 @@ const schema = {
 
 export default function AsuransiMobilBatamPage() {
   return (
-    <ProductPageLayout cluster="vehicle"
+    <ProductPageLayout rich benefitsVariant="circle" cluster="vehicle"
       title="Asuransi Mobil Batam"
       subtitle="Proteksi All Risk & TLO – Tenang Berkendara, Klaim Tanpa Ribet"
       description="Mobil adalah aset berharga yang menemani aktivitas harian Anda di Batam. Satu kecelakaan, satu kejadian tak terduga, bisa menguras biaya jutaan rupiah. Dengan asuransi mobil yang tepat — All Risk untuk perlindungan menyeluruh atau TLO untuk proteksi hemat — Anda tidak perlu khawatir lagi. Hitung estimasi premi kendaraan Anda sekarang menggunakan kalkulator online kami, gratis dan hasilnya langsung tampil tanpa perlu daftar."
@@ -102,18 +102,19 @@ export default function AsuransiMobilBatamPage() {
       <KalkulatorMobil />
       <div className="mt-16">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Baca & Lengkapi Juga</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Link href="/blog/perbedaan-all-risk-dan-tlo" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Perbedaan All Risk dan TLO</h3>
-            <p className="text-[#475569] text-sm">Pahami dulu sebelum memilih jenis perlindungan mobil Anda.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
+          <Link href="/blog/perbedaan-all-risk-dan-tlo" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Perbedaan All Risk dan TLO</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Pahami dulu sebelum memilih jenis perlindungan mobil Anda.</p>
           </Link>
-          <Link href="/blog/cara-klaim-asuransi-mobil-batam" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Cara Klaim Asuransi Mobil</h3>
-            <p className="text-[#475569] text-sm">Panduan langkah-langkah klaim agar prosesnya cepat dan tidak ribet.</p>
+          <Link href="/blog/cara-klaim-asuransi-mobil-batam" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Cara Klaim Asuransi Mobil</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Panduan langkah-langkah klaim agar prosesnya cepat dan tidak ribet.</p>
           </Link>
-          <Link href="/asuransi-personal-accident/pa-individu-keluarga" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">PA Individu & Keluarga</h3>
-            <p className="text-[#475569] text-sm">Lindungi diri Anda sendiri, bukan hanya kendaraannya.</p>
+          <Link href="/asuransi-personal-accident/pa-individu-keluarga" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">PA Individu & Keluarga</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Lindungi diri Anda sendiri, bukan hanya kendaraannya.</p>
           </Link>
         </div>
       </div>

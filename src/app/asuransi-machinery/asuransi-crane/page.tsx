@@ -45,28 +45,29 @@ const schema = {
 };
 export default function AsuransiCranePage() {
   return (
-    <ProductPageLayout cluster="machinery" title="Asuransi Crane Batam" subtitle="Perlindungan Tower Crane & Mobile Crane"
+    <ProductPageLayout rich benefitsVariant="circle" cluster="machinery" title="Asuransi Crane Batam" subtitle="Perlindungan Tower Crane & Mobile Crane"
       description="Tower crane dan mobile crane adalah peralatan berisiko tinggi di proyek konstruksi Batam. Satu kejadian — boom jatuh, kabel putus, atau tabrakan struktur — bisa mengakibatkan kerugian miliaran dan tuntutan hukum besar. Pastikan aset dan tanggung jawab pihak ketiga Anda terlindungi."
       benefits={benefits} faqs={faqs} policyComparison={policyComparison}
       breadcrumbs={[{ label: "Asuransi Machinery", href: "/asuransi-machinery" }, { label: "Asuransi Crane", href: "/asuransi-machinery/asuransi-crane" }]}
       schema={schema}>
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Studi Kasus: Klaim Crane di Batam</h2>
-        <p className="text-center text-[#475569] mb-8">Ilustrasi nyata mengapa asuransi crane tidak bisa diabaikan di kawasan konstruksi aktif Batam.</p>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-6 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">🏗️ Kasus 1 — Tower Crane Ambruk, Batam Center</h3>
-            <p className="text-[#475569] text-sm mb-3">Sebuah tower crane setinggi 45 meter di proyek apartemen kawasan Batam Center mengalami kegagalan sambungan mast akibat angin kencang. Boom jatuh mengenai bangunan ruko di sebelah area proyek.</p>
-            <div className="bg-white rounded-xl p-4 text-sm">
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <p className="text-center text-[#475569] text-sm md:text-base mb-4 md:mb-6">Ilustrasi nyata mengapa asuransi crane tidak bisa diabaikan di kawasan konstruksi aktif Batam.</p>
+        <div className="grid md:grid-cols-2 gap-3 md:gap-4">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">🏗️ Kasus 1 — Tower Crane Ambruk, Batam Center</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug md:leading-relaxed mb-2.5">Sebuah tower crane setinggi 45 meter di proyek apartemen kawasan Batam Center mengalami kegagalan sambungan mast akibat angin kencang. Boom jatuh mengenai bangunan ruko di sebelah area proyek.</p>
+            <div className="bg-white rounded-lg p-3 text-[13px] md:text-sm leading-snug">
               <p className="text-[#0a1628] font-semibold mb-1">Kerugian yang terjadi:</p>
               <p className="text-[#475569]">Kerusakan fisik crane: Rp 1,8 M | Kerusakan ruko pihak ketiga: Rp 650 jt | Biaya hukum & mediasi: Rp 120 jt</p>
               <p className="text-green-700 font-semibold mt-2">✅ Seluruh klaim tertanggung karena pemilik memiliki polis Comprehensive + TPL Rp 5 M.</p>
             </div>
           </div>
-          <div className="p-6 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">🚛 Kasus 2 — Mobile Crane Terbalik, Kawasan Industri Muka Kuning</h3>
-            <p className="text-[#475569] text-sm mb-3">Mobile crane 80 ton mengalami terbalik saat mengangkat komponen mesin pabrik di Muka Kuning akibat kondisi tanah yang tidak stabil setelah hujan deras. Crane rusak total dan mesin yang diangkat juga rusak parah.</p>
-            <div className="bg-white rounded-xl p-4 text-sm">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">🚛 Kasus 2 — Mobile Crane Terbalik, Kawasan Industri Muka Kuning</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug md:leading-relaxed mb-2.5">Mobile crane 80 ton mengalami terbalik saat mengangkat komponen mesin pabrik di Muka Kuning akibat kondisi tanah yang tidak stabil setelah hujan deras. Crane rusak total dan mesin yang diangkat juga rusak parah.</p>
+            <div className="bg-white rounded-lg p-3 text-[13px] md:text-sm leading-snug">
               <p className="text-[#0a1628] font-semibold mb-1">Kerugian yang terjadi:</p>
               <p className="text-[#475569]">Kerusakan mobile crane: Rp 4,2 M | Biaya pengangkatan dan salvage: Rp 280 jt</p>
               <p className="text-green-700 font-semibold mt-2">✅ Klaim diproses dalam 14 hari kerja karena dokumentasi awal lengkap.</p>
@@ -76,18 +77,19 @@ export default function AsuransiCranePage() {
       </div>
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Pelengkap untuk Proyek Pengangkatan</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Link href="/asuransi-machinery/asuransi-alat-berat" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Asuransi Alat Berat</h3>
-            <p className="text-[#475569] text-sm">Lindungi excavator, bulldozer, dan alat berat lain di proyek Anda.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
+          <Link href="/asuransi-machinery/asuransi-alat-berat" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Asuransi Alat Berat</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Lindungi excavator, bulldozer, dan alat berat lain di proyek Anda.</p>
           </Link>
-          <Link href="/asuransi-engineering/erection-all-risk" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Erection All Risk (EAR)</h3>
-            <p className="text-[#475569] text-sm">Untuk proyek pemasangan mesin yang sering menggunakan crane.</p>
+          <Link href="/asuransi-engineering/erection-all-risk" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Erection All Risk (EAR)</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Untuk proyek pemasangan mesin yang sering menggunakan crane.</p>
           </Link>
-          <Link href="/asuransi-liability/public-liability" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Public Liability</h3>
-            <p className="text-[#475569] text-sm">Perluas tanggung jawab hukum atas kerusakan properti di sekitar area kerja crane.</p>
+          <Link href="/asuransi-liability/public-liability" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Public Liability</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Perluas tanggung jawab hukum atas kerusakan properti di sekitar area kerja crane.</p>
           </Link>
         </div>
       </div>

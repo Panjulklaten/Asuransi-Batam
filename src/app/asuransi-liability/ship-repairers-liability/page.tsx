@@ -70,7 +70,7 @@ const schema = {
 
 export default function ShipRepairersLiabilityPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout rich benefitsVariant="circle"
       cluster="liability"
       title="Asuransi Ship Repairer's Liability Batam"
       subtitle="Tanggung Gugat Galangan dan Kontraktor Reparasi Kapal"
@@ -83,8 +83,9 @@ export default function ShipRepairersLiabilityPage() {
       ]}
       schema={schema}
     >
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Aset, Tanggung Gugat, atau Pihak Ketiga?</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-center text-[#475569] mb-6">Tiga polis yang sering dicampuradukkan di galangan, padahal melindungi hal yang berbeda.</p>
         <div className="overflow-x-auto rounded-2xl border border-gray-200">
           <table className="w-full text-sm">
@@ -105,8 +106,9 @@ export default function ShipRepairersLiabilityPage() {
         <p className="text-xs text-gray-500 mt-3">Tabel ini bersifat umum. Cakupan dan pengecualian final mengikuti wording polis masing-masing penanggung.</p>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3 text-center">Konteks Galangan di Batam</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-[#475569] leading-relaxed mb-4">
           Galangan di sekitar Tanjung Uncang dan Kabil menerima kapal pelanggan dari berbagai jenis, seperti tongkang, tugboat, kapal niaga, dan kapal pendukung lepas pantai, untuk docking, penggantian pelat, pengecatan, dan perbaikan mesin. Selama berada di dok, kapal itu bukan milik galangan tetapi berada dalam penguasaannya, dan di situlah celah tanggung gugatnya muncul.
         </p>
@@ -115,35 +117,37 @@ export default function ShipRepairersLiabilityPage() {
         </p>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Ilustrasi Skenario</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-center text-[#475569] mb-6 text-sm">Skenario hipotetis untuk memudahkan pemahaman, bukan kasus nyata. Keputusan klaim tetap mengikuti wording polis.</p>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-6 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">🔥 Percikan las di ruang mesin</h3>
-            <p className="text-[#475569] text-sm">Pekerjaan penggantian pelat menimbulkan percikan yang memicu kebakaran di ruang mesin kapal pelanggan yang sedang docking. Pemilik kapal menuntut galangan. Ini adalah tuntutan tanggung gugat atas kapal dalam penguasaan galangan.</p>
+        <div className="grid md:grid-cols-2 gap-3 md:gap-4">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">🔥 Percikan las di ruang mesin</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Pekerjaan penggantian pelat menimbulkan percikan yang memicu kebakaran di ruang mesin kapal pelanggan yang sedang docking. Pemilik kapal menuntut galangan. Ini adalah tuntutan tanggung gugat atas kapal dalam penguasaan galangan.</p>
           </div>
-          <div className="p-6 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">⚓ Kapal terbentur saat dipindahkan</h3>
-            <p className="text-[#475569] text-sm">Saat dipindahkan dari floating dock ke dermaga, sebuah kapal terbentur dan merusak lambung kapal lain yang sedang bersandar di dekatnya. Pemilik kapal kedua mengajukan tuntutan kepada galangan.</p>
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">⚓ Kapal terbentur saat dipindahkan</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Saat dipindahkan dari floating dock ke dermaga, sebuah kapal terbentur dan merusak lambung kapal lain yang sedang bersandar di dekatnya. Pemilik kapal kedua mengajukan tuntutan kepada galangan.</p>
           </div>
         </div>
       </div>
 
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Pelengkap Perlindungan Galangan</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Link href="/asuransi-marine/builders-risk" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Builder&apos;s Risk</h3>
-            <p className="text-[#475569] text-sm">Melindungi aset kapal yang sedang dibangun atau direparasi, bukan tanggung gugatnya.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
+          <Link href="/asuransi-marine/builders-risk" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Builder&apos;s Risk</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Melindungi aset kapal yang sedang dibangun atau direparasi, bukan tanggung gugatnya.</p>
           </Link>
-          <Link href="/asuransi-liability/public-liability" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Public Liability</h3>
-            <p className="text-[#475569] text-sm">Tanggung gugat atas cedera dan kerusakan properti pihak ketiga di area kerja.</p>
+          <Link href="/asuransi-liability/public-liability" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Public Liability</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Tanggung gugat atas cedera dan kerusakan properti pihak ketiga di area kerja.</p>
           </Link>
-          <Link href="/asuransi-liability/employers-product-liability" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Employers&apos; Liability</h3>
-            <p className="text-[#475569] text-sm">Tuntutan dari pekerja galangan sendiri, pekerjaan di ketinggian dan di dalam tangki.</p>
+          <Link href="/asuransi-liability/employers-product-liability" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Employers&apos; Liability</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Tuntutan dari pekerja galangan sendiri, pekerjaan di ketinggian dan di dalam tangki.</p>
           </Link>
         </div>
       </div>

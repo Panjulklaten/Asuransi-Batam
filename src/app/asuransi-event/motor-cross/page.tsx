@@ -67,7 +67,7 @@ const schema = {
 
 export default function AsuransiMotorCrossPage() {
   return (
-    <ProductPageLayout cluster="event"
+    <ProductPageLayout rich benefitsVariant="circle" cluster="event"
       title="Asuransi Event Motor Cross Batam"
       subtitle="Personal Accident Pembalap & Liability Penonton"
       description="Dari Sirkuit Golden Prawn Bengkong hingga kompleks Temenggung Abdul Jamal, ajang grasstrack dan motocross di Kepri terus bertambah ramai. Kami membantu panitia klub, IMI Kepri, dan event organizer merancang perlindungan bagi pembalap dan penonton sesuai skala event."
@@ -79,7 +79,7 @@ export default function AsuransiMotorCrossPage() {
       ]}
       schema={schema}
     >
-      <div className="mb-12 max-w-3xl mx-auto text-center">
+      <div className="mb-6 md:mb-8 max-w-3xl mx-auto text-center">
         <p className="text-[#475569]">
           Ingin memahami risiko lengkap event motor cross — standar keselamatan, lokasi balap di Kepri,
           dan kesalahan umum yang sering diabaikan panitia?{" "}
@@ -90,18 +90,19 @@ export default function AsuransiMotorCrossPage() {
       </div>
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Jenis Event Lainnya</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Link href="/asuransi-event/konser-musik" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Asuransi Konser Musik</h3>
-            <p className="text-[#475569] text-sm">Liability penonton dan non-appearance artis untuk konser di Batam.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
+          <Link href="/asuransi-event/konser-musik" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Asuransi Konser Musik</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Liability penonton dan non-appearance artis untuk konser di Batam.</p>
           </Link>
-          <Link href="/asuransi-event/hole-in-one" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Asuransi Hole in One</h3>
-            <p className="text-[#475569] text-sm">Jaminan hadiah hole in one untuk turnamen golf.</p>
+          <Link href="/asuransi-event/hole-in-one" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Asuransi Hole in One</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Jaminan hadiah hole in one untuk turnamen golf.</p>
           </Link>
-          <Link href="/asuransi-personal-accident" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Asuransi Personal Accident</h3>
-            <p className="text-[#475569] text-sm">Lindungi kru medis dan panitia lintasan secara kolektif.</p>
+          <Link href="/asuransi-personal-accident" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Asuransi Personal Accident</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Lindungi kru medis dan panitia lintasan secara kolektif.</p>
           </Link>
         </div>
       </div>

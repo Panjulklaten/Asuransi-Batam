@@ -119,7 +119,7 @@ const schema = {
 
 export default function AsuransiPabrikBatamPage() {
   return (
-    <ProductPageLayout cluster="property"
+    <ProductPageLayout rich benefitsVariant="circle" cluster="property"
       title="Asuransi Pabrik & Kawasan Industri Batam"
       subtitle="Properti Industri All Risk – Gedung, Mesin, Stok & Liability"
       description="Batam adalah kota industri. Pabrik elektronik, galangan kapal, fasilitas logistik, dan kawasan industri terpadu membutuhkan perlindungan properti yang dirancang khusus — bukan sekadar polis properti biasa. Kami membantu Anda mendapatkan cakupan yang benar-benar sesuai."
@@ -135,18 +135,19 @@ export default function AsuransiPabrikBatamPage() {
     >
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Lengkapi Proteksi Kawasan Industri Anda</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Link href="/asuransi-properti/asuransi-gudang-batam" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Asuransi Gudang</h3>
-            <p className="text-[#475569] text-sm">Lindungi fasilitas gudang dan stok logistik di area pabrik Anda.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
+          <Link href="/asuransi-properti/asuransi-gudang-batam" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Asuransi Gudang</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Lindungi fasilitas gudang dan stok logistik di area pabrik Anda.</p>
           </Link>
-          <Link href="/asuransi-liability/asuransi-limbah-b3" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Asuransi Limbah B3</h3>
-            <p className="text-[#475569] text-sm">Wajib bagi industri penghasil limbah B3 sesuai PP 22/2021.</p>
+          <Link href="/asuransi-liability/asuransi-limbah-b3" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Asuransi Limbah B3</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Wajib bagi industri penghasil limbah B3 sesuai PP 22/2021.</p>
           </Link>
-          <Link href="/asuransi-personal-accident/pa-karyawan-grup" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">PA Karyawan Grup</h3>
-            <p className="text-[#475569] text-sm">Lindungi karyawan pabrik dari risiko kecelakaan kerja.</p>
+          <Link href="/asuransi-personal-accident/pa-karyawan-grup" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">PA Karyawan Grup</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Lindungi karyawan pabrik dari risiko kecelakaan kerja.</p>
           </Link>
         </div>
       </div>

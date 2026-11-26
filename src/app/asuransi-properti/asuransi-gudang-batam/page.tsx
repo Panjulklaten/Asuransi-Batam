@@ -95,7 +95,7 @@ const schema = {
 
 export default function AsuransiGudangBatamPage() {
   return (
-    <ProductPageLayout cluster="property"
+    <ProductPageLayout rich benefitsVariant="circle" cluster="property"
       title="Asuransi Gudang Batam"
       subtitle="Proteksi Bangunan, Stok & Operasional Logistik Anda"
       description="Gudang adalah titik paling kritis dalam rantai distribusi bisnis Anda. Satu insiden kebakaran atau banjir yang tidak terlindungi bisa menghancurkan stok senilai miliaran dan menghentikan operasional selama berbulan-bulan. Asuransi gudang yang tepat bukan sekadar formalitas — ini adalah jaring pengaman yang menentukan apakah bisnis Anda bisa bangkit atau tidak setelah musibah."
@@ -111,18 +111,19 @@ export default function AsuransiGudangBatamPage() {
     >
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Baca & Lengkapi Juga</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Link href="/asuransi-properti/asuransi-pabrik-kawasan-industri-batam" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Asuransi Pabrik & Kawasan Industri</h3>
-            <p className="text-[#475569] text-sm">Lindungi fasilitas produksi yang terhubung dengan gudang Anda.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
+          <Link href="/asuransi-properti/asuransi-pabrik-kawasan-industri-batam" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Asuransi Pabrik & Kawasan Industri</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Lindungi fasilitas produksi yang terhubung dengan gudang Anda.</p>
           </Link>
-          <Link href="/blog/asuransi-gudang-kawasan-industri-muka-kuning-batam" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Asuransi Gudang Muka Kuning</h3>
-            <p className="text-[#475569] text-sm">Studi kasus dan tips khusus gudang di kawasan industri Muka Kuning.</p>
+          <Link href="/blog/asuransi-gudang-kawasan-industri-muka-kuning-batam" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Asuransi Gudang Muka Kuning</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Studi kasus dan tips khusus gudang di kawasan industri Muka Kuning.</p>
           </Link>
-          <Link href="/asuransi-marine/marine-cargo" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Marine Cargo Insurance</h3>
-            <p className="text-[#475569] text-sm">Lindungi barang Anda juga saat dalam proses pengiriman, bukan hanya saat di gudang.</p>
+          <Link href="/asuransi-marine/marine-cargo" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Marine Cargo Insurance</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Lindungi barang Anda juga saat dalam proses pengiriman, bukan hanya saat di gudang.</p>
           </Link>
         </div>
       </div>

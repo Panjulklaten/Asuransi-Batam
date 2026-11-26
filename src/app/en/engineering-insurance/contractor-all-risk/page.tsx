@@ -62,7 +62,7 @@ const schema = {
 
 export default function ContractorAllRiskENPage() {
   return (
-    <ProductPageLayout cluster="engineering"
+    <ProductPageLayout rich benefitsVariant="circle" cluster="engineering"
       title="Contractor All Risk (CAR) Insurance Batam"
       subtitle="Construction Project Protection – Ground Breaking to Handover"
       description="Comprehensive protection for your construction project in Batam — from ground breaking through the maintenance period. Materials, equipment, and third-party liability are all covered under one policy."

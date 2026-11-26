@@ -45,14 +45,15 @@ const schema = {
 };
 export default function AsuransiDumpTruckPage() {
   return (
-    <ProductPageLayout cluster="vehicle" title="Asuransi Dump Truck Batam" subtitle="Perlindungan Armada Kendaraan Berat & Niaga"
+    <ProductPageLayout rich benefitsVariant="circle" cluster="vehicle" title="Asuransi Dump Truck Batam" subtitle="Perlindungan Armada Kendaraan Berat & Niaga"
       description="Armada dump truck adalah aset vital dan sumber pendapatan bisnis Anda. Di Batam — kota dengan proyek reklamasi, konstruksi kawasan industri, dan galian aktif — dump truck bekerja di kondisi paling berat. Satu kecelakaan atau kerusakan mesin yang tidak terlindungi bisa menghentikan operasional dan menguras kas bisnis."
       benefits={benefits} faqs={faqs} policyComparison={policyComparison}
       breadcrumbs={[{ label: "Asuransi Kendaraan", href: "/asuransi-kendaraan" }, { label: "Asuransi Dump Truck", href: "/asuransi-kendaraan/asuransi-dumptruck" }]}
       schema={schema}>
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Estimasi Premi Dump Truck di Batam</h2>
-        <p className="text-center text-[#475569] mb-8">Panduan harga perlindungan untuk armada kendaraan berat Anda.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <p className="text-center text-[#475569] text-sm md:text-base mb-4 md:mb-6">Panduan harga perlindungan untuk armada kendaraan berat Anda.</p>
         <div className="overflow-x-auto rounded-2xl border border-[#e2e8f0]">
           <table className="w-full text-sm">
             <thead>
@@ -89,18 +90,19 @@ export default function AsuransiDumpTruckPage() {
       </div>
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Pelengkap untuk Operasional Tambang & Proyek</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Link href="/asuransi-machinery/asuransi-alat-berat" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Asuransi Alat Berat</h3>
-            <p className="text-[#475569] text-sm">Lindungi excavator dan bulldozer yang bekerja bersama armada dump truck Anda.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
+          <Link href="/asuransi-machinery/asuransi-alat-berat" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Asuransi Alat Berat</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Lindungi excavator dan bulldozer yang bekerja bersama armada dump truck Anda.</p>
           </Link>
-          <Link href="/asuransi-liability/public-liability" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Public Liability</h3>
-            <p className="text-[#475569] text-sm">Perluas tanggung jawab hukum operasional armada di luar batas polis kendaraan standar.</p>
+          <Link href="/asuransi-liability/public-liability" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Public Liability</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Perluas tanggung jawab hukum operasional armada di luar batas polis kendaraan standar.</p>
           </Link>
-          <Link href="/blog/asuransi-dump-truck-batam-proyek-konstruksi" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Panduan Dump Truck untuk Proyek</h3>
-            <p className="text-[#475569] text-sm">Tips lengkap proteksi armada dump truck untuk kebutuhan proyek konstruksi Batam.</p>
+          <Link href="/blog/asuransi-dump-truck-batam-proyek-konstruksi" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Panduan Dump Truck untuk Proyek</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Tips lengkap proteksi armada dump truck untuk kebutuhan proyek konstruksi Batam.</p>
           </Link>
         </div>
       </div>

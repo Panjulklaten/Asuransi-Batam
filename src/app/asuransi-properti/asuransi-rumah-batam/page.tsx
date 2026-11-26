@@ -42,7 +42,7 @@ const schema = {
 
 export default function AsuransiRumahBatamPage() {
   return (
-    <ProductPageLayout cluster="property"
+    <ProductPageLayout rich benefitsVariant="circle" cluster="property"
       title="Asuransi Rumah Batam"
       subtitle="Proteksi Hunian & Isi Rumah Keluarga Anda"
       description="Rumah adalah investasi terbesar keluarga Anda di Batam. Kebakaran, banjir, dan pencurian adalah risiko nyata yang bisa menghancurkan aset dalam semalam. Dengan asuransi rumah yang tepat, nilai investasi properti Anda tetap terlindungi — premi mulai dari ratusan ribu rupiah per tahun."
@@ -55,9 +55,10 @@ export default function AsuransiRumahBatamPage() {
       schema={schema}
       calculatorCard="rumah"
     >
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Estimasi Premi Asuransi Rumah di Batam</h2>
-        <p className="text-center text-[#475569] mb-8">Harga perlindungan yang jauh lebih murah dari biaya memperbaiki kerusakan sendiri.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <p className="text-center text-[#475569] text-sm md:text-base mb-4 md:mb-6">Harga perlindungan yang jauh lebih murah dari biaya memperbaiki kerusakan sendiri.</p>
         <div className="overflow-x-auto rounded-2xl border border-[#e2e8f0]">
           <table className="w-full text-sm">
             <thead>
@@ -94,18 +95,19 @@ export default function AsuransiRumahBatamPage() {
       </div>
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Lengkapi Proteksi Keluarga Anda</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Link href="/blog/cara-klaim-asuransi-kebakaran-rumah" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Cara Klaim Kebakaran Rumah</h3>
-            <p className="text-[#475569] text-sm">Panduan langkah demi langkah agar proses klaim asuransi rumah Anda berjalan lancar.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
+          <Link href="/blog/cara-klaim-asuransi-kebakaran-rumah" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Cara Klaim Kebakaran Rumah</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Panduan langkah demi langkah agar proses klaim asuransi rumah Anda berjalan lancar.</p>
           </Link>
-          <Link href="/asuransi-personal-accident/pa-individu-keluarga" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">PA Individu & Keluarga</h3>
-            <p className="text-[#475569] text-sm">Lindungi juga diri dan anggota keluarga dari risiko kecelakaan dan musibah.</p>
+          <Link href="/asuransi-personal-accident/pa-individu-keluarga" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">PA Individu & Keluarga</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Lindungi juga diri dan anggota keluarga dari risiko kecelakaan dan musibah.</p>
           </Link>
-          <Link href="/asuransi-kendaraan/asuransi-mobil-batam" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Asuransi Mobil Batam</h3>
-            <p className="text-[#475569] text-sm">Lengkapi proteksi aset keluarga — rumah sudah terlindungi, giliran kendaraan Anda.</p>
+          <Link href="/asuransi-kendaraan/asuransi-mobil-batam" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Asuransi Mobil Batam</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Lengkapi proteksi aset keluarga — rumah sudah terlindungi, giliran kendaraan Anda.</p>
           </Link>
         </div>
       </div>

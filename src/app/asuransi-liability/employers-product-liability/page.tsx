@@ -70,7 +70,7 @@ const schema = {
 
 export default function EmployersProductLiabilityPage() {
   return (
-    <ProductPageLayout
+    <ProductPageLayout rich benefitsVariant="circle"
       cluster="liability"
       title="Asuransi Employers Liability & Product Liability Batam"
       subtitle="Tanggung Gugat terhadap Karyawan dan Produk Anda"
@@ -83,8 +83,9 @@ export default function EmployersProductLiabilityPage() {
       ]}
       schema={schema}
     >
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Employers&apos; Liability vs Product Liability</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-center text-[#475569] mb-6">Dua polis yang sering dibeli berpasangan, tetapi melindungi hal yang berbeda.</p>
         <div className="overflow-x-auto rounded-2xl border border-gray-200">
           <table className="w-full text-sm">
@@ -106,8 +107,9 @@ export default function EmployersProductLiabilityPage() {
         <p className="text-xs text-gray-500 mt-3">Tabel ini bersifat umum. Cakupan dan pengecualian final mengikuti wording polis masing-masing penanggung.</p>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-3 text-center">Yang Kami Tentukan Bersama Anda Sebelum Penawaran</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-[#475569] leading-relaxed mb-4">
           Penawaran Employers&apos; dan Product Liability tidak bisa dibuat dari satu angka. Beberapa keputusan berikut menentukan seberapa jauh polis benar-benar melindungi, dan sebaiknya disepakati sebelum polis diterbitkan:
         </p>
@@ -123,35 +125,37 @@ export default function EmployersProductLiabilityPage() {
         </p>
       </div>
 
-      <div className="mb-12 max-w-4xl mx-auto">
+      <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Ilustrasi Skenario</h2>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
         <p className="text-center text-[#475569] mb-6 text-sm">Skenario hipotetis untuk memudahkan pemahaman, bukan kasus nyata. Keputusan klaim tetap mengikuti wording polis.</p>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-6 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">👷 Pekerja galangan jatuh dari perancah</h3>
-            <p className="text-[#475569] text-sm">Seorang pekerja subkontraktor mengalami cedera berat saat pekerjaan di ketinggian. Selain santunan dari program BPJS Ketenagakerjaan, keluarganya mengajukan tuntutan ganti rugi tambahan kepada perusahaan. Di sinilah Employers&apos; Liability relevan, termasuk untuk biaya pembelaan hukum.</p>
+        <div className="grid md:grid-cols-2 gap-3 md:gap-4">
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">👷 Pekerja galangan jatuh dari perancah</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Seorang pekerja subkontraktor mengalami cedera berat saat pekerjaan di ketinggian. Selain santunan dari program BPJS Ketenagakerjaan, keluarganya mengajukan tuntutan ganti rugi tambahan kepada perusahaan. Di sinilah Employers&apos; Liability relevan, termasuk untuk biaya pembelaan hukum.</p>
           </div>
-          <div className="p-6 rounded-2xl border border-[#e2e8f0] bg-[#f8faff]">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">📦 Komponen elektronik memicu kerusakan di pabrik pembeli</h3>
-            <p className="text-[#475569] text-sm">Sebuah komponen buatan Batam yang sudah terpasang di produk pembeli dituduh menyebabkan kerusakan properti dan cedera pada pengguna akhir. Product Liability dapat menanggung ganti rugi dan biaya pembelaan, sementara biaya penarikan produk umumnya perlu pengaturan terpisah.</p>
+          <div className="p-3.5 md:p-5 rounded-xl border border-[#c7d9f5] bg-[#eef4ff]">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">📦 Komponen elektronik memicu kerusakan di pabrik pembeli</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Sebuah komponen buatan Batam yang sudah terpasang di produk pembeli dituduh menyebabkan kerusakan properti dan cedera pada pengguna akhir. Product Liability dapat menanggung ganti rugi dan biaya pembelaan, sementara biaya penarikan produk umumnya perlu pengaturan terpisah.</p>
           </div>
         </div>
       </div>
 
       <div>
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Pelengkap Perlindungan Liability</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <Link href="/asuransi-liability/public-liability" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Public Liability</h3>
-            <p className="text-[#475569] text-sm">Tanggung gugat terhadap pihak ketiga di lokasi usaha dan proyek.</p>
+        <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mt-4">
+          <Link href="/asuransi-liability/public-liability" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Public Liability</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Tanggung gugat terhadap pihak ketiga di lokasi usaha dan proyek.</p>
           </Link>
-          <Link href="/asuransi-personal-accident/pa-karyawan-grup" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">PA Karyawan Grup</h3>
-            <p className="text-[#475569] text-sm">Santunan kecelakaan diri bagi karyawan, berbeda dari tanggung gugat perusahaan.</p>
+          <Link href="/asuransi-personal-accident/pa-karyawan-grup" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">PA Karyawan Grup</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Santunan kecelakaan diri bagi karyawan, berbeda dari tanggung gugat perusahaan.</p>
           </Link>
-          <Link href="/blog/employers-liability-product-liability-batam" className="block p-6 rounded-2xl border border-[#e2e8f0] hover:border-[#c9a84c]/40 hover:shadow-lg transition-all card-hover">
-            <h3 className="font-display font-bold text-lg text-[#0a1628] mb-2">Mengapa EL &amp; PL Sering Terlewat</h3>
-            <p className="text-[#475569] text-sm">Artikel tentang celah di luar BPJS dan Public Liability, serta siapa yang paling rentan.</p>
+          <Link href="/blog/employers-liability-product-liability-batam" className="block p-3.5 md:p-5 rounded-xl border border-[#ecdca0] bg-[#fbf6e6] hover:border-[#c9a84c] hover:shadow-md transition-all">
+            <h3 className="font-display font-bold text-base md:text-lg leading-snug text-[#0a1628] mb-1">Mengapa EL &amp; PL Sering Terlewat</h3>
+            <p className="text-[#475569] text-[13px] md:text-sm leading-snug">Artikel tentang celah di luar BPJS dan Public Liability, serta siapa yang paling rentan.</p>
           </Link>
         </div>
       </div>
