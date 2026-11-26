@@ -10,6 +10,7 @@ import QuoteButton from "./quote/QuoteButton";
 import QuoteHeroActions from "./quote/QuoteHeroActions";
 import { QUOTE_CLUSTERS } from "@/lib/quote";
 import QuoteCard from "./quote/QuoteCard";
+import { resolveSubHero } from "@/lib/sub-hero";
 import type { QuoteClusterKey } from "@/lib/quote";
 
 interface FAQ { q: string; a: string; }
@@ -68,6 +69,8 @@ export default function ProductPageLayout({
   benefits, faqs, policyComparison,
   breadcrumbs, schema, calculatorCta, calculatorCard, cluster, heroImage, rich, benefitsVariant, children,
 }: ProductPageProps) {
+  // Foto hero otomatis untuk sub-halaman (bila file ada di public/images/produk/sub/); parent tetap memakai prop heroImage.
+  const hero: ProductPageProps["heroImage"] = heroImage ?? resolveSubHero(breadcrumbs, title);
   // Detect language from first breadcrumb href
   const isEN = breadcrumbs[0]?.href?.startsWith("/en");
   const lang = isEN ? "en" : "id";
@@ -142,8 +145,8 @@ export default function ProductPageLayout({
       )}
 
       {/* Hero */}
-      <section className={`${rich ? "pt-20 pb-8 lg:pb-12" : "pt-24 pb-16"} bg-gradient-to-br from-[#0a1628] via-[#132040] to-[#1a4fa0]${heroImage ? " relative overflow-hidden" : ""}`}>
-        {heroImage && (
+      <section className={`${rich ? "pt-20 pb-8 lg:pb-12" : "pt-24 pb-16"} bg-gradient-to-br from-[#0a1628] via-[#132040] to-[#1a4fa0]${hero ? " relative overflow-hidden" : ""}`}>
+        {hero && (
           <>
             <div aria-hidden="true" className="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full bg-[#c9a84c]/15 blur-3xl" />
             <div aria-hidden="true" className="pointer-events-none absolute -bottom-32 left-1/3 h-80 w-80 rounded-full bg-[#1a4fa0]/40 blur-3xl" />
@@ -167,9 +170,9 @@ export default function ProductPageLayout({
             ))}
           </nav>
 
-          <div className={heroImage ? "grid items-center gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10" : ""}>
-          <div className={heroImage ? "" : "max-w-3xl"}>
-            {heroImage ? (
+          <div className={hero ? "grid items-center gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10" : ""}>
+          <div className={hero ? "" : "max-w-3xl"}>
+            {hero ? (
               <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#c9a84c]/40 bg-[#c9a84c]/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-[#f0d080]">
                 <ShieldCheck size={14} aria-hidden="true" />
                 {subtitle}
@@ -221,27 +224,27 @@ export default function ProductPageLayout({
             </div>
           </div>
 
-          {heroImage && (
-            <div className={`relative mx-auto w-full ${heroImage.shape === "square" ? "max-w-sm lg:ml-auto lg:max-w-[420px]" : "max-w-xl lg:max-w-none"}`}>
+          {hero && (
+            <div className={`relative mx-auto w-full ${hero.shape === "square" ? "max-w-sm lg:ml-auto lg:max-w-[420px]" : "max-w-xl lg:max-w-none"}`}>
               <div aria-hidden="true" className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-[#c9a84c]/50 via-transparent to-[#1a4fa0]/50 blur-xl" />
               <div className="relative overflow-hidden rounded-3xl border border-white/20 shadow-2xl shadow-black/40">
                 {/* Foto produk berwatermark di pojok: tampil utuh (tanpa crop) dan tanpa overlay di tepi bawah. */}
-                <div className={`relative w-full ${heroImage.shape === "square" ? "aspect-square" : "aspect-video"}`}>
+                <div className={`relative w-full ${hero.shape === "square" ? "aspect-square" : "aspect-video"}`}>
                   <Image
-                    src={heroImage.src}
-                    alt={heroImage.alt}
+                    src={hero.src}
+                    alt={hero.alt}
                     fill
                     priority
                     className="object-cover"
-                    sizes={heroImage.shape === "square" ? "(max-width: 1024px) 384px, 420px" : "(max-width: 1024px) 100vw, 560px"}
+                    sizes={hero.shape === "square" ? "(max-width: 1024px) 384px, 420px" : "(max-width: 1024px) 100vw, 560px"}
                   />
                 </div>
-                {heroImage.badge && (
+                {hero.badge && (
                   <div className="absolute right-3 top-3 flex max-w-[80%] items-center gap-2 rounded-xl border border-white/30 bg-[#0a1628]/75 px-3 py-2 backdrop-blur-md">
                     <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#c9a84c] to-[#f0d080] text-[#0a1628]">
                       <ShieldCheck size={16} aria-hidden="true" />
                     </span>
-                    <span className="text-xs font-medium leading-snug text-white">{heroImage.badge}</span>
+                    <span className="text-xs font-medium leading-snug text-white">{hero.badge}</span>
                   </div>
                 )}
               </div>
