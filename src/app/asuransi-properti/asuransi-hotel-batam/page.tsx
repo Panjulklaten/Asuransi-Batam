@@ -65,6 +65,7 @@ export default function AsuransiHotelBatamPage() {
       schema={schema}
       calculatorCard="hotel"
       rich
+      benefitsVariant="circle"
     >
       <div className="mb-6 md:mb-8 max-w-4xl mx-auto">
         <h2 className="font-display font-bold text-2xl text-[#0a1628] mb-2 text-center">Studi Kasus: Klaim Hotel di Batam</h2>

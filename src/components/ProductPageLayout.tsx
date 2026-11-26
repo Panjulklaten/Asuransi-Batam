@@ -35,6 +35,8 @@ interface ProductPageProps {
   heroImage?: { src: string; alt: string; badge?: string; /** "square" untuk foto 1:1 (mis. 400x400); default lanskap 16:9. */ shape?: "square" | "landscape" };
   /** Tampilan premium opsional untuk kartu manfaat, tabel perbandingan, dan FAQ. */
   rich?: boolean;
+  /** Varian kartu manfaat: ikon dalam lingkaran + lencana nomor (opsional; default tidak berubah). */
+  benefitsVariant?: "circle";
   children?: React.ReactNode;
 }
 
@@ -64,7 +66,7 @@ function CompareCell({ value, rich }: { value: string; rich?: boolean }) {
 export default function ProductPageLayout({
   title, subtitle, description,
   benefits, faqs, policyComparison,
-  breadcrumbs, schema, calculatorCta, calculatorCard, cluster, heroImage, rich, children,
+  breadcrumbs, schema, calculatorCta, calculatorCard, cluster, heroImage, rich, benefitsVariant, children,
 }: ProductPageProps) {
   // Detect language from first breadcrumb href
   const isEN = breadcrumbs[0]?.href?.startsWith("/en");
@@ -255,8 +257,26 @@ export default function ProductPageLayout({
           <h2 className={`font-display font-bold ${rich ? "text-2xl" : "text-3xl"} text-[#0a1628] mb-2 text-center`}>{t.benefitsTitle}</h2>
           {rich && <div aria-hidden="true" className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#f0d080]" />}
           <p className={`text-center text-[#475569] ${rich ? "mb-5 text-sm md:text-base" : "mb-12"} max-w-2xl mx-auto`}>{t.benefitsSubtitle}</p>
-          <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ${rich ? "gap-3" : "gap-6"}`}>
+          <div className={benefitsVariant === "circle" ? "grid grid-cols-2 lg:grid-cols-3 gap-x-3 gap-y-5 md:gap-x-6 md:gap-y-7" : `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ${rich ? "gap-3" : "gap-6"}`}>
             {benefits.map((b, i) => {
+              if (benefitsVariant === "circle") {
+                const circle = (
+                  <>
+                    <span className="relative mb-2.5 flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-full border-2 border-[#c9a84c] bg-white shadow-sm shadow-[#c9a84c]/20">
+                      {b.Icon ? <b.Icon size={24} strokeWidth={2} className="text-[#1a4fa0]" aria-hidden="true" /> : <span className="text-2xl" aria-hidden="true">{b.icon}</span>}
+                      <span aria-hidden="true" className="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-[#0a1628] text-xs font-bold text-[#f0d080] ring-2 ring-white">{i + 1}</span>
+                    </span>
+                    <h3 className="font-display font-bold text-[14px] md:text-base leading-tight text-[#0a1628] mb-1">{b.title}</h3>
+                    <p className="text-[12.5px] md:text-sm leading-snug text-[#475569]">{b.desc}</p>
+                  </>
+                );
+                const cls = "flex flex-col items-center text-center px-1";
+                return b.href ? (
+                  <Link key={i} href={b.href} className={`${cls} hover:opacity-80 transition-opacity`}>{circle}</Link>
+                ) : (
+                  <div key={i} className={cls}>{circle}</div>
+                );
+              }
               const tn = tone(i);
               const cardClass = rich
                 ? `group flex items-start gap-3 rounded-xl border p-3.5 transition-all hover:shadow-md ${tn.card}`
